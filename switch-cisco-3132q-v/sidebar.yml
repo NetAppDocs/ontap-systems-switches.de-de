@@ -1,0 +1,67 @@
+---
+section: switch-cisco-3132q-v
+title: Cisco Nexus 3132Q-V Switches
+entries:
+- title: Überblick
+  url: "/switch-cisco-3132q-v/index.html"
+- title: Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch und eine Pass-Through-Panel
+    in einem NetApp Rack
+  url: "/switch-cisco-3132q-v/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html"
+- title: Einrichtung
+  entries:
+  - title: Richten Sie die Schalter ein
+    url: "/switch-cisco-9336c-fx2/setup-switches.html"
+  - title: Erforderliche Informationen zur Cluster-Konfiguration
+    url: "/switch-cisco-9336c-fx2/setup-required-information.html"
+    entries:
+    - title: Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor
+        (CSHM) für 92300YC-Switches
+      url: "/switch-cisco-9336c-fx2/setup-install-cshm-file.html"
+  - title: Erforderliche Dokumentation
+    url: "/switch-cisco-9336c-fx2/setup-required-documentation.html"
+  - title: Überlegungen für die Verwendung von Smart Call Home
+    url: "/switch-cisco-9336c-fx2/setup-considerations-smart-call.html"
+  - title: Beispiele und leere Verkabelungsarbeitsblätter
+    url: "/switch-cisco-9336c-fx2/setup-worksheets-sample-cabling.html"
+    entries:
+    - title: Cisco Nexus 9336C-FX2 – Verkabelungsarbeitsblatt
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-9336c.html"
+    - title: Arbeitsblatt für die Cisco Nexus 92300YC-Verkabelung
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-92300yc.html"
+    - title: Verkabelungsarbeitsblatt für den Cisco Nexus 3232C-Serie
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-3232c.html"
+    - title: Cisco Nexus 3132Q-V – Verkabelungsarbeitsblatt
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-3132q.html"
+    - title: Cisco Nexus 5596UP und 5596T – Verkabelungsarbeitsblatt
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-5596.html"
+- title: Installieren Sie NX-OS und RCFs auf Cisco Nexus 3132Q-V Cluster Switches
+  url: "/switch-cisco-3132q-v/task-install-nx-os-software-and-rcfs-on-cisco-nexus-3132q-v-cluster-switches.html"
+  entries:
+  - title: Installieren Sie die NX-OS-Software
+    url: "/switch-cisco-3132q-v/task-install-the-nx-os-software-3132q-v.html"
+  - title: Installieren Sie die Referenzkonfigurationsdatei (RCF).
+    url: "/switch-cisco-3132q-v/task-install-the-reference-configuration-file-rcf-3132q-v.html"
+- title: Migrieren Sie mit Cisco Nexus 3132Q-V Cluster Switches zu einem Switch mit
+    zwei Nodes
+  url: "/switch-cisco-3132q-v/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html"
+  entries:
+  - title: Migration eines 2-Node-Switch-Clusters mit Cisco Nexus 3132Q-V Cluster-Switches
+    url: "/switch-cisco-3132q-v/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html"
+- title: Ersetzen Sie die Cisco Nexus 3132Q-V Cluster Switches
+  url: "/switch-cisco-3132q-v/concept-replace-cisco-nexus-3132q-v-cluster-switches.html"
+  entries:
+  - title: So ersetzen Sie Cisco Nexus 3132Q-V Cluster-Switches
+    url: "/switch-cisco-3132q-v/task-how-to-replace-cisco-nexus-3132q-v-cluster-switches.html"
+- title: Ersetzen Sie einen Cisco Nexus 5596 Cluster Switch durch einen Cisco Nexus
+    3132Q-V Cluster-Switch
+  url: "/switch-cisco-3132q-v/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html"
+  entries:
+  - title: So ersetzen Sie einen Cisco Nexus 5596 Cluster Switch durch einen Cisco
+      Nexus 3132Q-V Cluster Switch
+    url: "/switch-cisco-3132q-v/task-how-to-migrate-from-a-cisco-nexus-5596-cluster-switch-to-a-cisco-nexus-3232c-cluster-switch.html"
+- title: Ersetzen Sie CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches
+  url: "/switch-cisco-3132q-v/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html"
+  entries:
+  - title: So ersetzen Sie CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster
+      Switches
+    url: "/switch-cisco-3132q-v/task-how-to-replace-cn1610-cluster-switches-with-cisco-nexus-3232c-cluster-switches.html"

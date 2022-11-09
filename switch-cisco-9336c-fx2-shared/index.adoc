@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9336c-fx2-shared/index.html 
+keywords: shared storage cluster switch 
+summary: In ONTAP 9.9 können Unternehmen mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- und Cluster-Funktionen in einem gemeinsamen Switch-Szenario kombinieren. 
+---
+= Cisco 9336C-FX2 Shared Switch – Übersicht
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+In ONTAP 9.9 können Unternehmen mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- und Cluster-Funktionen in einem gemeinsamen Switch-Szenario kombinieren.

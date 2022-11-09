@@ -1,0 +1,32 @@
+---
+permalink: switch-bes-53248/replace-configure-new-switch.html 
+sidebar: sidebar 
+keywords: BES-53248 switches,initial installation,new install 
+summary: Sie können einen neuen BES-53248-Cluster-Switch konfigurieren, indem Sie die in diesem Kapitel beschriebenen Schritte ausführen. 
+---
+= Konfigurieren Sie einen neuen BES-53248 Cluster-Switch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen neuen BES-53248-Cluster-Switch konfigurieren, indem Sie die in diesem Kapitel beschriebenen Schritte ausführen.
+
+Bei der Installation des BES-53248-Cluster-Switch auf Systemen mit ONTAP beginnt die Einrichtung einer IP-Adresse und -Konfiguration, damit der Switch über die Managementoberfläche kommunizieren kann. Anschließend können Sie die Ethernet Fabric OS (EFOS)-Software, die RCF-Referenzkonfigurationsdatei und andere Lizenzen nach Bedarf installieren. Dieses Verfahren dient zur Vorbereitung des BES-53248-Schalters vor dem Hinzufügen von Controllern. Darüber hinaus müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für die BES-53248-Cluster-Switches zu unterstützen. Siehe link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"] Entnehmen.
+
+Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+
+* Die NetApp Switch-Namen sind cs1 und cs2.
+* Das in diesem Verfahren verwendete Beispiel startet das Upgrade auf dem zweiten Schalter, _cs2._
+* Die Cluster-LIF-Namen sind node1_clug1 und node1_clus2 für node1, und node2_clus1 und node2_clus2 für node2.
+* Der IPspace Name ist der Cluster.
+* Der `cluster1::>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Die Cluster-Ports auf jedem Node lauten e0a und e0b.
++
+Siehe https://hwu.netapp.com/Home/Index["NetApp Hardware Universe"^] Für die tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.
+
+* Die von NetApp Switches unterstützten Inter-Switch Links (ISLs) sind die Ports 0/55 und 0/56.
+* Die für NetApp Switches unterstützten Node-Verbindungen sind die Ports 0/1 bis 0/16 mit Standardlizenz.
+* Die Beispiele in diesem Verfahren verwenden zwei Nodes, Sie können jedoch bis zu 24 Nodes in einem Cluster haben.
+

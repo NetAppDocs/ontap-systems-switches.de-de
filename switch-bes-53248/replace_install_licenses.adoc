@@ -1,0 +1,277 @@
+---
+permalink: switch-bes-53248/replace-install-licenses.html 
+sidebar: sidebar 
+keywords: bes, cluster, switch, base, model, license, install license for bes-53428 cluster switches - bes-53428 switches 
+summary: Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw. 25-GbE-Ports und zwei 100-GbE-Ports lizenziert. Neue Ports können durch den Kauf weiterer Lizenzen hinzugefügt werden. 
+---
+= Installation von Lizenzen für BES-53248 Cluster-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw. 25-GbE-Ports und zwei 100-GbE-Ports lizenziert. Neue Ports können durch den Kauf weiterer Lizenzen hinzugefügt werden.
+
+Die folgenden Lizenzen sind zur Verwendung auf dem BES-53248 Cluster-Switch verfügbar:
+
+[cols="1,2"]
+|===
+| Lizenztyp | Lizenzdetails 
+
+
+| Unterstützte Firmware-Version  a| 
+SW-BES-53248A1-G1-8P-LIC
+
+
+
+ a| 
+Broadcom 8P 10-25,2P40-100 Lizenzschlüssel, X190005/R
+ a| 
+EFOS 3.4.3.3 und höher
+
+
+
+ a| 
+SW-BES-53248A1-G1-16P-LIC
+ a| 
+Broadcom 16P 10-25,4P40-100 Lizenzschlüssel, X190005/R
+
+
+
+ a| 
+EFOS 3.4.3.3 und höher
+ a| 
+SW-BES-53248A1-G1-24P-LIC
+
+
+
+ a| 
+Broadcom 24P 10-25,6P40-100 Lizenzschlüssel, X190005/R
+ a| 
+EFOS 3.4.3.3 und höher
+
+
+
+ a| 
+SW-BES54248-40-100G-LIC
+ a| 
+Broadcom 6Port 40G100G Lizenzschlüssel, X190005/R
+
+
+
+ a| 
+EFOS 3.4.4.6 und höher
+ a| 
+SW-BES53248-8P-10G25G-LIC
+
+
+
+ a| 
+Broadcom 8-Port 10 G25 G Lizenzschlüssel, X190005/R
+ a| 
+EFOS 3.4.4.6 und höher
+
+
+
+ a| 
+SW-BES53248-16P-1025G-LIC
+ a| 
+Broadcom 16-Port 10-G25-G-Lizenzschlüssel, X190005/R
+
+
+
+ a| 
+EFOS 3.4.4.6 und höher
+ a| 
+SW-BES53248-24P-1025G-LIC
+
+
+
+ a| 
+Broadcom 24Port 10G25G Lizenzschlüssel, X190005/R
+ a| 
+EFOS 3.4.4.6 und höher
+
+|===
+.Schritte
+. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der EFOS, Lizenzen und der RCF-Datei hostet.
++
+In diesem Beispiel wird überprüft, ob der Switch mit der IP-Adresse 172.19.2 verbunden ist:
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *ping 172.19.2.1*
+Pinging 172.19.2.1 with 0 bytes of data:
+
+Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
+----
+. Überprüfen Sie die aktuelle Lizenzverwendung auf Switch cs2:
++
+`show license`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show license*
+Reboot needed.................................. No
+Number of active licenses...................... 0
+
+License Index  License Type     Status
+-------------- ---------------- -----------
+
+No license file found.
+----
+. Installieren Sie die Lizenzdatei. Im folgenden Beispiel wird SFTP verwendet, um eine Lizenzdatei in einen Schlüsselindex 1 zu kopieren.
++
+Wiederholen Sie diesen Schritt, um weitere Lizenzen zu laden und verschiedene Schlüsselindizes zu verwenden.
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *copy sftp://root@172.19.2.1/var/lib/tftpboot/license.dat nvram:license-key 1*
+Remote Password:********
+
+Mode........................................... SFTP
+Set Server IP.................................. 172.19.2.1
+Path........................................... /var/lib/tftpboot/
+Filename....................................... license.dat
+Data Type...................................... license
+
+
+Management access will be blocked for the duration of the transfer
+Are you sure you want to start? (y/n) *y*
+
+File transfer in progress. Management access will be blocked for the duration of the transfer. Please wait...
+
+License Key transfer operation completed successfully. System reboot is required.
+----
+. Zeigen Sie alle aktuellen Lizenzinformationen an und notieren Sie sich den Lizenzstatus, bevor Switch cs2 neu gestartet wird:
++
+`show license`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show license*
+
+Reboot needed.................................. Yes
+Number of active licenses...................... 0
+
+
+License Index  License Type      Status
+-------------- ----------------- -------------------------------
+1              Port              License valid but not applied
+----
+. Alle lizenzierten Ports anzeigen:
++
+`show port all | exclude Detach`
+
++
+Die Ports aus den zusätzlichen Lizenzdateien werden erst nach einem Neustart des Switches angezeigt.
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show port all \| exclude Detach*
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+0/1              Disable   Auto                  Down   Enable  Enable long
+0/2              Disable   Auto                  Down   Enable  Enable long
+0/3              Disable   Auto                  Down   Enable  Enable long
+0/4              Disable   Auto                  Down   Enable  Enable long
+0/5              Disable   Auto                  Down   Enable  Enable long
+0/6              Disable   Auto                  Down   Enable  Enable long
+0/7              Disable   Auto                  Down   Enable  Enable long
+0/8              Disable   Auto                  Down   Enable  Enable long
+0/9              Disable   Auto                  Down   Enable  Enable long
+0/10             Disable   Auto                  Down   Enable  Enable long
+0/11             Disable   Auto                  Down   Enable  Enable long
+0/12             Disable   Auto                  Down   Enable  Enable long
+0/13             Disable   Auto                  Down   Enable  Enable long
+0/14             Disable   Auto                  Down   Enable  Enable long
+0/15             Disable   Auto                  Down   Enable  Enable long
+0/16             Disable   Auto                  Down   Enable  Enable long
+0/55             Disable   Auto                  Down   Enable  Enable long
+0/56             Disable   Auto                  Down   Enable  Enable long
+----
+. Starten Sie den Switch neu:
++
+`reload`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *reload*
+
+The system has unsaved changes.
+Would you like to save them now? (y/n) *y*
+
+Config file 'startup-config' created successfully .
+
+Configuration Saved!
+Are you sure you would like to reset the system? (y/n) *y*
+----
+. Überprüfen Sie, ob die neue Lizenz aktiv ist, und beachten Sie, dass die Lizenz angewendet wurde:
++
+`show license`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show license*
+
+Reboot needed.................................. No
+Number of installed licenses................... 1
+Total Downlink Ports enabled................... 16
+Total Uplink Ports enabled..................... 8
+
+License Index  License Type              Status
+-------------- ------------------------- -----------------------------------
+1              Port                      License applied
+----
+. Stellen Sie sicher, dass alle neuen Ports verfügbar sind:
++
+`show port all | exclude Detach`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show port all \| exclude Detach*
+
+                 Admin     Physical   Physical   Link   Link    LACP   Actor
+Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
+--------- ------ --------- ---------- ---------- ------ ------- ------ --------
+0/1              Disable    Auto                 Down   Enable  Enable long
+0/2              Disable    Auto                 Down   Enable  Enable long
+0/3              Disable    Auto                 Down   Enable  Enable long
+0/4              Disable    Auto                 Down   Enable  Enable long
+0/5              Disable    Auto                 Down   Enable  Enable long
+0/6              Disable    Auto                 Down   Enable  Enable long
+0/7              Disable    Auto                 Down   Enable  Enable long
+0/8              Disable    Auto                 Down   Enable  Enable long
+0/9              Disable    Auto                 Down   Enable  Enable long
+0/10             Disable    Auto                 Down   Enable  Enable long
+0/11             Disable    Auto                 Down   Enable  Enable long
+0/12             Disable    Auto                 Down   Enable  Enable long
+0/13             Disable    Auto                 Down   Enable  Enable long
+0/14             Disable    Auto                 Down   Enable  Enable long
+0/15             Disable    Auto                 Down   Enable  Enable long
+0/16             Disable    Auto                 Down   Enable  Enable long
+0/49             Disable   100G Full             Down   Enable  Enable long
+0/50             Disable   100G Full             Down   Enable  Enable long
+0/51             Disable   100G Full             Down   Enable  Enable long
+0/52             Disable   100G Full             Down   Enable  Enable long
+0/53             Disable   100G Full             Down   Enable  Enable long
+0/54             Disable   100G Full             Down   Enable  Enable long
+0/55             Disable   100G Full             Down   Enable  Enable long
+0/56             Disable   100G Full             Down   Enable  Enable long
+----
+
+
+
+CAUTION: Wenn Sie zusätzliche Lizenzen installieren, müssen Sie die neuen Schnittstellen manuell konfigurieren. Eine erneute Anwendung eines RCF auf einen vorhandenen Arbeitsumschalter ist nicht ratsam.

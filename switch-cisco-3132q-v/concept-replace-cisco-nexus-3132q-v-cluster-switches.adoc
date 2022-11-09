@@ -1,0 +1,45 @@
+---
+permalink: switch-cisco-3132q-v/concept-replace-cisco-nexus-3132q-v-cluster-switches.html 
+sidebar: sidebar 
+keywords: replace, cisco nexus 3132q-v cluster switches 
+summary: Wenn Sie die Cisco Nexus 3132Q-V Cluster Switches ersetzen, müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen kennen. 
+---
+= Ersetzen Sie die Cisco Nexus 3132Q-V Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die Cisco Nexus 3132Q-V Cluster Switches ersetzen, müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen kennen.
+
+* Der Cisco Nexus 3132Q-V Cluster-Switch wird unterstützt.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert link:https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Cluster-Switches verwenden die Inter-Switch-Link-Ports (ISL) e1/31-32.
+* Der link:https://hwu.netapp.com["Hardware Universe"^] Enthält Informationen über die unterstützten Kabel zu Nexus 3132Q-V Switches:
++
+** Die Nodes mit 10 GbE-Cluster-Verbindungen erfordern optische QSFP-Module mit Breakout-Glasfaserkabeln oder QSFP zu SFP+ Kupfer Breakout-Kabel.
+** Die Nodes mit 40/100 GbE-Cluster-Verbindungen erfordern unterstützte QSFP/QSFP28 optische Module mit Glasfaserkabeln oder QSFP/QSFP28-Kupfer-Direct-Attach-Kabeln.
+** Die Cluster-Switches verwenden die entsprechenden ISL-Kabel: 2 QSFP28-Glasfaser- oder Kupfer-Direct-Attach-Kabel.
+
+
+* Bei Nexus 3132Q-V können Sie QSFP-Ports entweder als 40/100-GB-Ethernet- oder als 4 x 10-GB-Ethernet-Modus betreiben.
++
+Standardmäßig befinden sich im 40/100-GB-Ethernet-Modus 32 Ports. Diese 40-GB-Ethernet-Ports werden in einer 2-tupel-Namenskonvention nummeriert. Beispielsweise wird der zweite 40-GB-Ethernet-Port mit der Nummer 1/2 nummeriert. Der Prozess der Änderung der Konfiguration von 40 GB Ethernet zu 10 GB Ethernet wird _Breakout_ genannt und der Prozess der Änderung der Konfiguration von 10 GB Ethernet zu 40 GB Ethernet wird _break_ genannt. Wenn Sie einen 40/100-GB-Ethernet-Port in 10-GB-Ethernet-Ports umwandeln, werden die resultierenden Ports mit einer 3-tupel-Namenskonvention nummeriert. Die Breakout-Ports des zweiten 40/100-GB-Ethernet-Ports werden beispielsweise als 1/2/1, 1/2/2/2/3, 1/2/4 nummeriert.
+
+* Auf der linken Seite von Nexus 3132Q-V befindet sich ein Satz von vier SFP+ Ports, die auf den ersten QSFP-Port multipliziert werden.
++
+Standardmäßig ist der RCF so strukturiert, dass der erste QSFP-Port verwendet wird.
+
++
+Mit dem können Sie vier SFP+-Ports anstelle eines QSFP-Ports für Nexus 3132Q-V aktivieren `hardware profile front portmode sfp-plus` Befehl. Auf ähnliche Weise können Sie Nexus 3132Q-V zurücksetzen, um einen QSFP-Port anstelle von vier SFP+-Ports mit dem zu verwenden `hardware profile front portmode qsfp` Befehl.
+
+* Sie müssen einige der Ports auf Nexus 3132Q-V für 10 GbE oder 40/100 GbE konfiguriert haben.
++
+Sie können die ersten sechs Ports mit dem in den 4x10 GbE-Modus eingliedern `interface breakout module 1 port 1-6 map 10g-4x` Befehl. Auf ähnliche Weise können Sie die ersten sechs QSFP+-Ports aus Breakout-Konfiguration mit dem neu gruppieren `no interface breakout module 1 port 1-6 map 10g-4x` Befehl.
+
+* Sie müssen die Planung, Migration und die erforderliche Dokumentation zu 10- GbE- und 40/100-GbE-Konnektivität von den Nodes zu den Nexus 3132Q-V Cluster Switches gelesen haben.
++
+Der link:http://mysupport.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^] Die Seite enthält Informationen zu den in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen.
+
+

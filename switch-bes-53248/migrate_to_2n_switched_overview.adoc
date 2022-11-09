@@ -1,0 +1,518 @@
+---
+permalink: switch-bes-53248/migrate-to-2n-switched-overview.html 
+sidebar: sidebar 
+keywords: two-node switchless cluster environments,migrating to a two-node switched BES-53248 cluster environment,switchless cluster environments,tnsc,TNSC,2-node 
+summary: Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit den von Broadcom unterstützten BES-53248 Cluster-Switches zu einer Switch-basierten 2-Node-Umgebung migrieren. So können Sie eine Skalierung auf mehr als zwei Nodes im Cluster vornehmen. 
+---
+= Migration zu einer Switch-basierten NetApp Cluster-Umgebung mit von Broadcom unterstützten BES-53248 Cluster-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit den von Broadcom unterstützten BES-53248 Cluster-Switches zu einer Switch-basierten 2-Node-Umgebung migrieren. So können Sie eine Skalierung auf mehr als zwei Nodes im Cluster vornehmen.
+
+Konfiguration mit zwei Nodes ohne Switches:
+
+* Die Konfiguration mit zwei Nodes ohne Switches muss ordnungsgemäß eingerichtet und funktionsfähig sein.
+* Auf den Knoten muss ONTAP 9.5P8 und höher ausgeführt werden. Die Unterstützung für 40/100-GbE-Cluster-Ports beginnt mit der EFOS-Firmware-Version 3.4.4.6 und höher.
+* Alle Cluster-Ports müssen den Status „up“ aufweisen.
+* Alle logischen Cluster-Schnittstellen (LIFs) müssen sich im „up“-Zustand und an ihren Home-Ports befinden.
+
+
+Von Broadcom unterstützte BES-53248 Cluster-Switch-Konfiguration:
+
+* Der BES-53248-Cluster-Switch muss bei beiden Switches voll funktionsfähig sein.
+* Beide Switches müssen über Management-Netzwerk-Konnektivität verfügen.
+* Konsolenzugriff auf die Cluster-Switches muss vorhanden sein.
+* BES-53248 Node-to-Node-Switch und Switch-to-Switch-Verbindungen müssen Twinax- oder Glasfaserkabel verwenden.
++
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.
+
+* Inter-Switch Link (ISL)-Kabel müssen an beiden BES-53248-Switches mit den Ports 0/55 und 0/56 verbunden sein.
+* Die erste Anpassung der BES-53248-Switches muss abgeschlossen sein. So werden die:
++
+** Bei BES-53248-Switches wird die neueste Softwareversion ausgeführt
+** Beim Kauf von BES-53248 Switches sind optionale Portlizenzen installiert
+** Auf die Switches wurden Referenzkonfigurationsdateien (RCFs) angewendet
++
+Auf den neuen Switches müssen alle Site-Anpassungen wie SMTP, SNMP und SSH konfiguriert werden.
+
+
+
+
+
+In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
+
+* Die Namen der BES-53248-Switches lauten `cs1` Und `cs2`.
+* Die Namen der Cluster-SVMs lauten `node1` Und `node2`.
+* Die Namen der LIFs sind `node1_clus1` Und `node1_clus2` Auf Node 1, und `node2_clus1` Und `node2_clus2` Auf Knoten 2.
+* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Die in diesem Verfahren verwendeten Cluster-Ports sind `e0a` Und `e0b`.
++
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+
+
+
+.Schritte
+. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
++
+`system node autosupport invoke -node * -type all -message MAINT=xh`
+
++
+Wobei x die Dauer des Wartungsfensters in Stunden ist.
+
++
+
+NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+
++
+Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+
++
+[listing]
+----
+cluster1::*> system node autosupport invoke -node \* -type all -message MAINT=2h
+----
+. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
++
+`set -privilege advanced`
+
++
+Die erweiterte Eingabeaufforderung (`*>`Erscheint.
+
+. Deaktivieren Sie alle aktivierten Node-Ports (keine ISL-Ports) auf beiden neuen Cluster-Switches cs1 *und* cs2.
++
+
+NOTE: Sie dürfen die ISL-Ports nicht deaktivieren.
+
++
+Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 16 auf Switch cs1 deaktiviert sind:
+
++
+[listing, subs="+quotes"]
+----
+(cs1)# *configure*
+(cs1)(Config)# *interface 0/1-0/16*
+(cs1)(Interface 0/1-0/16)# *shutdown*
+(cs1)(Interface 0/1-0/16)# *exit*
+(cs1)(Config)# *exit*
+----
+. Stellen Sie sicher, dass ISL und die physischen Ports auf der ISL zwischen den beiden BES-53248 Switches cs1 und cs2 vorhanden sind `up`:
++
+`show port-channel`
+
++
+Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs1 aktiv sind:
+
++
+[listing, subs="+quotes"]
+----
+(cs1)# *show port-channel 1/1*
+Local Interface................................ 1/1
+Channel Name................................... Cluster-ISL
+Link State..................................... Up
+Admin Mode..................................... Enabled
+Type........................................... Dynamic
+Port channel Min-links......................... 1
+Load Balance Option............................ 7
+(Enhanced hashing mode)
+
+Mbr    Device/       Port       Port
+Ports  Timeout       Speed      Active
+------ ------------- ---------  -------
+0/55   actor/long    100G Full  True
+       partner/long
+0/56   actor/long    100G Full  True
+       partner/long
+(cs1) #
+----
++
+Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs2 aktiviert sind:
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show port-channel 1/1*
+Local Interface................................ 1/1
+Channel Name................................... Cluster-ISL
+Link State..................................... Up
+Admin Mode..................................... Enabled
+Type........................................... Dynamic
+Port channel Min-links......................... 1
+Load Balance Option............................ 7
+(Enhanced hashing mode)
+
+Mbr    Device/       Port       Port
+Ports  Timeout       Speed      Active
+------ ------------- ---------  -------
+0/55   actor/long    100G Full  True
+       partner/long
+0/56   actor/long    100G Full  True
+       partner/long
+----
+. Liste der benachbarten Geräte anzeigen:
++
+`show isdp neighbors`
+
++
+Dieser Befehl enthält Informationen zu den Geräten, die mit dem System verbunden sind.
+
++
+Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs1 aufgeführt:
+
++
+[listing, subs="+quotes"]
+----
+(cs1)# *show isdp neighbors*
+
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge,
+                  S - Switch, H - Host, I - IGMP, r - Repeater
+Device ID      Intf     Holdtime  Capability   Platform    Port ID
+-------------- -------- --------- ------------ ----------- ---------
+cs2            0/55     176       R            BES-53248   0/55
+cs2            0/56     176       R            BES-53248   0/56
+----
++
+Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs2 aufgeführt:
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *show isdp neighbors*
+
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge,
+                  S - Switch, H - Host, I - IGMP, r - Repeater
+Device ID      Intf     Holdtime  Capability   Platform    Port ID
+-------------- -------- --------- ------------ ----------- ---------
+cs2            0/55     176       R            BES-53248   0/55
+cs2            0/56     176       R            BES-53248   0/56
+----
+. Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind `up`:
++
+`network port show -ipspace Cluster`
+
++
+Jeder Port sollte für angezeigt werden `Link` Und `healthy` Für `Health Status`.
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network port show -ipspace Cluster*
+
+Node: node1
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+
+Node: node2
+
+                                                  Speed(Mbps) Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status
+--------- ------------ ---------------- ---- ---- ----------- --------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy
+----
+. Vergewissern Sie sich, dass alle Cluster-LIFs sind `up` Und in Betrieb: `network interface show -vserver Cluster`
++
+Jede Cluster-LIF sollte angezeigt werden `true` Für `Is Home` Und ich habe ein `Status Admin/Oper` Von `up/up`
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -vserver Cluster*
+
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- -----
+Cluster
+            node1_clus1  up/up    169.254.209.69/16  node1         e0a     true
+            node1_clus2  up/up    169.254.49.125/16  node1         e0b     true
+            node2_clus1  up/up    169.254.47.194/16  node2         e0a     true
+            node2_clus2  up/up    169.254.19.183/16  node2         e0b     true
+----
+. Verifizieren Sie das `auto-revert` Ist auf allen Cluster-LIFs aktiviert: `network interface show -vserver Cluster -fields auto-revert`
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -vserver Cluster -fields auto-revert*
+
+          Logical
+Vserver   Interface     Auto-revert
+--------- ------------- ------------
+Cluster
+          node1_clus1   true
+          node1_clus2   true
+          node2_clus1   true
+          node2_clus2   true
+----
+. Trennen Sie das Kabel vom Cluster-Port e0a auf node1, und verbinden sie e0a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
++
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält weitere Informationen zur Verkabelung.
+
+. Trennen Sie das Kabel vom Cluster-Port e0a auf node2 und verbinden sie e0a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
+. Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.
++
+Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs1 aktiviert sind:
+
++
+[listing, subs="+quotes"]
+----
+(cs1)# *configure*
+(cs1)(Config)# *interface 0/1-0/16*
+(cs1)(Interface 0/1-0/16)# *no shutdown*
+(cs1)(Interface 0/1-0/16)# *exit*
+(cs1)(Config)# *exit*
+----
+. Vergewissern Sie sich, dass alle Cluster-LIFs aktiv und betriebsbereit sind und als angezeigt werden `true` Für `Is Home`:
++
+`network interface show -vserver Cluster`
+
++
+Das folgende Beispiel zeigt, dass alle LIFs sich auf node1 und node2 befinden und dass `Is Home` Die Ergebnisse sind `true`:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -vserver Cluster*
+
+         Logical      Status     Network            Current     Current Is
+Vserver  Interface    Admin/Oper Address/Mask       Node        Port    Home
+-------- ------------ ---------- ------------------ ----------- ------- ----
+Cluster
+         node1_clus1  up/up      169.254.209.69/16  node1       e0a     true
+         node1_clus2  up/up      169.254.49.125/16  node1       e0b     true
+         node2_clus1  up/up      169.254.47.194/16  node2       e0a     true
+         node2_clus2  up/up      169.254.19.183/16  node2       e0b     true
+----
+. Informationen zum Status der Nodes im Cluster anzeigen:
++
+`cluster show`
+
++
+Im folgenden Beispiel werden Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster angezeigt:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster show*
+
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------  ------------
+node1                true    true          false
+node2                true    true          false
+----
+. Trennen Sie das Kabel von Cluster-Port e0b auf node1, und verbinden Sie dann e0b mit Port 1 am Cluster-Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
+. Trennen Sie das Kabel von Cluster-Port e0b auf node2, und verbinden Sie dann e0b mit Port 2 am Cluster Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
+. Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs2.
++
+Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs2 aktiviert sind:
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *configure*
+(cs2)(Config)# *interface 0/1-0/16*
+(cs2)(Interface 0/1-0/16)# *no shutdown*
+(cs2)(Interface 0/1-0/16)# *exit*
+(cs2)(Config)# *exit*
+----
+. Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind `up`:
++
+`network port show -ipspace Cluster`
+
++
+Im folgenden Beispiel werden alle Cluster-Ports auf node1 und node2 angezeigt:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network port show -ipspace Cluster*
+
+Node: node1
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
+
+Node: node2
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
+----
+. Vergewissern Sie sich, dass alle Schnittstellen angezeigt werden `true` Für `Is Home`:
++
+`network interface show -vserver Cluster`
+
++
+
+NOTE: Dies kann einige Minuten dauern.
+
++
+Das folgende Beispiel zeigt, dass alle LIFs auf node1 und node2 liegen und dass `Is Home` Die Ergebnisse sind `true`:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -vserver Cluster*
+
+          Logical      Status     Network            Current    Current Is
+Vserver   Interface    Admin/Oper Address/Mask       Node       Port    Home
+--------- ------------ ---------- ------------------ ---------- ------- ----
+Cluster
+          node1_clus1  up/up      169.254.209.69/16  node1      e0a     true
+          node1_clus2  up/up      169.254.49.125/16  node1      e0b     true
+          node2_clus1  up/up      169.254.47.194/16  node2      e0a     true
+          node2_clus2  up/up      169.254.19.183/16  node2      e0b     true
+----
+. Vergewissern Sie sich, dass beide Knoten jeweils eine Verbindung zu jedem Switch haben:
++
+`show isdp neighbors`
+
++
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+
++
+[listing, subs="+quotes"]
+----
+(cs1)# *show isdp neighbors*
+
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge,
+                  S - Switch, H - Host, I - IGMP, r - Repeater
+Device ID      Intf         Holdtime  Capability   Platform -- Port ID
+-------------- ------------ --------- ------------ ----------- ----------
+node1          0/1          175       H            FAS2750     e0a
+node2          0/2          157       H            FAS2750     e0a
+cs2            0/55         178       R            BES-53248   0/55
+cs2            0/56         178       R            BES-53248   0/56
+
+
+(cs2)# *show isdp neighbors*
+
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge,
+                  S - Switch, H - Host, I - IGMP, r - Repeater
+Device ID      Intf         Holdtime  Capability   Platform    Port ID
+-------------- ------------ --------- ------------ ----------- ------------
+node1          0/1          137       H            FAS2750     e0b
+node2          0/2          179       H            FAS2750     e0b
+cs1            0/55         175       R            BES-53248   0/55
+cs1            0/56         175       R            BES-53248   0/56
+----
+. Zeigen Sie Informationen zu den erkannten Netzwerkgeräten im Cluster an:
++
+`network device-discovery show -protocol cdp`
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network device-discovery show -protocol cdp*
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------  ----------------
+node2      /cdp
+            e0a    cs1                       0/2               BES-53248
+            e0b    cs2                       0/2               BES-53248
+node1      /cdp
+            e0a    cs1                       0/1               BES-53248
+            e0b    cs2                       0/1               BES-53248
+----
+. Vergewissern Sie sich, dass die Einstellungen deaktiviert sind:
++
+`network options switchless-cluster show`
+
++
+
+NOTE: Es kann einige Minuten dauern, bis der Befehl abgeschlossen ist. Warten Sie, bis die Ankündigung „3 Minuten Lebensdauer abläuft“ abläuft.
+
++
+Der `false` Die Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseinstellungen deaktiviert sind:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network options switchless-cluster show*
+Enable Switchless Cluster: false
+----
+. Überprüfen Sie den Status der Node-Mitglieder im Cluster:
++
+`cluster show`
+
++
+Das folgende Beispiel zeigt Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster show*
+
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------  --------
+node1                true    true          false
+node2                true    true          false
+----
+. Stellen Sie mit dem Befehl sicher, dass das Cluster-Netzwerk über vollständige Konnektivität verfügt:
++
+`cluster ping-cluster -node _node-name_`
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster ping-cluster -node local*
+
+Host is node2
+Getting addresses from network interface table...
+Cluster node1_clus1 192.168.168.26 node1 e0a
+Cluster node1_clus2 192.168.168.27 node1 e0b
+Cluster node2_clus1 192.168.168.28 node2 e0a
+Cluster node2_clus2 192.168.168.29 node2 e0b
+Local = 192.168.168.28 192.168.168.29
+Remote = 192.168.168.26 192.168.168.27
+Cluster Vserver Id = 4294967293
+Ping status:
+....
+Basic connectivity succeeds on 4 path(s)
+Basic connectivity fails on 0 path(s)
+................
+Detected 1500 byte MTU on 4 path(s):
+    Local 192.168.168.28 to Remote 192.168.168.26
+    Local 192.168.168.28 to Remote 192.168.168.27
+    Local 192.168.168.29 to Remote 192.168.168.26
+    Local 192.168.168.29 to Remote 192.168.168.27
+Larger than PMTU communication succeeds on 4 path(s)
+RPC status:
+2 paths up, 0 paths down (tcp check)
+2 paths up, 0 paths down (udp check)
+----
+. Ändern Sie die Berechtigungsebene zurück in den Administrator:
++
+`set -privilege admin`
+
+. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
++
+[listing]
+----
+cluster1::*> system node autosupport invoke -node \* -type all -message MAINT=END
+----
+
+
+Siehe link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"] Und link:configure-log-collection.html["Konfigurieren Sie die Protokollerfassung für den Cluster-Switch"] Für die Schritte, die erforderlich sind, um die Protokollerfassung des Cluster-Zustandsschalters zu aktivieren, die zum Erfassen von Switch-bezogenen Protokolldateien verwendet wird.
+
+*Verwandte Informationen*
+
+https://hwu.netapp.com/Home/Index["NetApp Hardware Universe"^]
+
+link:replace-requirements.html["Von Broadcom unterstützte BES-53248-Switches Einrichtung und Konfiguration"^]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB-Artikel: Wie kann die automatische Case-Erstellung während geplanter Wartungszeitfenster unterdrückt werden"^]

@@ -1,0 +1,23 @@
+---
+section: switch-cisco-9336c-fx2-shared
+title: Gemeinsam genutzte Cisco Nexus 9336C-FX2 Switches
+url: "/switch-cisco-9336c-fx2-shared/index.html"
+entries:
+- title: Installations- und Konfigurationsleitfaden für gemeinsam genutzte Cisco Switches
+  url: "/switch-cisco-9336c-fx2-shared/9336c_setup_and_configuration_guide_for_cisco_shared_switches.html"
+- title: Installieren der NX-OS-Software und der Referenzkonfigurationsdateien (RCFs)
+  url: "/switch-cisco-9336c-fx2-shared/9336c_install_nx-os_software_and_reference_configuration_files_rcfs.html"
+- title: Migrieren Sie von einem Cluster ohne Switches mit Direct-Attached Storage
+    durch Ergänzung von zwei neuen Shared Switches
+  url: "/switch-cisco-9336c-fx2-shared/9336c_migrate_from_a_switchless_cluster_with_dat_storage_by_adding_two_new_shared_switches.html"
+- title: Migrieren Sie mit Direct-Attached Storage von einer geswitchten Konfiguration
+    durch Hinzufügen von zwei neuen Shared-Switches
+  url: "/switch-cisco-9336c-fx2-shared/9336c_migrate_from_a_switched_configuration_with_dat_storage_by_adding_two_new_shared_switches.html"
+- title: Migrieren Sie mit der erneuten Nutzung der Storage-Switches von einer Konfiguration
+    ohne Switches mit Switch-Attached Storage
+  url: "/switch-cisco-9336c-fx2-shared/9336c_migrate_from_a_switchless_configuration_with_sat_storage_by_reusing_the_storage_switches.html"
+- title: Migrieren Sie die Migration von einem Switch-Attached Storage-Cluster mit
+    Switch-Attached Storage durch erneutes Verwenden der Storage-Switches
+  url: "/switch-cisco-9336c-fx2-shared/9336c_migrate_from_a_switched_cluster_with_sat_storage_by_reusing_the_storage_switches.html"
+- title: Ersetzen Sie einen gemeinsamen Cisco Nexus 9336C-FX2 Switch
+  url: "/switch-cisco-9336c-fx2-shared/9336c_replace_a_cisco_nexus_9336c-fx2_shared_switch.html"

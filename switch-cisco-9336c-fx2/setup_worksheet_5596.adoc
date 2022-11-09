@@ -1,0 +1,724 @@
+---
+permalink: switch-cisco-9336c-fx2/setup-worksheet-5596.html 
+sidebar: sidebar 
+keywords: cable worksheet, Cisco NX 5596T 
+summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden. 
+---
+= Cisco Nexus 5596UP und 5596T – Verkabelungsarbeitsblatt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden.
+
+
+
+== Beispiel für eine Verkabelung
+
+Einige Plattformen unterstützen mehrere 10-GbE-Cluster-Port-Verbindungen pro Cluster Interconnect Switch. Zur Unterstützung zusätzlicher Cluster-Verbindungen können Sie bei der Installation von Erweiterungsmodulen die Ports 25 bis 40 sowie die Ports 49 bis 80 verwenden.
+
+Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Cluster-Switch A 2+| Cluster-Switch B 
+
+
+| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+
+
+ a| 
+1
+ a| 
+Node-Port 1
+ a| 
+1
+ a| 
+Node-Port 1
+
+
+
+ a| 
+2
+ a| 
+Node-Port 2
+ a| 
+2
+ a| 
+Node-Port 2
+
+
+
+ a| 
+3
+ a| 
+Node-Port 3
+ a| 
+3
+ a| 
+Node-Port 3
+
+
+
+ a| 
+4
+ a| 
+Node-Port 4
+ a| 
+4
+ a| 
+Node-Port 4
+
+
+
+ a| 
+5
+ a| 
+Node-Port 5
+ a| 
+5
+ a| 
+Node-Port 5
+
+
+
+ a| 
+6
+ a| 
+Node-Port 6
+ a| 
+6
+ a| 
+Node-Port 6
+
+
+
+ a| 
+7
+ a| 
+Node-Port 7
+ a| 
+7
+ a| 
+Node-Port 7
+
+
+
+ a| 
+8
+ a| 
+Node-Port 8
+ a| 
+8
+ a| 
+Node-Port 8
+
+
+
+ a| 
+9
+ a| 
+Node-Port 9
+ a| 
+9
+ a| 
+Node-Port 9
+
+
+
+ a| 
+10
+ a| 
+Node-Port 10
+ a| 
+10
+ a| 
+Node-Port 10
+
+
+
+ a| 
+11
+ a| 
+Node-Port 11
+ a| 
+11
+ a| 
+Node-Port 11
+
+
+
+ a| 
+12
+ a| 
+Node-Port 12
+ a| 
+12
+ a| 
+Node-Port 12
+
+
+
+ a| 
+13
+ a| 
+Node-Port 13
+ a| 
+13
+ a| 
+Node-Port 13
+
+
+
+ a| 
+14
+ a| 
+Node-Port 14
+ a| 
+14
+ a| 
+Node-Port 14
+
+
+
+ a| 
+15
+ a| 
+Node-Port 15
+ a| 
+15
+ a| 
+Node-Port 15
+
+
+
+ a| 
+16
+ a| 
+Node-Port 16
+ a| 
+16
+ a| 
+Node-Port 16
+
+
+
+ a| 
+17
+ a| 
+Node-Port 17
+ a| 
+17
+ a| 
+Node-Port 17
+
+
+
+ a| 
+18
+ a| 
+Node-Port 18
+ a| 
+18
+ a| 
+Node-Port 18
+
+
+
+ a| 
+19
+ a| 
+Node-Port 19
+ a| 
+19
+ a| 
+Node-Port 19
+
+
+
+ a| 
+20
+ a| 
+Node-Port 20
+ a| 
+20
+ a| 
+Node-Port 20
+
+
+
+ a| 
+21
+ a| 
+Node-Port 21
+ a| 
+21
+ a| 
+Node-Port 21
+
+
+
+ a| 
+22
+ a| 
+Node-Port 22
+ a| 
+22
+ a| 
+Node-Port 22
+
+
+
+ a| 
+23
+ a| 
+Node-Port 23
+ a| 
+23
+ a| 
+Node-Port 23
+
+
+
+ a| 
+24
+ a| 
+Node-Port 24
+ a| 
+24
+ a| 
+Node-Port 24
+
+
+
+ a| 
+25 bis 40
+ a| 
+Reserviert
+ a| 
+25 bis 40
+ a| 
+Reserviert
+
+
+
+ a| 
+41
+ a| 
+ISL zu Switch B Port 41
+ a| 
+41
+ a| 
+ISL für Switch A Port 41
+
+
+
+ a| 
+42
+ a| 
+ISL zu Switch B Port 42
+ a| 
+42
+ a| 
+ISL für Switch A Port 42
+
+
+
+ a| 
+43
+ a| 
+ISL zu Switch B Port 43
+ a| 
+43
+ a| 
+ISL für Switch A Port 43
+
+
+
+ a| 
+44
+ a| 
+ISL zu Switch B Port 44
+ a| 
+44
+ a| 
+ISL für Switch A Port 44
+
+
+
+ a| 
+45
+ a| 
+ISL zu Switch B Port 45
+ a| 
+45
+ a| 
+ISL für Switch A Port 45
+
+
+
+ a| 
+46
+ a| 
+ISL zu Switch B Port 46
+ a| 
+46
+ a| 
+ISL für Switch A Port 46
+
+
+
+ a| 
+47
+ a| 
+ISL zu Switch B Port 47
+ a| 
+47
+ a| 
+ISL für Switch A Port 47
+
+
+
+ a| 
+48
+ a| 
+ISL zu Switch B Port 48
+ a| 
+48
+ a| 
+ISL für Switch A Port 48
+
+|===
+
+
+== Leeres Verkabelungsarbeitsblatt
+
+Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt _Unterstützte Cluster-Verbindungen_ der_Hardware Universe_ definiert die von der Plattform verwendeten Cluster-Ports.
+
+
+NOTE: Switch-Ports 1 bis 24 Funktion als 10 GbE-Ports. Die Switch-Ports 41 bis 48 sind für Inter-Switch Links (ISLs) reserviert.
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Cluster-Switch A 2+| Cluster-Switch B 
+
+
+| Switch-Port | Node-/Port-Verwendung | Switch-Port | Node-/Port-Verwendung 
+
+
+ a| 
+1
+ a| 
+ a| 
+1
+ a| 
+
+
+
+ a| 
+2
+ a| 
+ a| 
+2
+ a| 
+
+
+
+ a| 
+3
+ a| 
+ a| 
+3
+ a| 
+
+
+
+ a| 
+4
+ a| 
+ a| 
+4
+ a| 
+
+
+
+ a| 
+5
+ a| 
+ a| 
+5
+ a| 
+
+
+
+ a| 
+6
+ a| 
+ a| 
+6
+ a| 
+
+
+
+ a| 
+7
+ a| 
+ a| 
+7
+ a| 
+
+
+
+ a| 
+8
+ a| 
+ a| 
+8
+ a| 
+
+
+
+ a| 
+9
+ a| 
+ a| 
+9
+ a| 
+
+
+
+ a| 
+10
+ a| 
+ a| 
+10
+ a| 
+
+
+
+ a| 
+11
+ a| 
+ a| 
+11
+ a| 
+
+
+
+ a| 
+12
+ a| 
+ a| 
+12
+ a| 
+
+
+
+ a| 
+13
+ a| 
+ a| 
+13
+ a| 
+
+
+
+ a| 
+14
+ a| 
+ a| 
+14
+ a| 
+
+
+
+ a| 
+15
+ a| 
+ a| 
+15
+ a| 
+
+
+
+ a| 
+16
+ a| 
+ a| 
+16
+ a| 
+
+
+
+ a| 
+17
+ a| 
+ a| 
+17
+ a| 
+
+
+
+ a| 
+18
+ a| 
+ a| 
+18
+ a| 
+
+
+
+ a| 
+19
+ a| 
+ a| 
+19
+ a| 
+
+
+
+ a| 
+20
+ a| 
+ a| 
+20
+ a| 
+
+
+
+ a| 
+21
+ a| 
+ a| 
+21
+ a| 
+
+
+
+ a| 
+22
+ a| 
+ a| 
+22
+ a| 
+
+
+
+ a| 
+23
+ a| 
+ a| 
+23
+ a| 
+
+
+
+ a| 
+24
+ a| 
+ a| 
+24
+ a| 
+
+
+
+ a| 
+25 bis 40
+ a| 
+Reserviert
+ a| 
+25 bis 40
+ a| 
+Reserviert
+
+
+
+ a| 
+41
+ a| 
+ISL zu Switch B Port 41
+ a| 
+41
+ a| 
+ISL für Switch A Port 41
+
+
+
+ a| 
+42
+ a| 
+ISL zu Switch B Port 42
+ a| 
+42
+ a| 
+ISL für Switch A Port 42
+
+
+
+ a| 
+43
+ a| 
+ISL zu Switch B Port 43
+ a| 
+43
+ a| 
+ISL für Switch A Port 43
+
+
+
+ a| 
+44
+ a| 
+ISL zu Switch B Port 44
+ a| 
+44
+ a| 
+ISL für Switch A Port 44
+
+
+
+ a| 
+45
+ a| 
+ISL zu Switch B Port 45
+ a| 
+45
+ a| 
+ISL für Switch A Port 45
+
+
+
+ a| 
+46
+ a| 
+ISL zu Switch B Port 46
+ a| 
+46
+ a| 
+ISL für Switch A Port 46
+
+
+
+ a| 
+47
+ a| 
+ISL zu Switch B Port 47
+ a| 
+47
+ a| 
+ISL für Switch A Port 47
+
+
+
+ a| 
+48
+ a| 
+ISL zu Switch B Port 48
+ a| 
+48
+ a| 
+ISL für Switch A Port 48
+
+|===

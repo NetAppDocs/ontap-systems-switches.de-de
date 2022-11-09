@@ -1,0 +1,83 @@
+---
+permalink: switch-bes-53248/overview-bes53248.html 
+sidebar: sidebar 
+keywords: cluster-mode,supported versions,switches supported,cluster network,efos 
+summary: Von Broadcom unterstützte BES-53248-Cluster-Switches wurden für den Einsatz in Clustern mit einer Größe von zwei bis 24 Nodes in ONTAP 9.5P8 und höher entwickelt. Die Unterstützung für 40/100-GbE-Cluster-Ports beginnt mit der EFOS-Firmware-Version 3.4.4.6 und höher. 
+---
+= Übersicht über die von Broadcom unterstützten BES-53248 Cluster-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Von Broadcom unterstützte BES-53248-Cluster-Switches wurden für den Einsatz in Clustern mit einer Größe von zwei bis 24 Nodes in ONTAP 9.5P8 und höher entwickelt. Die Unterstützung für 40/100-GbE-Cluster-Ports beginnt mit der EFOS-Firmware-Version 3.4.4.6 und höher.
+
+BES-53248 ist ein Switch, der auf einem in Broadcom eingebetteten Betriebssystem (Ethernet Fabric OS) ausgeführt wird.
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung des BES-53248-Cluster-Switches, der Rack-Mount-Schienensatz, Lüfter und Netzteile aufgeführt:
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+X190005
+ a| 
+BES-53248, CLSW, 16Pt10/25 GB, PTSX, BRDCM-SUPPORT (PTSX = Port Side Exhaust)
+
+
+
+ a| 
+X190005R
+ a| 
+BES-53248, CLSW, 16Pt10/25 GB, PSIN, BRDCM-SUPPORT (PSIN = Port Side Intake)
+
+
+
+ a| 
+X-RAIL-4POST-190005
+ a| 
+Rack Mount Rail Kit Ozeki 4 Post 19 Zoll
+
+
+
+ a| 
+X-FAN-190005-R
+ a| 
+Lüfter, Anschlußseite X190005
+
+
+
+ a| 
+X-FAN-190005-F
+ a| 
+Lüfter, Auslass auf der Anschlussseite X190005
+
+
+
+ a| 
+X-PSU-190005-R
+ a| 
+Netzteil, Anschlusseingang X190005
+
+
+
+ a| 
+X-PSU-190005-F
+ a| 
+Netzteil, Auspuff an der Anschlussseite X190005
+
+|===
+Überblick über den Luftstrom basierend auf den beiden angebotenen Modellen:
+
+* Anschlussseitiger Abluftstrom (Standardluft): Kühle Luft tritt durch die Lüfter- und Stromversorgungsmodule im Kaltgang in das Gehäuse ein und entgast durch das Anschlussende des Gehäuses im heißen Gang. Die blaue Färbung zeigt die Luftzirkulation an der Anschlussseite an. Dies ist die am häufigsten verwendete Option.
+* Ansaugluftstrom (Umkehrluft): Kühle Luft tritt durch das Anschlussende im Kaltgang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang.
+
+
+Siehe https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/MetroCluster/How_to_add_Additional_Port_Licensing_for_the_Broadcom-Supported_BES-53248_Switch["NetApp KB-Artikel: Wie fügen Sie eine zusätzliche Portlizenz für den von Broadcom unterstützten BES-53248 Switch hinzu"^] Weitere Informationen zum Hinzufügen weiterer Portlizenzen.
+
+Informationen zu den entsprechenden Anschlüssen und Kabeloptionen sowie den zugehörigen Teilenummern finden Sie im https://hwu.netapp.com/Home/Index["NetApp Hardware Universe"^].
+
+Weitere Informationen finden Sie in der _Cluster-Netzwerk- und Management-Netzwerkkompatibilitäts-Matrix_, die von der Download-Website des BES-53248-Switch verfügbar ist https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^].

@@ -1,0 +1,37 @@
+---
+permalink: switch-cisco-3232c/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html 
+sidebar: sidebar 
+keywords: migrate, two-node cluster, switchless, cisco nexus 3232c 
+summary: Wenn Sie ein 2-Node-Cluster ohne Switches zu einem Cluster mit Cisco Nexus 3232C-Cluster-Switches migrieren, müssen Sie bestimmte Konfigurationsinformationen, Port-Verbindungen und Verkabelungsanforderungen beachten. 
+---
+= Migrieren Sie mit Cisco Nexus 3232C Cluster-Switches von einem Cluster mit zwei Nodes ohne Switches zu einem Cluster
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein 2-Node-Cluster ohne Switches zu einem Cluster mit Cisco Nexus 3232C-Cluster-Switches migrieren, müssen Sie bestimmte Konfigurationsinformationen, Port-Verbindungen und Verkabelungsanforderungen beachten.
+
+Der link:http://mysupport.netapp.com/NOW/download/software/cm_switches/.html["Seite zu Cisco Ethernet Switches"^] Informationen über die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen.
+
+Sie müssen Folgendes haben, bevor Sie mit dem Migrationsprozess beginnen:
+
+* Verfügbare Ports für Node-Verbindungen
++
+Die Cluster-Switches verwenden die Inter-Switch-Link-Ports (ISL) e1/31-32. -
+
+* Geeignete Kabel für Cluster-Verbindungen:
++
+** Die Nodes mit 10 GbE-Cluster-Verbindungen erfordern optische QSFP-Module mit Breakout-Glasfaserkabeln oder QSFP zu SFP+ Kupfer-Breakout-Kabeln.
+** Die Nodes mit 40/100 GbE-Cluster-Verbindungen erfordern unterstützte optische QSFP/QSFP28-Module mit Glasfaserkabeln oder QSFP/QSFP28-Kupfer-Direct-Attach-Kabeln.
+** Die Cluster-Switches erfordern die entsprechende ISL-Verkabelung: 2 QSFP28-Glasfaser- oder Kupfer-Direct-Attached-Kabel.
+
+
++
+[NOTE]
+====
+Siehe link:https://hwu.netapp.com/["_Hardware Universe_"^] Weitere Informationen zu Verkabelungssystemen mit Nexus 3232C-Switches.
+
+====
+

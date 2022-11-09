@@ -1,0 +1,14 @@
+---
+permalink: switch-bes-53248/replace-set-up.html 
+sidebar: sidebar 
+keywords: setup,install bes-53248,cluster switch 
+summary: Mit den Setup-Informationen können Sie Ihre Cluster-Switches optimal konfigurieren und an Ihre Anforderungen anpassen. 
+---
+= Richten Sie den BES-53248-Cluster-Switch ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit den Setup-Informationen können Sie Ihre Cluster-Switches optimal konfigurieren und an Ihre Anforderungen anpassen.

@@ -1,0 +1,28 @@
+---
+permalink: switch-nvidia-sn2100/install_cable_shelves_SAT_sn2100.html 
+sidebar: sidebar 
+keywords: sn2100 cabling setup, msn2100 sn2100 switches configuration, cumulus linux 
+summary: 'Überprüfen Sie vor der Konfiguration des NVIDIA SN2100-Switches die folgenden Informationen:' 
+---
+= Verkabelung der NS224 Shelfs als Switch-Attached Storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie über ein System verfügen, bei dem die NS224 Laufwerk-Shelfs als Switch-Attached Storage verkabelt werden müssen (kein Direct-Attached Storage), verwenden Sie die hier bereitgestellten Informationen.
+
+* Kabel-NS224-Laufwerk-Shelfs über Storage-Switches:
++
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2876580["Informationen zu Verkabelung-Switch-Attached NS224-Laufwerk-Shelfs"^]
+
+* Installieren Sie Ihre Speicher-Switches:
++
+https://docs.netapp.com/us-en/ontap-systems-switches/index.html["Dokumentation zu den Switches von AFF und FAS"^]
+
+* Bestätigen Sie die unterstützte Hardware, z. B. die Storage-Switches und Kabel, für Ihr Plattformmodell:
++
+https://hwu.netapp.com/["NetApp Hardware Universe"^]
+
+

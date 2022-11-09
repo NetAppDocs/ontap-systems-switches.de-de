@@ -1,0 +1,44 @@
+---
+permalink: switch-bes-53248/replace-upgrade.html 
+sidebar: sidebar 
+keywords: BES-53248 switches,upgrading,BES-53248 switches 
+summary: 'Das Upgrade von BES-53248-Cluster-Switches beginnt mit der Vorbereitung des Controllers auf das Upgrade, der Installation der EFOS-Software, der Lizenzen und der Referenzkonfigurationsdatei \ (RCF\). Nach der Installation können Sie die Controller-Konfiguration in einer Umgebung mit unterbrechungsfreiem Upgrade \(NDU\) und unterbrechungsfreiem Betrieb \(NDO\) wiederherstellen.' 
+---
+= Aktualisieren eines BES-53248-Cluster-Switches in einer NDO/NDU-Umgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Upgrade von BES-53248-Cluster-Switches beginnt mit der Vorbereitung des Controllers auf das Upgrade, der Installation der EFOS-Software, der Lizenzen und der Referenzkonfigurationsdatei (RCF). Nach der Installation können Sie die Controller-Konfiguration in einer Umgebung mit unterbrechungsfreien Upgrades (Nondisruptive Upgrade, NDU) und unterbrechungsfreiem Betrieb (Nondisruptive Operations, NDO) wiederherstellen.
+
+Vor der Installation der EFOS-Software, der Lizenzen und der RCF-Datei auf einem vorhandenen NetApp BES-53248-Cluster-Switch müssen die folgenden Bedingungen erfüllt sein:
+
+* Das Cluster muss ein voll funktionsfähiges Cluster sein (keine Fehlermeldungen oder andere Probleme).
+* Das Cluster darf keine fehlerhaften Cluster-Netzwerkkarten (NICs) enthalten.
+* Alle verbundenen Ports auf beiden Cluster-Switches müssen funktionsfähig sein.
+* Alle Cluster-Ports müssen aktiv sein.
+* Alle Cluster-LIFs müssen administrativ und betrieblich und auf ihren Home-Ports vorhanden sein.
+* Das ONTAP `cluster ping-cluster -node node1` Der Befehl für erweiterte Berechtigungen muss angeben `larger than PMTU communication` Ist auf allen Pfaden erfolgreich.
+* Zwischen der Befehlssyntax in der RCF- und EFOS-Version kann es zu Befehlsabhängigkeiten kommen.
+
+
+Die Switch-Kompatibilitätstabelle für NetApp BES-53248 Switches enthält die unterstützten EFOS-, RCF- und ONTAP-Versionen unter: http://mysupport.netapp.com/site["NetApp BES-53248 Switches"^].
+
+Dieses Verfahren gilt für ein funktionierendes Cluster und ermöglicht unterbrechungsfreie Upgrades. Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+
+* Die NetApp Switch-Namen sind `cs1` Und `cs2`.
+* Das in diesem Verfahren verwendete Beispiel startet das Upgrade auf dem zweiten Schalter, _cs2._
+* Die LIF-Namen des Clusters sind `node1_clus1` Und `node1_clus2` Für Node1, und `node2_clus1` Und `node2_clus2` Für node2 .
+* Der IPspace Name ist der Cluster.
+* Der `cluster1::>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Die Cluster-Ports an jedem Node werden mit benannt `e0a` Und `e0b`.
++
+Siehe https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Für die tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.
+
+* Die von NetApp Cluster Switches unterstützten Inter-Switch Links (ISLs) sind die Ports 0/55 und 56.
+* Die für NetApp Cluster-Switches unterstützten Node-Verbindungen sind die Ports 0/1 bis 0/16 mit Standardlizenz.
+* Die Beispiele in diesem Verfahren verwenden zwei Nodes, Sie können jedoch bis zu 24 Nodes in einem Cluster haben.
+* Wiederholen Sie alle Verfahren in diesem Abschnitt, um die EFOS-Software und die RCF-Datei auf dem anderen Switch *cs1* zu aktualisieren.
+

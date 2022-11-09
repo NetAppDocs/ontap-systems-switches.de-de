@@ -1,0 +1,167 @@
+---
+permalink: switch-bes-53248/replace-edit-rcf.html 
+sidebar: sidebar 
+keywords: activating licenses,additional licenses,licenses in the RCF,edit rcf 
+summary: Um neu lizenzierte Ports zu aktivieren, müssen Sie die neueste RCF-Version bearbeiten und die entsprechenden Portdetails auflösen. Die Standardlizenz aktiviert die Ports 0/1 bis 0/16 und 0/55 bis 0/56, während die neu lizenzierten Ports je nach Typ und Anzahl der verfügbaren Lizenzen zwischen den Ports 0/17 bis 0/54 liegen. 
+---
+= Bearbeiten der Referenzkonfigurationsdatei (RCF)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um neu lizenzierte Ports zu aktivieren, müssen Sie die neueste RCF-Version bearbeiten und die entsprechenden Portdetails auflösen. Die Standardlizenz aktiviert die Ports 0/1 bis 0/16 und 0/55 bis 0/56, während die neu lizenzierten Ports je nach Typ und Anzahl der verfügbaren Lizenzen zwischen den Ports 0/17 bis 0/54 liegen.
+
+
+NOTE: Wenn Sie versuchen, eine zuvor installierte RCF zu bearbeiten, kann dies fehlschlagen, da eine vorhandene Konfiguration für andere Bereiche der RCF vorhanden ist, siehe  a previously installed RCF file.
+
+Details zu den verfügbaren Lizenztypen für den Einsatz mit dem BES-53248 Cluster-Switch finden Sie unter link:configure-licenses.html["Installieren von Lizenzen für BES-53248 Cluster-Switches"].
+
+Um beispielsweise die SW-BES54248-40-100G-LIC-Lizenz zu aktivieren, müssen Sie den folgenden Abschnitt im RCF entkommentieren:
+
+[listing]
+----
+.
+.
+!
+! 2-port or 6-port 40/100GbE node port license block
+!
+interface 0/49
+no shutdown
+description "40/100GbE Node Port"
+!speed 100G full-duplex
+speed 40G full-duplex
+service-policy in WRED_100G
+spanning-tree edgeport
+mtu 9216
+switchport mode trunk
+datacenter-bridging
+priority-flow-control mode on
+priority-flow-control priority 5 no-drop
+exit
+exit
+!
+interface 0/50
+no shutdown
+description "40/100GbE Node Port"
+!speed 100G full-duplex
+speed 40G full-duplex
+service-policy in WRED_100G
+spanning-tree edgeport
+mtu 9216
+switchport mode trunk
+datacenter-bridging
+priority-flow-control mode on
+priority-flow-control priority 5 no-drop
+exit
+exit
+!
+interface 0/51
+no shutdown
+description "40/100GbE Node Port"
+speed 100G full-duplex
+!speed 40G full-duplex
+service-policy in WRED_100G
+spanning-tree edgeport
+mtu 9216
+switchport mode trunk
+datacenter-bridging
+priority-flow-control mode on
+priority-flow-control priority 5 no-drop
+exit
+exit
+!
+interface 0/52
+no shutdown
+description "40/100GbE Node Port"
+speed 100G full-duplex
+!speed 40G full-duplex
+service-policy in WRED_100G
+spanning-tree edgeport
+mtu 9216
+switchport mode trunk
+datacenter-bridging
+priority-flow-control mode on
+priority-flow-control priority 5 no-drop
+exit
+exit
+!
+interface 0/53
+no shutdown
+description "40/100GbE Node Port"
+speed 100G full-duplex
+!speed 40G full-duplex
+service-policy in WRED_100G
+spanning-tree edgeport
+mtu 9216
+switchport mode trunk
+datacenter-bridging
+priority-flow-control mode on
+priority-flow-control priority 5 no-drop
+exit
+exit
+!
+interface 0/54
+no shutdown
+description "40/100GbE Node Port"
+speed 100G full-duplex
+!speed 40G full-duplex
+service-policy in WRED_100G
+spanning-tree edgeport
+mtu 9216
+switchport mode trunk
+datacenter-bridging
+priority-flow-control mode on
+priority-flow-control priority 5 no-drop
+exit
+exit
+!
+.
+.
+----
+
+NOTE: Bei High-Speed-Ports zwischen 0/49 und 0/54 inklusive, deaktivieren Sie jeden Port, aber lösen Sie nur eine *Speed*-Leitung im RCF für jeden dieser Ports:
+
+* Geschwindigkeit 100 GB Vollduplex
+* Geschwindigkeit 40 Gbit Vollduplex
+
+
+Wie im Beispiel dargestellt.
+
+Bei Low-Speed-Ports zwischen 0/17 und 0/48 inklusive, deaktivieren Sie den gesamten Abschnitt mit 8 Ports, wenn eine entsprechende Lizenz aktiviert wurde.
+
+
+
+== Eine zuvor installierte RCF-Datei bearbeiten
+
+Nachdem Sie eine zuvor installierte RCF-Datei bearbeitet und die ausgeführt haben `script apply` Befehl, möglicherweise wird die folgende Fehlermeldung angezeigt:
+
+[listing, subs="+quotes"]
+----
+(CS1)# *script apply BES-53248_RCF_v1.6-Cluster-HA.scr*
+Are you sure you want to apply the configuration script? (y/n) *y*
+----
+Nachdem Sie *y* ausgewählt haben, erhalten Sie die folgende Fehlermeldung:
+
+[listing]
+----
+config
+ ...
+ match cos 5
+ Unrecognized command : match cos 5
+ Error! in configuration script file at line number 40.
+ CLI Command :: match cos 5.
+ Aborting script.
+----
+Um dieses Problem zu vermeiden oder zu lösen, können Sie eine der folgenden Optionen wählen:
+
+* Um den Fehler zu vermeiden, können Sie Folgendes Verfahren:
++
+.. Erstellen Sie ein zweites RCF, das nur die neue Portkonfiguration enthält.
+.. Kopieren Sie den zweiten RCF auf den Switch.
+.. Wenden Sie das Skript mithilfe des Befehls an den Switch: `script apply`.
+
+
+* Informationen zum Beheben des Fehlers finden Sie im Knowledge Base-Artikel: link:++https://kb.netapp.com/?title=Advice_and_Troubleshooting%2FData_Storage_Systems%2FFabric%252C_Interconnect_and_Management_Switches%2FError%2521_in_configuration_script_file_at_line_number_XX_when_applying_a_new_RCF%20%20%20++["Fehler! In der Konfigurationsskript-Datei bei der Zeilennummer XX beim Anwenden eines neuen RCF"^]
+

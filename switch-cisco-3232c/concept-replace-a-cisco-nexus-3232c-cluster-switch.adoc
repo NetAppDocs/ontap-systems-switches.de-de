@@ -1,0 +1,29 @@
+---
+permalink: switch-cisco-3232c/concept-replace-a-cisco-nexus-3232c-cluster-switch.html 
+sidebar: sidebar 
+keywords: replace, cisco nexus 3232c, cluster switch 
+summary: Wenn Sie Cisco Nexus 3232C Cluster-Switches ersetzen, müssen bestimmte Konfigurationsinformationen, Port-Verbindungen und Verkabelungsanforderungen bekannt sein. 
+---
+= Austausch eines Cisco Nexus 3232C-Cluster-Switch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Cisco Nexus 3232C Cluster-Switches ersetzen, müssen bestimmte Konfigurationsinformationen, Port-Verbindungen und Verkabelungsanforderungen bekannt sein.
+
+Sie müssen vor der Installation der NX-OS Software und der RCFs auf einem Cisco Nexus Cluster-Switch folgende Bedingungen überprüfen:
+
+* Ihr System kann Cisco Nexus 3232C Switches unterstützen.
+* Das Cluster muss voll funktionsfähig sein.
+* Sie müssen die Switch-Kompatibilitätstabelle auf der Seite Cisco Ethernet Switch für die unterstützten ONTAP-, NX-OS- und RCF-Versionen verwenden.
++
+[NOTE]
+====
+Sie sollten beachten, dass es Abhängigkeiten zwischen der Befehlssyntax für in den RCF- und NX-OS-Versionen geben kann.
+
+====
+* Sie müssen die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco-Website für vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren von Cisco für Switches nutzen.
+* Sie müssen die entsprechenden RCFs heruntergeladen haben.
+

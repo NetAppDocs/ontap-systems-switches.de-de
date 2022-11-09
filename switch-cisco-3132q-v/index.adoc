@@ -1,0 +1,78 @@
+---
+permalink: switch-cisco-3132q-v/index.html 
+sidebar: sidebar 
+keywords: Cisco, 3132Q-V 
+summary: Migration zu einem Switch-Cluster mit zwei Nodes 
+---
+= Cisco Nexus 3132Q-V Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Cisco Nexus 3132Q-V Switches als Cluster Switches im AFF oder FAS Cluster verwenden.
+
+* Sie können NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Cisco Nexus 3132Q-V Cluster Switch installieren.
+* Sie können mit den Cisco Nexus 3132Q-V Cluster Switches von einer 2-Node-Umgebung ohne Switches auf eine Switch-Umgebung mit zwei Nodes migrieren.
+* Sie können einen defekten Cisco Nexus 3132Q-V Switch in einem Cluster ersetzen und das Switch-Betriebssystem und die Referenzkonfigurationsdatei herunterladen.
+* Sie können Cisco Nexus 5596, Nexus 5020 oder Nexus 5010 Cluster Switches durch Cisco Nexus 3132Q-V Switches ersetzen.
+* Sie können NetApp CN1610 Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen.
+
+
+In der folgenden Tabelle ist die Dokumentation für die Cisco Nexus-Switches 3132Q-V aufgeführt.
+
+|===
+
+
+| Titel | Beschreibung 
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html["_Cisco Nexus 3132Q-V Cluster-Switch und Pass-Through-Panel in einem NetApp Rack installieren_"^]
+ a| 
+Beschreibt die Installation der Durchlaufabdeckung in den Systemschränken, in denen sich die Stromanschlüsse an der Vorderseite des Gehäuses befinden und die Stromverteiler auf der Rückseite des Gehäuses befinden.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/setup-switches.html["_Cisco Nexus 3132Q-V Cluster Switches einrichten_"^]
+ a| 
+Beschreibt die Einrichtung und Konfiguration Ihrer Cisco Nexus 3132Q-V Cluster Switches.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-install-nx-os-software-and-rcfs-on-cisco-nexus-3132q-v-cluster-switches.html["_NX-OS and Reference Configuration Files (RCfs)_ installieren"^]
+ a| 
+Beschreibt die Installation von NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Nexus 3132Q-V Cluster Switch.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html["_Cisco Nexus 5596 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen_"^]
+ a| 
+Beschreibt die Migration von Umgebungen, in denen ältere Cisco Switches verwendet werden, in Umgebungen, in denen Cisco 31Q-V-Switches verwendet werden.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html["_CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen_"^]
+ a| 
+Beschreibt das Verfahren zum Austausch eines CN1610-Switch durch einen Cisco Nexus 3132Q-V Cluster-Switch.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html["_Migration von einem Cluster ohne Switch mit zwei Nodes_"^]
+ a| 
+In wird die Migration von einer 2-Node-Umgebung mit einem Switch und zwei Nodes mit Switch und Cisco Nexus 3132Q-V Cluster Switches beschrieben.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-replace-cisco-nexus-3132q-v-cluster-switches.html["_Ersetzen Sie einen Cisco Nexus 3132Q-V Cluster Switch_"^]
+ a| 
+Beschreibt das Verfahren zum Austausch eines fehlerhaften Cisco Nexus 3132Q-V Switches in einem Cluster und Herunterladen des Switch-Betriebssystems und der Referenzkonfigurationsdatei.
+
+|===

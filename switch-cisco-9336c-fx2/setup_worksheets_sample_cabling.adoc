@@ -1,0 +1,14 @@
+---
+permalink: switch-cisco-9336c-fx2/setup-worksheets-sample-cabling.html 
+sidebar: sidebar 
+keywords: worksheet,cabling sample,blank worksheet 
+summary: Die Beispiel-Verkabelungsarbeitsblätter stellen Beispiele für empfohlene Port-Zuweisungen zwischen den Switches und den Controllern dar. Die leeren Worksheets liefern eine Vorlage, die Sie beim Einrichten des Clusters verwenden können. 
+---
+= Beispiele und leere Verkabelungsarbeitsblätter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Beispiel-Verkabelungsarbeitsblätter stellen Beispiele für empfohlene Port-Zuweisungen zwischen den Switches und den Controllern dar. Die leeren Worksheets liefern eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.

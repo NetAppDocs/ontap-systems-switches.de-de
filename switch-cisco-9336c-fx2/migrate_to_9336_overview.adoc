@@ -1,0 +1,28 @@
+---
+permalink: switch-cisco-9336c-fx2/migrate-to-9336-overview.html 
+sidebar: sidebar 
+keywords: Cisco Nexus cluster switches,replacing older Cisco switches,9336C-FX2 cluster switches,migrate to newer cisco cluster switch 
+summary: Bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen müssen bekannt sein, wenn einige ältere Cisco Nexus Cluster Switches durch Cisco Nexus 9336C-FX2 Cluster Switches ersetzt werden. 
+---
+= Migrieren Sie von einem älteren Cisco Switch zu einem Cisco Nexus 9336C-FX2 Cluster Switch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen müssen bekannt sein, wenn einige ältere Cisco Nexus Cluster Switches durch Cisco Nexus 9336C-FX2 Cluster Switches ersetzt werden.
+
+* Folgende Cluster-Switches werden unterstützt:
++
+** Nexus 9336C-FX2
+** Nexus 5596UP
+** Nexus 3232C
+** Nexus 3132Q-V
+
+
+* Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
+* Sie haben einige Ports auf Nexus 9336C-FX2 Switches für 10 GbE oder 40 GbE konfiguriert.
+* Sie haben 10-GbE- und 40-GbE-Konnektivität von Nodes zu Nexus 9336C-FX2 Cluster-Switches geplant, migriert und dokumentiert.
+* Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen befinden sich auf dem https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite.
+

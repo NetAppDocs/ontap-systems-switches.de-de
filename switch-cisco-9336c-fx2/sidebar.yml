@@ -1,0 +1,74 @@
+---
+section: switch-cisco-9336c-fx2
+title: Cisco Nexus 9336C-FX2 Switches
+entries:
+- title: Überblick
+  url: "/switch-cisco-9336c-fx2/9336-overview.html"
+- title: Installation eines Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in
+    einem NetApp Rack
+  url: "/switch-cisco-9336c-fx2/install-switch-and-passthrough-panel.html"
+- title: Einrichtung
+  entries:
+  - title: Richten Sie die Schalter ein
+    url: "/switch-cisco-9336c-fx2/setup-switches.html"
+  - title: Erforderliche Informationen zur Cluster-Konfiguration
+    url: "/switch-cisco-9336c-fx2/setup-required-information.html"
+    entries:
+    - title: Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor
+        (CSHM) für 92300YC-Switches
+      url: "/switch-cisco-9336c-fx2/setup-install-cshm-file.html"
+  - title: Erforderliche Dokumentation
+    url: "/switch-cisco-9336c-fx2/setup-required-documentation.html"
+  - title: Überlegungen für die Verwendung von Smart Call Home
+    url: "/switch-cisco-9336c-fx2/setup-considerations-smart-call.html"
+  - title: Beispiele und leere Verkabelungsarbeitsblätter
+    url: "/switch-cisco-9336c-fx2/setup-worksheets-sample-cabling.html"
+    entries:
+    - title: Cisco Nexus 9336C-FX2 – Verkabelungsarbeitsblatt
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-9336c.html"
+    - title: Arbeitsblatt für die Cisco Nexus 92300YC-Verkabelung
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-92300yc.html"
+    - title: Verkabelungsarbeitsblatt für den Cisco Nexus 3232C-Serie
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-3232c.html"
+    - title: Cisco Nexus 3132Q-V – Verkabelungsarbeitsblatt
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-3132q.html"
+    - title: Cisco Nexus 5596UP und 5596T – Verkabelungsarbeitsblatt
+      url: "/switch-cisco-9336c-fx2/setup-worksheet-5596.html"
+- title: Installieren Sie NX-OS Software und RCFs auf Cisco Nexus 9336C-FX2 Cluster
+    Switches
+  entries:
+  - title: Überblick
+    url: "/switch-cisco-9336c-fx2/install-nxos-overview.html"
+  - title: Installieren Sie die NX-OS-Software
+    url: "/switch-cisco-9336c-fx2/install-nxos-software.html"
+  - title: Installieren Sie die Referenzkonfigurationsdatei (RCF).
+    url: "/switch-cisco-9336c-fx2/install-nxos-rcf.html"
+- title: Migrieren Sie von einem Cisco Switch zu einem Cisco Nexus 9336C-FX2 Cluster-Switch
+  entries:
+  - title: Überblick
+    url: "/switch-cisco-9336c-fx2/migrate-to-9336-overview.html"
+  - title: So migrieren Sie von einem Cisco Switch zu einem Cisco Nexus 9336C-FX2
+      Cluster Switch
+    url: "/switch-cisco-9336c-fx2/migrate-to-9336.html"
+- title: Migration zu einem Switch-basierten 2-Node-Cluster mit Cisco Nexus 9336C-FX2
+    Cluster-Switches
+  entries:
+  - title: Überblick
+    url: "/switch-cisco-9336c-fx2/migrate-to-2n-switched-overview.html"
+  - title: So migrieren Sie zu einer Switch-basierten NetApp Cluster-Umgebung mit
+      Cisco Nexus 9336C-FX2 Cluster Switches
+    url: "/switch-cisco-9336c-fx2/migrate-to-2n-switched.html"
+- title: Konfigurieren Sie einen Cisco Nexus 9336C-FX2 Cluster-Switch
+  entries:
+  - title: Überblick
+    url: "/switch-cisco-9336c-fx2/replace-configure-new-switch.html"
+  - title: Erstinstallation des Nexus 9336C-FX2 Cluster-Switch
+    url: "/switch-cisco-9336c-fx2/replace-install-initial.html"
+  - title: Installieren Sie die NX-OS-Software
+    url: "/switch-cisco-9336c-fx2/replace-install-nxos.html"
+  - title: Installieren Sie die Referenzkonfigurationsdatei (RCF).
+    url: "/switch-cisco-9336c-fx2/replace-install-rcf.html"
+- title: Ersetzen Sie einen Cisco Nexus 9336C-FX2 Cluster-Switch
+  url: "/switch-cisco-9336c-fx2/replace-9336c.html"
+- title: Ersetzen Sie einen Cisco Nexus 9336C-FX2 Storage-Switch
+  url: "/switch-cisco-9336c-fx2/replace_9336c_storage_switch.html"

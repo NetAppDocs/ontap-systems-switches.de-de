@@ -1,0 +1,86 @@
+---
+permalink: switch-bes-53248/replace-prepare-controller.html 
+sidebar: sidebar 
+keywords: BES-53248 switches,preparing for upgrade,upgrade bes-53248 switch 
+summary: Anhand dieses Verfahrens können Sie den Controller für ein Upgrade eines BES-53248 Cluster-Switches vorbereiten. 
+---
+= Bereiten Sie den Controller auf ein Upgrade für Cluster-Switch vor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Anhand dieses Verfahrens können Sie den Controller für ein Upgrade eines BES-53248 Cluster-Switches vorbereiten.
+
+.Schritte
+. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Mit dem Ping-Befehl können Sie die Verbindung zum Server, der EFOS, Lizenzen und RCF hostet, überprüfen.
++
+Wenn es sich um ein Problem handelt, verwenden Sie ein nicht geroutetes Netzwerk, und konfigurieren Sie den Service-Port mithilfe der IP-Adresse 192.168.x oder 172.19.x Sie können den Service-Port später an die Produktionsmanagement-IP-Adresse neu konfigurieren.
+
++
+In diesem Beispiel wird überprüft, ob der Switch mit der IP-Adresse 172.19.2 verbunden ist:
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *ping 172.19.2.1*
+Pinging 172.19.2.1 with 0 bytes of data:
+
+Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
+----
+. Überprüfen Sie, ob die Cluster-Ports ordnungsgemäß sind und über einen Link verfügen. Verwenden Sie dazu den Befehl:
++
+`network port show -ipspace Cluster`
+
++
+Das folgende Beispiel zeigt die Art der Ausgabe, in der alle Ports mit einem verfügen `Link` Wert von up und a `Health Status` Für gesund:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::> *network port show -ipspace Cluster*
+
+Node: node1
+                                                                    Ignore
+                                               Speed(Mbps) Health   Health
+Port   IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+------ ------------ ---------------- ---- ---- ----------- -------- ------
+e0a    Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b    Cluster      Cluster          up   9000  auto/10000 healthy  false
+
+Node: node2
+                                                                    Ignore
+                                               Speed(Mbps) Health   Health
+Port   IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+-----  ------------ ---------------- ---- ---- ----------- -------- ------
+e0a    Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b    Cluster      Cluster          up   9000  auto/10000 healthy  false
+----
+. Überprüfen Sie mithilfe des Befehls, dass die Cluster-LIFs administrativ und betrieblich sind und sich in ihren Home Ports befinden:
++
+`network interface show -vserver Cluster`
+
++
+In diesem Beispiel ist der `-vserver` Mit dem Parameter werden Informationen zu den LIFs angezeigt, die den Cluster-Ports zugeordnet sind. `Status Admin/Oper` Muss up-und sein `Is Home` Muss wahr sein:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::> *network interface show -vserver Cluster*
+
+          Logical      Status     Network             Current       Current Is
+Vserver   Interface    Admin/Oper Address/Mask        Node          Port    Home
+--------- ----------   ---------- ------------------  ------------- ------- ----
+Cluster
+          node1_clus1
+                       up/up      169.254.217.125/16  node1         e0a     true
+          node1_clus2
+                       up/up      169.254.205.88/16   node1         e0b     true
+          node2_clus1
+                       up/up      169.254.252.125/16  node2         e0a     true
+          node2_clus2
+                       up/up      169.254.110.131/16  node2         e0b     true
+----
+

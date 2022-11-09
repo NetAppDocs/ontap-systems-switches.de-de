@@ -1,0 +1,34 @@
+---
+section: switch-nvidia-sn2100
+title: NVIDIA SN2100-Switches
+entries:
+- title: Überblick
+  url: "/switch-nvidia-sn2100/sn2100-overview.html"
+- title: Einrichten und Konfigurieren von NVIDIA SN2100-Switches
+  entries:
+  - title: Überblick
+    url: "/switch-nvidia-sn2100/install_setup_sn2100_switches_overview.html"
+  - title: Überlegungen zur Verkabelung und Konfiguration
+    url: "/switch-nvidia-sn2100/install_cabling_config_considerations_sn2100.html"
+  - title: Installieren Sie Cumulus Linux im Cumulus-Modus
+    url: "/switch-nvidia-sn2100/install_cumulus_linux_cumulus_mode.html"
+  - title: Installieren Sie Cumulus Linux im ONIE-Modus
+    url: "/switch-nvidia-sn2100/install_cumulus_linux_onie_mode.html"
+  - title: Installieren Sie das RCF-Skript
+    url: "/switch-nvidia-sn2100/install_sn2100_rcf.html"
+  - title: Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung
+    url: "/switch-nvidia-sn2100/install_snmpv3_support_for_log_collection.html"
+  - title: Verkabelung der NS224 Shelfs als Switch-Attached Storage
+    url: "/switch-nvidia-sn2100/install_cable_shelves_SAT_sn2100.html"
+- title: Migrieren Sie von Cisco Cluster-Switches auf NVIDIA SN2100 Cluster-Switches
+  url: "/switch-nvidia-sn2100/migrate_cisco_sn2100_cluster_switch.html"
+- title: Migration von Cisco Storage Switches zu NVIDIA SN2100 Storage-Switches
+  url: "/switch-nvidia-sn2100/migrate_cisco_sn2100_storage_switch.html"
+- title: Migrieren Sie mit NVIDIA SN2100 Switches zu einem Cluster mit zwei Nodes
+  url: "/switch-nvidia-sn2100/migrate_2n_switched_sn2100_switches.html"
+- title: NVIDIA SN2100-Switches ersetzen
+  entries:
+  - title: Ersetzen Sie einen NVIDIA SN2100-Cluster-Switch
+    url: "/switch-nvidia-sn2100/replace_sn2100_switch_cluster.html"
+  - title: Ersetzen Sie einen NVIDIA SN2100 Storage-Switch
+    url: "/switch-nvidia-sn2100/replace_sn2100_switch_storage.html"

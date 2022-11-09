@@ -1,0 +1,17 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+permalink: index.html 
+keywords: switches 
+lead: Use the docs on this site to install, upgrade and maintain your cluster, shared storage and MetroCluster switches. 
+summary: Verwenden Sie die Dokumente auf dieser Seite, um den Cluster, die freigegebenen Speicher und die MetroCluster Switches zu installieren, zu aktualisieren und zu warten. 
+---
+= Dokumentation zu den Switches von AFF und FAS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

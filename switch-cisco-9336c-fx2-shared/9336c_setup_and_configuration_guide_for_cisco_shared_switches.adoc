@@ -1,0 +1,295 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9336c-fx2-shared/9336c_setup_and_configuration_guide_for_cisco_shared_switches.html 
+keywords:  
+summary:  
+---
+= Installations- und Konfigurationsleitfaden für gemeinsam genutzte Cisco Switches
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+
+== Von ONTAP unterstützte Switches
+
+Ab ONTAP 9.9 können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- und Cluster-Funktionen in einer gemeinsamen Switch-Konfiguration kombinieren. Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Netzwerk-Switches erforderlich.
+
+Die folgenden gemeinsamen Cisco Netzwerk-Switches werden unterstützt.
+
+
+
+=== Nexus 9336C-FX2
+
+Sie können den Cisco Nexus 9336C-FX2 Switch (X190200/X190210) in einem NetApp Systemschrank oder Schrank eines Drittanbieters mit Standardhalterungen in einem Gehäuse von NetApp installieren, die im Lieferumfang des Switches enthalten sind.
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung für den Switch 9336C-FX2, die Lüfter und die Netzteile aufgeführt:
+
+|===
+| Teilenummer | Beschreibung 
+
+
+| X190200-CS-PE | N9K-9336C-FX2, CS, PTSX, 36PT10/25/40/100GQSFP28 
+
+
+| X190200-CS-PI | N9K-9336C-FX2, CS, PSIN, 36PT10/25/40/100GQSFP28 
+
+
+| X190002 | Zubehörkit X190001/X190003 
+
+
+| X-NXA-PAC-1100W-PE2 | N9K-9336C AC 1100 W Netzteil – Luftstrom am Port Side 
+
+
+| X-NXA-PAC-1100W-PI2 | N9K-9336C AC 1100 W Netzteil – Luftstrom für den seitlichen Ansauganschluss 
+
+
+| X-NXA-LÜFTER-65CFM-PE | N9K-9336C 65 CFM, Luftstrom nach Anschlussseite 
+
+
+| X-NXA-LÜFTER-65CFM-PI | N9K-9336C 65 CFM, Luftstrom zur Ansaugöffnung an der Seite des Ports 
+|===
+
+
+== Die Schalter einrichten
+
+Wenn Sie noch nicht über die erforderlichen Konfigurationsinformationen und Dokumentation verfügen, müssen Sie diese Informationen erfassen, bevor Sie Ihre freigegebenen Switches einrichten.
+
+.Bevor Sie beginnen
+* Sie müssen auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zugreifen können, um die entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File) herunterzuladen.
+* Sie müssen über die erforderliche Dokumentation für den gemeinsamen Switch verfügen.
++
+Siehe  documentation for shared switches Finden Sie weitere Informationen.
+
+* Sie müssen über die erforderliche Controller-Dokumentation und die ONTAP-Dokumentation verfügen.
++
+Siehe https://docs.netapp.com/us-en/ontap/index.html["NetApp ONTAP-Dokumentation"].
+
+* Sie müssen über die entsprechenden Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel verfügen.
+* Sie müssen über die ausgefüllten Verkabelungsarbeitsblätter verfügen.
+
+
+
+NOTE: Neben den Verkabelungsgrafiken enthält dieser Leitfaden Beispielarbeitsblätter mit empfohlenen Port-Zuweisungen und leeren Arbeitsblättern, mit denen Sie Ihr Netzwerk einrichten können. Weitere Informationen finden Sie im https://hwu.netapp.com["Hardware Universe"].
+
+Alle gemeinsam genutzten Cisco Switches sind mit der standardmäßigen Standardkonfiguration von Cisco ausgestattet. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, aber nicht über die RCFs geladen.
+
+
+IMPORTANT: Sie müssen die entsprechenden NetApp RCFs von herunterladen https://mysupport.netapp.com["NetApp Support Website"] Für die Switches, die Sie empfangen.
+
+
+
+=== Verfahren
+
+. Racks für Switches, Controller und NS224 NVMe Storage-Shelfs Siehehttps://docs.netapp.com/platstor/topic/com.netapp.doc.hw-sw-9336c-install-cabinet/GUID-92287262-E7A6-4A62-B159-7F148097B33B.html["Installation eines Cisco Nexus 9336C-FX2 Cluster Switches und Pass-Through-Panel in einem NetApp Rack"] Anweisungen zur Installation des Switches in einem NetApp Rack finden Sie hier.
+. Schalten Sie die Switches, Controller und NS224 NVMe Storage-Shelfs ein.
+. [[Schritt3]]] eine Erstkonfiguration der Switches anhand der in bereitgestellten Informationen durchführen  configuration information.
+. Überprüfen Sie die Konfigurationseinstellungen, die Sie am Ende der Einrichtung in der Anzeige vorgenommen haben, und stellen Sie sicher, dass Sie die Konfiguration speichern.
+. Prüfen Sie die Softwareversion auf den Switches und laden Sie ggf. die von NetApp unterstützte Version der Software auf die Switches herunter.
++
+Wenn Sie die von NetApp unterstützte Version der Software herunterladen, müssen Sie auch die NetApp Network Switch Reference Configuration File herunterladen und mit der Konfiguration zusammenführen, die Sie in gespeichert haben ,Schritt 3. Sie können die Datei und die Anweisungen von herunterladen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Seite. Wenn Sie Ihre eigenen Schalter haben, lesen Sie die http://www.cisco.com["Cisco"] Standort.
+
+
+
+
+
+=== Erforderliche Konfigurationsinformationen
+
+Für die Konfiguration benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelanschlüssen für Ihre Switches. Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
+
+
+
+=== Erforderliche Netzwerkinformationen für alle Switches
+
+* Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfigurationen:
++
+** IP-Subnetz für den Management-Netzwerkdatenverkehr
+** Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
+** Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700s Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
+
+
+* Siehe https://hwu.netapp.com["Hardware Universe"] Aktuelle Informationen.
+
+
+
+
+=== Erforderliche Netzwerkinformationen für Cisco Nexus 9336C-FX2 Switches
+
+Bei dem Cisco Nexus 9336C-FX2 Switch müssen Sie beim ersten Booten des Switches anwendbare Antworten auf die folgenden Einrichtungsfragen geben. Die Sicherheitsrichtlinie Ihres Standorts definiert die Antworten und Services, die Folgendes ermöglichen:
+
+. Automatische Bereitstellung abbrechen und mit der normalen Einrichtung fortfahren? (ja/nein)
++
+Antworten Sie mit *ja*. Der Standardwert ist Nein
+
+. Wollen Sie den sicheren Kennwortstandard durchsetzen? (ja/nein)
++
+Antworten Sie mit *ja*. Die Standardeinstellung ist ja.
+
+. Geben Sie das Passwort für den Administrator ein.
++
+Das Standardpasswort lautet admin. Sie müssen ein neues, starkes Passwort erstellen.
+
++
+Ein schwaches Kennwort kann abgelehnt werden.
+
+. Möchten Sie das Dialogfeld Grundkonfiguration aufrufen? (ja/nein)
++
+Reagieren Sie mit *ja* bei der Erstkonfiguration des Schalters.
+
+. Noch ein Login-Konto erstellen? (ja/nein)
++
+Ihre Antwort hängt von den Richtlinien Ihrer Site ab, die von alternativen Administratoren abhängen. Der Standardwert ist Nein
+
+. Schreibgeschützte SNMP-Community-String konfigurieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+. Lese-Schreib-SNMP-Community-String konfigurieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+. Geben Sie den Switch-Namen ein.
++
+Der Switch-Name ist auf 63 alphanumerische Zeichen begrenzt.
+
+. Mit Out-of-Band-Management-Konfiguration (mgmt0) fortfahren? (ja/nein)
++
+Beantworten Sie mit *ja* (der Standardeinstellung) bei dieser Aufforderung. Geben Sie an der Eingabeaufforderung mgmt0 IPv4 Adresse: ip_address Ihre IP-Adresse ein
+
+. Standard-Gateway konfigurieren? (ja/nein)
++
+Antworten Sie mit *ja*. Geben Sie an der IPv4-Adresse des Standard-Gateway: Prompt Ihren Standard_Gateway ein.
+
+. Erweiterte IP-Optionen konfigurieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+. Telnet-Dienst aktivieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+. SSH-Dienst aktivieren? (ja/nein)
++
+Antworten Sie mit *ja*. Die Standardeinstellung ist ja.
+
+
+
+
+NOTE: SSH wird empfohlen, wenn Sie Cluster Switch Health Monitor (CSHM) für seine Protokollerfassung verwenden. SSHv2 wird auch für erhöhte Sicherheit empfohlen.
+
+. [[steep14]]Geben Sie den Typ des zu generierende SSH-Schlüssels ein (dsa/rsa/rsa1). Die Standardeinstellung ist rsa.
+. Geben Sie die Anzahl der Schlüsselbits ein (1024- 2048).
+. Konfigurieren Sie den NTP-Server? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+. Standard-Schnittstellenebene konfigurieren (L3/L2):
++
+Antworten Sie mit *L2*. Der Standardwert ist L2.
+
+. Konfigurieren Sie den Status der Switch-Schnittstelle (shut/noshut) als Standard-Switch-Port:
++
+Antworten Sie mit *noshut*. Die Standardeinstellung ist noshut.
+
+. Konfiguration des CoPP-Systemprofils (streng/mittel/lenient/dense):
++
+Reagieren Sie mit * Strict*. Die Standardeinstellung ist streng.
+
+. Möchten Sie die Konfiguration bearbeiten? (ja/nein)
++
+Die neue Konfiguration sollte jetzt angezeigt werden. Überprüfen Sie die soeben eingegebene Konfiguration und nehmen Sie alle erforderlichen Änderungen vor. Wenn Sie mit der Konfiguration zufrieden sind, beantworten Sie mit Nein. Beantworten Sie mit *ja*, wenn Sie Ihre Konfigurationseinstellungen bearbeiten möchten.
+
+. Verwenden Sie diese Konfiguration und speichern Sie sie? (ja/nein)
++
+Antworten Sie mit *ja*, um die Konfiguration zu speichern. Dadurch werden die Kickstart- und Systembilder automatisch aktualisiert.
+
++
+
+NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden keine Änderungen beim nächsten Neustart des Switches wirksam.
+
+
+
+Weitere Informationen zur Erstkonfiguration des Switches finden Sie im folgenden Handbuch: https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Cisco Nexus 9336C-FX2 – Installations- und Upgrade-Leitfaden"].
+
+
+
+===== Erforderliche Dokumentation für freigegebene Switches
+
+Zum Einrichten des ONTAP Netzwerks benötigen Sie spezifische Switch- und Controller-Dokumentation.
+
+Informationen zum Einrichten der gemeinsamen Cisco Nexus 9336C-FX2-Switches finden Sie im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"] Seite.
+
+|===
+| Dokumenttitel | Beschreibung 
+
+
+| link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Hardware-Installationsleitfaden Der Nexus 9000-Serie"] | Detaillierte Informationen zu Standortanforderungen, Hardwaredetails zu Switches und Installationsoptionen. 
+
+
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-and-configuration-guides-list.html["Cisco Nexus 9000-Serie Switch – Software-Konfigurationsleitfäden"] (Im Leitfaden für die auf den Switches installierte NX-OS Version finden) | Stellt Informationen zur Erstkonfiguration des Switches bereit, die Sie benötigen, bevor Sie den Switch für den ONTAP-Betrieb konfigurieren können. 
+
+
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Cisco Nexus 9000 Serie NX-OS Software-Upgrade und Downgrade Guide"] (Im Leitfaden für die auf den Switches installierte NX-OS Version finden) | Enthält Informationen zum Downgrade des Switch auf ONTAP unterstützte Switch-Software, falls erforderlich. 
+
+
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000-Serie NX-OS Command Reference Master Index"] | Enthält Links zu den verschiedenen von Cisco bereitgestellten Befehlsreferenzen. 
+
+
+| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/mib/quickreference/b_Cisco_Nexus_7000_Series_and_9000_Series_NX-OS_MIB_Quick_Reference.html["Cisco Nexus 9000 MIBs Referenz"] | Beschreibt die MIB-Dateien (Management Information Base) für die Nexus 9000-Switches. 
+
+
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-system-message-guides-list.html["Nachrichtenreferenz für das NX-OS-System der Serie Nexus 9000"] | Beschreibt die Systemmeldungen für Switches der Cisco Nexus 9000 Serie, Informationen und andere, die bei der Diagnose von Problemen mit Links, interner Hardware oder der Systemsoftware helfen können. 
+
+
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#ReleaseandCompatibility["Versionshinweise für die Cisco Nexus 9000-Serie NX-OS"] (Wählen Sie die Hinweise für die NX-OS Version, die auf Ihren Switches installiert ist.) | Beschreibt die Funktionen, Bugs und Einschränkungen der Cisco Nexus 9000 Serie. 
+
+
+| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/regulatory/compliance/RCSI.html["Compliance- und Sicherheitsinformationen für die Cisco Nexus 9000-Serie"] | Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen für Switches der Serie Nexus 9000. 
+|===
+
+
+== Details zur Cisco Nexus 9336C-FX2-Verkabelung
+
+Sie können die folgenden Verkabelungsabbilder verwenden, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. Wenn Sie NS224-Speicher als Switch-Attached verkabeln möchten, folgen Sie dem Schaltplan:
+
+image:9336c_image1.jpg["Switch-Anschluss"]
+
+Wenn Sie NS224-Speicher als Direct-Attached anstatt die Shared Switch-Speicherports verkabeln möchten, folgen Sie dem direkt angeschlossenen Diagramm:
+
+image:9336c_image2.jpg["Direct-Attached"]
+
+
+
+=== Cisco Nexus 9336C-FX2 – Verkabelungsarbeitsblatt
+
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie als Anleitung ein ausgefülltes Beispiel-Verkabelungsarbeitsblatt verwenden.
+
+Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:image:cabling_worksheet.jpg["Verkabelungsarbeitsblatt"]
+
+Wo?
+
+* 100-GB-ISL für Switch A-Port 35
+* 100-GB-ISL für Switch A-Port 36
+* 100-GB-ISL zu Switch B-Port 35
+* 100-GB-ISL zu Switch B-Port 36
+
+
+
+
+=== Leeres Verkabelungsarbeitsblatt
+
+Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Die Tabelle der unterstützten Cluster-Verbindungen der Hardware Universe definiert die von der Plattform verwendeten Cluster-Ports.
+
+image:blank_cabling_worksheet.jpg["Leeres Verkabelungsarbeitsblatt"]
+
+Wo?
+
+* 100-GB-ISL für Switch A-Port 35
+* 100-GB-ISL für Switch A-Port 36
+* 100-GB-ISL zu Switch B-Port 35
+* 100-GB-ISL zu Switch B-Port 36
+

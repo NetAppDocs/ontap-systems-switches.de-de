@@ -1,0 +1,132 @@
+---
+permalink: switch-cisco-9336c-fx2/install-switch-and-passthrough-panel.html 
+sidebar: sidebar 
+keywords: install, cisco, nexus, switch, pass-through, panel, netapp, cabinet, bracket, switch, install a cisco nexus 9336c-fx2 switch and pass-through panel in a netapp cabinet - cisco nexus 9336c-fx2 
+summary: Sie können den Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in einem NetApp-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind, installieren. 
+---
+= Installation eines Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in einem NetApp Rack
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in einem NetApp-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind, installieren.
+
+Sie müssen die anfänglichen Vorbereitungsanforderungen, den Inhalt des Kits und die Sicherheitsvorkehrungen überprüft haben.
+
+https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/aci_9336cfx2_hig/guide/b_n9336cFX2_aci_hardware_installation_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 9000-Serie"^]
+
+* Für jeden Switch müssen Sie die acht 10-32- oder 12-24-Schrauben und Muttern bereitstellen, um die Halterungen und Gleitschienen an den vorderen und hinteren Schrankleisten zu befestigen.
+* Sie müssen den Cisco Standard-Schienensatz verwenden, um den Switch in einem NetApp Rack zu installieren.
+
+
+
+NOTE: Die Jumper-Kabel sind nicht im Lieferumfang des Pass-Through-Kits enthalten und sollten in Ihrem Switch enthalten sein. Wenn die Switches nicht im Lieferumfang enthalten sind, können Sie sie bei NetApp bestellen (Teilenummer X1558A-R6).
+
+.Schritte
+. Die Pass-Through-Blindplatte in den NetApp-Schrank einbauen.
++
+Die Pass-Through-Panel-Kit ist bei NetApp erhältlich (Teilenummer X8784-R6).
+
++
+Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
+
++
+** Ein Durchlauf-Blindblech
+** Vier 10-32 x 0,75 Schrauben
+** Vier 10-32-Clip-Muttern
++
+... Stellen Sie die vertikale Position der Schalter und der Blindplatte im Schrank fest.
++
+Bei diesem Verfahren wird die Blindplatte in U40 installiert.
+
+... Bringen Sie an jeder Seite zwei Klemmmuttern an den entsprechenden quadratischen Löchern für die vorderen Schrankschienen an.
+... Zentrieren Sie die Abdeckung senkrecht, um ein Eindringen in den benachbarten Rack zu verhindern, und ziehen Sie die Schrauben fest.
+... Stecken Sie die Buchsen der beiden 48-Zoll-Jumper-Kabel von der Rückseite der Abdeckung und durch die Bürstenbaugruppe.
++
+image::../media/cisco_9148_jumper_cords.gif[cisco 9148-Jumper-Kabel]
+
++
+.... Buchsenleiste des Überbrückungskabels.
+
+
+
+
+
+
+. Installieren Sie die Halterungen für die Rack-Montage am Switch-Gehäuse des Nexus 9336C-FX2.
++
+.. Positionieren Sie eine vordere Rack-Mount-Halterung auf einer Seite des Switch-Gehäuses so, dass das Montagewinkel an der Gehäusefaceplate (auf der Netzteilseite oder Lüfterseite) ausgerichtet ist. Verwenden Sie dann vier M4-Schrauben, um die Halterung am Gehäuse zu befestigen.
++
+image::../media/3132q_front_bracket.gif[Vordere Halterung]
+
+.. Wiederholen Sie den Schritt ,2 a Mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Setzen Sie die hintere Rack-Halterung am Switch-Gehäuse ein.
+.. Wiederholen Sie den Schritt ,2c Mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
+
+
+. Die Klemmmuttern für alle vier IEA-Stützen an den Stellen der quadratischen Bohrung anbringen.
++
+image::../media/ru_locations_for_3132q_v.gif[ru Standorte für 3132q V]
+
++
+Die beiden 9336C-FX2 Schalter werden immer in der oberen 2 HE des Schrankes RU41 und 42 montiert.
+
+. Installieren Sie die Gleitschienen im Schrank.
++
+.. Positionieren Sie die erste Gleitschiene an der RU42-Markierung auf der Rückseite des hinteren linken Pfosten, legen Sie die Schrauben mit dem entsprechenden Gewindetyp ein und ziehen Sie die Schrauben mit den Fingern fest.
++
+image::../media/3132q_v_slider_rails.gif[3132q V Gleitschienen]
+
++
+... Richten Sie die Gleitschiene beim sanften Schieben an den Schraubenbohrungen im Rack aus.
+... Ziehen Sie die Schrauben der Gleitschienen an den Schrankleisten fest.
+
+
+.. Wiederholen Sie den Schritt ,4 a Für den hinteren Pfosten auf der rechten Seite.
+.. Wiederholen Sie die Schritte ,4 a Und ,4b An den RU41 Standorten auf dem Schrank.
+
+
+. Den Schalter in den Schrank einbauen.
++
+
+NOTE: Für diesen Schritt sind zwei Personen erforderlich: Eine Person muss den Schalter von vorne und von der anderen in die hinteren Gleitschienen führen.
+
++
+.. Positionieren Sie die Rückseite des Schalters an RU41.
++
+image::../media/3132q_v_positioning.gif[Positionierung der 3232C-Serie auf der U39-40]
+
++
+... Richten Sie die beiden hinteren Rackmontageführungen an den Gleitschienen aus, wenn das Gehäuse in Richtung der hinteren Pfosten gedrückt wird.
+... Schieben Sie den Schalter vorsichtig so weit, bis die Halterungen der vorderen Rackmontage bündig mit den vorderen Pfosten verbunden sind.
+
+
+.. Befestigen Sie den Schalter am Gehäuse.
++
+image::../media/3132q_attaching.gif[3132q Befestigung]
+
++
+... Wenn eine Person die Vorderseite der Gehäuseebene hält, sollte die andere Person die vier hinteren Schrauben vollständig an den Schrankpfosten festziehen.
+
+
+.. Wenn das Gehäuse nun ohne Unterstützung unterstützt wird, ziehen Sie die vorderen Schrauben fest an den Stützen.
+.. Wiederholen Sie die Schritte ,5a Bis ,5c Für den zweiten Schalter an der RU42-Position.
++
+
+NOTE: Durch die Verwendung des vollständig installierten Schalters als Unterstützung ist es nicht erforderlich, während des Installationsvorgangs die Vorderseite des zweiten Schalters zu halten.
+
+
+
+. Wenn die Switches installiert sind, verbinden Sie die Jumper-Kabel mit den Switch-Netzeinkabeln.
+. Verbinden Sie die Stecker beider Überbrückungskabel mit den am nächsten verfügbaren PDU-Steckdosen.
++
+
+NOTE: Um Redundanz zu erhalten, müssen die beiden Kabel mit verschiedenen PDUs verbunden werden.
+
+. Verbinden Sie den Management Port an jedem 9336C-FX2 Switch mit einem der Management-Switches (falls bestellt) oder verbinden Sie sie direkt mit dem Management-Netzwerk.
++
+Der Management-Port ist der oben rechts gelegene Port auf der PSU-Seite des Switch. Das CAT6-Kabel für jeden Switch muss über die Passthrough-Leiste geführt werden, nachdem die Switches zur Verbindung mit den Management-Switches oder dem Management-Netzwerk installiert wurden.
+
+
