@@ -13,6 +13,7 @@ summary: Um einen vorhandenen Nexus 5596 Cluster Switch durch einen Nexus 3132Q-
 [role="lead"]
 Um einen vorhandenen Nexus 5596 Cluster Switch durch einen Nexus 3132Q-V Cluster-Switch zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren beschreiben den Austausch von Nexus 5596 Switches durch Nexus 3132Q-V Switches. Mit diesen Schritten (durch Änderungen) können andere ältere Cisco Switches ersetzt werden. Für das Verfahren wird die folgende Nomenklatur von Switches und Nodes verwendet:
 
 * Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
@@ -34,7 +35,7 @@ NOTE: Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches
 Dieses Verfahren umfasst folgende Szenarien:
 
 * Das Cluster beginnt mit zwei verbundenen Nodes und funktioniert in einem 2 Nexus 5596 Cluster-Switch.
-* Der zu ersetzende Cluster-Switch CL2 durch C2 (,Schritt 1 - ,19)
+* Der zu ersetzende Cluster-Switch CL2 durch C2 (<<step1_replace5596_3232q,Schritt 1>> - <<step19_replace5596_3232q,19>>)
 +
 ** Der Traffic auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Nodes wird zu den ersten Cluster-Ports migriert und mit CL1 verbundene LIFs.
 ** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und verwenden Sie dann die unterstützte Breakout-Verkabelung, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.
@@ -42,7 +43,7 @@ Dieses Verfahren umfasst folgende Szenarien:
 ** Der Datenverkehr auf allen Cluster-Ports und LIFs, die mit C2 verbunden sind, wird auf allen Nodes zurückgesetzt.
 
 
-* Der zu ersetzende Cluster-Switch CL2 durch C2 (,Schritt 20 - ,33)
+* Der zu ersetzende Cluster-Switch CL2 durch C2 (<<step20_replace5596_3232q,Schritt 20>> - <<step33_replace5596_3232q,33>>)
 +
 ** Der Datenverkehr aller Cluster-Ports oder LIFs auf allen mit CL1 verbundenen Nodes wird zu den zweiten Cluster-Ports oder zu LIFs migriert, die mit C2 verbunden sind.
 ** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten, und verbinden Sie sie über unterstützte Breakout-Kabel mit dem neuen Cluster-Switch C1.
@@ -50,7 +51,7 @@ Dieses Verfahren umfasst folgende Szenarien:
 ** Der Verkehr auf allen Cluster-Ports oder LIFs, die mit C1 auf allen Nodes verbunden sind, wird zurückgesetzt.
 
 
-* Zwei FAS9000 Nodes wurden dem Cluster hinzugefügt, wobei Beispiele für Cluster-Details ( zeigen,Schritt 34 - ,37).
+* Zwei FAS9000 Nodes wurden dem Cluster hinzugefügt, wobei Beispiele für Cluster-Details ( zeigen<<step34_replace5596_3232q,Schritt 34>> - <<step37_replace5596_3232q,37>>).
 
 
 .Schritte

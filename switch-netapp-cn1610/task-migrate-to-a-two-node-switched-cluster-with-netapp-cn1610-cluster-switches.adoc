@@ -13,6 +13,7 @@ summary: Wenn Sie über einen 2-Node-Cluster ohne Switches verfügen, können Si
 [role="lead"]
 Wenn Sie über einen 2-Node-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei auf ein 2-Node-Cluster mit Switch migrieren, das die NetApp CN1610 Cluster-Netzwerk-Switches umfasst. Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben.
 
+.Über diese Aufgabe
 Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports.
 
 FAS22xx Nodes ermöglichen einen einzelnen Cluster-Port an jedem Controller.

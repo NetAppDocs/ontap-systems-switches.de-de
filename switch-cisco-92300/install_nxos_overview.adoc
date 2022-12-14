@@ -13,6 +13,7 @@ summary: 'Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien \(RCFs\
 [role="lead"]
 Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien (RCFs) müssen auf Cisco Nexus 92300YC Cluster Switches installiert sein.
 
+.Bevor Sie beginnen
 Die folgenden Bedingungen müssen vorliegen, bevor Sie die NX-OS-Software und RCFs (Reference Configurations Files) auf dem Cluster-Switch installieren:
 
 * Das Cluster muss voll funktionsfähig sein (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
@@ -24,6 +25,7 @@ Die folgenden Bedingungen müssen vorliegen, bevor Sie die NX-OS-Software und RC
 * Sie müssen über den aktuellen RCF verfügen.
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`.
 
 Siehe https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.

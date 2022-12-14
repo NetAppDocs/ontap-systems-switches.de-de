@@ -13,6 +13,7 @@ summary: Sie können dieses Verfahren verwenden, um die Erstinstallation des Cis
 [role="lead"]
 Sie können dieses Verfahren verwenden, um die Erstinstallation des Cisco Nexus 92300YC-Switch durchzuführen.
 
+.Über diese Aufgabe
 Sie können die entsprechende NetApp Cisco NX-OS Software für Ihre Switches vom herunterladen http://mysupport.netapp.com/["NetApp Support"^] Standort.
 
 Bei NX-OS handelt es sich um ein Netzwerkbetriebssystem für die Ethernet Switches der Nexus Serie und die MDS Serie mit Fibre Channel (FC) Storage Area Network Switches von Cisco Systems.

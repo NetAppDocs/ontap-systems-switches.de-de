@@ -33,12 +33,13 @@ Die beiden Nodes müssen verbunden und in einer 2-Node-Cluster-Einstellung ohne 
 
 
 
+.Über diese Aufgabe
 *Verfahrensübersicht*
 
-* *I. Anzeigen und Migrieren physischer und logischer Ports (Schritte ,1-,10)*
-* *II Fahren Sie die neu zugeordneten LIFs herunter und trennen Sie die Kabel (Schritte ,11-,14))*
-* *III. Aktivieren Sie die Cluster-Ports (Schritte ,15-,20)*
-* *IV. Aktivieren der neu zugewiesen LIFs (Schritte ,21-,33)*
+* *I. Anzeigen und Migrieren physischer und logischer Ports (Schritte <<joyce,1>>-<<beckett,10>>)*
+* *II Fahren Sie die neu zugeordneten LIFs herunter und trennen Sie die Kabel (Schritte <<casey,11>>-<<heaney,14)>>)*
+* *III. Aktivieren Sie die Cluster-Ports (Schritte <<yeats,15>>-<<friel,20>>)*
+* *IV. Aktivieren der neu zugewiesen LIFs (Schritte <<wilde,21>>-<<swift,33>>)*
 
 
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:

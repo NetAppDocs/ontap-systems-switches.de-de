@@ -13,6 +13,7 @@ summary: 'Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch C
 [role="lead"]
 Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.
 
+.Bevor Sie beginnen
 Es werden folgende Annahmen angenommen:
 
 * Sie verfügen über ein Linux-Wissen auf mittlerer Ebene.

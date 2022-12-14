@@ -45,6 +45,7 @@ Für die Konfiguration des Clusters können Sie die Portzuweisung für BES-53248
 Ports mit 100 GbE Cluster Inter-Switch Link (ISL), Basiskonfiguration
 
 |===
+.Einschränkung bei der Geschwindigkeit der Port-Gruppe
 Bei BES-53248 Cluster Switches werden die 48 10/25-GbE-Ports (SFP28/SFP+) wie folgt in 12 Gruppen mit 4 Ports kombiniert:
 
 * Ports 1-4, 5-8, 9-12, 13-16, 17-20, 21–24, 25–28, 29–32, 33–36, 37–40, 41-44 und 45-48.

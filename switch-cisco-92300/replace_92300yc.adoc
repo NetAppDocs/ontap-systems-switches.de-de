@@ -13,6 +13,7 @@ summary: 'Der Austausch eines defekten Nexus 92300YC Switches in einem Cluster-N
 [role="lead"]
 Der Austausch eines defekten Nexus 92300YC Switches in einem Cluster-Netzwerk ist eine unterbrechungsfreie Prozedur (NDU).
 
+.Bevor Sie beginnen
 Die folgenden Bedingungen müssen vorliegen, bevor der Switch in der aktuellen Umgebung und am Ersatzschalter ausgetauscht wird.
 
 * Vorhandene Cluster- und Netzwerkinfrastruktur:
@@ -41,6 +42,7 @@ Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH sollten auf den neu
 
 
 
+.Über diese Aufgabe
 Sie müssen den Befehl zum Migrieren einer Cluster-LIF von dem Node ausführen, auf dem die Cluster-LIF gehostet wird.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:

@@ -13,6 +13,7 @@ summary: Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches 
 [role="lead"]
 Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit CN1610 Cluster-Netzwerk-Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie eine Skalierung über zwei Nodes hinaus vornehmen.
 
+.Bevor Sie beginnen
 Konfiguration mit zwei Nodes ohne Switches:
 
 * Die Konfiguration mit zwei Nodes ohne Switches muss ordnungsgemäß eingerichtet und funktionsfähig sein.
@@ -37,6 +38,7 @@ Alle Anpassungen der vorherigen Site, wie SMTP, SNMP und SSH, sollten auf die ne
 
 
 
+.Über diese Aufgabe
 In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
 
 * Die Namen der CN1610-Switches lauten cs1 und cs2.

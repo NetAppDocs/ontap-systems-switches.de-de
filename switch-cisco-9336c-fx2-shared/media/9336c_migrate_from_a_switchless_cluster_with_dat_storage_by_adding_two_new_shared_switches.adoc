@@ -50,6 +50,7 @@ Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, 
 
 
 
+.Über diese Aufgabe
 In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
 
 * Die Namen der Schalter 9336C-FX2 lauten _cs1_ und _cs2_.

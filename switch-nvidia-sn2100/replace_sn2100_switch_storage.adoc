@@ -13,6 +13,7 @@ summary: 'Ersetzen eines fehlerhaften NVIDIA SN2100 Storage Switch in einem unte
 [role="lead"]
 Beim Austausch von NVIDIA SN2100 Storage Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen kennen.
 
+.Bevor Sie beginnen
 Vor der Installation der Cumulus-Software und der RCFs auf einem NVIDIA SN2100-Speicherschalter müssen Sie überprüfen, ob die folgenden Bedingungen vorliegen:
 
 * Ihr System kann NVIDIA SN2100 Storage Switches unterstützen.
@@ -20,6 +21,7 @@ Vor der Installation der Cumulus-Software und der RCFs auf einem NVIDIA SN2100-S
 * Der http://hwu.netapp.com["Hardware Universe"^] Ausführliche Informationen zu unterstützten Ports und deren Konfigurationen erhalten Sie im Detail.
 
 
+.Über diese Aufgabe
 Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
 
 * Stellen Sie sicher, dass alle Fehlerbehebungsschritte durchgeführt wurden, um zu bestätigen, dass Ihr Switch ausgetauscht werden muss.
@@ -38,6 +40,7 @@ Der Ersatz-NVIDIA SN2100-Switch muss die folgenden Eigenschaften aufweisen:
 * Die anfängliche Anpassung des Schalters muss abgeschlossen sein.
 
 
+.Zusammenfassung der Vorgehensweise
 Dieses Verfahren ersetzt den zweiten NVIDIA SN2100 Storage Switch sw2 durch den neuen NVIDIA SN2100 Switch nsw2. Die beiden Knoten sind node1 und node2.
 
 Schritte zur Fertigstellung:

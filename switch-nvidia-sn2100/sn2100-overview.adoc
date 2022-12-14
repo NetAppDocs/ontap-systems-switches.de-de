@@ -17,6 +17,7 @@ Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unt
 
 Sie installieren den NVIDIA SN2100-Switch (X190006/X190106) im NVIDIA-Dual/Single-Switch-Gehäuse mit den im Lieferumfang des Switches enthaltenen Standardhalterungen.
 
+.SN2100-Switches und Schienensatz – Details
 In der folgenden Tabelle sind die Teilenummer und Beschreibung der MSN2100-Switches und Schienen-Kits aufgeführt:
 
 [cols="1,2"]
@@ -68,6 +69,7 @@ Rail Kit, NVIDIA Single Switch, kurze Tiefe
 
 IMPORTANT: Weitere Informationen finden Sie in der NVIDIA-Dokumentation auf https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installieren Sie den SN2100-Switch und den Schienen-Kit"^].
 
+.Verfügbare Dokumentation
 In der folgenden Tabelle ist die Dokumentation für die NVIDIA SN2100-Switches aufgeführt.
 
 [cols="1,2"]

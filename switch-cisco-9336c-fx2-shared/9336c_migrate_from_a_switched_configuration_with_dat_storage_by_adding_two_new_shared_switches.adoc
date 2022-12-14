@@ -68,6 +68,7 @@ Siehe https://hwu.netapp.com["Hardware Universe"] Finden Sie weitere Information
 
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die vorhandenen Cisco Nexus 3232C Cluster-Switches sind _c1_ und _c2_.

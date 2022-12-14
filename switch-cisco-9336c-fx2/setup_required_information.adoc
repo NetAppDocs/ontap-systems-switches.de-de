@@ -13,6 +13,7 @@ summary: Zum Konfigurieren des Clusters benötigen Sie die entsprechende Anzahl 
 [role="lead"]
 Zum Konfigurieren des Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für Ihre Switches. Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
 
+.Erforderliche Netzwerkinformationen für alle Switches
 Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfigurationen:
 
 * IP-Subnetz für den Management-Netzwerkdatenverkehr

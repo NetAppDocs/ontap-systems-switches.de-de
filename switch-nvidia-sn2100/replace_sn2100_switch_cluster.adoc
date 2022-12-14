@@ -13,6 +13,7 @@ summary: 'Der Austausch eines defekten NVIDIA SN2100-Switches in einem Cluster-N
 [role="lead"]
 Der Austausch eines fehlerhaften NVIDIA SN2100-Switches in einem Cluster-Netzwerk ist ein NDU.
 
+.Bevor Sie beginnen
 Die folgenden Bedingungen müssen vorliegen, bevor der Switch in der aktuellen Umgebung und am Ersatzschalter ausgetauscht wird.
 
 * Vorhandene Cluster- und Netzwerkinfrastruktur:
@@ -40,6 +41,7 @@ Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH sollten auf den neu
 
 Sie müssen den Befehl zum Migrieren einer Cluster-LIF von dem Node ausführen, auf dem die Cluster-LIF gehostet wird.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die Namen der vorhandenen NVIDIA SN2100-Switches lauten _sw1_ und _sw2_.

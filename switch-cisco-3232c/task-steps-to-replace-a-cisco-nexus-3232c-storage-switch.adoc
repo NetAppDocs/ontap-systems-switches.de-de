@@ -13,6 +13,7 @@ summary: Es besteht die Möglichkeit, einen defekten Cisco Nexus 3232C-Storage-S
 [role="lead"]
 Es besteht die Möglichkeit, einen defekten Cisco Nexus 3232C-Storage-Switch durch Ausführen einer bestimmten Aufgabenfolge unterbrechungsfrei zu ersetzen.
 
+.Bevor Sie beginnen
 Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
 
 * Auf der Seite Cisco Ethernet Switches befinden sich die neuesten RCF- und NX-OS-Versionen auf Ihren Switches.
@@ -35,10 +36,10 @@ Der Cisco Nexus 3232C Switch muss folgende Merkmale aufweisen:
 
 *Verfahrensübersicht:*
 
-* *Bestätigen Sie, dass der zu ersetzende Schalter S2 ist (Schritte ,1-,5)*
-* *Trennen Sie die Kabel vom Schalter S2 ,(Schritt 6)*
-* *Schließen Sie die Kabel wieder an den Schalter NS2 an (Schritt ,7)*
-* *Überprüfung aller Gerätekonfigurationen auf Switch NS2 (Schritte ,8-,10)*
+* *Bestätigen Sie, dass der zu ersetzende Schalter S2 ist (Schritte <<one,1>>-<<five,5>>)*
+* *Trennen Sie die Kabel vom Schalter S2 <<six,(Schritt 6)>>*
+* *Schließen Sie die Kabel wieder an den Schalter NS2 an (Schritt <<seven,7>>)*
+* *Überprüfung aller Gerätekonfigurationen auf Switch NS2 (Schritte <<eight,8>>-<<ten,10>>)*
 * Dieses Verfahren ersetzt den zweiten Nexus 3232C Storage Switch S2 durch den neuen 3232C Switch NS2.
 * Die beiden Knoten sind node1 und node2.
 

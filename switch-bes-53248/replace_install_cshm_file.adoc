@@ -13,6 +13,7 @@ summary: Mit diesen Verfahren können Sie die entsprechende Konfigurationsdatei 
 [role="lead"]
 Mit diesen Verfahren können Sie die entsprechende Konfigurationsdatei für die Zustandsüberwachung von BES-53248 Cluster-Switches für Cluster-Switches installieren. Bei ONTAP Releases 9.5P7 und früher sowie 9.6P2 und früher müssen Sie die Konfigurationsdatei des Cluster Switch zur Systemzustandsüberwachung separat herunterladen. In ONTAP Versionen 9.5P8 und höher, 9.6P3 und höher und 9.7 und höher wird die Konfigurationsdatei des Cluster-Switch-Systemzustandsüberwachung mit ONTAP gebündelt.
 
+.Was Sie benötigen
 Bevor Sie die Switch-Systemzustandsüberwachung für BES-53248 Cluster-Switches einrichten, müssen Sie sicherstellen, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
 
 

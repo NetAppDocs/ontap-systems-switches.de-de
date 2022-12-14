@@ -13,6 +13,7 @@ summary: 'Wenn Sie eine Referenzkonfigurationsdatei (RCF) installieren, müssen 
 [role="lead"]
 Wenn Sie eine Referenzkonfigurationsdatei (RCF) installieren, müssen Sie zuerst die Cluster-LIFs vom cs2-Switch weg migrieren. Nachdem die RCF installiert und validiert wurde, können die LIFs zurück migriert werden.
 
+.Bevor Sie beginnen
 Sie müssen die Konfiguration gespeichert haben, die derzeit auf Ihrem Switch ausgeführt wird.
 
 .Schritte

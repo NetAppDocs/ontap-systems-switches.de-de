@@ -13,6 +13,7 @@ summary: 'Ein Upgrade der Cisco NX-OS Software und der Referenzkonfigurationsdat
 [role="lead"]
 Ein Upgrade der Cisco NX-OS Software und der Referenzkonfigurationsdateien (RCs) auf Cisco Nexus 3232C-Storage-Switches kann durchgeführt werden.
 
+.Bevor Sie beginnen
 Vor dem Upgrade der NX-OS Software und der RCFs auf dem Storage-Switch müssen die folgenden Bedingungen erfüllt sein:
 
 * Der Switch muss voll funktionsfähig sein (es dürfen keine Fehler in den Protokollen oder ähnlichen Problemen auftreten).
@@ -26,11 +27,11 @@ Wenn Sie die Boot-Variablen ändern müssen, um die aktuellen Startabbilder zu b
 
 *Verfahrensübersicht:*
 
-* **I.. Überprüfen Sie den Integritätsstatus von Switches und Ports (,Schritt 1- ,4)**
-* **II Kopieren Sie den RCF auf Cisco Switch S2 (,Schritt 5 - ,8)**
-* **III Laden Sie das NX-OS-Image auf den Cisco Switch S2 herunter und starten Sie (,Schritt 9 - ,12)**
-* **IV Überprüfen Sie den Integritätsstatus von Switches und Ports (,Schritt 13 - ,15)**
-* **V.. Wiederholen ,Schritt 1- ,17 Für Cisco Switch S1.**
+* **I.. Überprüfen Sie den Integritätsstatus von Switches und Ports (<<step1_upgrade_3232c,Schritt 1>>- <<step4_upgrade_3232c,4>>)**
+* **II Kopieren Sie den RCF auf Cisco Switch S2 (<<step5_upgrade_3232c,Schritt 5>> - <<step8_upgrade_3232c,8>>)**
+* **III Laden Sie das NX-OS-Image auf den Cisco Switch S2 herunter und starten Sie (<<step9_upgrade_3232c,Schritt 9>> - <<step12_upgrade_3232c,12>>)**
+* **IV Überprüfen Sie den Integritätsstatus von Switches und Ports (<<step13_upgrade_3232c,Schritt 13>> - <<step15_upgrade_3232c,15>>)**
+* **V.. Wiederholen <<step1_upgrade_3232c,Schritt 1>>- <<step17_upgrade_3232c,17>> Für Cisco Switch S1.**
 
 
 Die Beispiele in diesem Verfahren verwenden zwei Nodes; Knoten1 mit zwei Storage-Ports und Knoten2 mit zwei Storage-Ports. Siehe link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Um die korrekten Speicherports auf Ihren Plattformen zu überprüfen.

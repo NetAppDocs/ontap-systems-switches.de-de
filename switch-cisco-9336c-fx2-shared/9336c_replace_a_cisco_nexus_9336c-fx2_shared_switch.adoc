@@ -19,6 +19,7 @@ summary:
 
 Der Austausch eines fehlerhaften Nexus 9336C-FX2 Shared Switch ist ein Nondisruptive Procedure (NDU).
 
+.Bevor Sie beginnen
 Die folgenden Bedingungen müssen vorliegen, bevor der Switch in der aktuellen Umgebung und am Ersatzschalter ausgetauscht wird.
 
 * Vorhandene Cluster- und Netzwerkinfrastruktur:
@@ -41,6 +42,7 @@ Die folgenden Bedingungen müssen vorliegen, bevor der Switch in der aktuellen U
 
 
 
+.Über diese Aufgabe
 Sie müssen den Befehl zum Migrieren einer Cluster-LIF von dem Node ausführen, auf dem die Cluster-LIF gehostet wird.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
@@ -136,14 +138,14 @@ Wobei x die Dauer des Wartungsfensters in Stunden ist.
 
 . Optional: Installieren Sie die entsprechenden RCF und das entsprechende Bild auf dem Switch, newsh2, und machen Sie alle erforderlichen Standortvorbereitungen.
 +
-.. Überprüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und NX-OS-Software für den neuen Switch. Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und NX-OS-Software benötigt, fahren Sie fort ,Schritt 3.
+.. Überprüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und NX-OS-Software für den neuen Switch. Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und NX-OS-Software benötigt, fahren Sie fort <<step3,Schritt 3>>.
 .. Rufen Sie die Seite „Referenzkonfigurationsdatei“ der NetApp Support-Website auf der Seite „NetApp Cluster- und Management-Netzwerk-Switches“ auf.
 .. Klicken Sie auf den Link für die Cluster-Netzwerk- und Management-Netzwerk-Kompatibilitätsmatrix, und notieren Sie anschließend die erforderliche Switch-Softwareversion.
 .. Klicken Sie auf den Zurück-Pfeil Ihres Browsers, um zur Seite Beschreibung zurückzukehren. Klicken Sie auf WEITER, akzeptieren Sie die Lizenzvereinbarung und gehen Sie dann zur Download-Seite.
 .. Befolgen Sie die Schritte auf der Download-Seite, um die korrekten RCF- und NX-OS-Dateien für die Version der installierten ONTAP-Software herunterzuladen.
 
 
-. [[Schritt3]]beim neuen Switch melden Sie sich als Administrator an und fahren Sie alle Ports ab, die mit den Node-Cluster-Schnittstellen verbunden werden sollen (Ports 1/1 bis 1/34). Wenn der Schalter, den Sie ersetzen, nicht funktionsfähig ist und ausgeschaltet ist, fahren Sie mit fort ,Schritt 4. Die LIFs auf den Cluster-Nodes sollten für jeden Node bereits ein Failover auf den anderen Cluster-Port durchgeführt haben.
+. [[Schritt3]]beim neuen Switch melden Sie sich als Administrator an und fahren Sie alle Ports ab, die mit den Node-Cluster-Schnittstellen verbunden werden sollen (Ports 1/1 bis 1/34). Wenn der Schalter, den Sie ersetzen, nicht funktionsfähig ist und ausgeschaltet ist, fahren Sie mit fort <<step4,Schritt 4>>. Die LIFs auf den Cluster-Nodes sollten für jeden Node bereits ein Failover auf den anderen Cluster-Port durchgeführt haben.
 +
 [listing, subs="+quotes"]
 ----

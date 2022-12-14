@@ -13,6 +13,7 @@ summary: Sie können den Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in 
 [role="lead"]
 Sie können den Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in einem NetApp-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind, installieren.
 
+.Über diese Aufgabe
 Sie müssen die anfänglichen Vorbereitungsanforderungen, den Inhalt des Kits und die Sicherheitsvorkehrungen überprüft haben.
 
 https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/aci_9336cfx2_hig/guide/b_n9336cFX2_aci_hardware_installation_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 9000-Serie"^]
@@ -61,9 +62,9 @@ image::../media/cisco_9148_jumper_cords.gif[cisco 9148-Jumper-Kabel]
 +
 image::../media/3132q_front_bracket.gif[Vordere Halterung]
 
-.. Wiederholen Sie den Schritt ,2 a Mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Wiederholen Sie den Schritt <<SUBSTEP_9F2E2DDAEE084FE5853D1A6C6D945941,2 a>> Mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
 .. Setzen Sie die hintere Rack-Halterung am Switch-Gehäuse ein.
-.. Wiederholen Sie den Schritt ,2c Mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Wiederholen Sie den Schritt <<SUBSTEP_53A502380D6D4F058F62ED5ED5FC2000,2c>> Mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
 
 
 . Die Klemmmuttern für alle vier IEA-Stützen an den Stellen der quadratischen Bohrung anbringen.
@@ -84,8 +85,8 @@ image::../media/3132q_v_slider_rails.gif[3132q V Gleitschienen]
 ... Ziehen Sie die Schrauben der Gleitschienen an den Schrankleisten fest.
 
 
-.. Wiederholen Sie den Schritt ,4 a Für den hinteren Pfosten auf der rechten Seite.
-.. Wiederholen Sie die Schritte ,4 a Und ,4b An den RU41 Standorten auf dem Schrank.
+.. Wiederholen Sie den Schritt <<SUBSTEP_81651316D3F84964A76BC80A9DE48C0E,4 a>> Für den hinteren Pfosten auf der rechten Seite.
+.. Wiederholen Sie die Schritte <<SUBSTEP_81651316D3F84964A76BC80A9DE48C0E,4 a>> Und <<SUBSTEP_593967A423024594B9A41A04703DC458,4b>> An den RU41 Standorten auf dem Schrank.
 
 
 . Den Schalter in den Schrank einbauen.
@@ -112,7 +113,7 @@ image::../media/3132q_attaching.gif[3132q Befestigung]
 
 
 .. Wenn das Gehäuse nun ohne Unterstützung unterstützt wird, ziehen Sie die vorderen Schrauben fest an den Stützen.
-.. Wiederholen Sie die Schritte ,5a Bis ,5c Für den zweiten Schalter an der RU42-Position.
+.. Wiederholen Sie die Schritte <<SUBSTEP_4F538C8C55E34C5FB5D348391088A0FE,5a>> Bis <<SUBSTEP_EB8FE2FED2CA4120B709CC753C0F50FC,5c>> Für den zweiten Schalter an der RU42-Position.
 +
 
 NOTE: Durch die Verwendung des vollständig installierten Schalters als Unterstützung ist es nicht erforderlich, während des Installationsvorgangs die Vorderseite des zweiten Schalters zu halten.

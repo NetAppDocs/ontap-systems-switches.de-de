@@ -41,6 +41,7 @@ Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Enth�
 
 
 
+.Über diese Aufgabe
 In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
 
 * Die Namen der SN2100-Schalter lauten _sw1_ und _sw2_.

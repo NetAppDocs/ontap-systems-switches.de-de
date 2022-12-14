@@ -13,6 +13,7 @@ summary: Zum Einrichten des ONTAP Clusters benötigen Sie spezifische Switch- un
 [role="lead"]
 Zum Einrichten des ONTAP Clusters benötigen Sie spezifische Switch- und Controller-Dokumentation.
 
+.Erforderliche Dokumentation für Cluster-Netzwerk-Switches
 Zum Einrichten der Cisco Nexus 9336C-FX2- und 92300YC-Switches benötigen Sie die folgende Dokumentation auf der https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
 
 [cols="1,2"]
@@ -192,6 +193,7 @@ _Informationen zu Vorschriften, Compliance und Sicherheit für die Cisco Serie N
 Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen für Switches der Serie Nexus 5000.
 
 |===
+.Erforderliche Dokumentation für unterstützte ONTAP Systeme
 Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 Dokumentationszentrum"^].
 
 [cols="1,2"]
@@ -219,6 +221,7 @@ https://hwu.netapp.com["Hardware Universe"^]
 Liefert Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
 
 |===
+.Schienensatz und Rack-Dokumentation
 Informationen zur Installation eines Cisco Switch in einem NetApp Rack finden Sie in der folgenden Hardware-Dokumentation:
 
 [cols="1,2"]

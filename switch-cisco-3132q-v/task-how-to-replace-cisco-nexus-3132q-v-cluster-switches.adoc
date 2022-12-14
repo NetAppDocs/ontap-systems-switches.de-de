@@ -35,6 +35,7 @@ Der link:http://support.netapp.com/NOW/download/software/cm_switches/["Cisco Eth
 
 
 
+.Über diese Aufgabe
 Bei diesem Verfahren wird der zweite Nexus 3132Q-V Cluster Switch CL2 durch den neuen 3132Q-V Switch C2 ersetzt. Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * n1_clus1 ist die erste logische Clusterschnittstelle (LIF), die für Knoten n1 mit Cluster-Switch C1 verbunden ist.
@@ -48,7 +49,7 @@ Bei diesem Verfahren wird der zweite Nexus 3132Q-V Cluster Switch CL2 durch den 
 Dieses Verfahren umfasst das folgende Szenario:
 
 * Das Cluster beginnt mit vier Nodes, die mit zwei Nexus 3132Q-V Cluster Switches, CL1 und CL2 verbunden sind.
-* Cluster-Switch CL2 wird durch C2 ( ersetzt,Schritt 1 -,21)
+* Cluster-Switch CL2 wird durch C2 ( ersetzt<<step1_replace3132q,Schritt 1>> -<<step21_replace3132q,21>>)
 +
 ** Bei jedem Node werden mit CL2 verbundene Cluster-LIFs auf Cluster-Ports migriert, die mit CL1 verbunden sind.
 ** Trennen Sie die Verkabelung von allen Anschlüssen am CL2, und schließen Sie die Verkabelung wieder an die gleichen Ports am Switch C2 an.

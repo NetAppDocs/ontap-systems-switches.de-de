@@ -13,6 +13,7 @@ summary: Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch von B
 [role="lead"]
 Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch von Broadcom unterstützte BES-53248-Cluster-Switches zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
 
+.Was Sie benötigen
 Die Beispiele in diesem Verfahren verwenden zwei Nodes, die jeweils zwei 10-GbE-Cluster-Interconnect-Ports implementieren: `e0a` Und `e0b`.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
@@ -26,6 +27,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * Die LIF-Namen des Clusters sind `node1_clus1` Und `node1_clus2` Für Node1, und `node2_clus1` Und `node2_clus2` Für Knoten 2.
 
 
+.Über diese Aufgabe
 Dieses Verfahren umfasst das folgende Szenario:
 
 * Zu Beginn des Clusters sind zwei mit zwei CN1610 Cluster-Switches verbundene Nodes verbunden.
@@ -572,6 +574,7 @@ cluster::*> *system node autosupport invoke -node \* -type all -message MAINT=EN
 ----
 
 
+.Nachdem Sie fertig sind
 Siehe link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"] Und link:configure-log-collection.html["Konfigurieren Sie die Protokollerfassung für den Cluster-Switch"] Für die Schritte, die erforderlich sind, um die Protokollerfassung des Cluster-Zustandsschalters zu aktivieren, die zum Erfassen von Switch-bezogenen Protokolldateien verwendet wird.
 
 *Verwandte Informationen*

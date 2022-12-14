@@ -13,6 +13,7 @@ summary: 'Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch C
 [role="lead"]
 Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.
 
+.Bevor Sie beginnen
 Sie können Cumulus Linux unter Verwendung der Open Network Install Environment (ONIE) installieren, die die automatische Erkennung eines Network Installer-Images ermöglicht. Dies erleichtert das Systemmodell der Sicherung von Schaltern mit einem Betriebssystem, wie Cumulus Linux. Die einfachste Möglichkeit, Cumulus Linux mit ONIE zu installieren, ist mit lokaler HTTP-Erkennung.
 
 

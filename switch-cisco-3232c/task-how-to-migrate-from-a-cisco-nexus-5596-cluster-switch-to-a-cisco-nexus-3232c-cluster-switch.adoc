@@ -13,6 +13,7 @@ summary: Um vorhandene Cisco Nexus 5596-Cluster-Switches in einem Cluster durch 
 [role="lead"]
 Um vorhandene Cisco Nexus 5596-Cluster-Switches in einem Cluster durch Nexus 3232C-Cluster-Switches zu ersetzen, muss eine bestimmte Sequenz von Aufgaben durchgeführt werden.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren beschreiben, wie Cisco Nexus 5596 Switches durch Cisco Nexus 3232C-Switches ersetzt werden. Sie können diese Schritte (mit Änderungen) für andere ältere Cisco Switches (z. B. 3132Q-V) verwenden. Weiterhin verwendet das Verfahren die folgende Nomenklatur für Switches und Nodes:
 
 * Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.

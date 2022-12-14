@@ -63,7 +63,7 @@ Wenn Sie noch nicht über die erforderlichen Konfigurationsinformationen und Dok
 * Sie müssen auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zugreifen können, um die entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File) herunterzuladen.
 * Sie müssen über die erforderliche Dokumentation für den gemeinsamen Switch verfügen.
 +
-Siehe  documentation for shared switches Finden Sie weitere Informationen.
+Siehe <<Erforderliche Dokumentation für freigegebene Switches>> Finden Sie weitere Informationen.
 
 * Sie müssen über die erforderliche Controller-Dokumentation und die ONTAP-Dokumentation verfügen.
 +
@@ -76,6 +76,7 @@ Siehe https://docs.netapp.com/us-en/ontap/index.html["NetApp ONTAP-Dokumentation
 
 NOTE: Neben den Verkabelungsgrafiken enthält dieser Leitfaden Beispielarbeitsblätter mit empfohlenen Port-Zuweisungen und leeren Arbeitsblättern, mit denen Sie Ihr Netzwerk einrichten können. Weitere Informationen finden Sie im https://hwu.netapp.com["Hardware Universe"].
 
+.Über diese Aufgabe
 Alle gemeinsam genutzten Cisco Switches sind mit der standardmäßigen Standardkonfiguration von Cisco ausgestattet. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, aber nicht über die RCFs geladen.
 
 
@@ -87,11 +88,11 @@ IMPORTANT: Sie müssen die entsprechenden NetApp RCFs von herunterladen https://
 
 . Racks für Switches, Controller und NS224 NVMe Storage-Shelfs Siehehttps://docs.netapp.com/platstor/topic/com.netapp.doc.hw-sw-9336c-install-cabinet/GUID-92287262-E7A6-4A62-B159-7F148097B33B.html["Installation eines Cisco Nexus 9336C-FX2 Cluster Switches und Pass-Through-Panel in einem NetApp Rack"] Anweisungen zur Installation des Switches in einem NetApp Rack finden Sie hier.
 . Schalten Sie die Switches, Controller und NS224 NVMe Storage-Shelfs ein.
-. [[Schritt3]]] eine Erstkonfiguration der Switches anhand der in bereitgestellten Informationen durchführen  configuration information.
+. [[Schritt3]]] eine Erstkonfiguration der Switches anhand der in bereitgestellten Informationen durchführen <<Erforderliche Konfigurationsinformationen>>.
 . Überprüfen Sie die Konfigurationseinstellungen, die Sie am Ende der Einrichtung in der Anzeige vorgenommen haben, und stellen Sie sicher, dass Sie die Konfiguration speichern.
 . Prüfen Sie die Softwareversion auf den Switches und laden Sie ggf. die von NetApp unterstützte Version der Software auf die Switches herunter.
 +
-Wenn Sie die von NetApp unterstützte Version der Software herunterladen, müssen Sie auch die NetApp Network Switch Reference Configuration File herunterladen und mit der Konfiguration zusammenführen, die Sie in gespeichert haben ,Schritt 3. Sie können die Datei und die Anweisungen von herunterladen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Seite. Wenn Sie Ihre eigenen Schalter haben, lesen Sie die http://www.cisco.com["Cisco"] Standort.
+Wenn Sie die von NetApp unterstützte Version der Software herunterladen, müssen Sie auch die NetApp Network Switch Reference Configuration File herunterladen und mit der Konfiguration zusammenführen, die Sie in gespeichert haben <<step3,Schritt 3>>. Sie können die Datei und die Anweisungen von herunterladen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Seite. Wenn Sie Ihre eigenen Schalter haben, lesen Sie die http://www.cisco.com["Cisco"] Standort.
 
 
 

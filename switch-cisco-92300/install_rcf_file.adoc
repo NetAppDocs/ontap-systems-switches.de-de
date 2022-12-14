@@ -13,6 +13,7 @@ summary: Sie können den RCF installieren, nachdem Sie den Nexus 92300YC-Switch 
 [role="lead"]
 Sie können den RCF installieren, nachdem Sie den Nexus 92300YC-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die Namen der beiden Cisco Switches lauten `cs1` Und `cs2`.

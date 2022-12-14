@@ -25,6 +25,7 @@ Zwischen der Befehlssyntax für „RCF“ und „FASTPATH“-Versionen kann eine
 
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die beiden NetApp Switch-Namen sind cs1 und cs2.

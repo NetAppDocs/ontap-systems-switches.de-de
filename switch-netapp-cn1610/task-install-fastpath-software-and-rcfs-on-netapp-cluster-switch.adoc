@@ -28,6 +28,7 @@ Zwischen der Befehlssyntax für „RCF“ und „FASTPATH“-Versionen kann eine
 
 NOTE: In RCF Version 1.2 wurde die Unterstützung für Telnet explizit aufgrund von Sicherheitsbedenken deaktiviert. Um Verbindungsprobleme bei der Installation von RCF 1.2 zu vermeiden, müssen Sie sicherstellen, dass Secure Shell (SSH) aktiviert ist. Der https://library.netapp.com/ecm/ecm_get_file/ECMP1117874["Administratorleitfaden für den NetApp CN1610 Switch"^] Hat weitere Informationen über SSH.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Für die in diesem Dokument beschriebenen Verfahren wird die Syntax „Clustered Data ONTAP 8.2“ verwendet. Aus diesem Grund unterscheiden sich der Cluster-Vserver, LIF-Namen und die CLI-Ausgabe von denen in Data ONTAP 8.3.

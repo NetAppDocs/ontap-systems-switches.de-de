@@ -20,6 +20,7 @@ Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch fol
 
 IMPORTANT: Siehe link:install_cabling_config_considerations_sn2100.html["Überlegungen zur Verkabelung und Konfiguration"^] Bei Einschränkungen und weiteren Details.
 
+.Aktuelle RCF-Skriptversionen
 Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.
 
 * Clustering: *MSN2100-RCF-v1.8-Cluster*

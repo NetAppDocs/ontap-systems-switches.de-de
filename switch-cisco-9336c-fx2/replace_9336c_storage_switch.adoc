@@ -13,6 +13,7 @@ summary: 'Der Austausch eines defekten Nexus 9336C-FX2 Switches in einem Cluster
 [role="lead"]
 Beim Austausch von Cisco Nexus 9336C-FX2 Storage-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen kennen.
 
+.Bevor Sie beginnen
 Vor der Installation der NX-OS-Software und der RCF auf einem Cisco Nexus 9336C-FX2-Storage-Switch müssen folgende Bedingungen erfüllt sein:
 
 * Ihr System kann Cisco Nexus 9336C-FX2 Storage Switches unterstützen.
@@ -25,6 +26,7 @@ NOTE: Beachten Sie, dass es Abhängigkeiten zwischen der Befehlssyntax für in d
 * Sie müssen die entsprechenden RCFs heruntergeladen haben.
 
 
+.Über diese Aufgabe
 Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
 
 * Auf der Seite Cisco Ethernet Switches befinden sich die neuesten RCF- und NX-OS-Versionen auf Ihren Switches.

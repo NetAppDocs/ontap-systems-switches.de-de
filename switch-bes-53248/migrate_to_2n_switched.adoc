@@ -13,6 +13,7 @@ summary: Wenn Sie über ein 2-Node-Cluster ohne Switches verfügen, können Sie 
 [role="lead"]
 Wenn Sie über ein 2-Node-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei auf ein 2-Node-Cluster mit Switches migrieren, das von Broadcom unterstützte BES-53248 Cluster-Switches enthält. Der dokumentierte Prozess funktioniert bei allen Cluster-Node-Ports mit optischen oder Twinax-Ports, wird bei diesem Switch jedoch nicht unterstützt, wenn Knoten integrierte 10GBASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.
 
+.Über diese Aufgabe
 Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports.
 
 Vergewissern Sie sich, dass der BES-53248-Cluster-Switch wie unter beschrieben eingerichtet ist link:replace-requirements.html["Von Broadcom unterstützte BES-53248-Switches Einrichtung und Konfiguration"^] Bevor Sie mit diesem Migrationsprozess beginnen.

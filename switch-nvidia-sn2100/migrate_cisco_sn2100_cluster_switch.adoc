@@ -22,6 +22,7 @@ Folgende Cisco Cluster-Switches werden unterstützt:
 * Nexus 3132Q-V
 
 
+.Bevor Sie beginnen
 Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei zu NVIDIA SN2100 Cluster Switches migrieren.
 
 * Das vorhandene Cluster muss ordnungsgemäß eingerichtet und funktionsfähig sein.
@@ -44,6 +45,7 @@ NOTE: In diesem Verfahren werden Cisco Nexus 3232C-Cluster-Switches beispielswei
 
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die vorhandenen Cisco Nexus 3232C Cluster-Switches sind _c1_ und _c2_.

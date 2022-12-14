@@ -21,6 +21,7 @@ Wenn Sie FAS22xx-Systeme in einem bestehenden 2-Node-Cluster ohne Switches einse
 * Alle Cluster-Ports müssen sich im befinden `up` Bundesland.
 
 
+.Über diese Aufgabe
 Bei diesem Verfahren wird die direkte Cluster-Konnektivität in einer Umgebung ohne Switches unterbrechungsfrei beseitigt und jede Verbindung zum Switch durch eine Verbindung zum Partner-Node ersetzt.
 
 .Schritte

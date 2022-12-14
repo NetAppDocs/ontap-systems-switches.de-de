@@ -13,6 +13,7 @@ summary: Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unter
 [role="lead"]
 Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei auf Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migrieren.
 
+.Bevor Sie beginnen
 Vor dem Austausch eines älteren Cisco Nexus Cluster-Switches durch einen Cisco Nexus 9336C-FX2 Cluster-Switch müssen die folgenden Bedingungen gegeben sein:
 
 * Das Cluster muss voll funktionsfähig sein (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
@@ -27,6 +28,7 @@ Vor dem Austausch eines älteren Cisco Nexus Cluster-Switches durch einen Cisco 
 * Sie müssen die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco-Website für vollständige Dokumentation zum Upgrade und Downgrade von Cisco Switches unter abrufen https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.htmlCisco["Switches Der Nexus 9000 Serie"^].
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://hwu.netapp.com/["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 

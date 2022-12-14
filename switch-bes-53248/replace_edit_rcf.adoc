@@ -14,7 +14,7 @@ summary: Um neu lizenzierte Ports zu aktivieren, müssen Sie die neueste RCF-Ver
 Um neu lizenzierte Ports zu aktivieren, müssen Sie die neueste RCF-Version bearbeiten und die entsprechenden Portdetails auflösen. Die Standardlizenz aktiviert die Ports 0/1 bis 0/16 und 0/55 bis 0/56, während die neu lizenzierten Ports je nach Typ und Anzahl der verfügbaren Lizenzen zwischen den Ports 0/17 bis 0/54 liegen.
 
 
-NOTE: Wenn Sie versuchen, eine zuvor installierte RCF zu bearbeiten, kann dies fehlschlagen, da eine vorhandene Konfiguration für andere Bereiche der RCF vorhanden ist, siehe  a previously installed RCF file.
+NOTE: Wenn Sie versuchen, eine zuvor installierte RCF zu bearbeiten, kann dies fehlschlagen, da eine vorhandene Konfiguration für andere Bereiche der RCF vorhanden ist, siehe <<Eine zuvor installierte RCF-Datei bearbeiten>>.
 
 Details zu den verfügbaren Lizenztypen für den Einsatz mit dem BES-53248 Cluster-Switch finden Sie unter link:configure-licenses.html["Installieren von Lizenzen für BES-53248 Cluster-Switches"].
 

@@ -19,6 +19,7 @@ summary:
 
 Die Cisco NX-OS Software und die Referenzkonfigurationsdatei (RCF) müssen auf Cisco Nexus 9336C-FX2 Cluster-Switches installiert sein.
 
+.Bevor Sie beginnen
 Vor der Installation der NX-OS Software und der RCF auf dem Cluster-Switch müssen die folgenden Bedingungen erfüllt sein:
 
 * Das Cluster muss voll funktionsfähig sein (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
@@ -31,6 +32,7 @@ Vor der Installation der NX-OS Software und der RCF auf dem Cluster-Switch müss
 * Sie müssen über den aktuellen RCF verfügen.
 
 
+.Ersteinrichtung
 Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden je A400 Controller zwei 100-GbE-Cluster-Interconnect-Ports e3a und e3b. Siehe https://hwu.netapp.com["Hardware Universe"] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 
@@ -459,6 +461,7 @@ GEM  FPGA                        0x2
 
 Sie können das RCF installieren, nachdem Sie den Nexus 9336C-FX2 Cluster-Switch zum ersten Mal eingerichtet haben. Sie können diese Vorgehensweise auch zum Upgrade Ihrer RCF-Version auf Ihrem Cluster-Switch verwenden.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die Namen der beiden Cisco Switches lauten `cs1` Und `cs2`.
@@ -1022,6 +1025,7 @@ RPC status:
 
 Die Referenzkonfigurationsdateien (RCFs) können auf Cisco Nexus 9336C-FX2 Storage-Switches aktualisiert werden.
 
+.Bevor Sie beginnen
 Bevor Sie das RCF-Upgrade auf dem Storage-Switch durchführen, müssen die folgenden Bedingungen erfüllt sein:
 
 * Der Switch muss voll funktionsfähig sein (es dürfen keine Fehler in den Protokollen oder ähnlichen Problemen auftreten).

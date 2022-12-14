@@ -13,6 +13,7 @@ summary: Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch Cisco
 [role="lead"]
 Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch Cisco Nexus 3232C-Cluster-Switches zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die Knoten sind n1, n2, n3 und n4.
@@ -30,8 +31,8 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 In der folgenden Liste werden die Phasen beschrieben, die Sie beim Ändern der Cluster-Switches durchführen müssen:
 
-* ICH Ersetzen Sie den Cluster-Switch CL2 durch C2 (Schritte) ,1-,22)
-* II Ersetzen Sie den Cluster-Switch CL1 durch C1 (Schritte) ,23-,40)
+* ICH Ersetzen Sie den Cluster-Switch CL2 durch C2 (Schritte) <<one,1>>-<<twentytwo,22>>)
+* II Ersetzen Sie den Cluster-Switch CL1 durch C1 (Schritte) <<twentythree,23>>-<<forty,40>>)
 
 
 Die Beispiele in diesem Verfahren verwenden vier Nodes: Zwei Nodes verwenden vier 10-GbE-Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GbE Cluster Interconnect Glasfaserkabel: e4a und e4e. Der link:https://hwu.netapp.com/["_Hardware Universe_"^] Enthält Informationen zu den Glasfaserkabeln des Clusters auf den Plattformen.

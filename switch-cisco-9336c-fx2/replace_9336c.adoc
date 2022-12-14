@@ -13,6 +13,7 @@ summary: 'Der Austausch eines defekten Nexus 9336C-FX2 Switches in einem Cluster
 [role="lead"]
 Der Austausch eines defekten Nexus 9336C-FX2 Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren (NDU).
 
+.Bevor Sie beginnen
 Die folgenden Bedingungen müssen vorliegen, bevor der Switch in der aktuellen Umgebung und am Ersatzschalter ausgetauscht wird.
 
 * Vorhandene Cluster- und Netzwerkinfrastruktur:

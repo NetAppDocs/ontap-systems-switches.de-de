@@ -17,6 +17,7 @@ Mit diesem Verfahren können Sie die EFOS-Software auf dem BES-53248-Cluster-Swi
 
 == Über diese Aufgabe
 
+[]
 ====
 *Beachten Sie Folgendes:*
 

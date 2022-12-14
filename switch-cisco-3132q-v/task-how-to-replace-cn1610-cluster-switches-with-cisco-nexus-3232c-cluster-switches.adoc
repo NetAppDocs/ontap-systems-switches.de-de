@@ -13,6 +13,7 @@ summary: Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco
 [role="lead"]
 Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco Nexus 3132Q-V Cluster Switches zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden vier Nodes: Zwei Nodes verwenden vier 10-GbE-Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40/100 GbE Cluster Interconnect Glasfaserkabel: e4a und e4e. Der link:https://hwu.netapp.com/["Hardware Universe"^] Enthält Informationen zu den Glasfaserkabeln des Clusters auf den Plattformen.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
@@ -30,7 +31,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 Dieses Verfahren umfasst das folgende Szenario:
 
 * Zu Beginn des Clusters sind zwei mit zwei CN1610 Cluster-Switches verbundene Nodes verbunden.
-* Cluster-Switch CL2 wird durch C2 ( ersetzt,Schritt 2 - ,22)
+* Cluster-Switch CL2 wird durch C2 ( ersetzt<<step2_replacecn1610,Schritt 2>> - <<step22_replacecn1610,22>>)
 +
 ** Der Traffic auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Nodes wird zu den ersten Cluster-Ports migriert und mit CL1 verbundene LIFs.
 ** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und verwenden Sie anschließend die unterstützten Breakout-Kabel, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.
@@ -38,7 +39,7 @@ Dieses Verfahren umfasst das folgende Szenario:
 ** Der Datenverkehr auf allen Cluster-Ports und LIFs, die mit C2 verbunden sind, wird auf allen Nodes zurückgesetzt.
 
 
-* Cluster-Switch CL1 wird durch C1 ( ersetzt,Schritt 23 - ,43)
+* Cluster-Switch CL1 wird durch C1 ( ersetzt<<step23_replacecn1610,Schritt 23>> - <<step43_replacecn1610,43>>)
 +
 ** Der Datenverkehr aller Cluster-Ports und LIFs auf allen mit CL1 verbundenen Nodes wird zu den zweiten Cluster-Ports und LIFs migriert, die mit C2 verbunden sind.
 ** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Nodes, und verwenden Sie dann die unterstützten Breakout-Kabel, um die Ports wieder mit dem neuen Cluster-Switch C1 zu verbinden.

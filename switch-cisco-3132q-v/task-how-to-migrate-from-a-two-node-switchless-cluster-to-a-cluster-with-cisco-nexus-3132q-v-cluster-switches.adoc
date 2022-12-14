@@ -33,6 +33,7 @@ Die neuesten RCF- und NX-OS-Versionen auf Ihren Switches.
 
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Nexus 3132Q-V Cluster Switches, C1 und C2.
@@ -57,9 +58,9 @@ Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der C
 
 ====
 * Das Cluster beginnt mit zwei verbundenen Nodes und funktioniert in einer zwei-Node-Cluster-Einstellung ohne Switches.
-* Der erste Cluster Port ist auf C1 verschoben (,Schritt 1- ,20)
-* Der zweite Cluster-Port wurde auf C2 ( verschoben,Schritt 21- ,32).
-* Deaktivieren Sie die 2-Node-Cluster-Option (,Schritt 33- ,35)
+* Der erste Cluster Port ist auf C1 verschoben (<<step1_migrate_2node3132q,Schritt 1>>- <<step20_migrate_2node3132q,20>>)
+* Der zweite Cluster-Port wurde auf C2 ( verschoben<<step21_migrate_2node3132q,Schritt 21>>- <<step32_migrate_2node3132q,32>>).
+* Deaktivieren Sie die 2-Node-Cluster-Option (<<step33_migrate_2node3132q,Schritt 33>>- <<step35_migrate_2node3132q,35>>)
 
 
 .Schritte

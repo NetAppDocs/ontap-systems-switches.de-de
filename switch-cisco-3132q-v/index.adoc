@@ -20,6 +20,7 @@ Sie können die Cisco Nexus 3132Q-V Switches als Cluster Switches im AFF oder FA
 * Sie können NetApp CN1610 Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen.
 
 
+.Verfügbare Dokumentation
 In der folgenden Tabelle ist die Dokumentation für die Cisco Nexus-Switches 3132Q-V aufgeführt.
 
 |===

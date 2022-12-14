@@ -97,6 +97,7 @@ Wenn Sie die von NetApp unterstützte Version der Software herunterladen, müsse
 
 
 
+.Verwandte Informationen
 xref:setup-required-information.adoc[Erforderliche Informationen zur Cluster-Konfiguration]
 
 xref:setup-required-documentation.adoc[Erforderliche Dokumentation]

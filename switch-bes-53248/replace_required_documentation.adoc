@@ -13,6 +13,7 @@ summary: Zum Einrichten der Cluster-Mode-Konfiguration benötigen Sie spezifisch
 [role="lead"]
 Zum Einrichten der Cluster-Mode-Konfiguration benötigen Sie spezifische Switch- und Controller-Dokumentation.
 
+.Erforderliche Dokumentation für BES-53248 Cluster Switches
 Zum Einrichten des BES-53248-Cluster-Switches benötigen Sie die folgenden Dokumente, die über die Broadcom Support Site verfügbar sind: https://www.broadcom.com/support/bes-switch["Produkte Der Broadcom Ethernet-Switches-Reihe"^]
 
 [cols="1,2"]
@@ -68,6 +69,7 @@ _EFOS Release Notes Version 3.4.3_
 Enthält Release-spezifische Informationen zur BES-53248-Software.
 
 |===
+.Erforderliche Dokumentation für unterstützte ONTAP Systeme
 Um ein ONTAP System einzurichten, benötigen Sie die folgenden Dokumente über die NetApp Support Site unter http://mysupport.netapp.com/["mysupport.netapp.com"^]
 
 [cols="1,2"]

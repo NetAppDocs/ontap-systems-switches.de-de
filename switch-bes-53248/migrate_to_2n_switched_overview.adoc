@@ -13,6 +13,7 @@ summary: Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches 
 [role="lead"]
 Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit den von Broadcom unterstützten BES-53248 Cluster-Switches zu einer Switch-basierten 2-Node-Umgebung migrieren. So können Sie eine Skalierung auf mehr als zwei Nodes im Cluster vornehmen.
 
+.Was Sie benötigen
 Konfiguration mit zwei Nodes ohne Switches:
 
 * Die Konfiguration mit zwei Nodes ohne Switches muss ordnungsgemäß eingerichtet und funktionsfähig sein.
@@ -43,6 +44,7 @@ Auf den neuen Switches müssen alle Site-Anpassungen wie SMTP, SNMP und SSH konf
 
 
 
+.Über diese Aufgabe
 In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
 
 * Die Namen der BES-53248-Switches lauten `cs1` Und `cs2`.
@@ -507,6 +509,7 @@ cluster1::*> system node autosupport invoke -node \* -type all -message MAINT=EN
 ----
 
 
+.Nachdem Sie fertig sind
 Siehe link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"] Und link:configure-log-collection.html["Konfigurieren Sie die Protokollerfassung für den Cluster-Switch"] Für die Schritte, die erforderlich sind, um die Protokollerfassung des Cluster-Zustandsschalters zu aktivieren, die zum Erfassen von Switch-bezogenen Protokolldateien verwendet wird.
 
 *Verwandte Informationen*

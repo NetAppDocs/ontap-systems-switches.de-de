@@ -21,6 +21,7 @@ Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Clu
 * Sie können den Cisco Nexus 3232C Switch (X190100) NetApp Systemschrank mit angepassten Halterungen installieren, die mit dem Switch geliefert werden. Alternativ können Sie ihn in einem Rack mit den Standardhalterungen installieren, die auch im Lieferumfang des Switches enthalten sind.
 
 
+.Verfügbare Dokumentation
 In der folgenden Tabelle ist die Dokumentation aufgeführt, die für die Cisco Nexus 3232C-Switches verfügbar ist.
 
 |===

@@ -13,6 +13,7 @@ summary: 'Das Upgrade von BES-53248-Cluster-Switches beginnt mit der Vorbereitun
 [role="lead"]
 Das Upgrade von BES-53248-Cluster-Switches beginnt mit der Vorbereitung des Controllers auf das Upgrade, der Installation der EFOS-Software, der Lizenzen und der Referenzkonfigurationsdatei (RCF). Nach der Installation können Sie die Controller-Konfiguration in einer Umgebung mit unterbrechungsfreien Upgrades (Nondisruptive Upgrade, NDU) und unterbrechungsfreiem Betrieb (Nondisruptive Operations, NDO) wiederherstellen.
 
+.Bevor Sie beginnen
 Vor der Installation der EFOS-Software, der Lizenzen und der RCF-Datei auf einem vorhandenen NetApp BES-53248-Cluster-Switch müssen die folgenden Bedingungen erfüllt sein:
 
 * Das Cluster muss ein voll funktionsfähiges Cluster sein (keine Fehlermeldungen oder andere Probleme).
@@ -24,6 +25,7 @@ Vor der Installation der EFOS-Software, der Lizenzen und der RCF-Datei auf einem
 * Zwischen der Befehlssyntax in der RCF- und EFOS-Version kann es zu Befehlsabhängigkeiten kommen.
 
 
+.Über diese Aufgabe
 Die Switch-Kompatibilitätstabelle für NetApp BES-53248 Switches enthält die unterstützten EFOS-, RCF- und ONTAP-Versionen unter: http://mysupport.netapp.com/site["NetApp BES-53248 Switches"^].
 
 Dieses Verfahren gilt für ein funktionierendes Cluster und ermöglicht unterbrechungsfreie Upgrades. Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:

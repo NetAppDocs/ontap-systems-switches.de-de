@@ -13,6 +13,7 @@ summary: Ein defekter Cisco Nexus 3232C Switch kann in einem Cluster unterbrechu
 [role="lead"]
 Ein defekter Cisco Nexus 3232C Switch kann in einem Cluster unterbrechungsfrei durch Ausführen einer bestimmten Aufgabenfolge ausgetauscht werden.
 
+.Bevor Sie beginnen
 Die vorhandene Cluster- und Netzwerkkonfiguration muss folgende Merkmale aufweisen:
 
 * Die Nexus 3232C-Cluster-Infrastruktur muss auf beiden Switches redundant und voll funktionsfähig sein.
@@ -32,12 +33,13 @@ Der Cisco Nexus 3232C Switch muss folgende Merkmale aufweisen:
 * Die anfängliche Anpassung des Schalters muss abgeschlossen sein.
 
 
+.Über diese Aufgabe
 *Verfahrensübersicht*
 
-* *Anzeige und Migration der Cluster-Ports auf Switch C2 (Schritte ,1-,7)*
-* *ISL-Kabel vom Switch CL2 wieder an Switch C2 anschließen und ISLs auf Switch CL1 und C2 migrieren (Schritte ,8-,14)*
-* *Zurücksetzen aller LIFs auf die ursprünglich zugewiesenen Ports (Schritte ,15-,18)*
-* *Überprüfung, ob alle Ports und LIF korrekt migriert wurden (Schritte ,19-,21)*
+* *Anzeige und Migration der Cluster-Ports auf Switch C2 (Schritte <<one,1>>-<<seven,7)>>*
+* *ISL-Kabel vom Switch CL2 wieder an Switch C2 anschließen und ISLs auf Switch CL1 und C2 migrieren (Schritte <<eight,8>>-<<fourteen,14)>>*
+* *Zurücksetzen aller LIFs auf die ursprünglich zugewiesenen Ports (Schritte <<fifteen,15>>-<<eighteen,18)>>*
+* *Überprüfung, ob alle Ports und LIF korrekt migriert wurden (Schritte <<nineteen,19>>-<<twentyone,21>>)*
 
 
 Bei diesem Verfahren wird der zweite Nexus 3232C-Cluster-Switch CL2 durch den neuen 3232C-Switch C2 ersetzt. Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:

@@ -22,6 +22,7 @@ Sie müssen bestimmte Konfigurationsinformationen, Portverbindungen und Verkabel
 * Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
 
 
+.Bevor Sie beginnen
 Sie können ältere Cisco Storage Switches für ein ONTAP Cluster unterbrechungsfrei auf NVIDIA SN2100 Storage Switches migrieren.
 
 * Das vorhandene Cluster muss ordnungsgemäß eingerichtet und funktionsfähig sein.
@@ -44,6 +45,7 @@ NOTE: In diesem Verfahren werden Cisco Nexus 9336C-FX2 Storage-Switches zum Beis
 
 
 
+.Über diese Aufgabe
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
 * Die vorhandenen Cisco Nexus 9336C-FX2 Storage Switches sind _S1_ und _S2_.

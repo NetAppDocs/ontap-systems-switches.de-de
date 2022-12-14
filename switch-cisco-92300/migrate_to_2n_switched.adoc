@@ -13,6 +13,7 @@ summary: Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches
 [role="lead"]
 Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit Cisco Nexus 92300YC Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie auf mehr als zwei Nodes im Cluster skalieren.
 
+.Bevor Sie beginnen
 Konfiguration mit zwei Nodes ohne Switches:
 
 * Die Konfiguration mit zwei Nodes ohne Switches muss ordnungsgemäß eingerichtet und funktionsfähig sein.
@@ -38,6 +39,7 @@ Der https://hwu.netapp.com/SWITCH/INDEX["_Hardware Universe - Schalter_"^] Enth�
 
 
 
+.Über diese Aufgabe
 In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
 
 * Die Namen der 92300YC-Switches lauten cs1 und cs2.

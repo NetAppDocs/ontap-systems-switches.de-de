@@ -13,6 +13,7 @@ summary: Diese Version bietet Unterstützung für SNMPv3 zur Protokollüberwachu
 [role="lead"]
 Diese Version umfasst Unterstützung für SNMPv3 für die Erfassung von Switch-Protokollen für Switch Health Monitoring (SHM).
 
+.Über diese Aufgabe
 Mit den folgenden Befehlen wird ein SNMPv3-Benutzername auf NVIDIA SN2100-Switches konfiguriert:
 
 * Für *keine Authentifizierung*:
