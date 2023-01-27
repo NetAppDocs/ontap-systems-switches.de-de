@@ -1,0 +1,68 @@
+---
+permalink: switch-cisco-92300/components-92300.html 
+sidebar: sidebar 
+keywords: cisco nexus 92300YC 
+summary: Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden. 
+---
+= Komponenten für Cisco Nexus 92300YC Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prüfen Sie bei der Installation und Wartung von Cisco Nexus 92300YC-Switches alle Switch-Komponenten und Teilenummern.
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung für den 92300YC-Switch, die Lüfter und die Netzteile aufgeführt:
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+190003
+ a| 
+Cisco 92300YC, CLSW, 48 Pt10/25 GB, 18 Pt100G, PTSX (PTSX = Port Side Exhaust)
+
+
+
+ a| 
+190003R
+ a| 
+Cisco 92300YC, CLSW, 48Pt10/25 GB, 18Pt100G, PSIN (PSIN = Port Side Intake)
+
+
+
+ a| 
+X-NXA-LÜFTER-35CFM-B
+ a| 
+Lüfter, Luftstrom für den seitlichen Cisco N9K-Anschluss
+
+
+
+ a| 
+X-NXA-LÜFTER-35CFM-F
+ a| 
+Lüfter, seitlicher Luftstrom des Cisco N9K-Ports
+
+
+
+ a| 
+X-NXA-PAC-650W-B
+ a| 
+Netzteil, Cisco 650W - Anschlusseingang
+
+
+
+ a| 
+X-NXA-PAC-650W-F
+ a| 
+Netzteil, Cisco 650W - Anschlussseite Auspuff
+
+|===
+Details zum Luftstrom des Cisco Nexus 92300YC-Switches:
+
+* Port-Side Abluftstrom (Standardluft) -- Kühle Luft dringt durch die Lüfter- und Stromversorgungsmodule im Kaltgang in das Gehäuse ein und auspufft durch das Anschlussende des Gehäuses im heißen Gang. Port-Side Abluftstrom mit blauer Färbung.
+* Port-Side Ansaugluftstrom (Rückwärtsluft) -- Kühle Luft dringt durch das Anschlussende im kalten Gang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang. Port-Side-Luftstrom mit Burgunder Färbung.
+

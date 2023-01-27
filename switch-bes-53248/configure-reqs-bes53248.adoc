@@ -1,0 +1,78 @@
+---
+permalink: switch-bes-53248/configure-reqs-bes53248.html 
+sidebar: sidebar 
+keywords: bes, cluster, switch, port, assignment, table, configure, bes-53428 cluster switch port assignments - bes-53428 switches 
+summary: Für die Konfiguration des Clusters können Sie die Portzuweisung für BES-53248 Cluster-Switches als Anleitung verwenden. 
+---
+= Konfigurationsanforderungen für BES-53248 Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prüfen Sie für die Installation und Wartung von BES-53248 Switches die Support- und Konfigurationsanforderungen für das Betriebssystem.
+
+
+
+== Unterstützung von Betriebssystemen (OS)
+
+Der BES-53248-Switch unterstützt Folgendes:
+
+* * EFOS Firmware 3.4.4.6 und höher*. Der BES-53248-Switch wird auf einem in Broadcom eingebetteten Betriebssystem ausgeführt, das als Ethernet Fabric OS (EFOS) bekannt ist. Die Unterstützung für 40/100-GbE-Cluster-Ports beginnt mit der EFOS-Firmware-Version 3.4.4.6 und höher.
+* *ONTAP 9.5P8 und höher*. Die von Broadcom unterstützten BES-53248-Cluster-Switches sind für den Einsatz in Clustern mit einer Größe von zwei bis 24 Nodes in ONTAP 9.5P8 und höher konzipiert.
+
+
+
+
+== Konfigurationsanforderungen
+
+Zum Konfigurieren eines Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für die Cluster-Switches. Je nach Art des zu Beginn konfiguriert-Cluster-Switch müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen.
+
+
+
+=== Zuweisung von Cluster-Switch-Ports
+
+Sie können die von Broadcom unterstützte Tabelle zur Konfiguration des Clusters für die Zuweisung von BES-53248-Cluster-Switches als Leitfaden verwenden.
+
+[cols="1,2"]
+|===
+| Switch-Ports | Anzahl der Ports 
+
+
+ a| 
+01-16
+ a| 
+10/25-GbE-Cluster-Port-Nodes, Basiskonfiguration
+
+
+
+ a| 
+17-48
+ a| 
+10/25-GbE-Cluster-Port-Nodes, mit Lizenzen
+
+
+
+ a| 
+49-54
+ a| 
+100-GbE-Cluster-Port-Nodes mit Lizenzen, die links hinzugefügt wurden
+
+
+
+ a| 
+55-56
+ a| 
+Ports mit 100 GbE Cluster Inter-Switch Link (ISL), Basiskonfiguration
+
+|===
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+
+
+
+=== Einschränkung bei der Geschwindigkeit der Port-Gruppe
+
+Bei BES-53248 Cluster Switches werden die 48 10/25-GbE-Ports (SFP28/SFP+) wie folgt in 12 x 4-Port-Gruppen kombiniert: 1–4 Ports, 5–8, 9–12, 13–16, 17–20, 21–24, 25–28, 29–32, 33–36, 37–40, 41-44 und 45-48.
+
+Die Port-Geschwindigkeit von SFP28/SFP+ muss für alle Ports der 4-Port-Gruppe gleich (10 GbE oder 25 GbE) sein.

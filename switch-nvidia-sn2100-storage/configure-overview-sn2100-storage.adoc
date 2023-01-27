@@ -1,0 +1,43 @@
+---
+permalink: switch-nvidia-sn2100/configure-overview-sn2100-storage.html 
+sidebar: sidebar 
+keywords: sn2100 SN2100 switches setup, sn2100 SN2100 switches install, cumulus linux 
+summary: Überprüfen Sie vor der Konfiguration von NVIDIA SN2100-Switches die Verfahrensübersicht. 
+---
+= Überblick über den Konfigurationsprozess für NVIDIA SN2100 Storage Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die NVIDIA SN2100 ist ein Storage Switch, über den Sie Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN) weiterleiten können.
+
+
+
+== Überblick über die Erstkonfiguration
+
+Gehen Sie wie folgt vor, um einen NVIDIA SN2100-Switch auf Systemen mit ONTAP zu konfigurieren:
+
+. link:install-hardware-sn2100-storage.html["Installieren Sie die Hardware für den NVIDIA SN2100 Switch"]. Anweisungen hierzu finden Sie im _NVIDIA Switch Installation Guide_.
+. link:configure-sn2100-storage.html["Konfigurieren Sie den Switch"]. Anweisungen finden Sie in der NVIDIA-Dokumentation.
+. link:cabling-considerations-sn2100-storage.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]. Prüfen Sie die Anforderungen für optische Verbindungen, den QSA-Adapter und die Switch-Port-Geschwindigkeit.
+. link:install-cable-shelves-sn2100-storage.html["Verkabelung der NS224 Shelfs als Switch-Attached Storage"]. Befolgen Sie diese Anweisungen, wenn Sie über ein System verfügen, in dem die NS224-Laufwerk-Shelfs als Switch-Attached Storage (nicht als Direct-Attached Storage) verkabelt werden müssen.
+. link:install-cumulus-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im Cumulus-Modus"] Oder link:install-onie-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im ONIE-Modus"]. Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.
+. link:install-rcf-sn2100-storage.html["Installieren Sie das Skript für die Referenzkonfigurationsdatei"]. Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.
+. link:install-snmpv3-sn2100-storage.html["Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung"]. Diese Version umfasst Unterstützung für SNMPv3 für die Erfassung von Switch-Protokollen und für Switch Health Monitoring (SHM).
+
+
+
+NOTE: Die Verfahren verwenden Network Command Line Utility (NCLU), eine Befehlszeilenoberfläche, die sicherstellt, dass Cumulus Linux für alle zugänglich ist. Der NET-Befehl ist das Wrapper-Dienstprogramm, mit dem Sie Aktionen von einem Terminal aus ausführen.
+
+
+
+== Weitere Informationen
+
+Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
+
+* link:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"]
+* link:components-sn2100-storage.html["Komponenten und Teilenummern"]
+* link:required-documentation-sn2100-storage.html["Erforderliche Dokumentation"]
+

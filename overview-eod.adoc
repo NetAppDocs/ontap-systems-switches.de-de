@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: overview-eod.html 
+keywords: switches, fas, aff systems, end of availability, EOD 
+summary: EOD-Switches für FAS- und AFF-Systeme. 
+---
+= End-of-Verfügbarkeit
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die folgenden Switches sind nicht mehr zum Kauf erhältlich, werden aber weiterhin unterstützt.
+
+* link:./switch-cisco-3232c/install-overview-cisco-3232c.html["Cisco Nexus 3232C"]
+* link:./switch-cisco-3132q-v/install-overview-cisco-3132qv.html["Cisco Nexus 3132Q-V"]
+* link:./switch-cisco-92300/install-overview-cisco-92300.html["Cisco Nexus 92300YC"]
+* link:./switch-netapp-cn1610/install-overview-cn1610.html["NetApp CN1610"]
+

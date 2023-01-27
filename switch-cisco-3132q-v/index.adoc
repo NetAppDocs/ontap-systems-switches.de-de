@@ -4,76 +4,190 @@ sidebar: sidebar
 keywords: Cisco, 3132Q-V 
 summary: Migration zu einem Switch-Cluster mit zwei Nodes 
 ---
-= Cisco Nexus 3132Q-V Switches
+= Überblick und Anforderungen: Cisco Nexus 3132Q-V Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können die Cisco Nexus 3132Q-V Switches als Cluster Switches im AFF oder FAS Cluster verwenden.
-
-* Sie können NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Cisco Nexus 3132Q-V Cluster Switch installieren.
-* Sie können mit den Cisco Nexus 3132Q-V Cluster Switches von einer 2-Node-Umgebung ohne Switches auf eine Switch-Umgebung mit zwei Nodes migrieren.
-* Sie können einen defekten Cisco Nexus 3132Q-V Switch in einem Cluster ersetzen und das Switch-Betriebssystem und die Referenzkonfigurationsdatei herunterladen.
-* Sie können Cisco Nexus 5596, Nexus 5020 oder Nexus 5010 Cluster Switches durch Cisco Nexus 3132Q-V Switches ersetzen.
-* Sie können NetApp CN1610 Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen.
+Bei der Installation und Wartung von Cisco Nexus-Switches 3132Q-V sollten Sie alle Anforderungen und die empfohlene Dokumentation prüfen.
 
 
-.Verfügbare Dokumentation
-In der folgenden Tabelle ist die Dokumentation für die Cisco Nexus-Switches 3132Q-V aufgeführt.
+
+== Aufgabenübersicht
+
+Sie können die Cisco Nexus 3132Q-V Switches als Cluster Switches im AFF oder FAS Cluster verwenden. Zu den Installations- und Wartungsaufgaben zählen:
+
+* Installieren von NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Cisco Nexus 3132Q-V Cluster Switch
+* Migration von einer 2-Node-Umgebung ohne Switches zu einer Umgebung mit zwei Nodes und Switches mit Cisco Nexus 3132Q-V Cluster Switches
+* Ersetzen eines fehlerhaften Cisco Nexus 3132Q-V Switches in einem Cluster und Herunterladen des Switch-Betriebssystems und der Referenzkonfigurationsdatei.
+* Austausch der Cisco Nexus 5596, Nexus 5020 oder Nexus 5010 Cluster Switches durch Cisco Nexus 3132Q-V Switches.
+* Austausch der NetApp CN1610 Switches durch Cisco Nexus 3132Q-V Cluster Switches.
+
+
+
+
+== Konfigurationsanforderungen
+
+Zum Konfigurieren des Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für Ihre Switches. Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
+
+
+
+== Netzwerkanforderungen
+
+Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfigurationen:
+
+* IP-Subnetz für den Management-Netzwerkdatenverkehr.
+* Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches.
+* Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700 Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
+
+
+Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+
+
+
+== Anforderungen für Smart Call Home
+
+Smart Call Home überwacht die Hardware- und Softwarekomponenten in Ihrem Netzwerk, um eine E-Mail-basierte Benachrichtigung über wichtige Systembedingungen zu generieren. Wenn ein Ereignis auf Ihrem Gerät auftritt, wird Smart Call Home an alle Empfänger, die im Zielprofil konfiguriert sind, eine Warnmeldung ausgegeben.
+
+Sie müssen einen Cluster-Netzwerk-Switch konfigurieren, um per E-Mail mit dem Smart Call Home-System kommunizieren zu können. Sie können optional Ihren Cluster-Netzwerk-Switch einrichten, um die integrierte Smart Call Home-Support-Funktion von Cisco zu nutzen.
+
+Bevor Sie die Smart Call Home-Funktion verwenden können, beachten Sie die folgenden Punkte:
+
+* Es muss ein E-Mail-Server vorhanden sein.
+* Der Switch muss über eine IP-Verbindung zum E-Mail-Server verfügen.
+* Der Name des Kontakts (SNMP-Serverkontakt), die Telefonnummer und die Adresse der Straße müssen konfiguriert werden. Dies ist erforderlich, um den Ursprung der empfangenen Nachrichten zu bestimmen.
+* Eine CCO-ID muss mit einem entsprechenden Cisco SMARTnet-Servicevertrag für Ihr Unternehmen verknüpft sein.
+* Cisco SMARTnet Service muss vorhanden sein, damit das Gerät registriert werden kann.
+
+
+Der http://www.cisco.com/c/en/us/products/switches/index.html["Cisco Support-Website"^] Enthält Informationen zu den Befehlen zum Konfigurieren von Smart Call Home.
+
+
+
+== Dokumentationsanforderungen
+
+Zum Einrichten der 3132Q-V Switches und des ONTAP Clusters benötigen Sie spezifische Switch- und Controller-Dokumentation.
+
+
+
+=== Switch-Dokumentation
+
+Zum Einrichten der Cisco Nexus 3132Q-V Switches benötigen Sie die folgende Dokumentation von https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/series.html["Switches Der Cisco Nexus 3000-Serie Unterstützen"^] Seite.
+
+[cols="1,2"]
+|===
+| Dokumenttitel | Beschreibung 
+
+
+ a| 
+Hardware-Installationshandbuch Der Serie _Nexus 3000_
+ a| 
+Detaillierte Informationen zu Standortanforderungen, Hardwaredetails zu Switches und Installationsoptionen.
+
+
+
+ a| 
+_Cisco Nexus 3000 Series Switch Software Configuration Guides_ (wählen Sie das Handbuch für die auf Ihren Switches installierte NX-OS-Version)
+ a| 
+Stellt Informationen zur Erstkonfiguration des Switches bereit, die Sie benötigen, bevor Sie den Switch für den ONTAP-Betrieb konfigurieren können.
+
+
+
+ a| 
+_Cisco Nexus 3000 Series NX-OS Software Upgrade and Downgrade Guide_ (wählen Sie das Handbuch für die auf Ihren Switches installierte NX-OS-Version)
+ a| 
+Enthält Informationen zum Downgrade des Switch auf ONTAP unterstützte Switch-Software, falls erforderlich.
+
+
+
+ a| 
+_Cisco Nexus 3000 Series NX-OS Command Reference Master Index_
+ a| 
+Enthält Links zu den verschiedenen von Cisco bereitgestellten Befehlsreferenzen.
+
+
+
+ a| 
+_Cisco Nexus 3000 MIBs Referenz_
+ a| 
+Beschreibt die MIB-Dateien (Management Information Base) für die Nexus 3000-Switches.
+
+
+
+ a| 
+_Nexus 3000 Series NX-OS System Message Reference_
+ a| 
+Beschreibt die Systemmeldungen für Switches der Cisco Nexus 3000 Serie, Informationen und andere, die bei der Diagnose von Problemen mit Links, interner Hardware oder der Systemsoftware helfen können.
+
+
+
+ a| 
+_Versionshinweise zur Cisco Nexus 3000-Serie NX-OS (wählen Sie die Hinweise für die auf Ihren Switches installierte NX-OS-Version aus)_
+ a| 
+Beschreibt die Funktionen, Bugs und Einschränkungen der Cisco Nexus 3000 Serie.
+
+
+
+ a| 
+Gesetzliche Vorschriften, Compliance und Sicherheitsinformationen für die Cisco Nexus 6000, Cisco Nexus 5000 Serie, Cisco Nexus 3000 Serie und Cisco Nexus 2000 Serie
+ a| 
+Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen für Switches der Serie Nexus 3000.
 
 |===
 
 
-| Titel | Beschreibung 
+=== Dokumentation der ONTAP Systeme
+
+Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 Dokumentationszentrum"^].
+
+[cols="1,2"]
+|===
+| Name | Beschreibung 
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html["_Cisco Nexus 3132Q-V Cluster-Switch und Pass-Through-Panel in einem NetApp Rack installieren_"^]
+Controller-spezifisch _Installations- und Setup-Anleitung_
  a| 
-Beschreibt die Installation der Durchlaufabdeckung in den Systemschränken, in denen sich die Stromanschlüsse an der Vorderseite des Gehäuses befinden und die Stromverteiler auf der Rückseite des Gehäuses befinden.
-
-
-
- a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/setup-switches.html["_Cisco Nexus 3132Q-V Cluster Switches einrichten_"^]
- a| 
-Beschreibt die Einrichtung und Konfiguration Ihrer Cisco Nexus 3132Q-V Cluster Switches.
-
-
-
- a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/task-install-nx-os-software-and-rcfs-on-cisco-nexus-3132q-v-cluster-switches.html["_NX-OS and Reference Configuration Files (RCfs)_ installieren"^]
- a| 
-Beschreibt die Installation von NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Nexus 3132Q-V Cluster Switch.
+Beschreibt die Installation von NetApp Hardware.
 
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html["_Cisco Nexus 5596 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen_"^]
+ONTAP-Dokumentation
  a| 
-Beschreibt die Migration von Umgebungen, in denen ältere Cisco Switches verwendet werden, in Umgebungen, in denen Cisco 31Q-V-Switches verwendet werden.
-
-
-
- a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html["_CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches ersetzen_"^]
- a| 
-Beschreibt das Verfahren zum Austausch eines CN1610-Switch durch einen Cisco Nexus 3132Q-V Cluster-Switch.
+Dieser Service bietet detaillierte Informationen zu allen Aspekten der ONTAP Versionen.
 
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html["_Migration von einem Cluster ohne Switch mit zwei Nodes_"^]
+https://hwu.netapp.com["Hardware Universe"^]
  a| 
-In wird die Migration von einer 2-Node-Umgebung mit einem Switch und zwei Nodes mit Switch und Cisco Nexus 3132Q-V Cluster Switches beschrieben.
+Liefert Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
+
+|===
+
+
+=== Schienensatz und Rack-Dokumentation
+
+Informationen zur Installation eines 33132Q-V Cisco Switch in einem NetApp Rack finden Sie in der folgenden Hardware-Dokumentation.
+
+[cols="1,2"]
+|===
+| Name | Beschreibung 
+
+
+ a| 
+https://library.netapp.com/ecm/ecm_download_file/ECMM1280394["42-HE-System-Cabinet, Deep Guide"^]
+ a| 
+Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anweisungen für Wartung und FRU-Austausch.
 
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-3132q-v/concept-replace-cisco-nexus-3132q-v-cluster-switches.html["_Ersetzen Sie einen Cisco Nexus 3132Q-V Cluster Switch_"^]
+link:task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html["Installation des Cisco Nexus 3132Q-V Switch in einem NetApp Rack"^]
  a| 
-Beschreibt das Verfahren zum Austausch eines fehlerhaften Cisco Nexus 3132Q-V Switches in einem Cluster und Herunterladen des Switch-Betriebssystems und der Referenzkonfigurationsdatei.
+Beschreibt die Installation eines Cisco Nexus 3132Q-V Switches in einem NetApp Rack mit vier Pfosten.
 
 |===

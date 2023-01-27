@@ -1,0 +1,58 @@
+---
+permalink: get-started/learn-switch-concept.html 
+sidebar: sidebar 
+keywords:  
+summary: Informieren Sie sich über Cluster-, Storage- und Shared-Switches. 
+---
+= Erfahren Sie mehr über Cluster, Storage und Shared Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp bietet Cluster-, Storage- und Shared-Switches, die interne Kommunikation mit der Möglichkeit bieten, Daten und Netzwerkschnittstellen innerhalb des Clusters unterbrechungsfrei zu verschieben.
+
+Die „Front-End“-Switches sorgen für Konnektivität mit Host Storage, während die „Back-End“-Cluster-Switches Verbindungen zwischen zwei oder mehr NetApp Controllern ermöglichen.
+
+
+
+== Cluster-Switches
+
+Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen. Von NetApp unterstützte Cluster-Switches:
+
+* Broadcom BES-53248
+* Cisco Nexus 9336C-FX2
+* NVIDIA SN2100
+
+
+
+
+== Storage Switches
+
+Storage-Switches ermöglichen das Routen von Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN). Von NetApp unterstützte Cluster-Switches:
+
+* Cisco Nexus 9336C-FX2
+* NVIDIA SN2100
+
+
+
+
+== Shared-Switches
+
+Mit Shared Switches können Sie Cluster- und Storage-Funktionen zu einer Shared-Switch-Konfiguration kombinieren, indem Sie gemeinsam genutzte Cluster- und Storage-RCFs unterstützen. Der von NetApp unterstützte Shared-Switch ist:
+
+* Cisco Nexus 9336C-FX2
+
+
+
+
+== End-of-Verfügbarkeit
+
+Folgende Storage Switches sind nicht mehr erhältlich. Sie werden jedoch weiterhin unterstützt:
+
+* Cisco Nexus 3232C
+* Cisco Nexus 3132Q-V
+* Cisco Nexus 92300YC
+* NetApp CN1610
+

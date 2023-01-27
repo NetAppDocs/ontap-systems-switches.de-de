@@ -1,0 +1,41 @@
+---
+permalink: switch-bes-53248/configure-new-switch-overview.html 
+sidebar: sidebar 
+keywords: BES-53248 switches, initial installation, configure new bes-53248 switch 
+summary: Lesen Sie vor der Konfiguration von BES-53248-Cluster-Switches die Konfigurationsübersicht. 
+---
+= Überblick über die Installation und Konfiguration von BES-53248-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der BES-53248 ist ein Bare Metal-Switch für den Einsatz in ONTAP Clustern mit zwei bis 24 Nodes.
+
+
+
+== Überblick über die Erstkonfiguration
+
+Gehen Sie wie folgt vor, um einen BES-53248-Cluster-Switch auf Systemen mit ONTAP zu konfigurieren:
+
+. link:install-hardware-bes53248.html["Installieren Sie die Hardware für den BES-53248 Cluster-Switch"]. Anweisungen hierzu finden Sie im Installationshandbuch für den Cluster Switch _Broadcom-unterstützte BES-53248 Cluster Switch_.
+. link:configure-install-initial.html["Konfigurieren Sie den BES-53248 Cluster-Switch"]. Führen Sie eine Ersteinrichtung des BES-53248-Cluster-Switch durch.
+. link:configure-efos-software.html["Installieren Sie die EFOS-Software"]. Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.
+. link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"]. Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.
+. link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.
+. link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"]. Installieren Sie die entsprechende Konfigurationsdatei für das Monitoring des Clusterstatus.
+. link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"]. Wenn Sie den Cluster Switch Health Monitor (CSHM) und die Funktionen zur Protokollerfassung verwenden, aktivieren Sie SSH auf den Switches.
+. link:configure-log-collection.html["Aktivieren Sie die Protokollerfassungsfunktion"]. Verwenden Sie diese Funktion, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
+
+
+
+
+== Weitere Informationen
+
+Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
+
+* link:configure-reqs-bes53248.html["Konfigurationsanforderungen"]
+* link:components-bes53248.html["Komponenten und Teilenummern"]
+* link:required-documentation-bes53248.html["Erforderliche Dokumentation"]
+

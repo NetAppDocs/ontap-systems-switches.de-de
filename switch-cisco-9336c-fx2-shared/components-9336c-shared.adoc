@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9336c-fx2-shared/components-9336c-shared.html 
+keywords: shared storage cluster switch 
+summary: In ONTAP 9.9 können Unternehmen mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- und Cluster-Funktionen in einem gemeinsamen Switch-Szenario kombinieren. 
+---
+= Komponenten und Teilenummern für gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Informationen zur Installation und Wartung von Cisco Nexus 9336C-FX2 Switches finden Sie in der Liste der Komponenten und Teilenummern.
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung für den Switch 9336C-FX2, die Lüfter und die Netzteile aufgeführt:
+
+|===
+| Teilenummer | Beschreibung 
+
+
+| X190200-CS-PE | N9K-9336C-FX2, CS, PTSX, 36PT10/25/40/100GQSFP28 
+
+
+| X190200-CS-PI | N9K-9336C-FX2, CS, PSIN, 36PT10/25/40/100GQSFP28 
+
+
+| X190002 | Zubehörkit X190001/X190003 
+
+
+| X-NXA-PAC-1100W-PE2 | N9K-9336C AC 1100 W Netzteil – Luftstrom am Port Side 
+
+
+| X-NXA-PAC-1100W-PI2 | N9K-9336C AC 1100 W Netzteil – Luftstrom für den seitlichen Ansauganschluss 
+
+
+| X-NXA-LÜFTER-65CFM-PE | N9K-9336C 65 CFM, Luftstrom nach Anschlussseite 
+
+
+| X-NXA-LÜFTER-65CFM-PI | N9K-9336C 65 CFM, Luftstrom zur Ansaugöffnung an der Seite des Ports 
+|===

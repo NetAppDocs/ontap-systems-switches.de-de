@@ -1,0 +1,19 @@
+---
+permalink: switch-cisco-9336c-fx2-shared/configure-software-overview-9336c-shared.html 
+sidebar: sidebar 
+keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Überblick über die Softwarekonfiguration von Cisco Nexus 9336C-FX2 Shared Switches 
+---
+= Workflow für die Softwareinstallation für gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2 Switch:
+
+. link:install-nxos-overview-9336c-shared.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"]. Befolgen Sie die vorbereitenden Verfahren zur Installation der Cisco NX-OS-Software und der Referenzkonfigurationsdateien (RCFs).
+. link:install-nxos-software-9336c-shared.html["Installieren Sie die NX-OS-Software"]. Installieren Sie die NX-OS-Software auf dem Nexus 9336C-FX2 Cluster Switch.
+. link:install-nxos-rcf-9336c-shared.html["Installieren Sie die RCF-Konfigurationsdatei"]. Installieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Schalter zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+

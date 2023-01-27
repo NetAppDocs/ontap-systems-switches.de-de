@@ -1,0 +1,144 @@
+---
+permalink: switch-bes-53248/configure-log-collection.html 
+sidebar: sidebar 
+keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation 
+summary: Die Protokollerfassungsfunktion für die Cluster-Switch-Systemzustandsüberwachung wird verwendet, um mit dem Switch bezogene Protokolldateien in ONTAP zu erfassen. Die Einrichtung der Umgebung muss mithilfe der BES-53248 Cluster Switch CLI wie hier beschrieben erfolgen. 
+---
+= Aktivieren Sie die Protokollerfassungsfunktion
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Protokollerfassungsfunktion aktivieren, mit der Switch-bezogene Protokolldateien in ONTAP erfasst werden.
+
+Vergewissern Sie sich, dass die Umgebung mit der BES-53248 Cluster Switch-CLI eingerichtet wurde.
+
+
+
+== Für ONTAP 9.8 und höher
+
+Aktivieren Sie die Protokollerfassungsfunktion mithilfe der Befehle:
+
+`system switch ethernet log setup-password` Und `system switch ethernet log enable-collection`
+
+.Schritte
+. Geben Sie Ein: `system switch ethernet log setup-password`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs1*
+RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
+Do you want to continue? {y|n}::[n] *y*
+
+Enter the password: <enter switch password>
+Enter the password again: <enter switch password>
+
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: *cs2*
+RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
+Do you want to continue? {y|n}:: [n] *y*
+
+Enter the password: <enter switch password>
+Enter the password again: <enter switch password>
+----
+====
+. Geben Sie Ein: `system switch ethernet log enable-collection`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log enable-collection*
+
+Do you want to enable cluster log collection for all nodes in the cluster?
+{y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+
+cluster1::*>
+----
+====
+
+
+
+
+== Für ONTAP 9.5P15, 9.6P11, 9.7P8 und neuere Patch-Releases
+
+Aktivieren Sie die Protokollerfassungsfunktion mithilfe der Befehle:
+
+`system cluster-switch log setup-password` Und `system cluster-switch log enable-collection`
+
+.Schritte
+. Geben Sie Ein: `system cluster-switch log setup-password`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system cluster-switch log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system cluster-switch log setup-password*
+
+Enter the switch name: *cs1*
+RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
+Do you want to continue? {y|n}::[n] *y*
+
+Enter the password: <enter switch password>
+Enter the password again: <enter switch password>
+
+cluster1::*> *system cluster-switch log setup-password*
+
+Enter the switch name: *cs2*
+RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
+Do you want to continue? {y|n}:: [n] *y*
+
+Enter the password: <enter switch password>
+Enter the password again: <enter switch password>
+----
+====
+. Geben Sie Ein: `system cluster-switch log enable-collection`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system cluster-switch log enable-collection*
+
+Do you want to enable cluster log collection for all nodes in the cluster?
+{y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+----
+====
+
+
+
+NOTE: Der Befehl zum Erfassen von Protokollen ist derzeit nicht verfügbar. Siehe link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1225042["Bug 1225042"^] Entnehmen.
+
+
+CAUTION: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetApp Support.
+
+.Was kommt als Nächstes?
+Wenn Sie den Switch aktualisieren, gehen Sie zu link:replace-verify.html["Upgrade-Konfiguration überprüfen"].

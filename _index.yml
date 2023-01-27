@@ -1,55 +1,41 @@
 ---
 indexpage:
-  lead: Verwenden Sie die Dokumentation auf dieser Website, um Cluster- und Storage-Switches
-    zu installieren, zu aktualisieren und zu warten.
+  lead: NetApp bietet Cluster-, Storage- und Shared-Switches für Konnektivität zwischen
+    Host-Storage und zwei oder mehr All Flash FAS/FAS Controllern. So können Sie Daten
+    und Netzwerkschnittstellen innerhalb Ihrer Storage-Infrastruktur unterbrechungsfrei
+    verschieben.
   tiles:
-  - title: Cluster-Switches
+  - title: Los geht's
     links:
-    - title: Von Broadcom unterstützte BES-53248
-      url: switch-bes-53248/overview-bes53248.html
-    - title: Cisco Nexus 3132Q-V
-      url: switch-cisco-3132q-v/index.html
-    - title: Cisco Nexus 3232C
-      url: switch-cisco-3232c/index.html
-    - title: Cisco Nexus 9336C-FX2
-      url: switch-cisco-9336c-fx2/9336-overview.html
-    - title: Cisco Nexus 92300YC
-      url: switch-cisco-92300/92300-overview.html
-    - title: NetApp CN1610
-      url: switch-netapp-cn1610/index.html
-    - title: NVIDIA SN2100
-      url: switch-nvidia-sn2100/sn2100-overview.html
-    - title: Andere Switch-Modelle
-      url: other/switch-linkout.html
-  - title: Storage Switches
-    links:
-    - title: Cisco Nexus 3232C
-      url: switch-cisco-3232c/index.html
-    - title: Cisco Nexus 9336C-FX2
-      url: switch-cisco-9336c-fx2/9336-overview.html
-    - title: NVIDIA SN2100
-      url: switch-nvidia-sn2100/sn2100-overview.html
-  - title: Shared-Switches
-    links:
-    - title: Cisco Nexus 9336C-FX2
-      url: "/switch-cisco-9336c-fx2-shared/9336c_setup_and_configuration_guide_for_cisco_shared_switches.html"
-  - title: Mehr Ressourcen
-    links:
-    - title: AFF und FAS Dokumentation
-      url: https://docs.netapp.com/us-en/ontap-systems/index.html
-    - title: AFF und FAS Upgrade-Dokumentation
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/index.html
+    - title: Was ist neu
+      url: whats-new.html
+    - title: Schnellstart
+      url: "/get-started/get-up-and-running.html"
     - title: Versionshinweise zu ONTAP
       url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
-    - title: ONTAP 9-Dokumentation
-      url: https://docs.netapp.com/us-en/ontap/index.html
+  - title: Unterstützte Switches
+    links:
+    - title: BES-53248
+      url: "/switch-bes-53248/configure-new-switch-overview.html"
+    - title: Cisco Nexus 9336C-FX2
+      url: "/switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html"
+    - title: NVIDIA SN2100
+      url: "/switch-nvidia-sn2100/configure-overview-sn2100-cluster.html"
+    - title: End-of-Verfügbarkeit
+      url: "/overview-eod.html"
+  - title: Verwandte ONTAP Dokumente
+    links:
+    - title: AFF/FAS-Hardwaresysteme
+      url: https://docs.netapp.com/us-en/ontap-systems/index.html
+    - title: ONTAP Software
+      url: https://docs.netapp.com/us-en/ontap/index.htmly/
+  - title: Tools-Support
+    links:
+    - title: NetApp Interoperabilitätsmatrix
+      url: http://mysupport.netapp.com/matrix/
     - title: NetApp Hardware Universe
       url: https://hwu.netapp.com/
-    - title: NetApp Active IQ Digital Advisor
-      url: https://docs.netapp.com/us-en/active-iq/index.html
-    - title: NetApp Active IQ Config Advisor
-      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
-    - title: NetApp Interoperabilitätsmatrix
-      url: https://mysupport.netapp.com/matrix/#welcome
-    - title: NetApp Community
-      url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins
+    - title: NetApp Knowledge Base
+      url: https://kb.netapp.com/
+    - title: Active IQ (Anmeldung erforderlich)
+      url: https://activeiq.netapp.com/?source=aiqnsspages

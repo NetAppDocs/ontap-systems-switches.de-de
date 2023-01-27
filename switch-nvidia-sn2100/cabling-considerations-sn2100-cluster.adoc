@@ -1,0 +1,109 @@
+---
+permalink: switch-nvidia-sn2100/cabling-considerations-sn2100-cluster.html 
+sidebar: sidebar 
+keywords: sn2100 SN2100 cabling setup, sn2100 switches configuration, cumulus linux os 
+summary: Überprüfen Sie vor der Konfiguration des NVIDIA SN2100-Switches die folgenden Informationen. 
+---
+= Prüfen Sie die Verkabelung und Konfigurationsüberlegungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lesen Sie vor der Konfiguration des NVIDIA SN2100-Switches die folgenden Punkte.
+
+
+
+== Details zum NVIDIA-Port
+
+|===
+
+
+| *Switch-Ports* | *Verwendung von Ports* 
+
+
+ a| 
+Swp1s0-3
+ a| 
+Nodes mit 10/40 Cluster-Ports
+
+
+
+ a| 
+Swp2s0-3
+ a| 
+Nodes mit 25/100 Cluster-Ports
+
+
+
+ a| 
+Swp3-14 40/100-Cluster-Port-Knoten
+ a| 
+Swp15-16 40/100 Inter-Switch Link (ISL)-Ports
+
+|===
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+
+
+
+== Optische Verbindungen
+
+Nur optische Verbindungen werden auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100-GbE-Ports unterstützt. Beispiel:
+
+* AFF A800 auf den Ports e0a und e0b
+* AFF A320 an den Ports e0g und e0h
+
+
+
+
+== QSA-Adapter
+
+Wenn ein QSA-Adapter für die Verbindung mit den integrierten Intel-Cluster-Ports auf einer Plattform verwendet wird, werden nicht alle Verbindungen hergestellt. Als Beispiel sind die FAS2750, die AFF A300 und die FAS8200 (alle 10G) und die AFF A250 (25G).
+
+Gehen Sie wie folgt vor, um dieses Problem zu beheben:
+
+. Stellen Sie bei Intel 10G die Verbindungsgeschwindigkeit swp1s0-3 manuell auf 10000 ein und setzen Sie die automatische Aushandlung auf aus.
+. Stellen Sie für Chelsio 25G die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein und setzen Sie die automatische Aushandlung auf aus.
+
+
+
+NOTE: Verwenden Sie die nicht-Breakout-40/100G-Ports mit 10G/25G QSA. Setzen Sie den QSA-Adapter nicht in Ports ein, die für Breakout konfiguriert sind.
+
+
+
+== Switch-Port-Geschwindigkeit
+
+Je nach Sender/Empfänger im Switchport müssen Sie die Geschwindigkeit am Switchport möglicherweise auf eine feste Geschwindigkeit einstellen. Wenn Sie 10G- und 25G-Breakout-Ports verwenden, stellen Sie sicher, dass die automatische Aushandlung nicht erfolgt und stellen Sie die Port-Geschwindigkeit auf dem Switch fest. Beispiel:
+
+[listing, subs="+quotes"]
+----
+cumulus@cumulus:mgmt:~$ net add int swp1s3 link autoneg off && net com
+--- /etc/network/interfaces     2019-11-17 00:17:13.470687027 +0000
++++ /run/nclu/ifupdown2/interfaces.tmp  2019-11-24 00:09:19.435226258 +0000
+@@ -37,21 +37,21 @@
+     alias 10G Intra-Cluster Node
+     link-autoneg off
+     link-speed 10000  *<---- port speed set*
+     mstpctl-bpduguard yes
+     mstpctl-portadminedge yes
+     mtu 9216
+
+auto swp1s3
+iface swp1s3
+     alias 10G Intra-Cluster Node
+-    link-autoneg off
++    link-autoneg on
+     link-speed 10000 *<---- port speed set*
+     mstpctl-bpduguard yes
+     mstpctl-portadminedge yes
+     mtu 9216
+
+auto swp2s0
+iface swp2s0
+     alias 25G Intra-Cluster Node
+     link-autoneg off
+     link-speed 25000 *<---- port speed set*
+----
+.Was kommt als Nächstes?
+link:install-cable-shelves-sn2100-cluster.html["Verkabelung der NS224 Shelfs als Switch-Attached Storage"].

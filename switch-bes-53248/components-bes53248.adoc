@@ -1,0 +1,74 @@
+---
+permalink: switch-bes-53248/components-bes53248.html 
+sidebar: sidebar 
+keywords: cluster-mode,supported versions,switches supported,cluster network,efos 
+summary: Prüfen Sie für die Installation und Wartung von BES-53248-Switches die Liste der Komponenten und Teilenummern. 
+---
+= Komponenten und Teilenummern für BES-53248 Cluster-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prüfen Sie für die Installation und Wartung von BES-53248-Switches die Liste der Komponenten und Teilenummern.
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung der BES-53248-Cluster-Switch-Komponenten aufgeführt, einschließlich Rack-montierter Schienen-Kit, Lüfter und Netzteile.
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+X190005
+ a| 
+BES-53248, CLSW, 16Pt10/25 GB, PTSX, BRDCM-SUPPORT (PTSX = Port Side Exhaust)
+
+
+
+ a| 
+X190005R
+ a| 
+BES-53248, CLSW, 16Pt10/25 GB, PSIN, BRDCM-SUPPORT (PSIN = Port Side Intake)
+
+
+
+ a| 
+X-RAIL-4POST-190005
+ a| 
+Rack Mount Rail Kit Ozeki 4 Post 19 Zoll
+
+
+
+ a| 
+X-FAN-190005-R
+ a| 
+Lüfter, Anschlußseite X190005
+
+
+
+ a| 
+X-FAN-190005-F
+ a| 
+Lüfter, Auslass auf der Anschlussseite X190005
+
+
+
+ a| 
+X-PSU-190005-R
+ a| 
+Netzteil, Anschlusseingang X190005
+
+Ansaugluftstrom (Umkehrluft): Kühle Luft tritt durch das Anschlussende im Kaltgang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang.
+
+
+
+ a| 
+X-PSU-190005-F
+ a| 
+Netzteil, Auspuff an der Anschlussseite X190005
+
+Anschlussseitiger Abluftstrom (Standardluft): Kühle Luft tritt durch die Lüfter- und Stromversorgungsmodule im Kaltgang in das Gehäuse ein und entgast durch das Anschlussende des Gehäuses im heißen Gang. Die blaue Färbung zeigt die Luftzirkulation an der Anschlussseite an. Dies ist die am häufigsten verwendete Option.
+
+|===

@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9336c-fx2-shared/cable-9336c-shared.html 
+keywords: shared storage cluster switch cable 
+summary: Verwenden Sie die Verkabelungsabbilder, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. 
+---
+= Füllen Sie das Cisco Nexus 9336C-FX2-Verkabelungsarbeitsblatt aus
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Verwenden Sie die folgenden Verkabelungsabbilder, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.
+
+
+
+== Kabel NS224 Speicher als Switch-Attached
+
+Wenn Sie NS224-Speicher als Switch-Attached verkabeln möchten, folgen Sie dem Schaltplan:
+
+image:9336c_image1.jpg["Switch-Anschluss"]
+
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+
+
+
+== Kabel-NS224-Speicher als Direct-Attached
+
+Wenn Sie NS224-Speicher als Direct-Attached anstatt die Shared Switch-Speicherports verkabeln möchten, folgen Sie dem direkt angeschlossenen Diagramm:
+
+image:9336c_image2.jpg["Direct-Attached"]
+
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+
+
+
+== Cisco Nexus 9336C-FX2 – Verkabelungsarbeitsblatt
+
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie als Anleitung ein ausgefülltes Beispiel-Verkabelungsarbeitsblatt verwenden.
+
+Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:image:cabling_worksheet.jpg["Verkabelungsarbeitsblatt"]
+
+Wo?
+
+* 100-GB-ISL für Switch A-Port 35
+* 100-GB-ISL für Switch A-Port 36
+* 100-GB-ISL zu Switch B-Port 35
+* 100-GB-ISL zu Switch B-Port 36
+
+
+
+
+== Leeres Verkabelungsarbeitsblatt
+
+Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Die Tabelle der unterstützten Cluster-Verbindungen der Hardware Universe definiert die von der Plattform verwendeten Cluster-Ports.
+
+image:blank_cabling_worksheet.jpg["Leeres Verkabelungsarbeitsblatt"]
+
+Wo?
+
+* 100-GB-ISL für Switch A-Port 35
+* 100-GB-ISL für Switch A-Port 36
+* 100-GB-ISL zu Switch B-Port 35
+* 100-GB-ISL zu Switch B-Port 36
+

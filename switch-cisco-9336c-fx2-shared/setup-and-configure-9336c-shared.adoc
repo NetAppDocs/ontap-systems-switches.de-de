@@ -1,0 +1,146 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9336c-fx2-shared/setup-and-configure-9336c-shared.html 
+keywords:  
+summary:  
+---
+= Konfigurieren Sie gemeinsam genutzte Cisco Nexus 9336C-FX2 Switches
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Befolgen Sie diese Anweisungen, um gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches zu konfigurieren.
+
+.Was Sie benötigen
+* Erforderliche Dokumentation für gemeinsamen Switch, Controller-Dokumentation und ONTAP-Dokumentation Siehe link:required-documentation-9336c-shared.html["Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 Shared-Switches"] Und https://docs.netapp.com/us-en/ontap/index.html["NetApp ONTAP-Dokumentation"^].
+* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen und Kabel
+* Abgeschlossene Verkabelungsarbeitsblätter. Siehe link:cable-9336c-shared.html["Füllen Sie das Cisco Nexus 9336C-FX2-Verkabelungsarbeitsblatt aus"]. Weitere Informationen zur Verkabelung finden Sie im https://hwu.netapp.com["Hardware Universe"].
+
+
+.Schritte
+. [[Schritt3]] eine Erstkonfiguration der Switches durchführen.
++
+Für die Konfiguration benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelanschlüssen für Ihre Switches.
+
++
+Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
+
+. Starten Sie den Switch.
++
+Geben Sie beim ersten Booten des Switches die entsprechenden Antworten auf die folgenden Einrichtungsfragen an.
+
++
+Die Sicherheitsrichtlinie Ihres Standorts definiert die zu erstellenenden Antworten und Services.
+
++
+.. Automatische Bereitstellung abbrechen und mit der normalen Einrichtung fortfahren? (ja/nein)
++
+Antworten Sie mit *ja*. Der Standardwert ist Nein
+
+.. Wollen Sie den sicheren Kennwortstandard durchsetzen? (ja/nein)
++
+Antworten Sie mit *ja*. Die Standardeinstellung ist ja.
+
+.. Geben Sie das Passwort für den Administrator ein.
++
+Das Standardpasswort lautet admin. Sie müssen ein neues, starkes Passwort erstellen.
+
++
+Ein schwaches Kennwort kann abgelehnt werden.
+
+.. Möchten Sie das Dialogfeld Grundkonfiguration aufrufen? (ja/nein)
++
+Reagieren Sie mit *ja* bei der Erstkonfiguration des Schalters.
+
+.. Noch ein Login-Konto erstellen? (ja/nein)
++
+Ihre Antwort hängt von den Richtlinien Ihrer Site ab, die von alternativen Administratoren abhängen. Der Standardwert ist Nein
+
+.. Schreibgeschützte SNMP-Community-String konfigurieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+.. Lese-Schreib-SNMP-Community-String konfigurieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+.. Geben Sie den Switch-Namen ein.
++
+Der Switch-Name ist auf 63 alphanumerische Zeichen begrenzt.
+
+.. Mit Out-of-Band-Management-Konfiguration (mgmt0) fortfahren? (ja/nein)
++
+Beantworten Sie mit *ja* (der Standardeinstellung) bei dieser Aufforderung. Geben Sie an der Eingabeaufforderung mgmt0 IPv4 Adresse: ip_address Ihre IP-Adresse ein
+
+.. Standard-Gateway konfigurieren? (ja/nein)
++
+Antworten Sie mit *ja*. Geben Sie an der IPv4-Adresse des Standard-Gateway: Prompt Ihren Standard_Gateway ein.
+
+.. Erweiterte IP-Optionen konfigurieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+.. Telnet-Dienst aktivieren? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+.. SSH-Dienst aktivieren? (ja/nein)
++
+Antworten Sie mit *ja*. Die Standardeinstellung ist ja.
+
++
+
+NOTE: SSH wird empfohlen, wenn Sie Cluster Switch Health Monitor (CSHM) für seine Protokollerfassung verwenden. SSHv2 wird auch für erhöhte Sicherheit empfohlen.
+
+.. [[steep14]]Geben Sie den Typ des zu generierende SSH-Schlüssels ein (dsa/rsa/rsa1). Die Standardeinstellung ist rsa.
+.. Geben Sie die Anzahl der Schlüsselbits ein (1024- 2048).
+.. Konfigurieren Sie den NTP-Server? (ja/nein)
++
+Antworten Sie mit *Nein*. Der Standardwert ist Nein
+
+.. Standard-Schnittstellenebene konfigurieren (L3/L2):
++
+Antworten Sie mit *L2*. Der Standardwert ist L2.
+
+.. Konfigurieren Sie den Status der Switch-Schnittstelle (shut/noshut) als Standard-Switch-Port:
++
+Antworten Sie mit *noshut*. Die Standardeinstellung ist noshut.
+
+.. Konfiguration des CoPP-Systemprofils (streng/mittel/lenient/dense):
++
+Reagieren Sie mit * Strict*. Die Standardeinstellung ist streng.
+
+.. Möchten Sie die Konfiguration bearbeiten? (ja/nein)
++
+Die neue Konfiguration sollte jetzt angezeigt werden. Überprüfen Sie die soeben eingegebene Konfiguration und nehmen Sie alle erforderlichen Änderungen vor. Wenn Sie mit der Konfiguration zufrieden sind, beantworten Sie mit Nein. Beantworten Sie mit *ja*, wenn Sie Ihre Konfigurationseinstellungen bearbeiten möchten.
+
+.. Verwenden Sie diese Konfiguration und speichern Sie sie? (ja/nein)
++
+Antworten Sie mit *ja*, um die Konfiguration zu speichern. Dadurch werden die Kickstart- und Systembilder automatisch aktualisiert.
+
+
+
+. Überprüfen Sie die Konfigurationseinstellungen, die Sie am Ende der Einrichtung in der Anzeige vorgenommen haben, und stellen Sie sicher, dass Sie die Konfiguration speichern.
++
+
+NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden keine Änderungen beim nächsten Neustart des Switches wirksam.
+
+. Prüfen Sie die Softwareversion auf den Switches und laden Sie ggf. die von NetApp unterstützte Version der Software auf die Switches herunter.
++
+Wenn Sie die von NetApp unterstützte Version der Software herunterladen, müssen Sie auch die NetApp Network Switch Reference Configuration File herunterladen und mit der Konfiguration zusammenführen, die Sie in gespeichert haben <<step3,Schritt 3>>.
+
++
+Sie können die Datei und die Anweisungen von herunterladen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Seite.
+
++
+Wenn Sie Ihre eigenen Schalter haben, lesen Sie die http://www.cisco.com["Cisco"] Standort.
+
+
+
+.Was kommt als Nächstes?
+Je nach Konfiguration können Sie dies tun link:install-switch-and-passthrough-panel-9336c-shared.html["Switch in NetApp-Schrank einbauen"]. Andernfalls fahren Sie mit fort link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].

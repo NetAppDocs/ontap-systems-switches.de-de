@@ -1,0 +1,75 @@
+---
+permalink: switch-bes-53248/configure-health-monitor.html 
+sidebar: sidebar 
+keywords: CSHM,initial setup,configuration file,cshm,enable SSH 
+summary: 'Sie können die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM) installieren, die die BES-53248-Cluster-Switches überwacht.' 
+---
+= Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM) installieren, die die BES-53248-Cluster-Switches überwacht.
+
+In ONTAP-Versionen 9.5P7 und früher sowie 9.6P2 und früher müssen Sie die CSHM-Datei separat herunterladen. In ONTAP-Versionen 9.5P8 und höher, 9.6P3 und höher sowie 9.7 und höher wird die CSHM-Datei mit ONTAP gebündelt.
+
+.Was Sie benötigen
+Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
+
+.Schritte
+. Laden Sie die CSHM zip-Datei basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der folgenden Seite verfügbar: https://mysupport.netapp.com/NOW/cgi-bin/software/["NetApp Software-Download"^]
++
+.. Wählen Sie auf der Software-Download-Seite *Switch Health Monitor Configuration Files*.
+.. Wählen Sie Plattform = *ONTAP* und klicken Sie auf *Los!*.
+.. Klicken Sie auf der Seite Switch Health Monitor Configuration Files for ONTAP auf *Anzeigen & Download*.
+.. Klicken Sie auf der Seite Switch Health Monitor Configuration Files for ONTAP - Description auf *Download* für das entsprechende Cluster Switch-Modell, z. B.: *Broadcom-supported BES-53248*.
+.. Klicken Sie auf der Seite Endbenutzer-Lizenzvereinbarung auf *Akzeptieren*.
+.. Wählen Sie auf der Seite Switch Health Monitor Configuration Files for ONTAP - Download die entsprechende Konfigurationsdatei aus, z. B. *Broadcom_BES-53248.zip*.
+
+
+. Laden Sie die entsprechende Zip-Datei auf Ihren internen Webserver hoch, wobei DIE IP-Adresse X.X.X.X ist
++
+Für einen internen Webserver IP-Adresse von 192.168.2.20, und wenn ein Verzeichnis /usr/download vorhanden ist, können Sie die zip-Datei mit auf Ihren Webserver hochladen `scp`:
+
++
+[listing, subs="+quotes"]
+----
+% *scp Broadcom_BES-53248.zip admin@192.168.2.20:/usr/download/Broadcom_BES-53248.zip*
+----
+. Greifen Sie mit dem Befehl auf die Einstellung für den erweiterten Modus von einem der ONTAP Systeme im Cluster zu `set -privilege advanced`:
++
+[listing, subs="+quotes"]
+----
+cluster1::> *set -privilege advanced*
+----
+. Führen Sie den Befehl der Switch-Systemzustandsüberwachung configure aus:
++
+`system cluster-switch configure-health-monitor -node * -package-url \http://server/file-location`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::> *system cluster-switch configure-health-monitor -node * -package-url
+http://192.168.2.20/usr/download/Broadcom_BES-53248.zip*
+----
+====
+. Überprüfen Sie, ob die Befehlsausgabe den Textstring enthält: `downloaded package processed successfully`. Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
+. Führen Sie den Befehl aus `system cluster-switch show` Stellen Sie auf dem ONTAP-System sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf „true“ gesetzt ist.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system cluster-switch show*
+----
++
+
+NOTE: Wenn Sie zu einer früheren Version von ONTAP zurückkehren, müssen Sie die CSHM-Konfigurationsdatei erneut installieren, um die Switch-Zustandsüberwachung von BES-53248-Cluster-Switches zu ermöglichen.
+
+
+
+.Was kommt als Nächstes?
+Um alle in CSHM verfügbaren Funktionen zu nutzen, aktivieren Sie SSH wie in beschrieben link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"].

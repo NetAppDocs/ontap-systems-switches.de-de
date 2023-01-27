@@ -1,0 +1,75 @@
+---
+permalink: switch-nvidia-sn2100/components-sn2100-storage.html 
+sidebar: sidebar 
+keywords: nvidia SN2100 switches 
+summary: Lesen Sie bei der Installation und Wartung von NVIDIA SN2100-Switches die Liste der Komponenten und Teilenummern für Schrank und Schienensatz. 
+---
+= Komponenten und Teilenummern für NVIDIA SN2100-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lesen Sie bei der Installation und Wartung von NVIDIA SN2100-Switches die Liste der Komponenten und Teilenummern für Schrank und Schienensatz.
+
+
+
+== Rack-Details
+
+Sie installieren den NVIDIA SN2100-Switch (X190006/X190106) im NVIDIA-Dual/Single-Switch-Gehäuse mit den im Lieferumfang des Switches enthaltenen Standardhalterungen.
+
+
+
+== Einzelheiten zum Schienensatz
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung der MSN2100-Switches und Schienen-Kits aufgeführt:
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+X190006-PE
+ a| 
+Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PTSX
+
+
+
+ a| 
+X190006-PI
+ a| 
+Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PSIN
+
+
+
+ a| 
+X190106-FE-PE
+ a| 
+Switch, NVIDIA SN2100, 16 PT 100 G, PTSX, Frontend
+
+
+
+ a| 
+X190106-FE-PI
+ a| 
+Switch, NVIDIA SN2100, 16 PT 100G, PSIN, Front End
+
+
+
+ a| 
+X-MTEF-KIT-D
+ a| 
+Rail Kit, NVIDIA Dual Switch Seite an Seite
+
+
+
+ a| 
+X-MTEF-KIT-E
+ a| 
+Rail Kit, NVIDIA Single Switch, kurze Tiefe
+
+|===
+
+NOTE: Weitere Informationen finden Sie in der NVIDIA-Dokumentation auf https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installieren Sie den SN2100-Switch und den Schienen-Kit"^].

@@ -1,0 +1,136 @@
+---
+permalink: switch-nvidia-sn2100/sn2100-overview.html 
+sidebar: sidebar 
+keywords: nvidia SN2100 switches 
+summary: Für die Installation und Wartung von NVIDIA SN2100-Switches sollten Sie alle Anforderungen und die empfohlene Dokumentation prüfen. 
+---
+= Übersicht und Anforderungen für NVIDIA SN2100 Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Installation und Wartung von NVIDIA SN2100-Switches sollten Sie alle Anforderungen und die empfohlene Dokumentation prüfen.
+
+Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden.
+
+
+
+== ONTAP und Linux Unterstützung
+
+Der NVIDIA SN2100 Switch ist ein 10/25/40/100 GB Ethernet-Switch mit Cumulus Linux. Der Switch unterstützt Folgendes:
+
+* ONTAP 9.10.1P3. Der SN2100 Switch dient Cluster- und Speicheranwendungen in ONTAP 9.10.1P3 über verschiedene Switch-Paare. Ab ONTAP 9.10.1P3 können Sie mit NVIDIA SN2100 Switches Storage- und Cluster-Funktionen in einer gemeinsamen Switch-Konfiguration kombinieren.
+* Cumulus Linux (CL) OS Version 4.4.2. Cumulus Linux kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.
+
+
+
+
+== Angaben zum Rack und Schienensatz
+
+Sie installieren den NVIDIA SN2100-Switch (X190006/X190106) im NVIDIA-Dual/Single-Switch-Gehäuse mit den im Lieferumfang des Switches enthaltenen Standardhalterungen.
+
+In der folgenden Tabelle sind die Teilenummer und Beschreibung der MSN2100-Switches und Schienen-Kits aufgeführt:
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+X190006-PE
+ a| 
+Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PTSX
+
+
+
+ a| 
+X190006-PI
+ a| 
+Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PSIN
+
+
+
+ a| 
+X190106-FE-PE
+ a| 
+Switch, NVIDIA SN2100, 16 PT 100 G, PTSX, Frontend
+
+
+
+ a| 
+X190106-FE-PI
+ a| 
+Switch, NVIDIA SN2100, 16 PT 100G, PSIN, Front End
+
+
+
+ a| 
+X-MTEF-KIT-D
+ a| 
+Rail Kit, NVIDIA Dual Switch Seite an Seite
+
+
+
+ a| 
+X-MTEF-KIT-E
+ a| 
+Rail Kit, NVIDIA Single Switch, kurze Tiefe
+
+|===
+
+NOTE: Weitere Informationen finden Sie in der NVIDIA-Dokumentation auf https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installieren Sie den SN2100-Switch und den Schienen-Kit"^].
+
+
+
+== Verfügbare Dokumentation
+
+In der folgenden Tabelle ist die Dokumentation für die NVIDIA SN2100-Switches aufgeführt.
+
+[cols="1,2"]
+|===
+| Titel | Beschreibung 
+
+
+ a| 
+link:install_setup_sn2100_switches_overview.html["_NVIDIA SN2100 Switches einrichten und konfigurieren_"^]
+ a| 
+Hier wird beschrieben, wie Sie Ihre NVIDIA SN2100-Switches einrichten und konfigurieren, einschließlich der Installation von Cumulus Linux und entsprechenden RCFs.
+
+
+
+ a| 
+link:migrate_cisco_sn2100_cluster_switch.html["_Von einem Cisco Cluster-Switch zu einem NVIDIA SN2100 Cluster-Switch migrieren_"^]
+ a| 
+Eine Beschreibung der Migration von Umgebungen, in denen Cisco Cluster Switches verwendet werden, in Umgebungen, die NVIDIA SN2100 Cluster-Switches verwenden.
+
+
+
+ a| 
+link:migrate_cisco_sn2100_storage_switch.html["_Von einem Cisco Storage Switch zu einem NVIDIA Storage Switch migrieren_"^]
+ a| 
+Eine Beschreibung der Migration von Umgebungen, die Cisco Storage Switches in Umgebungen verwenden, die NVIDIA SN2100 Storage-Switches verwenden.
+
+
+
+ a| 
+link:migrate_2n_switched_sn2100_switches.html["_Migration zu einem Cluster mit zwei Nodes und NVIDIA SN2100 Cluster Switches_"^]
+ a| 
+Hier wird die Migration zu einer Switch-Umgebung mit zwei Nodes mit NVIDIA SN2100-Cluster-Switches beschrieben.
+
+
+
+ a| 
+link:replace_sn2100_switch_cluster.html["_Ersetzen Sie einen NVIDIA SN2100-Cluster-Switch_"^]
+ a| 
+Beschreibt das Verfahren zum Ersetzen eines defekten NVIDIA SN2100-Switch in einem Cluster und Herunterladen von Cumulus Linux und Referenzkonfigurationsdatei.
+
+
+
+ a| 
+link:replace_sn2100_switch_storage.html["_Einen NVIDIA SN2100-Storage-Switch ersetzen_"^]
+ a| 
+Beschreibt das Verfahren zum Austausch eines defekten NVIDIA SN2100-Speicherschalters und Herunterladen von Cumulus Linux und Referenzkonfigurationsdatei.
+
+|===

@@ -1,0 +1,587 @@
+---
+permalink: switch-cisco-9336c-fx2/setup-worksheet-9336c-cluster.html 
+sidebar: sidebar 
+keywords: document, support, platform, complete, blank, cabling, worksheet, guide, cisco, nexus, cisco nexus 9336c-fx2 cabling worksheet - cisco nexus 9336-fx2 
+summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden. 
+---
+= Füllen Sie das Cisco Nexus 9336C-FX2-Verkabelungsarbeitsblatt aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter, und füllen Sie das Verkabelungsarbeitsblatt aus.
+
+Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+
+
+
+== Beispiel für eine Verkabelung
+
+Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Cluster-Switch A 2+| Cluster-Switch B 
+
+
+| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+
+
+ a| 
+1
+ a| 
+4 x 10-GbE-Node 1
+ a| 
+1
+ a| 
+4 x 10-GbE-Node 1
+
+
+
+ a| 
+2
+ a| 
+4 x 10-GbE-Node 2
+ a| 
+2
+ a| 
+4 x 10-GbE-Node 2
+
+
+
+ a| 
+3
+ a| 
+4x10 GbE Node 3
+ a| 
+3
+ a| 
+4x10 GbE Node 3
+
+
+
+ a| 
+4
+ a| 
+4 x 25-GbE-Node 4
+ a| 
+4
+ a| 
+4 x 25-GbE-Node 4
+
+
+
+ a| 
+5
+ a| 
+4 x 25-GbE-Node 5
+ a| 
+5
+ a| 
+4 x 25-GbE-Node 5
+
+
+
+ a| 
+6
+ a| 
+4 x 25-GbE-Node 6
+ a| 
+6
+ a| 
+4 x 25-GbE-Node 6
+
+
+
+ a| 
+7
+ a| 
+4 x 100-GbE-Node 7
+ a| 
+7
+ a| 
+4 x 100-GbE-Node 7
+
+
+
+ a| 
+8
+ a| 
+4 x 100-GbE-Node 8
+ a| 
+8
+ a| 
+4 x 100-GbE-Node 8
+
+
+
+ a| 
+9
+ a| 
+4 x 100-GbE-Node 9
+ a| 
+9
+ a| 
+4 x 100-GbE-Node 9
+
+
+
+ a| 
+10
+ a| 
+4 x 100-GbE-Node 10
+ a| 
+10
+ a| 
+4 x 100-GbE-Node 10
+
+
+
+ a| 
+11
+ a| 
+4 x 100-GbE-Node 11
+ a| 
+11
+ a| 
+4 x 100-GbE-Node 11
+
+
+
+ a| 
+12
+ a| 
+4 x 100-GbE-Node 12
+ a| 
+12
+ a| 
+4 x 100-GbE-Node 12
+
+
+
+ a| 
+13
+ a| 
+4 x 100-GbE-Node 13
+ a| 
+13
+ a| 
+4 x 100-GbE-Node 13
+
+
+
+ a| 
+14
+ a| 
+4 x 100-GbE-Node 14
+ a| 
+14
+ a| 
+4 x 100-GbE-Node 14
+
+
+
+ a| 
+15
+ a| 
+4 x 100-GbE-Node 15
+ a| 
+15
+ a| 
+4 x 100-GbE-Node 15
+
+
+
+ a| 
+16
+ a| 
+4 x 100-GbE-Node 16
+ a| 
+16
+ a| 
+4 x 100-GbE-Node 16
+
+
+
+ a| 
+17
+ a| 
+4 x 100-GbE-Node 17
+ a| 
+17
+ a| 
+4 x 100-GbE-Node 17
+
+
+
+ a| 
+18
+ a| 
+4 x 100-GbE-Node 18
+ a| 
+18
+ a| 
+4 x 100-GbE-Node 18
+
+
+
+ a| 
+19
+ a| 
+4 x 100-GbE-Node 19
+ a| 
+19
+ a| 
+4 x 100-GbE-Node 19
+
+
+
+ a| 
+20
+ a| 
+4 x 100-GbE-Node 20
+ a| 
+20
+ a| 
+4 x 100-GbE-Node 20
+
+
+
+ a| 
+21
+ a| 
+4 x 100-GbE-Node 21
+ a| 
+21
+ a| 
+4 x 100-GbE-Node 21
+
+
+
+ a| 
+22
+ a| 
+4 x 100-GbE-Node 22
+ a| 
+22
+ a| 
+4 x 100-GbE-Node 22
+
+
+
+ a| 
+23
+ a| 
+4 x 100-GbE-Node 23
+ a| 
+23
+ a| 
+4 x 100-GbE-Node 23
+
+
+
+ a| 
+24
+ a| 
+4 x 100-GbE-Node 24
+ a| 
+24
+ a| 
+4 x 100-GbE-Node 24
+
+
+
+ a| 
+25 bis 34
+ a| 
+Reserviert
+ a| 
+25 bis 34
+ a| 
+Reserviert
+
+
+
+ a| 
+35
+ a| 
+100-GB-ISL zu Switch B-Port 35
+ a| 
+35
+ a| 
+100-GB-ISL für Switch A-Port 35
+
+
+
+ a| 
+36
+ a| 
+100-GB-ISL zu Switch B-Port 36
+ a| 
+36
+ a| 
+100-GB-ISL für Switch A-Port 36
+
+|===
+
+
+== Leeres Verkabelungsarbeitsblatt
+
+Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Cluster-Switch A 2+| Cluster-Switch B 
+
+
+ a| 
+1
+ a| 
+ a| 
+1
+ a| 
+
+
+
+ a| 
+2
+ a| 
+ a| 
+2
+ a| 
+
+
+
+ a| 
+3
+ a| 
+ a| 
+3
+ a| 
+
+
+
+ a| 
+4
+ a| 
+ a| 
+4
+ a| 
+
+
+
+ a| 
+5
+ a| 
+ a| 
+5
+ a| 
+
+
+
+ a| 
+6
+ a| 
+ a| 
+6
+ a| 
+
+
+
+ a| 
+7
+ a| 
+ a| 
+7
+ a| 
+
+
+
+ a| 
+8
+ a| 
+ a| 
+8
+ a| 
+
+
+
+ a| 
+9
+ a| 
+ a| 
+9
+ a| 
+
+
+
+ a| 
+10
+ a| 
+ a| 
+10
+ a| 
+
+
+
+ a| 
+11
+ a| 
+ a| 
+11
+ a| 
+
+
+
+ a| 
+12
+ a| 
+ a| 
+12
+ a| 
+
+
+
+ a| 
+13
+ a| 
+ a| 
+13
+ a| 
+
+
+
+ a| 
+14
+ a| 
+ a| 
+14
+ a| 
+
+
+
+ a| 
+15
+ a| 
+ a| 
+15
+ a| 
+
+
+
+ a| 
+16
+ a| 
+ a| 
+16
+ a| 
+
+
+
+ a| 
+17
+ a| 
+ a| 
+17
+ a| 
+
+
+
+ a| 
+18
+ a| 
+ a| 
+18
+ a| 
+
+
+
+ a| 
+19
+ a| 
+ a| 
+19
+ a| 
+
+
+
+ a| 
+20
+ a| 
+ a| 
+20
+ a| 
+
+
+
+ a| 
+21
+ a| 
+ a| 
+21
+ a| 
+
+
+
+ a| 
+22
+ a| 
+ a| 
+22
+ a| 
+
+
+
+ a| 
+23
+ a| 
+ a| 
+23
+ a| 
+
+
+
+ a| 
+24
+ a| 
+ a| 
+24
+ a| 
+
+
+
+ a| 
+25 bis 34
+ a| 
+Reserviert
+ a| 
+25 bis 34
+ a| 
+Reserviert
+
+
+
+ a| 
+35
+ a| 
+100-GB-ISL zu Switch B-Port 35
+ a| 
+35
+ a| 
+100-GB-ISL für Switch A-Port 35
+
+
+
+ a| 
+36
+ a| 
+100-GB-ISL zu Switch B-Port 36
+ a| 
+36
+ a| 
+100-GB-ISL für Switch A-Port 36
+
+|===
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.

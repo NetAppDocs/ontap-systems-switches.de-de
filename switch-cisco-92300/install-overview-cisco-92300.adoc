@@ -1,0 +1,36 @@
+---
+permalink: switch-cisco-92300/install-overview-cisco-92300.html 
+sidebar: sidebar 
+keywords: install, cisco nexus 92300 switch, 
+summary: Lesen Sie vor der Konfiguration von Cisco Nexus 92300-Switches eine Übersicht über den Prozess und die Terminologie. 
+---
+= Überblick über die Installation und Konfiguration von Cisco Nexus 92300 Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lesen Sie vor der Konfiguration von Cisco Nexus 92300-Switches die Verfahrensübersicht.
+
+Gehen Sie wie folgt vor, um einen Cisco Nexus 92300 Switch auf Systemen mit ONTAP zu konfigurieren:
+
+. link:setup-worksheet-92300yc.html["Füllen Sie das Cisco Nexus 92300YC-Verkabelungsarbeitsblatt aus"]. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+. link:configure-install-initial.html["Konfigurieren Sie den Cisco Nexus 92300YC-Switch"]. Cisco Nexus 92300YC-Switch einrichten und konfigurieren.
+. link:install-nxos-overview.html["Vorbereiten der Installation der NX-OS-Software und der Referenzkonfigurationsdatei (RCF)"]. Bereiten Sie sich auf die Installation der NX-OS-Software und der Referenzkonfigurationsdatei (RCF) vor.
+. link:install-nxos-software.html["Installieren Sie die NX-OS-Software"]. Installieren Sie die NX-OS-Software auf dem Nexus 92300YC-Switch. Bei NX-OS handelt es sich um ein Netzwerkbetriebssystem für die Ethernet Switches der Nexus Serie und die MDS Serie mit Fibre Channel (FC) Storage Area Network Switches von Cisco Systems.
+. link:install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Installieren Sie das RCF, nachdem Sie den Nexus 92300YC-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+. link:setup-install-cshm-file.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"]. Installieren Sie die entsprechende Konfigurationsdatei für die Integritätsüberwachung des Cluster Switch bei Nexus 92300YC Cluster Switches.
+
+
+
+
+== Weitere Informationen
+
+Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
+
+* link:configure-reqs-92300.html["Konfigurationsanforderungen"]
+* link:components-92300.html["Komponenten und Teilenummern"]
+* link:required-documentation-92300.html["Erforderliche Dokumentation"]
+* link:smart-call-home-92300.html["Anforderungen für Smart Call Home"]
+

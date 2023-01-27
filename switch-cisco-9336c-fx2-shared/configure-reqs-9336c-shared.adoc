@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: /switch-cisco-9336c-fx2-shared/configure-reqs-9336c-shared.html 
+keywords: shared storage cluster switch 
+summary: In ONTAP 9.9 können Unternehmen mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- und Cluster-Funktionen in einem gemeinsamen Switch-Szenario kombinieren. 
+---
+= Konfigurationsanforderungen für gemeinsame Cisco Nexus 9336C-FX2 Switches
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prüfen Sie bei der Installation und Wartung von Cisco Nexus 9336C-FX2 Switches die Konfigurations- und Netzwerkanforderungen.
+
+
+
+== ONTAP Support
+
+Ab ONTAP 9.9 können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- und Cluster-Funktionen in einer gemeinsamen Switch-Konfiguration kombinieren.
+
+Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Netzwerk-Switches erforderlich.
+
+
+
+== Konfigurationsanforderungen
+
+Für die Konfiguration benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelanschlüssen für Ihre Switches.
+
+Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
+
+
+
+== Netzwerkanforderungen
+
+Für alle Switch-Konfigurationen benötigen Sie die folgenden Netzwerkinformationen.
+
+* IP-Subnetz für den Management-Netzwerkdatenverkehr
+* Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
+* Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700s Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
+* Siehe https://hwu.netapp.com["Hardware Universe"] Aktuelle Informationen.
+
+
+Weitere Informationen zur Erstkonfiguration des Switches finden Sie im folgenden Handbuch: https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Cisco Nexus 9336C-FX2 – Installations- und Upgrade-Leitfaden"].

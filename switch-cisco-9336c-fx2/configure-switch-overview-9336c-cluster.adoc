@@ -1,0 +1,41 @@
+---
+permalink: switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html 
+sidebar: sidebar 
+keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Überblick über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Cluster-Switches 
+---
+= Überblick über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Cluster-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Cisco Nexus 9336C-FX2 Cluster-Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp System-Rack installiert werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+
+
+
+== Überblick über die Erstkonfiguration
+
+Gehen Sie wie folgt vor, um einen Cisco Nexus 9336C-FX2 Switch auf Systemen mit ONTAP zu konfigurieren:
+
+. link:setup-worksheet-9336c-cluster.html["Füllen Sie das Cisco Nexus 9336C-FX2-Verkabelungsarbeitsblatt aus"]. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+. link:install-switch-9336c-cluster.html["Den Schalter einbauen"]. Richten Sie die Switch-Hardware ein.
+. link:setup-switch-9336c-cluster.html["Konfigurieren Sie den Cluster-Switch 9336C-FX2"]. Richten Sie den Cisco Nexus 9336C-FX2 Switch ein.
+. link:install-switch-and-passthrough-panel-9336c-cluster.html["Installation eines Cisco Nexus 9336C-FX2 Switch in einem NetApp Rack"]. Je nach Konfiguration können Sie den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.
+. link:install-nxos-overview-9336c-cluster.html["Bereiten Sie sich auf die Installation der NX-OS-Software und der RCF vor"]. Befolgen Sie die vorbereitenden Verfahren zur Installation der Cisco NX-OS-Software und der Referenzkonfigurationsdateien (RCFs).
+. link:install-nxos-software-9336c-cluster.html["Installieren Sie die NX-OS-Software"]. Installieren Sie die NX-OS-Software auf dem Nexus 9336C-FX2 Cluster Switch.
+. link:install-nxos-rcf-9336c-cluster.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Installieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Schalter zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+
+
+
+
+== Weitere Informationen
+
+Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
+
+* link:configure-reqs-9336c-cluster.html["Konfigurationsanforderungen"]
+* link:components-9336c-cluster.html["Komponenten und Teilenummern"]
+* link:required-documentation-9336c-cluster.html["Erforderliche Dokumentation"]
+* link:smart-call-9336c-cluster.html["Anforderungen für Smart Call Home"]
+

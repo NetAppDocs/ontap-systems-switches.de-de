@@ -1,0 +1,35 @@
+---
+permalink: switch-cisco-92300/configure-reqs-92300.html 
+sidebar: sidebar 
+keywords: cisco nexus 92300YC 
+summary: Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden. 
+---
+= Konfigurationsanforderungen für Cisco Nexus 92300YC Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Installation und Wartung von Cisco Nexus 92300YC-Switches müssen alle Konfigurations- und Netzwerkanforderungen geprüft werden.
+
+Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden.
+
+
+
+== Konfigurationsanforderungen
+
+Zum Konfigurieren des Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für Ihre Switches. Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
+
+
+
+== Netzwerkanforderungen
+
+Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfigurationen:
+
+* IP-Subnetz für den Management-Netzwerkdatenverkehr
+* Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
+* Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700 Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
+
+
+Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.

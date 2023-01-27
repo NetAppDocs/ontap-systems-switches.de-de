@@ -1,73 +1,50 @@
 ---
 section: switch-cisco-3232c
-title: Cisco Nexus 3232C Switches
+title: Cisco Nexus 3232C
 entries:
 - title: Überblick
-  url: "/switch-cisco-3232c/index.html"
-- title: Installieren Sie einen Cisco Nexus 3232C-Cluster-Switch und eine Pass-Through-Panel
-    in einem NetApp-Rack
-  url: "/switch-cisco-3232c/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html"
-- title: Einrichtung
   entries:
-  - title: Richten Sie die Schalter ein
-    url: "/switch-cisco-9336c-fx2/setup-switches.html"
-  - title: Erforderliche Informationen zur Cluster-Konfiguration
-    url: "/switch-cisco-9336c-fx2/setup-required-information.html"
-    entries:
-    - title: Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor
-        (CSHM) für 92300YC-Switches
-      url: "/switch-cisco-9336c-fx2/setup-install-cshm-file.html"
+  - title: Konfigurationsübersicht
+    url: "/switch-cisco-3232c/install-overview-cisco-3232c.html"
+  - title: Konfigurationsanforderungen
+    url: "/switch-cisco-3232c/configure-reqs-3232c.html"
   - title: Erforderliche Dokumentation
-    url: "/switch-cisco-9336c-fx2/setup-required-documentation.html"
-  - title: Überlegungen für die Verwendung von Smart Call Home
-    url: "/switch-cisco-9336c-fx2/setup-considerations-smart-call.html"
-  - title: Beispiele und leere Verkabelungsarbeitsblätter
-    url: "/switch-cisco-9336c-fx2/setup-worksheets-sample-cabling.html"
-    entries:
-    - title: Cisco Nexus 9336C-FX2 – Verkabelungsarbeitsblatt
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-9336c.html"
-    - title: Arbeitsblatt für die Cisco Nexus 92300YC-Verkabelung
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-92300yc.html"
-    - title: Verkabelungsarbeitsblatt für den Cisco Nexus 3232C-Serie
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-3232c.html"
-    - title: Cisco Nexus 3132Q-V – Verkabelungsarbeitsblatt
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-3132q.html"
-    - title: Cisco Nexus 5596UP und 5596T – Verkabelungsarbeitsblatt
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-5596.html"
-- title: Installieren Sie NX-OS und RCFs auf Cisco Nexus 3232C Cluster Switches
-  url: "/switch-cisco-3232c/task-install-nx-os-software-and-rcfs-on-cisco-nexus-3232-cluster-switches-running-ontap-9-4-and-later.html"
+    url: "/switch-cisco-3232c/required-documentation-3232c.html"
+  - title: Anforderungen für Smart Call Home
+    url: "/switch-cisco-3232c/smart-call-home-3232c.html"
+- title: Hardware installieren
   entries:
-  - title: Installieren Sie die NX-OS-Software
-    url: "/switch-cisco-3232c/task-install-the-nx-os-software-3232c-cluster-switch.html"
-  - title: Installieren Sie die Referenzkonfigurationsdatei (RCF).
-    url: "/switch-cisco-3232c/task-install-the-reference-configuration-file-rcf-3232c-cluster-switch.html"
-- title: Migrieren Sie einen CN1610 Switch zu einem Cisco Nexus 3232C Cluster-Switch
-  url: "/switch-cisco-3232c/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html"
+  - title: Füllen Sie das Verkabelungsarbeitsblatt aus
+    url: "/switch-cisco-3232c/setup_worksheet_3232c.html"
+  - title: Konfigurieren Sie den Switch
+    url: "/switch-cisco-3232c/setup-switch.html"
+  - title: Switch in NetApp-Schrank einbauen
+    url: "/switch-cisco-3232c/install-cisco-nexus-3232c.html"
+- title: Software konfigurieren
   entries:
-  - title: Migrieren eines CN1610 Cluster-Switches zu einem Cisco Nexus 3232C Cluster-Switch
-    url: "/switch-cisco-3232c/task-how-to-replace-cn1610-cluster-switches-with-cisco-nexus-3232c-cluster-switches.html"
-- title: Migration von einem Cisco Nexus 5596 Switch zu einem Cisco Nexus 3232C Switch
-  url: "/switch-cisco-3232c/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html"
+  - title: Bereiten Sie sich auf die Installation von NX-OS und RCF vor
+    url: "/switch-cisco-3232c/prepare-install-cisco-nexus-3232c.html"
+  - title: Installation der NX-OS Software
+    url: "/switch-cisco-3232c/install-nx-os-software-3232c.html"
+  - title: Installieren Sie die RCF-Konfigurationsdatei
+    url: "/switch-cisco-3232c/install-rcf-3232c.html"
+- title: Switches migrieren
   entries:
-  - title: So migrieren Sie von einem Cisco Nexus 5596-Cluster-Switch zu einem Cisco
-      Nexus 3232C-Cluster-Switch
-    url: "/switch-cisco-3232c/task-how-to-migrate-from-a-cisco-nexus-5596-cluster-switch-to-a-cisco-nexus-3232c-cluster-switch.html"
-- title: Migrieren Sie mit Cisco Nexus 3232C Cluster-Switches von einem Cluster mit
-    zwei Nodes ohne Switches zu einem Cluster
-  url: "/switch-cisco-3232c/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html"
+  - title: Migrationsanforderungen
+    url: "/switch-cisco-3232c/migrate-requirements-3232c.html"
+  - title: Migration von CN1610 Cluster-Switch
+    url: "/switch-cisco-3232c/migrate-cn1610-cluster-switches.html"
+  - title: Migration von Cisco Nexus 5596 Cluster-Switch
+    url: "/switch-cisco-3232c/migrate-from-cisco-nexus-5596.html"
+  - title: Migrieren Sie von einem Cluster mit zwei Nodes ohne Switches
+    url: "/switch-cisco-3232c/migrate-from-two-node-switchless-cluster.html"
+  - title: Migrieren Sie auf ein Cluster mit zwei Nodes ohne Switches
+    url: "/switch-cisco-3232c/migrate-to-switchless-cluster-interconnect.html"
+- title: Tauschen Sie die Schalter aus
   entries:
-  - title: So migrieren Sie von einem 2-Node-Cluster ohne Switches zu einem Cluster
-      mit Cisco Nexus 3232C-Cluster-Switches
-    url: "/switch-cisco-3232c/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html"
-- title: Austausch eines Cisco Nexus 3232C-Cluster-Switch
-  url: "/switch-cisco-3232c/concept-replace-a-cisco-nexus-3232c-cluster-switch.html"
-  entries:
-  - title: Austausch eines Cisco Nexus 3232C-Cluster-Switch
-    url: "/switch-cisco-3232c/task-how-to-replace-a-cisco-nexus-3232c-cluster-switch.html"
-- title: Einen Cisco Nexus 3232C Storage-Switch austauschen
-  url: "/switch-cisco-3232c/concept-replace-a-cisco-nexus-3232c-storage-switch.html"
-  entries:
-  - title: Schritte zum Austausch eines Cisco Nexus 3232C Storage-Switches
-    url: "/switch-cisco-3232c/task-steps-to-replace-a-cisco-nexus-3232c-storage-switch.html"
-- title: Aktualisieren eines Cisco Nexus 3232C Storage Switch
-  url: "/switch-cisco-3232c/task-upgrade-nx-os-software-and-rcfs-on-cisco-nexus-3232c-storage-switches.html"
+  - title: Cluster-Switch austauschen
+    url: "/switch-cisco-3232c/replace-cluster-switch.html"
+  - title: Storage-Switch austauschen
+    url: "/switch-cisco-3232c/replace-storage-switch.html"
+- title: Aktualisieren der Switches
+  url: "/switch-cisco-3232c/upgrade-3232c-storage-switches.html"

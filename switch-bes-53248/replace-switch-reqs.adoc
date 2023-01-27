@@ -1,0 +1,50 @@
+---
+permalink: switch-bes-53248/replace-switch-reqs.html 
+sidebar: sidebar 
+keywords: replace, replacing, defective, broadcom-supported, bes, cluster, switch, network, nondisruptive, procedure, ndu, replace a broadcom-supported bes-53428 cluster switch - bes-53428 switches 
+summary: 'Der Austausch eines defekten Broadcom unterstützten BES-53248 Cluster-Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren \(NDU\).' 
+---
+= Ersatzanforderungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Stellen Sie vor dem Austausch des Switches sicher, dass die folgenden Bedingungen in der aktuellen Umgebung und am Ersatzschalter erfüllt sind.
+
+
+
+== Bestehende Cluster- und Netzwerkinfrastruktur
+
+Stellen Sie sicher, dass:
+
+* Das vorhandene Cluster wird mit mindestens einem vollständig verbundenen Cluster-Switch als voll funktionsfähig geprüft.
+* Alle Cluster-Ports sind *up*.
+* Alle Cluster-logischen Schnittstellen (LIFs) sind administrativ und betrieblich *up* und auf ihren Home-Ports.
+* Das ONTAP `cluster ping-cluster -node node1` Der Befehl muss angeben, dass die Einstellungen `basic connectivity` Und `larger than PMTU communication`, Sind auf allen Wegen erfolgreich.
+
+
+
+
+== BES-53248 Austausch-Cluster-Switch
+
+Stellen Sie sicher, dass:
+
+* Das Management-Netzwerk-Konnektivität auf dem Ersatz-Switch ist funktionsfähig.
+* Der Konsolenzugriff auf den Ersatz-Switch erfolgt.
+* Die Node-Verbindungen sind die Ports 0/1 bis 0/16 bei der Standardlizenzierung.
+* Alle Inter-Switch Link (ISL)-Ports sind an den Ports 0/55 und 0/56 deaktiviert.
+* Die gewünschte Referenzkonfigurationsdatei (RCF) und das Switch-Image des EFOS-Betriebssystems werden auf den Switch geladen.
+* Die Erstanpassung des Schalters ist abgeschlossen, wie in beschrieben link:configure-install-initial.html["Konfigurieren Sie den BES-53248 Cluster-Switch"].
+
+
+Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH werden auf den neuen Switch kopiert.
+
+
+
+== Finden Sie weitere Informationen
+
+* https://mysupport.netapp.com/["NetApp Support Website"^]
+* https://hwu.netapp.com/Home/Index["NetApp Hardware Universe"^]
+

@@ -1,0 +1,39 @@
+---
+permalink: switch-cisco-3232c/install-overview-cisco-3232c.html 
+sidebar: sidebar 
+keywords: install, cisco nexus 3232c switch, 
+summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Übersicht über den Prozess und die Terminologie. 
+---
+= Überblick über Installation und Konfiguration von Cisco Nexus 3232c-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+
+
+
+== Überblick über die Erstkonfiguration
+
+Gehen Sie wie folgt vor, um einen Cisco Nexus 3232c Switch auf Systemen mit ONTAP zu konfigurieren:
+
+. link:setup_worksheet_3232c.html["Füllen Sie das Cisco Nexus 3232C-Verkabelungsarbeitsblatt aus"]. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+. link:install-cisco-nexus-3232c.html["Installieren Sie einen Cisco Nexus 3232C Cluster Switch in einem NetApp Rack"]. Installieren Sie den Cisco Nexus 3232C-Cluster-Switch und die Pass-Through-Panel in einem NetApp-Schrank mit den im Switch enthaltenen Standardhalterungen.
+. link:setup-switch.html["Konfigurieren Sie den 3232C-Cluster-Switch"]. Richten Sie den Cisco Nexus 3232C Switch ein und konfigurieren Sie ihn.
+. link:prepare-install-cisco-nexus-3232c.html["Bereiten Sie die Installation der NX-OS-Software und der Referenzkonfigurationsdatei vor"]. Bereiten Sie die Installation der NX-OS-Software und der Referenz-Konfigurationsdatei (RCF) vor.
+. link:install-nx-os-software-3232c.html["Installieren Sie die NX-OS-Software"]. Installieren Sie die NX-OS-Software auf dem Nexus 3232C-Cluster-Switch.
+. link:install-rcf-3232c.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Installieren Sie den RCF, nachdem Sie den Nexus 3232C-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+
+
+
+
+== Weitere Informationen
+
+Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
+
+* link:configure-reqs-3232c.html["Konfigurationsanforderungen"]
+* link:required-documentation-3232c.html["Erforderliche Dokumentation"]
+* link:smart-call-home-3232c.html["Anforderungen für Smart Call Home"]
+

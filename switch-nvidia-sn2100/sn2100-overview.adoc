@@ -4,20 +4,33 @@ sidebar: sidebar
 keywords: nvidia SN2100 switches 
 summary: Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden. 
 ---
-= NVIDIA SN2100-Switch
+= Überblick und Anforderungen: NVIDIA SN2100 Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ab ONTAP 9.10.1P3 können Sie mit NVIDIA SN2100 Switches Storage- und Cluster-Funktionen in einer gemeinsamen Switch-Konfiguration kombinieren.
+Für die Installation und Wartung von NVIDIA SN2100-Switches sollten Sie alle Anforderungen und die empfohlene Dokumentation prüfen.
 
 Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden.
 
+
+
+== ONTAP und Linux Unterstützung
+
+Der NVIDIA SN2100 Switch ist ein 10/25/40/100 GB Ethernet-Switch mit Cumulus Linux. Der Switch unterstützt Folgendes:
+
+* ONTAP 9.10.1P3. Der SN2100 Switch dient Cluster- und Speicheranwendungen in ONTAP 9.10.1P3 über verschiedene Switch-Paare. Ab ONTAP 9.10.1P3 können Sie mit NVIDIA SN2100 Switches Storage- und Cluster-Funktionen in einer gemeinsamen Switch-Konfiguration kombinieren.
+* Cumulus Linux (CL) OS Version 4.4.2. Cumulus Linux kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.
+
+
+
+
+== Angaben zum Rack und Schienensatz
+
 Sie installieren den NVIDIA SN2100-Switch (X190006/X190106) im NVIDIA-Dual/Single-Switch-Gehäuse mit den im Lieferumfang des Switches enthaltenen Standardhalterungen.
 
-.SN2100-Switches und Schienensatz – Details
 In der folgenden Tabelle sind die Teilenummer und Beschreibung der MSN2100-Switches und Schienen-Kits aufgeführt:
 
 [cols="1,2"]
@@ -67,9 +80,12 @@ Rail Kit, NVIDIA Single Switch, kurze Tiefe
 
 |===
 
-IMPORTANT: Weitere Informationen finden Sie in der NVIDIA-Dokumentation auf https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installieren Sie den SN2100-Switch und den Schienen-Kit"^].
+NOTE: Weitere Informationen finden Sie in der NVIDIA-Dokumentation auf https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installieren Sie den SN2100-Switch und den Schienen-Kit"^].
 
-.Verfügbare Dokumentation
+
+
+== Verfügbare Dokumentation
+
 In der folgenden Tabelle ist die Dokumentation für die NVIDIA SN2100-Switches aufgeführt.
 
 [cols="1,2"]

@@ -1,67 +1,46 @@
 ---
 section: switch-cisco-3132q-v
-title: Cisco Nexus 3132Q-V Switches
+title: Cisco Nexus 3132Q-V
 entries:
 - title: Überblick
-  url: "/switch-cisco-3132q-v/index.html"
-- title: Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch und eine Pass-Through-Panel
-    in einem NetApp Rack
-  url: "/switch-cisco-3132q-v/task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html"
-- title: Einrichtung
   entries:
-  - title: Richten Sie die Schalter ein
-    url: "/switch-cisco-9336c-fx2/setup-switches.html"
-  - title: Erforderliche Informationen zur Cluster-Konfiguration
-    url: "/switch-cisco-9336c-fx2/setup-required-information.html"
-    entries:
-    - title: Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor
-        (CSHM) für 92300YC-Switches
-      url: "/switch-cisco-9336c-fx2/setup-install-cshm-file.html"
+  - title: Konfigurationsübersicht
+    url: "/switch-cisco-3132q-v/install-overview-cisco-3132qv.html"
+  - title: Konfigurationsanforderungen
+    url: "/switch-cisco-3132q-v/configure-reqs-3132q.html"
   - title: Erforderliche Dokumentation
-    url: "/switch-cisco-9336c-fx2/setup-required-documentation.html"
-  - title: Überlegungen für die Verwendung von Smart Call Home
-    url: "/switch-cisco-9336c-fx2/setup-considerations-smart-call.html"
-  - title: Beispiele und leere Verkabelungsarbeitsblätter
-    url: "/switch-cisco-9336c-fx2/setup-worksheets-sample-cabling.html"
-    entries:
-    - title: Cisco Nexus 9336C-FX2 – Verkabelungsarbeitsblatt
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-9336c.html"
-    - title: Arbeitsblatt für die Cisco Nexus 92300YC-Verkabelung
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-92300yc.html"
-    - title: Verkabelungsarbeitsblatt für den Cisco Nexus 3232C-Serie
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-3232c.html"
-    - title: Cisco Nexus 3132Q-V – Verkabelungsarbeitsblatt
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-3132q.html"
-    - title: Cisco Nexus 5596UP und 5596T – Verkabelungsarbeitsblatt
-      url: "/switch-cisco-9336c-fx2/setup-worksheet-5596.html"
-- title: Installieren Sie NX-OS und RCFs auf Cisco Nexus 3132Q-V Cluster Switches
-  url: "/switch-cisco-3132q-v/task-install-nx-os-software-and-rcfs-on-cisco-nexus-3132q-v-cluster-switches.html"
+    url: "/switch-cisco-3132q-v/required-documentation-3132q.html"
+  - title: Anforderungen für Smart Call Home
+    url: "/switch-cisco-3132q-v/smart-call-home-3132q.html"
+- title: Hardware installieren
   entries:
-  - title: Installieren Sie die NX-OS-Software
-    url: "/switch-cisco-3132q-v/task-install-the-nx-os-software-3132q-v.html"
-  - title: Installieren Sie die Referenzkonfigurationsdatei (RCF).
-    url: "/switch-cisco-3132q-v/task-install-the-reference-configuration-file-rcf-3132q-v.html"
-- title: Migrieren Sie mit Cisco Nexus 3132Q-V Cluster Switches zu einem Switch mit
-    zwei Nodes
-  url: "/switch-cisco-3132q-v/concept-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3232c-cluster-switches.html"
+  - title: Füllen Sie das Verkabelungsarbeitsblatt aus
+    url: "/switch-cisco-3132q-v/setup_worksheet_3132q.html"
+  - title: Konfigurieren Sie den Switch
+    url: "/switch-cisco-3132q-v/setup-switch.html"
+  - title: Switch in NetApp-Schrank einbauen
+    url: "/switch-cisco-3132q-v/install-cisco-nexus-3132qv.html"
+- title: Software konfigurieren
   entries:
-  - title: Migration eines 2-Node-Switch-Clusters mit Cisco Nexus 3132Q-V Cluster-Switches
-    url: "/switch-cisco-3132q-v/task-how-to-migrate-from-a-two-node-switchless-cluster-to-a-cluster-with-cisco-nexus-3132q-v-cluster-switches.html"
-- title: Ersetzen Sie die Cisco Nexus 3132Q-V Cluster Switches
-  url: "/switch-cisco-3132q-v/concept-replace-cisco-nexus-3132q-v-cluster-switches.html"
+  - title: Bereiten Sie sich auf die Installation von NX-OS und RCF vor
+    url: "/switch-cisco-3132q-v/prepare-install-cisco-nexus-3132q.html"
+  - title: Installation der NX-OS Software
+    url: "/switch-cisco-3132q-v/install-nx-os-software-3132q-v.html"
+  - title: Installieren Sie die RCF-Konfigurationsdatei
+    url: "/switch-cisco-3132q-v/install-rcf-3132q-v.html"
+- title: Switches migrieren
   entries:
-  - title: So ersetzen Sie Cisco Nexus 3132Q-V Cluster-Switches
-    url: "/switch-cisco-3132q-v/task-how-to-replace-cisco-nexus-3132q-v-cluster-switches.html"
-- title: Ersetzen Sie einen Cisco Nexus 5596 Cluster Switch durch einen Cisco Nexus
-    3132Q-V Cluster-Switch
-  url: "/switch-cisco-3132q-v/concept-migrate-from-a-cisco-5596-switch-to-a-cisco-nexus-3232c.html"
+  - title: Migrieren Sie von CN5596 Switches
+    url: "/switch-cisco-3132q-v/migrate-from-cisco-nexus-5596-to-cisco-nexus-3232c.html"
+  - title: Migration von CN1610 Switches
+    url: "/switch-cisco-3132q-v/replace-cn1610-with-cisco-nexus-3232c.html"
+  - title: Migrieren Sie Cluster mit Switches von ohne Switch zu Clustern
+    url: "/switch-cisco-3132q-v/migrate-from-switchless-cluster-to-cisco-nexus-3132q-v.html"
+  - title: Migrieren Sie von einem Switch-basierten auf einen Cluster ohne Switch
+    url: "/switch-cisco-3132q-v/migrate-to-switchless-cluster-interconnect.html"
+- title: Tauschen Sie die Schalter aus
   entries:
-  - title: So ersetzen Sie einen Cisco Nexus 5596 Cluster Switch durch einen Cisco
-      Nexus 3132Q-V Cluster Switch
-    url: "/switch-cisco-3132q-v/task-how-to-migrate-from-a-cisco-nexus-5596-cluster-switch-to-a-cisco-nexus-3232c-cluster-switch.html"
-- title: Ersetzen Sie CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches
-  url: "/switch-cisco-3132q-v/concept-migrate-a-cn1610-switch-to-a-cisco-nexus-3232c-cluster-switch.html"
-  entries:
-  - title: So ersetzen Sie CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster
-      Switches
-    url: "/switch-cisco-3132q-v/task-how-to-replace-cn1610-cluster-switches-with-cisco-nexus-3232c-cluster-switches.html"
+  - title: Anforderungen ersetzen
+    url: "/switch-cisco-3132q-v/switch-requirements.html"
+  - title: Tauschen Sie die CN3132Q-V-Schalter aus
+    url: "/switch-cisco-3132q-v/replace-cisco-nexus-3132q-v.html"
