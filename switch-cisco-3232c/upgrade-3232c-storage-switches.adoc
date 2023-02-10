@@ -263,9 +263,48 @@ S2# copy running-config startup-config
 
 
 
-=== Schritt 3: Laden Sie das NX-OS-Image auf Cisco Switch S2 herunter und starten Sie neu
+=== Schritt 3: Kopieren Sie das NX-OS-Image auf Cisco Switch S2 und starten Sie neu
 
-. Laden Sie das NX-OS-Image herunter, um den Schalter S2 zu wechseln.
+. Kopieren Sie das NX-OS-Image auf Switch S2.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+S2# copy sftp: bootflash: vrf management
+Enter source filename: /code/nxos.9.3.4.bin
+Enter hostname for the sftp server: 172.19.2.1
+Enter username: user1
+
+Outbound-ReKey for 172.19.2.1:22
+Inbound-ReKey for 172.19.2.1:22
+user1@172.19.2.1's password:
+sftp> progress
+Progress meter enabled
+sftp> get   /code/nxos.9.3.4.bin  /bootflash/nxos.9.3.4.bin
+/code/nxos.9.3.4.bin  100% 1261MB   9.3MB/s   02:15
+sftp> exit
+Copy complete, now saving to disk (please wait)...
+Copy complete.
+
+cs2# copy sftp: bootflash: vrf management
+Enter source filename: /code/n9000-epld.9.3.4.img
+Enter hostname for the sftp server: 172.19.2.1
+Enter username: user1
+
+Outbound-ReKey for 172.19.2.1:22
+Inbound-ReKey for 172.19.2.1:22
+user1@172.19.2.1's password:
+sftp> progress
+Progress meter enabled
+sftp> get   /code/n9000-epld.9.3.4.img  /bootflash/n9000-epld.9.3.4.img
+/code/n9000-epld.9.3.4.img  100%  161MB   9.5MB/s   00:16
+sftp> exit
+Copy complete, now saving to disk (please wait)...
+Copy complete.
+----
+====
 . Installieren Sie das System-Image so, dass die neue Version beim nächsten Neustart von Switch S2 geladen wird.
 +
 Der Schalter wird in 10 Sekunden neu gestartet, wobei das neue Bild wie in der folgenden Ausgabe dargestellt ist:

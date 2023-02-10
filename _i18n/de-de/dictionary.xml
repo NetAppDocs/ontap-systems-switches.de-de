@@ -3444,8 +3444,6 @@
   <block id="ae93751a93d78c7a46cb2fb14c4ee8b7" category="paragraph"><block ref="37012567363af00fe31747157af69b42" prefix="" category="inline-code"></block></block>
   <block id="9678824a283295181839404bacab6aec" category="paragraph">In der Bannerausgabe aus dem<block ref="6d53824b9996e36fd31937e922967215" prefix=" " category="inline-code"></block> Befehl, Sie müssen lesen und befolgen Sie die Anweisungen im Abschnitt * WICHTIGE HINWEISE*, um die richtige Konfiguration und den Betrieb des Switches zu gewährleisten.</block>
   <block id="5691cd5298e545e7d1addfde1db9b5b8" category="list-text">Nachdem Sie sich vergewissern, dass die Software-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie den<block ref="092a495b03acdb0bf155d8ff2997a8d6" prefix=" " category="inline-code"></block> Datei in der<block ref="35b7dd24bfd716b0553d5e558b8afe97" prefix=" " category="inline-code"></block> Datei auf Schalter S2.</block>
-  <block id="e3adda4268a7e7bd78f47e8cc5f86c48" category="section-title">Schritt 3: Laden Sie das NX-OS-Image auf Cisco Switch S2 herunter und starten Sie neu</block>
-  <block id="fb7ec7093f3964bd1d568e19bda96e76" category="list-text">Laden Sie das NX-OS-Image herunter, um den Schalter S2 zu wechseln.</block>
   <block id="4e829ce6afd35ae225b70f58b27f634a" category="paragraph">Sie werden aufgefordert, das System neu zu booten.</block>
   <block id="9f78f2ea8dc9f03e722eb98915e83eae" category="list-text">Vergewissern Sie sich, dass sich die neue NX-OS-Versionsnummer auf dem Switch befindet:</block>
   <block id="8492932a4b3a469a1fb900aea61b22ff" category="section-title">Schritt 4: Überprüfen Sie den Funktionszustand von Switches und Ports</block>
@@ -4310,4 +4308,6 @@
   <block id="a8bb0b5314965a8ac1d110202d7aae1f" category="sidebar">Installation von NX-OS</block>
   <block id="72f2a813dae956304645ec60ccd278dd" category="sidebar">Installieren Sie CSHM</block>
   <block id="9c065304d8a82e97da8536d4c7484ee2" category="sidebar">Migrieren Sie von einem älteren Cisco Switch</block>
+  <block id="c95ced7468e70606897322014b89e5b3" category="section-title">Schritt 3: Kopieren Sie das NX-OS-Image auf Cisco Switch S2 und starten Sie neu</block>
+  <block id="04677d95852adc11088eca251913d172" category="list-text">Kopieren Sie das NX-OS-Image auf Switch S2.</block>
 </blocks>
