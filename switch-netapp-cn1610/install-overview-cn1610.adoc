@@ -15,10 +15,9 @@ Gehen Sie wie folgt vor, um einen NetApp CN1610 Switch auf Systemen mit ONTAP zu
 
 . link:install-hardware-cn1610.html["Hardware installieren"]
 . link:install-fastpath-software.html["INSTALLIEREN Sie DIE FASTPATH Software"]
-. link:install-rcf-file.html["Installieren Sie eine Referenzkonfigurationsdatei"]
+. link:install-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei"]
 +
-
-NOTE: Wenn auf den Switches ONTAP 8.3.1 oder höher ausgeführt wird, befolgen Sie die Anweisungen unter link:install-fastpath-rcf-831.html["INSTALLIEREN SIE FASTPATH und RCFs auf Switches mit ONTAP 8.3.1 und höher."]
+Wenn auf den Switches ONTAP 8.3.1 oder höher ausgeführt wird, befolgen Sie die Anweisungen unter link:install-fastpath-rcf-831.html["INSTALLIEREN SIE FASTPATH und RCFs auf Switches mit ONTAP 8.3.1 und höher."]
 
 . link:configure-hardware-cn1610.html["Konfigurieren Sie den Switch"]
 

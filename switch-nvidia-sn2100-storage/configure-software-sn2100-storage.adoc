@@ -13,10 +13,18 @@ summary: Überblick über den Softwarekonfigurationsprozess für NVIDIA SN2100 S
 [role="lead"]
 So installieren und konfigurieren Sie die Software für einen NVIDIA SN2100-Switch:
 
-. link:install-cumulus-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im Cumulus-Modus"] Oder link:install-onie-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im ONIE-Modus"]. Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.
-. link:install-rcf-sn2100-storage.html["Installieren Sie das Skript für die Referenzkonfigurationsdatei"]. Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.
-. link:install-snmpv3-sn2100-storage.html["Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung"]. Diese Version umfasst Unterstützung für SNMPv3 für die Erfassung von Switch-Protokollen und für Switch Health Monitoring (SHM).
+. link:install-cumulus-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im Cumulus-Modus"] Oder link:install-onie-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im ONIE-Modus"].
++
+Sie können Cumulus Linux (CL) OS installieren, wenn der Switch Cumulus Linux oder ONIE ausführt.
+
+. link:install-rcf-sn2100-storage.html["Installieren Sie das Skript für die Referenzkonfigurationsdatei"].
++
+Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.
+
+. link:install-snmpv3-sn2100-storage.html["Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung"].
++
+Diese Version umfasst Unterstützung für SNMPv3 für die Erfassung von Switch-Protokollen und für Switch Health Monitoring (SHM).
 
 
 
-NOTE: Die Verfahren verwenden Network Command Line Utility (NCLU), eine Befehlszeilenoberfläche, die sicherstellt, dass Cumulus Linux für alle zugänglich ist. Der NET-Befehl ist das Wrapper-Dienstprogramm, mit dem Sie Aktionen von einem Terminal aus ausführen.
+Die Verfahren verwenden Network Command Line Utility (NCLU), eine Befehlszeilenoberfläche, die sicherstellt, dass Cumulus Linux für alle zugänglich ist. Der NET-Befehl ist das Wrapper-Dienstprogramm, mit dem Sie Aktionen von einem Terminal aus ausführen.

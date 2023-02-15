@@ -13,10 +13,28 @@ summary: Lesen Sie die Software-Übersicht.
 [role="lead"]
 Gehen Sie wie folgt vor, um die Software für einen BES-53248 Cluster-Switch zu installieren und zu konfigurieren:
 
-. link:configure-efos-software.html["Installieren Sie die EFOS-Software"]. Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.
-. link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"]. Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.
-. link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.
-. link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"]. Installieren Sie die entsprechende Konfigurationsdatei für das Monitoring des Clusterstatus.
-. link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"]. Wenn Sie den Cluster Switch Health Monitor (CSHM) und die Funktionen zur Protokollerfassung verwenden, aktivieren Sie SSH auf den Switches.
-. link:configure-log-collection.html["Aktivieren Sie die Protokollerfassungsfunktion"]. Verwenden Sie diese Funktion, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
+. link:configure-efos-software.html["Installieren Sie die EFOS-Software"].
++
+Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.
+
+. link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"].
++
+Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.
+
+. link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."].
++
+Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.
+
+. link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"].
++
+Installieren Sie die entsprechende Konfigurationsdatei für das Monitoring des Clusterstatus.
+
+. link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"].
++
+Wenn Sie den Cluster Switch Health Monitor (CSHM) und die Funktionen zur Protokollerfassung verwenden, aktivieren Sie SSH auf den Switches.
+
+. link:configure-log-collection.html["Aktivieren Sie die Protokollerfassungsfunktion"].
++
+Verwenden Sie diese Funktion, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
+
 
