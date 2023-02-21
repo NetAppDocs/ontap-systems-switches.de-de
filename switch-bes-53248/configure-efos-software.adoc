@@ -101,9 +101,6 @@ Nicht FIPS-konform
 
 |===
 
-IMPORTANT: Beachten Sie, dass nach dem Upgrade von BES-53248-Cluster-Switches von EFOS 3.3.x.x oder 3.4.x.x auf EFOS 3.7.0.4 oder 3.8.0.2 Inter-Switch Links (ISLs) und Port Channel im Status *Down* markiert sind. Lesen Sie diesen KB-Artikel: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric%2C_Interconnect_and_Management_Switches/BES-53248_Cluster_Switch_NDU_failed_upgrade_to_EFOS_3.7.0.4_and_later["NDU für Cluster-Switch BES-53248 konnte nicht auf EFOS 3.7.0.4 und höher aktualisiert werden"^] Entnehmen.
-
-
 
 == Installieren Sie die Software
 
@@ -118,6 +115,9 @@ Verwenden Sie eine der folgenden Methoden:
 === Methode 1: EFOS installieren
 
 Führen Sie die folgenden Schritte durch, um die EFOS-Software zu installieren oder zu aktualisieren.
+
+
+IMPORTANT: Beachten Sie, dass nach dem Upgrade von BES-53248-Cluster-Switches von EFOS 3.3.x.x oder 3.4.x.x auf EFOS 3.7.0.4 oder 3.8.0.2 Inter-Switch Links (ISLs) und Port Channel im Status *Down* markiert sind. Lesen Sie diesen KB-Artikel: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric%2C_Interconnect_and_Management_Switches/BES-53248_Cluster_Switch_NDU_failed_upgrade_to_EFOS_3.7.0.4_and_later["NDU für Cluster-Switch BES-53248 konnte nicht auf EFOS 3.7.0.4 und höher aktualisiert werden"^] Entnehmen.
 
 .Schritte
 . Verbinden Sie den BES-53248-Cluster-Switch mit dem Managementnetzwerk.
