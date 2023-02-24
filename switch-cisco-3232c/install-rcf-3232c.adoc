@@ -43,6 +43,8 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 .Über diese Aufgabe
 Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
 
+Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+
 Führen Sie den Vorgang in durch link:prepare-install-cisco-nexus-3232c.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"], Und dann folgen Sie den Schritten unten.
 
 .Schritte

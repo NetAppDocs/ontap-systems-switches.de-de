@@ -130,16 +130,7 @@ Antworten Sie mit *ja*, um die Konfiguration zu speichern. Dadurch werden die Ki
 
 NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden keine Änderungen beim nächsten Neustart des Switches wirksam.
 
-. Prüfen Sie die Softwareversion auf den Switches und laden Sie ggf. die von NetApp unterstützte Version der Software auf die Switches herunter.
-+
-Wenn Sie die von NetApp unterstützte Version der Software herunterladen, müssen Sie auch die NetApp Network Switch Reference Configuration File herunterladen und mit der Konfiguration zusammenführen, die Sie in gespeichert haben <<step3,Schritt 3>>.
-
-+
-Sie können die Datei und die Anweisungen von herunterladen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Seite.
-
-+
-Wenn Sie Ihre eigenen Schalter haben, lesen Sie die http://www.cisco.com["Cisco"] Standort.
-
+. Überprüfen Sie die Version der Cluster-Netzwerk-Switches und laden Sie bei Bedarf die von NetApp unterstützte Version der Software von auf die Switches von herunter https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
 
 
 .Was kommt als Nächstes?

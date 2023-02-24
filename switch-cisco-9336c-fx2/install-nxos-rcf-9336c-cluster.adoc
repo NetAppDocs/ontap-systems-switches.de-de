@@ -53,6 +53,8 @@ NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von 
 .Über diese Aufgabe
 Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 9000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
 
+Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+
 
 CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein. Mit dieser Aufgabe wird die Konfiguration des Managementnetzwerks zurückgesetzt.
 
@@ -206,7 +208,7 @@ cluster1::*>
 ====
 [listing]
 ----
-cluster1::*> network interface modify -vserver Cluster -lif \* -auto-revert false
+cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert false
 ----
 ====
 
@@ -591,7 +593,7 @@ cluster1::*>
 ====
 [listing]
 ----
-cluster1::*> network interface modify -vserver Cluster -lif \* -auto-revert True
+cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert True
 ----
 ====
 . Schalter cs1 neu starten. Sie führen dies aus, um die Cluster-LIFs auszulösen, die auf die Home-Ports zurückgesetzt werden. Sie können die auf den Nodes gemeldeten Ereignisse „`Cluster Ports down`“ ignorieren, während der Switch neu gebootet wird.
@@ -618,7 +620,7 @@ This command will reboot the system. (y/n)?  [n] y
 ====
 [listing]
 ----
-cs1# show interface brief \| grep up
+cs1# show interface brief | grep up
 .
 .
 Eth1/1/1      1       eth  access up      none                    10G(D) --

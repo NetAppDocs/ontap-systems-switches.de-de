@@ -132,7 +132,7 @@ Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anwei
 
 
  a| 
-link:install-switch-and-passthrough-panel.html["Installation eines Cisco 9336-FX2 Switch in einem NetApp Rack"^]
+link:install-switch-and-passthrough-panel-9336c-cluster.html["Installation eines Cisco 9336-FX2 Switch in einem NetApp Rack"^]
  a| 
 Beschreibt die Installation eines Cisco Nexus 9336C-FX2 Switches in einem NetApp Rack mit vier Pfosten.
 

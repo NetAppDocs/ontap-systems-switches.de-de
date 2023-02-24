@@ -72,7 +72,7 @@ Retype new password: *netapp1!*
 ----
 cumulus@cumulus:mgmt:~$ *net show system*
 Hostname......... cumulus
-Build............ *Cumulus Linux 4.4.2*
+Build............ *Cumulus Linux 4.4.3*
 Uptime........... 0:08:20.860000
 Model............ Mlnx X86
 CPU.............. x86_64 Intel Atom C2558 2.40GHz
@@ -152,11 +152,11 @@ cumulus@sw1:~$ *sudo dpkg-reconfigure tzdata*
 .. Überprüfen Sie, ob das Datum und die Uhrzeit auf dem Switch korrekt sind, und aktualisieren Sie ggf..
 
 
-. Installieren Von Cumulus Linux 4.4.2:
+. Installieren Sie Cumulus Linux 4.4.3:
 +
 [listing, subs="+quotes"]
 ----
-cumulus@sw1:mgmt:~$ *sudo onie-install -a -i http://_<web-server>/<path>_/cumulus-linux-4.4.2-mlx-amd64.bin*
+cumulus@sw1:mgmt:~$ *sudo onie-install -a -i http://_<web-server>/<path>_/cumulus-linux-4.4.3-mlx-amd64.bin*
 ----
 +
 Das Installationsprogramm startet den Download. Geben Sie bei Aufforderung * y* ein.
@@ -176,7 +176,7 @@ cumulus@sw1:mgmt:~$ *sudo reboot*
 
 
 . Wiederholen Sie die Schritte 1 bis 4, um sich anzumelden.
-. Überprüfen Sie, ob die Cumulus Linux-Version 4.4 ist.2:
+. Überprüfen Sie, ob die Cumulus Linux-Version 4.4.3 lautet:
 +
 `net show version`
 
@@ -187,10 +187,10 @@ cumulus@sw1:mgmt:~$ *sudo reboot*
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:mgmt:~$ *net show version*
-NCLU_VERSION=1.0-cl4.4.2u0
+NCLU_VERSION=1.0-cl4.4.3u0
 DISTRIB_ID="Cumulus Linux"
-DISTRIB_RELEASE=*4.4.2*
-DISTRIB_DESCRIPTION=*"Cumulus Linux 4.4.2"*
+DISTRIB_RELEASE=*4.4.3*
+DISTRIB_DESCRIPTION=*"Cumulus Linux 4.4.3"*
 ----
 ====
 . Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu `sudo` Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.

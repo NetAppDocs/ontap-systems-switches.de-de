@@ -16,7 +16,7 @@ Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren.
 .Was Sie benötigen
 Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch folgende Funktionen verfügbar sind:
 
-* Cumulus Linux 4.4.2 ist installiert.
+* Cumulus Linux 4.4.3 ist installiert.
 * IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.
 
 
@@ -274,7 +274,7 @@ sw1                         cluster-network    10.233.205.90    MSN2100-CB2RC
      Serial Number: MNXXXXXXGD
       Is Monitored: true
             Reason: None
-  Software Version: Cumulus Linux version 4.4.2 running on Mellanox
+  Software Version: Cumulus Linux version 4.4.3 running on Mellanox
                     Technologies Ltd. MSN2100
     Version Source: LLDP
 
@@ -282,7 +282,7 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
      Serial Number: MNCXXXXXXGS
       Is Monitored: true
             Reason: None
-  Software Version: Cumulus Linux version 4.4.2 running on Mellanox
+  Software Version: Cumulus Linux version 4.4.3 running on Mellanox
                     Technologies Ltd. MSN2100
     Version Source: LLDP
 ----
