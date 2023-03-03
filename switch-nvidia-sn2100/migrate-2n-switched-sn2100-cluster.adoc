@@ -44,6 +44,9 @@ IMPORTANT: Siehe link:cabling-considerations-sn2100-cluster.html["Prüfen Sie di
 ** SN2100-Switches führen die neueste Version von Cumulus Linux aus
 ** Auf die Switches werden Referenzkonfigurationsdateien (RCFs) angewendet
 ** Auf den neuen Switches werden alle Site-Anpassungen wie SMTP, SNMP und SSH konfiguriert.
++
+Der https://hwu.netapp.com["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+
 
 
 
