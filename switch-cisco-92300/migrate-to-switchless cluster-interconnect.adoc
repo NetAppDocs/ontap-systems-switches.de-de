@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: migrate, switchless cluster interconnect, cisco nexus switch 92300YC 
 summary: Sie können von einem Cluster mit einem Switch-Cluster-Netzwerk zu einem migrieren, mit dem zwei Nodes direkt für ONTAP 9.3 und höher verbunden sind. 
 ---
-= Migrieren Sie zu einem Cluster mit zwei Nodes ohne Switches mit Cisco Nexus 92300YC Cluster Switches
+= Austausch von Cisco Nexus 92300YC Cluster Switches durch Verbindungen ohne Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -252,6 +252,10 @@ Enable Switchless Cluster: true
 . Vergewissern Sie sich, dass das Cluster-Netzwerk nicht unterbrochen wird:
 +
 `cluster ping-cluster -node local`
+
++
+
+IMPORTANT: Bevor Sie mit dem nächsten Schritt fortfahren, müssen Sie mindestens zwei Minuten warten, um eine funktionierende Back-to-Back-Verbindung für Gruppe 1 zu bestätigen.
 
 . Richten Sie die Konfiguration ohne Switches für die Ports in Gruppe 2 ein.
 +
