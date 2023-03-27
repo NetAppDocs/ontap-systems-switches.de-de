@@ -79,7 +79,7 @@ In der folgenden Tabelle ist die für die Cisco Nexus 92300YC-Switches verfügba
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/setup-switches.html["_Cisco Nexus 92300YC Cluster Switches einrichten_"^]
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-overview-cisco-92300.html["_Cisco Nexus 92300YC Cluster Switches einrichten_"^]
  a| 
 Beschreibt die Einrichtung und Konfiguration Ihrer Cisco Nexus 92300YC Cluster Switches.
 
@@ -93,7 +93,7 @@ Beschreibt die Installation von NX-OS und Referenzkonfigurationsdateien (RCFs) a
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-overview.html["_Neuen Cisco Nexus 92300YC Switch konfigurieren_"^]
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-initial.html["_Neuen Cisco Nexus 92300YC Switch konfigurieren_"^]
  a| 
 Beschreibt die Migration von Umgebungen, in denen ältere Cisco Switches verwendet werden, in Umgebungen, in denen Cisco 92300YC-Switches verwendet werden.
 

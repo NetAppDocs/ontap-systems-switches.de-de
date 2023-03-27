@@ -377,4 +377,4 @@ GEM FPGA                         0x2
 
 
 .Was kommt als Nächstes?
-link:.install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei"].
+link:install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei"]

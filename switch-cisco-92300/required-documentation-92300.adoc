@@ -129,7 +129,7 @@ Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anwei
 
 
  a| 
-link:install-switch-and-passthrough-panel.html["Installieren Sie einen Cisco Nexus 92300YC Switch in einem NetApp Rack"]
+link:install-cisco-nexus-3132qv.html["[Installieren Sie einen Cisco Nexus 92300YC Switch in einem NetApp Cabinet"]
  a| 
 Beschreibt die Installation eines Cisco Nexus 92300YC Switches in einem NetApp Rack mit vier Säulen.
 

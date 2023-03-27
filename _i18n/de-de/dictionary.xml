@@ -76,22 +76,16 @@
   <block id="4cbae0b27dc5bb331502b630a138cc4a" category="paragraph">In der folgenden Tabelle ist die Dokumentation für die NVIDIA SN2100-Switches aufgeführt.</block>
   <block id="b78a3223503896721cca1303f776159b" category="cell">Titel</block>
   <block id="b6b0513dd441d375575669499c028d77" category="inline-link-macro">_NVIDIA SN2100 Switches einrichten und konfigurieren_</block>
-  <block id="bc73d70686c873ae5e2f4e513f491722" category="paragraph"><block ref="bc73d70686c873ae5e2f4e513f491722" category="inline-link-macro-rx"></block></block>
   <block id="77f388375aa4a60bc88c77b1a62210b1" category="paragraph">Hier wird beschrieben, wie Sie Ihre NVIDIA SN2100-Switches einrichten und konfigurieren, einschließlich der Installation von Cumulus Linux und entsprechenden RCFs.</block>
   <block id="7f3bf3d40898d5f432e8fac499b35019" category="inline-link-macro">_Von einem Cisco Cluster-Switch zu einem NVIDIA SN2100 Cluster-Switch migrieren_</block>
-  <block id="3bbe54c8552e40dc5f89b73892046850" category="paragraph"><block ref="3bbe54c8552e40dc5f89b73892046850" category="inline-link-macro-rx"></block></block>
   <block id="c215cbb78c56580b18190d97abd7667b" category="paragraph">Eine Beschreibung der Migration von Umgebungen, in denen Cisco Cluster Switches verwendet werden, in Umgebungen, die NVIDIA SN2100 Cluster-Switches verwenden.</block>
   <block id="821a2f7945b3464ddee06f602c686f9b" category="inline-link-macro">_Von einem Cisco Storage Switch zu einem NVIDIA Storage Switch migrieren_</block>
-  <block id="3fbe15969453ca44c2deb4fdfe8323ee" category="paragraph"><block ref="3fbe15969453ca44c2deb4fdfe8323ee" category="inline-link-macro-rx"></block></block>
   <block id="26872f7030028e1569f2ce01c9bc352c" category="paragraph">Eine Beschreibung der Migration von Umgebungen, die Cisco Storage Switches in Umgebungen verwenden, die NVIDIA SN2100 Storage-Switches verwenden.</block>
   <block id="6f2cf7b704c57c57ef32132488de219a" category="inline-link-macro">_Migration zu einem Cluster mit zwei Nodes und NVIDIA SN2100 Cluster Switches_</block>
-  <block id="a5fe3028e8bedffa1849e536a4538b5b" category="paragraph"><block ref="a5fe3028e8bedffa1849e536a4538b5b" category="inline-link-macro-rx"></block></block>
   <block id="f47598dac203329e94811e7ca007b4e2" category="paragraph">Hier wird die Migration zu einer Switch-Umgebung mit zwei Nodes mit NVIDIA SN2100-Cluster-Switches beschrieben.</block>
   <block id="704deb422a6b7e49bc71f93eb9153e24" category="inline-link-macro">_Ersetzen Sie einen NVIDIA SN2100-Cluster-Switch_</block>
-  <block id="cb35bcc230f43141ffe95979875e1193" category="paragraph"><block ref="cb35bcc230f43141ffe95979875e1193" category="inline-link-macro-rx"></block></block>
   <block id="04c9967f210e3a292f67ab723d461b51" category="paragraph">Beschreibt das Verfahren zum Ersetzen eines defekten NVIDIA SN2100-Switch in einem Cluster und Herunterladen von Cumulus Linux und Referenzkonfigurationsdatei.</block>
   <block id="44bb54091263606f157bbaad0fdef9c3" category="inline-link-macro">_Einen NVIDIA SN2100-Storage-Switch ersetzen_</block>
-  <block id="38c797c6506c8619afc1b09c65aa0655" category="paragraph"><block ref="38c797c6506c8619afc1b09c65aa0655" category="inline-link-macro-rx"></block></block>
   <block id="2875df17f2e2895666eddce90fc6146f" category="paragraph">Beschreibt das Verfahren zum Austausch eines defekten NVIDIA SN2100-Speicherschalters und Herunterladen von Cumulus Linux und Referenzkonfigurationsdatei.</block>
   <block id="4e4a4a02911e122627365a67b690270e" category="summary">Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.</block>
   <block id="5c336d9150225836a1bf47b21339dedc" category="doc">Installieren Sie Cumulus Linux im ONIE-Modus</block>
@@ -610,7 +604,6 @@
   <block id="3e59b0e11242ccaa0aa06829a5a285e1" category="list-text">Aktualisieren Sie das EPLD-Bild, und starten Sie den Switch neu.</block>
   <block id="b2ed876df70e9e36d71d5bfdd2c8ce2f" category="list-text">Melden Sie sich nach dem Neustart des Switches erneut an, und überprüfen Sie, ob die neue EPLD-Version erfolgreich geladen wurde.</block>
   <block id="807acdbbef909943d9431809ace5cd2a" category="summary">Wenn Sie noch nicht über die erforderlichen Konfigurationsinformationen und Dokumentation verfügen, müssen Sie diese Informationen erfassen, bevor Sie die Cluster- und Management-Netzwerk-Switches einrichten.</block>
-  <block id="caf0eb5dcf09e6feaabb021fca4aa115" category="paragraph">Siehe <block ref="ce02abd585ceec2d373feba1d7f19db4" category="inline-xref-macro-rx"></block> Finden Sie weitere Informationen.</block>
   <block id="7a4e9cb5597c0c38152cde29a5ffea15" category="inline-link">NetApp Dokumentation</block>
   <block id="737342a20357f18d3845f3010879136d" category="paragraph"><block ref="737342a20357f18d3845f3010879136d" category="inline-link-rx"></block></block>
   <block id="0373910e51252c7b97dcbea9f4942604" category="inline-link">mysupport.netapp.com</block>
@@ -2168,16 +2161,13 @@
   <block id="9adac45c8f65af4ce2b61c1a4a107e6f" category="list-text">Verschieben Sie das Kabel von HA-Paar 1, Node A, Pfad A zum Storage Port NSM2224 für HA-Paar 1, Node A auf Storage Switch A</block>
   <block id="0e537830f3d70ee3a080b4d98d4c355a" category="list-text">Bewegen Sie das Kabel von HA-Paar 1, Node B, Pfad A zum Storage Port NSM2224 für HA-Paar 1, Node B auf Storage Switch A</block>
   <block id="34a5a87b0cc4e8609dc123f3eda8ae15" category="inline-link-macro">Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch</block>
-  <block id="f0ce965dd466a7b645474763caf2ba5a" category="list-text">[[Schritt6]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="dfaf1e0c7a26db603d75c12484eecbe5" category="list-text">Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage Switch A in einem ordnungsgemäßen Zustand ist:<block ref="f45218c1373cff36899b29f6a1585823" prefix=" " category="inline-code"></block></block>
   <block id="cc173b3b8d39723f6f1a95f88f27699a" category="list-text">[[Schritt8]]] Verschieben Sie die Kabel HA-Paar 1, NSM224 Pfad B vom Storage Switch B zu den gemeinsamen NS224 Storage-Ports für HA-Paar 1, Pfad B zum Storage Switch B</block>
   <block id="5d5108c830c67272c71b7aadba12e4b2" category="list-text">Bewegen Sie das Kabel von HA-Paar 1, Node A, Pfad B zum gemeinsamen Storage Port für HA-Paar 1, Node A, Pfad B auf Storage Switch B.</block>
   <block id="53b39cfff16d9870da3ecc23bf2f95ba" category="list-text">Bewegen Sie das Kabel von HA-Paar 1, Node B, Pfad B zu dem gemeinsamen Storage Port für HA-Paar 1, Node B, Pfad B auf Storage Switch B</block>
   <block id="ce8c521f1923b2dd332b3fc771e23d2a" category="list-text">Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:<block ref="f45218c1373cff36899b29f6a1585823" prefix=" " category="inline-code"></block></block>
-  <block id="3e8e79feff4b6aa3e8cf99d5fd2e529c" category="list-text">[[step 12]] ersetzen Sie die Speicher-RCF-Datei auf Shared-Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="447638ceee95556dee2fdf9379e52c28" category="list-text">[[step 15]]ISLs zwischen Shared Switch A und Shared Switch B installieren:</block>
   <block id="8a6725809e9d102de1fa5e1c7d8c431d" category="inline-link-macro">Ersetzen Sie einen gemeinsamen Cisco Nexus 9336C-FX2 Switch</block>
-  <block id="b2f0294b7ae68a5ba87ae2839d34a70c" category="list-text">[[steep16]]Migrieren Sie das Clusternetzwerk von den vorhandenen Cluster-Switches auf die gemeinsam genutzten Switches, indem Sie das Switch-Austauschverfahren und den gemeinsamen RCF verwenden. Der neue gemeinsam genutzte Schalter A ist „cs1“. Der neue gemeinsam genutzte Schalter B ist „cs2“. Siehe <block ref="cbb16447b88abbf626db4295a94e10df" category="inline-link-macro-rx"></block> Und <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="412d467b5f15dc1967df2c5af126e62d" category="list-text">Entfernen Sie die nicht verwendeten Cluster-Switches.</block>
   <block id="936648102dd0e64a9748e863cad7bbdd" category="list-text">Entfernen Sie die nicht verwendeten Speicherschalter.</block>
   <block id="eac9e7086f92a026c0dbe06001206204" category="doc">Installations- und Konfigurationsleitfaden für gemeinsam genutzte Cisco Switches</block>
@@ -2336,11 +2326,8 @@
   <block id="a61fb4ee9862ad3ca2ace374860efe47" category="list-text">[[Schritt3]]Verschieben Sie das HA-Paar 1, den Pfad A von NSM2224 vom Storage Switch A zu den gemeinsamen NS224 Storage-Ports für HA-Paar 1, Pfad A auf Storage Switch A</block>
   <block id="13edd7f420c2674d548b2a52a6da2adb" category="list-text">Verschieben Sie das Kabel von HA-Paar 1, Node A, Pfad A zu dem gemeinsamen Storage Port für HA-Paar 1, Node A auf Storage Switch A</block>
   <block id="8fa35651fd65d802f471c470966f21ec" category="list-text">Bewegen Sie das Kabel von HA-Paar 1, Node B, Pfad A zum gemeinsamen Storage Port für HA-Paar 1, Node B auf Storage Switch A</block>
-  <block id="5851bb17419faa449f719ec90fe12181" category="list-text">[[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="ea77aeb98674be7fb36ce74bd1108462" category="list-text">[[Schritt9]]] Verschieben Sie die Kabel HA-Paar 1 und NSM224 Pfad B vom Storage Switch B zu den gemeinsamen NS224 Storage-Ports für HA-Paar 1, Pfad B zum Storage Switch B</block>
-  <block id="ea9f3090e45d8199fc92892a96dd0214" category="list-text">[[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="b72c69a60f695309089392e6d394557c" category="inline-link-macro">Installieren der NX-OS-Software und der Referenzkonfigurationsdateien (RCFs)</block>
-  <block id="779f2e1ced3dc42aa441f71771bcb993" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="2e68fbe1bf6d8e813f758c3b7509ff6f" category="inline-link-macro-rx"></block>Entnehmen.</block>
   <block id="512a76427a65e27ffb75015bb7a6951e" category="list-text">Vergewissern Sie sich, dass die Switch-Netzwerkkonfiguration gültig ist:<block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block></block>
   <block id="b7167dcb288bc483f270fcd135c332ec" category="doc">Migrieren Sie von einem Cluster ohne Switches mit DAT Storage durch Ergänzung von zwei neuen Shared-Switches</block>
   <block id="8dfca7fe51402f701fd524d9f91fe93f" category="section-title">Migrieren Sie von einem Cluster ohne Switches mit DAT Storage</block>
@@ -2505,12 +2492,10 @@
   <block id="b53bf6a34828e828f9ca940ae691105c" category="list-text">Port-Side Ansaugluftstrom (Rückwärtsluft) --kühle Luft dringt durch das Anschlussende im kalten Gang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang. Port-Side-Luftstrom mit Burgunder Färbung.</block>
   <block id="d63345204e5c17d6bcf92cf136b9db27" category="paragraph">In der folgenden Tabelle ist die für die Cisco Nexus 92300YC-Switches verfügbare Dokumentation aufgeführt.</block>
   <block id="ecb1fb78f0a7256fc432444618ad1a8a" category="inline-link">_Cisco Nexus 92300YC Cluster Switches einrichten_</block>
-  <block id="233068d024bf94c66deaa2970d7b9fd3" category="paragraph"><block ref="233068d024bf94c66deaa2970d7b9fd3" category="inline-link-rx"></block></block>
   <block id="c50690ac186612ed9379c8fda0fb361b" category="paragraph">Beschreibt die Einrichtung und Konfiguration Ihrer Cisco Nexus 92300YC Cluster Switches.</block>
   <block id="992891edbdc5eb8cc0b55e47bf60836a" category="paragraph"><block ref="992891edbdc5eb8cc0b55e47bf60836a" category="inline-link-rx"></block></block>
   <block id="eccfa27226994fa4bdd73f45a4dd5759" category="paragraph">Beschreibt die Installation von NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Nexus 92300YC Cluster Switch.</block>
   <block id="9609b0108c844f45a60fa9ab473cb104" category="inline-link">_Neuen Cisco Nexus 92300YC Switch konfigurieren_</block>
-  <block id="a912d5a866cb6cfbd2f1d30042ff0e78" category="paragraph"><block ref="a912d5a866cb6cfbd2f1d30042ff0e78" category="inline-link-rx"></block></block>
   <block id="30237fd637d825e779189d71b17a50a9" category="paragraph">Beschreibt die Migration von Umgebungen, in denen ältere Cisco Switches verwendet werden, in Umgebungen, in denen Cisco 92300YC-Switches verwendet werden.</block>
   <block id="52b4746fcf8ac5f85a48a7b72b6213d3" category="inline-link">_Migration von einem älteren Cisco Switch zu einem Cisco Nexus 92300YC Switch_</block>
   <block id="e43fce9494e572945ab96f1a3707d3ee" category="paragraph"><block ref="e43fce9494e572945ab96f1a3707d3ee" category="inline-link-rx"></block></block>
@@ -2988,7 +2973,6 @@
   <block id="ec8855627efbb26afaa912164ff82dbd" category="inline-link-macro">Installieren Sie die RCF-Konfigurationsdatei</block>
   <block id="afe6bd84cf9f314186e891843eba49cc" category="paragraph"><block ref="41aae7f405e62aa01d791efeede3f9c2" category="inline-link-macro-rx"></block>.</block>
   <block id="2563a96fdb66dda5382058af89e8a58c" category="paragraph-title">Switch- und Node-Terminologie</block>
-  <block id="b4e654973509f8baaa138d687ecb2501" category="doc">Migrieren Sie zu einem Cluster mit zwei Nodes ohne Switches mit Cisco Nexus 9336C-FX2 Cluster-Switches</block>
   <block id="a2d07f4e7a36ed872e60c08cdcc73771" category="doc">Migration auf Cluster mit zwei Nodes</block>
   <block id="5b1bedb3dd2208af0449bbbfcc022136" category="paragraph">Wenn Sie über eine bestehende Cluster-Umgebung mit zwei Nodes (ohne Switch) verfügen, können Sie mit Cisco Nexus 9336C-FX2 Switches zu einer 2-Node-_Switched_-Cluster-Umgebung migrieren, um eine Skalierung über zwei Nodes im Cluster hinaus zu ermöglichen.</block>
   <block id="a693fd2056f9dc0037e9baefb9fbe3bb" category="paragraph">Der Migrationsprozess funktioniert bei allen Knoten mit optischen oder Twinax-Ports, wird von diesem Switch jedoch nicht unterstützt, wenn die Nodes integrierte 10 GB BASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.</block>
@@ -3101,7 +3085,6 @@
   <block id="e6aebd52a61a760e0bd9e778093f435d" category="paragraph">Zum Einrichten der Cisco Nexus 3132Q-V Switches benötigen Sie die folgende Dokumentation von<block ref="40f761a60b53eb5657b22596a88a5500" category="inline-link-rx"></block> Seite.</block>
   <block id="67c1b479900ac0bd70bc53cec53ab09d" category="paragraph">Informationen zur Installation eines 33132Q-V Cisco Switch in einem NetApp Rack finden Sie in der folgenden Hardware-Dokumentation.</block>
   <block id="7b180b39357479c0dfc914a589065e0f" category="inline-link-macro">Installation des Cisco Nexus 3132Q-V Switch in einem NetApp Rack</block>
-  <block id="bf52aa99c31093c8c238d41b9b3fcef1" category="paragraph"><block ref="bf52aa99c31093c8c238d41b9b3fcef1" category="inline-link-macro-rx"></block></block>
   <block id="077662abda369797cf161b3c680959fa" category="doc">Anforderungen für den Austausch von Cisco Nexus 3132Q-V Cluster Switches</block>
   <block id="b626c24802c9c9fd81b149f1462a9392" category="paragraph">Stellen Sie sicher, dass Sie die Konfigurationsanforderungen, Port-Verbindungen und Verkabelungsanforderungen kennen, wenn Sie Cluster Switches ersetzen.</block>
   <block id="5ec6a450c60171f21b1076c5993144d4" category="section-title">Anforderungen für Cisco Nexus 3132Q-V</block>
@@ -3151,7 +3134,6 @@
   <block id="85ed1ee9f4201a216125c557ae3a7f55" category="paragraph">Gehen Sie wie folgt vor, um einen Cisco Nexus 3132Q-V Switch auf Systemen mit ONTAP zu konfigurieren:</block>
   <block id="2b4b02e189294d861923b97358dd2f5a" category="list-text"><block ref="23d1fa41a61ba507d26b61266d9bc561" category="inline-link-macro-rx"></block>. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.</block>
   <block id="4e9e2beeb3b73a531c47ec929bbfd872" category="inline-link-macro">Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch in einem NetApp Rack</block>
-  <block id="4a6db6e3b93a6522439406532f3a4a17" category="list-text"><block ref="797ca528d8b2d9437ce0102b5130ae34" category="inline-link-macro-rx"></block>. Installieren Sie den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.</block>
   <block id="d33a1a3c4cea4496ac1583d929f95c2b" category="inline-link-macro">Konfigurieren Sie den Cisco Nexus 3132Q-V Switch</block>
   <block id="ab65b98e8410ac425fabe5d73b5e3eed" category="list-text"><block ref="6e21de03ac85481d2e774cd373205342" category="inline-link-macro-rx"></block>. Richten Sie den Cisco Nexus 3132Q-V Switch ein und konfigurieren Sie ihn.</block>
   <block id="d6a0822a7c97bddf0c6c35c07c36f7b0" category="list-text"><block ref="c7d9f92acf90399e5467216f763af38e" category="inline-link-macro-rx"></block>. Bereiten Sie die Installation der NX-OS-Software und der Referenz-Konfigurationsdatei (RCF) vor.</block>
@@ -3252,7 +3234,6 @@
   <block id="8e89ccec40320a1b61989fb275303962" category="paragraph">Siehe folgendes:</block>
   <block id="379715148f20afc8152f9fd0f9300f3b" category="paragraph">Dieses Austauschverfahren beschreibt das folgende Szenario:</block>
   <block id="eb643417b6ed41175edc34f9fab61508" category="paragraph">Durch diesen Austausch wird der zweite Nexus 3232C Cluster Switch CL2 durch den neuen 3232C Switch C2 ersetzt.</block>
-  <block id="5e657936f35f6654d5a390a94d411b26" category="paragraph">Die Beispiele in diesem Ersatzverfahren verwenden vier Knoten. Zwei der Nodes verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe <block ref="862bc7e99d01b4498927c2ced84e253e" category="inline-link-macro-rx"></block> Um zu überprüfen, welche Cluster-Ports für Ihre Plattform korrekt sind.</block>
   <block id="5451f895474fe79cd46d771ade1be8a2" category="section-title">Schritt 1: Anzeigen und migrieren Sie die Cluster-Ports auf den Switch</block>
   <block id="fb752c4a6200ed286349457edd2d4ac3" category="list-text">Fahren Sie die Cluster-Interconnect-Ports herunter, die physisch mit dem ursprünglichen Switch CL2 verbunden sind:</block>
   <block id="40bb1c214aa359fc74abb9464fb96251" category="section-title">Schritt: ISLs auf Switch CL1 und C2 migrieren</block>
@@ -3329,9 +3310,7 @@
   <block id="47ef3517d3d3996b89399d4a9639bea1" category="paragraph">Zum Einrichten der Cisco Nexus 3232C-Switches wird die folgende Dokumentation von benötigt<block ref="40f761a60b53eb5657b22596a88a5500" category="inline-link-rx"></block> Seite.</block>
   <block id="25de84bcfcfc826d24ce4a2563335dc2" category="paragraph">Informationen zur Installation eines Cisco Switch der 3232C-Serie in einem NetApp Rack finden Sie in der folgenden Hardware-Dokumentation.</block>
   <block id="536a003d2bb3a06adeaae4beb1438864" category="inline-link-macro">Installieren Sie einen Cisco Nexus 3232C Switch in einem NetApp Rack</block>
-  <block id="c49b5e210e49767e7c1d24da3ed18174" category="paragraph"><block ref="c49b5e210e49767e7c1d24da3ed18174" category="inline-link-macro-rx"></block></block>
   <block id="484438288295ccb871ffe387515ce29d" category="paragraph">Führen Sie den Vorgang in durch <block ref="92ff606cd08828782a7061b88d8a96a2" category="inline-link-macro-rx"></block>, Und dann folgen Sie den Schritten unten.</block>
-  <block id="5ccb38ebed4216ec8a6d18c4dc589f1e" category="paragraph"><block ref="a4d2e439383c877b79e3ee8d38ee9828" category="inline-link-macro-rx"></block>.</block>
   <block id="096a3404a2a07948959b99d02933138c" category="paragraph">Befolgen Sie diese Anweisungen, um den Cisco Nexus 3232C Switch einzurichten und zu konfigurieren.</block>
   <block id="b91a19f0a97dcea0bc6535cbc925db21" category="list-text">Erforderliche Dokumentation für das Cluster-Netzwerk und den Switch des Management-Netzwerks</block>
   <block id="b9f5f24ad90c4ea8ff15fad9ac408f42" category="list-text">Erforderliche Controller-Dokumentation und ONTAP-Dokumentation</block>
@@ -3478,7 +3457,6 @@
   <block id="81c54e4e4741aebd357dd94f97940d7d" category="list-text">Sie haben die folgenden Punkte überprüft:</block>
   <block id="06e45f008f3f22d11a5dc4eb8e875800" category="list-text"><block ref="06e45f008f3f22d11a5dc4eb8e875800" category="inline-link-macro-rx"></block></block>
   <block id="8b21286de1f0b27e78e54a55a69f517f" category="list-text"><block ref="8b21286de1f0b27e78e54a55a69f517f" category="inline-link-macro-rx"></block></block>
-  <block id="69ee4bf3a06817e8c0fa7c6865794f53" category="list-text"><block ref="69ee4bf3a06817e8c0fa7c6865794f53" category="inline-link-macro-rx"></block></block>
   <block id="e3eebebd717a15c05b5d4bda6525db57" category="paragraph">In den Beispielen der Konfigurationsverfahren wird die folgende Nomenklatur für Switches und Knoten verwendet:</block>
   <block id="2a589226697f86d1ec8dba9f56cb3a14" category="list-text">Die NetApp Switch-Namen sind<block ref="b12efe4e2b53de51a261421f77a3cbef" prefix=" " category="inline-code"></block> Und<block ref="43c8ce94d81492e62c60092a3664a65f" prefix=" " category="inline-code"></block>. Das Upgrade beginnt auf dem zweiten Switch, _cs2._</block>
   <block id="569d321ae19e7d1c701bb976abe74690" category="list-text">Die Cluster-Ports an jedem Node werden mit benannt<block ref="922c556baf6272bffc4fa28b2e9a0bbc" prefix=" " category="inline-code"></block> Und<block ref="22fe67c2e87caff18249cf1804bbeaad" prefix=" " category="inline-code"></block>. Siehe<block ref="6a8cef5b71adde6301ea0984592ea5c1" category="inline-link-rx"></block> Für die tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.</block>
@@ -3720,13 +3698,11 @@
   <block id="b6000f9eed7f8ea9ee4632bd2f77961a" category="inline-link">AFF C 190</block>
   <block id="8e4eec704f9a8706e1a3cf96accb2c17" category="list-text"><block ref="8e4eec704f9a8706e1a3cf96accb2c17" category="inline-link-rx"></block></block>
   <block id="8fd3ca5f66dff5be16e79560dd28171e" category="inline-link">AFF A220</block>
-  <block id="fafaf2b4975899cdac53345e69aac224" category="list-text"><block ref="fafaf2b4975899cdac53345e69aac224" category="inline-link-rx"></block></block>
   <block id="68b23d3f7da36f1f08be0727f515bcb1" category="inline-link">AFF A250</block>
   <block id="5173935e91aef44c51b8afd57f32f13f" category="list-text"><block ref="5173935e91aef44c51b8afd57f32f13f" category="inline-link-rx"></block></block>
   <block id="540dacfeb5577ce4282c41e9c7518680" category="inline-link">AFF A400</block>
   <block id="e06ad9290eff5c16396920aafb75091e" category="list-text"><block ref="e06ad9290eff5c16396920aafb75091e" category="inline-link-rx"></block></block>
   <block id="56c7968a1d140906ab8313162854322d" category="inline-link">AFF A700</block>
-  <block id="550e0f3f38fa7f062f0cd580e8ec9904" category="list-text"><block ref="550e0f3f38fa7f062f0cd580e8ec9904" category="inline-link-rx"></block></block>
   <block id="53270fbfda62583949b287e08ae3d063" category="inline-link">AFF A800</block>
   <block id="2f143cdae4fee80d6697460e215b8a02" category="list-text"><block ref="2f143cdae4fee80d6697460e215b8a02" category="inline-link-rx"></block></block>
   <block id="ec5e81cea4c5ee83d635778e86350e80" category="inline-link">AFF A900</block>
@@ -3737,11 +3713,9 @@
   <block id="1752b126dd5e4219fbf53c09ee63d51e" category="inline-link">FAS8300</block>
   <block id="9832cac218f9fee6c6d44a9f9b5e7d76" category="list-text"><block ref="9832cac218f9fee6c6d44a9f9b5e7d76" category="inline-link-rx"></block></block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="inline-link">FAS8700</block>
-  <block id="c892df1b5e8927f2c5ea04ddabf1eade" category="list-text"><block ref="c892df1b5e8927f2c5ea04ddabf1eade" category="inline-link-rx"></block></block>
   <block id="ec5c696a4bc57321a5a79c91b886d5ff" category="inline-link">FAS9000</block>
   <block id="6cfed826aaeccc59ecbf1bef0c41c6b6" category="list-text"><block ref="6cfed826aaeccc59ecbf1bef0c41c6b6" category="inline-link-rx"></block></block>
   <block id="756d409209ace98589705774b5011aa0" category="inline-link">FAS9500</block>
-  <block id="12308a6b5626caec9567d89e267f0550" category="list-text"><block ref="12308a6b5626caec9567d89e267f0550" category="inline-link-rx"></block></block>
   <block id="f3fd85a3ac5b5eb87b15d1c52c1dc13c" category="section-title">Schritt 2: Installieren Sie die Switch-Hardware</block>
   <block id="26d2e0bd267361cc8916e7e16faebcbb" category="paragraph">Installieren Sie Ihre Switches im Rack oder Schrank. Lesen Sie die folgenden Anweisungen für Ihr Switch-Modell.</block>
   <block id="8821c03ea98d1edaf4b4b82c0aaf59dc" category="inline-link-macro">Installieren Sie den BES-53248-Switch</block>
@@ -3795,8 +3769,6 @@
   <block id="cd0ac8ac6ae100c0f56d712237ad4aea" category="list-text">Informationen zu ONTAP mit MetroCluster Implementierungen finden Sie unter<block ref="725c74f5b5396d66bd86e73daf02329b" category="inline-link-rx"></block>.</block>
   <block id="1e672cb0691529b9dab89394f7a5f58c" category="paragraph"><block ref="f9b2ed845567b21857ae5d0479088ab0" category="inline-link-macro-rx"></block>.</block>
   <block id="21f31f792b72c310b4fd5aa9c2e35835" category="paragraph">Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem gemeinsamen Switch Nexus 9336C-FX2 zu installieren.</block>
-  <block id="7a0053c4b6fad6758411d3fe2d648fb7" category="paragraph">Bevor Sie beginnen, führen Sie den Vorgang in durch <block ref="7f9772c8b2604a832c6aad846dc2adc9" category="inline-link-macro-rx"></block>.</block>
-  <block id="708b9bef34421e8293c00d9205b84615" category="paragraph"><block ref="22eb01d1e7d6584a0da20f490dc5af77" category="inline-link-macro-rx"></block>.</block>
   <block id="3353682bf555dc374d0a35c53f69888f" category="paragraph">Sie können einen defekten Nexus 9336C-FX2 Shared Switch ersetzen. Dies ist ein NDU (Non Disruptive Procedure, NDU).</block>
   <block id="417613c56ec1e642135d2c1c9047771b" category="list-text">In dem vorhandenen Cluster und der Netzwerkinfrastruktur:</block>
   <block id="a3fed8ac06490f1babb7bb8e52ad3317" category="list-text">Für den Nexus 9336C-FX2-Ersatzschalter:</block>
@@ -3840,13 +3812,11 @@
   <block id="f1d2082f6b7e2fe0bd21c264b34b1db0" category="inline-link">Anweisungen zum Rack</block>
   <block id="85fdb4a8732610c4c52e8f55737378a6" category="paragraph">Siehe<block ref="bbb1ee507d7be4aaba439496ffdc6801" category="inline-link-rx"></block> Erfahren Sie, wie Sie den Switch in einem NetApp Rack unterbringen.</block>
   <block id="d2fa93779a0f6b07d1717e02308c2fa6" category="inline-link-macro">Konfigurieren Sie den gemeinsamen Cisco Nexus 9336C-FX2 Switch</block>
-  <block id="5273d8542606089233fc6b6190b5a6a1" category="paragraph">Gehen Sie zu <block ref="1b64b8467f6d243e16d469a0634ee2e3" category="inline-link-macro-rx"></block>.</block>
   <block id="c5ad5ecc479e35c7979fd57a0ebbe702" category="doc">Konfigurieren Sie gemeinsam genutzte Cisco Nexus 9336C-FX2 Switches</block>
   <block id="a241f03e92a7f9be7881ccbebc3c49c1" category="list-text">[[Schritt3]] eine Erstkonfiguration der Switches durchführen.</block>
   <block id="f1763dacc91922ffa978d054dfd1f86a" category="list-text">Starten Sie den Switch.</block>
   <block id="dccfac69359fbbc2d697ceff2f471768" category="paragraph">Geben Sie beim ersten Booten des Switches die entsprechenden Antworten auf die folgenden Einrichtungsfragen an.</block>
   <block id="aae42f96c85f765e2daf91cfda78fbed" category="paragraph">Die Sicherheitsrichtlinie Ihres Standorts definiert die zu erstellenenden Antworten und Services.</block>
-  <block id="39f03c8807c9d36b2901f7198a4ae0c2" category="paragraph">Je nach Konfiguration können Sie dies tun <block ref="bd7e5f56c6474a1d0a59eeac0ce681d7" category="inline-link-macro-rx"></block>. Andernfalls fahren Sie mit fort <block ref="16a9a5fa8979bab3106e7aad0dfd20d9" category="inline-link-macro-rx"></block>.</block>
   <block id="e0f95538095f3006db4ec3d4d022f616" category="summary">Überblick über Installation und Konfiguration für gemeinsame Cisco Nexus 9336C-FX2-Switches</block>
   <block id="c4081cf1ddd1a31c8c993d369968dbdb" category="paragraph">Der gemeinsame Switch der Cisco Nexus 9336C-FX2 ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp Systemschrank installiert werden. Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Storage-Funktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren, indem Sie gemeinsam genutzte Cluster- und Speicherreferenzkonfigurationsdateien unterstützen.</block>
   <block id="6b60b7ab5a3f661e97c0ea00594d9f2a" category="list-text"><block ref="6b60b7ab5a3f661e97c0ea00594d9f2a" category="inline-link-macro-rx"></block></block>
@@ -4070,7 +4040,6 @@
   <block id="4f1029afef8c698983cd55b4b7196076" category="list-text">Anwendbare NetApp Cisco NX-OS Software für Ihre Switches über die NetApp Support Site, erhältlich über<block ref="7bc6752d2076d2c755eaebbdfeb91d23" category="inline-link-rx"></block></block>
   <block id="c2995f917cf848b1a8ad4f123990b08f" category="inline-link-macro">_Hardware Universe^_</block>
   <block id="47db2740e391cb9dd7afd4c727db1c28" category="paragraph">Siehe <block ref="2e30f42bb79c7c9fe477a9d63d7f110d" category="inline-link-macro-rx"></block> Für die tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.</block>
-  <block id="a998998d9aa85cfad622a955a89c3928" category="paragraph"><block ref="c9caf8686378c2ac2326b9009e47db5d" category="inline-link-macro-rx"></block>.</block>
   <block id="3fbd08493d5c275b232c6896255f6eba" category="paragraph">Stellen Sie vor dem Austausch des Switches Folgendes sicher:</block>
   <block id="9bcdab9bd4ecdb0aaa64e3361181edda" category="list-text">Für den Nexus 92300YC-Ersatzschalter:</block>
   <block id="ddb606c3427383a547248e87a5791c6d" category="list-text">Alle Inter-Switch Link (ISL)-Ports sind an den Ports 1/65 und 1/66 deaktiviert.</block>
@@ -4118,8 +4087,6 @@
   <block id="4ebdda488f805c9ab0a258700a488e0b" category="doc">Dokumentationsanforderungen für Cisco Nexus 92300YC-Switches</block>
   <block id="4f6bac6c0b1a5da139b3d40b1f27d66c" category="paragraph">Zum Einrichten der Cisco Nexus 92300YC Switches benötigen Sie die folgende Dokumentation von<block ref="f4fbe3bed062fba5aa150f0db2ededbd" category="inline-link-rx"></block> Seite:</block>
   <block id="1bae6202d6745d172ebce83b73e80d17" category="paragraph">Informationen zur Installation eines Cisco Nexus 92300YC Switch in einem NetApp-Schrank finden Sie in der folgenden Hardware-Dokumentation.</block>
-  <block id="38432f6d5817226c6aa0cd518b5f378d" category="inline-link-macro">Installieren Sie einen Cisco Nexus 92300YC Switch in einem NetApp Rack</block>
-  <block id="5c446008fefc03f89204e24056931fa6" category="paragraph"><block ref="5c446008fefc03f89204e24056931fa6" category="inline-link-macro-rx"></block></block>
   <block id="1c246914de63b585e3ac51879ee3dc8f" category="paragraph">Beschreibt die Installation eines Cisco Nexus 92300YC Switches in einem NetApp Rack mit vier Säulen.</block>
   <block id="88a0b3df07cdb106fc7a25b0182e181c" category="summary">Wenn Sie einen unterbrechungsfrei 2-Node-Cluster ohne Switches zu einem Cluster mit Cisco Nexus 92300YC Cluster-Switches migrieren, müssen Sie bestimmte Konfigurationsinformationen, Port-Verbindungen und Verkabelungsanforderungen beachten.</block>
   <block id="5763545af30d991e7fec280eebb750f9" category="paragraph">Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben. Der dokumentierte Prozess funktioniert für alle Knoten mit optischen oder Twinax-Ports, wird aber auf diesem Switch nicht unterstützt, wenn Knoten integrierte 10-Gbit-BASE-T-RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.</block>
@@ -4237,7 +4204,6 @@
   <block id="bddd350f57f122b08e2cb443bea291f8" category="paragraph">Führen Sie eine Ersteinrichtung des BES-53248-Cluster-Switch durch.</block>
   <block id="52e2edab7e3825b54d082dec1bec95c2" category="paragraph">Verwenden Sie die Protokollerfassungsfunktionen, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.</block>
   <block id="89176363c7d28c567fb702f95f7eee23" category="list-text"><block ref="89176363c7d28c567fb702f95f7eee23" category="inline-link-macro-rx"></block></block>
-  <block id="c3751db0b816eb77f301f33109e09667" category="list-text"><block ref="7f9772c8b2604a832c6aad846dc2adc9" category="inline-link-macro-rx"></block>.Referenzkonfigurationsdateien (RCFs).</block>
   <block id="2aff03c3dbc05dcd1a7473fdae46a518" category="list-text"><block ref="ac0177a37e0d6a9d48948f0f0ce18138" category="inline-link-macro-rx"></block>.</block>
   <block id="77e50b9c28c254a30c6532cef05d409b" category="list-text"><block ref="791d44ab04841c1e3ddab1f7a28b754b" category="inline-link-macro-rx"></block>.</block>
   <block id="fd5531349e673e037070aacc3a802f37" category="list-text"><block ref="2d5ab056fce0957a1995d7dbefe2460c" category="inline-link-macro-rx"></block>.</block>
@@ -4268,6 +4234,39 @@
   <block id="6772e4d59dd062c5a9260242b751786f" category="doc">Ersetzen Sie Cisco Nexus 3232C-Cluster-Switches durch Verbindungen ohne Switches</block>
   <block id="6dd41d8a8ed57c2ab7e587572c2bf8c5" category="doc">Austausch von Cisco Nexus 92300YC Cluster Switches durch Verbindungen ohne Switches</block>
   <block id="5e1805c74a69eb3dca33ebb7e0f38ef6" category="doc">Ersetzen Sie Cisco Nexus 9336C-FX2 Cluster-Switches durch Switch-lose Verbindungen</block>
-  <block id="1991711774b7f5c3d1ceb09a3f94be78" category="doc">Migrieren Sie mit Cisco Nexus 9336C-FX2 Cluster-Switches von einem Switch auf einen Switch ohne Switches</block>
   <block id="0cb146d69d0fe75b8dbae294e40edac5" category="sidebar">Cluster-Switches durch Verbindungen ohne Switches ersetzen</block>
+  <block id="c0a5b1a3d1bb172f76bd6c3a49e192b0" category="paragraph"><block ref="c0a5b1a3d1bb172f76bd6c3a49e192b0" category="inline-link-rx"></block></block>
+  <block id="c0465e16a8eab6f05c1f0b75df3a60ef" category="paragraph"><block ref="c0465e16a8eab6f05c1f0b75df3a60ef" category="inline-link-rx"></block></block>
+  <block id="5209c02c28f9cf2ff12a0dc853b7bfc8" category="paragraph"><block ref="5209c02c28f9cf2ff12a0dc853b7bfc8" category="inline-link-rx"></block></block>
+  <block id="3d1ad993d058b226af4c41175610801a" category="paragraph"><block ref="3d1ad993d058b226af4c41175610801a" category="inline-link-rx"></block></block>
+  <block id="52411f7e6913940f22e4643fd665796b" category="paragraph"><block ref="52411f7e6913940f22e4643fd665796b" category="inline-link-rx"></block></block>
+  <block id="a780e0abe892abffee72be061886b35a" category="paragraph"><block ref="a780e0abe892abffee72be061886b35a" category="inline-link-rx"></block></block>
+  <block id="f88ff492d9ac2b71b83a8f1cf903002f" category="paragraph"><block ref="f88ff492d9ac2b71b83a8f1cf903002f" category="inline-link-macro-rx"></block></block>
+  <block id="3de316d04f9ddd9e9153f3bf9d611beb" category="list-text"><block ref="0f34072d0ab1c4a9db39b14366a38c31" category="inline-link-macro-rx"></block>. Installieren Sie den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.</block>
+  <block id="51f182c7d57e93ac41dc191ea3467c70" category="paragraph"><block ref="51f182c7d57e93ac41dc191ea3467c70" category="inline-link-macro-rx"></block></block>
+  <block id="febc0aefd48524c17323ea62f494c0a3" category="paragraph">Siehe <block ref="1dbca34b24162eb59cc33616a1549705" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="fc03792e787f91930c4afa79aa28d773" category="paragraph"><block ref="fc03792e787f91930c4afa79aa28d773" category="inline-link-macro-rx"></block></block>
+  <block id="10fd49cfa6f861021f96ea607a4f1301" category="paragraph">Die Beispiele in diesem Ersatzverfahren verwenden vier Knoten. Zwei der Nodes verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe <block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block> Um zu überprüfen, welche Cluster-Ports für Ihre Plattform korrekt sind.</block>
+  <block id="7b1f8572a598b67cece8c82d64948766" category="paragraph"><block ref="7b1f8572a598b67cece8c82d64948766" category="inline-link-macro-rx"></block></block>
+  <block id="a4546ad702e5e121d27f5d4775aafe40" category="paragraph"><block ref="a4546ad702e5e121d27f5d4775aafe40" category="inline-link-rx"></block></block>
+  <block id="5e39f518f379edf87fbd37cab3947422" category="paragraph"><block ref="5e39f518f379edf87fbd37cab3947422" category="inline-link-rx"></block></block>
+  <block id="df45f84b5087e66d03f27b014107fca6" category="admonition">Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC Cluster Switches zu unterstützen. Siehe <block ref="7548ef470ae7a4b5446d2e75f973e9c7" category="inline-link-macro-rx"></block> Entsprechende Details.</block>
+  <block id="85e1bd0d0188ca0339d3e60bb2a7e065" category="inline-link-macro">[Installieren Sie einen Cisco Nexus 92300YC Switch in einem NetApp Cabinet</block>
+  <block id="a3eb3beddbb43f454ab9432019c1c2ba" category="paragraph"><block ref="a3eb3beddbb43f454ab9432019c1c2ba" category="inline-link-macro-rx"></block></block>
+  <block id="9461b7a834c383c5538d97f8a173943a" category="paragraph"><block ref="9461b7a834c383c5538d97f8a173943a" category="inline-link-macro-rx"></block></block>
+  <block id="7f8ff44cf8415837b6ddd0f6cfbf3f5a" category="list-text"><block ref="7f8ff44cf8415837b6ddd0f6cfbf3f5a" category="inline-link-macro-rx"></block></block>
+  <block id="564ec135f22614fd51e7ace4addc3c82" category="list-text"><block ref="564ec135f22614fd51e7ace4addc3c82" category="inline-link-rx"></block></block>
+  <block id="5cebcc95a2116e4839d188e34a24089c" category="list-text"><block ref="5cebcc95a2116e4839d188e34a24089c" category="inline-link-rx"></block></block>
+  <block id="4cd32923632a1028f1e64fee85335b39" category="list-text"><block ref="4cd32923632a1028f1e64fee85335b39" category="inline-link-rx"></block></block>
+  <block id="2bf999bae7084da5db26c6b483ac44f0" category="list-text"><block ref="2bf999bae7084da5db26c6b483ac44f0" category="inline-link-rx"></block></block>
+  <block id="17467de5e625043cda6499d3541a20d4" category="list-text">[[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
+  <block id="636bbeffec3fc87e3384d539d543afee" category="list-text">[[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
+  <block id="73cb4c03f2757beb35ad69fd322003be" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="e0b55f136d815f7a36c41fd7fe28e0fd" category="inline-link-macro-rx"></block>Entnehmen.</block>
+  <block id="12bc639206c2ca12e8a65041a697e4fc" category="paragraph">Gehen Sie zu<block ref="c686ee523547302c3fa5199eafd95753" category="inline-link-rx"></block>.</block>
+  <block id="6446fc62a2115815d4bdbe55f18815c1" category="list-text"><block ref="47109c7943148b2a9617cfcb4b49a79f" category="inline-link-macro-rx"></block>.</block>
+  <block id="22eb01d1e7d6584a0da20f490dc5af77" category="paragraph"><block ref="22eb01d1e7d6584a0da20f490dc5af77" category="inline-link-macro-rx"></block></block>
+  <block id="6f773061a9b11739f4b04a8b170f8f8e" category="paragraph">Je nach Konfiguration können Sie dies tun <block ref="bd7e5f56c6474a1d0a59eeac0ce681d7" category="inline-link-macro-rx"></block>. Andernfalls fahren Sie mit fort <block ref="cd3d2c6d0c8a0c43f0a0e10375ad6bbc" category="inline-link-macro-rx"></block>.</block>
+  <block id="7f81bc06b8e7a4bfd515767a4b4385fe" category="list-text">[[Schritt6]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
+  <block id="2b888f1fbb1010b5a426f7a2a88e0914" category="list-text">[[step 12]] ersetzen Sie die Speicher-RCF-Datei auf Shared-Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
+  <block id="8ddcfbe457d5db5e61625624a6a20b33" category="list-text">[[steep16]]Migrieren Sie das Clusternetzwerk von den vorhandenen Cluster-Switches auf die gemeinsam genutzten Switches, indem Sie das Switch-Austauschverfahren und den gemeinsamen RCF verwenden. Der neue gemeinsam genutzte Schalter A ist „cs1“. Der neue gemeinsam genutzte Schalter B ist „cs2“. Siehe <block ref="79be7ff3aee9976e13251b5a88fadf5c" category="inline-link-macro-rx"></block> Und <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
 </blocks>

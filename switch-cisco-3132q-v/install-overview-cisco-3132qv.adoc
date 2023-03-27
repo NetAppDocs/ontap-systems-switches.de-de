@@ -20,7 +20,7 @@ Die Cisco Nexus 3132Q-V Switches können als Cluster Switches in Ihrem AFF oder 
 Gehen Sie wie folgt vor, um einen Cisco Nexus 3132Q-V Switch auf Systemen mit ONTAP zu konfigurieren:
 
 . link:setup_worksheet_3132q.html["Füllen Sie das Cisco Nexus 3132Q-V-Verkabelungsarbeitsblatt aus"]. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
-. link:install-cisco-nexus-3232c.html["Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch in einem NetApp Rack"]. Installieren Sie den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.
+. link:install-cisco-nexus-3132qv.html["Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch in einem NetApp Rack"]. Installieren Sie den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.
 . link:setup-switch.html["Konfigurieren Sie den Cisco Nexus 3132Q-V Switch"]. Richten Sie den Cisco Nexus 3132Q-V Switch ein und konfigurieren Sie ihn.
 . link:prepare-install-cisco-nexus-3132q.html["Bereiten Sie die Installation der NX-OS-Software und der Referenzkonfigurationsdatei vor"]. Bereiten Sie die Installation der NX-OS-Software und der Referenz-Konfigurationsdatei (RCF) vor.
 . link:install-nx-os-software-3132q-v.html["Installieren Sie die NX-OS-Software"]. Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem Nexus 3132Q-V Cluster Switch zu installieren.

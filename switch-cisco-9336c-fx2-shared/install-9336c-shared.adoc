@@ -31,4 +31,4 @@ Siehe https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-sw-9336c-install-
 
 
 .Was kommt als Nächstes?
-Gehen Sie zu link:.setup-and-configure-9336c-shared.html["Konfigurieren Sie den gemeinsamen Cisco Nexus 9336C-FX2 Switch"].
+Gehen Sie zu https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/setup-and-configure-9336c-shared.html["Konfigurieren Sie den gemeinsamen Cisco Nexus 9336C-FX2 Switch"].

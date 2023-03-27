@@ -129,7 +129,7 @@ Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anwei
 
 
  a| 
-link:task-install-a-cisco-nexus-3232c-cluster-switch-and-pass-through-panel-in-a-netapp-cabinet.html["Installieren Sie einen Cisco Nexus 3232C Switch in einem NetApp Rack"^]
+link:install-cisco-nexus-3232c.html["Installieren Sie einen Cisco Nexus 3232C Switch in einem NetApp Rack"^]
  a| 
 Beschreibt die Installation eines Cisco Nexus 3232C-Switch in einem NetApp Rack mit vier Pfosten.
 

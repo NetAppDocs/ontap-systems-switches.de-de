@@ -75,7 +75,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
 
-Die Beispiele in diesem Ersatzverfahren verwenden vier Knoten. Zwei der Nodes verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe link:https://hwu.netapp.com/SWITCH/INDEX.html["Hardware Universe"^] Um zu überprüfen, welche Cluster-Ports für Ihre Plattform korrekt sind.
+Die Beispiele in diesem Ersatzverfahren verwenden vier Knoten. Zwei der Nodes verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe link:https://hwu.netapp.com["Hardware Universe"^] Um zu überprüfen, welche Cluster-Ports für Ihre Plattform korrekt sind.
 
 
 

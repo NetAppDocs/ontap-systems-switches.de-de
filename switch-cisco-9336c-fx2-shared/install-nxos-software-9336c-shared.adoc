@@ -13,7 +13,7 @@ summary: Mithilfe dieses Verfahrens kann die NX-OS Software auf dem Nexus 9336C-
 [role="lead"]
 Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem gemeinsamen Switch Nexus 9336C-FX2 zu installieren.
 
-Bevor Sie beginnen, führen Sie den Vorgang in durch link:install-nxos-overview-9336c-shared.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
+Bevor Sie beginnen, führen Sie den Vorgang in durch link:prepare-nxos-rcf-9336c-shared.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
 
 
 
@@ -369,4 +369,4 @@ GEM  FPGA                        0x2
 
 
 .Was kommt als Nächstes?
-link:install-nxos-rcf-9336c-shared.html["Installieren Sie die RCF-Konfigurationsdatei"].
+link:install-nxos-rcf-9336c-shared.html["Installieren Sie die RCF-Konfigurationsdatei"]

@@ -18,7 +18,7 @@ Befolgen Sie diese Anweisungen, um den Cisco Nexus 3232C Switch einzurichten und
 * Entsprechende NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
 * Erforderliche Dokumentation für das Cluster-Netzwerk und den Switch des Management-Netzwerks
 +
-Siehe xref:setup-required-documentation.adoc[Erforderliche Dokumentation] Finden Sie weitere Informationen.
+Siehe link:required-documentation-3232c.html["Erforderliche Dokumentation"] Finden Sie weitere Informationen.
 
 * Erforderliche Controller-Dokumentation und ONTAP-Dokumentation
 +

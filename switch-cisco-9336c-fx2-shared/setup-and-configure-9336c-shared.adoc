@@ -134,4 +134,4 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 
 .Was kommt als Nächstes?
-Je nach Konfiguration können Sie dies tun link:install-switch-and-passthrough-panel-9336c-shared.html["Switch in NetApp-Schrank einbauen"]. Andernfalls fahren Sie mit fort link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
+Je nach Konfiguration können Sie dies tun link:install-switch-and-passthrough-panel-9336c-shared.html["Switch in NetApp-Schrank einbauen"]. Andernfalls fahren Sie mit fort link:prepare-nxos-rcf-9336c-shared.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].

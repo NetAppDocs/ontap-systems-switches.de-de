@@ -19,7 +19,7 @@ Führen Sie diese Schritte aus, um eine Ersteinrichtung des BES-53248-Cluster-Sw
 +
 ** link:configure-reqs-bes53248.html["Konfigurationsanforderungen"]
 ** link:components-bes53248.html["Komponenten und Teilenummern"]
-** link:required-documentation-53248.html["Dokumentationsanforderungen"]
+** link:required-documentation-bes53248.html["Dokumentationsanforderungen"]
 
 
 

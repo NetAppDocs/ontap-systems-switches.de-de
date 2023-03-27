@@ -28,7 +28,7 @@ indexpage:
     - title: AFF/FAS-Hardwaresysteme
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
     - title: ONTAP Software
-      url: https://docs.netapp.com/us-en/ontap/index.htmly/
+      url: https://docs.netapp.com/us-en/ontap/index.html
   - title: Tools-Support
     links:
     - title: NetApp Interoperabilitätsmatrix
