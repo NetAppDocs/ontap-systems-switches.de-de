@@ -26,55 +26,89 @@ Lesen Sie vor der Konfiguration des NVIDIA SN2100-Switches die folgenden Punkte.
  a| 
 Swp1s0-3
  a| 
-Nodes mit 10/40 Cluster-Ports
+4 x 10 GbE Breakout-Cluster-Port-Nodes
 
 
 
  a| 
 Swp2s0-3
  a| 
-Nodes mit 25/100 Cluster-Ports
+4 x 25-GbE-Breakout-Cluster-Port-Nodes
 
 
 
  a| 
-Swp3-14 40/100-Cluster-Port-Knoten
+Swp3-14
  a| 
-Swp15-16 40/100 Inter-Switch Link (ISL)-Ports
+40/100 Cluster-Port-Nodes
+
+
+
+ a| 
+Swp15-16
+ a| 
+40/100 Inter-Switch Link (ISL)-Ports
 
 |===
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports.
 
 
 
 == Optische Verbindungen
 
-Nur optische Verbindungen werden auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100-GbE-Ports unterstützt. Beispiel:
+Für Cumulus Linux 4.4.2 werden nur optische Verbindungen auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100-GbE-Ports unterstützt. Beispiel:
 
 * AFF A800 auf den Ports e0a und e0b
 * AFF A320 an den Ports e0g und e0h
 
 
+Für Cumulus Linux 4.4.3 und höher sind die folgenden Konfigurationsänderungen erforderlich, um dieses Problem zu beheben.
+
+. Fügen Sie die folgenden beiden Zeilen zum hinzu `/etc/cumulus/switchd.conf` Datei für jeden Port (<n>), der 40/100GbE-Kupferkabel verwendet:
++
+** `interface.swp<n>.enable_media_depended_linkup_flow=TRUE`
+** `interface.swp<n>.enable_short_tuning=TRUE`
+
+
+. Starten Sie den switchd-Daemon neu: `systemctl restart switchd`
+
+
+Siehe folgendes https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["KB"^] Entnehmen.
+
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cumulus@cumulus:mgmt:~$ *cat /etc/cumulus/switchd.conf | grep swp3*
+interface.swp3.enable_media_depended_linkup_flow=TRUE
+interface.swp3.enable_short_tuning=TRUE
+cumulus@cumulus:mgmt:~$ *cat /etc/cumulus/switchd.conf | grep swp6*
+interface.swp6.enable_media_depended_linkup_flow=TRUE
+interface.swp6.enable_short_tuning=TRUE
+cumulus@cumulus:mgmt:~$
+----
+====
 
 
 == QSA-Adapter
 
-Wenn ein QSA-Adapter für die Verbindung mit den integrierten Intel-Cluster-Ports auf einer Plattform verwendet wird, werden nicht alle Verbindungen hergestellt. Als Beispiel sind die FAS2750, die AFF A300 und die FAS8200 (alle 10G) und die AFF A250 (25G).
+Wenn ein QSA-Adapter für die Verbindung mit den integrierten Cluster-Ports einer Plattform verwendet wird, wird die Verbindung möglicherweise nicht angezeigt.
 
 Gehen Sie wie folgt vor, um dieses Problem zu beheben:
 
-. Stellen Sie bei Intel 10G die Verbindungsgeschwindigkeit swp1s0-3 manuell auf 10000 ein und setzen Sie die automatische Aushandlung auf aus.
-. Stellen Sie für Chelsio 25G die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein und setzen Sie die automatische Aushandlung auf aus.
+* Stellen Sie bei 10G die Verbindungsgeschwindigkeit swp1s0-3 manuell auf 10000 und stellen Sie die automatische Aushandlung auf aus.
+* Bei 25G stellen Sie die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein, und stellen Sie die automatische Aushandlung auf aus.
 
 
 
-NOTE: Verwenden Sie die nicht-Breakout-40/100G-Ports mit 10G/25G QSA. Setzen Sie den QSA-Adapter nicht in Ports ein, die für Breakout konfiguriert sind.
+NOTE: Wenn Sie 10G/25G QSA verwenden, stecken Sie sie in nicht-Breakout-40/100G-Ports. Setzen Sie den QSA-Adapter nicht in Ports ein, die für Breakout konfiguriert sind.
 
 
 
-== Switch-Port-Geschwindigkeit
+== Einstellen der Schnittstellengeschwindigkeit an Breakout-Ports
 
-Je nach Sender/Empfänger im Switchport müssen Sie die Geschwindigkeit am Switchport möglicherweise auf eine feste Geschwindigkeit einstellen. Wenn Sie 10G- und 25G-Breakout-Ports verwenden, stellen Sie sicher, dass die automatische Aushandlung nicht erfolgt und stellen Sie die Port-Geschwindigkeit auf dem Switch fest. Beispiel:
+Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen. Wenn 10G- und 25G-Breakout-Ports verwendet werden, stellen Sie sicher, dass die automatische Aushandlung deaktiviert ist und die Schnittstellengeschwindigkeit am Switch fest eingestellt ist. Beispiel:
 
 [listing, subs="+quotes"]
 ----
