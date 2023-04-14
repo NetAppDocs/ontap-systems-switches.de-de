@@ -4,16 +4,16 @@ sidebar: sidebar
 keywords: install, cisco nexus 92300 switch, 
 summary: Lesen Sie vor der Konfiguration von Cisco Nexus 92300-Switches eine Übersicht über den Prozess und die Terminologie. 
 ---
-= Überblick über die Installation und Konfiguration von Cisco Nexus 92300 Switches
+= Überblick über die Installation und Konfiguration von Cisco Nexus 92300YC Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Lesen Sie vor der Konfiguration von Cisco Nexus 92300-Switches die Verfahrensübersicht.
+Lesen Sie vor der Konfiguration von Cisco Nexus 92300YC-Switches die Verfahrensübersicht durch.
 
-Gehen Sie wie folgt vor, um einen Cisco Nexus 92300 Switch auf Systemen mit ONTAP zu konfigurieren:
+Gehen Sie wie folgt vor, um einen Cisco Nexus 92300YC-Switch auf Systemen mit ONTAP zu konfigurieren:
 
 . link:setup-worksheet-92300yc.html["Füllen Sie das Cisco Nexus 92300YC-Verkabelungsarbeitsblatt aus"]. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
 . link:configure-install-initial.html["Konfigurieren Sie den Cisco Nexus 92300YC-Switch"]. Cisco Nexus 92300YC-Switch einrichten und konfigurieren.
