@@ -34,6 +34,8 @@ entries:
     url: "/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html"
   - title: Konfigurieren Sie die Switch-Protokollerfassung
     url: "/switch-nvidia-sn2100/install-snmpv3-sn2100-cluster.html"
+  - title: Aktualisieren Sie die Cumulus Linux-Version
+    url: "/switch-nvidia-sn2100/upgrade-cl-version.html"
 - title: Switches migrieren
   entries:
   - title: Migration von Cisco Cluster Switches

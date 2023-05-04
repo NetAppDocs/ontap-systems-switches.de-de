@@ -17,7 +17,7 @@ Lesen Sie bei der Installation und Wartung von NVIDIA SN2100-Switches die Liste 
 
 == Rack-Details
 
-Sie installieren den NVIDIA SN2100-Switch (X190006/X190106) im NVIDIA-Dual/Single-Switch-Gehäuse mit den im Lieferumfang des Switches enthaltenen Standardhalterungen.
+Sie installieren den NVIDIA SN2100-Switch (X190006) in einem NVIDIA Dual/Single-Switch-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.
 
 
 
@@ -33,28 +33,14 @@ In der folgenden Tabelle sind die Teilenummer und Beschreibung der SN2100-Switch
  a| 
 X190006-PE
  a| 
-Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PTSX
+Cluster-Switch, NVIDIA SN2100, 16 PT 100 GbE, PTSX
 
 
 
  a| 
 X190006-PI
  a| 
-Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PSIN
-
-
-
- a| 
-X190106-FE-PE
- a| 
-Switch, NVIDIA SN2100, 16 PT 100 G, PTSX, Frontend
-
-
-
- a| 
-X190106-FE-PI
- a| 
-Switch, NVIDIA SN2100, 16 PT 100G, PSIN, Front End
+Cluster Switch, NVIDIA SN2100, 16 PT 100 GbE, PSIN
 
 
 

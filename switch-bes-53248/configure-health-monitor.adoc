@@ -45,31 +45,50 @@ Für einen internen Webserver IP-Adresse von 192.168.2.20, und wenn ein Verzeich
 cluster1::> *set -privilege advanced*
 ----
 . Führen Sie den Befehl der Switch-Systemzustandsüberwachung configure aus:
-+
+
+
+[role="tabbed-block"]
+====
+.Für ONTAP 9.8 und höher
+--
+`system switch ethernet configure-health-monitor -node * -package-url \http://server/file-location`
+
+[listing]
+----
+cluster1::> switch ethernet configure-health-monitor -node * -package-url
+http://192.168.2.20/usr/download/Broadcom_BES-53248.zip
+----
+--
+.Für ONTAP 9.4 und höher
+--
 `system cluster-switch configure-health-monitor -node * -package-url \http://server/file-location`
 
-+
-.Beispiel anzeigen
-[%collapsible]
+[listing]
+----
+cluster1::> system cluster-switch configure-health-monitor -node * -package-url
+http://192.168.2.20/usr/download/Broadcom_BES-53248.zip
+----
+--
 ====
-[listing, subs="+quotes"]
-----
-cluster1::> *system cluster-switch configure-health-monitor -node * -package-url
-http://192.168.2.20/usr/download/Broadcom_BES-53248.zip*
-----
+. [[step5]]Überprüfen Sie, ob die Befehlsausgabe die Textzeichenfolge enthält: `downloaded package processed successfully`. Falls ein Fehler auftritt, wenden Sie sich an den NetApp Support.
+. Führen Sie den Befehl auf dem ONTAP-System aus, und überprüfen Sie, ob die Cluster-Switches erkannt werden, wobei das überwachte Feld auf „true“ gesetzt ist:
+
+
+[role="tabbed-block"]
 ====
-. Überprüfen Sie, ob die Befehlsausgabe den Textstring enthält: `downloaded package processed successfully`. Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
-. Führen Sie den Befehl aus `system cluster-switch show` Stellen Sie auf dem ONTAP-System sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf „true“ gesetzt ist.
-+
-[listing, subs="+quotes"]
-----
-cluster1::> *system cluster-switch show*
-----
-+
+.Für ONTAP 9.8 und höher
+--
+`system switch ethernet show`
+
+--
+.Für ONTAP 9.4 und höher
+--
+`system cluster-switch show`
+
+--
+====
 
 NOTE: Wenn Sie zu einer früheren Version von ONTAP zurückkehren, müssen Sie die CSHM-Konfigurationsdatei erneut installieren, um die Switch-Zustandsüberwachung von BES-53248-Cluster-Switches zu ermöglichen.
-
-
 
 .Was kommt als Nächstes?
 Um alle in CSHM verfügbaren Funktionen zu nutzen, aktivieren Sie SSH wie in beschrieben link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"].

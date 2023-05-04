@@ -1721,7 +1721,6 @@
   <block id="df9f9e9d2170bb250eb3337384525b86" category="paragraph"><block ref="df9f9e9d2170bb250eb3337384525b86" category="inline-link-rx"></block></block>
   <block id="c04ce9c1c44c5e07bf7a73e79811a429" category="list-text">Verwenden Sie zum Festlegen einer statischen IP-Adresse das<block ref="be61298f670927dc76b9ef87aec3538b" prefix=" " category="inline-code"></block>,<block ref="0b1b9820b62e4a0d7f72c76456845979" prefix=" " category="inline-code"></block>, und<block ref="a14092a0fca1bb648cb5a74d7dfe7995" prefix=" " category="inline-code"></block> Befehle, wie im Beispiel gezeigt.</block>
   <block id="ec633497488ed81a95ccbbbb57302ba3" category="list-text">Greifen Sie mit dem Befehl auf die Einstellung für den erweiterten Modus von einem der ONTAP Systeme im Cluster zu<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block>:</block>
-  <block id="77050d62a86740ca649977f25aae1ddc" category="list-text">Führen Sie den Befehl aus<block ref="694b56ad85eb627acc97ea9295f39018" prefix=" " category="inline-code"></block> Stellen Sie auf dem ONTAP-System sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf „true“ gesetzt ist.</block>
   <block id="16c3e502f28be460a987ad28ccd36874" category="paragraph">Sie können die von Broadcom unterstützte Tabelle zur Konfiguration des Clusters für die Zuweisung von BES-53248-Cluster-Switches als Leitfaden verwenden.</block>
   <block id="dc3310fe82b8aa736508dff9756c1c6a" category="cell">Switch-Ports</block>
   <block id="670c1649b9af213cff68a904e9de20ed" category="cell">Anzahl der Ports</block>
@@ -1730,7 +1729,6 @@
   <block id="1f3f639615a80a1684771c8c14152509" category="paragraph">17-48</block>
   <block id="187c30e211ba48efba7ee0554dccaf17" category="paragraph">10/25-GbE-Cluster-Port-Nodes, mit Lizenzen</block>
   <block id="e911666173c65a9be604d165f8bfca24" category="paragraph">49-54</block>
-  <block id="61dd5044a608adf035955ab327098b7f" category="paragraph">100-GbE-Cluster-Port-Nodes mit Lizenzen, die links hinzugefügt wurden</block>
   <block id="87c5a8a002c26c3c0f3324085542275a" category="paragraph">55-56</block>
   <block id="7353d71bb489b434e9c00860f53dc245" category="paragraph">Ports mit 100 GbE Cluster Inter-Switch Link (ISL), Basiskonfiguration</block>
   <block id="22ef485216cbed5496c7d8cea313dee0" category="paragraph">Die Port-Geschwindigkeit von SFP28/SFP+ muss für alle Ports der 4-Port-Gruppe gleich (10 GbE oder 25 GbE) sein.</block>
@@ -1808,21 +1806,9 @@
   <block id="f0e95f5c0e8e4943599aed05c5dcaa5c" category="list-text">Installieren Sie das RCF mithilfe des am BES-53248-Cluster-Switch<block ref="12cba3ee81cf4a793796a51b6327c678" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="4d87d0aacff9e4a95b16be27f0f1e89e" category="admonition">Je nach Umgebung müssen Sie im möglicherweise einen Doppelschrägstrich verwenden<block ref="12cba3ee81cf4a793796a51b6327c678" prefix=" " category="inline-code"></block> Befehl, z. B.:<block ref="a4bf294b73950b3019252cc54ae24b09" prefix=" " category="inline-code"></block>.</block>
   <block id="3a0aeae8d2331aaa16cf8b013ee0195b" category="paragraph">X190005</block>
-  <block id="1d0e61735e0e8e09d095959b09cdfb61" category="paragraph">BES-53248, CLSW, 16Pt10/25 GB, PTSX, BRDCM-SUPPORT (PTSX = Port Side Exhaust)</block>
   <block id="cedf09ac3086a8a21f249827087f6fad" category="paragraph">X190005R</block>
-  <block id="10423b6134c0596831c1217d026117a7" category="paragraph">BES-53248, CLSW, 16Pt10/25 GB, PSIN, BRDCM-SUPPORT (PSIN = Port Side Intake)</block>
   <block id="58ed1751063f5f79d08b95e0c78237bb" category="paragraph">X-RAIL-4POST-190005</block>
   <block id="26e197685e29b3f6ea5c61a20464ee66" category="paragraph">Rack Mount Rail Kit Ozeki 4 Post 19 Zoll</block>
-  <block id="47aa7e8b4b2b7f2529efa5e4716bbdd8" category="paragraph">X-FAN-190005-R</block>
-  <block id="6340613a1b13022e5f4fed31c639404d" category="paragraph">Lüfter, Anschlußseite X190005</block>
-  <block id="ad439ccfbefbdb29a34f19a94da31301" category="paragraph">X-FAN-190005-F</block>
-  <block id="f973643b15965b5150ad07cee65175d8" category="paragraph">Lüfter, Auslass auf der Anschlussseite X190005</block>
-  <block id="b234a10d56bffab6344a3cd1dd181b4e" category="paragraph">X-PSU-190005-R</block>
-  <block id="87e8525c8d2aeafd7648d58f8610f6e2" category="paragraph">Netzteil, Anschlusseingang X190005</block>
-  <block id="8b561f2608f0fdce807d1fcc0e6543af" category="paragraph">X-PSU-190005-F</block>
-  <block id="65e5c871ec7e036e5a539406da60f09e" category="paragraph">Netzteil, Auspuff an der Anschlussseite X190005</block>
-  <block id="303593f84fec47f3a4eba6f5b11c2a9c" category="list-text">Anschlussseitiger Abluftstrom (Standardluft): Kühle Luft tritt durch die Lüfter- und Stromversorgungsmodule im Kaltgang in das Gehäuse ein und entgast durch das Anschlussende des Gehäuses im heißen Gang. Die blaue Färbung zeigt die Luftzirkulation an der Anschlussseite an. Dies ist die am häufigsten verwendete Option.</block>
-  <block id="f1de0d38246c0ccc0320480848ef1258" category="list-text">Ansaugluftstrom (Umkehrluft): Kühle Luft tritt durch das Anschlussende im Kaltgang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang.</block>
   <block id="088d99e43c55d66d91452773ea081e66" category="inline-link">Broadcom Cluster-Switches</block>
   <block id="c0be2d74ddb0ea6b8972b9da2fc2c223" category="paragraph">Der<block ref="141c10db18cf1753fa5fc05f553c33ff" category="inline-link-rx"></block> Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.</block>
   <block id="6f7aa1f993576cd171d9bd0d355026fb" category="list-text">Die Namen der BES-53248-Switches lauten<block ref="b12efe4e2b53de51a261421f77a3cbef" prefix=" " category="inline-code"></block> Und<block ref="43c8ce94d81492e62c60092a3664a65f" prefix=" " category="inline-code"></block>.</block>
@@ -2815,7 +2801,6 @@
   <block id="81155cb9ee8ef1aa07c8376e201715db" category="paragraph">Der Switch lädt das ONIE-Image-Installationsprogramm herunter und startet. Nach Abschluss der Installation wird die Cumulus Linux-Anmeldeaufforderung im Terminalfenster angezeigt.</block>
   <block id="b53f6b592c12fd5937d7b72a3bcbfcfb" category="list-text">Drücken Sie die Taste *Esc* auf dem GNU GRUB-Bildschirm, um den normalen Bootvorgang zu unterbrechen, wählen Sie *ONIE* und drücken Sie *Enter*.</block>
   <block id="bb8165c1c0d8416da1e318e1c0f54603" category="list-text">Wählen Sie auf dem nächsten Bildschirm *ONIE: Install OS* aus.</block>
-  <block id="3b007ae6a2ced467726b9f5c7c59ffb0" category="list-text">Melden Sie sich nach Abschluss der Installation beim Switch an.</block>
   <block id="673b183eae1d985d3373995f15978e5b" category="inline-link-macro">Installieren Sie das RCF-Skript (Reference Configuration File)</block>
   <block id="8dcb8ce87423e2f4276589483a457d92" category="paragraph"><block ref="464fe9c0adfef54cfb4c6fe21ef12b08" category="inline-link-macro-rx"></block>.</block>
   <block id="2eb103c9e878418bac314f3d0a12d9a6" category="paragraph">In der folgenden Tabelle sind die Teilenummer und Beschreibung der SN2100-Switches und Schienen-Kits aufgeführt:</block>
@@ -2825,7 +2810,6 @@
   <block id="793086ebaed916943ac8fc5f192a1679" category="paragraph"><block ref="770c77dd441cd3adc4139ccb3c0d491b" category="inline-link-macro-rx"></block> Oder <block ref="28a30a7b340666b28d9a4222e714aaf7" category="inline-link-macro-rx"></block>.</block>
   <block id="e4476de08c6bf6f2b86938c20b3510bf" category="summary">Stellen Sie vor der Installation des RCF-Skripts sicher, dass folgende Funktionen auf dem Switch verfügbar sind</block>
   <block id="144a8e89f9c38ca949aede4fe56c2cb7" category="list-text">Kopieren Sie das RCF-Python-Skript auf den Switch.</block>
-  <block id="2240e6e4afefbb052da898cb451c9d1e" category="list-text">Anwenden des RCF-Python-Skripts *MSN2100-RCF-v1.8-Cluster*.</block>
   <block id="39e77b4f608ccea6c3163df34d07da19" category="paragraph">Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte durch.</block>
   <block id="58706c101ce23f0143df35c3d5877993" category="paragraph"><block ref="792bc5f76cd953c88762d75870189559" category="inline-link-macro-rx"></block>.</block>
   <block id="1a8981f50831032975e7c7ab919cf671" category="list-text">Überprüfen Sie die <block ref="d6c0afb29fcb19bc79e093e82e35e6bb" category="inline-link-macro-rx"></block>.</block>
@@ -3543,7 +3527,6 @@
   <block id="c1321e94fa70c8284c7eb8048b1e5076" category="paragraph">Befolgen Sie diese Anweisungen, um die Software zu installieren.</block>
   <block id="6e542d7f228623e0d93cb14b578964d6" category="summary">Prüfen Sie für die Installation und Wartung von BES-53248-Switches die Liste der Komponenten und Teilenummern.</block>
   <block id="d243834ab21b34f6cc60b0c0c7b6ef45" category="doc">Komponenten und Teilenummern für BES-53248 Cluster-Switches</block>
-  <block id="2ba75e7c8c0701784776f8d546f84c5f" category="paragraph">In der folgenden Tabelle sind die Teilenummer und Beschreibung der BES-53248-Cluster-Switch-Komponenten aufgeführt, einschließlich Rack-montierter Schienen-Kit, Lüfter und Netzteile.</block>
   <block id="2e251bbc5cf5abac11349f16ad8e95e7" category="summary">Sie können die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM) installieren, die die BES-53248-Cluster-Switches überwacht.</block>
   <block id="4db171b1958310050d33a6161ba14156" category="paragraph">In ONTAP-Versionen 9.5P7 und früher sowie 9.6P2 und früher müssen Sie die CSHM-Datei separat herunterladen. In ONTAP-Versionen 9.5P8 und höher, 9.6P3 und höher sowie 9.7 und höher wird die CSHM-Datei mit ONTAP gebündelt.</block>
   <block id="294206f940bbd4f3ec7f79996b76c616" category="paragraph">Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.</block>
@@ -3557,7 +3540,6 @@
   <block id="108fad13cb4557ce639ff2d509f833b5" category="paragraph">Für einen internen Webserver IP-Adresse von 192.168.2.20, und wenn ein Verzeichnis /usr/download vorhanden ist, können Sie die zip-Datei mit auf Ihren Webserver hochladen<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block>:</block>
   <block id="add89e2862924c702a738f3d2a28fa51" category="list-text">Führen Sie den Befehl der Switch-Systemzustandsüberwachung configure aus:</block>
   <block id="57dedb9cbe459a7c90ef4837093192ae" category="paragraph"><block ref="2f9091db6d94c377cc0c7e2fbd67bc1a" prefix="" category="inline-code"></block></block>
-  <block id="4a650fa31d16f24e5851848df6d16828" category="list-text">Überprüfen Sie, ob die Befehlsausgabe den Textstring enthält:<block ref="bb932139b2106289945776f4f81d066a" prefix=" " category="inline-code"></block>. Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.</block>
   <block id="edcd33ebd5d3817ccdc17b64134c7ec8" category="admonition">Wenn Sie zu einer früheren Version von ONTAP zurückkehren, müssen Sie die CSHM-Konfigurationsdatei erneut installieren, um die Switch-Zustandsüberwachung von BES-53248-Cluster-Switches zu ermöglichen.</block>
   <block id="914288f821c5d88db21f926b4e94b1b3" category="paragraph">Um alle in CSHM verfügbaren Funktionen zu nutzen, aktivieren Sie SSH wie in beschrieben <block ref="e2b4c4f5313b05dff7c4a02a4e9e0df6" category="inline-link-macro-rx"></block>.</block>
   <block id="4cf79f99b322552a5fe0fadeb4c0ae5b" category="doc">Ersatzanforderungen</block>
@@ -3569,11 +3551,6 @@
   <block id="27baa83a95dd19a6f10228564787bf14" category="list-text">Die gewünschte Referenzkonfigurationsdatei (RCF) und das Switch-Image des EFOS-Betriebssystems werden auf den Switch geladen.</block>
   <block id="5074769eeb418122757e7c8d01cb673f" category="list-text">Die Erstanpassung des Schalters ist abgeschlossen, wie in beschrieben <block ref="5d9dfcd78fc81899f18975b4b56b3ae1" category="inline-link-macro-rx"></block>.</block>
   <block id="b5a925fc7db2ad87d052b8e842aaca5c" category="doc">Konfigurationsanforderungen für BES-53248 Cluster Switches</block>
-  <block id="b9bbf7b388d20cc7c0c5f0d49ac0837e" category="paragraph">Prüfen Sie für die Installation und Wartung von BES-53248 Switches die Support- und Konfigurationsanforderungen für das Betriebssystem.</block>
-  <block id="c2e8359468a81351d78337f472618a06" category="section-title">Unterstützung von Betriebssystemen (OS)</block>
-  <block id="bdd5d839ce68a4aef1b3862a3a83e388" category="paragraph">Der BES-53248-Switch unterstützt Folgendes:</block>
-  <block id="c0f4e19130e2592110e94db5ecec1cf4" category="list-text">* EFOS Firmware 3.4.4.6 und höher*. Der BES-53248-Switch wird auf einem in Broadcom eingebetteten Betriebssystem ausgeführt, das als Ethernet Fabric OS (EFOS) bekannt ist. Die Unterstützung für 40/100-GbE-Cluster-Ports beginnt mit der EFOS-Firmware-Version 3.4.4.6 und höher.</block>
-  <block id="e9ba6fb0647a0e3943ac863a298769f5" category="list-text">*ONTAP 9.5P8 und höher*. Die von Broadcom unterstützten BES-53248-Cluster-Switches sind für den Einsatz in Clustern mit einer Größe von zwei bis 24 Nodes in ONTAP 9.5P8 und höher konzipiert.</block>
   <block id="794a085de55fb93282159bfe457b5455" category="paragraph">Zum Konfigurieren eines Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für die Cluster-Switches. Je nach Art des zu Beginn konfiguriert-Cluster-Switch müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen.</block>
   <block id="2bd5eb99d9f67d841743740c2c9e58fc" category="section-title">Zuweisung von Cluster-Switch-Ports</block>
   <block id="1e398c47e90911cdd18c0dcb654a78a1" category="paragraph">Bei BES-53248 Cluster Switches werden die 48 10/25-GbE-Ports (SFP28/SFP+) wie folgt in 12 x 4-Port-Gruppen kombiniert: 1–4 Ports, 5–8, 9–12, 13–16, 17–20, 21–24, 25–28, 29–32, 33–36, 37–40, 41-44 und 45-48.</block>
@@ -4274,26 +4251,129 @@
   <block id="d8c8c02df74538b604d42f3f6d992c40" category="paragraph">4 x 10 GbE Breakout-Cluster-Port-Nodes</block>
   <block id="331bcd76038fdc1605be4c587c56294c" category="paragraph">4 x 25-GbE-Breakout-Cluster-Port-Nodes</block>
   <block id="e451d063f2ca2617078b2305ef087f02" category="paragraph">Swp3-14</block>
-  <block id="0d60da82680f3305621fd4472d897e3b" category="paragraph">40/100 Cluster-Port-Nodes</block>
   <block id="044141a7c2076e2a8d84961a043b480a" category="paragraph">Swp15-16</block>
-  <block id="cab42d967475ecc877f819cc849c3392" category="paragraph">40/100 Inter-Switch Link (ISL)-Ports</block>
   <block id="c462eb588f6f13a8e04bee80aae30ba8" category="paragraph">Siehe<block ref="c043e01cdc55399f824e6d1e4eb8a5b5" category="inline-link-rx"></block> Weitere Informationen zu Switch-Ports.</block>
-  <block id="e7af52912cd69e9bf38776786cbca8a3" category="paragraph">Für Cumulus Linux 4.4.2 werden nur optische Verbindungen auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100-GbE-Ports unterstützt. Beispiel:</block>
-  <block id="85a0e57a29218d20a48e10c13bdf7cb6" category="paragraph">Für Cumulus Linux 4.4.3 und höher sind die folgenden Konfigurationsänderungen erforderlich, um dieses Problem zu beheben.</block>
-  <block id="f3f1289d53f31212ba6b49b341ffc7e6" category="list-text">Fügen Sie die folgenden beiden Zeilen zum hinzu<block ref="d4b3c0affe66439bbee012d30e38441b" prefix=" " category="inline-code"></block> Datei für jeden Port (&lt;n&gt;), der 40/100GbE-Kupferkabel verwendet:</block>
   <block id="69cf9ddd2a167644a30a59dda49e0f6a" category="list-text"><block ref="0babc1daa70cf30fe3f5ad4e3e07fab2" prefix="" category="inline-code"></block></block>
   <block id="7ecf603eb76daba643481182546f4e38" category="list-text"><block ref="a0ce25310d7a8e2527bb141f43700add" prefix="" category="inline-code"></block></block>
-  <block id="6ec72ecd2f587c249b56c3e03401ecae" category="list-text">Starten Sie den switchd-Daemon neu:<block ref="2b526042e0b783c1b2eb28b0ef5623de" prefix=" " category="inline-code"></block></block>
-  <block id="ab57fd0432e25d5b3013133a1c910d56" category="inline-link">KB</block>
-  <block id="d1230bc869b84c83439b8c8e7519dde2" category="paragraph">Siehe folgendes<block ref="a885142d9d0638feca0ff8bbde23eb83" category="inline-link-rx"></block> Entnehmen.</block>
-  <block id="7fa926cf10e568e38d190fa4bb643575" category="paragraph">Wenn ein QSA-Adapter für die Verbindung mit den integrierten Cluster-Ports einer Plattform verwendet wird, wird die Verbindung möglicherweise nicht angezeigt.</block>
-  <block id="3ff6d247db095566d17ccb43d3672576" category="list-text">Stellen Sie bei 10G die Verbindungsgeschwindigkeit swp1s0-3 manuell auf 10000 und stellen Sie die automatische Aushandlung auf aus.</block>
-  <block id="7884c7a18dfb8ee5902cac6f25fd2535" category="list-text">Bei 25G stellen Sie die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein, und stellen Sie die automatische Aushandlung auf aus.</block>
-  <block id="6b7eaec843bb5fcdab1371328ab1e94c" category="admonition">Wenn Sie 10G/25G QSA verwenden, stecken Sie sie in nicht-Breakout-40/100G-Ports. Setzen Sie den QSA-Adapter nicht in Ports ein, die für Breakout konfiguriert sind.</block>
   <block id="92f8e266fe70da4f6717e931d81faa46" category="section-title">Einstellen der Schnittstellengeschwindigkeit an Breakout-Ports</block>
-  <block id="577c386d1bb7bbffa59ac5c15182ada1" category="paragraph">Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen. Wenn 10G- und 25G-Breakout-Ports verwendet werden, stellen Sie sicher, dass die automatische Aushandlung deaktiviert ist und die Schnittstellengeschwindigkeit am Switch fest eingestellt ist. Beispiel:</block>
   <block id="5501293605b4b8c8957b68e1854b0f11" category="doc">Überblick über die Installation und Konfiguration von Cisco Nexus 92300YC Switches</block>
   <block id="c5fed3189b0ec4237029df463c0c1f64" category="paragraph">Lesen Sie vor der Konfiguration von Cisco Nexus 92300YC-Switches die Verfahrensübersicht durch.</block>
   <block id="109e216a5aa6e526f504483738dabc7b" category="paragraph">Gehen Sie wie folgt vor, um einen Cisco Nexus 92300YC-Switch auf Systemen mit ONTAP zu konfigurieren:</block>
   <block id="ed6ae629414abab8b0e9b2e8deadb8c2" category="paragraph">Prüfen Sie bei der Installation und Wartung von Cisco Nexus 92300YC-Switches alle Switch-Komponenten und Teilenummern. Siehe<block ref="cd25cbe53f0a314145c84729c6ce2c78" category="inline-link-rx"></block> Entsprechende Details.</block>
+  <block id="647742b7ed5a74255a1cd295f9fd2fc9" category="paragraph">Für die Installation und Wartung von BES-53248-Switches müssen die Support- und Konfigurationsanforderungen für EFOS und ONTAP überprüft werden.</block>
+  <block id="553524d0c0ef22a471e2424d00a09694" category="section-title">EFOS- und ONTAP-Unterstützung</block>
+  <block id="738451c0daa7cff3a610bea3abfefaf0" category="inline-link">Kompatibilitätsmatrix für Broadcom Switches</block>
+  <block id="c7c51b6011824439212ed43b1a65c583" category="paragraph">Siehe<block ref="341c1c8afc925d24c41903215e7d4958" category="inline-link-rx"></block> Und<block ref="019bec57a33f30d395c26e4eab684618" category="inline-link-rx"></block> Für Informationen zur EFOS- und ONTAP-Kompatibilität mit BES-53248-Switches. Die Unterstützung von EFOS und ONTAP kann je nach Maschinentyp des BES-53248-Switches variieren. Weitere Informationen zu allen BES-52348-Schaltmaschinentypen finden Sie unter <block ref="18673e02a37b64215efc2503c4149ac9" category="inline-link-macro-rx"></block>.</block>
+  <block id="e23ae5f8811df200956902ae1686a7f0" category="paragraph">40/100-GbE-Cluster-Port-Nodes mit Lizenzen, rechts nach links hinzugefügt</block>
+  <block id="024464eb7b3fd909a9746dff88c6b9c9" category="section-title">Zusätzlichen Anforderungen</block>
+  <block id="0367a2a79bd73fd44da88774641890f6" category="inline-link-macro">Aktivieren Sie neu lizenzierende Ports</block>
+  <block id="9c561ca9ef6d5814e15c1944c030d12d" category="list-text">Informationen zum Erwerb zusätzlicher Lizenzen finden Sie unter <block ref="78172331b9d74469f8abaa21c5813f50" category="inline-link-macro-rx"></block> Für Details, wie sie aktiviert werden.</block>
+  <block id="1ad4f5dc9889f4859c43a213e21f389c" category="list-text">Wenn SSH aktiv ist, müssen Sie es nach dem Ausführen des Befehls manuell erneut aktivieren<block ref="1fb554759d9d32d450daa4da09330114" prefix=" " category="inline-code"></block> Und den Switch neu zu starten.</block>
+  <block id="fa29548058837254e54c0910a42e81ed" category="paragraph"><block ref="7d77b5b7ecc6e91232de4d87c6f561de" prefix="" category="inline-code"></block></block>
+  <block id="25e09b4fadd3fa8202fa95ea688667c1" category="list-text">[[step5]]Überprüfen Sie, ob die Befehlsausgabe die Textzeichenfolge enthält:<block ref="bb932139b2106289945776f4f81d066a" prefix=" " category="inline-code"></block>. Falls ein Fehler auftritt, wenden Sie sich an den NetApp Support.</block>
+  <block id="d28bbd717c002acf43e747edb594c750" category="list-text">Führen Sie den Befehl auf dem ONTAP-System aus, und überprüfen Sie, ob die Cluster-Switches erkannt werden, wobei das überwachte Feld auf „true“ gesetzt ist:</block>
+  <block id="0b2982341db4239f887933204ca7720d" category="paragraph"><block ref="b4720f8aa09f4e4b3a04e78c558b6c90" prefix="" category="inline-code"></block></block>
+  <block id="4e4f70ba52e8cb595faa069991c5a9f4" category="list-text">[[schritt5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="1ad47980611dd1ee749c3478e99b4edd" category="paragraph">In der folgenden Tabelle sind die Teilenummer, die Beschreibung und die Mindestversionen von EFOS und ONTAP für die Komponenten des BES-53248-Cluster-Switches aufgeführt, einschließlich Details zum Rack-Befestigungsschienen-Kit.</block>
+  <block id="4a47a181e94c352883a8741b3ec5e291" category="admonition">Für die Teilenummern *X190005-B* und *X190005R-B* ist eine EFOS-Mindestversion von *3.10.0.3* erforderlich.</block>
+  <block id="c37b8196896554a6da47b74fe6581c98" category="cell">Minimale EFOS-Version</block>
+  <block id="7fa0305f8af6535ab7e968300969da78" category="cell">Minimale ONTAP-Version</block>
+  <block id="1bc55f822ecf1e2d3fb5e4e9edcbbea1" category="paragraph">X190005-B</block>
+  <block id="c38694b655b760c0d1690bd1652f4a6b" category="paragraph">BES-53248-B/IX8, CLSW, 16PT10/25GB, PTSX (PTSX = Port Side Exhaust)</block>
+  <block id="7be91793dbca44b8b32bc51b1fbb6a91" category="paragraph">3.10.0.3</block>
+  <block id="4f7dd0fe0940df4a5fda327a4ee4ddbd" category="paragraph">9.8</block>
+  <block id="36279773f041040d825a3034566a30e6" category="paragraph">X190005R-B</block>
+  <block id="e5a686994274838fad6d941211e8a0c1" category="paragraph">BES-53248-B/IX8, CLSW, 16PT10/25 GB, PSIN (PSIN = Port Side Intake)</block>
+  <block id="8c398f37fcd837194e4ece5fd5553d32" category="paragraph">BES-53248, CLSW, 16PT10/25 GB, PTSX, BRDCM-SUPPORT</block>
+  <block id="5b3c421126de8f671e6c7e0dd2070405" category="paragraph">3.4.4.6</block>
+  <block id="7501a55d10f73fc1f4d1a99887dad17c" category="paragraph">9.5P8</block>
+  <block id="51911b92d595d53b83df3e0bc419b628" category="paragraph">BES-53248, CLSW, 16PT10/25 GB, PSIN, BRDCM-SUPPORT</block>
+  <block id="382b0f5185773fa0f67a8ed8056c7759" category="paragraph">K. A.</block>
+  <block id="4f4750a84cf4db2252cb74295c5da46c" category="admonition">Beachten Sie die folgenden Informationen bezüglich Maschinentypen:</block>
+  <block id="3ea4bf9da7622edeeae1bf80e9c5cded" category="cell">Maschinentyp</block>
+  <block id="c98b57720d007eea3bac1ec42393b6b2" category="cell">EFOS-Version</block>
+  <block id="0455dc0ebc07890a363b2b109cd487c0" category="paragraph">BES-53248A1</block>
+  <block id="f9f7608c20cdacdffa7dd544e72cdb37" category="paragraph">BES-53248A2</block>
+  <block id="ed69a268691ed57ce7cc6feb524edfde" category="paragraph">BES-53248A3</block>
+  <block id="8e3cd01999a868b5f7d077cc81d41b25" category="paragraph">Sie können Ihren spezifischen Maschinentyp mit dem folgenden Befehl bestimmen:<block ref="48f6d03db0af7dafae461857e48942d9" prefix=" " category="inline-code"></block></block>
+  <block id="2498349a1561db3b82a697aa132adac5" category="open-title">Cumulus Linux 4.4.3</block>
+  <block id="481b5c6e7efa133e1b6e24e6aa57e7b9" category="list-text">Melden Sie sich nach Abschluss der Installation beim Switch an.</block>
+  <block id="73256464033866019c0ab71a474924d7" category="list-text">Überprüfen Sie die Cumulus Linux-Version:<block ref="98f5dff8534e8c39673b544f567273e7" prefix=" " category="inline-code"></block></block>
+  <block id="7eb75e0ba4663fc1aeea935cb2011f2c" category="open-title">Cumulus Linux 5.x</block>
+  <block id="2db9ca8bc5738dadc7b583c360d7d75f" category="list-text">Drücken Sie die Esc-Taste auf dem GNU GRUB-Bildschirm, um den normalen Bootvorgang zu unterbrechen, wählen Sie ONIE aus, und drücken Sie die Eingabetaste.</block>
+  <block id="0232feb830d6d5aad9aa07258e622649" category="paragraph">Wählen Sie ONIE: *OS installieren.*</block>
+  <block id="f341013c06c8fd055eeee7b2fb35f9ce" category="list-text">Der Vorgang zur Erkennung des ONIE-Installers führt die Suche nach der automatischen Installation durch. Drücken Sie *Enter*, um den Vorgang vorübergehend zu beenden.</block>
+  <block id="478fe67982f230b9dd6b03b6118c1014" category="list-text">Konfigurieren Sie die IP-Adresse, die Subnetzmaske und das Standard-Gateway:</block>
+  <block id="6fff52725ef1db2558a657c2f9a4a4c8" category="list-text">Installieren Sie Cumulus Linux 5.4:</block>
+  <block id="1b5baeeb29c57782394d9d7fe2316752" category="paragraph"><block ref="654e7566133dd316a7bccb8c83aae59b" prefix="" category="inline-code"></block></block>
+  <block id="8b0f0a4cede7fca6e2706f18eebf2e92" category="list-text">Überprüfen Sie die Cumulus Linux-Version:<block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix=" " category="inline-code"></block></block>
+  <block id="711762c3f710af6cfac64233e6c1db32" category="list-text">Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu<block ref="d338b3f0f405eb5e51c8cc1e5ca66f02" prefix=" " category="inline-code"></block> Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.</block>
+  <block id="b190a0c0112c1b7ed7c1fe82d8072aa4" category="list-text">Fügen Sie zusätzliche Benutzergruppen hinzu, auf die der Admin-Benutzer zugreifen kann<block ref="f9eab7a52fbda6f4788f438ba1a8da94" prefix=" " category="inline-code"></block> Befehl:</block>
+  <block id="b2fa408052dc67c0683eaf90858b073f" category="inline-link">NVIDIA Benutzerkonten</block>
+  <block id="9fce5f0b8e1dcabf168f42a400a2d10d" category="paragraph">Siehe<block ref="2d38cb404d4e76c701a1714802ee2c54" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="be8d2db807f6ccc0599691b80f14b976" category="list-text">Cumulus Linux ist installiert. Siehe<block ref="c043e01cdc55399f824e6d1e4eb8a5b5" category="inline-link-rx"></block> Für unterstützte Versionen.</block>
+  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">Hier</block>
+  <block id="b6a9bacb15977dcaaa1e05f20cc4d13b" category="paragraph">Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Laden Sie RCFs von herunter<block ref="89efcd657168a1e707caf54da1923871" category="inline-link-rx"></block>. Das Verfahren für jedes ist gleich.</block>
+  <block id="54d4022f2a747cb4974fcf06961bdb21" category="list-text">Cluster: *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*</block>
+  <block id="eac7436c884133e6b945a51430510a32" category="list-text">Speicher: *MSN2100-RCF-v1._x_-Speicher*</block>
+  <block id="196428336c87b3c0c9bf24432335bd6f" category="list-text">Wenden Sie das Skript RCF Python an *MSN2100-RCF-v1.x-Cluster-HA-Breakout-LLDP*.</block>
+  <block id="b9dfe38b5e91454220a6cd1f3cfb9ac8" category="admonition">In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl<block ref="900d965bd90d181d344d976a0e3093d8" prefix=" " category="inline-code"></block> Wird ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
+  <block id="0440c59cc67785ca7939ff4e3eba86ed" category="admonition">In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl<block ref="79a5f2bb850da898bd092e3a61bda06c" prefix=" " category="inline-code"></block> Wird ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
+  <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Beispiel:</block>
+  <block id="c8d246332e46cb12e9f724a357ad817f" category="paragraph"><block ref="770c77dd441cd3adc4139ccb3c0d491b" category="inline-link-macro-rx"></block> Oder <block ref="bba3ec5e6ca5e4f48b010488a5229b2c" category="inline-link-macro-rx"></block>.</block>
+  <block id="bd399ae0cf713e575ca26baedc0a896c" category="paragraph">Sie installieren den NVIDIA SN2100-Switch (X190006) in einem NVIDIA Dual/Single-Switch-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.</block>
+  <block id="1e247ada2e98c5879849d746a52a4241" category="paragraph">Der NVIDIA SN2100-Switch ist ein 10/25/40/100-GbE-Switch mit Cumulus Linux. Der Switch unterstützt Folgendes:</block>
+  <block id="f555c61f64386d2582939da4025ebe47" category="list-text">ONTAP 9.10.1P3. Der SN2100 Switch dient Cluster- und Speicheranwendungen in ONTAP 9.10.1P3 über verschiedene Switch-Paare.</block>
+  <block id="d40bf069d92679bf05879cf7f6cbe2cd" category="inline-link">NVIDIA Enterprise Support Portal</block>
+  <block id="cb8e85c2970ddd5692a09be2e61dcc13" category="list-text">Cumulus Linux (CL) OS-Version. Um die SN2100 Cumulus Software herunterzuladen, melden Sie sich beim an<block ref="778b7445002ab4132f3edc7cada5c78a" category="inline-link-rx"></block>. Beachten Sie, dass Sie über Anmeldedaten verfügen müssen, um auf die Cumulus-Software zugreifen zu können. Aktuelle Informationen zur Kompatibilität finden Sie im<block ref="f6aa36fb7711a9179cbd2c4c52b8d6ef" category="inline-link-rx"></block> Informationsseite.</block>
+  <block id="c19b9518d51b517376f0fe9109f66e90" category="paragraph">40/100-GbE-Cluster-Port-Nodes</block>
+  <block id="45a21206fd2396fdd6a59132a2a6d3a7" category="paragraph">40/100-GbE-Inter-Switch Link (ISL)-Ports</block>
+  <block id="509e4d6df8b93cb5deb86271a6326df2" category="section-title">Verbindungsverzögerungen mit optischen Verbindungen</block>
+  <block id="50137c9f3120823f7ba1d1983c48e011" category="paragraph">Wenn Sie Verbindungsverzögerungen von mehr als fünf Sekunden haben, bietet Cumulus Linux 5.4 und höher Unterstützung für eine schnelle Verbindungsaufnahme. Sie können die Verknüpfungen mit konfigurieren<block ref="0c14f6e7a82b0926c666f7fac383436a" prefix=" " category="inline-code"></block> Befehl wie folgt:</block>
+  <block id="68a8de419a9558e300d05a15cc5b2aec" category="section-title">Unterstützung für Kupferverbindungen</block>
+  <block id="5a6f42c8f3d33107177157ef7008dfe2" category="paragraph">Die folgenden Konfigurationsänderungen sind erforderlich, um dieses Problem zu beheben.</block>
+  <block id="5dfb78a5909646d153e9d260981232b4" category="list-text">Benennen Sie die einzelnen Schnittstellen, die 40-GbE-/100-GbE-Kupferkabel verwenden, wie folgt:</block>
+  <block id="17f9698fd9a933aea82b9498c3cf5318" category="list-text">Fügen Sie die folgenden beiden Zeilen zum hinzu<block ref="d4b3c0affe66439bbee012d30e38441b" prefix=" " category="inline-code"></block> Datei für jeden Port (swpp &lt;n&gt;), der 40 GbE/100 GbE Kupferkabel verwendet:</block>
+  <block id="0b17b874fe78bf6ab3bb2937838f8df1" category="list-text">Starten Sie den neu<block ref="b0df6da856b1d2d594adfbdfe27a1336" prefix=" " category="inline-code"></block> Dienst:</block>
+  <block id="b1d96c90c61dd718b6a805eb818961c4" category="list-text">Vergewissern Sie sich, dass die Ports hochgefahren sind:</block>
+  <block id="9d018838c5ab5975b4e472fee2f89455" category="list-text">Konfigurieren Sie die Verknüpfungen mit<block ref="0c14f6e7a82b0926c666f7fac383436a" prefix=" " category="inline-code"></block> Befehl wie folgt:</block>
+  <block id="4db57c36adcedbf3d48c546b8a964490" category="list-text"><block ref="4d9dc029304fd2614ef7b9bca43ee36d" prefix="" category="inline-code"></block></block>
+  <block id="6d882d10695e4f3595987a4c3fc3b0d4" category="list-text"><block ref="2aa6f22da2ac5e9b2e1e6d3643ea273e" prefix="" category="inline-code"></block></block>
+  <block id="9c1398e0fe6bc7229e870295da6e50f0" category="list-text">Laden Sie den neu<block ref="b0df6da856b1d2d594adfbdfe27a1336" prefix=" " category="inline-code"></block> Service</block>
+  <block id="1892645d2782c9bf9dc34851d08c3fc0" category="inline-link">Diesen KB</block>
+  <block id="3415ad7957144776adc29fe727ecd053" category="paragraph">Siehe<block ref="5f1cba074f9c9f92027bd9e16fc96408" category="inline-link-rx"></block> Entnehmen.</block>
+  <block id="45ac1916de26f6f51168dd562a7dfba5" category="paragraph">Auf Cumulus Linux 4.4.2 werden Kupferverbindungen nicht auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100-GbE-Ports unterstützt. Beispiel:</block>
+  <block id="4038c0e6561afda23a992fb3c5771bed" category="paragraph">Wenn ein QSA-Adapter für die Verbindung mit den 10 GbE/25 GbE-Cluster-Ports auf einer Plattform verwendet wird, wird die Verbindung möglicherweise nicht hergestellt.</block>
+  <block id="65a7722b91e57b456663ad9dfbce3756" category="list-text">Stellen Sie bei 10GbE die Verbindungsgeschwindigkeit swp1s0-3 manuell auf 10000 und stellen Sie die automatische Aushandlung auf aus.</block>
+  <block id="db2ee086523acdbe77c0655e5b34e140" category="list-text">Stellen Sie für 25 GbE die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein, und stellen Sie die automatische Aushandlung auf aus.</block>
+  <block id="a4776f8907c629282806882eea5abb7c" category="admonition">Wenn Sie 10-GbE-QSA-Adapter verwenden, fügen Sie sie in Breakout-GbE-/100-GbE-Ports (swp3-swp14) ein. Setzen Sie den QSA-Adapter nicht in einen Port ein, der für einen Breakout konfiguriert ist.</block>
+  <block id="e7e44cf1f6086f5ec92a0b659ae4c9a3" category="paragraph">Je nach Transceiver im Switch-Port müssen Sie die Geschwindigkeit an der Switch-Schnittstelle möglicherweise auf eine feste Geschwindigkeit einstellen. Bei Verwendung von 10-GbE- und 25-GbE-Breakout-Ports überprüfen Sie, ob die automatische Aushandlung deaktiviert ist, und legen Sie die Schnittstellengeschwindigkeit auf dem Switch fest.</block>
+  <block id="0f08aaa10ce68f7f905212dc1aab73b3" category="paragraph">Überprüfen Sie die Schnittstelle und den Port-Status, um zu überprüfen, ob die Einstellungen angewendet werden:</block>
+  <block id="9742e43179b451c849ed088319254cd9" category="summary">Führen Sie die folgenden Schritte durch, um Ihre Cumulus Linux-Version zu aktualisieren.</block>
+  <block id="9d021cb22b9c9afdaa65e8cfcee560c5" category="doc">Aktualisieren Sie Cumulus Linux-Versionen</block>
+  <block id="d62448073473e6946178f647bcbfbf0e" category="paragraph">Gehen Sie wie folgt vor, um Ihre Cumulus Linux-Version bei Bedarf zu aktualisieren.</block>
+  <block id="0fc8a779fbe2ae3a05240b53435f18cf" category="admonition">Jedes Mal, wenn Cumulus Linux aktualisiert wird, wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut. Ihre bestehende Konfiguration wird gelöscht. Sie müssen Ihre Switch-Konfiguration speichern und aufzeichnen, bevor Sie Cumulus Linux aktualisieren.</block>
+  <block id="0d151e82f107d3039ec4952c010d46c4" category="admonition">Das Standardpasswort für das Cumulus-Benutzerkonto lautet *Cumulus*. Wenn Sie sich das erste Mal bei Cumulus Linux anmelden, müssen Sie dieses Standardpasswort ändern. Sie müssen Automatisierungsskripts aktualisieren, bevor Sie ein neues Image installieren. Cumulus Linux bietet Befehlszeilenoptionen zum automatischen Ändern des Standardpassworts während des Installationsvorgangs.</block>
+  <block id="324fe5adbd1d84e1635133b2f3572f6d" category="open-title">Von Cumulus Linux 4.4.x auf Cumulus Linux 5.x</block>
+  <block id="6e86c333c0b662bb6dee3495ec26ec21" category="list-text">Überprüfen Sie die aktuelle Version von Cumulus Linux und die angeschlossenen Ports:</block>
+  <block id="698eeac576f2a03927debdd14725ba5e" category="list-text">Laden Sie das Cumulux Linux 5.x-Image herunter:</block>
+  <block id="a034a19ca9c1623f94c8f52b386d5a41" category="list-text">Ändern Sie das Passwort:</block>
+  <block id="d853eef2a857cbfcf5b1ef1abe8db17e" category="list-text">Prüfen Sie die Cumulus Linux-Version:<block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix=" " category="inline-code"></block></block>
+  <block id="985599684d8f5a06353d35110138f1b2" category="list-text">Ändern Sie den Hostnamen:</block>
+  <block id="0e991c1ef237b6e2304639c4e67230ec" category="list-text">Melden Sie sich ab, und melden Sie sich erneut beim Switch an, um den aktualisierten Switch-Namen an der Eingabeaufforderung anzuzeigen:</block>
+  <block id="9452c986bddec0ffc4c1e4393d954d4a" category="list-text">Legen Sie die IP-Adresse fest:</block>
+  <block id="b0255cc355effdccf079c37dfed7930c" category="open-title">Von Cumulus Linux 5.x auf Cumulus Linux 5.x</block>
+  <block id="65a9f174ce483d8b53a1a174dc734625" category="list-text">Laden Sie das Cumulux Linux 5.4.0-Image herunter:</block>
+  <block id="ae9c690e9fad2f5c57259599dd4505b1" category="list-text">Melden Sie sich ab, und melden Sie sich erneut beim Switch an, um den aktualisierten Switch-Namen an der Eingabeaufforderung anzuzeigen:</block>
+  <block id="db20376829e65eac071b27b68736377d" category="paragraph">Cluster-Switch, NVIDIA SN2100, 16 PT 100 GbE, PTSX</block>
+  <block id="d2eaff24ce79ed3c374a5a2090d168b1" category="paragraph">Cluster Switch, NVIDIA SN2100, 16 PT 100 GbE, PSIN</block>
+  <block id="001d5d8be5c2b491c0e7502d149d957d" category="paragraph">Switch, NVIDIA SN2100, 16 PT 100 GbE, PTSX, Front-End</block>
+  <block id="e41188b1210c6535f254eaa7b5dbd046" category="paragraph">Switch, NVIDIA SN2100, 16 PT 100 GbE, PSIN, Front-End</block>
+  <block id="eef96d02de8bddc099677ad1d3ec3385" category="list-text">Prüfen Sie die Cumulus Linux-Version:<block ref="518227d11c3d0b4ad2468e4272be661a" prefix=" " category="inline-code"></block></block>
+  <block id="5e7f834bb6ce37fe7786c30951681705" category="list-text">Überprüfen Sie, ob die Cumulus Linux-Version 4.4.3 lautet:<block ref="98f5dff8534e8c39673b544f567273e7" prefix=" " category="inline-code"></block></block>
+  <block id="d3197ab8aed6376fa7796149e9bb5d76" category="paragraph">Das Installationsprogramm startet den Download. Geben Sie bei Aufforderung * y* ein.</block>
+  <block id="0d5b4669d0f67490dffe38df0a47c207" category="list-text">Die Installation wird automatisch gestartet, und die folgenden GRUB-Bildschirmoptionen werden angezeigt. Wählen Sie bitte * nicht* aus.</block>
+  <block id="caf789a40cb327fa8f64258a010c13e0" category="list-text">Überprüfen Sie, ob die Cumulus Linux-Version 5.4 lautet:<block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix=" " category="inline-code"></block></block>
+  <block id="ebf243f9c791c52799ecfef9dba7e609" category="doc">Ersetzen Sie NetApp CN1610 Cluster Switches durch Verbindungen ohne Switches</block>
+  <block id="261de3e636d4ab259e73f4993ea87a6a" category="sidebar">Aktualisieren Sie die Cumulus Linux-Version</block>
 </blocks>

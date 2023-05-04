@@ -19,7 +19,7 @@ Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unt
 
 == ONTAP und Linux Unterstützung
 
-Der NVIDIA SN2100 Switch ist ein 10/25/40/100 GB Ethernet-Switch mit Cumulus Linux. Der Switch unterstützt Folgendes:
+Der NVIDIA SN2100-Switch ist ein 10/25/40/100-GbE-Switch mit Cumulus Linux. Der Switch unterstützt Folgendes:
 
 * ONTAP 9.10.1P3. Der SN2100 Switch dient Cluster- und Speicheranwendungen in ONTAP 9.10.1P3 über verschiedene Switch-Paare. Ab ONTAP 9.10.1P3 können Sie mit NVIDIA SN2100 Switches Storage- und Cluster-Funktionen in einer gemeinsamen Switch-Konfiguration kombinieren.
 * Cumulus Linux (CL) OS-Version 4.4.3. Aktuelle Informationen zur Kompatibilität finden Sie im https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] Informationsseite.
@@ -42,28 +42,28 @@ In der folgenden Tabelle sind die Teilenummer und Beschreibung der MSN2100-Switc
  a| 
 X190006-PE
  a| 
-Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PTSX
+Cluster-Switch, NVIDIA SN2100, 16 PT 100 GbE, PTSX
 
 
 
  a| 
 X190006-PI
  a| 
-Cluster Switch, NVIDIA SN2100, 16 PT 100 G, PSIN
+Cluster Switch, NVIDIA SN2100, 16 PT 100 GbE, PSIN
 
 
 
  a| 
 X190106-FE-PE
  a| 
-Switch, NVIDIA SN2100, 16 PT 100 G, PTSX, Frontend
+Switch, NVIDIA SN2100, 16 PT 100 GbE, PTSX, Front-End
 
 
 
  a| 
 X190106-FE-PI
  a| 
-Switch, NVIDIA SN2100, 16 PT 100G, PSIN, Front End
+Switch, NVIDIA SN2100, 16 PT 100 GbE, PSIN, Front-End
 
 
 

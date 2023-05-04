@@ -28,3 +28,7 @@ entries:
     url: "/switch-netapp-cn1610/migrate-switched-netapp-cn1610.html"
   - title: Migration auf Cluster mit zwei Nodes
     url: "/switch-netapp-cn1610/migrate-fas22xx-systems.html"
+- title: Tauschen Sie die Schalter aus
+  entries:
+  - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
+    url: "/switch-netapp-cn1610/migrate-to-switchless-cluster-interconnect.html"

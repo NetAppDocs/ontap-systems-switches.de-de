@@ -13,24 +13,57 @@ summary: Prüfen Sie für die Installation und Wartung von BES-53248-Switches di
 [role="lead"]
 Prüfen Sie für die Installation und Wartung von BES-53248-Switches die Liste der Komponenten und Teilenummern.
 
-In der folgenden Tabelle sind die Teilenummer und Beschreibung der BES-53248-Cluster-Switch-Komponenten aufgeführt, einschließlich Rack-montierter Schienen-Kit, Lüfter und Netzteile.
+In der folgenden Tabelle sind die Teilenummer, die Beschreibung und die Mindestversionen von EFOS und ONTAP für die Komponenten des BES-53248-Cluster-Switches aufgeführt, einschließlich Details zum Rack-Befestigungsschienen-Kit.
 
-[cols="1,2"]
+
+NOTE: Für die Teilenummern *X190005-B* und *X190005R-B* ist eine EFOS-Mindestversion von *3.10.0.3* erforderlich.
+
+[cols="20,40,20,20"]
 |===
-| Teilenummer | Beschreibung 
+| Teilenummer | Beschreibung | Minimale EFOS-Version | Minimale ONTAP-Version 
+
+
+ a| 
+X190005-B
+ a| 
+BES-53248-B/IX8, CLSW, 16PT10/25GB, PTSX (PTSX = Port Side Exhaust)
+ a| 
+3.10.0.3
+ a| 
+9.8
+
+
+
+ a| 
+X190005R-B
+ a| 
+BES-53248-B/IX8, CLSW, 16PT10/25 GB, PSIN (PSIN = Port Side Intake)
+ a| 
+3.10.0.3
+ a| 
+9.8
+
 
 
  a| 
 X190005
  a| 
-BES-53248, CLSW, 16Pt10/25 GB, PTSX, BRDCM-SUPPORT (PTSX = Port Side Exhaust)
+BES-53248, CLSW, 16PT10/25 GB, PTSX, BRDCM-SUPPORT
+ a| 
+3.4.4.6
+ a| 
+9.5P8
 
 
 
  a| 
 X190005R
  a| 
-BES-53248, CLSW, 16Pt10/25 GB, PSIN, BRDCM-SUPPORT (PSIN = Port Side Intake)
+BES-53248, CLSW, 16PT10/25 GB, PSIN, BRDCM-SUPPORT
+ a| 
+3.4.4.6
+ a| 
+9.5P8
 
 
 
@@ -38,37 +71,58 @@ BES-53248, CLSW, 16Pt10/25 GB, PSIN, BRDCM-SUPPORT (PSIN = Port Side Intake)
 X-RAIL-4POST-190005
  a| 
 Rack Mount Rail Kit Ozeki 4 Post 19 Zoll
-
-
-
  a| 
-X-FAN-190005-R
+K. A.
  a| 
-Lüfter, Anschlußseite X190005
-
-
-
- a| 
-X-FAN-190005-F
- a| 
-Lüfter, Auslass auf der Anschlussseite X190005
-
-
-
- a| 
-X-PSU-190005-R
- a| 
-Netzteil, Anschlusseingang X190005
-
-Ansaugluftstrom (Umkehrluft): Kühle Luft tritt durch das Anschlussende im Kaltgang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang.
-
-
-
- a| 
-X-PSU-190005-F
- a| 
-Netzteil, Auspuff an der Anschlussseite X190005
-
-Anschlussseitiger Abluftstrom (Standardluft): Kühle Luft tritt durch die Lüfter- und Stromversorgungsmodule im Kaltgang in das Gehäuse ein und entgast durch das Anschlussende des Gehäuses im heißen Gang. Die blaue Färbung zeigt die Luftzirkulation an der Anschlussseite an. Dies ist die am häufigsten verwendete Option.
+K. A.
 
 |===
+
+IMPORTANT: Beachten Sie die folgenden Informationen bezüglich Maschinentypen:
+
+[cols="50,50"]
+|===
+| Maschinentyp | EFOS-Version 
+
+
+ a| 
+BES-53248A1
+| 3.4.4.6 
+
+
+ a| 
+BES-53248A2
+| 3.10.0.3 
+
+
+ a| 
+BES-53248A3
+| 3.10.0.3 
+|===
+Sie können Ihren spezifischen Maschinentyp mit dem folgenden Befehl bestimmen: `show version`
+
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs1)# *show version*
+
+Switch: cs1
+
+System Description............................. EFOS, 3.10.0.3, Linux 5.4.2-b4581018, 2016.05.00.07
+Machine Type................................... *_BES-53248A3_*
+Machine Model.................................. BES-53248
+Serial Number.................................. QTWCU225xxxxx
+Part Number.................................... 1IX8BZxxxxx
+Maintenance Level.............................. a3a
+Manufacturer................................... QTMC
+Burned In MAC Address.......................... C0:18:50:F4:3x:xx
+Software Version............................... 3.10.0.3
+Operating System............................... Linux 5.4.2-b4581018
+Network Processing Device...................... BCM56873_A0
+.
+.
+.
+----
+====

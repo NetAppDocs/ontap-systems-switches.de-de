@@ -41,14 +41,15 @@ NOTE: Jedes Mal, wenn Cumulus Linux installiert wird, wird die gesamte Dateisyst
 CAUTION: Das Standardpasswort für das Cumulus-Benutzerkonto lautet *Cumulus*. Wenn Sie sich das erste Mal bei Cumulus Linux anmelden, müssen Sie dieses Standardpasswort ändern. Aktualisieren Sie alle Automatisierungsskripts, bevor Sie ein neues Image installieren. Cumulus Linux bietet Befehlszeilenoptionen zum automatischen Ändern des Standardpassworts während des Installationsvorgangs.
 
 .Schritte
+[role="tabbed-block"]
+====
+.Cumulus Linux 4.4.3
+--
 . Melden Sie sich beim Switch an.
 +
 Wenn Sie sich zum ersten Mal am Switch anmelden, benötigen Sie den Benutzernamen/das Passwort von *cumulus*/*cumulus* mit `sudo` Berechtigungen.
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus login: *cumulus*
@@ -59,15 +60,8 @@ Current password: *cumulus*
 New password: *<new_password>*
 Retype new password: *<new_password>*
 ----
-====
-. Prüfen Sie die Cumulus Linux-Version:
+. Prüfen Sie die Cumulus Linux-Version: `net show system`
 +
-`net show system`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@cumulus:mgmt:~$ *net show system*
@@ -88,7 +82,6 @@ ONIE Version..... 2019.11-5.2.0020-115200
 Base MAC Address. 04:3F:72:43:92:80
 Manufacturer..... Mellanox
 ----
-====
 . Konfigurieren Sie den Hostnamen, die IP-Adresse, die Subnetzmaske und das Standard-Gateway. Der neue Hostname wird erst nach dem Neustart der Konsole/SSH-Sitzung wirksam.
 +
 
@@ -99,9 +92,6 @@ NOTE: Ein Cumulus Linux-Switch bietet mindestens einen dedizierten Ethernet-Mana
 CAUTION: Verwenden Sie keine Unterstriche (_), Apostroph (') oder nicht-ASCII-Zeichen im Hostnamen.
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@cumulus:mgmt:~$ *net add hostname sw1*
@@ -110,15 +100,11 @@ cumulus@cumulus:mgmt:~$ *net add interface eth0 ip gateway 10.233.204.1*
 cumulus@cumulus:mgmt:~$ *net pending*
 cumulus@cumulus:mgmt:~$ *net commit*
 ----
-====
 +
 Dieser Befehl ändert beide `/etc/hostname` Und `/etc/hosts` Dateien:
 
 . Vergewissern Sie sich, dass der Hostname, die IP-Adresse, die Subnetzmaske und das Standard-Gateway aktualisiert wurden.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:mgmt:~$ *hostname sw1*
@@ -138,7 +124,6 @@ unreachable default metric 4278198272
 10.233.204.0/23 dev eth0 proto kernel scope link src 10.233.204.71
 127.0.0.0/8 dev mgmt proto kernel scope link src 127.0.0.1
 ----
-====
 . Konfigurieren Sie die Zeitzone mithilfe des interaktiven NTP-Modus.
 +
 .. Führen Sie auf einem Terminal den folgenden Befehl aus:
@@ -176,14 +161,8 @@ cumulus@sw1:mgmt:~$ *sudo reboot*
 
 
 . Wiederholen Sie die Schritte 1 bis 4, um sich anzumelden.
-. Überprüfen Sie, ob die Cumulus Linux-Version 4.4.3 lautet:
+. Überprüfen Sie, ob die Cumulus Linux-Version 4.4.3 lautet: `net show version`
 +
-`net show version`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:mgmt:~$ *net show version*
@@ -192,23 +171,19 @@ DISTRIB_ID="Cumulus Linux"
 DISTRIB_RELEASE=*4.4.3*
 DISTRIB_DESCRIPTION=*"Cumulus Linux 4.4.3"*
 ----
-====
 . Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu `sudo` Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.
 +
 `sudo adduser --ingroup netedit admin`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:mgmt:~$ *sudo adduser --ingroup netedit admin*
 [sudo] password for cumulus:
-Adding user `admin’ ...
-Adding new user `admin’ (1001) with group `netedit' ...
-Creating home directory `/home/admin’ ...
-Copying files from `/etc/skel' ...
+Adding user 'admin' ...
+Adding new user 'admin' (1001) with group `netedit' ...
+Creating home directory '/home/admin' ...
+Copying files from '/etc/skel' ...
 New password:
 Retype new password:
 passwd: password updated successfully
@@ -226,7 +201,7 @@ cumulus@sw1:mgmt:~$ *sudo adduser admin sudo*
 Adding user `admin' to group `sudo' ...
 Adding user admin to group sudo
 Done.
-cumulus@sw1:mgmt:~$ exit
+cumulus@sw1:mgmt:~$ *exit*
 logout
 Connection to 10.233.204.71 closed.
 
@@ -241,8 +216,203 @@ http://www.cumulusnetworks.com/support
 The registered trademark Linux (R) is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 admin@sw1:mgmt:~$
 ----
+
+
+--
+.Cumulus Linux 5.x
+--
+. Melden Sie sich beim Switch an.
++
+Wenn Sie sich zum ersten Mal am Switch anmelden, benötigen Sie den Benutzernamen/das Passwort von *cumulus*/*cumulus* mit `sudo` Berechtigungen.
+
++
+[listing, subs="+quotes"]
+----
+cumulus login: *cumulus*
+Password: *cumulus*
+You are required to change your password immediately (administrator enforced)
+Changing password for cumulus.
+Current password: *cumulus*
+New password: *<new_password>*
+Retype new password: *<new_password>*
+----
+. Prüfen Sie die Cumulus Linux-Version: `nv show system`
++
+[listing, subs="+quotes"]
+----
+cumulus@cumulus:mgmt:~$ *nv show system*
+operational         applied              description
+------------------- -------------------- ---------------------
+hostname            cumulus              cumulus
+build               Cumulus Linux 5.3.0  system build version
+uptime              6 days, 8:37:36      system uptime
+timezone            Etc/UTC              system time zone
+----
+. Konfigurieren Sie den Hostnamen, die IP-Adresse, die Subnetzmaske und das Standard-Gateway. Der neue Hostname wird erst nach dem Neustart der Konsole/SSH-Sitzung wirksam.
++
+
+NOTE: Ein Cumulus Linux-Switch bietet mindestens einen dedizierten Ethernet-Management-Port namens `eth0`. Diese Schnittstelle wurde speziell für den Out-of-Band-Management-Einsatz entwickelt. Standardmäßig verwendet die Managementoberfläche DHCPv4 für Adressierung.
+
++
+
+CAUTION: Verwenden Sie keine Unterstriche (_), Apostroph (') oder nicht-ASCII-Zeichen im Hostnamen.
+
++
+[listing, subs="+quotes"]
+----
+cumulus@cumulus:mgmt:~$ *nv add hostname sw1*
+cumulus@cumulus:mgmt:~$ *nv add interface eth0 ip address 10.233.204.71*
+cumulus@cumulus:mgmt:~$ *nv add interface eth0 ip gateway 10.233.204.1*
+cumulus@cumulus:mgmt:~$ *nv pending*
+cumulus@cumulus:mgmt:~$ *nv commit*
+----
++
+Dieser Befehl ändert beide `/etc/hostname` Und `/etc/hosts` Dateien:
+
+. Vergewissern Sie sich, dass der Hostname, die IP-Adresse, die Subnetzmaske und das Standard-Gateway aktualisiert wurden.
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *hostname sw1*
+cumulus@sw1:mgmt:~$ *ifconfig eth0*
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+inet 10.233.204.71  netmask 255.255.254.0  broadcast 10.233.205.255
+inet6 fe80::bace:f6ff:fe19:1df6  prefixlen 64  scopeid 0x20<link>
+ether b8:ce:f6:19:1d:f6  txqueuelen 1000  (Ethernet)
+RX packets 75364  bytes 23013528 (21.9 MiB)
+RX errors 0  dropped 7  overruns 0  frame 0
+TX packets 4053  bytes 827280 (807.8 KiB)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0 device memory 0xdfc00000-dfc1ffff
+
+cumulus@sw1::mgmt:~$ *ip route show vrf mgmt*
+default via 10.233.204.1 dev eth0
+unreachable default metric 4278198272
+10.233.204.0/23 dev eth0 proto kernel scope link src 10.233.204.71
+127.0.0.0/8 dev mgmt proto kernel scope link src 127.0.0.1
+----
+. Konfigurieren Sie die Zeitzone mithilfe des interaktiven NTP-Modus.
++
+.. Führen Sie auf einem Terminal den folgenden Befehl aus:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *sudo dpkg-reconfigure tzdata*
+----
+.. Folgen Sie den Menüoptionen auf dem Bildschirm, um den geografischen Bereich und die Region auszuwählen.
+.. Um die Zeitzone für alle Dienste und Dämonen einzustellen, starten Sie den Switch neu.
+.. Überprüfen Sie, ob das Datum und die Uhrzeit auf dem Switch korrekt sind, und aktualisieren Sie ggf..
+
+
+. Installieren Sie Cumulus Linux 5.4:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *sudo onie-install -a -i http://_<web-server>/<path>_/cumulus-linux-5.4-mlx-amd64.bin*
+----
++
+Das Installationsprogramm startet den Download. Geben Sie bei Aufforderung * y* ein.
+
+. Starten Sie den NVIDIA SN2100-Switch neu:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *sudo reboot*
+----
+. Die Installation wird automatisch gestartet, und die folgenden GRUB-Bildschirmoptionen werden angezeigt. Wählen Sie bitte * nicht* aus.
++
+** Cumulus-Linux GNU/Linux
+** ONIE: Installieren des Betriebssystems
+** CUMULUS EINBAUEN
+** Cumulus-Linux GNU/Linux
+
+
+. Wiederholen Sie die Schritte 1 bis 4, um sich anzumelden.
+. Überprüfen Sie, ob die Cumulus Linux-Version 5.4 lautet: `nv show system`
++
+[listing, subs="+quotes"]
+----
+cumulus@cumulus:mgmt:~$ *nv show system*
+operational         applied              description
+------------------- -------------------- ---------------------
+hostname            cumulus              cumulus
+build               Cumulus Linux 5.4.0  system build version
+uptime              6 days, 13:37:36     system uptime
+timezone            Etc/UTC              system time zone
+----
+. Stellen Sie sicher, dass die Nodes jeweils über eine Verbindung zu jedem Switch verfügen:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *nv show lldp*
+
+LocalPort  Speed  Mode        RemoteHost                          RemotePort
+---------  -----  ----------  ----------------------------------  -----------
+eth0       100M   Mgmt        mgmt-sw1                            Eth110/1/29
+swp2s1     25G    Trunk/L2    node1                               e0a
+swp15      100G   BondMember  sw2                                 swp15
+swp16      100G   BondMember  sw2                                 swp16
+----
+. Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu `sudo` Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.
++
+`sudo adduser --ingroup netedit admin`
+
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *sudo adduser --ingroup netedit admin*
+[sudo] password for cumulus:
+Adding user 'admin' ...
+Adding new user 'admin' (1001) with group `netedit' ...
+Creating home directory '/home/admin' ...
+Copying files from '/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for admin
+Enter the new value, or press ENTER for the default
+Full Name []:
+Room Number []:
+Work Phone []:
+Home Phone []:
+Other []:
+Is the information correct? [Y/n] *y*
+
+cumulus@sw1:mgmt:~$ *sudo adduser admin sudo*
+[sudo] password for cumulus:
+Adding user `admin' to group `sudo' ...
+Adding user admin to group sudo
+Done.
+cumulus@sw1:mgmt:~$ *exit*
+logout
+Connection to 10.233.204.71 closed.
+
+[admin@cycrh6svl01 ~]$ ssh admin@10.233.204.71
+admin@10.233.204.71's password:
+Linux sw1 4.19.0-cl-1-amd64 #1 SMP Cumulus 4.19.206-1+cl4.4.1u1 (2021-09-09) x86_64
+Welcome to NVIDIA Cumulus (R) Linux (R)
+
+For support and online technical documentation, visit
+http://www.cumulusnetworks.com/support
+
+The registered trademark Linux (R) is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
+admin@sw1:mgmt:~$
+----
+. Fügen Sie zusätzliche Benutzergruppen hinzu, auf die der Admin-Benutzer zugreifen kann `nv` Befehl:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *sudo adduser admin nvshow*
+     [sudo] password for cumulus:
+     Adding user 'admin' to group 'nvshow' ...
+     Adding user admin to group nvshow
+     Done.
+----
++
+Siehe https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] Finden Sie weitere Informationen.
+
+
+
+--
 ====
-
-
 .Was kommt als Nächstes?
 link:install-rcf-sn2100-cluster.html["Installieren Sie das RCF-Skript (Reference Configuration File)"].
