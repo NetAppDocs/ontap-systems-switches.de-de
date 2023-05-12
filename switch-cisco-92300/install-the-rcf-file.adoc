@@ -40,7 +40,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 
 .Über diese Aufgabe
-Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^]; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
+Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://["Switches Der Cisco Nexus 9000-Serie"^]; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
 
 .Schritte
 . Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
@@ -227,7 +227,7 @@ cs2#
 .. Führen Sie eine grundlegende Einrichtung des Switches durch.
 
 
-. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
+. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -255,7 +255,7 @@ Copy complete.
 ====
 . Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
 
 +
 .Beispiel anzeigen
@@ -358,7 +358,7 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
 
 +
 [listing, subs="+quotes"]

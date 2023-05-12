@@ -58,7 +58,7 @@ Der link:http://mysupport.netapp.com/NOW/download/software/cm_switches/["Cisco E
 ** Nexus 3132Q-V
 
 
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
 * Die Cluster-Switches verwenden die folgenden Ports für Verbindungen zu den Nodes:
 +
 ** Ports e1/1-40 (10 GbE): Nexus 5596

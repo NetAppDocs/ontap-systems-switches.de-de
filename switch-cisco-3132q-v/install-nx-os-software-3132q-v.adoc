@@ -24,7 +24,7 @@ Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem Nexus 3132Q-V Clust
 
 .Vorgeschlagene Dokumentation
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und NX-OS-Versionen.
-* https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Switches Der Cisco Nexus 3000-Serie"^]. Die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website finden Sie in der vollständigen Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches.
+* https://["Switches Der Cisco Nexus 3000-Serie"^]. Die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website finden Sie in der vollständigen Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches.
 
 
 
@@ -51,7 +51,7 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Kopieren Sie die NX-OS-Software mit einem der folgenden Übertragungsprotokolle auf den Nexus 3132Q-V-Switch: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch unter https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Series NX-OS Command Reference Guides"^].
+. Kopieren Sie die NX-OS-Software mit einem der folgenden Übertragungsprotokolle auf den Nexus 3132Q-V-Switch: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch unter https://["Cisco Nexus 3000 Series NX-OS Command Reference Guides"^].
 +
 .Beispiel anzeigen
 [%collapsible]

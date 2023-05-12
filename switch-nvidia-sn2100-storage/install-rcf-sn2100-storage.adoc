@@ -104,7 +104,7 @@ Das RCF-Skript führt die oben aufgeführten Schritte durch.
 
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://["NetApp Support"^] Für weitere Unterstützung.
 
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +

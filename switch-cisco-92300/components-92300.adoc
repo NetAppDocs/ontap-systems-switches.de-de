@@ -11,7 +11,7 @@ summary: Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind
 
 
 [role="lead"]
-Prüfen Sie bei der Installation und Wartung von Cisco Nexus 92300YC-Switches alle Switch-Komponenten und Teilenummern. Siehe https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Entsprechende Details.
+Prüfen Sie bei der Installation und Wartung von Cisco Nexus 92300YC-Switches alle Switch-Komponenten und Teilenummern. Siehe https://["Hardware Universe"^] Entsprechende Details.
 
 In der folgenden Tabelle sind die Teilenummer und Beschreibung für den 92300YC-Switch, die Lüfter und die Netzteile aufgeführt:
 

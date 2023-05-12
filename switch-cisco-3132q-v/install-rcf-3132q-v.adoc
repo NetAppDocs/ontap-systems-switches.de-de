@@ -24,7 +24,7 @@ Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3
 * Eine Boot-Konfiguration im RCF, die die gewünschten Boot-Images wiedergibt, erforderlich, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten. Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
 * Eine Konsolenverbindung mit dem Switch, die bei der Installation des RCF erforderlich ist.
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen. Beachten Sie, dass es Abhängigkeiten zwischen der Befehlssyntax im RCF und der in Versionen von NX-OS gibt.
-* https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Switches Der Cisco Nexus 3000-Serie"^]. Die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website finden Sie in der vollständigen Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches.
+* https://["Switches Der Cisco Nexus 3000-Serie"^]. Die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website finden Sie in der vollständigen Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches.
 
 
 
@@ -293,7 +293,7 @@ cs2#
 .. Führen Sie eine grundlegende Einrichtung des Switches durch.
 
 
-. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
+. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -310,7 +310,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
 
 +
 .Beispiel anzeigen
@@ -377,7 +377,7 @@ Wenn Sie die Ausgabe überprüfen, um zu überprüfen, ob Sie die richtige RCF h
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 3000-Serie NX-OS Command Reference"] Leitfäden.
 
 +
 .Beispiel anzeigen

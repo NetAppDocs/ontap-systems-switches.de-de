@@ -29,7 +29,7 @@ Siehe link:https://hwu.netapp.com/Home/Index["_Hardware Universe^_"] Für die ta
 .Unterstützte Ports und Node-Verbindungen
 * Die Inter-Switch Links (ISLs) werden für Nexus 92300YC Switches unterstützt; die Ports 1/65 und 1/66.
 * Die für Nexus 92300YC-Switches unterstützten Node-Verbindungen sind die Ports 1/1 bis 1/66.
-* Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`. Siehe https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+* Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`. Siehe https://["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 
 .Bevor Sie beginnen
@@ -37,7 +37,7 @@ Siehe link:https://hwu.netapp.com/Home/Index["_Hardware Universe^_"] Für die ta
 * Das Cluster muss voll funktionsfähig sein (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
 * Sie müssen die gewünschte Boot-Konfiguration im RCF aktiviert oder eingestellt haben, um die gewünschten Boot-Images zu reflektieren, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten.
 * Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
-* Sie müssen die Switch-Kompatibilitätstabelle auf dem konsultieren https://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet Switch"^] Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen.
+* Sie müssen die Switch-Kompatibilitätstabelle auf dem konsultieren https://["Cisco Ethernet Switch"^] Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen.
 * Es können Befehlsabhängigkeiten zwischen der Befehlssyntax im RCF und denen in Versionen von NX-OS zu finden sind.
 
 

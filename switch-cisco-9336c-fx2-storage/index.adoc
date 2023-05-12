@@ -107,7 +107,7 @@ Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfiguratio
 * Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700 Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
 
 
-Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+Siehe https://["Hardware Universe"^] Aktuelle Informationen.
 
 
 
@@ -126,7 +126,7 @@ Bevor Sie die Smart Call Home-Funktion verwenden können, müssen Sie die folgen
 * Cisco SMARTnet Service muss vorhanden sein, damit das Gerät registriert werden kann.
 
 
-Der http://www.cisco.com/c/en/us/products/switches/index.html["Cisco Support-Website"^] Enthält Informationen zu den Befehlen zum Konfigurieren von Smart Call Home.
+Der http://["Cisco Support-Website"^] Enthält Informationen zu den Befehlen zum Konfigurieren von Smart Call Home.
 
 
 
@@ -138,7 +138,7 @@ Zum Einrichten der Cisco 9336-FX2 Switches und des ONTAP-Clusters benötigen Sie
 
 === Switch-Dokumentation
 
-Zum Einrichten der Cisco Nexus 9336C-FX2-Switches benötigen Sie die folgende Dokumentation über das https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
+Zum Einrichten der Cisco Nexus 9336C-FX2-Switches benötigen Sie die folgende Dokumentation über das https://["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
 
 [cols="1,2"]
 |===
@@ -204,7 +204,7 @@ Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen f�
 
 === Dokumentation der ONTAP Systeme
 
-Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 Dokumentationszentrum"^].
+Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://["ONTAP 9 Dokumentationszentrum"^].
 
 [cols="1,2"]
 |===
@@ -226,7 +226,7 @@ Dieser Service bietet detaillierte Informationen zu allen Aspekten der ONTAP Ver
 
 
  a| 
-https://hwu.netapp.com["Hardware Universe"^]
+https://["Hardware Universe"^]
  a| 
 Liefert Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
 
@@ -243,7 +243,7 @@ Informationen zur Installation eines Cisco 9336-FX2 Switch in einem NetApp Rack 
 
 
  a| 
-https://library.netapp.com/ecm/ecm_download_file/ECMM1280394["42-HE-System-Cabinet, Deep Guide"^]
+https://["42-HE-System-Cabinet, Deep Guide"^]
  a| 
 Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anweisungen für Wartung und FRU-Austausch.
 

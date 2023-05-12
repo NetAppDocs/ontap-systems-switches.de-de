@@ -11,20 +11,23 @@ summary: Die Protokollerfassungsfunktion für die Cluster-Switch-Systemzustands�
 
 
 [role="lead"]
-Sie können die Protokollerfassungsfunktion aktivieren, mit der Switch-bezogene Protokolldateien in ONTAP erfasst werden.
-
-Vergewissern Sie sich, dass die Umgebung mit der BES-53248 Cluster Switch-CLI eingerichtet wurde.
+Sie können die Protokollerfassungsfunktion verwenden, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
 
 
+IMPORTANT: Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP Version 9.12.1 und höher sowie EFOS 3.8.0.2 und höher ausführen.
 
-== Für ONTAP 9.8 und höher
-
-Aktivieren Sie die Protokollerfassungsfunktion mithilfe der Befehle:
-
-`system switch ethernet log setup-password` Und `system switch ethernet log enable-collection`
+Stellen Sie sicher, dass Sie Ihre Umgebung mit dem BES-53248 Cluster Switch *CLI* eingerichtet haben.
 
 .Schritte
-. Geben Sie Ein: `system switch ethernet log setup-password`
+. Aktivieren Sie die Protokollerfassungsfunktion für die Statusüberwachung des Ethernet-Switches, um Switch-bezogene Protokolldateien mithilfe der folgenden Befehle zu erfassen:
++
+`system switch ethernet log setup-password` Und
+
++
+`system switch ethernet log enable-collection`
+
++
+.. Geben Sie Ein: `system switch ethernet log setup-password`
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -32,7 +35,7 @@ Aktivieren Sie die Protokollerfassungsfunktion mithilfe der Befehle:
 [listing, subs="+quotes"]
 ----
 cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: <return>
+Enter the switch name: *<return>*
 The switch name entered is not recognized.
 Choose from the following list:
 *cs1*
@@ -44,26 +47,27 @@ Enter the switch name: *cs1*
 RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
 Do you want to continue? {y|n}::[n] *y*
 
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
 
 cluster1::*> *system switch ethernet log setup-password*
+
 Enter the switch name: *cs2*
 RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
 Do you want to continue? {y|n}:: [n] *y*
 
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
 ----
 ====
-. Geben Sie Ein: `system switch ethernet log enable-collection`
+.. Geben Sie Ein: `system switch ethernet log enable-collection`
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *system switch ethernet log enable-collection*
+cluster1::*> *system  switch ethernet log enable-collection*
 
 Do you want to enable cluster log collection for all nodes in the cluster?
 {y|n}: [n] *y*
@@ -75,70 +79,35 @@ cluster1::*>
 ====
 
 
+. Initiieren der Switch-Protokollerfassung:
++
+`system switch ethernet log collect -device *`
 
++
+Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung erfolgreich war mit dem folgenden Befehl:
 
-== Für ONTAP 9.5P15, 9.6P11, 9.7P8 und neuere Patch-Releases
++
+`system switch ethernet log show`
 
-Aktivieren Sie die Protokollerfassungsfunktion mithilfe der Befehle:
-
-`system cluster-switch log setup-password` Und `system cluster-switch log enable-collection`
-
-.Schritte
-. Geben Sie Ein: `system cluster-switch log setup-password`
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *system cluster-switch log setup-password*
-Enter the switch name: <return>
-The switch name entered is not recognized.
-Choose from the following list:
-*cs1*
-*cs2*
+cluster1::*> system switch ethernet log show
+Log Collection Enabled: true
 
-cluster1::*> *system cluster-switch log setup-password*
-
-Enter the switch name: *cs1*
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] *y*
-
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
-
-cluster1::*> *system cluster-switch log setup-password*
-
-Enter the switch name: *cs2*
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] *y*
-
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
+Index  Switch                       Log Timestamp        Status
+------ ---------------------------- -------------------  ---------
+1      cs1 (b8:ce:f6:19:1b:42)      4/29/2022 03:05:25   complete
+2      cs2 (b8:ce:f6:19:1b:96)      4/29/2022 03:07:42   complete
 ----
-====
-. Geben Sie Ein: `system cluster-switch log enable-collection`
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *system cluster-switch log enable-collection*
-
-Do you want to enable cluster log collection for all nodes in the cluster?
-{y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-----
-====
-
-
-
-NOTE: Der Befehl zum Erfassen von Protokollen ist derzeit nicht verfügbar. Siehe link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1225042["Bug 1225042"^] Entnehmen.
-
 
 CAUTION: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetApp Support.
 
 .Was kommt als Nächstes?
 Wenn Sie den Switch aktualisieren, gehen Sie zu link:replace-verify.html["Upgrade-Konfiguration überprüfen"].
+
+====
+

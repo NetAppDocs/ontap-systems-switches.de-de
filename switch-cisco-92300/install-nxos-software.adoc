@@ -25,7 +25,7 @@ Bei NX-OS handelt es sich um ein Netzwerkbetriebssystem für die Ethernet Switch
 
 
 .Was Sie benötigen
-* Anwendbare NetApp Cisco NX-OS Software für Ihre Switches über die NetApp Support Site, erhältlich über http://mysupport.netapp.com/["mysupport.netapp.com"]
+* Anwendbare NetApp Cisco NX-OS Software für Ihre Switches über die NetApp Support Site, erhältlich über http://["mysupport.netapp.com"]
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch Seite"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und NX-OS-Versionen.
 

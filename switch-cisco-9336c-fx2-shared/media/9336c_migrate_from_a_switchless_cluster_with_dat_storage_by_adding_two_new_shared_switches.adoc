@@ -19,7 +19,7 @@ summary:
 
 Wenn Sie ein unterbrechungsfrei 2-Node-Cluster ohne Switches zu einem Cluster mit Cisco Nexus 9336C-FX2 Cluster-Switches migrieren, müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben. Der dokumentierte Prozess funktioniert für alle Nodes mit optischen oder Twinax-Ports, wird auf diesem Switch jedoch nicht unterstützt, wenn die Nodes integrierte 10-Gbit-BASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.
 
-Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports. Siehe  https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Finden Sie weitere Informationen.
+Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports. Siehe  https://["Cisco Ethernet-Switches"] Finden Sie weitere Informationen.
 
 Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit Cisco Nexus 9336C-FX2 Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie auf mehr als zwei Nodes im Cluster skalieren.
 
@@ -37,7 +37,7 @@ Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, 
 ** Beide Switches müssen über Management-Netzwerk-Konnektivität verfügen.
 ** Konsolenzugriff auf die Cluster-Switches muss vorhanden sein.
 ** Nexus 9336C-FX2 Node-zu-Node-Switch und Switch-to-Switch-Verbindungen müssen Twinax- oder Glasfaserkabel verwenden.
-** Das NetApp https://hwu.netapp.com["Hardware Universe"] Enthält weitere Informationen zur Verkabelung.
+** Das NetApp https://["Hardware Universe"] Enthält weitere Informationen zur Verkabelung.
 ** Inter-Switch Link (ISL)-Kabel müssen an den Anschlüssen 1/35 und 1/36 an beiden 9336C-FX2-Switches angeschlossen sein.
 
 
@@ -57,7 +57,7 @@ In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-
 * Die Namen der Cluster SVMs sind _node1_ und _node2_.
 * Die Namen der LIFs sind_node1_clus1_ und _node1_clus2_ auf Knoten 1, und _node2_clus1_ und _node2_clus2_ auf Knoten 2.
 * Die Eingabeaufforderung des Cluster1::*> gibt den Namen des Clusters an.
-* Die in diesem Verfahren verwendeten Cluster-Ports lauten _e3a_ und _e3b_ gemäß AFF A400-Controller. Der https://hwu.netapp.com["Hardware Universe"] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+* Die in diesem Verfahren verwendeten Cluster-Ports lauten _e3a_ und _e3b_ gemäß AFF A400-Controller. Der https://["Hardware Universe"] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 .Schritte
@@ -230,7 +230,7 @@ Cluster
 ----
 . [[Schritt9]]Trennen Sie das Kabel vom Cluster-Port e3a auf node1, und verbinden sie dann e3a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die geeignete Verkabelung, die von den Switches 9336C-FX2 unterstützt wird.
 +
-Das NetApp https://hwu.netapp.com["Hardware Universe"] Enthält weitere Informationen zur Verkabelung.
+Das NetApp https://["Hardware Universe"] Enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster-Port e3a auf node2, und verbinden sie dann e3a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dazu die geeignete Verkabelung, die von den Switches 9336C-FX2 unterstützt wird.
 . Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.

@@ -26,7 +26,7 @@ Folgende Storage-Switches werden unterstützt:
 * Cisco Nexus 3232C
 
 
-Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://hwu.netapp.com/["Hardware Universe"^].
+Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://["Hardware Universe"^].
 
 .Was Sie benötigen
 Stellen Sie sicher, dass:

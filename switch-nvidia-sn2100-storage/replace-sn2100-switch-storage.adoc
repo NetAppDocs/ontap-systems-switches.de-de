@@ -20,7 +20,7 @@ Stellen Sie vor der Installation der Cumulus-Software und der RCFs auf einem NVI
 * Sie haben die entsprechenden RCFs heruntergeladen.
 
 
-Der http://hwu.netapp.com["Hardware Universe"^] Ausführliche Informationen zu unterstützten Ports und deren Konfigurationen erhalten Sie im Detail.
+Der http://["Hardware Universe"^] Ausführliche Informationen zu unterstützten Ports und deren Konfigurationen erhalten Sie im Detail.
 
 Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
 

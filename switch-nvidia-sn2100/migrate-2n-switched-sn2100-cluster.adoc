@@ -36,7 +36,7 @@ Stellen Sie sicher, dass:
 * Bei NVIDIA SN2100, Node-to-Node-Switch und Switch-to-Switch-Verbindungen werden Twinax- oder Glasfaserkabel verwendet.
 +
 
-IMPORTANT: Siehe link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"] Bei Einschränkungen und weiteren Details. Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Enthält auch weitere Informationen über Verkabelung.
+IMPORTANT: Siehe link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"] Bei Einschränkungen und weiteren Details. Der https://["Hardware Universe – Switches"^] Enthält auch weitere Informationen über Verkabelung.
 
 * Inter-Switch Link (ISL)-Kabel werden an die Anschlüsse swp15 und swp16 an beiden NVIDIA SN2100-Switches angeschlossen.
 * Die Erstanpassung der beiden SN2100-Switches erfolgt so:
@@ -45,7 +45,7 @@ IMPORTANT: Siehe link:cabling-considerations-sn2100-cluster.html["Prüfen Sie di
 ** Auf die Switches werden Referenzkonfigurationsdateien (RCFs) angewendet
 ** Auf den neuen Switches werden alle Site-Anpassungen wie SMTP, SNMP und SSH konfiguriert.
 +
-Der https://hwu.netapp.com["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+Der https://["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
@@ -227,7 +227,7 @@ Cluster
 ====
 . Trennen Sie das Kabel vom Cluster-Port e3a auf node1, und verbinden sie dann e3a mit Port 3 am Cluster-Switch sw1. Verwenden Sie dazu die geeignete Verkabelung, die von den SN2100-Switches unterstützt wird.
 +
-Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Enthält weitere Informationen zur Verkabelung.
+Der https://["Hardware Universe – Switches"^] Enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster-Port e3a auf node2, und verbinden sie dann e3a mit Port 4 am Cluster-Switch sw1. Verwenden Sie dazu die geeignete Verkabelung, die von den SN2100-Switches unterstützt wird.
 . Aktivieren Sie bei Switch sw1 alle Anschlüsse, die nach Knoten ausgerichtet sind.

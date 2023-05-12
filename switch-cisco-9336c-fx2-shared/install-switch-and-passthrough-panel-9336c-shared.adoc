@@ -22,7 +22,7 @@ Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 9336C-FX2 Swit
 NOTE: Die Jumper-Kabel sind nicht im Lieferumfang des Pass-Through-Kits enthalten und sollten in Ihrem Switch enthalten sein. Wenn die Switches nicht im Lieferumfang enthalten sind, können Sie sie bei NetApp bestellen (Teilenummer X1558A-R6).
 
 .Erforderliche Dokumentation
-Lesen Sie die anfänglichen Vorbereitungsanforderungen, den Inhalt des Kits und die Sicherheitsvorkehrungen im https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/aci_9336cfx2_hig/guide/b_n9336cFX2_aci_hardware_installation_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 9000-Serie"^].
+Lesen Sie die anfänglichen Vorbereitungsanforderungen, den Inhalt des Kits und die Sicherheitsvorkehrungen im https://["Hardware-Installationsleitfaden Der Cisco Nexus 9000-Serie"^].
 
 .Schritte
 . Die Pass-Through-Blindplatte in den NetApp-Schrank einbauen.

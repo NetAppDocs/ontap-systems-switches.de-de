@@ -15,11 +15,13 @@ Sie können die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM) ins
 
 In ONTAP-Versionen 9.5P7 und früher sowie 9.6P2 und früher müssen Sie die CSHM-Datei separat herunterladen. In ONTAP-Versionen 9.5P8 und höher, 9.6P3 und höher sowie 9.7 und höher wird die CSHM-Datei mit ONTAP gebündelt.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
 
+Führen Sie die folgenden Schritte aus, um die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM) zu installieren.
+
 .Schritte
-. Laden Sie die CSHM zip-Datei basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der folgenden Seite verfügbar: https://mysupport.netapp.com/NOW/cgi-bin/software/["NetApp Software-Download"^]
+. Laden Sie die CSHM zip-Datei basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der folgenden Seite verfügbar: https://["NetApp Software-Download"^]
 +
 .. Wählen Sie auf der Software-Download-Seite *Switch Health Monitor Configuration Files*.
 .. Wählen Sie Plattform = *ONTAP* und klicken Sie auf *Los!*.

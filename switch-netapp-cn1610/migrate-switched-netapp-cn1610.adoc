@@ -33,7 +33,7 @@ Bei der Switch-Konfiguration des CN1610-Cluster:
 * Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
 * Bei Node-to-Node-Switch und Switch-to-Switch-Verbindungen bei CN1610 werden Twinax- oder Glasfaserkabel verwendet.
 +
-Der https://hwu.netapp.com/["Hardware Universe"^] Enthält weitere Informationen zur Verkabelung.
+Der https://["Hardware Universe"^] Enthält weitere Informationen zur Verkabelung.
 
 * Inter-Switch Link (ISL)-Kabel sind an beiden CN1610 Switches mit den Ports 13 bis 16 verbunden.
 * Die Erstanpassung der beiden CN1610 Switches ist abgeschlossen.
@@ -43,10 +43,10 @@ Alle Anpassungen der vorherigen Site, wie SMTP, SNMP und SSH, sollten auf die ne
 
 
 .Verwandte Informationen
-* http://hwu.netapp.com["Hardware Universe"^]
-* http://support.netapp.com/NOW/download/software/cm_switches_ntap/["Beschreibungsseite zu NetApp CN1601 und CN1610"^]
-* https://library.netapp.com/ecm/ecm_download_file/ECMP1118645["Installations- und Konfigurationshandbuch für CN1601 und CN1610-Switch"^]
-* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB Artikel 1010449: Wie kann die automatische Case-Erstellung während geplanter Wartungszeiten unterdrückt werden"^]
+* http://["Hardware Universe"^]
+* http://["Beschreibungsseite zu NetApp CN1601 und CN1610"^]
+* https://["Installations- und Konfigurationshandbuch für CN1601 und CN1610-Switch"^]
+* https://["NetApp KB Artikel 1010449: Wie kann die automatische Case-Erstellung während geplanter Wartungszeiten unterdrückt werden"^]
 
 
 
@@ -62,7 +62,7 @@ In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-
 * Der `cluster::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e1a und e2a.
 +
-Der https://hwu.netapp.com/["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+Der https://["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 

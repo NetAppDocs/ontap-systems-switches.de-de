@@ -30,7 +30,7 @@ Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unt
 
 Stellen Sie sicher, dass:
 
-* Sie verfügen über die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelstecker für Ihre Switches. Siehe https://hwu.netapp.com["Hardware Universe"^].
+* Sie verfügen über die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelstecker für Ihre Switches. Siehe https://["Hardware Universe"^].
 * Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen.
 
 
@@ -43,7 +43,7 @@ Für alle Switch-Konfigurationen benötigen Sie die folgenden Netzwerkinformatio
 * IP-Subnetz für den Management-Netzwerkdatenverkehr
 * Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
 * Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700s Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
-* Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+* Siehe https://["Hardware Universe"^] Aktuelle Informationen.
 
 
-Weitere Informationen zur Erstkonfiguration des Switches finden Sie im folgenden Handbuch: https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Cisco Nexus 9336C-FX2 – Installations- und Upgrade-Leitfaden"^].
+Weitere Informationen zur Erstkonfiguration des Switches finden Sie im folgenden Handbuch: https://["Cisco Nexus 9336C-FX2 – Installations- und Upgrade-Leitfaden"^].

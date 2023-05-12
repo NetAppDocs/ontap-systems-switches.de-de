@@ -28,7 +28,7 @@ Bei den NetApp CN1601 Management Switches und CN1610 Cluster Switches mit ONTAP 
 * Ein erfolgreicher Kommunikationspfad: Der ONTAP (Privilege: Erweitert) `cluster ping-cluster -node node1` Der Befehl muss das angeben `larger than PMTU communication` Ist auf allen Pfaden erfolgreich.
 * Eine unterstützte Version von FASTPATH, RCF und ONTAP.
 +
-Beachten Sie unbedingt die Kompatibilitätstabelle für Switches auf der http://mysupport.netapp.com/NOW/download/software/cm_switches_ntap/["NetApp CN1601 und CN1610 Switches"^] Seite für die unterstützten FASTPATH-, RCF- und ONTAP-Versionen.
+Beachten Sie unbedingt die Kompatibilitätstabelle für Switches auf der http://["NetApp CN1601 und CN1610 Switches"^] Seite für die unterstützten FASTPATH-, RCF- und ONTAP-Versionen.
 
 
 
@@ -41,7 +41,7 @@ Im folgenden Verfahren wird die Syntax „Clustered Data ONTAP 8.2“ verwendet.
 Zwischen der Befehlssyntax für „RCF“ und „FASTPATH“-Versionen kann eine Befehlssyntax bestehen.
 
 
-NOTE: In RCF Version 1.2 wurde die Unterstützung für Telnet explizit aufgrund von Sicherheitsbedenken deaktiviert. Um Verbindungsprobleme bei der Installation von RCF 1.2 zu vermeiden, vergewissern Sie sich, dass Secure Shell (SSH) aktiviert ist. Der https://library.netapp.com/ecm/ecm_get_file/ECMP1117874["Administratorleitfaden für den NetApp CN1610 Switch"^] Hat weitere Informationen über SSH.
+NOTE: In RCF Version 1.2 wurde die Unterstützung für Telnet explizit aufgrund von Sicherheitsbedenken deaktiviert. Um Verbindungsprobleme bei der Installation von RCF 1.2 zu vermeiden, vergewissern Sie sich, dass Secure Shell (SSH) aktiviert ist. Der https://["Administratorleitfaden für den NetApp CN1610 Switch"^] Hat weitere Informationen über SSH.
 
 .Zu den Beispielen
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
@@ -52,7 +52,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 * Die Cluster-Ports auf jedem Node lauten e0a und e0b.
 +
-https://hwu.netapp.com/["Hardware Universe"^] Bietet weitere Informationen zu den tatsächlichen, auf Ihrer Plattform unterstützten Cluster-Ports.
+https://["Hardware Universe"^] Bietet weitere Informationen zu den tatsächlichen, auf Ihrer Plattform unterstützten Cluster-Ports.
 
 * Die unterstützten Inter-Switch Links (ISLs) sind die Ports 0/13 bis 0/16.
 * Die unterstützten Node-Verbindungen sind die Ports 0/1 bis 0/12.

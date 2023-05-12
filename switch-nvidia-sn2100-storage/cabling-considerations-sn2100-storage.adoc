@@ -43,7 +43,7 @@ Swp3-14 40/100-Cluster-Port-Knoten
 Swp15-16 40/100 Inter-Switch Link (ISL)-Ports
 
 |===
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+Siehe https://["Hardware Universe"] Weitere Informationen zu Switch-Ports.
 
 
 

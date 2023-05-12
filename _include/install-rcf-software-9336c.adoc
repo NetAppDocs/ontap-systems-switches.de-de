@@ -32,7 +32,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 
 
-Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://["Hardware Universe"] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 
 NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
@@ -293,7 +293,7 @@ cs2#
 .. Führen Sie eine grundlegende Einrichtung des Switches durch.
 
 
-. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
+. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -312,7 +312,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
 
 +
 .Beispiel anzeigen
@@ -385,7 +385,7 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
 
 +
 .Beispiel anzeigen

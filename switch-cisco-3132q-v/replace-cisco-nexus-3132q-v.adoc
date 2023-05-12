@@ -40,7 +40,7 @@ Der link:http://support.netapp.com/NOW/download/software/cm_switches/["Cisco Eth
 ** Die anfängliche Anpassung des Schalters ist abgeschlossen.
 
 
-* http://hwu.netapp.com["Hardware Universe"^]
+* http://["Hardware Universe"^]
 
 
 

@@ -15,7 +15,7 @@ Informationen zur Installation der SN2100-Hardware finden Sie in der NVIDIA-Doku
 
 .Schritte
 . Überprüfen Sie die link:configure-reqs-sn2100-cluster.html["Konfigurationsanforderungen"].
-. Befolgen Sie die Anweisungen unter https://docs.nvidia.com/networking/display/sn2000pub/Installation["NVIDIA Switch Installation Guide"^].
+. Befolgen Sie die Anweisungen unter https://["NVIDIA Switch Installation Guide"^].
 
 
 .Was kommt als Nächstes?

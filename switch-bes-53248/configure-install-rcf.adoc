@@ -13,65 +13,419 @@ summary: 'Sie können die Referenzkonfigurationsdatei (RCF) installieren, nachde
 [role="lead"]
 Sie können die Referenzkonfigurationsdatei (RCF) installieren, nachdem Sie den BES-53248-Cluster-Switch konfiguriert und die neuen Lizenzen angewendet haben.
 
-Wenn Sie ein RCF von einer älteren Version aktualisieren, müssen Sie die Broadcom-Switch-Einstellungen zurücksetzen und die Grundkonfiguration durchführen, um das RCF erneut anzuwenden. Sie müssen diesen Vorgang jedes Mal durchführen, wenn Sie ein RCF aktualisieren oder ändern möchten. Siehe https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric%2C_Interconnect_and_Management_Switches/Error!_in_configuration_script_file_at_line_number_XX_when_applying_a_new_RCF["KB-Artikel"^] Entsprechende Details.
+Wenn Sie ein RCF von einer älteren Version aktualisieren, müssen Sie die Broadcom-Switch-Einstellungen zurücksetzen und die Grundkonfiguration durchführen, um das RCF erneut anzuwenden. Sie müssen diesen Vorgang jedes Mal durchführen, wenn Sie ein RCF aktualisieren oder ändern möchten. Siehe https://["KB-Artikel"^] Entsprechende Details.
 
-.Schritte
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der EFOS, Lizenzen und RCF hostet.
+
+
+== Prüfen Sie die Anforderungen
+
+.Bevor Sie beginnen
+* Ein aktuelles Backup der Switch-Konfiguration.
+* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
+* Die aktuelle RCF-Datei, die im verfügbar ist https://["Broadcom Cluster-Switches"^] Seite.
+* Eine Startkonfiguration im RCF, die die gewünschten Startabbilder widerspiegelt, ist erforderlich, wenn Sie nur EFOS installieren und die aktuelle RCF-Version beibehalten. Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
+* Eine Konsolenverbindung zum Switch, die erforderlich ist, wenn die RCF aus dem werkseitigen Standardzustand installiert wird. Diese Anforderung ist optional, wenn Sie den Knowledge Base-Artikel verwendet haben  https://["Löschen der Konfiguration auf einem Broadcom-Interconnect-Switch bei Beibehaltung der Remote-Konnektivität"^] Um die Konfiguration vorher zu löschen.
+
+
+.Vorgeschlagene Dokumentation
+* In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen. Siehe https://["Download der EFOS-Software"^] Seite. Beachten Sie, dass es zwischen der Befehlssyntax im RCF und der in EFOS-Versionen gefundenen Befehlssyntax bestehen kann.
+* Weitere Informationen finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der https://["Broadcom"^] Website für vollständige Dokumentation über die Upgrade- und Downgrade-Verfahren für BES-53248-Switches.
+
+
+
+
+== Installieren Sie die Konfigurationsdatei
+
+.Zu den Beispielen
+Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+
+* Die Namen der beiden BES-53248-Switches lauten cs1 und cs2.
+* Die Node-Namen sind cluster1-01, cluster1-02, cluster1-03 und cluster1-04.
+* Die Namen der Cluster-LIF sind cluster1-01_clus1, cluster1-01_clus2, cluster1-02_clus1, cluster1-02_clus2, cluster1-03_clus1, Cluster1-03_clus2, cluster1-04_clus1 und cluster1-04_clus2.
+* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`. Siehe https://["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+
+
+
+NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
+
+.Über diese Aufgabe
+Für das Verfahren müssen sowohl ONTAP-Befehle als auch Broadcom-Switch-Befehle verwendet werden. ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
+
+Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Mit dem folgenden Verfahren werden alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden, um einen unterbrechungsfreien Cluster-Betrieb zu gewährleisten.
+
+
+CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, verwenden Sie die https://["KB: Löschen der Konfiguration auf einem Broadcom-Interconnect-Switch bei Beibehaltung der Remote-Konnektivität"^]. Wenn Sie die Switch-Einstellungen vollständig löschen müssen, müssen Sie die Grundkonfiguration erneut durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein, da durch eine vollständige Löschung der Konfiguration die Konfiguration des Managementnetzwerks zurückgesetzt wird.
+
+
+
+== Schritt 1: Vorbereitung für die Installation
+
+. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
 +
-Wenn es sich bei der Konnektivität um ein Problem handelt, verwenden Sie ein nicht geroutetes Netzwerk, und konfigurieren Sie den Service-Port mithilfe der IP-Adresse 192.168.x oder 172.19.x Sie können den Service-Port später an die Produktionsmanagement-IP-Adresse neu konfigurieren.
+`system node autosupport invoke -node * -type all -message MAINT=xh`
+
++
+Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+
++
+
+NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+
++
+Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+
++
+[listing]
+----
+cluster1::*> system node autosupport invoke -node \* -type all -message MAINT=2h
+----
+. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
++
+`set -privilege advanced`
+
++
+Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
+
+. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist: `network device-discovery show`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network device-discovery show*
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------  --------
+cluster1-01/cdp
+            e0a    cs1                       0/2               BES-53248
+            e0b    cs2                       0/2               BES-53248
+cluster1-02/cdp
+            e0a    cs1                       0/1               BES-53248
+            e0b    cs2                       0/1               BES-53248
+cluster1-03/cdp
+            e0a    cs1                       0/4               BES-53248
+            e0b    cs2                       0/4               BES-53248
+cluster1-04/cdp
+            e0a    cs1                       0/3               BES-53248
+            e0b    cs2                       0/3               BES-53248
+cluster1::*>
+----
+====
+. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
++
+.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen: `network port show –role cluster`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network port show -role cluster*
+
+Node: cluster1-01
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e0a       Cluster      Cluster          up   9000  auto/100000 healthy false
+e0b       Cluster      Cluster          up   9000  auto/100000 healthy false
+
+Node: cluster1-02
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e0a       Cluster      Cluster          up   9000  auto/100000 healthy false
+e0b       Cluster      Cluster          up   9000  auto/100000 healthy false
+8 entries were displayed.
+
+Node: cluster1-03
+
+   Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
+
+Node: cluster1-04
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- ------
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
+cluster1::*>
+----
+====
+.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden: `network interface show -role cluster`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -role cluster*
+            Logical            Status     Network           Current      Current Is
+Vserver     Interface          Admin/Oper Address/Mask      Node         Port    Home
+----------- ------------------ ---------- ----------------- ------------ ------- ----
+Cluster
+            cluster1-01_clus1  up/up     169.254.3.4/23     cluster1-01  e0a     true
+            cluster1-01_clus2  up/up     169.254.3.5/23     cluster1-01  e0b     true
+            cluster1-02_clus1  up/up     169.254.3.8/23     cluster1-02  e0a     true
+            cluster1-02_clus2  up/up     169.254.3.9/23     cluster1-02  e0b     true
+            cluster1-03_clus1  up/up     169.254.1.3/23     cluster1-03  e0a     true
+            cluster1-03_clus2  up/up     169.254.1.1/23     cluster1-03  e0b     true
+            cluster1-04_clus1  up/up     169.254.1.6/23     cluster1-04  e0a     true
+            cluster1-04_clus2  up/up     169.254.1.7/23     cluster1-04  e0b     true
+----
+====
+
+
+. Vergewissern Sie sich, dass im Cluster Informationen für beide Cluster-Switches angezeigt werden.
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.8 und höher
+--
+Ab ONTAP 9.8 verwenden Sie den Befehl: `system switch ethernet show -is-monitoring-enabled-operational true`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet show -is-monitoring-enabled-operational true*
+Switch                      Type               Address          Model
+--------------------------- ------------------ ---------------- ---------------
+cs1                         cluster-network    10.228.143.200   BES-53248
+           Serial Number: QTWCU22510008
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+
+cs2                         cluster-network    10.228.143.202   BES-53248
+           Serial Number: QTWCU22510009
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+cluster1::*>
+----
+--
+.ONTAP 9.7 und früher
+--
+Verwenden Sie für ONTAP 9.7 und frühere Versionen den folgenden Befehl: `system cluster-switch show -is-monitoring-enabled-operational true`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *system cluster-switch show -is-monitoring-enabled-operational true*
+Switch                      Type               Address          Model
+--------------------------- ------------------ ---------------- ---------------
+cs1                         cluster-network    10.228.143.200   BES-53248
+           Serial Number: QTWCU22510008
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+
+cs2                         cluster-network    10.228.143.202   BES-53248
+           Serial Number: QTWCU22510009
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+cluster1::*>
+----
+--
+====
+. [[Schritt6]]Automatische Wiederherstellung auf den Cluster-LIFs deaktiviert.
++
+[listing]
+----
+cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert false
+----
+
+
+
+
+== Schritt 2: Ports konfigurieren
+
+. Fahren Sie beim Cluster-Switch cs2 die mit den Cluster-Ports der Nodes verbundenen Ports herunter.
++
+[listing, subs="+quotes"]
+----
+(cs2)(Config)# *interface 0/1-0/16*
+(cs2)(Interface 0/1-0/16)# *shutdown*
+----
+. Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert wurden, die auf Cluster-Switch cs1 gehostet werden. Dies kann einige Sekunden dauern.
++
+`network interface show -role cluster`
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird überprüft, ob der Switch mit der IP-Adresse 172.19.2 verbunden ist:
-
 [listing, subs="+quotes"]
 ----
-(cs2)# *ping 172.19.2.1*
-Pinging 172.19.2.1 with 0 bytes of data:
-
-Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
+cluster1::*> *network interface show -role cluster*
+            Logical           Status     Network            Current       Current Is
+Vserver     Interface         Admin/Oper Address/Mask       Node          Port    Home
+----------- ----------------- ---------- ------------------ ------------- ------- ----
+Cluster
+            cluster1-01_clus1 up/up      169.254.3.4/23     cluster1-01   e0a     true
+            cluster1-01_clus2 up/up      169.254.3.5/23     cluster1-01   e0a     false
+            cluster1-02_clus1 up/up      169.254.3.8/23     cluster1-02   e0a     true
+            cluster1-02_clus2 up/up      169.254.3.9/23     cluster1-02   e0a     false
+            cluster1-03_clus1 up/up      169.254.1.3/23     cluster1-03   e0a     true
+            cluster1-03_clus2 up/up      169.254.1.1/23     cluster1-03   e0a     false
+            cluster1-04_clus1 up/up      169.254.1.6/23     cluster1-04   e0a     true
+            cluster1-04_clus2 up/up      169.254.1.7/23     cluster1-04   e0a     false
+cluster1::*>
 ----
 ====
-. Installieren Sie das RCF mithilfe des am BES-53248-Cluster-Switch `copy` Befehl.
+. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet: `cluster show`
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
 [listing, subs="+quotes"]
 ----
-(cs2)# *copy sftp://172.19.2.1/tmp/BES-53248_RCF_v1.6-Cluster-HA.txt nvram:script BES-53248_RCF_v1.6-Cluster-HA.scr*
+cluster1::*> *cluster show*
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------  -------
+cluster1-01          true    true          false
+cluster1-02          true    true          false
+cluster1-03          true    true          true
+cluster1-04          true    true          false
+----
+====
+. Wenn Sie dies noch nicht getan haben, speichern Sie die aktuelle Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Protokolldatei kopieren: `show running-config`
+. Reinigen Sie die Konfiguration am Schalter cs2, und führen Sie eine grundlegende Einrichtung durch.
++
 
-Remote Password:********
+CAUTION: Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein, um die Switch-Einstellungen zu löschen.
 
++
+.. SSH in den Switch.
++
+Fahren Sie nur fort, wenn alle Cluster-LIFs aus den Ports am Switch entfernt wurden und der Switch bereit ist, die Konfiguration zu löschen.
+
+.. Aktivieren des Berechtigungsmodus:
++
+[listing]
+----
+(cs2)> enable
+
+(cs2)#
+----
+.. Kopieren Sie die folgenden Befehle und fügen Sie sie ein, um die vorherige RCF-Konfiguration zu entfernen (je nach der zuvor verwendeten RCF-Version können einige Befehle einen Fehler erzeugen, wenn keine bestimmte Einstellung vorhanden ist):
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+clear config interface 0/1-0/56
+y
+clear config interface lag 1
+y
+configure
+deleteport 1/1 all
+no policy-map CLUSTER
+no policy-map WRED_25G
+no policy-map WRED_100G
+no class-map CLUSTER
+no class-map HA
+no class-map RDMA
+no classofservice dot1p-mapping
+no random-detect queue-parms 0
+no random-detect queue-parms 1
+no random-detect queue-parms 2
+no random-detect queue-parms 3
+no random-detect queue-parms 4
+no random-detect queue-parms 5
+no random-detect queue-parms 6
+no random-detect queue-parms 7
+no cos-queue min-bandwidth
+no cos-queue random-detect 0
+no cos-queue random-detect 1
+no cos-queue random-detect 2
+no cos-queue random-detect 3
+no cos-queue random-detect 4
+no cos-queue random-detect 5
+no cos-queue random-detect 6
+no cos-queue random-detect 7
+exit
+vlan database
+no vlan 17
+no vlan 18
+exit
+----
+====
+.. Speichern Sie die laufende Konfiguration in der Startkonfiguration:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *write memory*
+
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) *y*
+
+Config file 'startup-config' created successfully .
+
+
+Configuration Saved!
+----
+====
+.. Führen Sie einen Neustart des Switches aus:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *reload*
+
+Are you sure you would like to reset the system? (y/n) *y*
+
+----
+====
+.. Melden Sie sich mit SSH erneut am Switch an, um die RCF-Installation abzuschließen.
+
+
+. Wenn zusätzliche Portlizenzen auf dem Switch installiert wurden, müssen Sie den RCF ändern, um die zusätzlichen lizenzierten Ports zu konfigurieren. Siehe link:configure-licenses.html#activate-newly-licensed-ports["Aktivieren Sie neu lizenzierte Ports"^] Entsprechende Details.
+. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP.
++
+Dieses Beispiel zeigt SFTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *copy sftp://172.19.2.1/tmp/BES-53248_RCF_v1.9-Cluster-HA.txt
+nvram:script BES-53248_RCF_v1.6-Cluster-HA.scr*
+Remote Password:**
 Mode........................................... SFTP
 Set Server IP.................................. 172.19.2.1
 Path........................................... //tmp/
-Filename....................................... BES-53248_RCF_v1.6-Cluster-HA.txt
+Filename....................................... BES-53248_RCF_v1.9-Cluster-HA.txt
 Data Type...................................... Config Script
-Destination Filename........................... BES-53248_RCF_v1.6-Cluster-HA.scr
-
+Destination Filename........................... BES-53248_RCF_v1.9-Cluster-HA.scr
 Management access will be blocked for the duration of the transfer
 Are you sure you want to start? (y/n) *y*
 SFTP Code transfer starting...
-
 File transfer operation completed successfully.
 ----
 ====
-+
-
-NOTE: Je nach Umgebung müssen Sie im möglicherweise einen Doppelschrägstrich verwenden `copy` Befehl, z. B.: `+copy sftp://172.19.2.1//tmp/BES-53248_RCF_v1.6-Cluster-HA.txt nvram:script BES-53248_RCF_v1.6-Cluster-HA.scr+`.
-
-+
-
-NOTE: Der `.scr` Die Erweiterung muss als Teil des Dateinamens festgelegt werden, bevor das Skript aufgerufen wird. Diese Erweiterung ist die Erweiterung für das EFOS-Betriebssystem. Der Switch validiert das Skript automatisch, wenn es auf den Switch heruntergeladen wird und die Ausgabe an die Konsole geht. Außerdem können Sie den Namen des ändern `.scr` So passen Sie den Konsolenbildschirm an, um die Lesbarkeit zu erleichtern: `+copy sftp://172.19.2.1/tmp/BES-53248_RCF_v1.6-Cluster-HA.txt nvram:script RCF_v1.6-Cluster-HA.scr+`.
-
-+
-
-NOTE: Der Dateiname darf die Symbole nicht enthalten `\/:*?"<>|` Und die maximal zulässige Länge beträgt 32 Zeichen.
-
 . Überprüfen Sie, ob das Skript heruntergeladen und auf dem Dateinamen gespeichert wurde, den Sie ihm gegeben haben:
 +
 `script list`
@@ -86,7 +440,7 @@ NOTE: Der Dateiname darf die Symbole nicht enthalten `\/:*?"<>|` Und die maximal
 
 Configuration Script Name                  Size(Bytes)  Date of Modification
 -----------------------------------------  -----------  --------------------
-BES-53248_RCF_v1.6-Cluster-HA.scr        2241         2020 09 30 05:41:00
+BES-53248_RCF_v1.9-Cluster-HA.scr          2241         2020 09 30 05:41:00
 
 1 configuration script(s) found.
 ----
@@ -101,19 +455,55 @@ BES-53248_RCF_v1.6-Cluster-HA.scr        2241         2020 09 30 05:41:00
 ====
 [listing, subs="+quotes"]
 ----
-(cs2)# *script apply BES-53248_RCF_v1.6-Cluster-HA.scr*
+(cs2)# *script apply BES-53248_RCF_v1.9-Cluster-HA.scr*
 
 Are you sure you want to apply the configuration script? (y/n) *y*
 
 The system has unsaved changes.
 Would you like to save them now? (y/n) *y*
-Config file 'startup-config' created successfully .
+Config file 'startup-config' created successfully.
 Configuration Saved!
 
-Configuration script 'BES-53248_RCF_v1.6-Cluster-HA.scr' applied.
+Configuration script 'BES-53248_RCF_v1.9-Cluster-HA.scr' applied.
 ----
 ====
-. Überprüfen Sie die Ports auf eine zusätzliche Lizenz, nachdem die RCF angewendet wurde:
+. Untersuchen Sie die Bannerausgabe aus dem `show clibanner` Befehl. Sie müssen diese Anweisungen lesen und befolgen, um sicherzustellen, dass der Schalter ordnungsgemäß konfiguriert und betrieben wird.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *show clibanner*
+
+Banner Message configured :
+=========================
+BES-53248 Reference Configuration File v1.9 for Cluster/HA/RDMA
+
+Switch   : BES-53248
+Filename : BES-53248-RCF-v1.9-Cluster.txt
+Date     : 10-26-2022
+Version  : v1.9
+Port Usage:
+Ports 01 - 16: 10/25GbE Cluster Node Ports, base config
+Ports 17 - 48: 10/25GbE Cluster Node Ports, with licenses
+Ports 49 - 54: 40/100GbE Cluster Node Ports, with licenses, added right to left
+Ports 55 - 56: 100GbE Cluster ISL Ports, base config
+NOTE:
+- The 48 SFP28/SFP+ ports are organized into 4-port groups in terms of port
+speed:
+Ports 1-4, 5-8, 9-12, 13-16, 17-20, 21-24, 25-28, 29-32, 33-36, 37-40, 41-44,
+45-48
+The port speed should be the same (10GbE or 25GbE) across all ports in a 4-port
+group
+- If additional licenses are purchased, follow the 'Additional Node Ports
+activated with Licenses' section for instructions
+- If SSH is active, it will have to be re-enabled manually after 'erase
+startup-config'
+command has been executed and the switch rebooted
+----
+====
+. Überprüfen Sie auf dem Switch, ob die zusätzlichen lizenzierten Ports nach der Anwendung des RCF angezeigt werden:
 +
 `show port all | exclude Detach`
 
@@ -123,11 +513,11 @@ Configuration script 'BES-53248_RCF_v1.6-Cluster-HA.scr' applied.
 ====
 [listing, subs="+quotes"]
 ----
-(cs2)# *show port all \| exclude Detach*
+(cs2)# *show port all | exclude Detach*
 
                  Admin     Physical     Physical   Link   Link    LACP   Actor
 Intf      Type   Mode      Mode         Status     Status Trap    Mode   Timeout
---------- ------ --------- ---------- ---------- ------ ------- ------ --------
+--------- ------ --------- ------------ ---------- ------ ------- ------ --------
 0/1              Enable    Auto                    Down   Enable  Enable long
 0/2              Enable    Auto                    Down   Enable  Enable long
 0/3              Enable    Auto                    Down   Enable  Enable long
@@ -201,6 +591,385 @@ Are you sure you would like to reset the system? (y/n) *y*
 System will now restart!
 ----
 ====
+. Überprüfen Sie die Ports auf Switch cs2: `show interfaces status all | exclude Detach`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs1)# show interfaces status all | exclude Detach
+
+                                Link    Physical    Physical    Media       Flow
+Port       Name                 State   Mode        Status      Type        Control     VLAN
+---------  -------------------  ------  ----------  ----------  ----------  ----------  ------
+.
+.
+.
+0/16       10/25GbE Node Port   Down    Auto                                Inactive    Trunk
+0/17       10/25GbE Node Port   Down    Auto                                Inactive    Trunk
+0/18       10/25GbE Node Port   Up      25G Full    25G Full    25GBase-SR  Inactive    Trunk
+0/19       10/25GbE Node Port   Up      25G Full    25G Full    25GBase-SR  Inactive    Trunk
+.
+.
+.
+0/50       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/51       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/52       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/53       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/54       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/55       Cluster   ISL Port   Up      Auto        100G Full   Copper      Inactive    Trunk
+0/56       Cluster   ISL Port   Up      Auto        100G Full   Copper      Inactive    Trunk
+----
+====
+. Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
++
+.. Überprüfen Sie, ob e0b Ports über alle Nodes im Cluster hinweg ordnungsgemäß eingerichtet sind: `network port show -role cluster`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network port show -role cluster*
+
+Node: cluster1-01
+                                                                      Ignore
+                                                  Speed(Mbps) Health  Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status  Status
+--------- ------------ ---------------- ---- ---- ----------- -------- -----
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
+
+Node: cluster1-02
+
+                                                                      Ignore
+                                                  Speed(Mbps) Health  Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status  Status
+--------- ------------ ---------------- ---- ---- ----------- -------- -----
+e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
+e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
+
+Node: cluster1-03
+                                                                      Ignore
+                                                  Speed(Mbps) Health  Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status  Status
+--------- ------------ ---------------- ---- ---- ----------- -------- -----
+e0a       Cluster      Cluster          up   9000  auto/100000 healthy false
+e0b       Cluster      Cluster          up   9000  auto/100000 healthy false
+
+Node: cluster1-04
+                                                                      Ignore
+                                                  Speed(Mbps) Health  Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status  Status
+--------- ------------ ---------------- ---- ---- ----------- -------- -----
+e0a       Cluster      Cluster          up   9000  auto/100000 healthy false
+e0b       Cluster      Cluster          up   9000  auto/100000 healthy false
+----
+====
+.. Überprüfen Sie den Switch-Zustand vom Cluster.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network device-discovery show -protocol cdp*
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------- --------
+cluster1-01/cdp
+            e0a    cs1                       0/2               BES-53248
+            e0b    cs2                       0/2               BES-53248
+cluster01-2/cdp
+            e0a    cs1                       0/1               BES-53248
+            e0b    cs2                       0/1               BES-53248
+cluster01-3/cdp
+            e0a    cs1                       0/4               BES-53248
+            e0b    cs2                       0/4               BES-53248
+cluster1-04/cdp
+            e0a    cs1                       0/3               BES-53248
+            e0b    cs2                       0/2               BES-53248
+----
+====
+
+
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.8 und höher
+--
+Ab ONTAP 9.8 verwenden Sie den Befehl: `system switch ethernet show -is-monitoring-enabled-operational true`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet show -is-monitoring-enabled-operational true*
+Switch                      Type               Address          Model
+--------------------------- ------------------ ---------------- ---------------
+cs1                         cluster-network    10.228.143.200   BES-53248
+           Serial Number: QTWCU22510008
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+
+cs2                         cluster-network    10.228.143.202   BES-53248
+           Serial Number: QTWCU22510009
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+cluster1::*>
+----
+--
+.ONTAP 9.7 und früher
+--
+Verwenden Sie für ONTAP 9.7 und frühere Versionen den folgenden Befehl: `system cluster-switch show -is-monitoring-enabled-operational true`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *system cluster-switch show -is-monitoring-enabled-operational true*
+Switch                      Type               Address          Model
+--------------------------- ------------------ ---------------- ---------------
+cs1                         cluster-network    10.228.143.200   BES-53248
+           Serial Number: QTWCU22510008
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+
+cs2                         cluster-network    10.228.143.202   BES-53248
+           Serial Number: QTWCU22510009
+            Is Monitored: true
+                  Reason: None
+        Software Version: 3.10.0.3
+          Version Source: CDP/ISDP
+cluster1::*>
+----
+--
+====
+. [[step17]]fahren Sie bei Cluster-Switch cs1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.
++
+Im folgenden Beispiel wird die Ausgabe des Schnittstellenbeispiels verwendet:
+
++
+[listing, subs="+quotes"]
+----
+(cs1)# *configure*
+(cs1)(Config)# *interface 0/1-0/16*
+(cs1)(Interface 0/1-0/16)# *shutdown*
+----
+. Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert wurden, die auf dem Switch cs2 gehostet werden. Dies kann einige Sekunden dauern.
+`network interface show -role cluster`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -role cluster*
+            Logical            Status     Network            Current            Current  Is
+Vserver     Interface          Admin/Oper Address/Mask       Node               Port     Home
+----------- ------------------ ---------- ------------------ ------------------ -------- ----
+Cluster
+            cluster1-01_clus1  up/up      169.254.3.4/23     cluster1-01        e0a      false
+            cluster1-01_clus2  up/up      169.254.3.5/23     cluster1-01        e0b      true
+            cluster1-02_clus1  up/up      169.254.3.8/23     cluster1-02        e0a      false
+            cluster1-02_clus2  up/up      169.254.3.9/23     cluster1-02        e0b      true
+            cluster1-03_clus1  up/up      169.254.1.3/23     cluster1-03        e0a      false
+            cluster1-03_clus2  up/up      169.254.1.1/23     cluster1-03        e0b      true
+            cluster1-04_clus1  up/up      169.254.1.6/23     cluster1-04        e0a      false
+            cluster1-04_clus2  up/up      169.254.1.7/23     cluster1-04        e0b      true
+cluster1::*>
+----
+====
+. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet: `cluster show`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster show*
+Node                 Health   Eligibility   Epsilon
+-------------------- -------- ------------- -------
+cluster1-01          true     true          false
+cluster1-02          true     true          false
+cluster1-03          true     true          true
+cluster1-04          true     true          false
+----
+====
+. Wiederholen Sie die Schritte 4 bis 14 am Schalter cs1.
+. Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
+`cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
+. Schalter cs1 neu starten. Sie führen dies aus, um die Cluster-LIFs auszulösen, die auf die Home-Ports zurückgesetzt werden. Sie können die Ereignisse „Cluster Ports down“ ignorieren, die auf den Knoten gemeldet wurden, während der Switch neu startet.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs1)# *reload*
+The system has unsaved changes.
+Would you like to save them now? (y/n) *y*
+Config file 'startup-config' created successfully.
+Configuration Saved! System will now restart!
+----
+====
+
+
+
+
+== Schritt 3: Überprüfen Sie die Konfiguration
+
+. Stellen Sie bei Switch cs1 sicher, dass die mit den Cluster-Ports verbundenen Switch-Ports *up* sind.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs1)# show interfaces status all | exclude Detach
+
+                                Link    Physical    Physical    Media       Flow
+Port       Name                 State   Mode        Status      Type        Control     VLAN
+---------  -------------------  ------  ----------  ----------  ----------  ----------  ------
+.
+.
+.
+0/16       10/25GbE Node Port   Down    Auto                                Inactive    Trunk
+0/17       10/25GbE Node Port   Down    Auto                                Inactive    Trunk
+0/18       10/25GbE Node Port   Up      25G Full    25G Full    25GBase-SR  Inactive    Trunk
+0/19       10/25GbE Node Port   Up      25G Full    25G Full    25GBase-SR  Inactive    Trunk
+.
+.
+.
+0/50       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/51       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/52       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/53       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/54       40/100GbE Node Port  Down    Auto                                Inactive    Trunk
+0/55       Cluster   ISL Port   Up      Auto        100G Full   Copper      Inactive    Trunk
+0/56       Cluster   ISL Port   Up      Auto        100G Full   Copper      Inactive    Trunk
+----
+====
+. Überprüfen Sie, ob die ISL zwischen den Switches cs1 und cs2 funktionsfähig ist: `show port-channel 1/1`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs1)# *show port-channel 1/1*
+Local Interface................................ 1/1
+Channel Name................................... Cluster-ISL
+Link State..................................... Up
+Admin Mode..................................... Enabled
+Type........................................... Dynamic
+Port-channel Min-links......................... 1
+Load Balance Option............................ 7
+(Enhanced hashing mode)
+Mbr     Device/       Port      Port
+Ports   Timeout       Speed     Active
+------- ------------- --------- -------
+0/55    actor/long    Auto      True
+        partner/long
+0/56    actor/long    Auto      True
+        partner/long
+----
+====
+. Vergewissern Sie sich, dass die Cluster-LIFs auf ihren Home-Port zurückgesetzt wurden: `network interface show -role cluster`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> network interface show -role cluster
+            Logical            Status     Network            Current             Current Is
+Vserver     Interface          Admin/Oper Address/Mask       Node                Port    Home
+----------- ------------------ ---------- ------------------ ------------------- ------- ----
+Cluster
+            cluster1-01_clus1  up/up      169.254.3.4/23     cluster1-01         e0a     true
+            cluster1-01_clus2  up/up      169.254.3.5/23     cluster1-01         e0b     true
+            cluster1-02_clus1  up/up      169.254.3.8/23     cluster1-02         e0a     true
+            cluster1-02_clus2  up/up      169.254.3.9/23     cluster1-02         e0b     true
+            cluster1-03_clus1  up/up      169.254.1.3/23     cluster1-03         e0a     true
+            cluster1-03_clus2  up/up      169.254.1.1/23     cluster1-03         e0b     true
+            cluster1-04_clus1  up/up      169.254.1.6/23     cluster1-04         e0a     true
+            cluster1-04_clus2  up/up      169.254.1.7/23     cluster1-04         e0b     true
+----
+====
+. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet: `cluster show`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster show*
+Node                 Health  Eligibility   Epsilon
+-------------------- ------- ------------- -------
+cluster1-01          true    true          false
+cluster1-02          true    true          false
+cluster1-03          true    true          true
+cluster1-04          true    true          false
+----
+====
+. Ping für die Remote-Cluster-Schnittstellen zur Überprüfung der Konnektivität: `cluster ping-cluster -node local`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster ping-cluster -node local*
+Host is cluster1-03
+Getting addresses from network interface table...
+Cluster cluster1-03_clus1 169.254.1.3 cluster1-03 e0a
+Cluster cluster1-03_clus2 169.254.1.1 cluster1-03 e0b
+Cluster cluster1-04_clus1 169.254.1.6 cluster1-04 e0a
+Cluster cluster1-04_clus2 169.254.1.7 cluster1-04 e0b
+Cluster cluster1-01_clus1 169.254.3.4 cluster1-01 e0a
+Cluster cluster1-01_clus2 169.254.3.5 cluster1-01 e0b
+Cluster cluster1-02_clus1 169.254.3.8 cluster1-02 e0a
+Cluster cluster1-02_clus2 169.254.3.9 cluster1-02 e0b
+Local = 169.254.1.3 169.254.1.1
+Remote = 169.254.1.6 169.254.1.7 169.254.3.4 169.254.3.5 169.254.3.8 169.254.3.9
+Cluster Vserver Id = 4294967293
+Ping status:
+............
+Basic connectivity succeeds on 12 path(s)
+Basic connectivity fails on 0 path(s)
+................................................
+Detected 9000 byte MTU on 12 path(s):
+    Local 169.254.1.3 to Remote 169.254.1.6
+    Local 169.254.1.3 to Remote 169.254.1.7
+    Local 169.254.1.3 to Remote 169.254.3.4
+    Local 169.254.1.3 to Remote 169.254.3.5
+    Local 169.254.1.3 to Remote 169.254.3.8
+    Local 169.254.1.3 to Remote 169.254.3.9
+    Local 169.254.1.1 to Remote 169.254.1.6
+    Local 169.254.1.1 to Remote 169.254.1.7
+    Local 169.254.1.1 to Remote 169.254.3.4
+    Local 169.254.1.1 to Remote 169.254.3.5
+    Local 169.254.1.1 to Remote 169.254.3.8
+    Local 169.254.1.1 to Remote 169.254.3.9
+Larger than PMTU communication succeeds on 12 path(s)
+RPC status:
+6 paths up, 0 paths down (tcp check)
+6 paths up, 0 paths down (udp check)
+----
+====
+. Ändern Sie die Berechtigungsebene zurück in den Administrator:
++
+`set -privilege admin`
+
+. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
 
 
 .Was kommt als Nächstes?

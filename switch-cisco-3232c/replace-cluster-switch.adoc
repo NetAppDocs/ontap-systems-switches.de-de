@@ -40,8 +40,8 @@ Der Ersatz-Switch der Cisco Nexus 3232C-Serie weist folgende Merkmale auf:
 .Finden Sie weitere Informationen
 Siehe folgendes:
 
-* http://support.netapp.com/NOW/download/software/cm_switches/["Beschreibungsseite für den Cisco Ethernet Switch"^]
-* http://hwu.netapp.com["Hardware Universe"^]
+* http://["Beschreibungsseite für den Cisco Ethernet Switch"^]
+* http://["Hardware Universe"^]
 
 
 
@@ -73,7 +73,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * n1_clus4 ist die zweite logische Schnittstelle, die mit Cluster-Switch CL1 für Node n1 verbunden ist.
 
 
-Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
 
 Die Beispiele in diesem Ersatzverfahren verwenden vier Knoten. Zwei der Nodes verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe link:https://hwu.netapp.com["Hardware Universe"^] Um zu überprüfen, welche Cluster-Ports für Ihre Plattform korrekt sind.
 
@@ -255,17 +255,17 @@ Version Source: CDP
 +
 .. Rufen Sie die NetApp Support Site auf.
 +
-http://mysupport.netapp.com/["mysupport.netapp.com"^]
+http://["mysupport.netapp.com"^]
 
 .. Gehen Sie zur Seite *Cisco Ethernet Switches* und notieren Sie sich die erforderlichen Softwareversionen in der Tabelle.
 +
-https://mysupport.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^]
+https://["Cisco Ethernet-Switches"^]
 
 .. Laden Sie die entsprechende Version des RCF herunter.
 .. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und navigieren Sie dann zur Seite *Download*.
 .. Laden Sie die richtige Version der Bildsoftware von der Seite * Cisco® Cluster und Management Network Switch Reference Configuration File Download* herunter.
 +
-http://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster und Management Network Switch Referenzkonfigurationsdatei herunterladen"^]
+http://["Cisco® Cluster und Management Network Switch Referenzkonfigurationsdatei herunterladen"^]
 
 
 
@@ -424,7 +424,7 @@ Larger than PMTU communication succeeds on 32 path(s) RPC status:
 
 . Fahren Sie die Ports 1/31 und 1/32 am Cluster-Switch CL1 herunter.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -443,7 +443,7 @@ Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https:
 . Entfernen Sie die ISL-Kabel (Inter-Switch Link) von den Ports e1/31 und e1/32 am Cluster-Switch CL2, und schließen Sie sie an die gleichen Ports am Ersatzschalter C2 an.
 . ISL-Ports 1/31 und 1/32 auf dem Cluster-Switch CL1 heraufholen.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -461,7 +461,7 @@ Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https:
 ====
 . Überprüfen Sie, ob die ISLs auf CL1 verfügbar sind.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 Die Ports eth1/31 und eth1/32 sollten angegeben werden `(P)`, Was bedeutet, dass die ISL-Ports im Port-Channel aktiv sind:
@@ -488,7 +488,7 @@ Group Port-        Type   Protocol  Member Ports
 ====
 . Vergewissern Sie sich, dass die ISLs auf Cluster-Switch C2 verfügbar sind.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen

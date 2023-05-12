@@ -45,6 +45,6 @@ Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH werden auf den neue
 
 == Finden Sie weitere Informationen
 
-* https://mysupport.netapp.com/["NetApp Support Website"^]
-* https://hwu.netapp.com/Home/Index["NetApp Hardware Universe"^]
+* https://["NetApp Support Website"^]
+* https://["NetApp Hardware Universe"^]
 

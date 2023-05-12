@@ -22,7 +22,7 @@ Bevor Sie die Switch-Systemzustandsüberwachung für 92300YC-Cluster-Switches ei
 NOTE: Sie sollten SSH auch aktivieren, um alle in CSHM verfügbaren Funktionen zu nutzen.
 
 .Schritte
-. Laden Sie die ZIP-Datei für die Cluster-Switch-Systemzustandsüberwachung auf Basis der entsprechenden ONTAP Release-Version herunter. Diese Datei ist im verfügbar https://mysupport.netapp.com/NOW/cgi-bin/software/["NetApp Software-Download"^] Seite.
+. Laden Sie die ZIP-Datei für die Cluster-Switch-Systemzustandsüberwachung auf Basis der entsprechenden ONTAP Release-Version herunter. Diese Datei ist im verfügbar https://["NetApp Software-Download"^] Seite.
 +
 .. Wählen Sie auf der Software-Download-Seite *Switch Health Monitor Configuration Files*
 .. Wählen Sie Plattform = *ONTAP* und klicken Sie auf *Los!*

@@ -32,4 +32,4 @@ Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfiguratio
 * Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700 Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
 
 
-Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+Siehe https://["Hardware Universe"^] Aktuelle Informationen.

@@ -15,18 +15,18 @@ Befolgen Sie diese Anweisungen, um den Cisco Nexus 3232C Switch einzurichten und
 
 .Was Sie benötigen
 * Zugriff auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zum Herunterladen der entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File).
-* Entsprechende NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
+* Entsprechende NX-OS-Version, heruntergeladen von https://["Cisco Software-Download"^] Seite.
 * Erforderliche Dokumentation für das Cluster-Netzwerk und den Switch des Management-Netzwerks
 +
 Siehe link:required-documentation-3232c.html["Erforderliche Dokumentation"] Finden Sie weitere Informationen.
 
 * Erforderliche Controller-Dokumentation und ONTAP-Dokumentation
 +
-https://netapp.com/us/documenation/index.aspx["NetApp Dokumentation"^]
+https://["NetApp Dokumentation"^]
 
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen und Kabel
 * Abgeschlossene Verkabelungsarbeitsblätter.
-* Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden http://mysupport.netapp.com/["mysupport.netapp.com"^] Für die Switches, die Sie empfangen. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, haben aber die RCFs nicht geladen.
+* Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden http://["mysupport.netapp.com"^] Für die Switches, die Sie empfangen. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, haben aber die RCFs nicht geladen.
 
 
 .Schritte
@@ -215,7 +215,7 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 |===
 . Überprüfen Sie die Konfigurationseinstellungen, die Sie am Ende der Einrichtung in der Anzeige vorgenommen haben, und stellen Sie sicher, dass Sie die Konfiguration speichern.
-. Überprüfen Sie die Version der Cluster-Netzwerk-Switches und laden Sie bei Bedarf die von NetApp unterstützte Version der Software von auf die Switches von herunter https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
+. Überprüfen Sie die Version der Cluster-Netzwerk-Switches und laden Sie bei Bedarf die von NetApp unterstützte Version der Software von auf die Switches von herunter https://["Cisco Software-Download"^] Seite.
 
 
 .Was kommt als Nächstes?

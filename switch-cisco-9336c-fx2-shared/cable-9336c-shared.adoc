@@ -24,7 +24,7 @@ Wenn Sie NS224-Speicher als Switch-Attached verkabeln möchten, folgen Sie dem S
 
 image:9336c_image1.jpg["Switch-Anschluss"]
 
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+Siehe https://["Hardware Universe"] Weitere Informationen zu Switch-Ports.
 
 
 
@@ -34,7 +34,7 @@ Wenn Sie NS224-Speicher als Direct-Attached anstatt die Shared Switch-Speicherpo
 
 image:9336c_image2.jpg["Direct-Attached"]
 
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+Siehe https://["Hardware Universe"] Weitere Informationen zu Switch-Ports.
 
 
 

@@ -66,7 +66,7 @@ Endgültig
 2 QSFP-Glasfaserkabel oder Kupfer-Direct-Attach-Kabel
 
 |===
-Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben. Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren RCFs definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben. Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren RCFs definiert https://["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
 
 Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen finden Sie auf der link:https://mysupport.netapp.com/NOW/download/software/cm_switches/.html["Seite zu Cisco Ethernet Switches"^].
 

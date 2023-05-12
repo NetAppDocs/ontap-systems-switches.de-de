@@ -25,7 +25,7 @@ Der Migrationsprozess funktioniert bei allen Knoten mit optischen oder Twinax-Po
 ** Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.
 ** Alle Cluster-Ports haben den Status *up*.
 ** Alle logischen Cluster-Schnittstellen (LIFs) befinden sich im *up*-Zustand und auf ihren Home-Ports.
-** Siehe https://hwu.netapp.com["Hardware Universe"^] Für alle unterstützten ONTAP-Versionen.
+** Siehe https://["Hardware Universe"^] Für alle unterstützten ONTAP-Versionen.
 
 
 * Für die Switch-Konfiguration des Cisco Nexus 9336C-FX2:
@@ -34,7 +34,7 @@ Der Migrationsprozess funktioniert bei allen Knoten mit optischen oder Twinax-Po
 ** Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
 ** Bei den Nexus 9336C-FX2 Nodes-zu-Node-Switches und Switch-zu-Switch-Verbindungen werden Twinax- oder Glasfaserkabel verwendet.
 +
-Siehe https://hwu.netapp.com["Hardware Universe"^] Weitere Informationen zur Verkabelung.
+Siehe https://["Hardware Universe"^] Weitere Informationen zur Verkabelung.
 
 
 
@@ -57,7 +57,7 @@ In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e0a und e0b.
 
 
-Siehe https://hwu.netapp.com["Hardware Universe"^] Weitere Informationen zu den Cluster-Ports für Ihre Plattformen.
+Siehe https://["Hardware Universe"^] Weitere Informationen zu den Cluster-Ports für Ihre Plattformen.
 
 
 
@@ -290,10 +290,10 @@ Cluster
 ====
 . Trennen Sie das Kabel vom Cluster-Port e0a auf node1, und verbinden Sie dann e0a mit Port 1 am Cluster Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den 9336C-FX2-Switches unterstützt wird.
 +
-Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Enthält weitere Informationen zur Verkabelung.
+Der https://["Hardware Universe – Switches"^] Enthält weitere Informationen zur Verkabelung.
 
 +
-https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^]
+https://["Hardware Universe – Switches"^]
 
 . Trennen Sie das Kabel vom Cluster Port e0a auf node2, und verbinden Sie dann e0a mit Port 2 am Cluster Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den 9336C-FX2 Switches unterstützt wird.
 . Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.
