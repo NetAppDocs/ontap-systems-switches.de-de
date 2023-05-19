@@ -189,18 +189,81 @@ cluster1::*>
 
 . Reinigen Sie die Konfiguration am Schalter cs2, und führen Sie eine grundlegende Einrichtung durch.
 +
-.. Reinigen Sie die Konfiguration. Dieser Schritt erfordert eine Konsolenverbindung mit dem Switch.
+
+CAUTION: Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Der SSH-Switch-Zugriff bleibt erhalten, wenn Sie PowerOn Auto Provisioning (POAP) deaktivieren können (NX-OS 9.2P1 oder höher erforderlich). Stellen Sie als zusätzliche Vorsichtsmaßnahme eine Verbindung mit dem Switch über die serielle Konsole her, wenn der SSH-Zugriff nach dem Neustart des Switches nicht möglich ist.
+
 +
+.. SSH in den Switch.
++
+Fahren Sie nur fort, wenn alle Cluster-LIFs aus den Ports am Switch entfernt wurden und der Switch bereit ist, die Konfiguration zu löschen.
+
+.. Aktivieren des Berechtigungsmodus:
++
+.Beispiel anzeigen
+[%collapsible]
+====
 [listing, subs="+quotes"]
 ----
-cs2# *write erase*
-Warning: This command will erase the startup-configuration.
-Do you wish to proceed anyway? (y/n)  [n] *y*
-cs2# *reload*
-This command will reboot the system. (y/n)?  [n] *y*
-cs2#
+(cs2)> *enable*
 ----
-.. Führen Sie eine grundlegende Einrichtung des Switches durch.
+====
+.. Konfiguration bereinigen:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *write erase*
+
+Warning: This command will erase the startup-configuration.
+
+Do you wish to proceed anyway? (y/n)  [n]  *y*
+----
+====
+.. POAP deaktivieren:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *system no poap*
+----
+====
++
+Siehe https://["Verwenden von PowerOn Auto Provisioning"^] Entnehmen.
+
+.. Bestätigen Sie, dass POAP beim nächsten erneuten Laden deaktiviert ist:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)#  *show boot*
+Current Boot Variables:
+ sup-1
+NXOS variable = bootflash:/nxos.9.2.1.125.bin
+Boot POAP Disabled
+
+POAP permanently disabled using 'system no poap'
+----
+====
+.. Führen Sie einen Neustart des Switches aus:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(cs2)# *reload*
+
+Are you sure you would like to reset the system? (y/n) *y*
+
+----
+====
+.. Melden Sie sich mit SSH erneut am Switch an, um die RCF-Installation abzuschließen.
 
 
 . Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
@@ -314,7 +377,10 @@ Wenn Sie die Ausgabe überprüfen, um zu überprüfen, ob Sie die richtige RCF h
 +
 ** Das RCF-Banner
 ** Die Node- und Port-Einstellungen
-** Anpassungen die Ausgabe variiert je nach Standortkonfiguration. Prüfen Sie die Porteinstellungen, und lesen Sie in den Versionshinweisen alle Änderungen, die für die RCF gelten, die Sie installiert haben.
+** Anpassungen
++
+Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Porteinstellungen, und lesen Sie in den Versionshinweisen alle Änderungen, die für die RCF gelten, die Sie installiert haben.
+
 
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.

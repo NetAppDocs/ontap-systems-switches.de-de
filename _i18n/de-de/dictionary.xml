@@ -405,7 +405,6 @@
   <block id="47c173b91782927bfc36acfeeaec5f9f" category="paragraph">Wenn Sie die Ausgabe überprüfen, um zu überprüfen, ob Sie die richtige RCF haben, stellen Sie sicher, dass die folgenden Informationen richtig sind:</block>
   <block id="2a4c49daad6f24fc930342baa230202a" category="list-text">Das RCF-Banner</block>
   <block id="f867470f4d681a0d1ba65ec5afb71681" category="list-text">Die Node- und Port-Einstellungen</block>
-  <block id="52ffc473f824bd729618f53fb6d14415" category="list-text">Anpassungen die Ausgabe variiert je nach Standortkonfiguration. Prüfen Sie die Porteinstellungen, und lesen Sie in den Versionshinweisen alle Änderungen, die für die RCF gelten, die Sie installiert haben.</block>
   <block id="f84dbe517c4cab37d96220b08c6a7430" category="list-text">Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.</block>
   <block id="751ae8e5b1f665d84208a0d929c57d52" category="list-text">Schalter cs2 neu starten. Sie können die auf den Nodes gemeldeten Ereignisse „`Cluster Ports down`“ ignorieren, während der Switch neu gebootet wird.</block>
   <block id="a8b215fa6b6d814a7e68d02c02b35409" category="list-text">Überprüfen Sie den Switch-Systemzustand des Clusters (dies zeigt möglicherweise nicht den Switch cs2 an, da LIFs nicht auf e0d homed sind).</block>
@@ -1377,12 +1376,9 @@
   <block id="28d7612827f82272affeaf30e405e24a" category="paragraph"><block ref="7af866342cc7e87972580d7b709d8820" prefix="" category="inline-code"></block></block>
   <block id="98f234e93ec030ce67a050ab46bd6ee6" category="list-text">Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:</block>
   <block id="5d0fccc0c22c6cabff0054b67831dfdc" category="paragraph"><block ref="7ca607e345a217b6fb9148234fe84d0c" prefix="" category="inline-code"></block></block>
-  <block id="d4d708e45e34a1416e859c8024a9e7c1" category="admonition">Verwenden Sie für ONTAP 9.8 und höher den Befehl<block ref="75a6cff01f343774ea81762529908faa" prefix=" " category="inline-code"></block>.</block>
   <block id="835044aeea65c8864816e5160f4d5f92" category="list-text">Überprüfen Sie, ob die Cluster-Ports zu den Ports migriert wurden, die auf Cluster-Switch cs1 gehostet werden. Dies kann einige Sekunden dauern.</block>
   <block id="1715d07a24988d9207de94794a6f01cc" category="list-text">Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:</block>
   <block id="494cb4f7976c64f111b74e9089d5bbd5" category="paragraph"><block ref="639161158d7426b3865ce9c5a6f648b3" prefix="" category="inline-code"></block></block>
-  <block id="8a69d7327337bf7d6152482b16e42f84" category="list-text">Reinigen Sie die Konfiguration.</block>
-  <block id="88b2ab3c3baa9b0c5faeb2e8a0fec98a" category="admonition">Dieser Schritt erfordert eine Konsolenverbindung mit dem Switch.</block>
   <block id="0bdc52e912f1ecc312522eb07e5f2cbb" category="list-text">Vergewissern Sie sich, dass die RCF-Datei die richtige neuere Version ist:</block>
   <block id="f1e487b54b162363f351d5d209fc59ac" category="paragraph">Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im<block ref="a793a8dbe6bab2f66743aaacba3b8ce6" category="inline-link-rx"></block> Leitfäden.</block>
   <block id="8fdae5a227344a83423005f83a057331" category="list-text">Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:</block>
@@ -3024,7 +3020,6 @@
   <block id="1238025070f42c2c91970d4a31d2a5c4" category="paragraph"><block ref="229e8d1240617e0b97c680c36bbc9564" prefix="" category="inline-code"></block></block>
   <block id="80ab93e3822e7ed7a0bd76c9ee9103bb" category="section-title">Schritt 2: Ports konfigurieren</block>
   <block id="ef1ee64e66c476fc0def572853f98a6d" category="paragraph">Im folgenden Beispiel wird die Ausgabe des Schnittstellenbeispiels verwendet:</block>
-  <block id="0d338ee833fbd097dbf87aa3c232f048" category="list-text">Wiederholen Sie die vorherigen Schritte auf Schalter cs1.</block>
   <block id="28f363620ef0b78f100aebcc28cca7da" category="list-text">Stellen Sie sicher, dass die mit den Cluster-Ports verbundenen Switch-Ports *up* sind.</block>
   <block id="5a60cb8f615fe52bbea3a0ce20d7cbf3" category="paragraph">Überprüfen Sie die folgenden Richtlinien, um die Smart Call Home-Funktion zu verwenden.</block>
   <block id="196735c2e16dea95e9e52940e995e4d3" category="paragraph">Smart Call Home überwacht die Hardware- und Softwarekomponenten Ihres Netzwerks. Wenn eine kritische Systemkonfiguration auftritt, generiert es eine E-Mail-basierte Benachrichtigung und gibt eine Warnung an alle Empfänger aus, die im Zielprofil konfiguriert sind. Um Smart Call Home zu verwenden, müssen Sie einen Cluster-Netzwerk-Switch konfigurieren, um per E-Mail mit dem Smart Call Home-System kommunizieren zu können. Darüber hinaus können Sie optional Ihren Cluster-Netzwerk-Switch einrichten, um die integrierte Smart Call Home-Support-Funktion von Cisco zu nutzen.</block>
@@ -3134,7 +3129,6 @@
   <block id="f85e9af89252fc6fd85cfbb4e0aa1add" category="section-title">Schritt 1: Überprüfen Sie den Portstatus</block>
   <block id="c35204e874fcafc94c7c67e31162e966" category="paragraph">Stellen Sie sicher, dass die automatische Umrüstung deaktiviert ist, nachdem Sie diesen Befehl ausgeführt haben.</block>
   <block id="d08074ca4afc3cad1b1b41c1134b3f1e" category="section-title">Schritt 2: Konfigurieren und überprüfen Sie das Setup</block>
-  <block id="0c0b4ff8f510dfc18a7d95bef227ea58" category="paragraph"><block ref="ed3fe2a45ef033acf306fc90fbafdd66" prefix="" category="inline-code"></block></block>
   <block id="b6ec5ccd50e4a92a636c1dc432c89581" category="admonition">Es kann bis zu 5 Minuten dauern, bis die Cluster-Nodes einen ordnungsgemäßen Zustand melden.</block>
   <block id="442f3bc68fd4ab1c760b482d02f7ca71" category="list-text">Wiederholen Sie die Schritte 1 bis 10 am Schalter cs1.</block>
   <block id="06e9c44ff7df8ac56c0fec0f8ded0121" category="section-title">Schritt 3: Neustart und Überprüfung der Konfiguration</block>
@@ -4429,4 +4423,13 @@
   <block id="2e58f874fe5dd7ef46fee2c92b1e77eb" category="paragraph">*Clusterknoten-Verbindungskabel wurden auf den cs1-New Switch* verlegt</block>
   <block id="7d829570fe05df690649474b2bb97a3b" category="image-alt">Verbindungskabel für Clusterknoten wurden auf den cs1-New-Switch verlegt</block>
   <block id="ec5ea2f0318e4d906c296f5576b9c026" category="list-text">[[step6]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
+  <block id="0429fa776d68090e46718ac7e32390ef" category="admonition">Verwenden Sie für EFOS Version 3.10.0.3 und höher den Befehl<block ref="c09633a606c51a161b16f8bf38f5ebb1" prefix=" " category="inline-code"></block>.</block>
+  <block id="455129a1d85d80f79e8d763a25910c74" category="admonition">Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Der SSH-Switch-Zugriff bleibt erhalten, wenn Sie PowerOn Auto Provisioning (POAP) deaktivieren können (NX-OS 9.2P1 oder höher erforderlich). Stellen Sie als zusätzliche Vorsichtsmaßnahme eine Verbindung mit dem Switch über die serielle Konsole her, wenn der SSH-Zugriff nach dem Neustart des Switches nicht möglich ist.</block>
+  <block id="2df26e386d021172b261bcb47e157019" category="list-text">Konfiguration bereinigen:</block>
+  <block id="a5247127c3e0a3fcdf9f80746c33cb54" category="list-text">POAP deaktivieren:</block>
+  <block id="b64ae68f672b168b4456ea13b494a759" category="inline-link">Verwenden von PowerOn Auto Provisioning</block>
+  <block id="01197fee3250d671fd8c51972b5f4745" category="paragraph">Siehe<block ref="ff53901c2c0b0d51a17df0925879b1a5" category="inline-link-rx"></block> Entnehmen.</block>
+  <block id="b8363a3557b5e1732a20eb45a96853b7" category="list-text">Bestätigen Sie, dass POAP beim nächsten erneuten Laden deaktiviert ist:</block>
+  <block id="f306e2be0abd8aabfa0b014c372bbac8" category="list-text">Wiederholen Sie die Schritte 4 bis 11 am Schalter cs1.</block>
+  <block id="256be937ef390f7d6dd71ad092869119" category="admonition">Verwenden Sie für ONTAP 9.8 und höher den Befehl<block ref="c57378c3b3bb81c6b42a2b31a30ddda7" prefix=" " category="inline-code"></block>.</block>
 </blocks>
