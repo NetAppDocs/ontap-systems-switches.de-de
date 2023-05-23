@@ -329,7 +329,7 @@ Reserviert
 
 == Leeres Verkabelungsarbeitsblatt
 
-Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
 
 [cols="1, 1, 1, 1"]
 |===

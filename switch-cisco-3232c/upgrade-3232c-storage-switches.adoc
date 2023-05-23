@@ -25,8 +25,8 @@ Stellen Sie vor dem Upgrade der NX-OS-Software und der RCFs auf dem Storage-Swit
 +
 Wenn Sie die Boot-Variablen ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor der erneuten Anwendung der RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
 
-* Sie haben die entsprechenden Leitfäden zu Software und Upgrades auf der bezogen http://["Switches Der Cisco Nexus 3000-Serie"^] Seite für vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Storage.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Cisco Ethernet-Switches"^] Seite.
+* Sie haben die entsprechenden Leitfäden zu Software und Upgrades auf der bezogen http://www.cisco.com/en/US/products/ps9670/prod_installation_guides_list.html["Switches Der Cisco Nexus 3000-Serie"^] Seite für vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Storage.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite.
 
 
 
@@ -141,7 +141,7 @@ There are no entries matching your query.
 
 . Kopieren Sie den RCF auf Switch S2 mit einem der folgenden Übertragungsprotokolle auf den Switch Bootflash: FTP, HTTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -245,7 +245,7 @@ NOTE: Beim ersten Anwenden des RCF wird die Meldung *ERROR: Failed to write VSH 
 
 . Nachdem Sie sich vergewissern, dass die Software-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie den `running-config` Datei in der `startup-config` Datei auf Schalter S2.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -378,7 +378,7 @@ S2#
 ====
 . Speichern Sie die Konfiguration.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 Sie werden aufgefordert, das System neu zu booten.

@@ -15,10 +15,10 @@ Gehen Sie folgendermaßen vor, um den Cisco Nexus 9336C-FX2-Switch zu konfigurie
 
 .Was Sie benötigen
 * Zugriff auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zum Herunterladen der entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File).
-* Entsprechende NX-OS-Version, heruntergeladen von https://["Cisco Software-Download"^] Seite.
+* Entsprechende NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen und Kabel
 * Abgeschlossen link:setup-worksheet-9336c-storage.html["Verkabelungsarbeitsblätter"].
-* Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden http://["mysupport.netapp.com"^]. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, aber nicht über die RCFs geladen.
+* Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden http://mysupport.netapp.com/["mysupport.netapp.com"^]. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, aber nicht über die RCFs geladen.
 * Erforderliche Switch-Dokumentation Siehe link:required-documentation-9336c-storage.html["Erforderliche Dokumentation"] Finden Sie weitere Informationen.
 
 
@@ -186,7 +186,7 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 |===
 . Überprüfen Sie die Konfigurationseinstellungen, die Sie am Ende der Einrichtung in der Anzeige vorgenommen haben, und stellen Sie sicher, dass Sie die Konfiguration speichern.
-. Überprüfen Sie die Version der Cluster-Netzwerk-Switches und laden Sie bei Bedarf die von NetApp unterstützte Version der Software von auf die Switches von herunter https://["Cisco Software-Download"^] Seite.
+. Überprüfen Sie die Version der Cluster-Netzwerk-Switches und laden Sie bei Bedarf die von NetApp unterstützte Version der Software von auf die Switches von herunter https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
 
 
 .Was kommt als Nächstes?

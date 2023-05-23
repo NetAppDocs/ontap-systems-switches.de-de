@@ -24,7 +24,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 [NOTE]
 ====
-* Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://["Switches Der Cisco Nexus 9000-Serie"^]; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
+* Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^]; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
 * Bevor Sie dieses Verfahren durchführen, stellen Sie sicher, dass Sie über eine aktuelle Sicherung der Switch-Konfiguration verfügen.
 * Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
@@ -232,7 +232,7 @@ Do you wish to proceed anyway? (y/n)  [n]  *y*
 ----
 ====
 +
-Siehe https://["Verwenden von PowerOn Auto Provisioning"^] Entnehmen.
+Siehe https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/103x/configuration/fundamentals/cisco-nexus-9000-nx-os-fundamentals-configuration-guide-103x/m-using-poap.html?bookSearch=true#id_85315["Verwenden von PowerOn Auto Provisioning"^] Entnehmen.
 
 .. Bestätigen Sie, dass POAP beim nächsten erneuten Laden deaktiviert ist:
 +
@@ -266,7 +266,7 @@ Are you sure you would like to reset the system? (y/n) *y*
 .. Melden Sie sich mit SSH erneut am Switch an, um die RCF-Installation abzuschließen.
 
 
-. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
+. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
 +
 Dieses Beispiel zeigt, dass TFTP zum Kopieren eines RCF auf den Bootflash auf Switch cs2 verwendet wird:
 
@@ -291,7 +291,7 @@ Copy complete.
 ----
 . Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
 
 +
 Dieses Beispiel zeigt die RCF-Datei `Nexus_92300YC_RCF_v1.0.2.txt` Installation auf Schalter cs2:
@@ -385,7 +385,7 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^] Leitfäden.
 
 +
 [listing, subs="+quotes"]

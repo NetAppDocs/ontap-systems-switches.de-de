@@ -29,8 +29,8 @@ Stellen Sie sicher, dass:
 ** Anpassung von Websites, z. B. DNS, NTP, SMTP, SNMP, Und SSH werden auf den neuen Switches konfiguriert.
 
 
-* Sie haben Zugriff auf die Switch-Kompatibilitätstabelle auf der https://["Cisco Ethernet-Switches"^] Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen.
-* Sie haben die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website für die Upgrade- und Downgrade-Verfahren von Cisco Switches unter geprüft https://["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite.
+* Sie haben Zugriff auf die Switch-Kompatibilitätstabelle auf der https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen.
+* Sie haben die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website für die Upgrade- und Downgrade-Verfahren von Cisco Switches unter geprüft https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite.
 
 
 
@@ -38,7 +38,7 @@ Stellen Sie sicher, dass:
 == Migrieren Sie die Switches
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://hwu.netapp.com/["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 
 NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
@@ -57,7 +57,7 @@ Beachten Sie während dieses Verfahrens das folgende Beispiel:
 image::../media/Initial_setup.png[Ersteinrichtung des Switches]
 
 .Über diese Aufgabe
-Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://["Switches Der Nexus 9000 Serie"^] Befehle; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
+Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Nexus 9000 Serie"^] Befehle; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
 
 Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 

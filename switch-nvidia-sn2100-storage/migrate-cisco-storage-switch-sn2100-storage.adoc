@@ -21,7 +21,7 @@ Folgende Storage-Switches werden unterstützt:
 
 * Cisco Nexus 9336C-FX2
 * Cisco Nexus 3232C
-* Siehe https://["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
+* Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
 
 
 .Was Sie benötigen
@@ -38,7 +38,7 @@ Stellen Sie sicher, dass:
 ** ISL-Ports aktiviert und zwischen den älteren Cisco Switches und zwischen den neuen Switches verkabelt.
 
 
-* Siehe https://["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
+* Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
 * Einige der Ports sind auf NVIDIA SN2100-Switches für 100 GbE konfiguriert.
 * Sie haben 100-GbE-Konnektivität von Nodes zu NVIDIA SN2100 Storage-Switches geplant, migriert und dokumentiert.
 

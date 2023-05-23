@@ -19,21 +19,21 @@ summary: Überprüfen Sie bei Installation und Wartung von NVIDIA SN2100-Switche
 
 
  a| 
-https://["NVIDIA Switch Installation Guide"^]
+https://docs.nvidia.com/networking/display/sn2000pub/Installation["NVIDIA Switch Installation Guide"^]
  a| 
 Beschreibt die Installation Ihrer NVIDIA SN2100-Switches.
 
 
 
  a| 
-https://["Shelf-Verkabelung bei NS224 NVMe-Laufwerken"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2876580["Shelf-Verkabelung bei NS224 NVMe-Laufwerken"^]
  a| 
 Überblick und Abbildungen zeigen die Konfiguration der Verkabelung für Laufwerk-Shelfs.
 
 
 
  a| 
-https://["NetApp Hardware Universe"^]
+https://hwu.netapp.com/["NetApp Hardware Universe"^]
  a| 
 Ermöglicht die Bestätigung der unterstützten Hardware wie Storage-Switches und -Kabel für Ihr Plattformmodell.
 

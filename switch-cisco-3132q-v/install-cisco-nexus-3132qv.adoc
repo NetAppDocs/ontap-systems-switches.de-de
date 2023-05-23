@@ -14,7 +14,7 @@ summary: Sie können den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel i
 Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.
 
 .Was Sie benötigen
-* Die anfänglichen Vorbereitungsanforderungen, Inhalt des Kits und Sicherheitsvorkehrungen im http://["Hardware-Installationsleitfaden Der Cisco Nexus 3000-Serie"^]. Lesen Sie diese Dokumente, bevor Sie mit dem Verfahren beginnen.
+* Die anfänglichen Vorbereitungsanforderungen, Inhalt des Kits und Sicherheitsvorkehrungen im http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/hw/installation/guide/b_n3000_hardware_install_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 3000-Serie"^]. Lesen Sie diese Dokumente, bevor Sie mit dem Verfahren beginnen.
 * Das Pass-Through-Panel-Kit, erhältlich von NetApp (Teilenummer X8784-R6). Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
 +
 ** Ein Durchlauf-Blindblech

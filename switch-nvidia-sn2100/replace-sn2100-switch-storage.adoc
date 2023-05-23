@@ -18,7 +18,7 @@ Vor der Installation der Cumulus-Software und der RCFs auf einem NVIDIA SN2100-S
 
 * Ihr System kann NVIDIA SN2100 Storage Switches unterstützen.
 * Sie müssen die entsprechenden RCFs heruntergeladen haben.
-* Der http://["Hardware Universe"^] Ausführliche Informationen zu unterstützten Ports und deren Konfigurationen erhalten Sie im Detail.
+* Der http://hwu.netapp.com["Hardware Universe"^] Ausführliche Informationen zu unterstützten Ports und deren Konfigurationen erhalten Sie im Detail.
 
 
 .Über diese Aufgabe

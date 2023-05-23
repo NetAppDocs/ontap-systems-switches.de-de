@@ -26,7 +26,7 @@ Wenn Sie die FASTPATH Software auf Ihren NetApp Switches installieren, müssen S
 * Ein erfolgreicher Kommunikationspfad: Der ONTAP (Privilege: Erweitert) `cluster ping-cluster -node node1` Der Befehl muss das angeben `larger than PMTU communication` Ist auf allen Pfaden erfolgreich.
 * Eine unterstützte Version von FASTPATH und ONTAP.
 +
-Beachten Sie unbedingt die Kompatibilitätstabelle für Switches auf der http://["NetApp CN1601 und CN1610 Switches"^] Seite für die unterstützten FASTPATH und ONTAP Versionen.
+Beachten Sie unbedingt die Kompatibilitätstabelle für Switches auf der http://mysupport.netapp.com/NOW/download/software/cm_switches_ntap/["NetApp CN1601 und CN1610 Switches"^] Seite für die unterstützten FASTPATH und ONTAP Versionen.
 
 
 
@@ -47,7 +47,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * Der `cluster::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 * Die Cluster-Ports auf jedem Node lauten e1a und e2a.
 +
-https://["Hardware Universe"^] Bietet weitere Informationen zu den tatsächlichen, auf Ihrer Plattform unterstützten Cluster-Ports.
+https://hwu.netapp.com/["Hardware Universe"^] Bietet weitere Informationen zu den tatsächlichen, auf Ihrer Plattform unterstützten Cluster-Ports.
 
 * Die unterstützten Inter-Switch Links (ISLs) sind die Ports 0/13 bis 0/16.
 * Die unterstützten Node-Verbindungen sind die Ports 0/1 bis 0/12.

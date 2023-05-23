@@ -39,7 +39,7 @@ Für die Switch-Konfiguration des Cisco Nexus 92300YC:
 * Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
 * Nexus 92300YC Node-to-Node-Switch und Switch-to-Switch-Verbindungen verwenden Twinax- oder Glasfaserkabel.
 +
-https://["Hardware Universe – Switches"^] Enthält weitere Informationen zur Verkabelung.
+https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Enthält weitere Informationen zur Verkabelung.
 
 * Inter-Switch Link (ISL)-Kabel werden an den Ports 1/65 und 1/66 an beiden 92300YC-Switches angeschlossen.
 * Initiale Anpassung der beiden 92300YC-Switches wird abgeschlossen. So werden die:
@@ -63,7 +63,7 @@ In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-
 * Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e0a und e0b.
 +
-https://["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+https://hwu.netapp.com["Hardware Universe"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
@@ -309,7 +309,7 @@ Cluster
 ====
 . Trennen Sie das Kabel vom Cluster Port e0a auf node1, und verbinden Sie dann e0a mit Port 1 auf Cluster Switch cs1, wobei die entsprechende Verkabelung verwendet wird, die von den 92300YC Switches unterstützt wird.
 +
-Der https://["_Hardware Universe - Schalter_"^] Enthält weitere Informationen zur Verkabelung.
+Der https://hwu.netapp.com/SWITCH/INDEX["_Hardware Universe - Schalter_"^] Enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster Port e0a auf node2, und verbinden Sie dann e0a mit Port 2 auf Cluster Switch cs1, unter Verwendung der entsprechenden Verkabelung, die von den 92300YC Switches unterstützt wird.
 . Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.

@@ -16,7 +16,7 @@ summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C
 [role="lead"]
 Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C-FX2 Switches spezielle Switch- und Controller-Dokumentation, um Ihre Cisco 9336-FX2-Switches und das ONTAP-Cluster einzurichten.
 
-Informationen zum Einrichten der gemeinsamen Cisco Nexus 9336C-FX2-Switches finden Sie im https://["Switches Der Cisco Nexus 9000-Serie Unterstützen"] Seite.
+Informationen zum Einrichten der gemeinsamen Cisco Nexus 9336C-FX2-Switches finden Sie im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"] Seite.
 
 |===
 | Dokumenttitel | Beschreibung 

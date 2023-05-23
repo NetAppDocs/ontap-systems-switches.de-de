@@ -120,8 +120,8 @@ NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgab
 Überprüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und EFOS-Software für den neuen Switch. Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und EFOS-Software benötigt, fahren Sie mit Schritt 2 fort.
 
 +
-.. Sie können die entsprechende Broadcom EFOS-Software für Ihre Cluster-Switches von herunterladen https://["Unterstützung Für Broadcom Ethernet-Switches"^] Standort. Befolgen Sie die Schritte auf der Download-Seite, um die EFOS-Datei für die Version der zu installienden ONTAP-Software herunterzuladen.
-.. Das entsprechende RCF ist im erhältlich https://["Broadcom Cluster-Switches"^] Seite. Befolgen Sie die Schritte auf der Download-Seite, um den korrekten RCF für die Version der von Ihnen installierenden ONTAP-Software herunterzuladen.
+.. Sie können die entsprechende Broadcom EFOS-Software für Ihre Cluster-Switches von herunterladen https://www.broadcom.com/support/bes-switch["Unterstützung Für Broadcom Ethernet-Switches"^] Standort. Befolgen Sie die Schritte auf der Download-Seite, um die EFOS-Datei für die Version der zu installienden ONTAP-Software herunterzuladen.
+.. Das entsprechende RCF ist im erhältlich https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite. Befolgen Sie die Schritte auf der Download-Seite, um den korrekten RCF für die Version der von Ihnen installierenden ONTAP-Software herunterzuladen.
 
 
 . Beim neuen Switch melden Sie sich als an `admin` Fahren Sie außerdem alle Ports herunter, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports 1 zu 16).

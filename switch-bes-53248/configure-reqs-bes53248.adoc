@@ -17,7 +17,7 @@ Für die Installation und Wartung von BES-53248-Switches müssen die Support- un
 
 == EFOS- und ONTAP-Unterstützung
 
-Siehe https://["NetApp Hardware Universe"^] Und https://["Kompatibilitätsmatrix für Broadcom Switches"^] Für Informationen zur EFOS- und ONTAP-Kompatibilität mit BES-53248-Switches. Die Unterstützung von EFOS und ONTAP kann je nach Maschinentyp des BES-53248-Switches variieren. Weitere Informationen zu allen BES-52348-Schaltmaschinentypen finden Sie unter link:components-bes53248.html["Komponenten und Teilenummern für BES-53248 Cluster-Switches"].
+Siehe https://hwu.netapp.com/Switch/Index["NetApp Hardware Universe"^] Und https://mysupport.netapp.com/site/info/broadcom-cluster-switch["Kompatibilitätsmatrix für Broadcom Switches"^] Für Informationen zur EFOS- und ONTAP-Kompatibilität mit BES-53248-Switches. Die Unterstützung von EFOS und ONTAP kann je nach Maschinentyp des BES-53248-Switches variieren. Weitere Informationen zu allen BES-52348-Schaltmaschinentypen finden Sie unter link:components-bes53248.html["Komponenten und Teilenummern für BES-53248 Cluster-Switches"].
 
 
 
@@ -63,7 +63,7 @@ Sie können die von Broadcom unterstützte Tabelle zur Konfiguration des Cluster
 Ports mit 100 GbE Cluster Inter-Switch Link (ISL), Basiskonfiguration
 
 |===
-Siehe https://["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
 
 
 

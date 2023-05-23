@@ -38,7 +38,7 @@ Prüfen Sie die folgenden Anforderungen für die Cluster-Umgebung.
 ** Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
 ** BES-53248 Node-to-Node-Switch und Switch-to-Switch-Verbindungen verwenden Twinax- oder Glasfaserkabel.
 +
-Der https://["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.
 
 
 
@@ -66,7 +66,7 @@ In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-
 * Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind `e0a` Und `e0b`.
 +
-Der https://["_NetApp Hardware Universe_"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
@@ -293,7 +293,7 @@ Cluster
 ====
 . Trennen Sie das Kabel vom Cluster-Port e0a auf node1, und verbinden sie e0a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
 +
-Der https://["_NetApp Hardware Universe_"^] Enthält weitere Informationen zur Verkabelung.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster-Port e0a auf node2 und verbinden sie e0a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
 . Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.
@@ -589,7 +589,7 @@ cluster1::*> system node autosupport invoke -node \* -type all -message MAINT=EN
 ----
 ====
 +
-Weitere Informationen finden Sie unter: https://["NetApp KB-Artikel: Wie kann die automatische Case-Erstellung während geplanter Wartungszeitfenster unterdrückt werden"^]
+Weitere Informationen finden Sie unter: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB-Artikel: Wie kann die automatische Case-Erstellung während geplanter Wartungszeitfenster unterdrückt werden"^]
 
 
 

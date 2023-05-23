@@ -34,7 +34,7 @@ Vor der Installation der EFOS Software, der Lizenzen und der RCF-Datei auf einem
 NOTE: Zwischen der Befehlssyntax in der RCF- und EFOS-Version kann es zu Befehlsabhängigkeiten kommen.
 
 
-NOTE: Informationen zur Switch-Kompatibilität finden Sie in der Kompatibilitätstabelle auf der https://["Broadcom Cluster-Switches"^] Seite für die unterstützten EFOS-, RCF- und ONTAP-Versionen.
+NOTE: Informationen zur Switch-Kompatibilität finden Sie in der Kompatibilitätstabelle auf der https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite für die unterstützten EFOS-, RCF- und ONTAP-Versionen.
 
 
 

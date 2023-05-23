@@ -29,7 +29,7 @@ Folgende Cisco Cluster-Switches werden unterstützt:
 * Nexus 3132Q-V
 
 
-Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://["Hardware Universe"^] .
+Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://hwu.netapp.com/["Hardware Universe"^] .
 
 .Was Sie benötigen
 Stellen Sie sicher, dass:

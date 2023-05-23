@@ -19,21 +19,21 @@ summary: Überprüfen Sie bei der Installation und Wartung von NetApp CN1610 Swi
 
 
  a| 
-https://["1G Installationshandbuch"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1117853["1G Installationshandbuch"^]
  a| 
 Ein Überblick über die Hardware- und Softwarefunktionen und den Installationsprozess des CN1601 Switch.
 
 
 
  a| 
-https://["10G-Installationsanleitung"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1117824["10G-Installationsanleitung"^]
  a| 
 Ein Überblick über die Hardware- und Softwarefunktionen für CN1610 Switches und beschreibt die Funktionen für die Installation des Switches und den Zugriff auf die CLI.
 
 
 
  a| 
-https://["Installations- und Konfigurationshandbuch für CN1601 und CN1610-Switch"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1118645["Installations- und Konfigurationshandbuch für CN1601 und CN1610-Switch"^]
  a| 
 Hier erfahren Sie, wie Sie die Switch-Hardware und -Software für Ihre Cluster-Umgebung konfigurieren.
 
@@ -44,9 +44,9 @@ Administratorhandbuch für den CN1601-Switch
  a| 
 Enthält Beispiele für die Verwendung des CN1601-Switches in einem typischen Netzwerk.
 
-* https://["Administratorhandbuch"^]
-* https://["Administratorhandbuch, Version 1.1.x.x"^]
-* https://["Administratorhandbuch, Version 1.2.x.x"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMP1117844["Administratorhandbuch"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2811865["Administratorhandbuch, Version 1.1.x.x"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMP1117874["Administratorhandbuch, Version 1.2.x.x"^]
 
 
 
@@ -56,9 +56,9 @@ CN1610 Network Switch CLI Command Reference
  a| 
 Enthält detaillierte Informationen zu den CLI-Befehlen (Command-Line Interface), mit denen Sie die CN1601-Software konfigurieren.
 
-* https://["Befehlsreferenz"^]
-* https://["Befehlsreferenz, Version 1.1.x.x"^]
-* https://["Befehlsreferenz, Version 1.2.x.x"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMP1117834["Befehlsreferenz"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2811863["Befehlsreferenz, Version 1.1.x.x"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMP1117863["Befehlsreferenz, Version 1.2.x.x"^]
 
 
 |===

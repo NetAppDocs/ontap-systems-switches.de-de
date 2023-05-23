@@ -16,12 +16,12 @@ Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren.
 .Was Sie benötigen
 Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch folgende Funktionen verfügbar sind:
 
-* Cumulus Linux ist installiert. Siehe https://["Hardware Universe"^] Für unterstützte Versionen.
+* Cumulus Linux ist installiert. Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Für unterstützte Versionen.
 * IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.
 
 
 .Aktuelle RCF-Skriptversionen
-Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Laden Sie RCFs von herunter https://["Hier"^]. Das Verfahren für jedes ist gleich.
+Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Laden Sie RCFs von herunter https://mysupport.netapp.com/site/info/nvidia-cluster-switch["Hier"^]. Das Verfahren für jedes ist gleich.
 
 * Cluster: *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*
 * Speicher: *MSN2100-RCF-v1._x_-Speicher*
@@ -104,7 +104,7 @@ NOTE: In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl `cat /etc/mo
 
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
 
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
@@ -357,7 +357,7 @@ admin@sw1:mgmt:~$ cat /etc/issue
 ----
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
 
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +

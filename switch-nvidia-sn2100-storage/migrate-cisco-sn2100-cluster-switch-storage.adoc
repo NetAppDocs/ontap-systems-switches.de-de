@@ -36,7 +36,7 @@ Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungs
 ** ISL-Ports aktiviert und zwischen den älteren Cisco Switches und zwischen den neuen Switches verkabelt.
 
 
-* Siehe https://["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
+* Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
 * Sie haben einige der Ports auf NVIDIA SN2100-Switches für 40 GbE oder 100 GbE konfiguriert.
 * Sie haben 40-GbE- und 100-GbE-Konnektivität von den Nodes zu NVIDIA SN2100 Cluster Switches geplant, migriert und dokumentiert.
 +

@@ -344,7 +344,7 @@ cumulus@cumulus:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Siehe https://["NVIDIA Benutzerkonten"^] Finden Sie weitere Informationen.
+Siehe https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] Finden Sie weitere Informationen.
 
 
 

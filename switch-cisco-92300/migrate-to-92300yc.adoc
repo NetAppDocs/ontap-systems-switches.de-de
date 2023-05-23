@@ -70,8 +70,8 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 ** Ports e1/13-20 (10 GbE): Nexus 5010
 
 
-* https://["Hardware Universe – Switches"^] Die enthält Informationen über die unterstützte Verkabelung aller Cluster Switches.
-* Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen befinden sich auf dem https://["Cisco Ethernet-Switches"^] Seite.
+* https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Die enthält Informationen über die unterstützte Verkabelung aller Cluster Switches.
+* Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen befinden sich auf dem https://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^] Seite.
 
 
 

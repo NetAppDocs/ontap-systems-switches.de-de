@@ -67,7 +67,7 @@ Die Beispiele in diesem Verfahren verwenden zwei Knoten, von denen jeder zwei 40
 * n1_clus2 ist die erste Cluster-LIF, die für Node n1 mit Cluster-Switch C2 verbunden wird.
 * n2_clus1 ist die erste Cluster-LIF, die für Knoten n2 mit Cluster-Switch C1 verbunden wird.
 * n2_clus2 ist die zweite Cluster-LIF, die für Knoten n2 an Cluster-Switch C2 angeschlossen werden soll.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
 
 
 [NOTE]
@@ -172,21 +172,21 @@ Sie müssen beide Switches derzeit vorbereiten. Wenn Sie die RCF- und Bildsoftwa
 +
 .. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
 +
-http://["Cisco Ethernet-Switches"^]
+http://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
 .. Laden Sie die entsprechende RCF-Version herunter.
 .. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um die RCF herunterzuladen.
 .. Laden Sie die entsprechende Version der Bildsoftware herunter.
 +
-https://["Download-Seite für die Referenzkonfigurationsdatei für den Cisco Cluster- und Management-Netzwerk-Switch"^]
+https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Download-Seite für die Referenzkonfigurationsdatei für den Cisco Cluster- und Management-Netzwerk-Switch"^]
 
 
 
 . Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um die RCF herunterzuladen.
 . Bei den Nexus 3232C-Switches C1 und C2 deaktivieren Sie alle Ports C1 und C2 für Knoten, deaktivieren Sie aber nicht die ISL-Ports e1/31-32.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -218,7 +218,7 @@ C2(config)# exit
 `show port-channel summary`
 
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -256,7 +256,7 @@ Group Port-        Type   Protocol  Member Ports
 ====
 . Zeigen Sie die Liste der benachbarten Geräte auf dem Switch an.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen
@@ -424,7 +424,7 @@ Sie können sich auf die laufende Konfiguration beziehen und e4a mit dem nächst
 
 . Aktivieren Sie alle Ports, die an Knoten gerichtet sind, auf C1.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
 
 +
 .Beispiel anzeigen

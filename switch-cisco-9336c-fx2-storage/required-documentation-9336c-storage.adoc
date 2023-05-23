@@ -20,7 +20,7 @@ summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C
 
 == Switch-Dokumentation
 
-Zum Einrichten der Cisco Nexus 9336C-FX2-Switches benötigen Sie die folgende Dokumentation über das https://["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
+Zum Einrichten der Cisco Nexus 9336C-FX2-Switches benötigen Sie die folgende Dokumentation über das https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
 
 [cols="1,2"]
 |===
@@ -86,7 +86,7 @@ Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen f�
 
 == Dokumentation der ONTAP Systeme
 
-Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://["ONTAP 9 Dokumentationszentrum"^].
+Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 Dokumentationszentrum"^].
 
 [cols="1,2"]
 |===
@@ -108,7 +108,7 @@ Dieser Service bietet detaillierte Informationen zu allen Aspekten der ONTAP Ver
 
 
  a| 
-https://["Hardware Universe"^]
+https://hwu.netapp.com["Hardware Universe"^]
  a| 
 Liefert Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
 
@@ -125,7 +125,7 @@ Informationen zur Installation eines Cisco 9336-FX2 Switch in einem NetApp Rack 
 
 
  a| 
-https://["42-HE-System-Cabinet, Deep Guide"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMM1280394["42-HE-System-Cabinet, Deep Guide"^]
  a| 
 Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anweisungen für Wartung und FRU-Austausch.
 

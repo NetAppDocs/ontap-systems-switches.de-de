@@ -15,11 +15,11 @@ Bevor Sie die NX-OS-Software und die RCF-Datei (Reference Configuration File) in
 
 .Was Sie benötigen
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
-* Entsprechende Leitfäden für Software und Upgrades, die bei verfügbar sind https://["Switches Der Cisco Nexus 9000-Serie"^].
+* Entsprechende Leitfäden für Software und Upgrades, die bei verfügbar sind https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^].
 
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`. Siehe https://["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`. Siehe https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 

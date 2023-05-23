@@ -49,7 +49,7 @@ Bei den Cluster-Switches werden die folgenden Inter-Switch-Link-Ports (ISL) verw
 * BES-53248: 0/55–0/56 Ports (100 GbE)
 
 
-Der https://["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Cluster-Switches.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Cluster-Switches.
 
 
 
@@ -343,7 +343,7 @@ Ports   Timeout        Speed     Active
 ====
 . Entfernen Sie auf allen Knoten die Kabel, die am CN1610 Switch CL2 angeschlossen sind.
 +
-Anschließend müssen Sie die getrennten Ports auf allen Nodes wieder an den neuen BES-53248-Switch cs2 anschließen. Siehe https://["_NetApp Hardware Universe_"^] Für genehmigte Kabeloptionen.
+Anschließend müssen Sie die getrennten Ports auf allen Nodes wieder an den neuen BES-53248-Switch cs2 anschließen. Siehe https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Für genehmigte Kabeloptionen.
 
 . Entfernen Sie vier ISL-Kabel von den Ports 13 bis 16 am CN1610-Switch CL2.
 +
@@ -529,7 +529,7 @@ RPC status:
 ====
 . Entfernen Sie auf allen Knoten die Kabel, die am CN1610 Switch CL1 angeschlossen sind.
 +
-Anschließend müssen Sie die getrennten Ports auf allen Nodes wieder an den neuen BES-53248-Switch cs1 anschließen. Siehe https://["_NetApp Hardware Universe_"^] Für genehmigte Kabeloptionen.
+Anschließend müssen Sie die getrennten Ports auf allen Nodes wieder an den neuen BES-53248-Switch cs1 anschließen. Siehe https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Für genehmigte Kabeloptionen.
 
 . Entfernen Sie vier ISL-Kabel von den Ports 13 bis 16 bei BES-53248-Switch cs2.
 . Entfernen Sie den temporären Port-Kanal 2 auf cs2.

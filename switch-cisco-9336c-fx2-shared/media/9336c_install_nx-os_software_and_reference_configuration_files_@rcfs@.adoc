@@ -26,9 +26,9 @@ Vor der Installation der NX-OS Software und der RCF auf dem Cluster-Switch müss
 * Sie müssen die gewünschte Boot-Konfiguration im RCF aktiviert oder eingestellt haben, um die gewünschten Boot-Images zu reflektieren, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten.
 * Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
 * Sie müssen über eine Konsolenverbindung mit dem Switch verfügen, die bei der Installation des RCF erforderlich ist.
-* Sie müssen die Switch-Kompatibilitätstabelle auf der Cisco Ethernet Switch-Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen verwenden. Siehe https://["Cisco Ethernet-Switches"] Finden Sie weitere Informationen.
+* Sie müssen die Switch-Kompatibilitätstabelle auf der Cisco Ethernet Switch-Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen verwenden. Siehe https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Finden Sie weitere Informationen.
 * Es können Befehlsabhängigkeiten zwischen der Befehlssyntax im RCF und denen in Versionen von NX-OS zu finden sind.
-* Sie müssen in die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website verwiesen haben, um eine vollständige Dokumentation über die Upgrade- und Downgrade-Verfahren für Cisco Switches auf Switches der Nexus 9000-Serie zu erhalten. Siehe https://["Switches Der Cisco Nexus 9000-Serie"] Finden Sie weitere Informationen.
+* Sie müssen in die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website verwiesen haben, um eine vollständige Dokumentation über die Upgrade- und Downgrade-Verfahren für Cisco Switches auf Switches der Nexus 9000-Serie zu erhalten. Siehe https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html["Switches Der Cisco Nexus 9000-Serie"] Finden Sie weitere Informationen.
 * Sie müssen über den aktuellen RCF verfügen.
 
 
@@ -36,7 +36,7 @@ Vor der Installation der NX-OS Software und der RCF auf dem Cluster-Switch müss
 
 ===== Ersteinrichtung
 
-Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden je A400 Controller zwei 100-GbE-Cluster-Interconnect-Ports e3a und e3b. Siehe https://["Hardware Universe"] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden je A400 Controller zwei 100-GbE-Cluster-Interconnect-Ports e3a und e3b. Siehe https://hwu.netapp.com["Hardware Universe"] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
 
 
 NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
@@ -665,7 +665,7 @@ cs2#
 . Führen Sie eine grundlegende Einrichtung des Switches durch.
 
 
-. [[STEP 11]]Kopieren Sie den RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+. [[STEP 11]]Kopieren Sie den RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 +
 Dieses Beispiel zeigt, dass TFTP zum Kopieren eines RCF auf den Bootflash auf dem Switch cs2 verwendet wird.
 
@@ -680,7 +680,7 @@ Trying to connect to tftp server...Connection to Server Established.
 TFTP get operation was successful
 Copy complete, now saving to disk (please wait)...
 ----
-. [[steep12]]Anwenden des zuvor heruntergeladenen RCF auf den Bootflash. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+. [[steep12]]Anwenden des zuvor heruntergeladenen RCF auf den Bootflash. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 +
 Dieses Beispiel zeigt die RCF-Datei `Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt` Wird auf Schalter cs2 installiert.
 
@@ -744,7 +744,7 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 
 
 
@@ -1052,8 +1052,8 @@ Bevor Sie das RCF-Upgrade auf dem Storage-Switch durchführen, müssen die folge
 * Der Switch muss voll funktionsfähig sein (es dürfen keine Fehler in den Protokollen oder ähnlichen Problemen auftreten).
 * Sie müssen die gewünschten Boot-Variablen im RCF aktiviert oder eingestellt haben, um die gewünschten Boot-Images zu reflektieren, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten.
 * Wenn Sie die Boot-Variablen ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor der erneuten Anwendung der RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
-* Sie sind in die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website verwiesen, um eine vollständige Dokumentation über das Upgrade und das Downgrade von Cisco Storage zu erhalten. Siehe https://["Switches Der Cisco Nexus 9000-Serie"] Finden Sie weitere Informationen.
-* Die Anzahl der 100-GbE-Ports ist in den auf dem verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Cisco Ethernet Switches"] Seite.
+* Sie sind in die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website verwiesen, um eine vollständige Dokumentation über das Upgrade und das Downgrade von Cisco Storage zu erhalten. Siehe https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html["Switches Der Cisco Nexus 9000-Serie"] Finden Sie weitere Informationen.
+* Die Anzahl der 100-GbE-Ports ist in den auf dem verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switches"] Seite.
 
 
 
@@ -1252,7 +1252,7 @@ st2#
 ----
 . [[Schritt9]]Kopieren Sie den RCF auf Switch st2 mit einem der folgenden Übertragungsprotokolle auf den Switch Bootflash: FTP, HTTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 
 +
 Im folgenden Beispiel wird HTTP zum Kopieren eines RCF auf den Bootflash auf Switch st2 verwendet:
@@ -1339,7 +1339,7 @@ st2#
 ----
 . [[STE12]]Nachdem Sie die Richtigkeit der Softwareversionen und der Switch-Einstellungen überprüft haben, kopieren Sie die Running-config-Datei auf Switch st2 in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 
 +
 Das folgende Beispiel zeigt die `running-config` Datei erfolgreich in kopiert `startup-config` Datei:
@@ -1430,7 +1430,7 @@ In ONTAP 9.9 können Unternehmen mithilfe von Cisco Nexus 9336C-FX2 Switches Sto
 .Schritte
 . Kopieren Sie den RCF-ON-Switch sh2 mit einem der folgenden Übertragungsprotokolle auf den Switch Bootflash: FTP, HTTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 
 +
 Das folgende Beispiel zeigt, dass HTTP zum Kopieren eines RCF auf den Bootflash auf Switch sh2 verwendet wird:
@@ -1521,7 +1521,7 @@ sh2#
 ----
 . [[Schritt4]]Nachdem Sie sich vergewissern, dass die Softwareversionen und die Switch-Einstellungen korrekt sind, kopieren Sie den `running-config` Datei zur Start-config-Datei auf Switch sh2.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Series NX-OS Command Reference Guides"].
 
 +
 Das folgende Beispiel zeigt die `running-config` Datei erfolgreich in kopiert `startup-config` Datei:

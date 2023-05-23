@@ -43,7 +43,7 @@ Mit dem können Sie vier SFP+-Ports anstelle eines QSFP-Ports für Nexus 3132Q-V
 +
 Sie können die ersten sechs Ports mit dem in den 4x10 GbE-Modus eingliedern `interface breakout module 1 port 1-6 map 10g-4x` Befehl. Auf ähnliche Weise können Sie die ersten sechs QSFP+-Ports aus Breakout-Konfiguration mit dem neu gruppieren `no interface breakout module 1 port 1-6 map 10g-4x` Befehl.
 
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Referenzkonfigurationsdatei Für Cisco ® Cluster-Switch Herunterladen"^] Seite.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Referenzkonfigurationsdatei Für Cisco ® Cluster-Switch Herunterladen"^] Seite.
 
 
 .Was Sie benötigen
@@ -92,7 +92,7 @@ Dieses Verfahren umfasst folgende Szenarien:
 * n1_clus2 ist die erste Cluster-LIF, die für Node n1 mit Cluster-Switch C2 verbunden wird.
 * n2_clus1 ist die erste Cluster-LIF, die für Knoten n2 mit Cluster-Switch C1 verbunden wird.
 * n2_clus2 ist die zweite Cluster-LIF, die für Knoten n2 an Cluster-Switch C2 angeschlossen werden soll.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://["Referenzkonfigurationsdatei Für Cisco ® Cluster-Switch Herunterladen"^] Seite.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Referenzkonfigurationsdatei Für Cisco ® Cluster-Switch Herunterladen"^] Seite.
 
 
 [NOTE]

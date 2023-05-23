@@ -83,7 +83,7 @@ node2
 storage::*> system health alert show -instance
 There are no entries matching your query.
 ----
-. [[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe http://["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
+. [[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe http://9336c_install_nx-os_software_and_reference_configuration_files_@rcfs@.html#install-the-rcf-on-a-cisco-nexus-9336c-fx2-shared-switch["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
 . Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:
 `system health alert show -instance`
 
