@@ -2724,7 +2724,6 @@
   <block id="4752e78bc698f54fab2873241037c39c" category="paragraph"><block ref="fcc881d4787d31c185b073346f97b823" prefix="" category="inline-code"></block></block>
   <block id="70b9e8739fd0230a7cd09ad6e9a66421" category="list-text">Überprüfen Sie den Integritätsstatus der Speicher-Node-Ports erneut:</block>
   <block id="1baf7c89328f1d71632e29ad4a2dd59d" category="list-text">Vergewissern Sie sich, dass beide Switches verfügbar sind:</block>
-  <block id="b19d86e3bcfd68004760a31aa0fc60dc" category="paragraph"><block ref="fe962342e77ec6978df73d7fb900c057" prefix="" category="inline-code"></block></block>
   <block id="27803f93d64ef714eff37b87b316c9a1" category="paragraph">Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben. Der dokumentierte Prozess funktioniert bei allen Knoten über optische oder Twinax-Ports, wird bei diesem Switch jedoch nicht unterstützt, wenn Knoten integrierte 10GBASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.</block>
   <block id="4e0b0c304729caba210b437f828a40e7" category="paragraph">Bei der Konfiguration mit zwei Nodes ohne Switches stellen Sie Folgendes sicher:</block>
   <block id="7933d62e23b62e3165a85bc092d5b0d4" category="list-text">Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.</block>
@@ -4432,4 +4431,64 @@
   <block id="b8363a3557b5e1732a20eb45a96853b7" category="list-text">Bestätigen Sie, dass POAP beim nächsten erneuten Laden deaktiviert ist:</block>
   <block id="f306e2be0abd8aabfa0b014c372bbac8" category="list-text">Wiederholen Sie die Schritte 4 bis 11 am Schalter cs1.</block>
   <block id="256be937ef390f7d6dd71ad092869119" category="admonition">Verwenden Sie für ONTAP 9.8 und höher den Befehl<block ref="c57378c3b3bb81c6b42a2b31a30ddda7" prefix=" " category="inline-code"></block>.</block>
+  <block id="393a5f0f5f1f070aac964741815cca76" category="doc">Ersetzen Sie Broadcom BES-53248-Cluster-Switches durch Switch-lose Verbindungen</block>
+  <block id="a2ba7bf1b1a10d50fd13725865eabc47" category="list-text">Testen Sie die Funktion zur Erfassung des Switch-Protokolls:</block>
+  <block id="10b9ce0440e39e291f451f5b535309cd" category="summary">Sie können einen defekten NetApp CN1610 Cluster Switch unterbrechungsfrei ersetzen, indem Sie eine bestimmte Abfolge von Aufgaben durchführen.</block>
+  <block id="a1e78a31e3c2a02f46648b1bf5b89e82" category="doc">Ersetzen Sie einen NetApp CN1610 Cluster Switch</block>
+  <block id="66683ae2f7c6fa1c2c22df9a8db5475e" category="paragraph">Führen Sie diese Schritte aus, um einen defekten NetApp CN1610-Switch in einem Cluster-Netzwerk auszutauschen. Dies ist ein unterbrechungsfreies Verfahren (Nondisruptive Procedure, NDU).</block>
+  <block id="1f5b80c6e2ed11c7bd8290ed613ae1a2" category="paragraph">Bevor Sie den Switch austauschen, müssen die folgenden Bedingungen erfüllt sein, bevor Sie den Switch in der aktuellen Umgebung und am Ersatz-Switch für das vorhandene Cluster und die Netzwerkinfrastruktur austauschen:</block>
+  <block id="18277bdc1890285661ff31218ab7b9aa" category="list-text">Alle Cluster-Ports müssen *up* sein.</block>
+  <block id="f98de8b264564fc8efac53d61616a3a6" category="list-text">Alle logischen Cluster-Schnittstellen (LIFs) müssen aktiviert sein und dürfen nicht migriert worden sein.</block>
+  <block id="83ef6b033ea6f10bf71f6382d94020d8" category="list-text">Dem ONTAP Cluster<block ref="21228022de91fd069639d941562e2965" prefix=" " category="inline-code"></block> Befehl muss angeben, dass die grundlegende Konnektivität und die Kommunikation größer als PMTU auf allen Pfaden erfolgreich ist.</block>
+  <block id="40432eff026ac452f4c464796c22cad2" category="list-text">Die Namen der beiden CN1610 Cluster-Switches lauten<block ref="b12efe4e2b53de51a261421f77a3cbef" prefix=" " category="inline-code"></block> Und<block ref="43c8ce94d81492e62c60092a3664a65f" prefix=" " category="inline-code"></block>.</block>
+  <block id="a3f821e3cd7f17533bef9e520ea14552" category="list-text">Der Name des zu ersetzenden CN1610-Schalters (der defekte Schalter) lautet<block ref="a86ae6152b2b202f86bf7a5980821925" prefix=" " category="inline-code"></block>.</block>
+  <block id="70a4fcd6859b5065af184b992f2a90b5" category="list-text">Der Name des neuen CN1610-Schalters (der Ersatzschalter) lautet<block ref="3e9b9ae819a46f5f7f886bfb01bfafc3" prefix=" " category="inline-code"></block>.</block>
+  <block id="42791710cd5232be1ed51712d657545b" category="list-text">Der Name des Partner-Switches, der nicht ersetzt wird, lautet<block ref="43c8ce94d81492e62c60092a3664a65f" prefix=" " category="inline-code"></block>.</block>
+  <block id="cd831af3a25c38b31f51ceb27d65111f" category="list-text">Vergewissern Sie sich, dass die Startkonfigurationsdatei mit der ausgeführten Konfigurationsdatei übereinstimmt. Sie müssen diese Dateien lokal speichern, um sie während des Austauschs verwenden zu können.</block>
+  <block id="c4264c3f14ebe6d8561e3cf5acc1d741" category="paragraph">Die Konfigurationsbefehle im folgenden Beispiel gelten für FASTPATH 1.2.0.7:</block>
+  <block id="45826415166a6e211a2acb28e84357a9" category="list-text">Erstellen Sie eine Kopie der ausgeführten Konfigurationsdatei.</block>
+  <block id="c048a33c156955dc46f6908ab7d1b4d8" category="paragraph">Der Befehl im folgenden Beispiel ist für FASTPATH 1.2.0.7:</block>
+  <block id="de99beb6ca92a5a94725134af11c8df3" category="admonition">Sie können jeden Dateinamen außer verwenden<block ref="269125eef7a6ed8a576f381402d71c00" prefix=" " category="inline-code"></block>. Der Dateiname muss die Erweiterung *.SCR* haben.</block>
+  <block id="c3e4e0f5814f326b33a9db1d9a1860c0" category="list-text">[[step3]]Speichern Sie die laufende Konfigurationsdatei des Switches auf einem externen Host, um den Austausch vorzubereiten.</block>
+  <block id="d8442364ffcbb22977e4d9c52e73b57a" category="list-text">Überprüfen Sie, ob die Switch- und ONTAP-Versionen in der Kompatibilitätsmatrix übereinstimmen. Siehe<block ref="fbc4dc59d397fb80fe60d1631a99b30c" category="inline-link-rx"></block> Für Details.</block>
+  <block id="8b0dd634e752838755fd13d129cbf10e" category="inline-link">Seite „Software-Downloads“</block>
+  <block id="b597e505404c69895e6ae5d6c947f299" category="list-text">Von<block ref="3785e6528c27a2098021814637bc462a" category="inline-link-rx"></block> Wählen Sie auf der NetApp Support Website NetApp Cluster Switches aus, um die entsprechenden RCF- und FASTPATH-Versionen herunterzuladen.</block>
+  <block id="543af457f6c3336d817218e084e17ad6" category="list-text">Richten Sie einen TFTP-Server (Trivial File Transfer Protocol) mit DER FASTPATH-, RCF- und gespeicherten Konfiguration ein<block ref="e9f6316b4b0161f7581dee64491a28dd" prefix=" " category="inline-code"></block> Datei zur Verwendung mit dem neuen Switch.</block>
+  <block id="0b370ae1e85c411b2432a8dd68539928" category="list-text">Verbinden Sie den seriellen Port (der RJ-45-Anschluss mit der Bezeichnung „IOIOIOI“ auf der rechten Seite des Switches) mit einem verfügbaren Host mit Terminalemulation.</block>
+  <block id="fdc083ea424ff6a805eb16cc6278c425" category="list-text">Stellen Sie auf dem Host die Einstellungen für die serielle Terminalverbindung ein:</block>
+  <block id="653e244c5d7d92e4099ddeea36e49c83" category="list-text">Bereiten Sie sich auf die Netzwerkverbindung mit dem TFTP-Server vor.</block>
+  <block id="eced0a01e57d421422879b818ddbc655" category="paragraph">Wenn Sie DHCP (Dynamic Host Configuration Protocol) verwenden, müssen Sie derzeit keine IP-Adresse für den Switch konfigurieren. Der Service-Port ist standardmäßig auf DHCP eingestellt. Der Netzwerkverwaltungsport ist für die IPv4- und IPv6-Protokolleinstellungen auf none festgelegt. Wenn der Schlüsselport mit einem Netzwerk verbunden ist, das über einen DHCP-Server verfügt, werden die Servereinstellungen automatisch konfiguriert.</block>
+  <block id="044ec168f671f2601806847445bfa01f" category="paragraph">Um eine statische IP-Adresse festzulegen, sollten Sie die befehle serviceport-Protokoll, Netzwerkprotokoll und serviceport ip verwenden.</block>
+  <block id="dc293c5866c77ae15aca96b85fcb77e6" category="list-text">Wenn sich der TFTP-Server auf einem Laptop befindet, schließen Sie den CN1610-Switch optional über ein Standard-Ethernet-Kabel an den Laptop an, und konfigurieren Sie dann den Netzwerkanschluss im gleichen Netzwerk mit einer alternativen IP-Adresse.</block>
+  <block id="b89dbda9007c12ba6185e044bc81949f" category="paragraph">Sie können das verwenden<block ref="df911f0151f9ef021d410b4be5060972" prefix=" " category="inline-code"></block> Befehl zum Verifizieren der Adresse. Wenn Sie die Verbindung nicht herstellen können, sollten Sie ein nicht geroutetes Netzwerk verwenden und den Service-Port mit IP 192.168.x oder 172.16.x konfigurieren Sie können den Service-Port zu einem späteren Zeitpunkt auf die Produktions-Management-IP-Adresse neu konfigurieren.</block>
+  <block id="b6254715be58b48ae4db50dd9fc31130" category="list-text">Überprüfen und installieren Sie optional die entsprechenden Versionen der RCF- und FASTPATH-Software für den neuen Switch. Wenn Sie überprüft haben, ob der neue Switch korrekt eingerichtet ist und keine Updates für die RCF- und FASTPATH-Software erforderlich sind, fahren Sie mit Schritt 13 fort.</block>
+  <block id="7a1bfd4690df6818c8dc387281d627ed" category="list-text">Überprüfen Sie die neuen Schaltereinstellungen.</block>
+  <block id="3ead3b3c8f520426f6d28b91165e4d04" category="list-text">Laden Sie den RCF auf den neuen Switch herunter.</block>
+  <block id="72825f9b72f9339979ca72becca7f71a" category="list-text">Stellen Sie sicher, dass der RCF auf den Switch heruntergeladen wurde.</block>
+  <block id="999d6ca910b9a02c83e6b39776ceedec" category="list-text">Den RCF auf den CN1610-Schalter auftragen.</block>
+  <block id="026fe9123f8f00bf5dbeb680d5c7798a" category="list-text">Speichern Sie die laufende Konfigurationsdatei, damit sie beim Neustart des Switches zur Startkonfigurationsdatei wird.</block>
+  <block id="97e20e2f0ef3427615572f54f429eddf" category="list-text">Laden Sie das Bild auf den Switch CN1610 herunter.</block>
+  <block id="3624b5e5cc6ddec75e62434e2a31ad65" category="list-text">Führen Sie das neue aktive Startabbild durch, indem Sie den Switch neu starten.</block>
+  <block id="5e5e17a51764aae8ce901f8404dfc149" category="paragraph">Der Switch muss neu gestartet werden, damit der Befehl in Schritt 6 das neue Image widerspiegelt. Es gibt zwei mögliche Ansichten für eine Antwort, die Sie nach Eingabe des Befehls reload möglicherweise sehen werden.</block>
+  <block id="62692b2ca653dbb46bb2be739ec25eca" category="list-text">Kopieren Sie die gespeicherte Konfigurationsdatei vom alten Switch auf den neuen Switch.</block>
+  <block id="de9c3c21ee744efbe0e9dc92d2f3f8fa" category="list-text">Wenden Sie die zuvor gespeicherte Konfiguration auf den neuen Switch an.</block>
+  <block id="19f3f611402ea405c73eff978db54c04" category="list-text">Speichern Sie die laufende Konfigurationsdatei in der Startkonfigurationsdatei.</block>
+  <block id="e34c68a3be46c36d4217182cacd9c5ed" category="list-text">Melden Sie sich beim neuen Switch New_cs1 als Admin-Benutzer an, und fahren Sie alle Ports herunter, die mit den Node-Cluster-Schnittstellen (Ports 1 bis 12) verbunden sind.</block>
+  <block id="c941b6ce2e4c24df909851b245a02a61" category="list-text">Migrieren Sie die Cluster-LIFs von den Ports, die mit dem Switch old_cs1 verbunden sind.</block>
+  <block id="4b1a908211784f472e4bd00126eca670" category="paragraph">Sie müssen jede LIF des Clusters von der Managementoberfläche des aktuellen Node migrieren.</block>
+  <block id="86549eb17e74fde8019bc78ee455f2f9" category="list-text">Vergewissern Sie sich, dass alle Cluster-LIFs auf den entsprechenden Cluster-Port auf jedem Node verschoben wurden.</block>
+  <block id="6699d1ca219ee05fb31767f9ee4390f7" category="list-text">Fahren Sie die Cluster-Ports herunter, die an den Switch angeschlossen sind, den Sie ausgetauscht haben.</block>
+  <block id="3733adcf3b4da74ba9d591ecbad96807" category="list-text">Überprüfen Sie den Systemzustand des Clusters.</block>
+  <block id="37d0e47b916b9fc27dd90cc97fc17772" category="list-text">Vergewissern Sie sich, dass die Ports ausgefallen sind.</block>
+  <block id="bad00619b1d5dd1b493aa019cb159e27" category="list-text">Fahren Sie auf dem Switch cs2 die ISL-Ports 13 bis 16 herunter.</block>
+  <block id="15eb5a489e20c8cf8725dc5b810b0c97" category="list-text">Überprüfen Sie, ob der Speicheradministrator für den Austausch des Switches bereit ist.</block>
+  <block id="e1d368bc1401944984beccd9e88393a4" category="list-text">Entfernen Sie alle Kabel vom Switch old_cs1, und schließen Sie dann die Kabel an dieselben Ports am Switch New_cs1 an.</block>
+  <block id="6e37f912363babbe2006b55d57ad6d78" category="list-text">Aktivieren Sie auf dem cs2-Switch die ISL-Ports 13 bis 16.</block>
+  <block id="6ce486621cb8c46471908d6225196077" category="list-text">Aktivieren Sie die Ports auf dem neuen Switch, der den Clusterknoten zugeordnet ist.</block>
+  <block id="68399f85a753831d967234dab3cd5b35" category="list-text">Rufen Sie auf einem einzelnen Node den Clusterknoten-Port auf, der mit dem ausgetauschten Switch verbunden ist, und bestätigen Sie anschließend, dass die Verbindung hergestellt ist.</block>
+  <block id="b19024cd31c9de6e6498dddd23993117" category="list-text">Setzen Sie die Cluster-LIFs zurück, die dem Port in Schritt 25 auf demselben Node zugeordnet sind.</block>
+  <block id="1a087f1b105982e5c8b2694ba1b674f3" category="paragraph">In diesem Beispiel werden die LIFs auf node1 erfolgreich zurückgesetzt, wenn die Spalte „is Home“ den Wert „true“ lautet.</block>
+  <block id="b047f062da383f17811a9e72a79d23f4" category="list-text">Wenn die Cluster-LIF des ersten Node hochgefahren ist und auf den Home Port zurückgesetzt wird, wiederholen Sie die Schritte 25 und 26, um die Cluster-Ports hochzuschalten und die Cluster-LIFs auf den anderen Nodes im Cluster zurückzusetzen.</block>
+  <block id="31c3fc1c4fe98b31f2904808ddd9be0b" category="list-text">Zeigt Informationen zu den Nodes im Cluster an.</block>
+  <block id="bf1b3c61d401b2f6c4dbbf5853555319" category="list-text">Vergewissern Sie sich, dass die Startkonfigurationsdatei und die laufende Konfigurationsdatei auf dem ersetzten Switch korrekt sind. Diese Konfigurationsdatei sollte mit der Ausgabe in Schritt 1 übereinstimmen.</block>
 </blocks>
