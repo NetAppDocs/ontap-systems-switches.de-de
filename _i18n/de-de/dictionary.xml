@@ -391,7 +391,6 @@
   <block id="1b75649d1b9ec0a73e309fd9b384b32a" category="list-text">Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.</block>
   <block id="00b63ac8e15bb57e7478f589f0b65a54" category="list-text">Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs.</block>
   <block id="5567fb27456995b9005b168c9dd39c7e" category="list-text">Fahren Sie beim Cluster-Switch cs2 die mit den Cluster-Ports der Nodes verbundenen Ports herunter.</block>
-  <block id="3f8f6d237f18036be3a3fb24642d16ba" category="list-text">Wenn Sie dies noch nicht getan haben, speichern Sie die aktuelle Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Protokolldatei kopieren:</block>
   <block id="9c730a9c4f4050cfce1db6d8dec1413d" category="list-text">Reinigen Sie die Konfiguration am Schalter cs2, und führen Sie eine grundlegende Einrichtung durch.</block>
   <block id="1504cf88a17b3708e24bb6d08d1219aa" category="list-text">Reinigen Sie die Konfiguration. Dieser Schritt erfordert eine Konsolenverbindung mit dem Switch.</block>
   <block id="a60e6126941c3f2e1aeab2b7f1fd5da6" category="list-text">Führen Sie eine grundlegende Einrichtung des Switches durch.</block>
@@ -4423,12 +4422,7 @@
   <block id="7d829570fe05df690649474b2bb97a3b" category="image-alt">Verbindungskabel für Clusterknoten wurden auf den cs1-New-Switch verlegt</block>
   <block id="ec5ea2f0318e4d906c296f5576b9c026" category="list-text">[[step6]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
   <block id="0429fa776d68090e46718ac7e32390ef" category="admonition">Verwenden Sie für EFOS Version 3.10.0.3 und höher den Befehl<block ref="c09633a606c51a161b16f8bf38f5ebb1" prefix=" " category="inline-code"></block>.</block>
-  <block id="455129a1d85d80f79e8d763a25910c74" category="admonition">Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Der SSH-Switch-Zugriff bleibt erhalten, wenn Sie PowerOn Auto Provisioning (POAP) deaktivieren können (NX-OS 9.2P1 oder höher erforderlich). Stellen Sie als zusätzliche Vorsichtsmaßnahme eine Verbindung mit dem Switch über die serielle Konsole her, wenn der SSH-Zugriff nach dem Neustart des Switches nicht möglich ist.</block>
   <block id="2df26e386d021172b261bcb47e157019" category="list-text">Konfiguration bereinigen:</block>
-  <block id="a5247127c3e0a3fcdf9f80746c33cb54" category="list-text">POAP deaktivieren:</block>
-  <block id="b64ae68f672b168b4456ea13b494a759" category="inline-link">Verwenden von PowerOn Auto Provisioning</block>
-  <block id="01197fee3250d671fd8c51972b5f4745" category="paragraph">Siehe<block ref="ff53901c2c0b0d51a17df0925879b1a5" category="inline-link-rx"></block> Entnehmen.</block>
-  <block id="b8363a3557b5e1732a20eb45a96853b7" category="list-text">Bestätigen Sie, dass POAP beim nächsten erneuten Laden deaktiviert ist:</block>
   <block id="f306e2be0abd8aabfa0b014c372bbac8" category="list-text">Wiederholen Sie die Schritte 4 bis 11 am Schalter cs1.</block>
   <block id="256be937ef390f7d6dd71ad092869119" category="admonition">Verwenden Sie für ONTAP 9.8 und höher den Befehl<block ref="c57378c3b3bb81c6b42a2b31a30ddda7" prefix=" " category="inline-code"></block>.</block>
   <block id="393a5f0f5f1f070aac964741815cca76" category="doc">Ersetzen Sie Broadcom BES-53248-Cluster-Switches durch Switch-lose Verbindungen</block>
@@ -4491,4 +4485,7 @@
   <block id="b047f062da383f17811a9e72a79d23f4" category="list-text">Wenn die Cluster-LIF des ersten Node hochgefahren ist und auf den Home Port zurückgesetzt wird, wiederholen Sie die Schritte 25 und 26, um die Cluster-Ports hochzuschalten und die Cluster-LIFs auf den anderen Nodes im Cluster zurückzusetzen.</block>
   <block id="31c3fc1c4fe98b31f2904808ddd9be0b" category="list-text">Zeigt Informationen zu den Nodes im Cluster an.</block>
   <block id="bf1b3c61d401b2f6c4dbbf5853555319" category="list-text">Vergewissern Sie sich, dass die Startkonfigurationsdatei und die laufende Konfigurationsdatei auf dem ersetzten Switch korrekt sind. Diese Konfigurationsdatei sollte mit der Ausgabe in Schritt 1 übereinstimmen.</block>
+  <block id="d23e0ef648ea8ae58d49d4170d37c221" category="list-text">Wenn Sie dies noch nicht getan haben, speichern Sie eine Kopie der aktuellen Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Textdatei kopieren:</block>
+  <block id="0fb51802ddab454289d99db889475b22" category="admonition">Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten.</block>
+  <block id="a91911d2b8a6bd2699aa77eb38d533f1" category="paragraph">Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokumentation von Broadcom.</block>
 </blocks>
