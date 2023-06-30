@@ -36,6 +36,8 @@ entries:
     url: "/switch-cisco-9336c-fx2/install-nxos-rcf-9336c-cluster.html"
 - title: Switches migrieren
   entries:
+  - title: Migration von CN1610 Cluster Switches
+    url: "/switch-cisco-9336c-fx2/migrate-cn1610-9336c-cluster.html"
   - title: Migrieren Sie von einem älteren Cisco Switch
     url: "/switch-cisco-9336c-fx2/migrate-to-9336-cluster.html"
   - title: Migration auf Cluster mit zwei Nodes
