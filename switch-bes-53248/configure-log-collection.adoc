@@ -16,18 +16,11 @@ Sie können die Protokollerfassungsfunktion verwenden, um Switch-bezogene Protok
 
 IMPORTANT: Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP Version 9.12.1 und höher sowie EFOS 3.8.0.2 und höher ausführen.
 
-Stellen Sie sicher, dass Sie Ihre Umgebung mit dem BES-53248 Cluster Switch *CLI* eingerichtet haben.
+Stellen Sie sicher, dass Sie Ihre Umgebung mit dem BES-53248 Cluster Switch * CLI* eingerichtet haben.
 
 .Schritte
-. Aktivieren Sie die Protokollerfassungsfunktion für die Statusüberwachung des Ethernet-Switches, um Switch-bezogene Protokolldateien mithilfe der folgenden Befehle zu erfassen:
-+
-`system switch ethernet log setup-password` Und
-
-+
-`system switch ethernet log enable-collection`
-
-+
-.. Geben Sie Ein: `system switch ethernet log setup-password`
+. Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung:
+`system switch ethernet log setup-password`
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -44,8 +37,7 @@ Choose from the following list:
 cluster1::*> *system switch ethernet log setup-password*
 
 Enter the switch name: *cs1*
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] *y*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
 
 Enter the password: *<enter switch password>*
 Enter the password again: *<enter switch password>*
@@ -53,61 +45,46 @@ Enter the password again: *<enter switch password>*
 cluster1::*> *system switch ethernet log setup-password*
 
 Enter the switch name: *cs2*
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] *y*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
 
 Enter the password: *<enter switch password>*
 Enter the password again: *<enter switch password>*
 ----
 ====
-.. Geben Sie Ein: `system switch ethernet log enable-collection`
+. Aktivieren Sie die Funktion zur Statusüberwachung des Ethernet-Switches.
++
+`system switch ethernet log modify -device _<switch-name>_ -log-request true`
+
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *system  switch ethernet log enable-collection*
+cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
 
-Do you want to enable cluster log collection for all nodes in the cluster?
-{y|n}: [n] *y*
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
 
 Enabling cluster switch log collection.
 
-cluster1::*>
+cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
 ----
 ====
-
-
-. Initiieren der Switch-Protokollerfassung:
 +
-`system switch ethernet log collect -device *`
-
-+
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung erfolgreich war mit dem folgenden Befehl:
+Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung mit dem folgenden Befehl abgeschlossen ist:
 
 +
 `system switch ethernet log show`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> system switch ethernet log show
-Log Collection Enabled: true
 
-Index  Switch                       Log Timestamp        Status
------- ---------------------------- -------------------  ---------
-1      cs1 (b8:ce:f6:19:1b:42)      4/29/2022 03:05:25   complete
-2      cs2 (b8:ce:f6:19:1b:96)      4/29/2022 03:07:42   complete
-----
+CAUTION: Wenn einer dieser Befehle einen Fehler zurückgibt oder die Protokollsammlung nicht abgeschlossen ist, wenden Sie sich an den NetApp Support.
 
-CAUTION: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetApp Support.
+
 
 .Was kommt als Nächstes?
 Wenn Sie den Switch aktualisieren, gehen Sie zu link:replace-verify.html["Upgrade-Konfiguration überprüfen"].
-
-====
-
