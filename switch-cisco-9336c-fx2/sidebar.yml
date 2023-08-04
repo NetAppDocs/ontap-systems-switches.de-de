@@ -3,6 +3,7 @@ section: switch-cisco-9336c-fx2
 title: Cisco Nexus 9336C-FX2
 entries:
 - title: Überblick
+  pdf-filename: Übersicht_9336c-fx2
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html"
@@ -15,6 +16,7 @@ entries:
   - title: Anforderungen für Smart Call Home
     url: "/switch-cisco-9336c-fx2/smart-call-9336c-cluster.html"
 - title: Hardware installieren
+  pdf-filename: Install_Hardware_9336c-fx2
   entries:
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-9336c-fx2/setup-worksheet-9336c-cluster.html"
@@ -25,6 +27,7 @@ entries:
   - title: Switch in NetApp-Schrank einbauen
     url: "/switch-cisco-9336c-fx2/install-switch-and-passthrough-panel-9336c-cluster.html"
 - title: Software konfigurieren
+  pdf-filename: Configure_Software_9336c-fx2
   entries:
   - title: Workflow für die Softwareinstallation
     url: "/switch-cisco-9336c-fx2/configure-software-overview-9336c-cluster.html"
@@ -35,6 +38,7 @@ entries:
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2/install-nxos-rcf-9336c-cluster.html"
 - title: Switches migrieren
+  pdf-filename: Migrate_Switches_9336c-fx2
   entries:
   - title: Migration von CN1610 Cluster Switches
     url: "/switch-cisco-9336c-fx2/migrate-cn1610-9336c-cluster.html"
@@ -43,6 +47,7 @@ entries:
   - title: Migration auf Cluster mit zwei Nodes
     url: "/switch-cisco-9336c-fx2/migrate-to-2n-switched-9336-cluster.html"
 - title: Tauschen Sie die Schalter aus
+  pdf-filename: Replace_Switches_9336c-fx2
   entries:
   - title: Cluster-Switch austauschen
     url: "/switch-cisco-9336c-fx2/replace-9336c-cluster.html"

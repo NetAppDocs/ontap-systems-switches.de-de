@@ -3,6 +3,7 @@ section: switch-nvidia-sn2100-storage
 title: NVIDIA SN2100
 entries:
 - title: Überblick
+  pdf-filename: Overview_sn2100-Storage
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-nvidia-sn2100/configure-overview-sn2100-storage.html"
@@ -13,6 +14,7 @@ entries:
   - title: Erforderliche Dokumentation
     url: "/switch-nvidia-sn2100/required-documentation-sn2100-storage.html"
 - title: Hardware installieren
+  pdf-filename: Install_Hardware_sn2100-Storage
   entries:
   - title: Installieren Sie den Schalter
     url: "/switch-nvidia-sn2100/install-hardware-sn2100-storage.html"
@@ -23,6 +25,7 @@ entries:
   - title: Kabel NS224-Einschübe
     url: "/switch-nvidia-sn2100/install-cable-shelves-sn2100-storage.html"
 - title: Software konfigurieren
+  pdf-filename: Configure_Software_sn2100-Storage
   entries:
   - title: Workflow für die Softwareinstallation
     url: "/switch-nvidia-sn2100/configure-software-sn2100-storage.html"
@@ -35,8 +38,10 @@ entries:
   - title: Konfigurieren Sie die Switch-Protokollerfassung
     url: "/switch-nvidia-sn2100/install-snmpv3-sn2100-storage.html"
 - title: Switches migrieren
+  pdf-filename: Migrate_Switches_sn2100-Storage
   entries:
   - title: Migration von Cisco Storage Switches
     url: "/switch-nvidia-sn2100/migrate-cisco-storage-switch-sn2100-storage.html"
 - title: Schalter austauschen
+  pdf-filename: Ersetzt_Switch_sn2100-Storage
   url: "/switch-nvidia-sn2100/replace-sn2100-switch-storage.html"

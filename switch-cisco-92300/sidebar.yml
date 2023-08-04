@@ -3,6 +3,7 @@ section: switch-cisco-92300
 title: Cisco Nexus 92300YC
 entries:
 - title: Überblick
+  pdf-filename: Übersicht_92300yc
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-cisco-92300/install-overview-cisco-92300.html"
@@ -15,12 +16,14 @@ entries:
   - title: Anforderungen für Smart Call Home
     url: "/switch-cisco-92300/smart-call-home-92300.html"
 - title: Hardware installieren
+  pdf-filename: Install_Hardware_92300yc
   entries:
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-92300/setup-worksheet-92300yc.html"
   - title: Konfigurieren Sie den Switch
     url: "/switch-cisco-92300/configure-install-initial.html"
 - title: Software konfigurieren
+  pdf-filename: Configure_Software_92300yc
   entries:
   - title: Bereiten Sie sich auf die Installation von NX-OS und RCF vor
     url: "/switch-cisco-92300/install-nxos-overview.html"
@@ -31,12 +34,14 @@ entries:
   - title: Installieren Sie CSHM
     url: "/switch-cisco-92300/setup-install-cshm-file.html"
 - title: Switches migrieren
+  pdf-filename: Migrate_Switches_92300yc
   entries:
   - title: Migration auf Cluster mit zwei Nodes
     url: "/switch-cisco-92300/migrate-to-2n-switched.html"
   - title: Migrieren Sie von einem älteren Cisco Switch
     url: "/switch-cisco-92300/migrate-to-92300yc.html"
 - title: Tauschen Sie die Schalter aus
+  pdf-filename: Replace_Switches_92300yc
   entries:
   - title: Schalter austauschen
     url: "/switch-cisco-92300/replace-92300yc.html"

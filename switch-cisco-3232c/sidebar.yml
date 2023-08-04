@@ -3,6 +3,7 @@ section: switch-cisco-3232c
 title: Cisco Nexus 3232C
 entries:
 - title: Überblick
+  pdf-filename: Übersicht_3232c
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-cisco-3232c/install-overview-cisco-3232c.html"
@@ -13,6 +14,7 @@ entries:
   - title: Anforderungen für Smart Call Home
     url: "/switch-cisco-3232c/smart-call-home-3232c.html"
 - title: Hardware installieren
+  pdf-filename: Install_Hardware_3232c
   entries:
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-3232c/setup_worksheet_3232c.html"
@@ -21,6 +23,7 @@ entries:
   - title: Switch in NetApp-Schrank einbauen
     url: "/switch-cisco-3232c/install-cisco-nexus-3232c.html"
 - title: Software konfigurieren
+  pdf-filename: Configure_Software_3232c
   entries:
   - title: Bereiten Sie sich auf die Installation von NX-OS und RCF vor
     url: "/switch-cisco-3232c/prepare-install-cisco-nexus-3232c.html"
@@ -29,6 +32,7 @@ entries:
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-3232c/install-rcf-3232c.html"
 - title: Switches migrieren
+  pdf-filename: Migrate_Switches_3232c
   entries:
   - title: Migrationsanforderungen
     url: "/switch-cisco-3232c/migrate-requirements-3232c.html"
@@ -39,6 +43,7 @@ entries:
   - title: Migrieren Sie von einem Cluster mit zwei Nodes ohne Switches
     url: "/switch-cisco-3232c/migrate-from-two-node-switchless-cluster.html"
 - title: Tauschen Sie die Schalter aus
+  pdf-filename: Replace_Switches_3232c
   entries:
   - title: Cluster-Switch austauschen
     url: "/switch-cisco-3232c/replace-cluster-switch.html"
@@ -47,4 +52,5 @@ entries:
   - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
     url: "/switch-cisco-3232c/migrate-to-switchless-cluster-interconnect.html"
 - title: Aktualisieren der Switches
+  pdf-filename: Upgrade_Switches_3232c
   url: "/switch-cisco-3232c/upgrade-3232c-storage-switches.html"

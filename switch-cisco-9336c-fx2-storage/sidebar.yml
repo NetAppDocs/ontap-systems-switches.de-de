@@ -3,6 +3,7 @@ section: switch-cisco-9336c-fx2-storage
 title: Cisco Nexus 9336C-FX2
 entries:
 - title: Überblick
+  pdf-filename: Overview_9336c-fx2-Speicher
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-cisco-9336c-fx2-storage/configure-switch-overview-9336c-storage.html"
@@ -15,6 +16,7 @@ entries:
   - title: Anforderungen für Smart Call Home
     url: "/switch-cisco-9336c-fx2-storage/smart-call-9336c-storage.html"
 - title: Hardware installieren
+  pdf-filename: Install_Hardware_9336c-fx2-Speicher
   entries:
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-9336c-fx2-storage/setup-worksheet-9336c-storage.html"
@@ -25,6 +27,7 @@ entries:
   - title: Switch in NetApp-Schrank einbauen
     url: "/switch-cisco-9336c-fx2-storage/install-switch-and-passthrough-panel-9336c-storage.html"
 - title: Software konfigurieren
+  pdf-filename: Configure_Software_9336c-fx2-Storage
   entries:
   - title: Workflow für die Softwareinstallation
     url: "/switch-cisco-9336c-fx2-storage/configure-software-overview-9336c-storage.html"
@@ -35,10 +38,12 @@ entries:
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-rcf-9336c-storage.html"
 - title: Switches migrieren
+  pdf-filename: Migrate_Switches_9336c-fx2-Speicher
   entries:
   - title: Migrieren Sie von einem älteren Cisco Switch
     url: "/switch-cisco-9336c-fx2-storage/migrate-to-9336-storage.html"
   - title: Migration auf Cluster mit zwei Nodes
     url: "/switch-cisco-9336c-fx2-storage/migrate-to-2n-switched-9336-storage.html"
 - title: Storage-Switch austauschen
+  pdf-filename: Replace_Switch_9336c-fx2-Speicher
   url: "/switch-cisco-9336c-fx2-storage/replace-storage-switch-9336c-storage.html"

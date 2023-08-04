@@ -3,6 +3,7 @@ section: switch-cisco-9336c-fx2-shared
 title: Cisco Nexus 9336C-FX2
 entries:
 - title: Überblick
+  pdf-filename: Overview_9336c-fx2-shared
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html"
@@ -13,6 +14,7 @@ entries:
   - title: Erforderliche Dokumentation
     url: "/switch-cisco-9336c-fx2-shared/required-documentation-9336c-shared.html"
 - title: Hardware installieren
+  pdf-filename: Install_Hardware_9336c-fx2-gemeinsam genutzt
   entries:
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-9336c-fx2-shared/cable-9336c-shared.html"
@@ -23,6 +25,7 @@ entries:
   - title: Switch in NetApp-Schrank einbauen
     url: "/switch-cisco-9336c-fx2-shared/install-switch-and-passthrough-panel-9336c-shared.html"
 - title: Software konfigurieren
+  pdf-filename: Configure_Software_9336c-fx2-shared
   entries:
   - title: Workflow für die Softwareinstallation
     url: "/switch-cisco-9336c-fx2-shared/configure-software-overview-9336c-shared.html"
@@ -33,6 +36,7 @@ entries:
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2-shared/install-nxos-rcf-9336c-shared.html"
 - title: Switches migrieren
+  pdf-filename: Migrate_Switches_9336c-fx2-shared
   entries:
   - title: Migrieren Sie von einem das-Cluster ohne Switches
     url: "/switch-cisco-9336c-fx2-shared/migrate-from-switchless-cluster-dat-storage.html"
@@ -43,4 +47,5 @@ entries:
   - title: Migrieren Sie vom geswitchten SAT-Cluster
     url: "/switch-cisco-9336c-fx2-shared/migrate-from-switched-cluster-sat-storage.html"
 - title: Tauschen Sie die Schalter aus
+  pdf-filename: Replace_Switches_9336c-fx2-shared
   url: "/switch-cisco-9336c-fx2-shared/replace-9336c-fx2-shared.html"
