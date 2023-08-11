@@ -4501,8 +4501,6 @@
   <block id="55c09ca9257750665c75e5b587165519" category="paragraph"><block ref="e802bd77f148cffa22d9aa9e7d79d65d" prefix="" category="inline-code"></block></block>
   <block id="e1d0dd82b8f2058c2b4c4d59c2f80125" category="paragraph">Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung mit dem folgenden Befehl abgeschlossen ist:</block>
   <block id="0eedc6e86bf0684694a5f74d12cd17d7" category="admonition">Wenn einer dieser Befehle einen Fehler zurückgibt oder die Protokollsammlung nicht abgeschlossen ist, wenden Sie sich an den NetApp Support.</block>
-  <block id="cada8434ff5f9181d7ae07ce2a2c1336" category="list-text">Einige der Ports auf BES-53248-Switches sind für 10-GbE- oder 40-GbE-Betrieb konfiguriert.</block>
-  <block id="9b8afb051b3fda2a9f3dcd0edcc95d79" category="list-text">Die 10GbE- und 40-GbE-Konnektivität von den Nodes zu BES-53248-Cluster-Switches wurde geplant, migriert und dokumentiert.</block>
   <block id="df3b6dd54dfaeb972568b29147c67103" category="list-text">Die erste Anpassung der BES-53248-Switches ist abgeschlossen, so dass:</block>
   <block id="8f7a04d5740dbba56b463f7bc775e27a" category="list-text">BES-53248-Switches verwenden die neueste empfohlene Version der EFOS-Software.</block>
   <block id="2f16d56c4dbd9373c09b2be5c94c8c4a" category="list-text">NetApp CN1610: Ports 0/1 bis 0/12 (10 GbE)</block>
@@ -4513,24 +4511,16 @@
   <block id="10eb67b70ef8150836466766bdd3f2f8" category="list-text">Zeigen Sie die Cluster-Ports auf jedem Node an, der mit den vorhandenen Cluster-Switches verbunden ist:</block>
   <block id="fc7a60af0bed9304a4ca478877f91450" category="list-text">Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Mit einem<block ref="741839f346d6e8126ae38ee76a96fd12" prefix=" " category="inline-code"></block> Status:</block>
   <block id="0be9e89f86499b3770f2ce9bad1ba0eb" category="list-text">[[step5]]Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs.</block>
-  <block id="04b62972586827d401a3dea129d172c9" category="list-text">Fahren Sie bei Cluster-Switch CL1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind:</block>
   <block id="d9f832c61b11e8d4b59ef0ae25ac9dd6" category="list-text">Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert haben, die auf dem Cluster-Switch CL1 gehostet werden. Dies kann einige Sekunden dauern.</block>
-  <block id="eba3ff5e6602b380a875b5adacf6e6fd" category="list-text">Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten CS2-Switch auf den neuen cs2-Switch.</block>
   <block id="8884e29d4b490f2084dae5227ca847a4" category="list-text">Bestätigen Sie den Funktionszustand der Netzwerkverbindungen, die zu cs2 verschoben wurden:</block>
   <block id="308cecb0e156959b9d08b434ef110588" category="paragraph">Es sollten alle verschobenen Cluster-Ports verwendet werden<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>.</block>
-  <block id="e2a6925a1c6094f573b02dac570783d1" category="list-text">Bestätigen Sie die Switch-Port-Verbindungen aus der Perspektive des Switch cs2 mit folgenden Befehlen:</block>
-  <block id="ad38a12ff64b2cba000c16daea86aee6" category="list-text">Fahren Sie bei Cluster-Switch CL2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind.</block>
   <block id="48281ee704bfb0f055c15fe754705f5a" category="paragraph">Alle Cluster-LIFs werden zum cs2-Switch verschoben.</block>
   <block id="18a308037b50cae9759f1f49af5aed58" category="list-text">Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert wurden, die auf dem Switch cs2 gehostet werden. Dies kann einige Sekunden dauern:</block>
   <block id="f20b906cc8acf5d97550e7a24fd7c69b" category="list-text">Verschieben Sie die Verbindungskabel des Clusterknoten von CL1 zum neuen cs1-Switch.</block>
   <block id="b7557e0e7f48313d82756b7481c1b1f6" category="list-text">Bestätigen Sie den Funktionszustand der Netzwerkverbindungen, die zu cs1 verschoben wurden:</block>
-  <block id="a19beb91ec2195c2db049b5e003334f4" category="list-text">Bestätigen Sie die Switch-Port-Verbindungen aus der Perspektive von Switch cs1 mit folgenden Befehlen:</block>
   <block id="ce16551695d7120d532abead22bee8c2" category="list-text">Vergewissern Sie sich, dass die ISL zwischen cs1 und cs2 weiterhin funktionsfähig ist:</block>
   <block id="b48ac462b57bcb2860eecd434bd2c80f" category="paragraph">Ab ONTAP 9.8 verwenden Sie den Befehl:<block ref="b4720f8aa09f4e4b3a04e78c558b6c90" prefix=" " category="inline-code"></block></block>
-  <block id="4ae8d24c72dd765a4920ac53c2dafe90" category="open-title">ONTAP 9.4 und frühere Versionen</block>
-  <block id="7c0f7899f6a5609732991b637b6b77d8" category="paragraph">Verwenden Sie für ONTAP 9.4 und frühere Versionen den folgenden Befehl:<block ref="f055904a9fc3a4f0bc33aca13ecd2b2d" prefix=" " category="inline-code"></block></block>
   <block id="3e1fd1b016d89d236712e513bee2a170" category="list-text">Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung.</block>
-  <block id="300c1f24adf38203b39051c2816bed96" category="admonition">Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP 9.12.1 und höher sowie EFOS 3.8.0.2 und höher ausführen.</block>
   <block id="079e7a1f80c26ff7b477dcbf014e4e70" category="list-text">Aktivieren Sie die Protokollerfassungsfunktion für die Ethernet-Switch-Statusüberwachung:</block>
   <block id="aae263170b5a7f23d3045f8a2b09091f" category="paragraph">Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:</block>
   <block id="c9a1a82d3af3d53e5132a5ce6181fc18" category="list-text">Einige der Ports auf Nexus 9336C-FX2-Switches sind für 10-GbE- oder 40-GbE-Betrieb konfiguriert.</block>
@@ -4606,4 +4596,20 @@
   <block id="ae6de81182adfafa064980e2532e7279" category="sidebar">Upgrade_Switches_bes53248</block>
   <block id="267f0a6ee7bf547701400bdefcf3e255" category="sidebar">Migrate_Switches_bes53248</block>
   <block id="368764dd3898433d38cff5ab40e268b0" category="sidebar">Replace_Switches_bes53248</block>
+  <block id="b839c7212b07af22047708d290e9fc06" category="list-text">Einige der Ports auf BES-53248-Switches sind für den Betrieb mit 10 GbE konfiguriert.</block>
+  <block id="c4a4e384df3331fa768c173d158b0aa5" category="list-text">Die 10-GbE-Konnektivität von den Nodes zu BES-53248 Cluster-Switches wurde geplant, migriert und dokumentiert.</block>
+  <block id="67b660e2046176252fca76261bc42667" category="list-text">Fahren Sie bei Cluster-Switch CL2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind:</block>
+  <block id="e6530d0201fae7d6787fd28d58724819" category="list-text">Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten CL2-Switch auf den neuen cs2-Switch.</block>
+  <block id="74473ad9515a4da22aa5f01542722c5b" category="list-text">Stellen Sie anhand der folgenden Befehle sicher, dass die Switch-Port-Verbindungen aus der Perspektive von Switch cs2 ordnungsgemäß sind:</block>
+  <block id="ca6f53e4266e008816889d83576a5877" category="list-text">Fahren Sie bei Cluster-Switch CL1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind.</block>
+  <block id="1dd6b9d779d28215b5d204a1be9c8b6a" category="list-text">Stellen Sie anhand der folgenden Befehle sicher, dass die Switch-Port-Verbindungen aus der Perspektive von Switch cs1 ordnungsgemäß sind:</block>
+  <block id="dae02701a0a247e1012b9b2832c32464" category="list-text">Löschen Sie die ausgetauschten CN1610-Switches aus der Switch-Tabelle des Clusters, wenn sie nicht automatisch entfernt werden:</block>
+  <block id="c8b9229aed88be3704b6c26029b7ae94" category="paragraph">Verwenden Sie für ONTAP 9.7 und frühere Versionen den folgenden Befehl:<block ref="f055904a9fc3a4f0bc33aca13ecd2b2d" prefix=" " category="inline-code"></block></block>
+  <block id="b8590eb7d6b7365e1a0bee47b03d5b4f" category="admonition">Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP 9.10.1P15, 9.11.1P12 oder 9.12.1 und höher sowie EFOS 3.8.0.2 und höher ausführen.</block>
+  <block id="e88b6a67743cc664a0a237ba8d94eefc" category="sidebar">Switch-cisco-9336c-fx2-Cluster</block>
+  <block id="517242a1c337699950aef05a38af45a0" category="sidebar">Switch-nvidia-sn2100-Cluster</block>
+  <block id="3ed3b1cc0917edd8fddcdd478bb581fb" category="sidebar">Switch-cisco-9336c-fx2-Speicher</block>
+  <block id="701d9aab459b808d17f39aa5c50f97df" category="sidebar">Switch-nvidia-sn2100-Storage</block>
+  <block id="a5f4f9ed92853ea6128046eb985ff5a7" category="sidebar">cisco-9336c-fx2-gemeinsam genutzt</block>
+  <block id="759d203c3eb13a684379c7413a7ea760" category="sidebar">cisco-9336c-fx2-Cluster</block>
 </blocks>

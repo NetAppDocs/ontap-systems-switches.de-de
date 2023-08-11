@@ -1,6 +1,7 @@
 ---
 section: switch-nvidia-sn2100
 title: NVIDIA SN2100
+pdf-filename: Switch-nvidia-sn2100-Cluster
 entries:
 - title: Überblick
   pdf-filename: Übersicht_sn2100
