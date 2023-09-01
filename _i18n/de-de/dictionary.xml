@@ -4612,4 +4612,5 @@
   <block id="701d9aab459b808d17f39aa5c50f97df" category="sidebar">Switch-nvidia-sn2100-Storage</block>
   <block id="a5f4f9ed92853ea6128046eb985ff5a7" category="sidebar">cisco-9336c-fx2-gemeinsam genutzt</block>
   <block id="759d203c3eb13a684379c7413a7ea760" category="sidebar">cisco-9336c-fx2-Cluster</block>
+  <block id="111cada5d22121a7e11aef39f4aca355" category="list-text">Aktivieren Sie bei Cluster-Switch cs2 die mit den Cluster-Ports der Nodes verbundenen Ports.</block>
 </blocks>

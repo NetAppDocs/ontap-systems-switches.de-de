@@ -1,7 +1,7 @@
 ---
 permalink: switch-bes-53248/configure-install-rcf.html 
 sidebar: sidebar 
-keywords: install rcf,setup rcf 
+keywords: install rcf,setup rcf,rcf file 
 summary: 'Sie können die Referenzkonfigurationsdatei (RCF) installieren, nachdem Sie den BES-53248-Cluster-Switch konfiguriert und die neuen Lizenzen angewendet haben.' 
 ---
 = Installieren Sie die Referenzkonfigurationsdatei (RCF).
@@ -591,6 +591,13 @@ Are you sure you would like to reset the system? (y/n) *y*
 System will now restart!
 ----
 ====
+. Aktivieren Sie bei Cluster-Switch cs2 die mit den Cluster-Ports der Nodes verbundenen Ports.
++
+[listing, subs="+quotes"]
+----
+(cs2)(Config)# *interface 0/1-0/16*
+(cs2)(Interface 0/1-0/16)# *no shutdown*
+----
 . Überprüfen Sie die Ports auf Switch cs2: `show interfaces status all | exclude Detach`
 +
 .Beispiel anzeigen
