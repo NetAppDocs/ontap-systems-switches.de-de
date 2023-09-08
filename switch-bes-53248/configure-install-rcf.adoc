@@ -756,7 +756,7 @@ cluster1::*>
 ----
 --
 ====
-. [[step17]]fahren Sie bei Cluster-Switch cs1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.
+. [[step18]]fahren Sie bei Cluster-Switch cs1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.
 +
 Im folgenden Beispiel wird die Ausgabe des Schnittstellenbeispiels verwendet:
 

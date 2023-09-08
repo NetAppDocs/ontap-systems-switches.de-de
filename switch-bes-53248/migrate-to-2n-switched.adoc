@@ -272,25 +272,12 @@ Cluster
             node2_clus2  up/up    169.254.19.183/16  node2         e0b     true
 ----
 ====
-. Verifizieren Sie das `auto-revert` Ist auf allen Cluster-LIFs aktiviert: `network interface show -vserver Cluster -fields auto-revert`
+. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface show -vserver Cluster -fields auto-revert*
-
-          Logical
-Vserver   Interface     Auto-revert
---------- ------------- ------------
-Cluster
-          node1_clus1   true
-          node1_clus2   true
-          node2_clus1   true
-          node2_clus2   true
+cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
 ----
-====
 . Trennen Sie das Kabel vom Cluster-Port e0a auf node1, und verbinden sie e0a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
 +
 Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält weitere Informationen zur Verkabelung.
@@ -410,6 +397,22 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 
 
 === Schritt 3: Überprüfen Sie die Konfiguration
+
+. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*
+----
+. Überprüfen Sie, ob die Cluster-LIFs auf ihre Home-Ports zurückgesetzt wurden (dies kann eine Minute dauern):
++
+`network interface show -vserver Cluster`
+
++
+Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Sie sie manuell zurück:
+
++
+`network interface revert -vserver Cluster -lif *`
 
 . Vergewissern Sie sich, dass alle Schnittstellen angezeigt werden `true` Für `Is Home`:
 +

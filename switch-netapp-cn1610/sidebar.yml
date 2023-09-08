@@ -25,12 +25,8 @@ entries:
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_cn1610
   entries:
-  - title: Migrationsoptionen
-    url: "/switch-netapp-cn1610/migrate-overview.html"
-  - title: Migrieren Sie von einem Cluster ohne Switches
+  - title: Migrieren Sie Cluster mit Switches von ohne Switch zu Clustern
     url: "/switch-netapp-cn1610/migrate-switched-netapp-cn1610.html"
-  - title: Migration auf Cluster mit zwei Nodes
-    url: "/switch-netapp-cn1610/migrate-fas22xx-systems.html"
 - title: Tauschen Sie die Schalter aus
   pdf-filename: Replace_Switches_cn1610
   entries:
