@@ -23,7 +23,6 @@ Bevor Sie beginnen, führen Sie den Vorgang in durch link:prepare-nxos-rcf-9336c
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Die aktuelle RCF-Datei.
-* Eine Boot-Konfiguration im RCF, die die gewünschten Boot-Images wiedergibt, erforderlich, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten. Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
 * Eine Konsolenverbindung mit dem Switch, die bei der Installation des RCF erforderlich ist.
 
 

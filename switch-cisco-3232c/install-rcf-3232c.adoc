@@ -21,7 +21,6 @@ Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Die aktuelle Referenzkonfigurationsdatei (RCF).
-* Eine Boot-Konfiguration im RCF, die die gewünschten Boot-Images wiedergibt, erforderlich, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten. Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
 * Eine Konsolenverbindung mit dem Switch, die bei der Installation des RCF erforderlich ist.
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch Seite"^] In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen. Beachten Sie, dass es Abhängigkeiten zwischen der Befehlssyntax im RCF und der in Versionen von NX-OS gibt.
 * link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Switches Der Cisco Nexus 3000-Serie"^]. Ausführliche Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website.
