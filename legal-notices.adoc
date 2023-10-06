@@ -40,11 +40,3 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 == Datenschutzrichtlinie
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
-
-
-
-== Open Source
-
-In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und Lizenzen von Drittanbietern, die in der NetApp Software verwendet werden.
-
-https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Hinweis für Festplatten-Shelfs"]

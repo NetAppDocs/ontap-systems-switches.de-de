@@ -38,13 +38,6 @@ entries:
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-software-9336c-storage.html"
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-rcf-9336c-storage.html"
-- title: Switches migrieren
-  pdf-filename: Migrate_Switches_9336c-fx2-Speicher
-  entries:
-  - title: Migrieren Sie von einem älteren Cisco Switch
-    url: "/switch-cisco-9336c-fx2-storage/migrate-to-9336-storage.html"
-  - title: Migration auf Cluster mit zwei Nodes
-    url: "/switch-cisco-9336c-fx2-storage/migrate-to-2n-switched-9336-storage.html"
 - title: Storage-Switch austauschen
   pdf-filename: Replace_Switch_9336c-fx2-Speicher
   url: "/switch-cisco-9336c-fx2-storage/replace-storage-switch-9336c-storage.html"

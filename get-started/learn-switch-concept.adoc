@@ -16,7 +16,7 @@ NetApp bietet Cluster-, Storage- und Shared-Switches, die interne Kommunikation 
 Die „Front-End“-Switches sorgen für Konnektivität mit Host Storage, während die „Back-End“-Cluster-Switches Verbindungen zwischen zwei oder mehr NetApp Controllern ermöglichen.
 
 
-NOTE: Nur von NetApp validierte Switches (bei NetApp bestellt) werden unterstützt.
+NOTE: Es werden nur von NetApp validierte Back-End Switches (im Auftrag von NetApp) unterstützt.
 
 
 
