@@ -260,7 +260,7 @@ cluster1::*>
 +
 `show running-config`
 
-. Reinigen Sie die Konfiguration am Schalter cs2, und führen Sie eine grundlegende Einrichtung durch.
+. Reinigen Sie die Konfiguration auf Switch cs2, und starten Sie den Switch neu.
 +
 
 CAUTION: Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten.
@@ -280,7 +280,7 @@ Warning: This command will erase the startup-configuration.
 Do you wish to proceed anyway? (y/n)  [n]  *y*
 ----
 ====
-.. Führen Sie einen Neustart des Switches aus:
+.. Starten Sie den Switch neu:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -295,6 +295,7 @@ Are you sure you would like to reset the system? (y/n) *y*
 ====
 
 
+. Führen Sie eine grundlegende Einrichtung des Switches durch. Siehe link:setup-switch.html["Konfigurieren Sie den 3232C-Cluster-Switch"] Entsprechende Details.
 . Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
 +
 .Beispiel anzeigen
@@ -602,8 +603,6 @@ cluster1::*>
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*
 ----
-
-
 . Vergewissern Sie sich, dass die mit den Cluster-Ports verbundenen Switch-Ports aktiv sind.
 +
 .Beispiel anzeigen
