@@ -38,6 +38,10 @@ entries:
     url: "/switch-cisco-9336c-fx2/install-nxos-software-9336c-cluster.html"
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2/install-nxos-rcf-9336c-cluster.html"
+  - title: Installieren Sie die SHM-Konfigurationsdatei
+    url: "/switch-cisco-9336c-fx2/setup-install-cshm-file.html"
+  - title: Aktivieren Sie die Protokollerfassung
+    url: "/switch-cisco-9336c-fx2/configure-log-collection.html"
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_9336c-fx2
   entries:
