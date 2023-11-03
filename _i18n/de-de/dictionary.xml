@@ -4636,4 +4636,8 @@
   <block id="669c1a3fa77bc8a049e5cd4a16e5cff8" category="paragraph">Stellen Sie sicher, dass Sie Ihre Umgebung mit dem Cluster-Switch 9336C-FX2 * CLI* eingerichtet haben.</block>
   <block id="680284a2e0d6a86aafc85099ca58d7af" category="list-text">Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung:</block>
   <block id="1f40996ca4617ab17127143171aa4ea4" category="sidebar">Installieren Sie die SHM-Konfigurationsdatei</block>
+  <block id="3fc74bed2ec666d227e966120d5c4160" category="inline-link">Bug 1570339</block>
+  <block id="a9881d2bc89c135aee3c1490acc55259" category="inline-link">CRC-Fehler auf T6-Ports nach der Konvertierung von 40GbE zu 100GbE</block>
+  <block id="835174c5c468acf2b423cff0eb23994f" category="admonition">Wenn Sie die Portgeschwindigkeit der e0a- und e1a-Cluster-Ports auf AFF A800- oder AFF C800-Systemen ändern, können Sie beobachten, wie fehlerhafte Pakete nach der Geschwindigkeitskonvertierung empfangen werden. Siehe <block ref="f867b947e44d8d6bccd25f3219f3d6d9" category="inline-link-rx"></block> Und den Knowledge Base Artikel<block ref="2a93cc61bbc3892324bc1b6369d71212" category="inline-link-rx"></block> Für eine Anleitung.</block>
+  <block id="5958c0f6bda471fafb31ea3acb4b20da" category="admonition">Wenn Sie die Portgeschwindigkeit der e0a- und e1a-Cluster-Ports auf AFF A800- oder AFF C800-Systemen ändern, können Sie beobachten, wie fehlerhafte Pakete nach der Geschwindigkeitskonvertierung empfangen werden. Siehe<block ref="f867b947e44d8d6bccd25f3219f3d6d9" category="inline-link-rx"></block> Und den Knowledge Base Artikel<block ref="2a93cc61bbc3892324bc1b6369d71212" category="inline-link-rx"></block> Für eine Anleitung.</block>
 </blocks>
