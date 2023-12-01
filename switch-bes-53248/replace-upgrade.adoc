@@ -13,7 +13,7 @@ summary: 'Das Upgrade von BES-53248-Cluster-Switches beginnt mit der Vorbereitun
 [role="lead"]
 Führen Sie diese Schritte aus, um einen BES-53248-Cluster-Switch zu aktualisieren.
 
-Dieser Vorgang gilt für ein funktionierendes Cluster und ermöglicht eine unterbrechungsfreie Upgrade- (NDU) und eine unterbrechungsfreie Betriebsumgebung (Non-Disruptive Operations, NDO).
+Dieser Vorgang gilt für ein funktionierendes Cluster und ermöglicht eine unterbrechungsfreie Upgrade- (NDU) und eine unterbrechungsfreie Betriebsumgebung (Non-Disruptive Operations, NDO). Weitere Informationen finden Sie im Knowledge Base-Artikel https://kb.netapp.com/onprem/ontap/hardware/How_to_prepare_ONTAP_for_a_cluster_switch_upgrade["Vorbereiten von ONTAP auf ein Cluster-Switch-Upgrade"^].
 
 
 

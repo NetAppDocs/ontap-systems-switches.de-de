@@ -11,7 +11,9 @@ summary: Sie können das RCF nach dem ersten Einrichten des Nexus 3232C-Switch i
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3232C-Switch zu installieren. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3232C-Switch zu installieren.
+
+Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. Weitere Informationen finden Sie im Knowledge Base-Artikel https://kb.netapp.com/onprem/Switches/Cisco/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] Weitere Informationen zum Upgrade Ihres RCF.
 
 
 

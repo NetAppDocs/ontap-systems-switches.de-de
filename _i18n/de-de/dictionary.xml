@@ -1490,7 +1490,6 @@
   <block id="05a9e5b7c0c83c8a1b0da673e6e07f22" category="list-text">Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:</block>
   <block id="0097ce0f8a70e3f4836e959cc2aab7af" category="summary">Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco Nexus 3132Q-V Cluster Switches zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.</block>
   <block id="bc01d49ccd216cbb296208344af71590" category="list-text">Die Nexus 3132Q-V-Switches als Ersatz für die CN1610-Switches sind C1 und C2.</block>
-  <block id="eb29e2026f68e263827bc6648e470d91" category="list-text">n1_clus4 ist die zweite logische Schnittstelle, die mit Cluster Switch 1 (CL1 oder C1) für Knoten n1 verbunden ist. Die Knoten sind n1, n2, n3 und n4.</block>
   <block id="fcaf9f39a9df76762021c3d64f44d4fe" category="list-text">Zu Beginn des Clusters sind zwei mit zwei CN1610 Cluster-Switches verbundene Nodes verbunden.</block>
   <block id="168843148dff81e8fff6f3bf865c2988" category="list-text">Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und verwenden Sie anschließend die unterstützten Breakout-Kabel, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.</block>
   <block id="5b467da6576c200097feff0bf43843e7" category="list-text">Trennen Sie die Verkabelung zwischen den ISL-Ports CL1 und CL2, und verwenden Sie dann die unterstützten Breakout-Kabel, um die Ports von CL1 nach C2 wiederherzustellen.</block>
@@ -3249,7 +3248,6 @@
   <block id="779fc6b934d55dc10ca87329087b2008" category="list-text">[[fünf]]]Überprüfen Sie die Shelf-Ports im Storage-System:</block>
   <block id="d97a5e4575ee30a387104386bf3f240b" category="section-title">Schritt 3: Überprüfen Sie alle Gerätekonfigurationen am Switch NS2</block>
   <block id="cb90078e1ca3fab95e047ce21d18bdc0" category="paragraph">Jeder Switch kann als einzelner 100-GbE-, 40-GbE-Port oder 4-x-GbE-Ports konfiguriert werden.</block>
-  <block id="5a5a12d4dbaeac060e4d6b7c5760ca7c" category="paragraph">Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3232C-Switch zu installieren. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.</block>
   <block id="319869b1ac41d35b8bb0654bf94a816d" category="list-text">Untersuchen Sie die Bannerausgabe aus dem<block ref="6d53824b9996e36fd31937e922967215" prefix=" " category="inline-code"></block> Befehl. Sie müssen die Anweisungen unter *wichtige Hinweise* lesen und befolgen, um sicherzustellen, dass der Schalter ordnungsgemäß konfiguriert und betrieben wird.</block>
   <block id="aaee942f01ab7b858b2f2b63c62fe972" category="paragraph">Führen Sie diese Schritte aus, um die Cisco NX-OS Software und die RCF (Referenz-Konfigurationsdateien) auf Cisco Nexus 3232C-Switches zu aktualisieren.</block>
   <block id="ee01b78d6cadb3e6f6a563b8d4eb8dee" category="paragraph">Stellen Sie vor dem Upgrade der NX-OS-Software und der RCFs auf dem Storage-Switch sicher, dass die folgenden Bedingungen erfüllt sind:</block>
@@ -3446,7 +3444,6 @@
   <block id="6dd4b5e58bd32b079e19b1dda5c2f1bc" category="paragraph">Gehen Sie wie folgt vor, um die Software für einen BES-53248 Cluster-Switch zu installieren und zu konfigurieren:</block>
   <block id="9302ce88c481ebfe72d64373c7b0d0e5" category="doc">Aktualisieren Sie den BES-53248 Cluster-Switch</block>
   <block id="db3a43c92e9a5ccc39b5fabb1bd97719" category="paragraph">Führen Sie diese Schritte aus, um einen BES-53248-Cluster-Switch zu aktualisieren.</block>
-  <block id="ca46577f8687df3ceb14eb4b66cfa89e" category="paragraph">Dieser Vorgang gilt für ein funktionierendes Cluster und ermöglicht eine unterbrechungsfreie Upgrade- (NDU) und eine unterbrechungsfreie Betriebsumgebung (Non-Disruptive Operations, NDO).</block>
   <block id="8ac36f1d8b0fc917225a100d2cd4a4c3" category="paragraph">Vor der Installation der EFOS Software, der Lizenzen und der RCF-Datei auf einem vorhandenen NetApp BES-53248 Cluster-Switch stellen Sie sicher, dass:</block>
   <block id="8e95d65cfa987ac59e9edd2e01c3a5f8" category="list-text">Das Cluster ist ein voll funktionsfähiges Cluster (keine Fehlermeldungen oder andere Probleme).</block>
   <block id="39268a4fe5b4dbf6e58a5a1147276955" category="list-text">Das Cluster enthält keine fehlerhaften Cluster-Netzwerkkarten (NICs).</block>
@@ -4668,4 +4665,9 @@ Aktuelle Informationen zur Kompatibilität finden Sie im<block ref="f6aa36fb7711
   <block id="2672a0c9ba5986c403c26e013c160859" category="list-text">Überprüfen Sie mit den folgenden Befehlen, ob sich die Cluster-Nodes in den richtigen Cluster-VLANs befinden:</block>
   <block id="89706bbdab62cd83048f38305d846f95" category="paragraph"><block ref="7d4adecb4116bbfb7ed1130103f872a7" prefix="" category="inline-code"></block></block>
   <block id="12bc122b0d9a4c902fdf52bfcc13ddc2" category="paragraph"><block ref="c01eca2c804c6a35b8aa8d87eceefe5d" prefix="" category="inline-code"></block></block>
+  <block id="5cb232b7121572a8cd994eb78f5bf42e" category="inline-link">Vorbereiten von ONTAP auf ein Cluster-Switch-Upgrade</block>
+  <block id="2c6ae2b5ab15a868c020423af475ce29" category="paragraph">Dieser Vorgang gilt für ein funktionierendes Cluster und ermöglicht eine unterbrechungsfreie Upgrade- (NDU) und eine unterbrechungsfreie Betriebsumgebung (Non-Disruptive Operations, NDO). Weitere Informationen finden Sie im Knowledge Base-Artikel<block ref="af19c072276b7cd7ef0c29b032a9fe34" category="inline-link-rx"></block>.</block>
+  <block id="3bf967e4da79afd8ac10997dbbfb40be" category="paragraph">Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3232C-Switch zu installieren.</block>
+  <block id="ce8d24a452c1c94c4680d7ce098325a9" category="inline-link">Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung</block>
+  <block id="e5f3c3d2c754cc48938d50b1782093ac" category="paragraph">Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. Weitere Informationen finden Sie im Knowledge Base-Artikel<block ref="c3cf8dee5fd4e009c0e2b38bfb97fe4d" category="inline-link-rx"></block> Weitere Informationen zum Upgrade Ihres RCF.</block>
 </blocks>
