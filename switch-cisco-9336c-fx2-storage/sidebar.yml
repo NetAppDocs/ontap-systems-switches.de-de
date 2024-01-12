@@ -19,8 +19,6 @@ entries:
 - title: Hardware installieren
   pdf-filename: Install_Hardware_9336c-fx2-Speicher
   entries:
-  - title: Füllen Sie das Verkabelungsarbeitsblatt aus
-    url: "/switch-cisco-9336c-fx2-storage/setup-worksheet-9336c-storage.html"
   - title: Installieren Sie den Schalter
     url: "/switch-cisco-9336c-fx2-storage/install-9336c-storage.html"
   - title: Konfigurieren Sie den Switch

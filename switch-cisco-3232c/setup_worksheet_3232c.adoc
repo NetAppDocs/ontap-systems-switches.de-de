@@ -34,264 +34,264 @@ Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
  a| 
 1
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 1
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 2
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 2
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 3
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 3
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 4
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 4
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 5
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 5
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 6
  a| 
-4 x 10 Gbit/40 Gbit/100 GNode
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 6
  a| 
-4 x 10 Gbit/40 Gbit/100 GNode
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 7
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 7
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 8
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 8
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 9
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 9
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 10
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 10
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 11
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 11
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 12
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 12
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 13
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 13
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 14
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 14
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 15
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 15
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 16
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 16
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 17
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 17
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 18
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
  a| 
 18
  a| 
-4 x 10 GB/40 GB/100 GB Node
+4 x 10 GbE/4x25 GbE oder 40/100-GbE-Node
 
 
 
  a| 
 19
  a| 
-40 Gbit/100 G Node 19
+40 G/100-GbE-Node 19
  a| 
 19
  a| 
-40 Gbit/100 G Node 19
+40 G/100-GbE-Node 19
 
 
 
  a| 
 20
  a| 
-40 Gbit/100 G Node 20
+40 G/100-GbE-Node 20
  a| 
 20
  a| 
-40 Gbit/100 G Node 20
+40 G/100-GbE-Node 20
 
 
 
  a| 
 21
  a| 
-40 Gbit/100 G Node 21
+40 G/100-GbE-Node 21
  a| 
 21
  a| 
-40 Gbit/100 G Node 21
+40 G/100-GbE-Node 21
 
 
 
  a| 
 22
  a| 
-40 Gbit/100 G Node 22
+40 G/100-GbE-Node 22
  a| 
 22
  a| 
-40 Gbit/100 G Node 22
+40 G/100-GbE-Node 22
 
 
 
  a| 
 23
  a| 
-40 Gbit/100 G Node 23
+40 G/100-GbE-Node 23
  a| 
 23
  a| 
-40 Gbit/100 G Node 23
+40 G/100-GbE-Node 23
 
 
 
  a| 
 24
  a| 
-40 Gbit/100 G Node 24
+40 G/100-GbE-Node 24
  a| 
 24
  a| 
-40 Gbit/100 G Node 24
+40 G/100-GbE-Node 24
 
 
 
@@ -309,22 +309,22 @@ Reserviert
  a| 
 31
  a| 
-100-GB-ISL zu Switch B-Port 31
+100-GbE-ISL zu Switch B-Port 31
  a| 
 31
  a| 
-100-GB-ISL für Switch A-Port 31
+100-GbE-ISL für Switch A-Port 31
 
 
 
  a| 
 32
  a| 
-100-GB-ISL zu Switch B-Port 32
+100-GbE-ISL zu Switch B-Port 32
  a| 
 32
  a| 
-100-GB-ISL für Switch A-Port 32
+100-GbE-ISL für Switch A-Port 32
 
 |===
 
@@ -571,21 +571,21 @@ Reserviert
  a| 
 31
  a| 
-100-GB-ISL zu Switch B-Port 31
+100-GbE-ISL zu Switch B-Port 31
  a| 
 31
  a| 
-100-GB-ISL für Switch A-Port 31
+100-GbE-ISL für Switch A-Port 31
 
 
 
  a| 
 32
  a| 
-100-GB-ISL zu Switch B-Port 32
+100-GbE-ISL zu Switch B-Port 32
  a| 
 32
  a| 
-100-GB-ISL für Switch A-Port 32
+100-GbE-ISL für Switch A-Port 32
 
 |===
