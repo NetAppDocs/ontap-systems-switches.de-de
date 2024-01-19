@@ -82,6 +82,10 @@ Config file 'startup-config' created successfully.
 Configuration Saved!
 ----
 ====
++
+
+WARNING: Stellen Sie sicher, dass SSH deaktiviert ist, bevor Sie die Schlüssel ändern. Andernfalls wird eine Warnung auf dem Switch gemeldet.
+
 . Starten Sie den Switch neu:
 +
 `reload`

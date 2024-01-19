@@ -39,7 +39,6 @@ Stellen Sie sicher, dass Ihre Konfiguration die folgenden Anforderungen erfüllt
 ** Ein redundantes und voll funktionsfähiges NetApp Cluster mit NetApp CN1610 Switches.
 ** Managementkonnektivität und Konsolenzugriff sowohl auf die NetApp CN1610-Switches als auch auf die neuen Switches.
 ** Alle Cluster-LIFs im Status „up“ mit den Cluster-LIFs befinden sich auf den Home-Ports.
-** ISL-Ports aktiviert und verkabelt zwischen den NetApp CN1610-Switches und zwischen den neuen Switches.
 
 
 * Einige der Ports sind auf Cisco 9336C-FX2 Switches konfiguriert, um mit 40 GbE oder 100 GbE zu laufen.
@@ -66,6 +65,9 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 
 
+
+
+NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
 
 
