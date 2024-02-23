@@ -20,6 +20,9 @@ Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch fol
 * IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.
 
 
+
+NOTE: Sie müssen im RCF (zusätzlich zum Admin-Benutzer) einen Benutzer angeben, der speziell für die Protokollerfassung verwendet werden soll.
+
 .Aktuelle RCF-Skriptversionen
 Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Laden Sie RCFs von herunter https://mysupport.netapp.com/site/info/nvidia-cluster-switch["Hier"^]. Das Verfahren für jedes ist gleich.
 

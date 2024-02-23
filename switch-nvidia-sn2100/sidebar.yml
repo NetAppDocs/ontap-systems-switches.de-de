@@ -36,8 +36,10 @@ entries:
     url: "/switch-nvidia-sn2100/install-onie-mode-sn2100-cluster.html"
   - title: Installieren Sie das RCF-Skript
     url: "/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html"
-  - title: Konfigurieren Sie die Switch-Protokollerfassung
-    url: "/switch-nvidia-sn2100/install-snmpv3-sn2100-cluster.html"
+  - title: Aktivieren Sie die Protokollerfassung
+    url: "/switch-nvidia-sn2100/CSHM_log_collection.html"
+  - title: Konfigurieren Sie SNMPv3 für die Überwachung
+    url: "/switch-nvidia-sn2100/CSHM_snmpv3.html"
   - title: Aktualisieren Sie die Cumulus Linux-Version
     url: "/switch-nvidia-sn2100/upgrade-cl-version.html"
 - title: Switches migrieren
