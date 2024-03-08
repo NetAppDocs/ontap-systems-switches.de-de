@@ -98,11 +98,13 @@ Dieses Verfahren umfasst das folgende Szenario:
 * Zu Beginn des Clusters sind zwei mit zwei CN1610 Cluster-Switches verbundene Nodes verbunden.
 * CN1610-Switch CL2 wird durch BES-53248-Schalter cs2 ersetzt:
 +
+** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
 ** Trennen Sie die Kabel von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und schließen Sie die Ports mit den unterstützten Kabeln wieder an den neuen Cluster-Switch cs2 an.
 
 
 * CN1610-Schalter CL1 wird durch BES-53248-Schalter cs1 ersetzt:
 +
+** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
 ** Trennen Sie die Kabel von allen Cluster-Ports auf allen mit CL1 verbundenen Nodes, und schließen Sie die Ports mit den unterstützten Kabeln wieder an den neuen Cluster-Switch cs1 an.
 
 
@@ -342,11 +344,8 @@ cluster1::*>
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
 ----
-. Fahren Sie bei Cluster-Switch CL2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind:
+. Fahren Sie bei Cluster-Switch CL2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 (CL2)# *configure*
@@ -356,8 +355,7 @@ cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert fals
 (CL2)(Config)# *exit*
 (CL2)#
 ----
-====
-. Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert haben, die auf dem Cluster-Switch CL1 gehostet werden. Dies kann einige Sekunden dauern.
+. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf dem Cluster-Switch CL1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster`
 
@@ -450,14 +448,14 @@ node1      /cdp
             e0b    cs2                       0/1               BES-53248
 ----
 ====
-. Stellen Sie anhand der folgenden Befehle sicher, dass die Switch-Port-Verbindungen aus der Perspektive von Switch cs2 ordnungsgemäß sind:
+. Vergewissern Sie sich, dass die Switch-Port-Verbindungen aus Sicht von Switch cs2 ordnungsgemäß sind:
 +
 [listing, subs="+quotes"]
 ----
 cs2# *show port all*
 cs2# *show isdp neighbors*
 ----
-. Fahren Sie bei Cluster-Switch CL1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind.
+. Fahren Sie bei Cluster-Switch CL1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
 +
 [listing, subs="+quotes"]
 ----
@@ -469,9 +467,9 @@ cs2# *show isdp neighbors*
 (CL1)#
 ----
 +
-Alle Cluster-LIFs werden zum cs2-Switch verschoben.
+Bei allen Cluster-LIFs wird ein Failover zum cs2-Switch durchgeführt.
 
-. Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert wurden, die auf dem Switch cs2 gehostet werden. Dies kann einige Sekunden dauern:
+. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Switch cs2 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern:
 +
 `network interface show -vserver Cluster`
 
@@ -564,7 +562,7 @@ node2      /cdp
             e0b    cs2                       0/2               BES-53248
 ----
 ====
-. Stellen Sie anhand der folgenden Befehle sicher, dass die Switch-Port-Verbindungen aus der Perspektive von Switch cs1 ordnungsgemäß sind:
+. Vergewissern Sie sich, dass die Switch-Port-Verbindungen aus Sicht von Switch cs1 ordnungsgemäß sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -711,11 +709,7 @@ RPC status:
 2 paths up, 0 paths down (udp check)
 ----
 ====
-. Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung.
-+
-
-IMPORTANT: Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP 9.10.1P15, 9.11.1P12 oder 9.12.1 und höher sowie EFOS 3.8.0.2 und höher ausführen.
-
+. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
 +
 `system switch ethernet log setup-password`
 
@@ -749,7 +743,7 @@ Enter the password: *<enter switch password>*
 Enter the password again: *<enter switch password>*
 ----
 ====
-. Aktivieren Sie die Protokollerfassungsfunktion für die Ethernet-Switch-Statusüberwachung:
+. Führen Sie zum Starten der Protokollerfassung den folgenden Befehl aus, um das GERÄT durch den im vorherigen Befehl verwendeten Switch zu ersetzen. Damit werden beide Arten der Log-Erfassung gestartet: Die detaillierten *Support*-Protokolle und eine stündliche Erfassung von *Periodic*-Daten.
 +
 `system switch ethernet log modify -device _<switch-name>_ -log-request true`
 

@@ -112,11 +112,9 @@ Die erweiterte Eingabeaufforderung (`*>`Erscheint.
 NOTE: Sie dürfen die ISL-Ports nicht deaktivieren.
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 16 auf Switch cs1 deaktiviert sind:
 
++
 [listing, subs="+quotes"]
 ----
 (cs1)# *configure*
@@ -125,7 +123,6 @@ Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 16 auf Switch cs1 deaktiv
 (cs1)(Interface 0/1-0/16)# *exit*
 (cs1)(Config)# *exit*
 ----
-====
 . Vergewissern Sie sich, dass ISL und die physischen Ports auf der ISL zwischen den beiden BES-53248-Switches cs1 und cs2 *up* sind:
 +
 `show port-channel`
@@ -285,11 +282,9 @@ Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält we
 . Trennen Sie das Kabel vom Cluster-Port e0a auf node2 und verbinden sie e0a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
 . Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs1 aktiviert sind:
 
++
 [listing, subs="+quotes"]
 ----
 (cs1)# *configure*
@@ -298,7 +293,6 @@ Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs1 aktiviert si
 (cs1)(Interface 0/1-0/16)# *exit*
 (cs1)(Config)# *exit*
 ----
-====
 . Vergewissern Sie sich, dass alle Cluster-LIFs aktiv und betriebsbereit sind und als angezeigt werden `true` Für `Is Home`:
 +
 `network interface show -vserver Cluster`
@@ -347,11 +341,9 @@ node2                true    true          false
 . Trennen Sie das Kabel von Cluster-Port e0b auf node2, und verbinden Sie dann e0b mit Port 2 am Cluster Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
 . Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs2.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs2 aktiviert sind:
 
++
 [listing, subs="+quotes"]
 ----
 (cs2)# *configure*
@@ -360,7 +352,6 @@ Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs2 aktiviert si
 (cs2)(Interface 0/1-0/16)# *exit*
 (cs2)(Config)# *exit*
 ----
-====
 . Vergewissern Sie sich, dass alle Cluster-Ports *up* sind:
 +
 `network port show -ipspace Cluster`

@@ -68,9 +68,20 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind _e3a_ und _e3b_.
 * Breakout-Ports haben das Format swp[Port]s[Breakout-Port 0-3]. Beispielsweise sind vier Breakout-Ports auf swp1 _swp1s0_, _swp1s1_, _swp1s2_ und _swp1s3_.
-* Schalter c2 wird zuerst durch Schalter sw2 ersetzt und dann Schalter c1 durch Schalter sw1 ersetzt.
+
+
+.Über diese Aufgabe
+Dieses Verfahren umfasst das folgende Szenario:
+
+* Schalter c2 wird zuerst durch Schalter sw2 ersetzt.
 +
+** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
 ** Die Verkabelung zwischen den Knoten und c2 wird dann von c2 getrennt und wieder mit sw2 verbunden.
+
+
+* Schalter c1 wird durch Schalter sw1 ersetzt.
++
+** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
 ** Die Verkabelung zwischen den Knoten und c1 wird dann von c1 getrennt und wieder mit sw1 verbunden.
 
 
@@ -98,17 +109,6 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
-
-Warning: Disabling the auto-revert feature of the cluster logical interface may effect the availability of your cluster network. Are you sure you want to continue? {y|n}: *y*
-----
-====
 
 
 
@@ -177,7 +177,7 @@ Cluster
 ====
 
 
-. Die Cluster-Ports auf jedem Node sind mit vorhandenen Cluster-Switches auf die folgende Weise (aus Sicht der Nodes) verbunden. Verwenden Sie dazu den Befehl:
+. Die Cluster-Ports auf jedem Node sind auf folgende Weise (aus Sicht der Nodes) mit vorhandenen Cluster-Switches verbunden:
 +
 `network device-discovery show -protocol lldp`
 
@@ -199,7 +199,7 @@ node2      /lldp
             e3b    c2 (6a:ad:4f:98:4c:a4)    Eth1/2            -
 ----
 ====
-. Die Cluster-Ports und -Switches sind (aus Sicht der Switches) folgendermaßen verbunden:
+. Die Cluster-Ports und Switches sind (aus Sicht der Switches) wie folgt verbunden:
 +
 `show cdp neighbors`
 
@@ -237,7 +237,7 @@ c1                    Eth1/31       175    S I s       N3K-C3232C       Eth1/31
 c1                    Eth1/32       175    S I s       N3K-C3232C       Eth1/32
 ----
 ====
-. Stellen Sie mit dem Befehl sicher, dass das Cluster-Netzwerk über vollständige Konnektivität verfügt:
+. Stellen Sie sicher, dass das Clusternetzwerk über vollständige Konnektivität verfügt:
 +
 `cluster ping-cluster -node node-name`
 
@@ -274,11 +274,8 @@ RPC status:
 2 paths up, 0 paths down (udp check)
 ----
 ====
-. Fahren Sie beim Switch c2 die mit den Cluster-Ports der Nodes verbundenen Ports herunter.
+. Fahren Sie auf Switch c2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 (c2)# *configure*
@@ -290,7 +287,6 @@ Enter configuration commands, one per line. End with CNTL/Z.
 (c2)(Config)# *exit*
 (c2)#
 ----
-====
 . Verschieben Sie die Node-Cluster-Ports vom alten Switch c2 auf den neuen Switch sw2, indem Sie die entsprechende Verkabelung verwenden, die von NVIDIA SN2100 unterstützt wird.
 . Zeigen Sie die Attribute des Netzwerkports an:
 +
@@ -363,11 +359,8 @@ UP     swp15        100G  9216   BondMember  sw1 (swp15)       Master: cluster_i
 UP     swp16        100G  9216   BondMember  sw1 (swp16)       Master: cluster_isl(UP)
 ----
 ====
-. Fahren Sie am Switch c1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.
+. Fahren Sie auf Switch c1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster LIFs zu ermöglichen.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 (c1)# *configure*
@@ -379,7 +372,6 @@ Enter configuration commands, one per line. End with CNTL/Z.
 (c1)(Config)# *exit*
 (c1)#
 ----
-====
 . Verschieben Sie die Knoten-Cluster-Ports vom alten Switch c1 auf den neuen Switch sw1, mit der entsprechenden Verkabelung unterstützt von NVIDIA SN2100.
 . Überprüfen der endgültigen Konfiguration des Clusters:
 +
@@ -530,8 +522,10 @@ Cluster
             node2_clus2  up/up    169.254.19.183/16  node2         e3b     true
 ----
 ====
-. Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung:
+. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
++
 `system switch ethernet log setup-password`
+
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -542,12 +536,12 @@ cluster1::*> *system switch ethernet log setup-password*
 Enter the switch name: *<return>*
 The switch name entered is not recognized.
 Choose from the following list:
-*cs1*
-*cs2*
+*sw1*
+*sw2*
 
 cluster1::*> *system switch ethernet log setup-password*
 
-Enter the switch name: *cs1*
+Enter the switch name: *sw1*
 Would you like to specify a user other than admin for log collection? {y|n}: *n*
 
 Enter the password: *<enter switch password>*
@@ -555,14 +549,14 @@ Enter the password again: *<enter switch password>*
 
 cluster1::*> *system switch ethernet log setup-password*
 
-Enter the switch name: *cs2*
+Enter the switch name: *sw2*
 Would you like to specify a user other than admin for log collection? {y|n}: *n*
 
 Enter the password: *<enter switch password>*
 Enter the password again: *<enter switch password>*
 ----
 ====
-. Aktivieren Sie die Funktion zur Statusüberwachung des Ethernet-Switches.
+. Führen Sie zum Starten der Protokollerfassung den folgenden Befehl aus, um das GERÄT durch den im vorherigen Befehl verwendeten Switch zu ersetzen. Damit werden beide Arten der Log-Erfassung gestartet: Die detaillierten *Support*-Protokolle und eine stündliche Erfassung von *Periodic*-Daten.
 +
 `system switch ethernet log modify -device _<switch-name>_ -log-request true`
 
@@ -572,13 +566,13 @@ Enter the password again: *<enter switch password>*
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
+cluster1::*> *system switch ethernet log modify -device sw1 -log-request true*
 
 Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
 
 Enabling cluster switch log collection.
 
-cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
+cluster1::*> *system switch ethernet log modify -device sw2 -log-request true*
 
 Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
 
@@ -602,8 +596,8 @@ Log Collection Enabled: true
 
 Index  Switch                       Log Timestamp        Status
 ------ ---------------------------- -------------------  ---------    
-1      cs1 (b8:ce:f6:19:1b:42)      4/29/2022 03:05:25   complete   
-2      cs2 (b8:ce:f6:19:1b:96)      4/29/2022 03:07:42   complete
+1      sw1 (b8:ce:f6:19:1b:42)      4/29/2022 03:05:25   complete   
+2      sw2 (b8:ce:f6:19:1b:96)      4/29/2022 03:07:42   complete
 ----
 ====
 +
