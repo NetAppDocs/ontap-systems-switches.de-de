@@ -2071,7 +2071,6 @@
   <block id="fc35a9ec43fa15619b7584ce5c4daa8a" category="list-text">Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:</block>
   <block id="5542e924104d087ae00a02e0143b2f6b" category="section-title">Migrieren Sie die Storage Switches</block>
   <block id="29c04d28b21adc7e1a7b356455c263a4" category="inline-image-macro">Switch-Anschluss</block>
-  <block id="7424e91fe1d742657d5ad736cc938704" category="paragraph">Durch die Wiederverwendung der Storage-Switches werden die Storage Switches von HA-Paar 1 zu gemeinsamen Switches. *Verkabelungsdiagramm für Switch-Attached*<block ref="6a2cf54f6a37518ec42d92fd7fd3e59c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="514085dcc3bcd7f871a43182b26fc37f" category="list-text">[[Schritt2]]HA-Paar 1, NSM224 Pfad-A-Kabel vom Storage Switch A zu den NSM224 Storage-Ports für HA-Paar 1, Pfad A auf Storage Switch A</block>
   <block id="9adac45c8f65af4ce2b61c1a4a107e6f" category="list-text">Verschieben Sie das Kabel von HA-Paar 1, Node A, Pfad A zum Storage Port NSM2224 für HA-Paar 1, Node A auf Storage Switch A</block>
   <block id="0e537830f3d70ee3a080b4d98d4c355a" category="list-text">Bewegen Sie das Kabel von HA-Paar 1, Node B, Pfad A zum Storage Port NSM2224 für HA-Paar 1, Node B auf Storage Switch A</block>
@@ -2125,7 +2124,6 @@
   <block id="6c2050d09711322397bf2564af018947" category="paragraph"><block ref="6c2050d09711322397bf2564af018947" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2aa2982691bcb6b044696b6691d5677" category="paragraph">Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie als Anleitung ein ausgefülltes Beispiel-Verkabelungsarbeitsblatt verwenden.</block>
   <block id="3d7fd5afdd3e2a9008c8eb6e9d19e41c" category="inline-image-macro">Verkabelungsarbeitsblatt</block>
-  <block id="7bfa22cf35645d8a9b2e335b3ee5f0b0" category="paragraph">Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:<block ref="5965a3db7e52c18148f117f0240c1e3f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4cd361459ea2bb087ed6c989579796c7" category="paragraph">Wo?</block>
   <block id="9ec84c8a49c539fada5b23f8acb3e112" category="paragraph">Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Die Tabelle der unterstützten Cluster-Verbindungen der Hardware Universe definiert die von der Plattform verwendeten Cluster-Ports.</block>
   <block id="eff06c6a47d34c39807f7ae5e22214f9" category="paragraph"><block ref="eff06c6a47d34c39807f7ae5e22214f9" category="inline-image-macro-rx" type="image"></block></block>
@@ -2270,9 +2268,6 @@
   <block id="97d338e8c659dde4173ceb593a7ccc43" category="list-text">[[ste28]]Überprüfen Sie, ob sich das Cluster in einem ordnungsgemäßen Zustand befindet:<block ref="639161158d7426b3865ce9c5a6f648b3" prefix=" " category="inline-code"></block></block>
   <block id="309143a0feb1ae92f31c8e20212e99bb" category="list-text">[[Schritt29]]Ping the Remote Cluster Interfaces to verify Connectivity:<block ref="6d931e460f3e419ca5bc874e47132b6d" prefix=" " category="inline-code"></block></block>
   <block id="31a64a44fce8ed03b7b71b06a1ddc567" category="doc">Migrieren Sie mit SAT-Storage von einer Switch-losen Konfiguration unter Wiederverwendung der Storage-Switches</block>
-  <block id="a791669229b197424a1c53af3c935995" category="list-text">[[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe<block ref="f6e7f441bcff51ec3d8080f15010fd4c" category="inline-link-rx"></block> Entnehmen.</block>
-  <block id="ded104c4c31658cbea5c009e1de22984" category="list-text">[[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="41062cda0a6ae510a0f118eb961870a4" category="inline-link-macro-rx"></block> Entnehmen.</block>
-  <block id="533661dac93384c9c5129a0888e57a1d" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="2cdb0ef9b29e3206865e37e4f43be394" category="inline-link-macro-rx"></block>Entnehmen.</block>
   <block id="0087b0de389e5b9f017430f157337f28" category="summary">Sie können ältere Cisco Cluster Switches für einen ONTAP Cluster unterbrechungsfrei zu Cisco Nexus 92300YC Cluster Network Switches migrieren.</block>
   <block id="ee9f18fe03ee9b0dd7c1625d630104b6" category="list-text">Alle Cluster-LIFs im Status „up“ mit den Cluster-LIFs befinden sich auf den Home-Ports.</block>
   <block id="861442a3532c3e685a51468723598110" category="list-text">Die vorhandenen Cisco Nexus 5596UP Cluster-Switches sind c1 und c2.</block>
@@ -4739,4 +4734,10 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
   <block id="6fa86324fabffaee853e6eeee2824329" category="list-text">Switch C1 wird durch Switch cs1 ersetzt.</block>
   <block id="9f4f9b4efa8b2eb74b227e6e2a18f872" category="list-text">Fahren Sie auf Switch C2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.</block>
   <block id="54c071b600d8be038e07b18d66329aa7" category="list-text">Fahren Sie auf Switch C1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster LIFs zu ermöglichen.</block>
+  <block id="5965a3db7e52c18148f117f0240c1e3f" category="paragraph"><block ref="5965a3db7e52c18148f117f0240c1e3f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6a5dd15f930e244dadfd412b53dd1ac0" category="paragraph">Durch die Wiederverwendung der Storage-Switches werden die Storage Switches von HA-Paar 1 zu gemeinsamen Switches.
+*Verkabelungsdiagramm für Switch-Attached*</block>
+  <block id="5851bb17419faa449f719ec90fe12181" category="list-text">[[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
+  <block id="ea9f3090e45d8199fc92892a96dd0214" category="list-text">[[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
+  <block id="779f2e1ced3dc42aa441f71771bcb993" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="2e68fbe1bf6d8e813f758c3b7509ff6f" category="inline-link-macro-rx"></block>Entnehmen.</block>
 </blocks>

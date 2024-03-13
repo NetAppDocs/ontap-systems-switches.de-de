@@ -10,7 +10,7 @@ summary: Verwenden Sie die Verkabelungsabbilder, um die Verkabelung zwischen den
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -42,7 +42,9 @@ Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informati
 
 Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie als Anleitung ein ausgefülltes Beispiel-Verkabelungsarbeitsblatt verwenden.
 
-Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:image:cabling_worksheet.jpg["Verkabelungsarbeitsblatt"]
+Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+
+image:cabling_worksheet.jpg["Verkabelungsarbeitsblatt"]
 
 Wo?
 

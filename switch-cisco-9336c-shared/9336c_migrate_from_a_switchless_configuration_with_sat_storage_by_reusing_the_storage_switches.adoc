@@ -10,14 +10,17 @@ summary:
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 
 
 == Migrieren Sie die Storage Switches
 
-Durch die Wiederverwendung der Storage-Switches werden die Storage Switches von HA-Paar 1 zu gemeinsamen Switches. *Verkabelungsdiagramm für Switch-Attached*image:9336c_image1.jpg["Switch-Anschluss"]
+Durch die Wiederverwendung der Storage-Switches werden die Storage Switches von HA-Paar 1 zu gemeinsamen Switches.
+*Verkabelungsdiagramm für Switch-Attached*
+
+image:9336c_image1.jpg["Switch-Anschluss"]
 
 .Schritte
 . Überprüfen Sie, ob die Storage-Konfiguration von HA-Paar 1 (und HA-Paar 2) richtig und fehlerfrei ist:
@@ -83,7 +86,7 @@ node2
 storage::*> system health alert show -instance
 There are no entries matching your query.
 ----
-. [[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe http://9336c_install_nx-os_software_and_reference_configuration_files_@rcfs@.html#install-the-rcf-on-a-cisco-nexus-9336c-fx2-shared-switch["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
+. [[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe link:9336c_install_nx-os_software_and_reference_configuration_files_rcfs.html#install-the-rcf-on-a-cisco-nexus-9336c-fx2-shared-switch["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
 . Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:
 `system health alert show -instance`
 
@@ -105,7 +108,7 @@ There are no entries matching your query.
 storage::*> system health alert show -instance
 There are no entries matching your query.
 ----
-. [[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe link:9336c_install_nx-os_software_and_reference_configuration_files_@rcfs@.html#install-the-rcf-on-a-cisco-nexus-9336c-fx2-shared-switch["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
+. [[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe link:9336c_install_nx-os_software_and_reference_configuration_files_rcfs.html#install-the-rcf-on-a-cisco-nexus-9336c-fx2-shared-switch["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
 . Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:
 `system health alert show -instance`
 
@@ -135,7 +138,7 @@ sh1 (config-if)# spanning-tree port type network
 sh1 (config-if)# exit
 sh1 (config)# exit
 ----
-. [[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe link:9336c_install_nx-os_software_and_reference_configuration_files_@rcfs@.html["Installieren der NX-OS-Software und der Referenzkonfigurationsdateien (RCFs)"]Entnehmen.
+. [[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe link:9336c_install_nx-os_software_and_reference_configuration_files_rcfs.html["Installieren der NX-OS-Software und der Referenzkonfigurationsdateien (RCFs)"]Entnehmen.
 . Vergewissern Sie sich, dass die Switch-Netzwerkkonfiguration gültig ist:
 `network port show`
 
