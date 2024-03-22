@@ -1,7 +1,7 @@
 ---
 permalink: switch-bes-53248/configure-ssh.html 
 sidebar: sidebar 
-keywords: ssh, requirement, cluster, switch, health, monitor, chsm, log, collection, feature, bes, enable ssh on bes-53248 cluster switches - bes-53248 switches 
+keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, bes, enable ssh on bes-53248 cluster switches - bes-53248 switches 
 summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Zum Aktivieren von SSH an BES-53248-Cluster-Switches generieren Sie zuerst die SSH-Schlüssel und aktivieren dann SSH.' 
 ---
 = Aktivieren Sie SSH bei BES-53248 Cluster-Switches
@@ -119,4 +119,4 @@ SCP server Administrative Mode: ............... Enabled
 
 
 .Was kommt als Nächstes?
-link:configure-log-collection.html["Aktivieren Sie die Protokollerfassungsfunktion"].
+link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"].

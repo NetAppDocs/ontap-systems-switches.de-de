@@ -1,8 +1,8 @@
 ---
-permalink: switch-cisco-3132q-v/CSHM_log_collection.html 
+permalink: switch-cisco-92300/CSHM_log_collection.html 
 sidebar: sidebar 
-keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation 
-summary: Die Protokollerfassungsfunktion für die Cluster-Switch-Systemzustandsüberwachung wird verwendet, um mit dem Switch bezogene Protokolldateien in ONTAP zu erfassen. Sie müssen sicherstellen, dass Sie Ihre Umgebung mit der CLI für den 92300YC-Cluster-Switch eingerichtet haben, wie hier beschrieben. 
+keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation,92300YC Cisco setup,92300YC switches configuration,NX-OS 
+summary: 'Die CSHM-Protokollerfassungsfunktion (Ethernet Switch Health Monitor) wird verwendet, um Protokolle von Cluster- oder Storage-Netzwerk-Switches in ONTAP zu erfassen.' 
 ---
 = Protokollerfassung der Ethernet-Switch-Statusüberwachung
 :allow-uri-read: 
@@ -11,17 +11,10 @@ summary: Die Protokollerfassungsfunktion für die Cluster-Switch-Systemzustands�
 
 
 [role="lead"]
-Sie können die Protokollerfassungsfunktion verwenden, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
-
 Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich. Dieses Verfahren führt Sie durch den Prozess der Einrichtung und Inbetriebnahme der Sammlung von detaillierten *Support*-Protokollen vom Switch und startet eine stündliche Erfassung von *periodischen* Daten, die von AutoSupport gesammelt werden.
 
-.Bevor Sie beginnen
-* Stellen Sie sicher, dass Sie Ihre Umgebung mit dem Cisco 3132Q-V Cluster Switch * CLI* eingerichtet haben.
-* Die Switch-Statusüberwachung muss für den Switch aktiviert sein. Überprüfen Sie dies, indem Sie sicherstellen, dass die `Is Monitored:` Feld wird in der Ausgabe des auf *true* gesetzt `system switch ethernet show` Befehl.
-
-
 .Schritte
-. Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung:
+. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
 +
 `system switch ethernet log setup-password`
 
@@ -79,7 +72,7 @@ Enabling cluster switch log collection.
 ----
 ====
 +
-Warten Sie 10 Minuten, und prüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
+Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
 
 +
 `system switch ethernet log show`
@@ -109,7 +102,7 @@ ONTAP-SSH-Schlüssel neu generieren. Wenden Sie sich an den NetApp Support.
  a| 
 *Switch-Passwort-Fehler*
  a| 
-Überprüfen Sie die Anmeldeinformationen, testen Sie die SSH-Konnektivität und regenerieren Sie ONTAP-SSH-Schlüssel. Lesen Sie die Switch-Dokumentation oder wenden Sie sich an den NetApp Support, um weitere Informationen zu erhalten.
+Überprüfen Sie die Anmeldeinformationen, testen Sie die SSH-Konnektivität und regenerieren Sie ONTAP-SSH-Schlüssel. Lesen Sie die Switch-Dokumentation oder wenden Sie sich an den NetApp Support, um Anweisungen zu erhalten.
 
 
 

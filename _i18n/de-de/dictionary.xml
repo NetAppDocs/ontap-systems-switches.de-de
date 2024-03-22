@@ -3994,7 +3994,6 @@
   <block id="354a428ae5bd694cfeccb15e5faecafb" category="sidebar">Installieren Sie ein RCF</block>
   <block id="c13171629fe31c1238a32f1e3650b982" category="sidebar">Installieren SIE FASTPATH und RCF für ONTAP 8.3.1 und höher</block>
   <block id="a8bb0b5314965a8ac1d110202d7aae1f" category="sidebar">Installation von NX-OS</block>
-  <block id="72f2a813dae956304645ec60ccd278dd" category="sidebar">Installieren Sie CSHM</block>
   <block id="9c065304d8a82e97da8536d4c7484ee2" category="sidebar">Migrieren Sie von einem älteren Cisco Switch</block>
   <block id="c95ced7468e70606897322014b89e5b3" category="section-title">Schritt 3: Kopieren Sie das NX-OS-Image auf Cisco Switch S2 und starten Sie neu</block>
   <block id="04677d95852adc11088eca251913d172" category="list-text">Kopieren Sie das NX-OS-Image auf Switch S2.</block>
@@ -4740,4 +4739,12 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
   <block id="5851bb17419faa449f719ec90fe12181" category="list-text">[[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="ea9f3090e45d8199fc92892a96dd0214" category="list-text">[[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2e5583639979312d3d691c4092c19d52" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="779f2e1ced3dc42aa441f71771bcb993" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="2e68fbe1bf6d8e813f758c3b7509ff6f" category="inline-link-macro-rx"></block>Entnehmen.</block>
+  <block id="3e4a731a25f6cb42856b944eca270383" category="paragraph"><block ref="69a3b5b5b3e87ce1bcae2811d815d9de" category="inline-link-macro-rx"></block>.</block>
+  <block id="a11987d46687611ce124e7db3e587d99" category="list-text">Für *keine Authentifizierung*:<block ref="ba6af8270ffe8be26bb38b923ee39375" prefix=" " category="inline-code"></block></block>
+  <block id="00a862cbf647531bcc4b5bf9faba74e4" category="list-text">Für * MD5/SHA-Authentifizierung*:<block ref="31b98def7e9f7bb02cdfd9ac87afcda4" prefix=" " category="inline-code"></block></block>
+  <block id="7286c151c11606a97b24bba616cce292" category="list-text">Für *MD5/SHA-Authentifizierung mit AES/DES-Verschlüsselung*:<block ref="6a48e8cc740517cd540e6de4c0a5585b" prefix=" " category="inline-code"></block></block>
+  <block id="e7d18f4dea6cb0b4877fd6a9e25a2411" category="paragraph"><block ref="e3949fbf38af37f5381ecfa4e157ffa8" prefix="" category="inline-code"></block></block>
+  <block id="7733a6a16b4fa24d09c107d2b3eefb78" category="summary">Die Protokollerfassungsfunktion für die Cluster-Switch-Systemzustandsüberwachung wird verwendet, um mit dem Switch bezogene Protokolldateien in ONTAP zu erfassen. Sie müssen sicherstellen, dass Sie Ihre Umgebung mit der CLI für den 92300YC-Cluster-Switch eingerichtet haben, wie hier beschrieben.</block>
+  <block id="e7c823ebcf9c688c2043749093639ce5" category="paragraph">Mit den folgenden Befehlen wird ein SNMPv3-Benutzername auf Cisco 92300YC-Switches konfiguriert:</block>
+  <block id="d60c463bb4096f3ed4bd1618626dfe10" category="paragraph-title">Fehlerbehebung</block>
 </blocks>
