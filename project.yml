@@ -12,7 +12,7 @@ settings:
   langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: AFF und FAS Switch-Dokumentation
+  - title: Switch docs für ONTAP Hardware
     url: "/index.html"
   - title: Los geht's
     entries:

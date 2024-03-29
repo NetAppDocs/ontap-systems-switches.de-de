@@ -1,9 +1,9 @@
 ---
 indexpage:
-  lead: NetApp bietet Cluster-, Storage- und Shared-Switches für Konnektivität zwischen
-    Host-Storage und zwei oder mehr All Flash FAS/FAS Controllern. So können Sie Daten
-    und Netzwerkschnittstellen innerhalb Ihrer Storage-Infrastruktur unterbrechungsfrei
-    verschieben.
+  lead: NetApp bietet Cluster-, Storage- und Shared-Switches für die Konnektivität
+    zwischen Host-Storage und zwei oder mehr NetApp-Controllern, sodass Daten und
+    Netzwerkschnittstellen in der Storage-Infrastruktur unterbrechungsfrei verschoben
+    werden können.
   tiles:
   - title: Los geht's
     links:
@@ -25,7 +25,7 @@ indexpage:
       url: "/overview-eod.html"
   - title: Verwandte ONTAP Dokumente
     links:
-    - title: AFF/FAS-Hardwaresysteme
+    - title: ONTAP Hardwaresysteme
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
     - title: ONTAP Software
       url: https://docs.netapp.com/us-en/ontap/index.html

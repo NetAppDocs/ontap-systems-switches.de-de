@@ -51,7 +51,7 @@ entries:
   entries:
   - title: Migration von CN1610 Switches
     url: "/switch-bes-53248/migrate-cn1610.html"
-  - title: Migration zu Switches mit zwei Nodes
+  - title: Migrieren Sie zu Switch mit zwei Nodes
     url: "/switch-bes-53248/migrate-to-2n-switched.html"
 - title: Tauschen Sie die Schalter aus
   pdf-filename: Replace_Switches_bes53248
