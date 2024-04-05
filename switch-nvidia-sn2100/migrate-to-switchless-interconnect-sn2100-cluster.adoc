@@ -344,7 +344,7 @@ Cluster  node2_clus2   e0b       true
 ----
 ====
 +
-Wenn keine Cluster-LIFS an die Home-Ports zurückgegeben wurden, setzen Sie sie manuell zurück:
+Wenn Cluster-LIFS nicht an die Home Ports zurückgegeben haben, setzen Sie sie manuell vom lokalen Node zurück:
 
 +
 `network interface revert -vserver Cluster -lif _lif_name_`

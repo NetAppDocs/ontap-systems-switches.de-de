@@ -22,6 +22,8 @@ entries:
     url: "/switch-cisco-92300/setup-worksheet-92300yc.html"
   - title: Konfigurieren Sie den Switch
     url: "/switch-cisco-92300/configure-install-initial.html"
+  - title: Überprüfung der Verkabelung und Konfiguration
+    url: "/switch-cisco-92300/cabling-considerations-92300.html"
 - title: Software konfigurieren
   pdf-filename: Configure_Software_92300yc
   entries:
