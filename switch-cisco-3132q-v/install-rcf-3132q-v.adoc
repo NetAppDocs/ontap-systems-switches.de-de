@@ -621,12 +621,6 @@ cluster1::*>
 ----
 ====
 . Wiederholen Sie die Schritte 1 bis 10 am Schalter cs1.
-
-
-
-
-=== Schritt 3: Neustart und Überprüfung der Konfiguration
-
 . Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
 +
 .Beispiel anzeigen
@@ -639,15 +633,17 @@ cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert True
 ====
 . Schalter cs1 neu starten. Sie führen dies aus, um die Cluster-LIFs auszulösen, die auf die Home-Ports zurückgesetzt werden. Sie können die auf den Nodes gemeldeten Ereignisse „Cluster Ports down“ ignorieren, während der Switch neu gebootet wird.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cs1# *reload*
 This command will reboot the system. (y/n)?  [n] *y*
 ----
-====
+
+
+
+
+=== Schritt 3: Überprüfen Sie die Konfiguration
+
 . Vergewissern Sie sich, dass die mit den Cluster-Ports verbundenen Switch-Ports aktiv sind.
 +
 `show interface brief | grep up`
