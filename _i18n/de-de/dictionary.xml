@@ -827,7 +827,6 @@
   <block id="1a0894513362fda649e11ba9de926b82" category="list-text">Legen Sie den Administrations- oder Betriebsstatus für jeden Cluster-Port fest.</block>
   <block id="be6163ad0c362d632b28f98dea1fdaaa" category="paragraph">Alle verschiebten Cluster-Ports sollten nach oben erfolgen.</block>
   <block id="d0141bcaf704f75f043a7384708a3131" category="paragraph">Vergewissern Sie sich, dass der cs2-neue Switch von den verschobenen Cluster-Ports als „Nachbarn“ angezeigt wird.</block>
-  <block id="8c61118abc6e9e30fd4469d362e96e00" category="paragraph">Alle Cluster-LIFs bewegen sich zum cs2-neuen Switch.</block>
   <block id="2a5fc0afbcb2299e24c73a909b297e93" category="paragraph">Vergewissern Sie sich, dass die verschiebten Cluster-Ports den cs1-neuen Switch als Nachbarn sehen.</block>
   <block id="9e25219bfef39dc2d94805b599244f8d" category="open-title">ONTAP 9.8 und höher</block>
   <block id="c341f6ea60d7e8508c7d6cd8d529fd71" category="paragraph">Aktivieren Sie die Protokollerfassungsfunktion für die Ethernet Switch-Systemzustandsüberwachung, um Switch-bezogene Protokolldateien zu erfassen. Verwenden Sie dazu die folgenden beiden Befehle:<block ref="36ac3c1f3bae8142b5d110fb906ba03e" prefix=" " category="inline-code"></block> Und<block ref="ff5aaae616b6f326cad680284f32b588" prefix=" " category="inline-code"></block></block>
@@ -4695,10 +4694,8 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
   <block id="415f7d338cb2daf9bc58ecb9861e7a38" category="list-text">Die Verkabelung zwischen den Knoten und cs2 wird dann von cs2 getrennt und wieder mit cs2-New verbunden.</block>
   <block id="4c583a66e2c7985bcc194e39f55ceea5" category="list-text">Switch cs1 wird durch Switch cs1-New ersetzt.</block>
   <block id="e36cd913095fb9e4f8b81c803f89930b" category="list-text">Die Verkabelung zwischen den Knoten und cs1 wird dann von cs1 getrennt und wieder mit cs1-New verbunden.</block>
-  <block id="c541a676ea1012971e3e092cd0c456bb" category="list-text">Fahren Sie bei Cluster-Switch cs2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:</block>
   <block id="3e504b88532082c592970766665ca3a1" category="list-text">Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.</block>
   <block id="501db48c47898b7316de60a2bcbe9a16" category="list-text">Bestätigen Sie die Switch-Port-Verbindungen aus der Perspektive von Switch cs2-New:</block>
-  <block id="4b9f132828deb041b404e712b378ac77" category="list-text">Fahren Sie bei Cluster-Switch cs1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen. Im folgenden Beispiel wird die Ausgabe des Schnittstellenbeispiels aus Schritt 7 verwendet.</block>
   <block id="32172ed3b8d9ced5da325e5230b7981b" category="list-text">Überprüfen Sie, ob für die Cluster-LIFs ein Failover zu den auf Switch cs2-New gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern:</block>
   <block id="85e04ff5dd770cff5dbbe435ea94a7dd" category="list-text">Bestätigen Sie die Switch-Port-Verbindungen aus der Perspektive von Switch cs1-New:</block>
   <block id="784542320767d69b7e7fc2bfeb64a5b4" category="list-text">Fahren Sie bei Cluster-Switch CL2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:</block>
@@ -4780,4 +4777,11 @@ Bild:../media/FEC_copper_table.jpg[25G Ports mit Kupferkabel]</block>
   <block id="eae32a8cbb7853bbc6b25138f2911afa" category="paragraph">Bevor Sie Ihren Cisco 3132Q-V-Switch konfigurieren, gehen Sie die folgenden Überlegungen durch.</block>
   <block id="e3e32349be8562dbe95d6af1fcba4bbe" category="list-text">Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:<block ref="80cae18d0d871afff6b1bcabf727d6da" prefix=" " category="inline-code"></block></block>
   <block id="abd1e059b59ee3b3be9267c9c1319923" category="list-text">Prüfen Sie, ob es keine Probleme mit dem Storage Switch oder der Verkabelung gibt:</block>
+  <block id="54be17cb6ddfe931b6d4ca0454c7bcc8" category="admonition">Durch die Deaktivierung der automatischen Zurücksetzung wird sichergestellt, dass ONTAP nur ein Failover der Cluster-LIFs übernimmt, wenn die Switch-Ports später heruntergefahren werden.</block>
+  <block id="3947ff32e82f86e7176dc28b3ee33db0" category="list-text">Fahren Sie auf Cluster-Switch cs2 die Ports herunter, die mit den Cluster-Ports von *all* Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:</block>
+  <block id="022c00ee7f7e6672d82cc079623d6e22" category="list-text">Fahren Sie auf Cluster-Switch cs1 die Ports herunter, die mit den Cluster-Ports von *all* Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.</block>
+  <block id="e6eb1709bc8131372d63990293ab75f8" category="paragraph">Alle Cluster-LIFs führen einen Failover zum cs2-neuen Switch durch.</block>
+  <block id="af7a19b4dbadf7641102bf88598cfd8b" category="paragraph">+
+Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich. Dieses Verfahren führt Sie durch den Prozess der Einrichtung und Inbetriebnahme der Sammlung von detaillierten *Support*-Protokollen vom Switch und startet eine stündliche Erfassung von *periodischen* Daten, die von AutoSupport gesammelt werden.</block>
+  <block id="a13c9d4c750715a8b993a3fec916189f" category="list-text">Der Benutzer für die Protokollerfassung muss angegeben werden, wenn die Referenzkonfigurationsdatei (RCF) angewendet wird. Standardmäßig ist dieser Benutzer auf _admin_ gesetzt. Wenn Sie einen anderen Benutzer verwenden möchten, müssen Sie dies im Abschnitt *# SHM-Benutzer*s des RCF angeben.</block>
 </blocks>

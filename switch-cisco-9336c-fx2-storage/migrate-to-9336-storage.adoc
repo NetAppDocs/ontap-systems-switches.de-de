@@ -258,7 +258,11 @@ cs2                         cluster-network     10.233.205.93   N5K-C5596UP
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-. Fahren Sie bei Cluster-Switch cs2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
++
+
+NOTE: Durch die Deaktivierung der automatischen Zurücksetzung wird sichergestellt, dass ONTAP nur ein Failover der Cluster-LIFs übernimmt, wenn die Switch-Ports später heruntergefahren werden.
+
+. Fahren Sie auf Cluster-Switch cs2 die Ports herunter, die mit den Cluster-Ports von *all* Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
 +
 [listing, subs="+quotes"]
 ----
@@ -376,7 +380,7 @@ Vergewissern Sie sich, dass der cs2-neue Switch von den verschobenen Cluster-Por
 cs2-new# *show interface brief*
 cs2-new# *show cdp neighbors*
 ----
-. Fahren Sie bei Cluster-Switch cs1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen. Im folgenden Beispiel wird die Ausgabe des Schnittstellenbeispiels aus Schritt 7 verwendet.
+. Fahren Sie auf Cluster-Switch cs1 die Ports herunter, die mit den Cluster-Ports von *all* Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.
 +
 [listing, subs="+quotes"]
 ----
@@ -384,7 +388,7 @@ cs1(config)# *interface eth1/1-1/2*
 cs1(config-if-range)# *shutdown*
 ----
 +
-Alle Cluster-LIFs bewegen sich zum cs2-neuen Switch.
+Alle Cluster-LIFs führen einen Failover zum cs2-neuen Switch durch.
 
 . Überprüfen Sie, ob für die Cluster-LIFs ein Failover zu den auf Switch cs2-New gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern:
 +

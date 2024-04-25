@@ -36,6 +36,10 @@ entries:
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-software-9336c-storage.html"
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-rcf-9336c-storage.html"
+  - title: Aktivieren Sie die Protokollerfassung
+    url: "/switch-cisco-9336c-fx2-storage/CSHM_log_collection.html"
+  - title: Konfigurieren Sie SNMPv3 für die Überwachung
+    url: "/switch-cisco-9336c-fx2-storage/CSHM_snmpv3.html"
 - title: Storage-Switch austauschen
   pdf-filename: Replace_Switch_9336c-fx2-Speicher
   url: "/switch-cisco-9336c-fx2-storage/replace-storage-switch-9336c-storage.html"
