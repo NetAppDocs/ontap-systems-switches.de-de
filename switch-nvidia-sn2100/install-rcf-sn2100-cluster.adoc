@@ -605,4 +605,4 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 --
 ====
 .Was kommt als Nächstes?
-link:install-snmpv3-sn2100-cluster.html["Konfigurieren Sie die Switch-Protokollerfassung"].
+link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"]

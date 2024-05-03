@@ -25,7 +25,7 @@ Anweisungen hierzu finden Sie im _NVIDIA Switch Installation Guide_.
 
 . link:configure-sn2100-cluster.html["Konfigurieren Sie den Switch"].
 +
-Anweisungen sind in der NVIDIA-Dokumentation verfügbar.
+Anweisungen hierzu finden Sie in der Dokumentation von NVIDIA.
 
 . link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"].
 +
@@ -43,7 +43,11 @@ Sie können Cumulus Linux (CL) OS installieren, wenn der Switch Cumulus Linux od
 +
 Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.
 
-. link:install-snmpv3-sn2100-cluster.html["Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung"].
+. link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"].
++
+Verwenden Sie diese Funktion, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
+
+. link:CSHM_snmpv3.html["Konfigurieren Sie SNMPv3 für die Überwachung"].
 +
 Diese Version umfasst Unterstützung für SNMPv3 für die Erfassung von Switch-Protokollen und für Switch Health Monitoring (SHM).
 

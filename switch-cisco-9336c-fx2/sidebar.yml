@@ -38,7 +38,7 @@ entries:
     url: "/switch-cisco-9336c-fx2/install-nxos-overview-9336c-cluster.html"
   - title: Installation der NX-OS Software
     url: "/switch-cisco-9336c-fx2/install-nxos-software-9336c-cluster.html"
-  - title: Installieren Sie die RCF-Konfigurationsdatei
+  - title: Installieren oder aktualisieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2/install-nxos-rcf-9336c-cluster.html"
   - title: Aktivieren Sie SSH
     url: "/switch-cisco-9336c-fx2/configure-ssh.html"
