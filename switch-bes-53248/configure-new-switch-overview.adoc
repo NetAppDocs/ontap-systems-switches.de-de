@@ -37,19 +37,19 @@ Optional können Sie neue Ports durch den Kauf und die Installation weiterer Liz
 
 . link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."].
 +
-Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.
-
-. link:configure-health-monitor.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"].
-+
-Installieren Sie die entsprechende Konfigurationsdatei für das Monitoring des Clusterstatus.
+Installieren Sie den RCF auf dem BES-53248 Cluster-Switch, und überprüfen Sie dann die Ports für eine zusätzliche Lizenz, nachdem der RCF angewendet wurde.
 
 . link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"].
 +
 Wenn Sie den Cluster Switch Health Monitor (CSHM) und die Funktionen zur Protokollerfassung verwenden, aktivieren Sie SSH auf den Switches.
 
-. link:configure-log-collection.html["Aktivieren Sie die Protokollerfassungsfunktion"].
+. link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassungsfunktion"].
 +
 Verwenden Sie die Protokollerfassungsfunktionen, um Switch-bezogene Protokolldateien in ONTAP zu sammeln.
+
+. link:CSHM_snmpv3.html["Konfigurieren Sie SNMPv3 für die Überwachung"].
++
+Wenn Sie die Funktion Cluster Switch Health Monitor (CSHM) verwenden, konfigurieren Sie SNMPv3, das die Ethernet-Switch-Statusüberwachung (CSHM) unterstützt.
 
 
 

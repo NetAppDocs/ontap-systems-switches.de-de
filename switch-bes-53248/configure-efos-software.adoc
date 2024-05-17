@@ -20,130 +20,29 @@ EFOS Software umfasst eine Reihe erweiterter Netzwerkfunktionen und Protokolle f
 == Installation vorbereiten
 
 .Bevor Sie beginnen
+* Dieses Verfahren ist nur für Neuinstallationen geeignet.
 * Laden Sie die entsprechende Broadcom EFOS-Software für Ihre Cluster-Switches von herunter https://www.broadcom.com/support/bes-switch["Unterstützung Für Broadcom Ethernet-Switches"^] Standort.
-* Lesen Sie die folgenden Hinweise zu EFOS-Versionen.
+* Stellen Sie sicher, dass die link:configure-install-initial.html["Der BES-53248 Cluster-Switch ist konfiguriert"].
 
 
-[]
-====
-*Beachten Sie Folgendes:*
-
-* Beim Upgrade von EFOS 3.4.x.x auf EFOS 3.7.x.x oder höher muss auf dem Switch EFOS 3.4.4.6 (oder höher 3.4.x.x-Version) ausgeführt werden. Wenn Sie vor dieser Version eine Version ausführen, aktualisieren Sie zuerst den Switch auf EFOS 3.4.4.6 (oder höher 3.4.x.x Version), und aktualisieren Sie dann den Switch auf EFOS 3.7.x.x oder höher.
-* Die Konfiguration für EFOS 3.4.x.x und 3.7.x.x oder höher ist unterschiedlich. Wenn Sie die EFOS-Version von 3.4.x.x auf 3.7.x.x oder höher ändern oder umgekehrt, müssen Sie den Switch auf die Werkseinstellungen zurücksetzen und die RCF-Dateien für die entsprechende EFOS-Version werden (neu) angewendet. Für dieses Verfahren ist ein Zugriff über den seriellen Konsolen-Port erforderlich.
-* Ab EFOS Version 3.7.x.x oder höher ist eine FIPS-konforme Version und eine FIPS-konforme Version verfügbar. Verschiedene Schritte gelten für den Wechsel von einer nicht FIPS-konformen Version auf eine FIPS-konforme Version oder umgekehrt. Wenn EFOS von einer nicht FIPS-konformen Version oder umgekehrt geändert wird, wird der Switch auf die Werkseinstellungen zurückgesetzt. Für dieses Verfahren ist ein Zugriff über den seriellen Konsolen-Port erforderlich.
-
-
-====
-|===
-
-
-| *Verfahren* | *Aktuelle EFOS-Version* | * Neue EFOS-Version* | *Hohe Stufen* 
-
-
- a| 
-Schritte zur Aktualisierung von EFOS zwischen zwei (nicht) FIPS-konformen Versionen
- a| 
-3.4.x.x
- a| 
-3.4.x.x
- a| 
-Installieren Sie das neue EFOS-Image mit <<Methode 1: EFOS installieren>>. Die Konfigurations- und Lizenzdaten bleiben erhalten.
-
-
-
- a| 
-3.4.4.6 (oder höher 3.4.x.x)
- a| 
-3.7.x.x oder höher ohne FIPS-konform
- a| 
-Aktualisieren von EFOS mit <<Methode 1: EFOS installieren>>. Setzen Sie den Schalter auf die Werkseinstellungen zurück, und wenden Sie die RCF-Datei für EFOS 3.7.x.x oder höher an.
-
-
-
-.2+| 3.7.x.x oder höher ohne FIPS-konform  a| 
-3.4.4.6 (oder höher 3.4.x.x)
- a| 
-EFOS mit herabstufen <<Methode 1: EFOS installieren>>. Setzen Sie den Schalter auf die Werkseinstellungen zurück, und wenden Sie die RCF-Datei für EFOS 3.4.x.x an
-
-
-
- a| 
-3.7.x.x oder höher ohne FIPS-konform
- a| 
-Installieren Sie das neue EFOS-Image mit <<Methode 1: EFOS installieren>>. Die Konfigurations- und Lizenzdaten bleiben erhalten.
-
-
-
- a| 
-3.7.x.x oder höher FIPS-konform
- a| 
-3.7.x.x oder höher FIPS-konform
- a| 
-Installieren Sie das neue EFOS-Image mit <<Methode 1: EFOS installieren>>. Die Konfigurations- und Lizenzdaten bleiben erhalten.
-
-
-
- a| 
-Schritte zum Upgrade auf/von einer FIPS-konformen EFOS-Version
- a| 
-Nicht FIPS-konform
- a| 
-FIPS-konform
- a| 
-Installation des EFOS-Images mit <<Methode 2: Aktualisieren von EFOS mit der ONIE OS-Installation>>. Informationen zur Switch-Konfiguration und -Lizenz gehen verloren.
-
-
-
- a| 
-FIPS-konform
- a| 
-Nicht FIPS-konform
-
-|===
-[IMPORTANT]
-====
-Um zu überprüfen, ob Ihre EFOS-Version FIPS-konform oder nicht-FIPS-konform ist, verwenden Sie die `show fips status` Befehl. In den folgenden Beispielen verwendet *IP_Switch_a1* FIPS-konformes EFOS und *IP_Switch_a2* verwendet nicht-FIPS-konformes EFOS.
-
-* Ein-Schalter IP_Switch_a1:
-
-
-[listing]
-----
-IP_switch_a1 # *show fips status*
-
-System running in FIPS mode
-----
-* Ein-Schalter IP_Switch_a2:
-
-
-[listing]
-----
-IP_switch_a2 # *show fips status*
-                     ^
-% Invalid input detected at `^` marker.
-----
-====
 
 
 == Installieren Sie die Software
 
-Verwenden Sie eine der folgenden Methoden:
+Verwenden Sie eine der folgenden Methoden, um die EFOS-Software zu installieren:
 
-* <<Methode 1: EFOS installieren>>. Verwenden Sie für die meisten Fälle (siehe Tabelle oben).
-* <<Methode 2: Aktualisieren von EFOS mit der ONIE OS-Installation>>. Verwenden Sie diese Option, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist.
+* <<Methode 1: EFOS installieren>>. In den meisten Fällen eingesetzt.
+* <<Methode 2: Installieren Sie EFOS im ONIE-Modus>>. Verwenden Sie diese Option, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist.
 
 
 
 
 === Methode 1: EFOS installieren
 
-Führen Sie die folgenden Schritte durch, um die EFOS-Software zu installieren oder zu aktualisieren.
-
-
-IMPORTANT: Beachten Sie, dass nach dem Upgrade von BES-53248-Cluster-Switches von EFOS 3.3.x.x oder 3.4.x.x auf EFOS 3.7.0.4 oder 3.8.0.2 Inter-Switch Links (ISLs) und Port Channel im Status *Down* markiert sind. Lesen Sie diesen KB-Artikel: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric%2C_Interconnect_and_Management_Switches/BES-53248_Cluster_Switch_NDU_failed_upgrade_to_EFOS_3.7.0.4_and_later["NDU für Cluster-Switch BES-53248 konnte nicht auf EFOS 3.7.0.4 und höher aktualisiert werden"^] Entnehmen.
+Führen Sie die folgenden Schritte durch, um die EFOS-Software zu installieren.
 
 .Schritte
-. Verbinden Sie den BES-53248-Cluster-Switch mit dem Managementnetzwerk.
+. Loggen Sie sich beim seriellen Konsolenport des Switches ein oder stellen Sie eine Verbindung mit SSH her.
 . Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der EFOS, Lizenzen und der RCF-Datei hostet.
 +
 .Beispiel anzeigen
@@ -159,85 +58,79 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Sichern Sie das aktuelle aktive Bild auf cs2:
-+
-`show bootvar`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-(cs2)# *show bootvar*
-
- Image Descriptions
-
- active :
- backup :
-
- Images currently available on Flash
---------------------------------------------------------------------
- unit      active      backup        current-active    next-active
---------------------------------------------------------------------
-    1      3.4.3.3     Q.10.22.1     3.4.3.3           3.4.3.3
-
-(cs2)# *copy active backup*
-Copying active to backup
-Management access will be blocked for the duration of the operation
-Copy operation successful
-
-(cs2)# *show bootvar*
-
-Image Descriptions
-
- active :
- backup :
- Images currently available on Flash
---------------------------------------------------------------------
- unit      active      backup      current-active    next-active
---------------------------------------------------------------------
-    1      3.4.3.3     3.4.3.3     3.4.3.3           3.4.3.3
-(cs2)#
-----
-====
-. Überprüfen Sie die laufende Version der EFOS-Software:
-+
-`show version`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-(cs2)# *show version*
-
-Switch: 1
-
-System Description............................. BES-53248A1, 3.4.3.3, Linux 4.4.117-ceeeb99d, 2016.05.00.05
-Machine Type................................... BES-53248A1
-Machine Model.................................. BES-53248
-Serial Number.................................. QTFCU38260014
-Maintenance Level.............................. A
-Manufacturer................................... 0xbc00
-Burned In MAC Address.......................... D8:C4:97:71:12:3D
-Software Version............................... 3.4.3.3
-Operating System............................... Linux 4.4.117-ceeeb99d
-Network Processing Device...................... BCM56873_A0
-CPLD Version................................... 0xff040c03
-
-Additional Packages............................ BGP-4
-...............................................	QOS
-...............................................	Multicast
-............................................... IPv6
-............................................... Routing
-............................................... Data Center
-............................................... OpEN API
-............................................... Prototype Open API
-----
-====
 . Laden Sie die Bilddatei auf den Switch herunter.
++
+In der folgenden Tabelle finden Sie Informationen zu unterstützten Kopierprotokollen:
+
++
+|===
+
+
+| *Protokoll* | *Voraussetzung* 
+
+
+ a| 
+Trivial File Transfer Protocol (TFTP)
+ a| 
+Keine
+
+
+
+ a| 
+SSH File Transfer Protocol (SFTP)
+ a| 
+Ihr Softwarepaket muss die sichere Verwaltung unterstützen
+
+
+
+ a| 
+FTP
+ a| 
+Passwort erforderlich
+
+
+
+ a| 
+XMODEM
+ a| 
+Keine
+
+
+
+ a| 
+YMODEM
+ a| 
+Keine
+
+
+
+ a| 
+ZMODEM
+ a| 
+Keine
+
+
+
+ a| 
+Secure Copy Protocol (SCP)
+ a| 
+Ihr Softwarepaket muss die sichere Verwaltung unterstützen
+
+
+
+ a| 
+HTTP
+ a| 
+CLI-basierte Dateiübertragungen werden auf ausgewählten Plattformen unterstützt, wenn ein natives WGET-Dienstprogramm verfügbar ist
+
+
+
+ a| 
+HTTPS
+ a| 
+CLI-basierte Dateiübertragungen werden auf ausgewählten Plattformen unterstützt, wenn ein natives WGET-Dienstprogramm verfügbar ist
+
+|===
 +
 Durch Kopieren der Bilddatei auf das aktive Image wird bei einem Neustart die aktuell ausgeführte EFOS-Version erstellt. Das vorherige Bild bleibt als Backup verfügbar.
 
@@ -247,13 +140,13 @@ Durch Kopieren der Bilddatei auf das aktive Image wird bei einem Neustart die ak
 ====
 [listing, subs="+quotes"]
 ----
-(cs2)# *copy sftp://root@172.19.2.1//tmp/EFOS-3.4.4.6.stk active*
+(cs2)# *copy sftp://root@172.19.2.1//tmp/EFOS-3.10.0.3.stk active*
 Remote Password:********
 
 Mode........................................... SFTP
 Set Server IP.................................. 172.19.2.1
 Path........................................... //tmp/
-Filename....................................... EFOS-3.4.4.6.stk
+Filename....................................... EFOS-3.10.0.3.stk
 Data Type...................................... Code
 Destination Filename........................... active
 
@@ -284,9 +177,9 @@ Image Descriptions
 
  Images currently available on Flash
 --------------------------------------------------------------------
- unit     active      backup       current-active        next-active
+ unit      active      backup      current-active    next-active
 --------------------------------------------------------------------
-    1     3.4.3.3     3.4.3.3       3.4.3.3              3.4.4.6
+    1      3.7.0.4     3.7.0.4     3.7.0.4           3.10.0.3
 ----
 ====
 . Starten Sie den Switch neu:
@@ -323,14 +216,14 @@ System will now restart!
 
 Switch: 1
 
-System Description............................. BES-53248A1, 3.4.4.6, Linux 4.4.211-28a6fe76, 2016.05.00.04
+System Description............................. BES-53248A1, 3.10.0.3, Linux 4.4.211-28a6fe76, 2016.05.00.04
 Machine Type................................... BES-53248A1,
 Machine Model.................................. BES-53248
 Serial Number.................................. QTFCU38260023
 Maintenance Level.............................. A
 Manufacturer................................... 0xbc00
 Burned In MAC Address.......................... D8:C4:97:71:0F:40
-Software Version............................... 3.4.4.6
+Software Version............................... 3.10.0.3
 Operating System............................... Linux 4.4.211-28a6fe76
 Network Processing Device...................... BCM56873_A0
 CPLD Version................................... 0xff040c03
@@ -345,21 +238,27 @@ Additional Packages............................ BGP-4
 ............................................... Prototype Open API
 ----
 ====
+. Schließen Sie die Installation ab.
+Führen Sie die folgenden fünf Schritte aus, um den Switch neu zu konfigurieren:
++
+.. link:configure-licenses.html["Installieren von Lizenzen"]
+.. link:configure-install-rcf.html["Installieren Sie die RCF-Datei"]
+.. link:configure-ssh.html["Aktivieren Sie SSH"]
+.. link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"]
+.. link:CSHM_snmpv3.html["Konfigurieren Sie SNMPv3 für die Überwachung"]
 
 
-.Was kommt als Nächstes?
-link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"].
+. Wiederholen Sie die Schritte 1 bis 7 auf dem Partner-Switch.
 
 
 
-=== Methode 2: Aktualisieren von EFOS mit der ONIE OS-Installation
+
+=== Methode 2: Installieren Sie EFOS im ONIE-Modus
 
 Sie können die folgenden Schritte durchführen, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist. Mit diesen Schritten kann das nicht-FIPS- oder FIPS-konforme EFOS 3.7.x.x-Image von ONIE installiert werden, wenn der Switch nicht startet.
 
-
-NOTE: Diese Funktion ist nur für EFOS 3.7.x.x oder höher ohne FIPS-konform verfügbar.
-
 .Schritte
+. Stellen Sie eine Verbindung zu einer Konsole her, die an den seriellen Port des Switches angeschlossen ist.
 . Starten Sie den Schalter in den ONIE-Installationsmodus.
 +
 Wählen Sie während des Startvorgangs ONIE aus, wenn die Eingabeaufforderung angezeigt wird.
@@ -437,7 +336,7 @@ discover: installer mode detected.
 Stopping: discover... done.
 ONIE:/ #
 ----
-. Konfigurieren Sie die Ethernet-Schnittstelle und fügen Sie die Route mit hinzu `ifconfig eth0 <ipAddress> netmask <netmask> up` Und `route add default gw <gatewayAddress>`
+. Konfigurieren Sie die Ethernet-Schnittstelle des Switch-Management-Ports, und fügen Sie die Route mithilfe hinzu `ifconfig eth0 <ipAddress> netmask <netmask> up` Und `route add default gw <gatewayAddress>`
 +
 [listing]
 ----
@@ -490,7 +389,7 @@ Preparing image archive ... OK.
 +
 Die Software wird installiert und startet den Switch anschließend neu. Lassen Sie den Switch normal in die neue EFOS-Version neu starten.
 
-. Vergewissern Sie sich, dass die neue Switch-Software installiert ist:
+. Melden Sie sich an, und überprüfen Sie, ob die neue Switch-Software installiert ist:
 +
 `show bootvar`
 
@@ -508,15 +407,20 @@ Images currently available on Flash
 ---- 	----------- -------- --------------- ------------
 unit 	active 	    backup   current-active  next-active
 ---- 	----------- -------- --------------- ------------
-1 	    3.7.0.4     3.7.0.4  3.7.0.4         3.7.0.4
+ 1      3.7.0.4     3.7.0.4    3.7.0.4        3.10.0.3
 (cs2) #
 ----
 ====
 . Schließen Sie die Installation ab.
+Der Switch wird ohne angewendete Konfiguration neu gestartet und auf die Werkseinstellungen zurückgesetzt. Führen Sie die folgenden sechs Schritte aus, um den Switch neu zu konfigurieren:
 +
-Der Switch wird neu gestartet, ohne dass die Konfiguration angewendet wurde, und setzt die Werkseinstellungen zurück.
+.. link:configure-install-initial.html["Konfigurieren Sie den Switch"]
+.. link:configure-licenses.html["Installieren von Lizenzen"]
+.. link:configure-install-rcf.html["Installieren Sie die RCF-Datei"]
+.. link:configure-ssh.html["Aktivieren Sie SSH"]
+.. link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"]
+.. link:CSHM_snmpv3.html["Konfigurieren Sie SNMPv3 für die Überwachung"]
 
 
+. Wiederholen Sie die Schritte 1 bis 8 auf dem Partner-Switch.
 
-.Was kommt als Nächstes?
-link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"].

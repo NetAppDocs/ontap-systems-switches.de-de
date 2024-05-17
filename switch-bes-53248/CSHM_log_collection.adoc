@@ -14,7 +14,7 @@ summary: 'Die CSHM-Protokollerfassungsfunktion (Ethernet Switch Health Monitor) 
 Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich. Dieses Verfahren führt Sie durch den Prozess der Einrichtung und Inbetriebnahme der Sammlung von detaillierten *Support*-Protokollen vom Switch und startet eine stündliche Erfassung von *periodischen* Daten, die von AutoSupport gesammelt werden.
 
 .Bevor Sie beginnen
-* Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP Version 9.12.1 oder höher und EFOS 3.8.0.2 oder höher ausführen.
+* Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP Version 9.10.1P15, 9.11.1P12 oder 9.12.1 oder höher und EFOS 3.8.0.2 oder höher ausführen.
 * Die Switch-Statusüberwachung muss für den Switch aktiviert sein. Überprüfen Sie dies, indem Sie sicherstellen, dass die `Is Monitored:` Feld wird in der Ausgabe des auf *true* gesetzt `system switch ethernet show` Befehl.
 
 
