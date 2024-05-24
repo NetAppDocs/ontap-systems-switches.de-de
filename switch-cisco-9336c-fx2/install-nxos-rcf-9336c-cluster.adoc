@@ -20,7 +20,7 @@ In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unters
 
 * link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Switches Der Cisco Nexus 3000-Serie"^]
 +
-Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches finden Sie auf der Cisco Website in den entsprechenden Software- und Upgrade-Leitfäden.
+Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website.
 
 
 

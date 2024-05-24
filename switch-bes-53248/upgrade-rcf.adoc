@@ -427,7 +427,12 @@ Are you sure you would like to reset the system? (y/n) *y*
 ----
 
 
-. Wenn zusätzliche Portlizenzen auf dem Switch installiert wurden, müssen Sie den RCF ändern, um die zusätzlichen lizenzierten Ports zu konfigurieren. Siehe link:configure-licenses.html#activate-newly-licensed-ports["Aktivieren Sie neu lizenzierte Ports"^] Entsprechende Details.
+. Beachten Sie Folgendes:
++
+.. Wenn zusätzliche Portlizenzen auf dem Switch installiert wurden, müssen Sie den RCF ändern, um die zusätzlichen lizenzierten Ports zu konfigurieren. Siehe link:configure-licenses.html#activate-newly-licensed-ports["Aktivieren Sie neu lizenzierte Ports"] Entsprechende Details.
+.. Notieren Sie alle Anpassungen, die in der vorherigen RCF vorgenommen wurden, und wenden Sie diese auf die neue RCF an. Zum Beispiel die Portgeschwindigkeit oder den FEC-Modus mit hartem Kodieren einstellen.
+
+
 . Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP.
 +
 Dieses Beispiel zeigt SFTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:
