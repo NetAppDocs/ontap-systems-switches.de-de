@@ -19,6 +19,7 @@ Führen Sie diese Schritte aus, um einen defekten Nexus 9336C-FX2-Switch in eine
 
 Stellen Sie vor dem Austausch des Switches Folgendes sicher:
 
+* Sie haben die Seriennummer des Switches überprüft, um sicherzustellen, dass der richtige Schalter ausgetauscht wird.
 * In dem vorhandenen Cluster und der Netzwerkinfrastruktur:
 +
 ** Das vorhandene Cluster wird mit mindestens einem vollständig verbundenen Cluster-Switch als voll funktionsfähig geprüft.

@@ -17,7 +17,7 @@ Sie können NetApp CN1610-Cluster-Switches für ein ONTAP-Cluster zu Cisco 9336C
 
 == Prüfen Sie die Anforderungen
 
-Wenn Sie NetApp CN1610-Cluster-Switches durch Cisco 9336C-FX2 Cluster-Switches ersetzen, müssen Sie sich über bestimmte Konfigurationsdaten, Port-Verbindungen und Verkabelungsanforderungen im Klaren sein.
+Wenn Sie NetApp CN1610-Cluster-Switches durch Cisco 9336C-FX2 Cluster-Switches ersetzen, müssen Sie sich über bestimmte Konfigurationsdaten, Port-Verbindungen und Verkabelungsanforderungen im Klaren sein. Überprüfen Sie außerdem die Seriennummer des Switches, um sicherzustellen, dass der richtige Switch migriert wird.
 
 .Unterstützte Switches
 Folgende Cluster-Switches werden unterstützt:

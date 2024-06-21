@@ -21,7 +21,7 @@ Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Die aktuelle Referenzkonfigurationsdatei (RCF).
-* Eine Konsolenverbindung mit dem Switch, die bei der Installation des RCF erforderlich ist. Diese Anforderung ist optional, wenn Sie den Knowledge Base-Artikel verwendet haben https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Broadcom-Interconnect-Switch bei Beibehaltung der Remote-Konnektivität"] Um die Konfiguration vorher zu löschen.
+* Bei der Installation des RCF ist eine Konsolenverbindung zum Switch erforderlich. Diese Anforderung ist optional, wenn Sie den Knowledge Base-Artikel verwendet haben https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] Um die Konfiguration vorher zu löschen.
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen. Beachten Sie, dass es Abhängigkeiten zwischen der Befehlssyntax im RCF und der in Versionen von NX-OS gibt.
 * https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Switches Der Cisco Nexus 3000-Serie"^]. Die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website finden Sie in der vollständigen Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches.
 
@@ -268,7 +268,7 @@ cluster1::*>
 . Reinigen Sie die Konfiguration am Schalter cs2, und führen Sie eine grundlegende Einrichtung durch.
 +
 
-CAUTION: Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten. Diese Anforderung ist optional, wenn Sie den Knowledge Base-Artikel verwendet haben https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Broadcom-Interconnect-Switch bei Beibehaltung der Remote-Konnektivität"] Um die Konfiguration vorher zu löschen.
+WARNING: Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen *an den seriellen Konsolenport des Switches angeschlossen sein, um den Switch wieder einzurichten. Diese Anforderung ist jedoch optional, wenn Sie den Knowledge Base-Artikel verwendet haben https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] Um die Konfiguration vorher zu löschen.
 
 +
 .. Konfiguration bereinigen:
@@ -411,7 +411,7 @@ NOTE: Wie Sie Ihre 10-GbE-Ports nach einem Upgrade des RCF online schalten könn
 
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
 
 +
 .Beispiel anzeigen
