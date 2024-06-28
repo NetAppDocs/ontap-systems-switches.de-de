@@ -51,7 +51,7 @@ entries:
   entries:
   - title: Anforderungen ersetzen
     url: "/switch-cisco-3132q-v/switch-requirements.html"
-  - title: Tauschen Sie die CN3132Q-V-Schalter aus
+  - title: 3132Q-V-Schalter austauschen
     url: "/switch-cisco-3132q-v/replace-cisco-nexus-3132q-v.html"
   - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
     url: "/switch-cisco-3132q-v/migrate-to-switchless-cluster-interconnect.html"

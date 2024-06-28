@@ -13,6 +13,10 @@ summary: Sie können einen defekten NetApp CN1610 Cluster Switch unterbrechungsf
 [role="lead"]
 Führen Sie diese Schritte aus, um einen defekten NetApp CN1610-Switch in einem Cluster-Netzwerk auszutauschen. Dies ist ein unterbrechungsfreies Verfahren (Nondisruptive Procedure, NDU).
 
+
+
+== Prüfen Sie die Anforderungen
+
 .Was Sie benötigen
 Bevor Sie den Switch austauschen, müssen die folgenden Bedingungen erfüllt sein, bevor Sie den Switch in der aktuellen Umgebung und am Ersatz-Switch für das vorhandene Cluster und die Netzwerkinfrastruktur austauschen:
 
@@ -21,6 +25,21 @@ Bevor Sie den Switch austauschen, müssen die folgenden Bedingungen erfüllt sei
 * Alle logischen Cluster-Schnittstellen (LIFs) müssen aktiviert sein und dürfen nicht migriert worden sein.
 * Dem ONTAP Cluster `ping-cluster -node node1` Befehl muss angeben, dass die grundlegende Konnektivität und die Kommunikation größer als PMTU auf allen Pfaden erfolgreich ist.
 
+
+
+
+== Aktivieren Sie die Konsolenprotokollierung
+
+NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch des Switches die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während der Wartung aktiviert.
+* Lösen Sie vor und nach der Wartung einen Wartungs-AutoSupport aus, um die Case-Erstellung für die Dauer der Wartung zu deaktivieren. Lesen Sie diesen Knowledge Base-Artikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Unterdrücken der automatischen Case-Erstellung während geplanter Wartungsfenster"^] Entnehmen.
+* Aktivieren Sie die Sitzungsprotokollierung für beliebige CLI-Sitzungen. Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["So konfigurieren Sie PuTTY für optimale Konnektivität zu ONTAP-Systemen"^].
+
+
+
+
+== Tauschen Sie den Schalter aus
 
 .Über diese Aufgabe
 Sie müssen den Befehl zum Migrieren einer Cluster-LIF von dem Node ausführen, auf dem die Cluster-LIF gehostet wird.

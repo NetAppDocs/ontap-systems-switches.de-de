@@ -46,6 +46,17 @@ Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH werden auf den neue
 
 
 
+== Aktivieren Sie die Konsolenprotokollierung
+
+NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch des Switches die folgenden Maßnahmen zu ergreifen:
+
+* Lassen Sie AutoSupport während der Wartung aktiviert.
+* Lösen Sie vor und nach der Wartung einen Wartungs-AutoSupport aus, um die Case-Erstellung für die Dauer der Wartung zu deaktivieren. Lesen Sie diesen Knowledge Base-Artikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Unterdrücken der automatischen Case-Erstellung während geplanter Wartungsfenster"^] Entnehmen.
+* Aktivieren Sie die Sitzungsprotokollierung für beliebige CLI-Sitzungen. Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["So konfigurieren Sie PuTTY für optimale Konnektivität zu ONTAP-Systemen"^].
+
+
+
+
 == Tauschen Sie den Schalter aus
 
 .Zu den Beispielen
