@@ -1,0 +1,101 @@
+---
+permalink: switch-nvidia-sn2100/setup-install-cshm-file.html 
+sidebar: sidebar 
+keywords: 'install, applicable, configuration, file, cluster, switch, health, monitor, ontap, install the cluster switch health monitor (csm) configuration file for SN2100 switches' 
+summary: Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei für die Zustandsüberwachung von NVIDIA SN2100-Cluster-Switches für Cluster-Switches installieren. 
+---
+= Installieren Sie die Konfigurationsdatei des Ethernet Switch Health Monitor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches über Ethernet-Switches zu installieren. Folgende Modelle werden unterstützt:
+
+* X190006-PE
+* X190006-PI
+
+
+
+NOTE: Dieses Installationsverfahren gilt für ONTAP 9.10.1 und höher.
+
+.Bevor Sie beginnen
+* Überprüfen Sie, ob Sie die Konfigurationsdatei herunterladen müssen, indem Sie ausführen `system switch ethernet show` und prüfen, ob *ANDERE* für Ihr Modell angezeigt wird.
++
+Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
+
+* Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
+* Aktivieren Sie SSH, um alle in CSHM verfügbaren Funktionen zu verwenden.
+
+
+.Schritte
+. Laden Sie die ZIP-Datei für die Konfiguration der Ethernet-Switch-Systemzustandsüberwachung basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der Seite verfügbar https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] .
++
+.. Wählen Sie auf der Download-Seite der NVIDIA SN2100-Software *Nvidia CSHM-Datei* aus.
+.. Aktivieren Sie auf der Seite Achtung/muss gelesen werden das Kontrollkästchen, um zuzustimmen.
+.. Aktivieren Sie auf der Seite Endbenutzer-Lizenzvereinbarung das Kontrollkästchen, um zuzustimmen, und klicken Sie auf *Akzeptieren und Fortfahren*.
+.. Wählen Sie auf der Seite Nvidia CSHM File - Download die entsprechende Konfigurationsdatei aus. Folgende Dateien sind verfügbar:
+
+
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 und höher
+--
+* X190006-PE.zip
+* X190006-PI.zip
+
+
+--
+.ONTAP 9.11.1 bis 9.14.1
+--
+* X190006-PE_PRIOR_9.15.1.zip
+* X190006-PI_PRIOR_9.15.1.zip
+
+
+--
+====
+. [[step2]]Laden Sie die entsprechende ZIP-Datei auf Ihren internen Webserver hoch.
+. Greifen Sie von einem der ONTAP-Systeme im Cluster aus auf den erweiterten Modus zu.
++
+`set -privilege advanced`
+
+. Führen Sie den Befehl Switch Health Monitor configure aus.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system cluster-switch configure-health-monitor -node * -package-url 192.168.2.20/usr/download/_[filename.zip]_*
+----
+. Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 und höher
+--
+Die Konfigurationsdatei wurde von der Statusüberwachung des Ethernet-Switches installiert.
+
+--
+.ONTAP 9.11.1 bis 9.14.1
+--
+SHM hat die Konfigurationsdatei installiert.
+
+--
+.ONTAP 9.10.1
+--
+Das heruntergeladene CSHM-Paket wurde erfolgreich verarbeitet.
+
+--
+====
+Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
+
+. [[step6]]Warten Sie bis zu zweimal das Abfrageintervall der Ethernet-Switch-Integritätsüberwachung, das durch Ausführen gefunden `system switch ethernet polling-interval show`wird, bevor Sie den nächsten Schritt abschließen.
+. Führen Sie den Befehl auf dem ONTAP-System aus `system switch ethernet show` , und stellen Sie sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *true* und das Seriennummernfeld nicht *Unknown* anzeigt.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system switch ethernet show*
+----
+

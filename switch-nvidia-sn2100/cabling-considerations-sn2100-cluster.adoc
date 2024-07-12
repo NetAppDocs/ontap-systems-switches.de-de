@@ -47,7 +47,7 @@ Swp3-14
  a| 
 Swp15-16
  a| 
-40/100-GbE-Inter-Switch Link (ISL)-Ports
+100-GbE-Inter-Switch Link-Ports (ISL
 
 |===
 Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports.

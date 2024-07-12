@@ -4124,7 +4124,6 @@
   <block id="bd399ae0cf713e575ca26baedc0a896c" category="paragraph">Sie installieren den NVIDIA SN2100-Switch (X190006) in einem NVIDIA Dual/Single-Switch-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.</block>
   <block id="1e247ada2e98c5879849d746a52a4241" category="paragraph">Der NVIDIA SN2100-Switch ist ein 10/25/40/100-GbE-Switch mit Cumulus Linux. Der Switch unterstützt Folgendes:</block>
   <block id="c19b9518d51b517376f0fe9109f66e90" category="paragraph">40/100-GbE-Cluster-Port-Nodes</block>
-  <block id="45a21206fd2396fdd6a59132a2a6d3a7" category="paragraph">40/100-GbE-Inter-Switch Link (ISL)-Ports</block>
   <block id="509e4d6df8b93cb5deb86271a6326df2" category="section-title">Verbindungsverzögerungen mit optischen Verbindungen</block>
   <block id="50137c9f3120823f7ba1d1983c48e011" category="paragraph">Wenn Sie Verbindungsverzögerungen von mehr als fünf Sekunden haben, bietet Cumulus Linux 5.4 und höher Unterstützung für eine schnelle Verbindungsaufnahme. Sie können die Verknüpfungen mit konfigurieren<block ref="0c14f6e7a82b0926c666f7fac383436a" prefix=" " category="inline-code"></block> Befehl wie folgt:</block>
   <block id="68a8de419a9558e300d05a15cc5b2aec" category="section-title">Unterstützung für Kupferverbindungen</block>
@@ -4968,4 +4967,37 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="50c3c6ae36d53e402b88d9a6222029a0" category="inline-link">Aufgrund von TCAM-Ressourcen sind die Ports auf dem Cisco Nexus 9336C-FX2 nicht verbunden</block>
   <block id="293da448e2520766812e980a00821699" category="paragraph">Weitere Informationen finden Sie im Knowledge Base-Artikel<block ref="882efca0483fcef9d53236590b1d74e9" category="inline-link-rx"></block> Für Details zur Lösung dieses Problems.</block>
   <block id="73f7e96895a0ddf72a3e199ac5ae2247" category="sidebar">3132Q-V-Schalter austauschen</block>
+  <block id="dd821578b18dec3b3c49fbc2a36950e0" category="paragraph">100-GbE-Inter-Switch Link-Ports (ISL</block>
+  <block id="c2f363b557f11042735dbadbfbd534d3" category="summary">Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei für die Zustandsüberwachung von NVIDIA SN2100-Cluster-Switches für Cluster-Switches installieren.</block>
+  <block id="1972298f5ec1d5e6b5fe96dd4ba6f4d3" category="doc">Installieren Sie die Konfigurationsdatei des Ethernet Switch Health Monitor</block>
+  <block id="65c65b976cfab8bcc3a5fa282181ca5b" category="paragraph">Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches über Ethernet-Switches zu installieren. Folgende Modelle werden unterstützt:</block>
+  <block id="164a0cea1831b06a7fa67aab2e9a5d98" category="admonition">Dieses Installationsverfahren gilt für ONTAP 9.10.1 und höher.</block>
+  <block id="dd7fa1380804217cf2f3af00bb585752" category="list-text">Überprüfen Sie, ob Sie die Konfigurationsdatei herunterladen müssen, indem Sie ausführen<block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> und prüfen, ob *ANDERE* für Ihr Modell angezeigt wird.</block>
+  <block id="3953f2c946249817a198b9dd2d604aa4" category="paragraph">Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.</block>
+  <block id="294206f940bbd4f3ec7f79996b76c616" category="list-text">Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.</block>
+  <block id="c2c0a6bc429d35a2d508307c899f4398" category="list-text">Aktivieren Sie SSH, um alle in CSHM verfügbaren Funktionen zu verwenden.</block>
+  <block id="0cfea6e2910f570cd17c24fb74c90378" category="inline-link">NVIDIA Ethernet-Switches</block>
+  <block id="363c0c7cf08dfd2752b66f1fc2506a0a" category="list-text">Laden Sie die ZIP-Datei für die Konfiguration der Ethernet-Switch-Systemzustandsüberwachung basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der Seite verfügbar<block ref="308b26f7678235b6ac179b42eaa22162" category="inline-link-rx"></block> .</block>
+  <block id="68de66680b1bf357acb893d8dfe0f0bc" category="list-text">Wählen Sie auf der Download-Seite der NVIDIA SN2100-Software *Nvidia CSHM-Datei* aus.</block>
+  <block id="6b98b47c20b7ca9e9919fa3a77bf7814" category="list-text">Aktivieren Sie auf der Seite Achtung/muss gelesen werden das Kontrollkästchen, um zuzustimmen.</block>
+  <block id="c36caaf00f9a67804cb39871b93b4fb1" category="list-text">Aktivieren Sie auf der Seite Endbenutzer-Lizenzvereinbarung das Kontrollkästchen, um zuzustimmen, und klicken Sie auf *Akzeptieren und Fortfahren*.</block>
+  <block id="e5e0b87b73538c14eb1223ba2685b479" category="list-text">Wählen Sie auf der Seite Nvidia CSHM File - Download die entsprechende Konfigurationsdatei aus. Folgende Dateien sind verfügbar:</block>
+  <block id="4b96de8aec25594d2021f91d86aa38cb" category="open-title">ONTAP 9.15.1 und höher</block>
+  <block id="b834fb250d0f1e06556ff2af9ce370ff" category="list-text">X190006-PE.zip</block>
+  <block id="33ab7322815a985fdb6cbba64b9ffda9" category="list-text">X190006-PI.zip</block>
+  <block id="9fc9e8ea7a5cdfe68b4528fb16936bf1" category="open-title">ONTAP 9.11.1 bis 9.14.1</block>
+  <block id="00032ac6acd20eb8310604aa0ac6a200" category="list-text">X190006-PE_PRIOR_9.15.1.zip</block>
+  <block id="6a9e7f50780a2f2b4e2b5999c1b1ae2b" category="list-text">X190006-PI_PRIOR_9.15.1.zip</block>
+  <block id="3e5315d19591c6790a6c062127cf9a8e" category="list-text">[[step2]]Laden Sie die entsprechende ZIP-Datei auf Ihren internen Webserver hoch.</block>
+  <block id="e319ecf1cb942a0710da7d0d525af1db" category="list-text">Greifen Sie von einem der ONTAP-Systeme im Cluster aus auf den erweiterten Modus zu.</block>
+  <block id="4072831dc74599297a173c0e1d86b538" category="list-text">Führen Sie den Befehl Switch Health Monitor configure aus.</block>
+  <block id="bdfd509ce621aa984c1f0a9cdf92ae88" category="list-text">Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:</block>
+  <block id="ff62e28086747c31b6e4bbd897aaaf54" category="paragraph">Die Konfigurationsdatei wurde von der Statusüberwachung des Ethernet-Switches installiert.</block>
+  <block id="3f54ec95c3fc7563a38988f9c2a7a823" category="paragraph">SHM hat die Konfigurationsdatei installiert.</block>
+  <block id="ab8296c5ef7a7b056b384680f89a9379" category="open-title">ONTAP 9.10.1</block>
+  <block id="74d14036e96594d67869316b84c6d566" category="paragraph">Das heruntergeladene CSHM-Paket wurde erfolgreich verarbeitet.</block>
+  <block id="89c6b3e5f896b8d329ae4e4fe91cc812" category="paragraph">Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.</block>
+  <block id="a6fd16052b19595c024aa4e5bcb0b366" category="list-text">[[step6]]Warten Sie bis zu zweimal das Abfrageintervall der Ethernet-Switch-Integritätsüberwachung, das durch Ausführen gefunden<block ref="c9e6cd6140c9d8677df821c7cce2aac1" prefix=" " category="inline-code"></block>wird, bevor Sie den nächsten Schritt abschließen.</block>
+  <block id="c947c5faccdddd0a9a87be7895f50511" category="list-text">Führen Sie den Befehl auf dem ONTAP-System aus<block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> , und stellen Sie sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *true* und das Seriennummernfeld nicht *Unknown* anzeigt.</block>
+  <block id="b954609be582bc6760c67ae6e58cd7a9" category="sidebar">Installieren Sie die CSHM-Konfigurationsdatei</block>
 </blocks>
