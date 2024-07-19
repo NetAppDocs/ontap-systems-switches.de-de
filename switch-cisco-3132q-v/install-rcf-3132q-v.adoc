@@ -422,7 +422,7 @@ Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im
 cs2# copy running-config startup-config [########################################] 100% Copy complete
 ----
 ====
-. Schalter cs2 neu starten. Sie können die auf den Nodes gemeldeten Ereignisse „Cluster Ports down“ ignorieren, während der Switch neu gebootet wird.
+. Starten Sie den Switch cs2 neu. Sie können sowohl die Ereignisse „Cluster Ports down“ ignorieren, die auf den Nodes gemeldet werden, während der Switch neu gebootet wird, als auch die Fehlerausgabe `% Invalid command at '^' marker` .
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -433,7 +433,7 @@ cs2# *reload*
 This command will reboot the system. (y/n)?  [n] *y*
 ----
 ====
-. Wenden Sie dieselbe RCF an, und speichern Sie die ausgeführte Konfiguration ein zweites Mal.
+. Wenden Sie dieselbe RCF an, und speichern Sie die ausgeführte Konfiguration ein zweites Mal. Dies ist notwendig, da der RCF QoS verwendet und eine TCAM-Neukonfiguration erfordert, bei der der RCF zweimal geladen wird, während der Switch dazwischen neu gestartet wird.
 +
 .Beispiel anzeigen
 [%collapsible]
