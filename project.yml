@@ -35,6 +35,7 @@ sidebar:
     entries:
     - section: switch-cisco-9336c-fx2-shared
       pdf-filename: Switch-cisco-9336c-fx2-Speicher
+  - section: switch-cshm
   - title: Switches für das Ende der Verfügbarkeit
     entries:
     - title: Überblick

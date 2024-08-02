@@ -1,0 +1,20 @@
+---
+permalink: switch-cshm/monitor-troubleshoot.html 
+sidebar: sidebar 
+keywords: cshm, cluster, storage, switch logs, debugging, collection 
+summary: Sie können die folgenden Befehle verwenden ..... 
+---
+= Fehlerbehebung bei Warnmeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Warnmeldungen werden ausgegeben, wenn ein Fehler, ein Risiko oder ein kritischer Zustand für einen Ethernet-Switch in Ihrem Cluster erkannt wird.
+
+Wenn Warnungen ausgegeben werden, meldet der Systemzustand den Status „beeinträchtigt“ für das Cluster. Die Meldungen enthalten die Informationen, die Sie auf einen beeinträchtigten Systemzustand reagieren müssen.
+
+Führen Sie den folgenden Befehl aus, um die verfügbaren Warnmeldungen zur Systemzustandsüberwachung des Ethernet-Switches anzuzeigen: `system health alert definition show -monitor ethernet-switch`
+
+Weitere Informationen zur Lösung von Warnmeldungen finden Sie in dem Artikel der Knowledge Base https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Cluster_Switch_Health_Monitor_CSHM_Alert_Resolution_Guide["Switch Health Monitor Alert Resolution Guide"^] .

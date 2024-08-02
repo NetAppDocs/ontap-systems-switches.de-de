@@ -21,10 +21,4 @@ Sie können Cumulus Linux (CL) OS installieren, wenn der Switch Cumulus Linux od
 +
 Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.
 
-. link:install-snmpv3-sn2100-cluster.html["Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung"].
-+
-Diese Version umfasst Unterstützung für SNMPv3 für die Erfassung von Switch-Protokollen und für Switch Health Monitoring (SHM).
 
-
-
-Die Verfahren verwenden Network Command Line Utility (NCLU), eine Befehlszeilenoberfläche, die sicherstellt, dass Cumulus Linux für alle zugänglich ist. Der NET-Befehl ist das Wrapper-Dienstprogramm, mit dem Sie Aktionen von einem Terminal aus ausführen.

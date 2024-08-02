@@ -36,10 +36,8 @@ entries:
     url: "/switch-cisco-9336c-fx2-shared/install-nxos-software-9336c-shared.html"
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-9336c-fx2-shared/install-nxos-rcf-9336c-shared.html"
-  - title: Aktivieren Sie die Protokollerfassung
-    url: "/switch-cisco-9336c-fx2-shared/CSHM_log_collection.html"
-  - title: Konfigurieren Sie SNMPv3 für die Überwachung
-    url: "/switch-cisco-9336c-fx2-shared/CSHM_snmpv3.html"
+  - title: Aktivieren Sie SSH
+    url: "/switch-cisco-9336c-fx2-shared/configure-ssh.html"
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_9336c-fx2-shared
   entries:

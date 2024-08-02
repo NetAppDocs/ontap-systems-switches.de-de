@@ -267,3 +267,6 @@ shelf id remote-port remote-device
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]

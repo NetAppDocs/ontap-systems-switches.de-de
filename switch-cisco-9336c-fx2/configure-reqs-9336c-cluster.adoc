@@ -25,6 +25,9 @@ Ab ONTAP 9.9 können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches Storage- un
 Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Netzwerk-Switches erforderlich.
 
 
+NOTE: Die Ethernet-Switch-Statusüberwachung unterstützt ONTAP 9.13.1P8 und früher und 9.14.1P3 und früher oder NX-OS Version 10.3(4a)(M) nicht.
+
+
 
 == Konfigurationsanforderungen
 

@@ -438,7 +438,7 @@ e3b       Cluster      Cluster          up    9000  auto/10000  healthy  false
 
 
 
-=== Schritt 3: Führen Sie den Vorgang durch
+=== Schritt 3: Überprüfen Sie die Konfiguration
 
 . Vergewissern Sie sich, dass das Cluster-Netzwerk ordnungsgemäß funktioniert.
 +
@@ -457,88 +457,6 @@ swp15      100G   BondMember  nsw2            swp15
 swp16      100G   BondMember  nsw2            swp16
 ----
 ====
-. Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung:
-+
-`system switch ethernet log setup-password`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: *<return>*
-The switch name entered is not recognized.
-Choose from the following list:
-*cs1*
-*cs2*
-
-cluster1::*> *system switch ethernet log setup-password*
-
-Enter the switch name: *cs1*
-Would you like to specify a user other than admin for log collection? {y|n}: *n*
-
-Enter the password: *<enter switch password>*
-Enter the password again: *<enter switch password>*
-
-cluster1::*> *system switch ethernet log setup-password*
-
-Enter the switch name: *cs2*
-Would you like to specify a user other than admin for log collection? {y|n}: *n*
-
-Enter the password: *<enter switch password>*
-Enter the password again: *<enter switch password>*
-----
-====
-. Aktivieren Sie die Funktion zur Statusüberwachung des Ethernet-Switches.
-+
-`system switch ethernet log modify -device _<switch-name>_ -log-request true`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
-
-Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-
-cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
-
-Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-----
-====
-+
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
-
-+
-`system switch ethernet log show`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> system switch ethernet log show
-Log Collection Enabled: true
-
-Index  Switch                       Log Timestamp        Status
------- ---------------------------- -------------------  ---------    
-1      cs1 (b8:ce:f6:19:1b:42)      4/29/2022 03:05:25   complete   
-2      cs2 (b8:ce:f6:19:1b:96)      4/29/2022 03:07:42   complete
-----
-====
-+
-
-CAUTION: Wenn einer dieser Befehle einen Fehler zurückgibt oder die Protokollsammlung nicht abgeschlossen ist, wenden Sie sich an den NetApp Support.
-
 . Ändern Sie die Berechtigungsebene zurück in den Administrator:
 +
 `set -privilege admin`
@@ -548,3 +466,6 @@ CAUTION: Wenn einer dieser Befehle einen Fehler zurückgibt oder die Protokollsa
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

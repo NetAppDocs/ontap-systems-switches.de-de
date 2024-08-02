@@ -1,5 +1,5 @@
 ---
-permalink: switch-nvidia-sn2100/install-rcf-sn2100-storage.html 
+permalink: switch-nvidia-sn2100-storage/install-rcf-sn2100-storage.html 
 sidebar: sidebar 
 keywords: install rcf script, python script, sn2100 SN2100 switches, cumulus 
 summary: Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren. 
@@ -292,4 +292,4 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 
 
 .Was kommt als Nächstes?
-link:install-snmpv3-sn2100-storage.html["Konfigurieren Sie die Switch-Protokollerfassung"].
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]

@@ -22,16 +22,11 @@ Gehen Sie wie folgt vor, um einen Cisco Nexus 9336C-FX2 Switch auf Systemen mit 
 . link:setup-worksheet-9336c-storage.html["Füllen Sie das Verkabelungsarbeitsblatt aus"].
 . link:install-9336c-storage.html["Den Schalter einbauen"].
 . link:setup-switch-9336c-storage.html["Konfigurieren Sie den Switch"].
-. link:install-switch-and-passthrough-panel-9336c-storage.html["Switch in NetApp-Schrank einbauen"].
-+
-Je nach Konfiguration können Sie den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.
-
+. link:install-switch-and-passthrough-panel-9336c-storage.html["Den Switch in einen NetApp-Schrank einbauen"].
 . link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
 . link:install-nxos-software-9336c-storage.html["Installieren Sie die NX-OS-Software"].
 . link:install-nxos-rcf-9336c-storage.html["Installieren Sie die RCF-Konfigurationsdatei"].
-+
-Installieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Schalter zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
-
+. link:configure-ssh.html["Aktivieren Sie SSH"].
 
 
 

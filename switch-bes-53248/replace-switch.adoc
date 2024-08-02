@@ -400,4 +400,4 @@ cs1          0/56    179         R             BES-53248   0/56
 
 
 .Was kommt als Nächstes?
-Siehe link:configure-log-collection.html["Aktivieren Sie die Protokollerfassungsfunktion"] Für die Schritte, die erforderlich sind, um die Protokollerfassung des Cluster-Zustandsschalters zu aktivieren, die zum Erfassen von Switch-bezogenen Protokolldateien verwendet wird.
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

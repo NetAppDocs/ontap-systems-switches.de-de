@@ -472,3 +472,6 @@ Configuration Saved!
 ====
 . Wiederholen Sie die vorherigen Schritte, um die RCF auf dem anderen Schalter, cs1, zu installieren.
 
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]

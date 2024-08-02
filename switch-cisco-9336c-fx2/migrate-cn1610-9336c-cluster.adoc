@@ -479,7 +479,7 @@ node2      /cdp
 
 
 
-=== Schritt 3: Führen Sie den Vorgang durch
+=== Schritt 3: Überprüfen Sie die Konfiguration
 
 . Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
 +
@@ -507,76 +507,6 @@ Cluster
             node2_clus2  up/up    169.254.19.183/16  node2         e3b     true
 ----
 ====
-. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
-+
-`system switch ethernet log setup-password`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: <return>
-The switch name entered is not recognized.
-Choose from the following list:
-*cs1*
-*cs2*
-
-cluster1::*> *system switch ethernet log setup-password*
-
-Enter the switch name: *cs1*
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] *y*
-
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
-
-cluster1::*> *system switch ethernet log setup-password*
-
-Enter the switch name: *cs2*
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] *y*
-
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
-----
-====
-. Führen Sie zum Starten der Protokollerfassung den folgenden Befehl aus, um das GERÄT durch den im vorherigen Befehl verwendeten Switch zu ersetzen. Damit werden beide Arten der Log-Erfassung gestartet: Die detaillierten *Support*-Protokolle und eine stündliche Erfassung von *Periodic*-Daten.
-+
-`system switch ethernet log modify -device _<switch-name>_ -log-request true`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
-
-Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-
-cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
-
-Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-cluster1::*>
-----
-====
-+
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung erfolgreich war mit dem folgenden Befehl:
-
-+
-`system switch ethernet log show`
-
-+
-
-NOTE: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetApp Support.
-
 . Ändern Sie die Berechtigungsebene zurück in den Administrator:
 +
 `set -privilege admin`
@@ -586,3 +516,6 @@ NOTE: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetA
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

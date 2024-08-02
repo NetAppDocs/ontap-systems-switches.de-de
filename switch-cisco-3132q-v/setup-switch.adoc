@@ -145,7 +145,7 @@ SSH-Dienst aktiviert? (ja/nein)
 Antworten Sie mit *ja*. Die Standardeinstellung ist ja.
 
 
-NOTE: SSH wird empfohlen, wenn Sie Cluster Switch Health Monitor (CSHM) für seine Protokollerfassung verwenden. SSHv2 wird auch für erhöhte Sicherheit empfohlen.
+NOTE: SSH wird empfohlen, wenn der Ethernet Switch Health Monitor (CSHM) für die Protokollerfassungsfunktionen verwendet wird. SSHv2 wird auch für erhöhte Sicherheit empfohlen.
 
 
 

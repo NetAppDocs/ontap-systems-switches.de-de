@@ -95,7 +95,7 @@ Antworten Sie mit *ja*. Die Standardeinstellung ist ja.
 
 +
 
-NOTE: SSH wird empfohlen, wenn Sie Cluster Switch Health Monitor (CSHM) für seine Protokollerfassung verwenden. SSHv2 wird auch für erhöhte Sicherheit empfohlen.
+NOTE: SSH wird empfohlen, wenn der Ethernet Switch Health Monitor (CSHM) für die Protokollerfassungsfunktionen verwendet wird. SSHv2 wird auch für erhöhte Sicherheit empfohlen.
 
 .. [[steep14]]Geben Sie den Typ des zu generierende SSH-Schlüssels ein (dsa/rsa/rsa1). Die Standardeinstellung ist rsa.
 .. Geben Sie die Anzahl der Schlüsselbits ein (1024- 2048).

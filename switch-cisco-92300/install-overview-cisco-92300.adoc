@@ -20,7 +20,6 @@ Gehen Sie wie folgt vor, um einen Cisco Nexus 92300YC-Switch auf Systemen mit ON
 . link:install-nxos-overview.html["Vorbereiten der Installation der NX-OS-Software und der Referenzkonfigurationsdatei (RCF)"]. Bereiten Sie sich auf die Installation der NX-OS-Software und der Referenzkonfigurationsdatei (RCF) vor.
 . link:install-nxos-software.html["Installieren Sie die NX-OS-Software"]. Installieren Sie die NX-OS-Software auf dem Nexus 92300YC-Switch. Bei NX-OS handelt es sich um ein Netzwerkbetriebssystem für die Ethernet Switches der Nexus Serie und die MDS Serie mit Fibre Channel (FC) Storage Area Network Switches von Cisco Systems.
 . link:install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Installieren Sie das RCF, nachdem Sie den Nexus 92300YC-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
-. link:setup-install-cshm-file.html["Installieren Sie die Konfigurationsdatei des Cluster Switch Health Monitor (CSHM)"]. Installieren Sie die entsprechende Konfigurationsdatei für die Integritätsüberwachung des Cluster Switch bei Nexus 92300YC Cluster Switches.
 
 
 

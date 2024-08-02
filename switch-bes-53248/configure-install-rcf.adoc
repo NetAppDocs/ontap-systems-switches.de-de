@@ -1068,4 +1068,4 @@ system node autosupport invoke -node * -type all -message MAINT=END
 
 
 .Was kommt als Nächstes?
-link:configure-ssh.html["Aktivieren Sie SSH für die Protokollerfassung"].
+link:configure-ssh.html["Aktivieren Sie SSH"].

@@ -1,0 +1,238 @@
+---
+permalink: switch-cshm/config-log-collection.html 
+sidebar: sidebar 
+keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation 
+summary: 'Die CSHM-Protokollerfassungsfunktion (Ethernet Switch Health Monitor) wird verwendet, um Protokolle von Cluster- oder Storage-Netzwerk-Switches in ONTAP zu erfassen.' 
+---
+= Konfigurieren der Protokollerfassung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich. Dieses Verfahren führt Sie durch den Prozess der Einrichtung der Erfassung, der Anforderung detaillierter *Support* Protokolle und der Aktivierung einer stündlichen Erfassung von *periodischen* Daten, die von AutoSupport gesammelt werden.
+
+*HINWEIS:* Wenn Sie den FIPS-Modus aktivieren, müssen Sie Folgendes ausführen:
+
+[NOTE]
+====
+. Regenerieren Sie SSH-Schlüssel auf dem Switch gemäß den Anweisungen des Anbieters.
+. Regenerieren Sie SSH-Schlüssel auf der ONTAP-Seite mit `debug system regenerate-systemshell-key-pair`
+. Führen Sie die Setup-Routine für die Protokollsammlung mithilfe von erneut aus `system switch ethernet log setup-password`
+
+
+====
+
+
+== Bevor Sie beginnen
+
+* Der Benutzer muss Zugriff auf die Switch-Befehle haben `show` . Wenn diese nicht verfügbar sind, erstellen Sie einen neuen Benutzer und erteilen Sie dem Benutzer die erforderlichen Berechtigungen.
+* Die Switch-Statusüberwachung muss für den Switch aktiviert sein. Überprüfen Sie dies, indem Sie sicherstellen, dass die `Is Monitored:` Feld wird in der Ausgabe des auf *true* gesetzt `system switch ethernet show` Befehl.
+* Bei NVIDIA-Switches muss es dem Benutzer für die Protokollerfassung erlaubt sein, die Protokollerfassungsbefehle auszuführen, ohne dass eine Kennwortaufforderung angezeigt wird. Führen Sie den folgenden Befehl aus, um diese Verwendung zuzulassen:
+`echo '<username> ALL = NOPASSWD: /usr/cumulus/bin/cl-support, /usr/sbin/csmgrctl' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
+
+
+
+
+== Schritte
+
+[role="tabbed-block"]
+====
+.ONTAP 9.14.1 und frühere Versionen
+--
+. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
++
+[source, cli]
+----
+system switch ethernet log setup-password
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs1*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs2*
+
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+----
+. Führen Sie den folgenden Befehl aus, um die Erfassung von Support-Protokollen anzufordern und die regelmäßige Erfassung zu aktivieren. Damit werden beide Arten der Protokollerfassung gestartet: Die detaillierten `Support` Protokolle und eine stündliche Datenerfassung `Periodic` .
++
+[source, cli]
+----
+system switch ethernet log modify -device <switch-name> -log-request true
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+
+cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+----
++
+Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
+
++
+[source, cli]
+----
+system switch ethernet log show
+----
+
+
+--
+.ONTAP 9.15.1 und höher
+--
+. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
++
+[source, cli]
+----
+system switch ethernet log setup-password
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs1*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs2*
+
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+----
+. Periodische Protokollerfassung aktivieren:
++
+[source, cli]
+----
+system switch ethernet log modify -device <switch-name> -periodic-enabled true
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log modify -device cs1 -periodic-enabled true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+*cs1*: Periodic log collection has been scheduled to run every hour.
+
+cluster1::*> *system switch ethernet log modify -device cs2 -periodic-enabled true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+*cs2*: Periodic log collection has been scheduled to run every hour.
+
+cluster1::*> *system switch ethernet log show*
+                                          Periodic    Periodic    Support
+Switch                                    Log Enabled Log State   Log State
+
+cs1                                       true        scheduled   never-run
+cs2                                       true        scheduled   never-run
+2 entries were displayed.
+----
+. Support-Protokoll anfordern:
++
+[source, cli]
+----
+system switch ethernet log collect-support-log -device <switch-name>
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log collect-support-log -device cs1*
+
+*cs1*: Waiting for the next Ethernet switch polling cycle to begin support collection.
+
+cluster1::*> *system switch ethernet log collect-support-log -device cs2*
+
+*cs2*: Waiting for the next Ethernet switch polling cycle to begin support collection.
+
+cluster1::*> *system switch ethernet log show
+                                          Periodic    Periodic    Support
+Switch                                    Log Enabled Log State   Log State
+
+cs1                                       false       halted      initiated
+cs2                                       true        scheduled   initiated
+2 entries were displayed.
+----
+. Um alle Details der Protokollsammlung anzuzeigen, einschließlich der Aktivierung, Statusmeldung, des vorherigen Zeitstempels und des Dateinamens der periodischen Erfassung, des Anforderungsstatus, der Statusmeldung und des vorherigen Zeitstempels und des Dateinamens der Support-Sammlung, verwenden Sie Folgendes:
++
+[source, cli]
+----
+system switch ethernet log show -instance
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log show -instance*
+
+                    Switch Name: cs1
+           Periodic Log Enabled: true
+            Periodic Log Status: Periodic log collection has been scheduled to run every hour.
+    Last Periodic Log Timestamp: 3/11/2024 11:02:59
+          Periodic Log Filename: cluster1:/mroot/etc/log/shm-cluster-info.tgz
+          Support Log Requested: false
+             Support Log Status: Successfully gathered support logs - see filename for their location.
+     Last Support Log Timestamp: 3/11/2024 11:14:20
+           Support Log Filename: cluster1:/mroot/etc/log/shm-cluster-log.tgz
+
+                    Switch Name: cs2
+           Periodic Log Enabled: false
+            Periodic Log Status: Periodic collection has been halted.
+    Last Periodic Log Timestamp: 3/11/2024 11:05:18
+          Periodic Log Filename: cluster1:/mroot/etc/log/shm-cluster-info.tgz
+          Support Log Requested: false
+             Support Log Status: Successfully gathered support logs - see filename for their location.
+     Last Support Log Timestamp: 3/11/2024 11:18:54
+           Support Log Filename: cluster1:/mroot/etc/log/shm-cluster-log.tgz
+2 entries were displayed.
+----
+
+
+--
+====
+
+CAUTION: Wenn Fehlerzustände durch die Log-Collection-Funktion (sichtbar in der Ausgabe von ) gemeldet werden `system switch ethernet log show`, siehe link:log-collection-troubleshoot.html["Fehlerbehebung bei der Protokollerfassung"] für weitere Details.
+
+|===
+|===

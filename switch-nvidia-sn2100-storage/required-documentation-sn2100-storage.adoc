@@ -1,5 +1,5 @@
 ---
-permalink: switch-nvidia-sn2100/required-documentation-sn2100-storage.html 
+permalink: switch-nvidia-sn2100-storage/required-documentation-sn2100-storage.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
 summary: Überprüfen Sie bei Installation und Wartung von NVIDIA SN2100-Switches alle empfohlenen Dokumente. 

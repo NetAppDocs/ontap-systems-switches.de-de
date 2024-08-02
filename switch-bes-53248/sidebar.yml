@@ -33,10 +33,6 @@ entries:
     url: "/switch-bes-53248/configure-install-rcf.html"
   - title: Aktivieren Sie SSH für die Protokollerfassung
     url: "/switch-bes-53248/configure-ssh.html"
-  - title: Aktivieren Sie die Protokollerfassung
-    url: "/switch-bes-53248/CSHM_log_collection.html"
-  - title: Konfigurieren Sie SNMPv3 für die Überwachung
-    url: "/switch-bes-53248/CSHM_snmpv3.html"
 - title: Switch aktualisieren
   pdf-filename: Upgrade_Switches_bes53248
   entries:

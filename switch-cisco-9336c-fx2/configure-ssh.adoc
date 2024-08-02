@@ -11,7 +11,7 @@ summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) 
 
 
 [role="lead"]
-Wenn Sie Cluster Switch Health Monitor (CSHM) und Funktionen zur Protokollerfassung verwenden, müssen Sie SSH-Schlüssel generieren und dann SSH auf den Cluster-Switches aktivieren.
+Wenn Sie die Funktionen des Ethernet Switch Health Monitor (CSHM) und der Protokollsammlung verwenden, müssen Sie die SSH-Schlüssel generieren und dann SSH auf den Cluster-Switches aktivieren.
 
 .Schritte
 . Vergewissern Sie sich, dass SSH deaktiviert ist:
@@ -115,4 +115,4 @@ SCP server Administrative Mode: ............... Enabled
 
 
 .Was kommt als Nächstes?
-link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"].
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

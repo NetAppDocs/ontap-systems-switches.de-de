@@ -1,0 +1,57 @@
+---
+permalink: switch-cshm/log-collection-troubleshoot.html 
+sidebar: sidebar 
+keywords: cshm, cluster, storage, switch logs, debugging, collection 
+summary: Mit den hier angegebenen Befehlen können Sie ...... verwenden 
+---
+= Fehlerbehebung bei der Protokollerfassung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen der folgenden Fehlerzustände sehen, die von der Protokollerfassungsfunktion gemeldet werden (sichtbar in der Ausgabe des `system switch ethernet log show` Befehls), versuchen Sie die entsprechenden Debugschritte:
+
+|===
+
+
+| *Fehlerstatus der Protokollsammlung* | * Auflösung* 
+
+
+ a| 
+*RSA-Schlüssel nicht vorhanden*
+ a| 
+ONTAP-SSH-Schlüssel neu generieren.
+
+
+
+ a| 
+*Fehler beim Wechseln des Kennworts*
+ a| 
+Überprüfen Sie die Anmeldeinformationen, testen Sie die SSH-Konnektivität und regenerieren Sie ONTAP-SSH-Schlüssel. Lesen Sie die Switch-Dokumentation oder wenden Sie sich an den NetApp Support, um weitere Informationen zu erhalten.
+
+
+
+ a| 
+*ECDSA-Schlüssel für FIPS* nicht vorhanden
+ a| 
+Wenn der FIPS-Modus aktiviert ist, müssen ECDSA-Schlüssel auf dem Switch generiert werden, bevor Sie es erneut versuchen.
+
+
+
+ a| 
+*Bereits vorhandenes Log gefunden*
+ a| 
+Entfernen Sie die vorherige Protokollerfassungsdatei auf dem Switch.
+
+
+
+ a| 
+*Switch Dump Log Fehler*
+ a| 
+Stellen Sie sicher, dass der Switch-Benutzer über Protokollerfassungsberechtigungen verfügt. Beachten Sie die oben genannten Voraussetzungen.
+
+|===
+
+NOTE: Wenn die Lösungsdetails nicht funktionieren, wenden Sie sich an den NetApp Support.

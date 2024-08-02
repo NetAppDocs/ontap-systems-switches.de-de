@@ -506,48 +506,7 @@ Total entries displayed: 4
 ====
 
 
-. [[Schritt15]]Aktivieren Sie die Protokollerfassung für die Integritätsüberwachung des Ethernet Switch, um Switch-bezogene Protokolldateien zu erfassen. Verwenden Sie dazu die folgenden Befehle:
-+
-** `system switch ethernet log setup password`
-** `system switch ethernet log enable-collection`
-+
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: <return>
-The switch name entered is not recognized.
-Choose from the following list:
-*sh1*
-*sh2*
-cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: *sh1*
-RSA key fingerprint is e5:8b:c6:dc:e2:18:18:09:36:63:d9:63:dd:03:d9:cc
-Do you want to continue? {y|n}::[n] *y*
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
-cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: *sh2*
-RSA key fingerprint is 57:49:86:a1:b9:80:6a:61:9a:86:8e:3c:e3:b7:1f:b1
-Do you want to continue? {y|n}:: [n] *y*
-Enter the password: <enter switch password>
-Enter the password again: <enter switch password>
-cluster1::*> system  switch ethernet log enable-collection
-Do you want to enable cluster log collection for all nodes in the cluster? y|n}: [n] *y*
-Enabling cluster switch log collection.
-cluster1::*>
-----
-====
-
-
-
-
-
-NOTE: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetApp Support.
-
-. [[steep16]]Bewegen Sie die Speicherports vom alten Switch sh2 zum neuen Switch newsh2.
+. [[step15]]Verschieben Sie die Speicherports vom alten Switch sh2 auf den neuen Switch news2.
 . Überprüfen Sie, ob der mit dem HA-Paar 1 verbundene Speicher, der gemeinsam genutzte Switch newsh2 in einem ordnungsgemäßen Zustand ist.
 . Überprüfen Sie, ob der an HA-Paar 2 angeschlossene Speicher, der gemeinsam genutzte Switch newsh2 in einem ordnungsgemäßen Zustand ist:
 +
@@ -578,7 +537,7 @@ node2
 ====
 
 
-. [[Schritt19]]Stellen Sie sicher, dass die Shelfs ordnungsgemäß verkabelt sind:
+. [[step18]]Überprüfen Sie, ob die Shelfs richtig verkabelt sind:
 +
 `storage shelf port show -fields remote- device,remote-port`
 
@@ -604,10 +563,13 @@ shelf id remote-port  remote-device
 ====
 
 
-. [[STep20]]Entfernen Sie den alten Schalter sh2.
+. [[step19]]Entfernen Sie den alten Schalter sh2.
 . Wiederholen Sie diese Schritte für den Schalter sh1 und den neuen Schalter newsh1.
 . Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

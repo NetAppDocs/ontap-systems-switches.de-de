@@ -758,3 +758,6 @@ RPC status:
 ----
 ====
 
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]

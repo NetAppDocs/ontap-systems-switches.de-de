@@ -11,12 +11,10 @@ summary: Überblick über die Software-Konfiguration für Cisco Nexus 9336C-FX2 
 
 
 [role="lead"]
-So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2 Switch:
+So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2-Speicher-Switch:
 
 . link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
 . link:install-nxos-software-9336c-storage.html["Installieren Sie die NX-OS-Software"].
 . link:install-nxos-rcf-9336c-storage.html["Installieren Sie die RCF-Konfigurationsdatei"].
-+
-Installieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Schalter zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
-
+. link:configure-ssh.html["Aktivieren Sie SSH"].
 

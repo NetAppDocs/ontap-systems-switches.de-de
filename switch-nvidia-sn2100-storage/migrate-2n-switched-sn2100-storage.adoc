@@ -1,5 +1,5 @@
 ---
-permalink: switch-nvidia-sn2100/migrate-2n-switched-sn2100-storage.html 
+permalink: switch-nvidia-sn2100-storage/migrate-2n-switched-sn2100-storage.html 
 sidebar: sidebar 
 keywords: two-node switchless cluster environments,migrating to a two-node switched NVIDIA SN2100 cluster environment,switchless cluster environments,NVIDIA SN2100 switches 
 summary: Wenn Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit NVIDIA SN2100 Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie eine Skalierung über zwei Nodes im Cluster hinaus vornehmen. 

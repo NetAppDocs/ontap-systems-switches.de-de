@@ -1,5 +1,5 @@
 ---
-permalink: switch-nvidia-sn2100/components-sn2100-storage.html 
+permalink: switch-nvidia-sn2100-storage/components-sn2100-storage.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
 summary: Lesen Sie bei der Installation und Wartung von NVIDIA SN2100-Switches die Liste der Komponenten und Teilenummern für Schrank und Schienensatz. 
