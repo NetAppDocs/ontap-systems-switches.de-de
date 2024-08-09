@@ -234,5 +234,5 @@ cluster1::*> *system switch ethernet log show -instance*
 
 CAUTION: Wenn Fehlerzustände durch die Log-Collection-Funktion (sichtbar in der Ausgabe von ) gemeldet werden `system switch ethernet log show`, siehe link:log-collection-troubleshoot.html["Fehlerbehebung bei der Protokollerfassung"] für weitere Details.
 
-|===
-|===
+.Was kommt als Nächstes?
+link:config-snmpv3.html["SNMPv3 konfigurieren (optional)"].

@@ -21,4 +21,8 @@ Sie können Cumulus Linux (CL) OS installieren, wenn der Switch Cumulus Linux od
 +
 Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.
 
+. link:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"].
++
+Sie können die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches des Ethernet-Switches installieren.
+
 

@@ -36,6 +36,8 @@ entries:
     url: "/switch-nvidia-sn2100-storage/install-onie-mode-sn2100-storage.html"
   - title: Installieren Sie das RCF-Skript
     url: "/switch-nvidia-sn2100-storage/install-rcf-sn2100-storage.html"
+  - title: Installieren Sie die CSHM-Datei
+    url: "/switch-nvidia-sn2100-storage/setup-install-cshm-file.html"
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_sn2100-Storage
   entries:
