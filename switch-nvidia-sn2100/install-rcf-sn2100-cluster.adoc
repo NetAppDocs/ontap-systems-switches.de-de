@@ -113,6 +113,7 @@ NOTE: In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl `cat /etc/mo
 
 NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
 
+. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -204,7 +205,7 @@ swp16      100G   BondMember  sw14                    swp16
 ----
 . Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
 +
-.. Vergewissern Sie sich, dass e0d-Ports über alle Nodes im Cluster hinweg ordnungsgemäß und ordnungsgemäß sind:
+.. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -370,6 +371,7 @@ admin@sw1:mgmt:~$ cat /etc/issue
 
 NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
 
+. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -540,7 +542,7 @@ swp16      100G   BondMember  sw2                      sw
 ----
 . Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
 +
-.. Vergewissern Sie sich, dass e0d-Ports über alle Nodes im Cluster hinweg ordnungsgemäß und ordnungsgemäß sind:
+.. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
 +
 [listing, subs="+quotes"]
 ----

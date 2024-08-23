@@ -33,7 +33,7 @@ Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstelle
 
 == Storage Switches
 
-Storage-Switches ermöglichen das Routen von Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN). Von NetApp unterstützte Cluster-Switches:
+Storage-Switches ermöglichen das Routen von Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN). Von NetApp unterstützte Storage-Switches:
 
 * Cisco Nexus 9336C-FX2
 * NVIDIA SN2100

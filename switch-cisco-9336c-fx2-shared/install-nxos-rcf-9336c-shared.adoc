@@ -123,6 +123,7 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 
 
+. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-9336c-fx2.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
 `copy running-config startup-config`
@@ -371,4 +372,4 @@ System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Ei
 Gehen Sie zu https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] Für Setup-Anweisungen.
 
 .Was kommt als Nächstes?
-link:../switch-cisco-9336c-fx2-storage/configure-ssh.html["Aktivieren Sie SSH"].
+link:configure-ssh.html["Aktivieren Sie SSH"].

@@ -106,6 +106,7 @@ Das RCF-Skript führt die oben aufgeführten Schritte durch.
 
 NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
 
+. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-storage.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 `net show interface all`
