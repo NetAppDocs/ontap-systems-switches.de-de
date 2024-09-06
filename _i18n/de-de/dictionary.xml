@@ -4381,8 +4381,6 @@
   <block id="2bc32577d8d84ba98d84472c4916dd0f" category="admonition">Es werden nur von NetApp validierte Back-End Switches (im Auftrag von NetApp) unterstützt.</block>
   <block id="d69d8c23518c3e983c5799321eb27404" category="list-text">Reinigen Sie die Konfiguration auf Switch cs2, und starten Sie den Switch neu.</block>
   <block id="a3d5cbedb318ff78ae8c3f9bced7661b" category="list-text">Führen Sie eine grundlegende Einrichtung des Switches durch. Siehe <block ref="ab35665c267fa570f19ad0ebf8386ab4" category="inline-link-macro-rx"></block> Entsprechende Details.</block>
-  <block id="6ab23d04af2dab64aaf06d089d134151" category="summary">SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Um SSH auf Cisco 9336C-FX2 Cluster Switches zu aktivieren, generieren Sie zunächst die SSH-Schlüssel und aktivieren dann SSH.</block>
-  <block id="f213e7d15465742733b22d11eff1d4ac" category="doc">Aktivieren Sie SSH auf Cisco 9336C-FX2 Cluster-Switches</block>
   <block id="a8d8d025a84c64f53b535b4e606fd65a" category="summary">Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei für die Integritätsüberwachung von Cluster-Switches der Nexus 92300YC-Cluster-Switches installieren.</block>
   <block id="0bf9f283c6d4cf639f7438f8d69e8f4f" category="doc">Installieren Sie die Cluster Switch Health Monitor (SHM)-Konfigurationsdatei</block>
   <block id="5a70ef3971f7a5956d9f9f829efc730c" category="paragraph">Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für Cluster Switch Health Monitoring (SHM) von Nexus 9336C-FX2-Cluster-Switches zu installieren.</block>
@@ -4675,7 +4673,6 @@ Bild:../media/FEC_copper_table.jpg[25G Ports mit Kupferkabel]</block>
   <block id="7e857aa8a0b068cc27d4b48a1e11e878" category="list-text"><block ref="7e857aa8a0b068cc27d4b48a1e11e878" category="inline-link-macro-rx"></block></block>
   <block id="32559ee483b61b36141f9b9e0f4bbfff" category="paragraph">In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen auf der NetApp Support-Website. Beachten Sie, dass es zwischen der Befehlssyntax in der RCF und der Syntax in bestimmten Versionen von NX-OS Befehlssyntax bestehen kann.</block>
   <block id="ad0d19783ccfa19f931108b838e4b7e4" category="list-text"><block ref="ad0d19783ccfa19f931108b838e4b7e4" category="inline-link-macro-rx"></block></block>
-  <block id="8fa9b99093c5cdfb4cebad0008ba3e8d" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe<block ref="e98f5e4074ae8b028a5791870586403d" category="inline-link-rx"></block> Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.</block>
   <block id="79509ba15c2970f327dd8610e3b4628c" category="paragraph-title">Verwendete Befehle</block>
   <block id="1ad593dd61af4356ce9ba12d276c4336" category="section-title">Option 1: Installieren Sie die RCF-Datei auf einem neuen Switch</block>
   <block id="d061b4842fee7f503446ba29253d182f" category="paragraph">Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben.</block>
@@ -4890,7 +4887,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="c947c5faccdddd0a9a87be7895f50511" category="list-text">Führen Sie den Befehl auf dem ONTAP-System aus<block ref="db3929a8e897b02a87f7f4bc42f38fc1" prefix=" " category="inline-code"></block> , und stellen Sie sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *true* und das Seriennummernfeld nicht *Unknown* anzeigt.</block>
   <block id="31c020d11cc321faf9c0793a662d1e53" category="list-text">Starten Sie den Switch cs2 neu. Sie können sowohl die Ereignisse „Cluster Ports down“ ignorieren, die auf den Nodes gemeldet werden, während der Switch neu gebootet wird, als auch die Fehlerausgabe<block ref="a9e34a08c2be7359540cbf7337dc5ce9" prefix=" " category="inline-code"></block> .</block>
   <block id="db82c22b5434946b4bc226a3b9b7888a" category="list-text">Wenden Sie dieselbe RCF an, und speichern Sie die ausgeführte Konfiguration ein zweites Mal. Dies ist notwendig, da der RCF QoS verwendet und eine TCAM-Neukonfiguration erfordert, bei der der RCF zweimal geladen wird, während der Switch dazwischen neu gestartet wird.</block>
-  <block id="5fdb34220ba0015ed7039c3f92044588" category="paragraph"><block ref="e28073c74a510a495bd318aad6ec05d2" category="inline-link-macro-rx"></block>.</block>
   <block id="c7ca49e9f550dc9b18f2402f13ad9430" category="list-text">[[schritt5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
   <block id="58a19c530e54f6364edd838f35b1830e" category="inline-link-macro">Konfigurieren Sie die Überwachung des Switch-Systemzustands</block>
   <block id="d21243682bbd31fa9c0d32d291135394" category="paragraph"><block ref="5b8b393a675dcaaee97c02828356657c" category="inline-link-macro-rx"></block>.</block>
@@ -4923,7 +4919,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="ec348def7634a5754cf9d62e8bca7f24" category="list-text"><block ref="853bcb6b647712eac9646e8ede049d7b" category="inline-link-macro-rx"></block>.</block>
   <block id="5f7b61b5cf8ee335e4fdf4eb2e2191b2" category="paragraph">Die Ports sind für 40/100-GbE-Cluster+HA, 4 x 10-GbE-Breakout für Cluster und 4 x 25-GbE-Breakout für Cluster+HA und 100-GbE-Ports für jedes Storage HA-Paar konfiguriert.</block>
   <block id="d30ea82d7096609f0aea87ef848f7ebd" category="paragraph">So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2 Shared Switch:</block>
-  <block id="332339bcd9f462ab40cbf756a81eb021" category="doc">Aktivieren Sie SSH auf gemeinsam genutzten Cisco 9336C-FX2-Switches</block>
   <block id="e495f3ec8dabfce7925d7c5053f55cbb" category="inline-link-macro">Den Switch in einen NetApp-Schrank einbauen</block>
   <block id="343d8858c5eef7adcd6fc983a90c4848" category="list-text"><block ref="cad0a32a1376b86b466dd6cf29c7e620" category="inline-link-macro-rx"></block>.</block>
   <block id="d136348fb812c17c0d3c68bd85d3987f" category="inline-link-macro">Bereiten Sie die Installation von NX-OS und RCF vor</block>
@@ -4932,7 +4927,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="bc2fac09fdd528e5067568b7be4074db" category="list-text">[[step18]]Überprüfen Sie, ob die Shelfs richtig verkabelt sind:</block>
   <block id="783733d2f76fb1513a44bb7144679e76" category="list-text">[[step19]]Entfernen Sie den alten Schalter sh2.</block>
   <block id="3e6dc141a56ffa03ce5afc78a5bbbef1" category="paragraph">So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2-Speicher-Switch:</block>
-  <block id="d60d1714728d79a415d0da5a4975ae8f" category="doc">Aktivieren Sie SSH auf Cisco 9336C-FX2 Storage-Switches</block>
   <block id="e9c6db9ee4edb08184a082916cf1f56f" category="list-text"><block ref="c49772a60328b39d671da109a076acd4" category="inline-link-macro-rx"></block>.</block>
   <block id="5537a63af1d3d4f5a6ffcc2a8619a2f8" category="list-text"><block ref="d43bf43861b014b2f70de1c12cff1c76" category="inline-link-macro-rx"></block>.</block>
   <block id="cb037476ec4486d51b86d5dbeede8008" category="doc">Konfigurieren der Protokollerfassung</block>
@@ -5028,4 +5022,7 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="4af7c647d1c04eb805c9ecbc772595d1" category="list-text">Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. <block ref="81e27480a79c2bb77194c038c9737157" category="inline-link-macro-rx"></block>Weitere Informationen zu erforderlichen Änderungen finden Sie unter.</block>
   <block id="e51054318a8dcf9b707bc011338e9665" category="section-title">Stellen Sie die Schnittstellengeschwindigkeit an Breakout-Ports ein</block>
   <block id="e4da4813fef5b96a216a043d594bf245" category="list-text">Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. <block ref="75ce5666fba6992a0719935651dd5b1b" category="inline-link-macro-rx"></block>Weitere Informationen zu erforderlichen Änderungen finden Sie unter.</block>
+  <block id="bdbcf1c0d7f9cba19eb12819b953fbf1" category="inline-link">Kein Quorum mehr aus dem Node bei der Migration von LIF auf Cluster während des Upgrades des Switch-Betriebssystems</block>
+  <block id="e6ab3c0f7886a69b4cd4dc70d1d4afa9" category="admonition">Stellen Sie sicher, dass Sie *alle* verbundenen Cluster-Ports herunterfahren, um Probleme mit der Netzwerkverbindung zu vermeiden. <block ref="c9b140831402716d03d51afcd09ff177" category="inline-link-rx"></block>Weitere Informationen finden Sie im Knowledge Base-Artikel.</block>
+  <block id="263b9f10fe7e073e656b08a5b6da7e5a" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. <block ref="cd25cbe53f0a314145c84729c6ce2c78" category="inline-link-rx"></block>Überprüfen Sie im die richtigen Cluster-Ports auf Ihren Plattformen.</block>
 </blocks>

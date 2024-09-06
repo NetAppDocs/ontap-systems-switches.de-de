@@ -91,7 +91,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
 
 
-Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b.  https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^]Überprüfen Sie im die richtigen Cluster-Ports auf Ihren Plattformen.
 
 
 NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
@@ -464,7 +464,7 @@ System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Ei
 Gehen Sie zu https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] Für Setup-Anweisungen.
 
 .Was kommt als Nächstes?
-link:configure-ssh.html["Aktivieren Sie SSH"].
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
 
 
 
@@ -649,6 +649,10 @@ cluster1::*>
 
 +
 `cs1(config-if-range)# *shutdown*`
+
++
+
+CAUTION: Stellen Sie sicher, dass Sie *alle* verbundenen Cluster-Ports herunterfahren, um Probleme mit der Netzwerkverbindung zu vermeiden.  https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Node_out_of_quorum_when_migrating_cluster_lif_during_switch_OS_upgrade["Kein Quorum mehr aus dem Node bei der Migration von LIF auf Cluster während des Upgrades des Switch-Betriebssystems"^]Weitere Informationen finden Sie im Knowledge Base-Artikel.
 
 . Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
 +
@@ -1330,4 +1334,4 @@ RPC status:
 
 
 .Was kommt als Nächstes?
-link:../switch-cisco-9336c-fx2-storage/configure-ssh.html["Aktivieren Sie SSH"].
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
