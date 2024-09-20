@@ -17,9 +17,9 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 
 [NOTE]
 ====
-. Regenerieren Sie SSH-Schlüssel auf dem Switch gemäß den Anweisungen des Anbieters.
-. Regenerieren Sie SSH-Schlüssel auf der ONTAP-Seite mit `debug system regenerate-systemshell-key-pair`
-. Führen Sie die Setup-Routine für die Protokollsammlung mithilfe von erneut aus `system switch ethernet log setup-password`
+. Generieren Sie SSH-Schlüssel auf dem Switch mithilfe der Herstelleranweisungen neu.
+. Regenerieren Sie SSH-Schlüssel in ONTAP mit `debug system regenerate-systemshell-key-pair`
+. Führen Sie die Setup-Routine für die Protokollsammlung mit dem `system switch ethernet log setup-password` Befehl erneut aus
 
 
 ====
@@ -29,8 +29,10 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 
 * Der Benutzer muss Zugriff auf die Switch-Befehle haben `show` . Wenn diese nicht verfügbar sind, erstellen Sie einen neuen Benutzer und erteilen Sie dem Benutzer die erforderlichen Berechtigungen.
 * Die Switch-Statusüberwachung muss für den Switch aktiviert sein. Überprüfen Sie dies, indem Sie sicherstellen, dass die `Is Monitored:` Feld wird in der Ausgabe des auf *true* gesetzt `system switch ethernet show` Befehl.
-* Bei NVIDIA-Switches muss es dem Benutzer für die Protokollerfassung erlaubt sein, die Protokollerfassungsbefehle auszuführen, ohne dass eine Kennwortaufforderung angezeigt wird. Führen Sie den folgenden Befehl aus, um diese Verwendung zuzulassen:
-`echo '<username> ALL = NOPASSWD: /usr/cumulus/bin/cl-support, /usr/sbin/csmgrctl' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
+* Für die Unterstützung der Log-Erfassung mit NVIDIA-Switches muss der _user_ für die Log-Sammlung berechtigt sein `cl-support`, den Befehl auszuführen, ohne ein Passwort angeben zu müssen. Führen Sie den folgenden Befehl aus, um diese Verwendung zuzulassen:
++
+`echo '_<user>_ ALL = NOPASSWD: /usr/cumulus/bin/cl-support' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
+
 
 
 

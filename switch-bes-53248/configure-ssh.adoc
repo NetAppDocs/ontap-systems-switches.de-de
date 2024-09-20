@@ -86,6 +86,54 @@ Configuration Saved!
 
 WARNING: Stellen Sie sicher, dass SSH deaktiviert ist, bevor Sie die Schlüssel ändern. Andernfalls wird eine Warnung auf dem Switch gemeldet.
 
+. Verschlüsseln Sie die SSH-Schlüssel (nur für *FIPS-Modus*):
++
+
+CAUTION: Im FIPS-Modus müssen die Schlüssel aus Sicherheitsgründen mit einer Passphrase verschlüsselt werden. Wenn kein verschlüsselter Schlüssel vorhanden ist, kann die Anwendung nicht gestartet werden. Die Schlüssel werden mithilfe der folgenden Befehle erstellt und verschlüsselt:
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(switch) *configure*
+(switch) (Config)# *crypto key encrypt write rsa passphrase _<passphase>_*
+
+The key will be encrypted and saved on NVRAM.
+This will result in saving all existing configuration also.
+Do you want to continue? (y/n): *y*
+
+Config file 'startup-config' created successfully.
+
+(switch) (Config)# *crypto key encrypt write dsa passphrase _<passphase>_*
+
+The key will be encrypted and saved on NVRAM.
+This will result in saving all existing configuration also.
+Do you want to continue? (y/n): *y*
+
+Config file 'startup-config' created successfully.
+
+(switch)(Config)# *crypto key encrypt write ecdsa passphrase _<passphase>_*
+
+The key will be encrypted and saved on NVRAM.
+This will result in saving all existing configuration also.
+Do you want to continue? (y/n): *y*
+
+Config file 'startup-config' created successfully.
+
+(switch) (Config)# end
+(switch)# write memory
+
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+Are you sure you want to save? (y/n) *y*
+
+Config file 'startup-config' created successfully.
+
+Configuration Saved!
+----
+====
 . Starten Sie den Switch neu:
 +
 `reload`

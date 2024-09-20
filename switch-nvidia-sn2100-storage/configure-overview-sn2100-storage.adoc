@@ -11,7 +11,7 @@ summary: Überprüfen Sie vor der Konfiguration von NVIDIA SN2100-Switches die V
 
 
 [role="lead"]
-Die NVIDIA SN2100 ist ein Storage Switch, über den Sie Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN) weiterleiten können.
+Der NVIDIA SN2100 ist ein Ethernet Switch, mit dem Sie Daten zwischen Controllern und Platten-Shelves wechseln können.
 
 
 

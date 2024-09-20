@@ -33,6 +33,8 @@ entries:
     url: "/switch-cisco-3132q-v/install-nx-os-software-3132q-v.html"
   - title: Installieren Sie die RCF-Konfigurationsdatei
     url: "/switch-cisco-3132q-v/install-rcf-3132q-v.html"
+  - title: SSH-Konfiguration überprüfen
+    url: "/switch-cisco-3132q-v/configure-ssh-keys.html"
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_3132q-V
   entries:

@@ -11,7 +11,7 @@ summary: Überblick über die Installation und Konfiguration der Cisco Nexus 933
 
 
 [role="lead"]
-Der Cisco Nexus 9336C-FX2 Storage-Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp System-Rack installiert werden. Storage-Switches ermöglichen das Routen von Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN).
+Der Cisco Nexus 9336C-FX2-Switch ist Teil der Cisco Nexus 9000-Plattform und kann in einem NetApp-Systemschrank installiert werden. Der Nexus 9336C-FX2 ist ein Ethernet-Switch, mit dem Daten zwischen Controllern und Festplatten-Shelfs ausgetauscht werden können.
 
 
 
