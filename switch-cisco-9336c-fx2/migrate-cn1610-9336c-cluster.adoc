@@ -66,19 +66,27 @@ Dieses Verfahren umfasst das folgende Szenario:
 * Schalter C2 wird zuerst durch Schalter cs2 ersetzt.
 +
 ** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
++
+*** Alle Cluster-LIFs führen ein Failover auf den neuen Switch cs2 durch.
+
+
 ** Die Verkabelung zwischen den Knoten und C2 wird dann von C2 getrennt und wieder mit cs2 verbunden.
 
 
 * Switch C1 wird durch Switch cs1 ersetzt.
 +
 ** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
++
+*** Alle Cluster-LIFs führen ein Failover auf den neuen Switch cs1 durch.
+
+
 ** Die Verkabelung zwischen den Knoten und C1 wird dann von C1 getrennt und wieder mit cs1 verbunden.
 
 
 
 
 
-NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Cluster-Betrieb zu gewährleisten, führt das folgende Verfahren ein Failover aller Cluster-LIFs auf den Partner-Switch des Betriebs durch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
 
 
@@ -98,7 +106,10 @@ Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 +
 Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
-. Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
+. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs.
++
+Wenn Sie die automatische Zurücksetzung für dieses Verfahren deaktivieren, werden die Cluster-LIFs nicht automatisch zurück zu ihrem Home Port verschoben. Sie verbleiben im aktuellen Port, während er weiterhin betriebsbereit ist.
+
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
