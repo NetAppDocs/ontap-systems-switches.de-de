@@ -51,8 +51,6 @@ entries:
   entries:
   - title: Cluster-Switch austauschen
     url: "/switch-cisco-3232c/replace-cluster-switch.html"
-  - title: Storage-Switch austauschen
-    url: "/switch-cisco-3232c/replace-storage-switch.html"
   - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
     url: "/switch-cisco-3232c/migrate-to-switchless-cluster-interconnect.html"
 - title: Aktualisieren der Switches

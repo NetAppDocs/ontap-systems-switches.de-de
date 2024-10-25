@@ -331,19 +331,47 @@ cluster::*> network port modify -node n2 -port e0b -up-admin false
 cluster::*> network port modify -node n2 -port e0c -up-admin false
 ----
 ====
-. Pingen Sie die Remote-Cluster-Schnittstellen, und führen Sie dann eine Remote-Prozedur Call-Server überprüfen:
-+
-`cluster ping-cluster`
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
-Im folgenden Beispiel wird gezeigt, wie Sie die Remote-Cluster-Schnittstellen pingen:
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
 
-[listing]
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
 ----
-cluster::*> cluster ping-cluster -node n1
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source      Destination   Packet
+Node   Date                       LIF         LIF           Loss
+------ -------------------------- ---------- -------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n1_clus2   n2_clus2       none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n2_clus2   n1_clus2       none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster::*> *cluster ping-cluster -node n1*
 Host is n1
 Getting addresses from network interface table...
 Cluster n1_clus1 n1       e0a    10.10.0.1
@@ -386,8 +414,9 @@ RPC status:
 4 paths up, 0 paths down (tcp check)
 4 paths up, 0 paths down (udp check)
 ----
+--
 ====
-. Fahren Sie die ISL-Ports 13 bis 16 am aktiven CN1610-Switch CL1 herunter:
+. [[step10]] Herunterfahren der ISL-Ports 13 bis 16 auf dem aktiven CN1610-Switch CL1:
 +
 `shutdown`
 
@@ -650,19 +679,47 @@ e0d   cluster   cluster     up    9000  auto/10000     -        -
 8 entries were displayed.
 ----
 ====
-. Pingen Sie die Remote-Cluster-Schnittstellen und führen Sie dann eine Remote-Prozedur aus Rufen Sie den Server an:
-+
-`cluster ping-cluster`
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
-Im folgenden Beispiel wird gezeigt, wie Sie die Remote-Cluster-Schnittstellen pingen:
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
 
-[listing]
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
 ----
-cluster::*> cluster ping-cluster -node n1
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source      Destination   Packet
+Node   Date                       LIF         LIF           Loss
+------ -------------------------- ---------- -------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n1_clus2   n2_clus2       none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n2_clus2   n1_clus2       none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster::*> *cluster ping-cluster -node n1*
 Host is n1
 Getting addresses from network interface table...
 Cluster n1_clus1 n1       e0a    10.10.0.1
@@ -705,8 +762,9 @@ RPC status:
 4 paths up, 0 paths down (tcp check)
 4 paths up, 0 paths down (udp check)
 ----
+--
 ====
-. Migrieren Sie bei jedem Node im Cluster die Schnittstellen, die dem ersten CN1610 Switch CL1 zugeordnet sind, der ersetzt werden soll:
+. [[step12]] Migrieren Sie auf jedem Knoten im Cluster die Schnittstellen, die dem ersten CN1610-Switch CL1 zugeordnet sind, um sie zu ersetzen:
 +
 `network interface migrate`
 
@@ -988,19 +1046,47 @@ Cluster
 8 entries were displayed.
 ----
 ====
-. Pingen Sie die Remote-Cluster-Schnittstellen und führen Sie dann eine Remote-Prozedur aus Rufen Sie den Server an:
-+
-`cluster ping-cluster`
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
-Im folgenden Beispiel wird gezeigt, wie Sie die Remote-Cluster-Schnittstellen pingen:
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
 
-[listing]
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
 ----
-cluster::*> cluster ping-cluster -node n1
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source      Destination   Packet
+Node   Date                       LIF         LIF           Loss
+------ -------------------------- ---------- -------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n1_clus2   n2_clus2       none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n2_clus2   n1_clus2       none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster::*> *cluster ping-cluster -node n1*
 Host is n1
 Getting addresses from network interface table...
 Cluster n1_clus1 n1       e0a    10.10.0.1
@@ -1043,8 +1129,9 @@ RPC status:
 4 paths up, 0 paths down (tcp check)
 4 paths up, 0 paths down (udp check)
 ----
+--
 ====
-. Erweitern Sie das Cluster durch Hinzufügen von Nodes zu den Nexus 3132Q-V Cluster Switches.
+. [[step7]]erweitern Sie den Cluster durch Hinzufügen von Knoten zu den Nexus 3132Q-V-Cluster-Switches.
 . Zeigen Sie die Informationen zu den Geräten in Ihrer Konfiguration an:
 +
 ** `network device-discovery show`
@@ -1257,4 +1344,4 @@ C2                          cluster-network    10.10.1.104      NX3132V
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

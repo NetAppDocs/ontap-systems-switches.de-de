@@ -288,17 +288,46 @@ c1(FOX2025GEEX)     Eth1/47        176    S I s     N5K-C5596UP        Eth1/47
 c1(FOX2025GEEX)     Eth1/48        176    S I s     N5K-C5596UP        Eth1/48
 ----
 ====
-. Überprüfen Sie mit dem Befehl, ob das Cluster-Netzwerk vollständig verbunden ist:
-+
-`cluster ping-cluster -node node-name`
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
 [listing, subs="+quotes"]
 ----
-cluster1::*> *cluster ping-cluster -node node2*
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source           Destination      Packet
+Node   Date                       LIF              LIF              Loss
+------ -------------------------- ---------------- ---------------- -----------
+node1
+       3/5/2022 19:21:18 -06:00   node1_clus2      node2-clus1      none
+       3/5/2022 19:21:20 -06:00   node1_clus2      node2_clus2      none
+node2
+       3/5/2022 19:21:18 -06:00   node2_clus2      node1_clus1      none
+       3/5/2022 19:21:20 -06:00   node2_clus2      node1_clus2      none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster ping-cluster -node local*
 Host is node2
 Getting addresses from network interface table...
 Cluster node1_clus1 169.254.209.69 node1     e0a
@@ -323,9 +352,8 @@ RPC status:
 2 paths up, 0 paths down (tcp check)
 2 paths up, 0 paths down (udp check)
 ----
+--
 ====
-
-
 
 
 === Schritt: Kabel und Ports konfigurieren
@@ -578,23 +606,46 @@ cs1(FDO220329KU)
 Total entries displayed: 4
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster-Netzwerk über vollständige Konnektivität verfügt:
-+
-`cluster ping-cluster -node node-name`
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
 [listing, subs="+quotes"]
 ----
-cluster1::*> *set -priv advanced*
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
 
-Warning: These advanced commands are potentially dangerous; use them only when
-         directed to do so by NetApp personnel.
-Do you want to continue? {y|n}: *y*
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source           Destination      Packet
+Node   Date                       LIF              LIF              Loss
+------ -------------------------- ---------------- ---------------- -----------
+node1
+       3/5/2022 19:21:18 -06:00   node1_clus2      node2-clus1      none
+       3/5/2022 19:21:20 -06:00   node1_clus2      node2_clus2      none
+node2
+       3/5/2022 19:21:18 -06:00   node2_clus2      node1_clus1      none
+       3/5/2022 19:21:20 -06:00   node2_clus2      node1_clus2      none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
 
-cluster1::*> *cluster ping-cluster -node node2*
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster ping-cluster -node local*
 Host is node2
 Getting addresses from network interface table...
 Cluster node1_clus1 169.254.209.69 node1     e0a
@@ -618,13 +669,27 @@ Larger than PMTU communication succeeds on 4 path(s)
 RPC status:
 2 paths up, 0 paths down (tcp check)
 2 paths up, 0 paths down (udp check)
+----
+--
+====
+. [[Schritt 3]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
 
-
-cluster1::*> *set -privilege admin*
-cluster1::*>
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system node autosupport invoke -node * -type all -message MAINT=END*
 ----
 ====
+. Ändern Sie die Berechtigungsebene zurück in den Administrator:
++
+`set -privilege admin`
+
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

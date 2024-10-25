@@ -795,14 +795,43 @@ cluster1-04          true    true          false
 cluster1::*>
 ----
 ====
-. Ping für die Remote-Cluster-Schnittstellen zur Überprüfung der Konnektivität:
-+
-`cluster ping-cluster -node local`
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source               Destination         Packet
+Node   Date                       LIF                  LIF                 Loss
+------ -------------------------- -------------------- ------------------- -----------
+node1
+       3/5/2022 19:21:18 -06:00   cluster1-01_clus2    cluster1-02-clus1   none
+       3/5/2022 19:21:20 -06:00   cluster1-01_clus2    cluster1-02_clus2   none
+node2
+       3/5/2022 19:21:18 -06:00   cluster1-02_clus2    cluster1-01_clus1   none
+       3/5/2022 19:21:20 -06:00   cluster1-02_clus2    cluster1-01_clus2   none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+
+`cluster ping-cluster -node <name>`
+
 [listing, subs="+quotes"]
 ----
 cluster1::*> *cluster ping-cluster -node local*
@@ -842,8 +871,7 @@ RPC status:
 6 paths up, 0 paths down (tcp check)
 6 paths up, 0 paths down (udp check)
 ----
+--
 ====
-
-
 .Was kommt als Nächstes?
 link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"].

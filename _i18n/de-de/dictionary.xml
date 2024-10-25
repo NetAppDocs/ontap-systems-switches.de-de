@@ -199,7 +199,6 @@
   <block id="300c4a8af362f43878948de70117255e" category="paragraph">Jedes LIF sollte für angezeigt werden<block ref="4f21ee5a18672b60f4c01e94e6be9c79" prefix=" " category="inline-code"></block> Und zwar für<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block>.</block>
   <block id="3dc587636ea58bb39b951053c233b58b" category="list-text">Die Cluster-Ports auf jedem Node sind mit vorhandenen Cluster-Switches auf die folgende Weise (aus Sicht der Nodes) verbunden. Verwenden Sie dazu den Befehl:<block ref="628dcb12513dedee012c3c686cf33a79" prefix=" " category="inline-code"></block></block>
   <block id="866e9195c3f1e53c818cc1513b132bbc" category="list-text">Die Cluster-Ports und -Switches sind (aus Sicht der Switches) folgendermaßen verbunden:<block ref="cdf610401d84a31ec0b35a9530629e42" prefix=" " category="inline-code"></block></block>
-  <block id="9e23ccbda503c8dd0fa60d4057a41702" category="list-text">Fahren Sie beim Switch c2 die mit den Cluster-Ports der Nodes verbundenen Ports herunter.</block>
   <block id="aba8d89ac417a82d843ceaf3c6ac2faa" category="list-text">Verschieben Sie die Node-Cluster-Ports vom alten Switch c2 auf den neuen Switch sw2, indem Sie die entsprechende Verkabelung verwenden, die von NVIDIA SN2100 unterstützt wird.</block>
   <block id="c1823cd6c866c4f070a5323fbfabc525" category="list-text">Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:</block>
   <block id="203a7f618c9b080eaa78a5e38ccd907d" category="list-text">Vergewissern Sie sich beim Switch sw2, dass alle Knoten-Cluster-Ports aktiv sind:<block ref="fba42a2ccc46f0a6204709f144e648ff" prefix=" " category="inline-code"></block></block>
@@ -754,8 +753,6 @@
   <block id="f523377f3be90c9c99ffba49f8f2ce16" category="list-text">Bei dem neuen Switch melden Sie sich als Administrator an und fahren Sie alle Ports ab, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports 1/1 zu 1/34).</block>
   <block id="65b12adbef5ea1ca868cfd0f85c4ee86" category="paragraph">Wenn der Schalter, den Sie ersetzen, nicht funktionsfähig ist und ausgeschaltet ist, fahren Sie mit Schritt 4 fort. Die LIFs auf den Cluster-Nodes sollten für jeden Node bereits ein Failover auf den anderen Cluster-Port durchgeführt haben.</block>
   <block id="7b5239f3a5575bedd1afcb0d613f5b2d" category="list-text">Vergewissern Sie sich, dass für alle Cluster-LIFs die automatische Zurücksetzung aktiviert ist:<block ref="d268e7bf124a9f74e2dbe2e0127d951b" prefix=" " category="inline-code"></block></block>
-  <block id="b20219b8e5862f90d99ed9d31b9cbaf4" category="list-text">Vergewissern Sie sich, dass alle Cluster-LIFs kommunizieren können:<block ref="1ab036f1d4c42e6635eba8a8774bbfc9" prefix=" " category="inline-code"></block></block>
-  <block id="2956a3c58e1e9e09d89c37630ad846c1" category="list-text">Fahren Sie die ISL-Ports 1/35 und 1/36 auf dem Nexus 9336C-FX2 Switch cs1 herunter:</block>
   <block id="2afc75d42480841e27d9b05235e39cde" category="list-text">Entfernen Sie alle Kabel vom Nexus 9336C-FX2 cs2 Switch, und verbinden Sie sie dann mit den gleichen Ports am Nexus C9336C-FX2 newc2 Switch.</block>
   <block id="78a32e32770c5475ef123676ee445f74" category="list-text">Bringen Sie die ISLs-Ports 1/35 und 1/36 zwischen den switches cs1 und newcs2 auf, und überprüfen Sie dann den Betriebsstatus des Port-Kanals.</block>
   <block id="9976ce3dd89716631075e314d8369a88" category="paragraph">Port-Channel sollte PO1(SU) angeben und Mitgliedsports sollten eth1/35(P) und eth1/36(P) angeben.</block>
@@ -764,7 +761,6 @@
   <block id="8ae1e4542e61531049621a5845dc70cd" category="list-text">Setzen Sie auf demselben Node, den Sie im vorherigen Schritt verwendet haben, die Cluster-LIF, die dem Port im vorherigen Schritt zugeordnet ist, mithilfe des Befehls „Netzwerkschnittstelle revert“ zurück.</block>
   <block id="96b8aff7acc9d139c59c26c488001f3f" category="paragraph">In diesem Beispiel wird LIF node1_clus2 auf node1 erfolgreich zurückgesetzt, wenn der Wert für „Home“ wahr ist und der Port e0b ist.</block>
   <block id="f33c1f43ae94bca5556a5612cebb3895" category="paragraph">Die folgenden Befehle geben LIF zurück<block ref="bd152ff09f603987e4c87a156b246966" prefix=" " category="inline-code"></block> Ein<block ref="164546f60261c7e4be0c5f5f9aaeec86" prefix=" " category="inline-code"></block> Zu Home Port<block ref="922c556baf6272bffc4fa28b2e9a0bbc" prefix=" " category="inline-code"></block> Und zeigt Informationen zu den LIFs auf beiden Nodes an. Das Einrichten des ersten Node ist erfolgreich, wenn die Spalte IS Home für beide Clusterschnittstellen wahr ist und in diesem Beispiel die korrekten Port-Zuweisungen angezeigt werden<block ref="922c556baf6272bffc4fa28b2e9a0bbc" prefix=" " category="inline-code"></block> Und<block ref="22fe67c2e87caff18249cf1804bbeaad" prefix=" " category="inline-code"></block> Auf Knoten 1.</block>
-  <block id="b8fcfd0b86837de6abae197ea7ce1e77" category="list-text">Bestätigen Sie die folgende Clusternetzwerkkonfiguration:<block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block></block>
   <block id="867937cadaaec41c51512879188ec686" category="summary">Wenn Sie ein unterbrechungsfrei 2-Node-Cluster ohne Switches zu einem Cluster mit Cisco Nexus 9336C-FX2 Cluster-Switches migrieren, müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben. Der dokumentierte Prozess funktioniert für alle Nodes mit optischen oder Twinax-Ports, wird auf diesem Switch jedoch nicht unterstützt, wenn die Nodes integrierte 10-Gbit-BASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.</block>
   <block id="cb3b33954945611e0ba8b2628e06d629" category="inline-link">Cisco Ethernet Switches</block>
   <block id="f7ee6f50613eb8c232914988eb2db3eb" category="paragraph">10/25-GbE-Node</block>
@@ -902,9 +898,6 @@
   <block id="0f717d9f0cdccd54283a68290db5a062" category="list-text">Beenden Sie die Cluster-Ports für die LIFs n1_clus1 und n2_clue1, die in Schritt 9 migriert wurden:</block>
   <block id="e95612c7ef671203cc282ce38a48bdb4" category="paragraph"><block ref="fdb936507a9dbe73b5c4b16108a324e6" prefix="" category="inline-code"></block></block>
   <block id="c2c05b7104e31c97ee9d11ccf7ac3b14" category="paragraph">Sie müssen den Befehl für jeden Port ausführen, wie im folgenden Beispiel gezeigt:</block>
-  <block id="6a7c10099f41c6e223cef671ebb76146" category="list-text">Anpingen der Remote-Cluster-Schnittstellen und Durchführen einer RPC-Server-Prüfung:</block>
-  <block id="c08886eaed359b5e123b95c056c6e19b" category="paragraph"><block ref="1e494d7a0d114db00b18964bfb9147db" prefix="" category="inline-code"></block></block>
-  <block id="9868b1da05b1c2bf12a9e340575945d0" category="paragraph">Im folgenden Beispiel wird Node n1 beflügelt und der RPC-Status danach angezeigt:</block>
   <block id="cfc28d2866c14653d52dc05e54775304" category="paragraph">Sie können sich auf die laufende Konfiguration beziehen und den ersten 40-GbE-Port am Switch C1 (Port 1/7 in diesem Beispiel) mit e4a auf n1 verbinden, indem die Verkabelung unterstützt für Nexus 3232C-Switches.</block>
   <block id="410b3914a557be27dd3a3b5a77e4cf2b" category="paragraph">Sie können sich auf die laufende Konfiguration beziehen und e4a mit dem nächsten verfügbaren 40 GbE-Port von C1, Port 1/8, über unterstützte Verkabelung verbinden.</block>
   <block id="70eeeed96560a359e5de8539aed23340" category="list-text">Aktivieren Sie alle Ports, die an Knoten gerichtet sind, auf C1.</block>
@@ -959,8 +952,6 @@
   <block id="8df6d09a602fca4aa18fe9e0b5e94fd4" category="list-text">Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:<block ref="d4f081f8f7b730c426160bfa9617a56a" prefix=" " category="inline-code"></block></block>
   <block id="812c73458a9bcfba11e9f9ce18f5d870" category="list-text">Zeigen Sie die Attribute des Netzwerkports an:<block ref="5a2357a985889803fc9ad4bba1f860e2" prefix=" " category="inline-code"></block></block>
   <block id="4abcd2a6fe57e9f246dd326cae0ddb1b" category="list-text">Zeigt Informationen zu den LIFs an:<block ref="7af866342cc7e87972580d7b709d8820" prefix=" " category="inline-code"></block></block>
-  <block id="8e7dcc2f49cf13de0316cb76b4708706" category="list-text">Ping für die Remote-Cluster-LIFs:<block ref="1e494d7a0d114db00b18964bfb9147db" prefix=" " category="inline-code"></block></block>
-  <block id="916ba5b1774eaf295926db30f3bad132" category="list-text">Überprüfen Sie das<block ref="9f1b7141f09f19c4e33409646aef43cf" prefix=" " category="inline-code"></block> Befehl ist für alle Cluster-LIFs aktiviert:<block ref="d268e7bf124a9f74e2dbe2e0127d951b" prefix=" " category="inline-code"></block></block>
   <block id="59f5de53d0bcaeeb4e4e9818bbf75f18" category="paragraph"><block ref="ff5aaae616b6f326cad680284f32b588" prefix="" category="inline-code"></block></block>
   <block id="0f8423ed5e0e5c2a15b9d97280628d07" category="doc">Austausch eines Cisco Nexus 3232C-Cluster-Switch</block>
   <block id="5a9c1ae57a80076b39ad53020fd29eed" category="summary">Ein Upgrade der Cisco NX-OS Software und der Referenzkonfigurationsdateien (RCs) auf Cisco Nexus 3232C-Storage-Switches kann durchgeführt werden.</block>
@@ -1025,7 +1016,6 @@
   <block id="fb0f753ded9498a080196f8272f79423" category="paragraph">Im folgenden Beispiel wird der aktuelle Status jedes Clusters angezeigt:</block>
   <block id="acd1d1d2ce5a2970e1b46fb53b75ad44" category="list-text">Fahren Sie die Cluster-Interconnect-Ports herunter, die physisch mit dem Switch CL2 verbunden sind:</block>
   <block id="e2b1bfb579bd8470a604887ff8ca68d3" category="paragraph">Die folgenden Befehle fahren die angegebenen Ports auf n1 und n2 herunter, die Ports müssen jedoch auf allen Knoten heruntergefahren werden:</block>
-  <block id="72611877ce7fbffb44381c1c62a69cd8" category="list-text">Schließen Sie ISLs 41 bis 48 auf CL1, dem aktiven Nexus 5596 Switch mit Cisco<block ref="5924f03a95ee6f7277e5bdd1e81b8fdc" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="c66e3aa8ea0ac093e4c0a3cf3a2362e7" category="paragraph">Das folgende Beispiel zeigt, dass ISLs 41 bis 48 am Nexus 5596-Switch CL1 heruntergefahren werden:</block>
   <block id="e611d5576e653114c65a96a266ece602" category="list-text">Mithilfe der entsprechenden Cisco Befehle können Sie eine temporäre ISL zwischen CL1 und C2 erstellen.</block>
   <block id="621728c29c88ed3282a78eafc103c550" category="paragraph">Das folgende Beispiel zeigt, dass ein temporärer ISL zwischen CL1 und C2 eingerichtet wird:</block>
@@ -1047,8 +1037,6 @@
   <block id="9e34505e95067067c4258419479733a1" category="paragraph">Das folgende Beispiel zeigt, dass die LIFs auf Fa.2 auf ihre Home-Ports zurückgesetzt werden und zeigt, dass die LIFs erfolgreich zurückgesetzt werden, wenn die Ports in der Spalte „Current Port“ den Status aufweisen<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Im<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Spalte. Wenn der<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Wert ist<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>, Das LIF wurde nicht zurückgesetzt.</block>
   <block id="b0522263b2b188ed6c32b8d81c7f9286" category="list-text">Vergewissern Sie sich, dass die Cluster-Ports verbunden sind:</block>
   <block id="14860c40af5b70801e3ca603e17cb1ae" category="paragraph">Das folgende Beispiel zeigt das Ergebnis des vorherigen<block ref="c41d3983ecd2badd54b3bb9658675080" prefix=" " category="inline-code"></block> Befehl, Überprüfung der Cluster Interconnects<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>:</block>
-  <block id="35f01ed40b6310feec062211ce126c2d" category="paragraph"><block ref="67b370e4ed014395d701d60f8f886608" prefix="" category="inline-code"></block></block>
-  <block id="f4df801f902ead90a2bade04e26cac42" category="list-text">Migrieren Sie bei jedem Node im Cluster die Schnittstellen, die mit dem ersten Nexus 5596 Switch CL1 verbunden sind, der ersetzt werden soll:</block>
   <block id="129a1c42491e08989734008419845f67" category="paragraph">Im folgenden Beispiel werden die Ports oder LIFs angezeigt, die auf den Nodes n1 und n2 migriert werden:</block>
   <block id="2f7e0ef82095fa5dae5874a5e402a389" category="list-text">Überprüfen Sie den Status des Clusters:</block>
   <block id="73610b963ec877545620c671a3e11854" category="paragraph">Im folgenden Beispiel wird gezeigt, dass die erforderlichen Cluster-LIFs zu geeigneten Cluster-Ports migriert wurden, die auf dem Cluster-Switch gehostet werden.C2:</block>
@@ -1075,7 +1063,6 @@
   <block id="6ddfcc3224ee61de55be71f4235743ce" category="paragraph">Im folgenden Beispiel werden die spezifischen Cluster-LIFs angezeigt, die auf ihre Home-Ports auf den Nodes n1 und n2 zurückgesetzt werden:</block>
   <block id="d4a8913469db1fc0f552292a60d6e828" category="list-text">Vergewissern Sie sich, dass die Schnittstelle Home ist:</block>
   <block id="daea7250d83f163412cc5379e80d5e82" category="paragraph">Im folgenden Beispiel wird der Status von Cluster-Interconnect-Schnittstellen angezeigt<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Und<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Für n1 und n2:</block>
-  <block id="684b2e790316879de4577bb080c72bf3" category="list-text">Erweitern Sie den Cluster durch Hinzufügen von Nodes zu den Nexus 3232C Cluster-Switches.</block>
   <block id="ade7d2702b97f21df7fd20dbf01f49fe" category="paragraph">In den folgenden Beispielen werden die Nodes n3 und n4 mit 40-GbE-Cluster-Ports verbunden, die mit den Ports e1/7 und e1/8 verbunden sind und beide Nodes dem Cluster verbunden sind. Die 40 GbE Cluster Interconnect Ports sind e4a und e4e.</block>
   <block id="25ea268f832f9b1eec50e6576dee1fa5" category="list-text">Zeigen Sie die Informationen zu den Geräten in Ihrer Konfiguration an:</block>
   <block id="f775db4015a6969e3d7826094686747b" category="inline-link">Beschreibungsseite für den Cisco Ethernet Switch</block>
@@ -1133,8 +1120,6 @@
   <block id="ef84127d5ef060917ce0f8f8ec03bf82" category="list-text">Laden Sie die entsprechende Version der Bildsoftware unter herunter <block ref="a1b5971027192ba8f103906f3e0c5af3" category="inline-link-macro-rx"></block>.</block>
   <block id="98eb99fcc0ed94997a2ab2be00fd87f8" category="paragraph">Sie müssen jede LIF individuell wie im folgenden Beispiel gezeigt migrieren:</block>
   <block id="58e4c812934a7909bf27428e713ee5c1" category="paragraph">Im folgenden Beispiel werden die vier Cluster-Interconnect-Ports für Knoten n1 und Knoten n2 heruntergefahren:</block>
-  <block id="1951e47d1525c6b1dfbe9f52df91cc7f" category="list-text">Pingen Sie die Remote-Cluster-Schnittstellen, und führen Sie dann eine Remote-Prozedur Call-Server überprüfen:</block>
-  <block id="105dcee6d5ae30eca10110db38214b1e" category="list-text">Fahren Sie die ISL-Ports 13 bis 16 am aktiven CN1610-Switch CL1 mit dem entsprechenden Befehl herunter.</block>
   <block id="06b942f634ce75ef69a38ebe9aa1d02c" category="paragraph">Im folgenden Beispiel werden die ISL-Ports 13 bis 16 am CN1610-Switch CL1 heruntergefahren:</block>
   <block id="8d9520a7db10148df2c9a1262cf4055a" category="list-text">Temporäres ISL zwischen CL1 und C2 aufbauen:</block>
   <block id="8b3c83619e5433d40fb01f0c00687515" category="paragraph">Das folgende Beispiel zeigt eine temporäre ISL, die zwischen CL1 (Ports 13-16) und C2 (Ports e1/24/1-4) mit Cisco aufgebaut wird<block ref="dcde5ecf700fb570ce819b9b94035298" prefix=" " category="inline-code"></block> Befehl:</block>
@@ -1245,7 +1230,6 @@
   <block id="dd731ffd2ea93d5d4f7a6ec37ae136dc" category="list-text">Vergewissern Sie sich, dass e0d-Ports über alle Nodes im Cluster hinweg ordnungsgemäß und ordnungsgemäß sind:<block ref="856f897c52a15ad9c779d1f7b82c2593" prefix=" " category="inline-code"></block></block>
   <block id="4b45f9c3c89c6b4fd380706244fef39d" category="paragraph">Je nach der zuvor auf dem Switch geladenen RCF-Version können Sie die folgende Ausgabe auf der cs1-Switch-Konsole beobachten</block>
   <block id="de5961cc4ba4008f669b392dba74a8da" category="list-text">Stellen Sie sicher, dass die ISL zwischen cs1 und cs2 funktionsfähig ist:<block ref="2f9f4462a41014889ceaf0991f774466" prefix=" " category="inline-code"></block></block>
-  <block id="0ecc223c2f66f6abde60759dd3185d04" category="list-text">Ping für die Remote-Cluster-Schnittstellen zur Überprüfung der Konnektivität:<block ref="6d931e460f3e419ca5bc874e47132b6d" prefix=" " category="inline-code"></block></block>
   <block id="c65be06145c6932d272087d8bd0dc751" category="list-text">Nexus 5596</block>
   <block id="555e8da414bf5a2d01f0f64a306f311c" category="list-text">Die Cluster-Switches verwenden die folgenden Ports für Verbindungen zu den Nodes:</block>
   <block id="c2f18641e43de285dd6439d822155502" category="list-text">Ports e1/1-40 (10 GbE): Nexus 5596</block>
@@ -1294,8 +1278,6 @@
   <block id="21ac417b713f0b8db45ffff0c3af14dd" category="paragraph">Führen Sie diesen Befehl von jedem lokalen Knoten aus.</block>
   <block id="3bf33ab1d6946b3f24d2516e6072bbfb" category="list-text">Überprüfen Sie, ob die Migration der Cluster-Schnittstellen durchgeführt wird:</block>
   <block id="e43adf663d10e04de01cdb70dba1ea3f" category="list-text">Fahren Sie Cluster-Ports herunter und schließen Sie LIF auf beiden Knoten an:</block>
-  <block id="0c93dd1c3bc740b534dc19a4612c4120" category="paragraph"><block ref="1ab036f1d4c42e6635eba8a8774bbfc9" prefix="" category="inline-code"></block></block>
-  <block id="df920baf118cae8ed08bc0e67c930632" category="list-text">Trennen Sie das Kabel von e4a am Knoten n1.</block>
   <block id="656098cc9fb2598274636e89bfda9deb" category="paragraph">Sie können sich auf die laufende Konfiguration beziehen und den ersten 40-GbE-Port am Switch C1 (Port 1/7 in diesem Beispiel) mit e4a auf n1 verbinden, indem Sie die unterstützte Verkabelung auf Nexus 3132Q-V. verwenden</block>
   <block id="916b11220f3f30d08ed357610e9a0f88" category="admonition">Beim erneuten Anschließen von Kabeln an einen neuen Cisco Cluster Switch müssen die verwendeten Kabel entweder Glasfaser oder Verkabelung sein, die von Cisco unterstützt wird.</block>
   <block id="1cd2a4b2269a32389e020110b6c528c4" category="list-text">Trennen Sie das Kabel von e4a auf Knoten n2.</block>
@@ -1362,7 +1344,6 @@
   <block id="7fd77ba3dd5e636631a1eb65009f8b8d" category="paragraph">Dieses Beispiel zeigt, dass die LIF-Migration auf allen Nodes durchgeführt wird:</block>
   <block id="43708903ed29a6b8f36b2d2012c5cd07" category="list-text">Überprüfen Sie den Systemzustand des Clusters:</block>
   <block id="74d7543cdff44d4d4d6b9c31a44929fd" category="paragraph">In diesem Beispiel werden die angegebenen Ports angezeigt, die auf allen Nodes heruntergefahren werden:</block>
-  <block id="4547e743de7a4493e60ec5a14011f213" category="list-text">Fahren Sie bei CL1 die Ports 1/31 und 1/32 herunter, und schalten Sie den aktiven Nexus 3132Q-V Switch ein:</block>
   <block id="1136531f8e26fab6ed3aa68ddd63c6cf" category="paragraph"><block ref="5924f03a95ee6f7277e5bdd1e81b8fdc" prefix="" category="inline-code"></block></block>
   <block id="7ed6ad166541eaeed2eb44050a4369b4" category="paragraph">In diesem Beispiel werden die ISL-Ports 1/31 und 1/32 am Switch CL1 heruntergefahren:</block>
   <block id="4ce7327540877b4c9bb108e79d7ec741" category="list-text">Entfernen Sie alle Kabel, die am Nexus 3132Q-V Switch CL2 angeschlossen sind, und schließen Sie sie an allen Knoten an den Ersatzschalter C2 an.</block>
@@ -1418,8 +1399,6 @@
   <block id="64d9658c6e0a01fd09972bb8e3bf80d8" category="paragraph">Besuchen Sie die Seite __ONTAP 8.x oder höher Referenzkonfigurationsdateien für Cluster und Netzwerk-Management-Switches__Download, und klicken Sie dann auf die entsprechende Version.</block>
   <block id="f5532c44fa87b73888e57560b15f09ab" category="paragraph">Das folgende Beispiel zeigt n1 und n2, die LIF-Migration muss jedoch auf allen Knoten durchgeführt werden:</block>
   <block id="653081b7951ce57e5013f6673c162a3c" category="paragraph">Das folgende Beispiel zeigt das Ergebnis des vorherigen<block ref="b25040194b5c780d571a8835507279e9" prefix=" " category="inline-code"></block> Befehl:</block>
-  <block id="85c96d16aebcae293f2d70dbbf9cb1d0" category="paragraph">Im folgenden Beispiel wird gezeigt, wie Sie die Remote-Cluster-Schnittstellen pingen:</block>
-  <block id="3deecfe62c85f26f915232658c689130" category="list-text">Fahren Sie die ISL-Ports 41 bis 48 am aktiven Nexus 5596-Switch CL1 herunter:</block>
   <block id="609bda8dbabe0a84f343b546e3d7a65a" category="paragraph">Das folgende Beispiel zeigt, wie die ISL-Ports 41 bis 48 auf dem Nexus 5596-Switch CL1 heruntergefahren werden:</block>
   <block id="74bb8188e949e71bcfef0fd8d38fa91b" category="list-text">Stellen Sie eine temporäre ISL zwischen CL1 und C2 her.</block>
   <block id="966456a7b0c13d93e99995ce83647e5f" category="paragraph">Schließen Sie bei der unterstützten Verkabelung die getrennten Ports aller Knoten wieder an den Nexus 3132Q-V Switch C2 an.</block>
@@ -1443,7 +1422,6 @@
   <block id="ad74bf339ee8d5d96a2bd94af6adee60" category="paragraph">Das folgende Beispiel zeigt alle Cluster-Interconnect-Ports, die für n1 und n2 auf dem 3132Q-V-Switch C1 aufgerufen werden:</block>
   <block id="f1cf8003cdf52e8ffcd5e3ec861861de" category="paragraph">Im folgenden Beispiel werden alle Cluster-Interconnect-Ports auf allen Knoten des neuen Switch C1 3132Q-V überprüft<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>:</block>
   <block id="9fff40b9c7a12070faa3809a040494f9" category="paragraph">Im folgenden Beispiel wird der Status von Cluster-Interconnect-Schnittstellen angezeigt<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Und<block ref="7510f0cdc8fdc222ee844ed5b7a9d8cf" prefix=" " category="inline-code"></block> Für n1 und n2:</block>
-  <block id="c88bbeb32e8a86a6536b0c77fe7f1ec8" category="list-text">Pingen Sie die Remote-Cluster-Schnittstellen und führen Sie dann eine Remote-Prozedur aus Rufen Sie den Server an:</block>
   <block id="9330abbaaa76e6624badc34f8f4a32ea" category="paragraph">Das folgende Beispiel zeigt, wie der Nexus 5596 entfernt wird:</block>
   <block id="05a9e5b7c0c83c8a1b0da673e6e07f22" category="list-text">Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:</block>
   <block id="0097ce0f8a70e3f4836e959cc2aab7af" category="summary">Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco Nexus 3132Q-V Cluster Switches zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen.</block>
@@ -1484,7 +1462,6 @@
   <block id="553d4b480ebd4c3c288cfa2be6c0e439" category="paragraph">Das folgende Beispiel zeigt, wie alle Cluster Interconnect Ports, die mit dem neuen Switch C1 3132Q-V verbunden sind, verbunden sind:</block>
   <block id="8fd12ba18f621197ae2f1f7203080e73" category="paragraph">Im folgenden Beispiel wird überprüft, ob alle Cluster-Interconnect-Ports an n1 und n2 auf dem neuen 3132Q-V-Switch C1 sind<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>:</block>
   <block id="42f427229de718255616b52d13a2ec50" category="paragraph">Im folgenden Beispiel wird gezeigt, wie die migrierten Cluster-LIFs auf die Home-Ports zurückgesetzt werden:</block>
-  <block id="9337d28b60d4b0252c3592ab024c6fc9" category="list-text">Erweitern Sie das Cluster durch Hinzufügen von Nodes zu den Nexus 3132Q-V Cluster Switches.</block>
   <block id="d06b10417bc355c0e14c53d8eae6e76e" category="paragraph">Die folgenden Beispiele zeigen die Nodes n3 und n4 mit 40-GbE-Cluster-Ports, die mit den Ports e1/7 und e1/8 verbunden sind, bzw. auf den Nexus 3132Q-V Cluster-Switches, und beide Nodes haben sich dem Cluster angeschlossen. Die 40 GbE Cluster Interconnect Ports sind e4a und e4e.</block>
   <block id="7e742ccdfe23c1184022b4bc3a971881" category="paragraph">Das folgende Beispiel zeigt, wie die CN1610-Switches entfernt werden:</block>
   <block id="e521258df15ab32738dc56ac4b1ce04f" category="list-text">Konfigurieren Sie Cluster clue1 und clus4 to<block ref="28c988ac956ff7a16325cde07547fef0" prefix=" " category="inline-code"></block> Auf jedem Knoten und bestätigen:</block>
@@ -1498,8 +1475,6 @@
   <block id="48e27bd4f05b8928a4da9e94eb1821b7" category="paragraph"><block ref="1ddf946090b02d8488854491b2232bce" prefix="" category="inline-code"></block></block>
   <block id="a06f69669c864cc0902a5e544ee247bc" category="paragraph"><block ref="5a2357a985889803fc9ad4bba1f860e2" prefix="" category="inline-code"></block></block>
   <block id="8eaf3d59876911ccca6dc5bdc347ee06" category="list-text">Zeigt Informationen zu den LIFs an:</block>
-  <block id="e73ca78de91a85725d7897c5caaeeb3e" category="list-text">Ping für die Remote-Cluster-LIFs:</block>
-  <block id="b28871024a61db436088d8a57f04935d" category="list-text">Überprüfen Sie das<block ref="9f1b7141f09f19c4e33409646aef43cf" prefix=" " category="inline-code"></block> Befehl ist für alle Cluster-LIFs aktiviert:</block>
   <block id="e4490c39e3c7c690b2b28793dd430b44" category="paragraph"><block ref="d268e7bf124a9f74e2dbe2e0127d951b" prefix="" category="inline-code"></block></block>
   <block id="7899d4f691aaa93027bcd88691483be1" category="summary">Sie können den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.</block>
   <block id="f7ad0a2648b0185763a6a88e903a53ac" category="list-text">Installieren Sie die Halterungen für die Rack-Montage am Switch-Chassis des Nexus 3132Q-V.</block>
@@ -1591,7 +1566,6 @@
   <block id="fe96ff1088869051b509f707698aefd3" category="paragraph">Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:</block>
   <block id="e74ba48b87be882bffe68906351b713a" category="list-text">Vergewissern Sie sich, dass die automatische Umrüstung auf allen Cluster-LIFs aktiviert ist:</block>
   <block id="2e729d790188b76f9ff137fba89a9db0" category="list-text">Zeigt die Attribute des Cluster-Netzwerk-Ports an:</block>
-  <block id="82214ffaae0abeffe761517344159444" category="list-text">Fahren Sie die ISL-Ports 13 bis 16 am aktiven CN1610-Switch CL1 herunter:</block>
   <block id="148a1525f4c4b2d620941031bf03f670" category="inline-link">_NetApp Hardware Universe_</block>
   <block id="210c72bbad8c8bc1c0de6bc95f64dff9" category="list-text">Vergewissern Sie sich, dass alle Cluster-Interconnect-Ports auf die Home-Ports zurückgesetzt werden:</block>
   <block id="f9d6a6a75483c0ffe08b0dea9565ef0c" category="list-text">Vergewissern Sie sich, dass alle Cluster-Ports verbunden sind:</block>
@@ -1861,7 +1835,6 @@
   <block id="20fb8dfa050d34e66fdcb88cde52cd39" category="paragraph">Jede Cluster-LIF sollte angezeigt werden<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> In der Spalte „`is Home`“.</block>
   <block id="a04a550528162e05ce99957d8bcaedf1" category="admonition">Die folgenden Änderungs- und Migrationsbefehle in den Schritten 10 bis 13 müssen vom lokalen Node aus ausgeführt werden.</block>
   <block id="e46a14518d3f20a82a8ea86aa3e1a91b" category="admonition">Verwenden Sie für Version 8.3 und höher den folgenden Befehl:<block ref="76be4589a0f314371f336c42f473092c" prefix=" " category="inline-code"></block></block>
-  <block id="1506e8a32c89125ba0188cab7beb0fb3" category="paragraph">Die Befehlsausgabe zeigt die Verbindung zwischen allen Cluster-Ports an.</block>
   <block id="159ba467749aba2dcf746508bf149877" category="paragraph">Das folgende Beispiel zeigt den Prozess der Migration von Faclu1 zu Anschluss e2a auf node1 und node2:</block>
   <block id="a06d76059f0a519a64519b90a1dc32fa" category="admonition">Verwenden Sie für Version 8.3 und höher den folgenden Befehl:<block ref="3dff2bb172157fa699b52c962c80e9d7" prefix=" " category="inline-code"></block></block>
   <block id="90df6f76d556f5c6f67ea48d18403467" category="paragraph">Im folgenden Beispiel wird überprüft, ob Faclu1 zu Port e2a auf node1 und node2 migriert wird:</block>
@@ -1932,7 +1905,6 @@
   <block id="03785619d55d01a3d9de759db10a42c2" category="list-text">Vergewissern Sie sich, dass die 10-GbE-Cluster-Ports, die auf dem Switch verbunden sind, als Teil desselben VLANs konfiguriert sind.</block>
   <block id="1935a529661750cc36f5da03c0214edf" category="paragraph">Wenn Sie die Cluster-Ports an jedem Controller-Modul mit unterschiedlichen Switches verbinden möchten, müssen Sie überprüfen, ob die Ports, an denen die Cluster-Ports an jedem Switch angeschlossen sind, für dasselbe VLAN konfiguriert sind und dass das Trunking auf beiden Switches ordnungsgemäß konfiguriert ist.</block>
   <block id="ad2c2b5612ae219cdefade565a2878a4" category="paragraph">Das folgende Beispiel zeigt, dass die LIFs sind<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Auf node1 und node2 und dass die "is Home" Spalte Ergebnisse sind<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>:</block>
-  <block id="a1f783c83c4d98e6eb5a7c79625862d7" category="paragraph">Die Befehlsausgabe sollte die Verbindung zwischen allen Cluster-Ports anzeigen.</block>
   <block id="2f22a515e333c7902fee7e2dd01783af" category="summary">Sie müssen DIE FASTPATH Software und die Referenzkonfigurationsdateien (RCs) auf einem NetApp CN1610 Cluster Switch installieren.</block>
   <block id="a968ac7024ff03437db257f2510e1999" category="list-text">Es dürfen keine defekten Netzwerkkarten des Clusters (NICs) vorhanden sein, und alle verbundenen Ports am Cluster-Switch müssen funktionsfähig sein.</block>
   <block id="a33067cd064feec6d8796cb8f57391c8" category="list-text">Sie müssen die Switch-Kompatibilitätstabelle auf dem lesen<block ref="ee1fcd300e124f1abbf347b76660f8d6" category="inline-link-rx"></block> Seite für die unterstützten FASTPATH-, RCF- und ONTAP-Versionen.</block>
@@ -2255,7 +2227,6 @@
   <block id="43a394f626014f93d34c2270873ed0f5" category="list-text">Trennen Sie bei node2 das Kabel von e1/2 auf c1, und verbinden Sie das Kabel mit e1/2 am cs1. Verwenden Sie dazu die geeignete Verkabelung, die von Nexus 92300YC unterstützt wird.</block>
   <block id="27781c87d25f863e4d8141fb97e91e1d" category="list-text">Löschen Sie die temporäre ISL zwischen cs1 und c1.</block>
   <block id="8b46c589466074f9f6f08c5ac2e65338" category="list-text">Überprüfen der endgültigen Konfiguration des Clusters:</block>
-  <block id="cd21dfc849bb9ea2aa764a739849b964" category="list-text">Stellen Sie sicher, dass das Clusternetzwerk über vollständige Konnektivität verfügt:</block>
   <block id="33487880ee5d3cff6333b1c6471b70ba" category="summary">Sie müssen bestimmte Konfigurationsinformationen, Port-Verbindungen und Verkabelungsanforderungen beachten, wenn Sie einige ältere Cisco Nexus Cluster Switches durch Cisco Nexus 92300YC Cluster Switches ersetzen.</block>
   <block id="96b8ff1634f6f4a5cc62e8b2c11e4a44" category="doc">Migrieren Sie von einem Cisco Switch zu einem Cisco Nexus 92300YC Switch</block>
   <block id="6ebe57c0a9d06f5e953e68c100387d0b" category="list-text">Nexus 5020</block>
@@ -2301,7 +2272,6 @@
   <block id="843e8bce6b1f5f343fc75f65042e3608" category="list-text">Klicken Sie auf den Zurück-Pfeil Ihres Browsers, um zur Seite *Beschreibung* zurückzukehren, klicken Sie auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und gehen Sie dann zur Seite *Download*.</block>
   <block id="110c695d96cf5ad96f14ba25bfd860f2" category="list-text">Bei dem neuen Switch melden Sie sich als Administrator an und fahren Sie alle Ports ab, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports 1/1 zu 1/64).</block>
   <block id="09f3237a21e153d832b3546f85186cbc" category="list-text">Vergewissern Sie sich, dass für alle Cluster-LIFs die automatische Zurücksetzung aktiviert ist:</block>
-  <block id="eb7580a8ac3bae2040e96931950a989f" category="list-text">Vergewissern Sie sich, dass alle Cluster-LIFs kommunizieren können:</block>
   <block id="566992671ef338b9a51fdc8643a29803" category="list-text">Fahren Sie die ISL-Ports 1/65 und 1/66 auf dem Nexus 92300YC-Switch cs1 herunter:</block>
   <block id="bcdc1c149628bee1646511fc29cd7407" category="list-text">Entfernen Sie alle Kabel vom Nexus 92300YC cs2 Switch, und verbinden Sie sie dann mit den gleichen Ports auf dem Nexus 92300YC newc2 Switch.</block>
   <block id="2975370bf83bdfdcc1f7c7bc49f1e4a2" category="list-text">Bringen Sie die ISLs-Ports 1/65 und 1/66 zwischen den switches cs1 und newcs2 auf, und überprüfen Sie dann den Betriebsstatus des Port-Kanals.</block>
@@ -2335,7 +2305,6 @@
   <block id="1f564e4f556cdb31888a8f9f8ba59571" category="summary">Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien \(RCFs\) müssen auf Cisco Nexus 92300YC-Cluster-Switches installiert sein.</block>
   <block id="ae51aab75debd2e4f744aa3423ddf6cf" category="list-text">Die LIF-Namen des Clusters sind<block ref="efdc0a97303fb41897cab634f9381835" prefix=" " category="inline-code"></block> Und<block ref="bd152ff09f603987e4c87a156b246966" prefix=" " category="inline-code"></block> Für Node1 und<block ref="a466bba1804a252e783c3e78c73981b0" prefix=" " category="inline-code"></block> Und<block ref="e136e422a5bae645f7cdf8ea4cf1a818" prefix=" " category="inline-code"></block> Für Knoten 2.</block>
   <block id="57bf5d8f5891a8230d2c53c4b728728e" category="list-text">Zeigen Sie die Attribute des Netzwerkports an: <block ref="5a2357a985889803fc9ad4bba1f860e2" prefix=" " category="inline-code"></block></block>
-  <block id="f640804165fe8b3014b443db071bd7c2" category="list-text">Vergewissern Sie sich, dass der automatische Zurücksetzen-Befehl auf allen Cluster-LIFs aktiviert ist:</block>
   <block id="c3fefe6517671336a8a9051770e62e39" category="summary">Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 92300YC-Switch installieren.</block>
   <block id="dfd32790423f16dd03c31199222c75e8" category="list-text">Kopieren Sie die NX-OS-Software und EPLD-Bilder auf den Nexus 92300YC-Switch.</block>
   <block id="0d6e969eb5674b7d09ad640ad5ba08eb" category="list-text">Überprüfen Sie mit dem Ping-Befehl die Verbindung zum Server, der den RCF hostet.</block>
@@ -2406,7 +2375,6 @@
   <block id="b1046cdb57cd97fe9c20f711ba08bed8" category="paragraph"><block ref="76be4589a0f314371f336c42f473092c" prefix="" category="inline-code"></block></block>
   <block id="5509fa38d3415bf6dfbd28918cf766f3" category="list-text">Vergewissern Sie sich, dass alle im vorherigen Schritt aufgeführten Ports mit einem Netzwerk-Switch verbunden sind:</block>
   <block id="101ead84905a0da72281347a2d3e5846" category="paragraph"><block ref="3c9df67ecefdc0250ea054cef3d4555b" prefix="" category="inline-code"></block></block>
-  <block id="fad8bc8bd6f8c2ecbc098cd96431ebde" category="list-text">Überprüfen Sie die Cluster-Konnektivität:</block>
   <block id="e477c0774c6014b5173ffa6810d512ab" category="paragraph"><block ref="484f24f8e4da80a1185aa63fa1d5fc08" prefix="" category="inline-code"></block></block>
   <block id="c992f99b79e71a5eb5127e5f190fab4e" category="paragraph">Alle Einheiten müssen entweder Master oder sekundär sein.</block>
   <block id="048592cc00af171e1fa6348b090a6c78" category="list-text">Richten Sie die Konfiguration ohne Switches für die Ports in Gruppe 1 ein.</block>
@@ -2419,8 +2387,6 @@
   <block id="cad47f7ffe7579e68a294494fa25af17" category="image-alt">Direkte Verbindung zwischen Ports „e0a“</block>
   <block id="e9ec4835d23694aed9844bcf9e7e87ea" category="list-text">Die Cluster-Netzwerkoption ohne Switches wechselt von<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> Bis<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>. Dies kann bis zu 45 Sekunden dauern. Vergewissern Sie sich, dass die Option „ohne Switch“ auf eingestellt ist<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>:</block>
   <block id="c412aebcb1566f8e5e0323f2afe60d0e" category="paragraph">Das folgende Beispiel zeigt, dass das Cluster ohne Switches aktiviert ist:</block>
-  <block id="6d1b5eebdb14196ce07c51c623533431" category="list-text">Vergewissern Sie sich, dass das Cluster-Netzwerk nicht unterbrochen wird:</block>
-  <block id="f643d26da1df28bcffc5c5067726246b" category="list-text">Richten Sie die Konfiguration ohne Switches für die Ports in Gruppe 2 ein.</block>
   <block id="863e48e1ab590a3004febd635c0c772c" category="admonition">Um mögliche Netzwerkprobleme zu vermeiden, müssen Sie die Ports von groerp2 trennen und sie so schnell wie möglich wieder zurückverbinden, z. B. *in weniger als 20 Sekunden*.</block>
   <block id="29f9df63556e07a416ddabb7ae9e6ad1" category="list-text">Ziehen Sie alle Kabel gleichzeitig von den Anschlüssen in Groupp2 ab.</block>
   <block id="f7107cbf076f0517cc09ef7864ab4721" category="paragraph">Im folgenden Beispiel werden die Kabel von Port „e0b“ auf jedem Node getrennt, und der Cluster-Datenverkehr wird durch die direkte Verbindung zwischen den „e0a“-Ports fortgesetzt:</block>
@@ -2436,8 +2402,6 @@
   <block id="31d2e20cefb76721dace23dfd9a35896" category="paragraph"><block ref="28a65537759ae55070780c50a3b3b9a6" prefix="" category="inline-code"></block></block>
   <block id="aeb90980ffc18e4c949766c382d409d4" category="list-text">Überprüfen Sie den Cluster-Status der Nodes von der Systemkonsole eines der beiden Nodes:</block>
   <block id="90d334e25f499d80506823cb341c39d7" category="paragraph">Das folgende Beispiel zeigt das Epsilon auf beiden Knoten<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>:</block>
-  <block id="26ba805ccb9566fb36369f48374b79c8" category="list-text">Bestätigen Sie die Verbindung zwischen den Cluster-Ports:</block>
-  <block id="a76aa36cc43767185eb24bf3e6381bdb" category="paragraph"><block ref="a12fdc96dc49a3d64afa69d8bb631cbf" prefix="" category="inline-code"></block></block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Rechtliche Hinweise</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken, Patente und mehr.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Urheberrecht</block>
@@ -2648,7 +2612,6 @@
   <block id="4d76f023f4fff5f776ba26426c03d7a6" category="doc">Komponenten und Teilenummern für NVIDIA SN2100-Switches</block>
   <block id="3f9c12e1d0acbeca7bc410db81110a76" category="section-title">Rack-Details</block>
   <block id="2fca9b848223ad314bfc0417bb307186" category="section-title">Einzelheiten zum Schienensatz</block>
-  <block id="d897cc0b3682ab01fb074cad614e3d87" category="list-text">Überprüfen Sie mit dem Befehl, ob das Cluster-Netzwerk vollständig verbunden ist:<block ref="67b370e4ed014395d701d60f8f886608" prefix=" " category="inline-code"></block></block>
   <block id="0fa2182996c829479a17f20108650375" category="admonition">Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch ONIE oder Cumulus Linux ausführt (siehe <block ref="31c7752379437c6abd98c0b1cf8b984b" category="inline-link-macro-rx"></block>).</block>
   <block id="2a7caab78aad5f1306f0e841c8cc7233" category="paragraph">Sie können Cumulus Linux unter Verwendung der Open Network Install Environment (ONIE) installieren, die die automatische Erkennung eines Network Installer-Images ermöglicht. Dies erleichtert das Systemmodell der Sicherung von Schaltern mit einem Betriebssystem, wie Cumulus Linux. Die einfachste Möglichkeit, Cumulus Linux mit ONIE zu installieren, ist mit lokaler HTTP-Erkennung.</block>
   <block id="86f9e7e4dc0c337b97f8769ea5f62452" category="list-text">Laden Sie die Cumulus Linux-Installationsdatei in das Stammverzeichnis des Webservers herunter. Diese Datei umbenennen in:<block ref="ad3b7e04b0013d13df088435d2fc4760" prefix=" " category="inline-code"></block>.</block>
@@ -2748,7 +2711,6 @@
   <block id="9284b77324fc2073740e195aa4d8c7bc" category="admonition">Siehe <block ref="81e27480a79c2bb77194c038c9737157" category="inline-link-macro-rx"></block> Bei Einschränkungen und weiteren Details. Der<block ref="fc1c96ca1130118b28ccd7598f63fe21" category="inline-link-rx"></block> Enthält auch weitere Informationen über Verkabelung.</block>
   <block id="73150a01363aed5257939f818ac56b3b" category="list-text">Auf die Switches werden Referenzkonfigurationsdateien (RCFs) angewendet</block>
   <block id="d334b073010dc4ca86957c663631fa0b" category="paragraph">Jede LIF im Cluster sollte für „true“ anzeigen<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Und ich habe ein<block ref="4f21ee5a18672b60f4c01e94e6be9c79" prefix=" " category="inline-code"></block> Von<block ref="fc7c1443e5c7b6439706b6132a4c0829" prefix=" " category="inline-code"></block>.</block>
-  <block id="9a82d0edb58bbaaf806da2f174490820" category="list-text">Vergewissern Sie sich, dass das Cluster-Netzwerk über vollständige Konnektivität verfügt:</block>
   <block id="e64b06ebdf8146ea2bc17ff7d5457eef" category="summary">Überblick über die Installation und Konfiguration der Cisco Nexus 9336C-FX2 Storage-Switches</block>
   <block id="be4cd7f1969695f8e6e1f2c8040abcd4" category="paragraph">Gehen Sie wie folgt vor, um einen Cisco Nexus 9336C-FX2 Switch auf Systemen mit ONTAP zu konfigurieren:</block>
   <block id="5ac09e984471f320b2e8920ece32b03d" category="inline-link-macro">Füllen Sie das Verkabelungsarbeitsblatt aus</block>
@@ -3029,7 +2991,6 @@
   <block id="1665ddb906f550f2db99dc8dd8ac07cf" category="list-text">Überprüfen Sie, ob es sich bei den ISLs um handelt<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Am CN1610-Schalter CL1:</block>
   <block id="63a080ea10d13b471f345736a9e24da5" category="list-text">Alle Cluster-Interconnect-Ports, die an allen Knoten mit dem 3132Q-V Switch C2 verbunden sind, werden angezeigt:</block>
   <block id="23fff82d9fb02c285b1502faee4ae332" category="list-text">Zurücksetzen aller migrierten Cluster-Interconnect-LIFs, die auf allen Nodes mit C2 verbunden sind:</block>
-  <block id="00327de917059c9e935218cad8596953" category="list-text">Migrieren Sie bei jedem Node im Cluster die Schnittstellen, die dem ersten CN1610 Switch CL1 zugeordnet sind, der ersetzt werden soll:</block>
   <block id="0a8253221b50cf222a53851a6ddbed1c" category="list-text">Fahren Sie die Node-Ports, die auf allen Nodes mit CL1 verbunden sind, herunter:</block>
   <block id="f5733555ddee6a45ef7d77727a730c77" category="list-text">Fahren Sie die ISL-Ports 24, 31 und 32 am aktiven Switch 3132Q-V C2 herunter.</block>
   <block id="23e226519bad1264ff6720a663714b83" category="list-text">Stellen Sie die Konfiguration an Port 24 wieder her, und entfernen Sie den temporären Port-Kanal 2 auf C2, indem Sie den kopieren<block ref="8ed2595e258fdd418e60bc54fb8390c0" prefix=" " category="inline-code"></block> Datei in der<block ref="811ed34e3f89e27ea59dac8cdeb3c7a1" prefix=" " category="inline-code"></block> Datei:</block>
@@ -3076,13 +3037,11 @@
   <block id="a2d66052febf9deb949f7d7e35df53a5" category="paragraph">Diese Konfiguration entspricht der ISL-Konfiguration auf dem 3232C-Switch C2, wenn die ISLs auf beiden Switches aufgerufen werden.</block>
   <block id="0cc66efb5c8a511b569cd814c99c92d4" category="list-text">Überprüfen Sie, ob es sich bei den ISLs um handelt<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Am 3232C-Switch C2:</block>
   <block id="b16c844dd0cab45182a4d3eae43625b0" category="list-text">Alle Cluster-Interconnect-Ports, die auf allen Knoten mit dem 3232C-Switch C2 verbunden sind, werden verfügbar:</block>
-  <block id="f8d208c1f437dafdcc22eba9eebccb38" category="list-text">Migrieren Sie die LIFs, die mit dem ersten CN1610 Switch CL1 verbunden sind:</block>
   <block id="502a7ea7de47db18cb4d391cdc1c745e" category="paragraph"><block ref="e3b59667988659c950426714ec77861c" prefix="" category="inline-code"></block></block>
   <block id="80ba2298ea2e8bd12acd9eb6839d255c" category="section-title">Schritt 3: Ersetzen Sie den Cluster-Switch CL1 durch C1</block>
   <block id="e750586a88360e325f160a338984da3a" category="list-text">Alle mit dem neuen 3232C-Switch C1 verbundenen Cluster-Interconnect-Ports auf allen Knoten:</block>
   <block id="a200c052ea88ce45ca5da5c961c95cd2" category="section-title">Schritt 4: Führen Sie den Vorgang durch</block>
   <block id="53df53d4b9649d9b2a5ab348bc614229" category="paragraph"><block ref="fa6e1d1bde7406e301eb5451453f52d0" prefix="" category="inline-code"></block></block>
-  <block id="c8cd62d32eeff74bd4e4085156642109" category="paragraph"><block ref="9e1fb31e56a5a6b23a53159fb353b6be" prefix="" category="inline-code"></block></block>
   <block id="212c45c6e98833f0aea3bc1164020ecf" category="paragraph">Die folgenden Beispiele zeigen die Nodes n3 und n4 mit 40-GbE-Cluster-Ports, die mit den Ports e1/7 bzw. e1/8 verbunden sind, auf beiden Nexus 3232C-Cluster-Switches. Beide Nodes sind dem Cluster verbunden. Die 40 GbE Cluster Interconnect Ports sind e4a und e4e.</block>
   <block id="26f6491fcc908bd549c7f4064a11e2b0" category="paragraph"><block ref="fa49d5ecd63dc0afeae5cdf40805aaa2" prefix="" category="inline-code"></block></block>
   <block id="8a83614e560d59c264d55e32972bc26c" category="paragraph">Wenn Sie über einen 2-Node-_Switch-_Cluster verfügen, können Sie zu einem _Switched_ Cluster mit zwei Nodes migrieren, der Cisco Nexus 3232C-Cluster-Netzwerk-Switches enthält. Hierbei handelt es sich um ein unterbrechungsfreies Verfahren.</block>
@@ -3296,7 +3255,6 @@
   <block id="f0b02a6a42b62e57a146137078a39635" category="section-title">In Cluster-Umgebung migrieren</block>
   <block id="09a5fb271719ecae04d6c0f573fa3099" category="paragraph">Das folgende Beispiel zeigt, dass die ISL-Ports *up* auf Switch cs1 sind:</block>
   <block id="f9431300de8d1a48bf2e554ad1605071" category="paragraph">Das folgende Beispiel zeigt, dass die ISL-Ports *up* auf Switch cs2 sind:</block>
-  <block id="99905a9acf063a85c4bbaa70f4455984" category="list-text">Überprüfen Sie mit dem Befehl, ob das Cluster-Netzwerk vollständig verbunden ist:</block>
   <block id="1e44ccea9f1ae385026deb840bc9b5f4" category="paragraph">Weitere Informationen finden Sie unter:<block ref="780f810d0519883e7efdd6ef45cf51ed" category="inline-link-rx"></block></block>
   <block id="77d285017f370185656b54b03d5b5a16" category="paragraph">Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw. 25-GbE-Ports und zwei 100-GbE-Ports lizenziert. Sie können neue Ports hinzufügen, indem Sie mehr Lizenzen erwerben.</block>
   <block id="f95b7ecd3b114623b8699a07a36fd860" category="section-title">Prüfen Sie verfügbare Lizenzen</block>
@@ -3508,12 +3466,9 @@
   <block id="6f48ab02f85ba15c8881b13dfb743c1f" category="list-text">Alle Inter-Switch Link (ISL)-Ports sind an den Ports 1/35 und 1/36 deaktiviert.</block>
   <block id="2400f4c6ea942e602ee72f34c92149fb" category="list-text">[[Schritt4]]Überprüfen Sie, ob für alle Cluster-LIFs die automatische Zurücksetzung aktiviert ist.</block>
   <block id="77c477176f23eee3a054860c86ade8ee" category="paragraph"><block ref="3dc4656499b962a12e176f61ea51ff38" prefix="" category="inline-code"></block></block>
-  <block id="351f5135225bc1aa8573399c24aaee63" category="list-text">[[schritt5]]Überprüfen Sie, ob alle Cluster-LIFs kommunizieren können:</block>
-  <block id="9a240210c2eead6e36900d78bed7eef4" category="paragraph"><block ref="6719f40a90253c4646383ef86ccea791" prefix="" category="inline-code"></block></block>
   <block id="cdfcdd135ec181475270de06d4e5f91e" category="list-text">[[ste9]]Überprüfen Sie, ob der Port e3b auf allen Knoten verfügbar ist:</block>
   <block id="1d559f001e58c1d63e11be4f19b5484b" category="list-text">[[Schritt11]]Informationen über die Knoten in einem Cluster anzeigen:</block>
   <block id="53c275e60a3964cc951d091cfc9d800d" category="list-text">[[steep12]]] Überprüfen Sie, ob alle physischen Cluster-Ports aktiv sind:</block>
-  <block id="d9c7fb52065c9f285a012f315313eb5e" category="list-text">[[Schritt13]]Stellen Sie sicher, dass alle Cluster-LIFs kommunizieren können:</block>
   <block id="9354d16e8675ab0de41f89b86b5aae21" category="list-text">[[steep14]]Bestätigen Sie die folgende Clusternetzwerkkonfiguration:</block>
   <block id="c11677f97d3ee2a98d058ccf0190a185" category="list-text">Überprüfen Sie, ob der an HA-Paar 2 angeschlossene Speicher, der gemeinsam genutzte Switch newsh2 in einem ordnungsgemäßen Zustand ist:</block>
   <block id="31fa17eadf22890247f9b117b5591678" category="paragraph"><block ref="2a56be163fc199ace3546fc94a295c05" prefix="" category="inline-code"></block></block>
@@ -3602,8 +3557,6 @@
   <block id="58665a6b8c7ef44525f1c47106f6a5f7" category="list-text">[[step21]]Überprüfen Sie, ob die Speicherkonfiguration von HA-Paar 1 (und HA-Paar 2) korrekt und fehlerfrei ist:</block>
   <block id="13982e86db6e34f25fefc25b6bdc9157" category="list-text">[[steep22]]Überprüfen Sie, ob die Einstellungen deaktiviert sind:</block>
   <block id="fc62df36a7229b3d62a69029133e4bad" category="list-text">[[steep23]]Überprüfen Sie den Status der Knotenmitglieder im Cluster:</block>
-  <block id="424f5bb3c0f9a5e7519b727f4bbfec8a" category="list-text">[[steep24]] Stellen Sie sicher, dass das Clusternetzwerk über vollständige Konnektivität verfügt:</block>
-  <block id="57cbdf7660ff8108b68333b5cdd82f80" category="list-text">[[steep25]]Ändern Sie die Berechtigungsebene zurück in admin:</block>
   <block id="8e2930bcf2c872a7120bbe73b8779424" category="section-title">Schritt 2: Richten Sie den gemeinsamen Schalter ein</block>
   <block id="cee31e17ff4073484e137ee2159131bd" category="list-text">Vergewissern Sie sich, dass die Storage-Node-Ports ordnungsgemäß und betriebsbereit sind:</block>
   <block id="c7f29a8717b9bbffee0430b5ba54c983" category="list-text">Verschieben Sie die Anschlüsse für HA-Paar 1 und NSM224 Pfad B in den bereich der sh2-Ports 11-22.</block>
@@ -3678,7 +3631,6 @@
   <block id="d9bc9e589852186d0d0f7ee5549d5002" category="list-text">Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und ein Takeover möglich ist:</block>
   <block id="751035e5db88d172e881299c202d9b13" category="paragraph"><block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix="" category="inline-code"></block></block>
   <block id="7585f91db102237924371a7e706740ac" category="list-text">Überprüfen Sie, ob die Cluster-Port-LIFs ordnungsgemäß funktionieren:</block>
-  <block id="975034487eab4a8e96e8e6d1c65f8552" category="list-text">Ping für die Cluster-Ports zur Überprüfung der Cluster-Konnektivität:</block>
   <block id="d70fd89df8aeadfc5b92548ac7980d1a" category="doc">Installieren SIE FASTPATH Software und RCs für ONTAP 8.3.1 und höher</block>
   <block id="834cc0a95f99fae146baeb2e09562fa9" category="paragraph">Folgen Sie diesem Verfahren, um FASTPATH-Software und RCFs für ONTAP 8.3.1 und höher zu installieren.</block>
   <block id="ef07b7e35e16571ab7d77ce32508e689" category="list-text">Eine unterstützte Version von FASTPATH, RCF und ONTAP.</block>
@@ -3702,7 +3654,6 @@
   <block id="e358220f8af8ba071a86497546e7cc33" category="list-text">Vergewissern Sie sich, dass jeder Cluster-Port mit dem entsprechenden Port auf seinem Partner-Cluster-Node verbunden ist:</block>
   <block id="19f96b9a58e58f1d934e5d8f924b7319" category="paragraph"><block ref="f4dd3947e6c3117e547b63d0f46346d0" prefix="" category="inline-code"></block></block>
   <block id="1437945719c1644405e8d8d8dc10b2fe" category="list-text">Vergewissern Sie sich, dass alle Cluster-LIFs sind<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> Und in Betrieb:</block>
-  <block id="a9fdf49653825d5a49c2d40f6431dcad" category="list-text">Faclu1 zu Port e2a auf der Konsole jedes Knotens migrieren:</block>
   <block id="17c163c5f3cf27f9ab7909ef8b7a260f" category="list-text">Vergewissern Sie sich, dass die Migration stattgefunden hat:</block>
   <block id="6eb5b9b1a64f0c90925b30b2539544ff" category="list-text">Fahren Sie Cluster-Port e1a auf beiden Knoten herunter:</block>
   <block id="142949c61ce1a054812f0cd4f16acd78" category="list-text">Überprüfen Sie den Portstatus:</block>
@@ -3715,7 +3666,6 @@
   <block id="2c7197850ace220e695ad5d7c75a398c" category="list-text">Schluss2 (der zuvor migriert wurde) auf beiden Knoten zu e2a zurücksetzen:</block>
   <block id="7a8f791edf07ab23985fcd68cfdd3ed6" category="section-title">Schritt 3: Schließen Sie die Konfiguration ab</block>
   <block id="0f6a263c930f026250dc80aee9d05738" category="list-text">Vergewissern Sie sich, dass alle Schnittstellen angezeigt werden<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> In der Spalte „is Home“:</block>
-  <block id="0f8ff5228b430fcf43b89da43ffa7d18" category="list-text">Vergewissern Sie sich, dass beide Nodes zwei Verbindungen zu jedem Switch haben:</block>
   <block id="7d510ed73956b5df449722fc30f548c8" category="paragraph"><block ref="5300819d7d7e3d6993508c34b25e015b" prefix="" category="inline-code"></block></block>
   <block id="4ea8faad6b3f550eb586fe8a6e127d47" category="list-text">Deaktivieren Sie die Konfigurationseinstellungen mit zwei Nodes ohne Switches auf beiden Nodes mithilfe des erweiterten Befehls „Privilege“:</block>
   <block id="f3bfe82b35272b9d6cd5e99a1930d66a" category="paragraph"><block ref="f4c4b4bcf8fade11f2bb6f27f2086ed6" prefix="" category="inline-code"></block></block>
@@ -4366,7 +4316,6 @@
   <block id="111cada5d22121a7e11aef39f4aca355" category="list-text">Aktivieren Sie bei Cluster-Switch cs2 die mit den Cluster-Ports der Nodes verbundenen Ports.</block>
   <block id="427c15bca394e9d3b5f203c35b96c743" category="inline-link">10-GbE-Ports auf einem Cisco 3132Q Cluster-Switch werden nicht online geschaltet</block>
   <block id="20f0f9c709341c54050214259fc6c790" category="admonition">Wie Sie Ihre 10-GbE-Ports nach einem Upgrade des RCF online schalten können, erfahren Sie in dem Knowledge Base Artikel<block ref="917fe6fdad3ed920883f4190398d0805" category="inline-link-rx"></block>.</block>
-  <block id="bc2be245d88ec44ff572954ca52f5e47" category="list-text">Wiederholen Sie die Schritte 7 bis 15 am Schalter cs1.</block>
   <block id="756f5b45c94a8929404edacf08b1bf8c" category="paragraph">Wenn keine Cluster-LIFS an die Home-Ports zurückgegeben wurden, setzen Sie sie manuell zurück:<block ref="af44897f72b682aae5fc0db1bf98e52d" prefix=" " category="inline-code"></block></block>
   <block id="e459e50e2d5bebb928139aa0e4ce09ac" category="list-text">Überprüfen Sie den Funktionsstatus der Storage-Node-Ports:</block>
   <block id="266daf0ca11ec57d9d3cb7598fd930b3" category="paragraph"><block ref="d14f00174ffa33ec8f559ffde7a52484" prefix="" category="inline-code"></block></block>
@@ -4521,7 +4470,6 @@ Aktuelle Informationen zur Kompatibilität finden Sie im<block ref="f6aa36fb7711
   <block id="64ea4acdf8f09e3b62f8764dea1b5bf4" category="list-text">Die Verkabelung zwischen den Knoten und c2 wird dann von c2 getrennt und wieder mit sw2 verbunden.</block>
   <block id="5f115706079e667394e9c5fb609142bb" category="list-text">Schalter c1 wird durch Schalter sw1 ersetzt.</block>
   <block id="1b42870c5bc0619ec4b57583bfec41e7" category="list-text">Die Verkabelung zwischen den Knoten und c1 wird dann von c1 getrennt und wieder mit sw1 verbunden.</block>
-  <block id="9c4f6f5aa4e55eb8ce92eee32e66b7cd" category="list-text">Fahren Sie auf Switch c2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.</block>
   <block id="670028f02a4239fb83dfde9087341e1c" category="list-text">Fahren Sie auf Switch c1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster LIFs zu ermöglichen.</block>
   <block id="3e10fab2ffa4ef18685db0df5ee45e84" category="list-text">Die Cluster-Ports auf jedem Node sind auf folgende Weise (aus Sicht der Nodes) mit vorhandenen Cluster-Switches verbunden:</block>
   <block id="c51f636604f29f6f814bde48e4fd4671" category="list-text">Die Cluster-Ports und Switches sind (aus Sicht der Switches) wie folgt verbunden:</block>
@@ -4543,7 +4491,6 @@ Aktuelle Informationen zur Kompatibilität finden Sie im<block ref="f6aa36fb7711
   <block id="e9505b73caa990829220fedbb878ef68" category="list-text">Schalter C2 wird zuerst durch Schalter cs2 ersetzt.</block>
   <block id="39bba2bddb2bf527b701828442a18b5e" category="list-text">Die Verkabelung zwischen den Knoten und C2 wird dann von C2 getrennt und wieder mit cs2 verbunden.</block>
   <block id="6fa86324fabffaee853e6eeee2824329" category="list-text">Switch C1 wird durch Switch cs1 ersetzt.</block>
-  <block id="9f4f9b4efa8b2eb74b227e6e2a18f872" category="list-text">Fahren Sie auf Switch C2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.</block>
   <block id="54c071b600d8be038e07b18d66329aa7" category="list-text">Fahren Sie auf Switch C1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster LIFs zu ermöglichen.</block>
   <block id="5965a3db7e52c18148f117f0240c1e3f" category="paragraph"><block ref="5965a3db7e52c18148f117f0240c1e3f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a5dd15f930e244dadfd412b53dd1ac0" category="paragraph">Durch die Wiederverwendung der Storage-Switches werden die Storage Switches von HA-Paar 1 zu gemeinsamen Switches.
@@ -4913,8 +4860,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="0ca3ca41c2905b8f6347613ad99abeda" category="paragraph">Befolgen Sie die vorbereitenden Verfahren zur Installation der Cisco NX-OS-Software und der Referenzkonfigurationsdateien (RCFs).</block>
   <block id="146fe7ba55f154a00f7fdd5bc0bc3b7f" category="paragraph">Installieren oder aktualisieren Sie die NX-OS-Software auf dem Nexus 9336C-FX2 Cluster-Switch.</block>
   <block id="c2682a02fa235bb20233662aeba236ad" category="paragraph">Installieren oder aktualisieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.</block>
-  <block id="b98c51d6f722172518f1e38267bc1da4" category="inline-link-macro">Aktivieren Sie SSH auf den Nexus 9336C-FX2-Cluster-Switches</block>
-  <block id="ec348def7634a5754cf9d62e8bca7f24" category="list-text"><block ref="853bcb6b647712eac9646e8ede049d7b" category="inline-link-macro-rx"></block>.</block>
   <block id="5f7b61b5cf8ee335e4fdf4eb2e2191b2" category="paragraph">Die Ports sind für 40/100-GbE-Cluster+HA, 4 x 10-GbE-Breakout für Cluster und 4 x 25-GbE-Breakout für Cluster+HA und 100-GbE-Ports für jedes Storage HA-Paar konfiguriert.</block>
   <block id="d30ea82d7096609f0aea87ef848f7ebd" category="paragraph">So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2 Shared Switch:</block>
   <block id="e495f3ec8dabfce7925d7c5053f55cbb" category="inline-link-macro">Den Switch in einen NetApp-Schrank einbauen</block>
@@ -5030,9 +4975,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="720c3ddeb84772ef2bbfeba7b1d17a28" category="paragraph"><block ref="df8bbc4b7a2a07f02d567d56129471ab" prefix="" category="inline-code"></block></block>
   <block id="3a88a5741f799dc33a61b15c6f06ef77" category="summary">SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Um SSH auf Cisco 3232C Cluster Switches zu aktivieren, generieren Sie zunächst die SSH-Schlüssel und aktivieren dann SSH.</block>
   <block id="1ea468ba4330d1b99a20149c0e78b4ed" category="summary">SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Um SSH auf Cisco 92300YC Cluster Switches zu aktivieren, generieren Sie zunächst die SSH-Schlüssel und aktivieren dann SSH.</block>
-  <block id="6740010e0f06e1b4faea70ce1b3a4a76" category="inline-link-macro">Generieren Sie SSH-Schlüssel</block>
-  <block id="c49d0af5a081eb64111a489cb2120d97" category="list-text"><block ref="52338aab140ac2dbc56c2c83d6349939" category="inline-link-macro-rx"></block>.</block>
-  <block id="f12f5027a3dbb2bbb22c5b1ca34d79d7" category="paragraph">Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, generieren Sie SSH-Schlüssel auf den Switches.</block>
   <block id="2e3301a364286013b9b29237fa347bb1" category="summary">SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Um SSH auf Cisco 9336c-fx2 Cluster Switches zu aktivieren, generieren Sie zunächst die SSH-Schlüssel und aktivieren dann SSH.</block>
   <block id="243847a87ff7e0cb67ee578c74d8ad1c" category="paragraph">Der Cisco Nexus 9336C-FX2-Switch ist Teil der Cisco Nexus 9000-Plattform und kann in einem NetApp-Systemschrank installiert werden. Der Nexus 9336C-FX2 ist ein Ethernet-Switch, mit dem Daten zwischen Controllern und Festplatten-Shelfs ausgetauscht werden können.</block>
   <block id="81f0d5b127adfd87f50ce10bc85e1e65" category="list-text">Generieren Sie SSH-Schlüssel auf dem Switch mithilfe der Herstelleranweisungen neu.</block>
@@ -5049,4 +4991,51 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="936b3180f1af844d99a2935c0f8f1407" category="paragraph">Wenn Sie die automatische Zurücksetzung für dieses Verfahren deaktivieren, werden die Cluster-LIFs nicht automatisch zurück zu ihrem Home Port verschoben. Sie verbleiben im aktuellen Port, während er weiterhin betriebsbereit ist.</block>
   <block id="8cfe0e3d8ad280ac0655595fef97d183" category="list-text">Alle Cluster-LIFs führen ein Failover auf den neuen Switch cs2 durch.</block>
   <block id="7f59c84a99e8340f8584b604b173e044" category="list-text">Alle Cluster-LIFs führen ein Failover auf den neuen Switch cs1 durch.</block>
+  <block id="450c144a370eb64ad7b2fb87b5e08ccd" category="paragraph">*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block>, um die Details anzuzeigen.</block>
+  <block id="1abee7895e26b219393999144625cf43" category="list-text">[[step7]] Ändern Sie die Berechtigungsebene zurück zu admin:</block>
+  <block id="7a073ea5ec2a763ddf5a0385781ed626" category="list-text">[[step6]] Stellen Sie sicher, dass der Befehl zum automatischen Zurücksetzen auf allen Cluster-LIFs aktiviert ist:</block>
+  <block id="2d7cd36455daea92f172ede16d765aae" category="list-text">[[step7]] Überprüfen Sie, ob das Cluster ordnungsgemäß ist:</block>
+  <block id="acdfe379cf0ed5868b119418e7d41b82" category="list-text">[[step11]] richten Sie die Konfiguration ohne Switches für die Ports in Gruppe 2 ein.</block>
+  <block id="a2f7ec2dd8feebc2c1e30e5f859d4497" category="list-text">[[Schritt6]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="2f3040f570b3d77425ad0bf50fc7985c" category="list-text">[[step6]]Ändern Sie die Berechtigungsebene zurück zu admin:</block>
+  <block id="4e4f70ba52e8cb595faa069991c5a9f4" category="list-text">[[schritt5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="c97fddef37af781b99f2bb564a90861d" category="list-text">[[step9]]Ändern Sie die Berechtigungsebene zurück zu admin:</block>
+  <block id="991d705309210a9623a3f1d994c15150" category="list-text">[[step10]]Herunterfahren der ISL-Ports 41 bis 48 auf dem aktiven Nexus 5596-Switch CL1:</block>
+  <block id="86134d7d31c06aa0711aee6c64ddd4f3" category="list-text">[[step12]]Migrieren Sie auf jedem Knoten im Cluster die Schnittstellen, die dem ersten Nexus 5596-Switch, CL1, zugeordnet sind, die ersetzt werden sollen:</block>
+  <block id="bbb276c46604db63ed55340efd9fdca4" category="list-text">[[step7]]erweitern Sie den Cluster durch Hinzufügen von Knoten zu den Nexus 3132Q-V-Cluster-Switches.</block>
+  <block id="5a941b8418c4fe0b34b15c50aa26a877" category="list-text">[[step10]]Trennen Sie das Kabel von e4a auf Knoten n1.</block>
+  <block id="654e3d51643a619895e470f1d55bc3ba" category="list-text">[[step2]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="8b7a1c5ca569b4edf87d12744a873c02" category="list-text">[[step6]]Überprüfen Sie, ob der<block ref="9f1b7141f09f19c4e33409646aef43cf" prefix=" " category="inline-code"></block> Befehl auf allen Cluster-LIFs aktiviert ist:</block>
+  <block id="2599d5f1ece8078590877d15b717f346" category="list-text">[[step9]]Herunterfahren der Ports 1/31 und 1/32 auf CL1 und des aktiven Nexus 3132Q-V-Switches:</block>
+  <block id="e24c0f89ee0b0fb577ecce66e38a9e4d" category="list-text">[[step10]] Herunterfahren der ISL-Ports 13 bis 16 auf dem aktiven CN1610-Switch CL1:</block>
+  <block id="8401a156e54d36682ab941dd51ed3e9d" category="list-text">[[step12]] Migrieren Sie auf jedem Knoten im Cluster die Schnittstellen, die dem ersten CN1610-Switch CL1 zugeordnet sind, um sie zu ersetzen:</block>
+  <block id="a1362b00e7776e62ab541ebf090bf150" category="list-text">Wiederholen Sie die Schritte 7 bis 17 am Schalter cs1.</block>
+  <block id="09c97f0f4f7a646915b2abf749bc1d6f" category="list-text">[[step3]] Herunterfahren der ISL-Ports 13 bis 16 auf dem aktiven CN1610-Switch CL1 mit dem entsprechenden Befehl.</block>
+  <block id="e2ad2b2cb346f8abd448d557881c7dd5" category="list-text">[[step16]] Migrieren Sie die LIFs, die mit dem ersten CN1610-Switch CL1 verbunden sind:</block>
+  <block id="e542ca85e220af35c4b3a82c0642077a" category="list-text">[[step4]] erweitern Sie das Cluster durch Hinzufügen von Nodes zu den Nexus 3232C-Cluster-Switches.</block>
+  <block id="0dee5df137b8161e82554818a557ccc2" category="list-text">[[step3]] Herunterfahren der ISLs 41 bis 48 auf CL1, dem aktiven Nexus 5596-Switch, mit dem Cisco-<block ref="5924f03a95ee6f7277e5bdd1e81b8fdc" prefix=" " category="inline-code"></block>Befehl.</block>
+  <block id="36cdf08b85e5feb55a70e6066970eb64" category="list-text">[[step15]] Migrieren Sie auf jedem Knoten im Cluster die Schnittstellen, die dem ersten Nexus 5596-Switch, CL1, zugeordnet sind, die ersetzt werden sollen:</block>
+  <block id="5744be7d661c6ac9679e21ca3f4dfaeb" category="list-text">[[step29]] erweitern Sie das Cluster durch Hinzufügen von Nodes zu den Nexus 3232C-Cluster-Switches.</block>
+  <block id="d05ecee4a6b0d861bcd1b9258b8245ca" category="list-text">[[step4]] Trennen Sie das Kabel von e4a auf Knoten n1.</block>
+  <block id="cc5ebab0ee641c8983f3228b4974ade1" category="list-text">[[step16]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="b18c2181f3eba90bca1c7f88f8586e11" category="list-text">[[step6]]Überprüfen Sie, ob der<block ref="9f1b7141f09f19c4e33409646aef43cf" prefix=" " category="inline-code"></block> Befehl auf allen Cluster-LIFs aktiviert ist:<block ref="d268e7bf124a9f74e2dbe2e0127d951b" prefix=" " category="inline-code"></block></block>
+  <block id="2ddf49eb6c3fafb7644444a8f6985876" category="list-text">[[step8]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="22265ef643cb758bbeafeae6b9005960" category="list-text">[[Schritt 3]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:</block>
+  <block id="f7e86b0278da2d0f23dfd04e64f68478" category="list-text">[[step2]] Bestätigen Sie die folgende Clusternetzwerkkonfiguration:</block>
+  <block id="cb9e3eca5ee8f7c34a9beb30eb78e80e" category="inline-link-macro">Überprüfen Sie die SSH-Konfiguration auf den Nexus 9336C-FX2 Cluster-Switches</block>
+  <block id="9d35e90712940df4e7dd724e3a99eb05" category="list-text"><block ref="174530f10d1b6584efbd4bb64a5325d0" category="inline-link-macro-rx"></block>.</block>
+  <block id="1de33421daf77940fdd8929e277ba937" category="paragraph">Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, überprüfen Sie, ob SSH auf den Switches aktiviert ist.</block>
+  <block id="51ad33f87e9af3baac880cb70771fe46" category="list-text">[[step5]] bei Switch C2 fahren Sie die mit den Cluster-Ports der Knoten verbundenen Ports herunter, um ein Failover der Cluster-LIFs durchzuführen.</block>
+  <block id="09b863ebe2485d0260db2694f545c132" category="doc">Migrieren Sie von einem älteren Cisco-Switch zu einem Cisco Nexus 9336C-FX2 Switch</block>
+  <block id="52f52fe5595841a94d975238199fecfa" category="list-text">[[step25]] Ändern Sie die Berechtigungsebene zurück zu admin:</block>
+  <block id="0804eaf4e04da57f4e0f01d9ed605047" category="list-text">[[step5]] Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:</block>
+  <block id="1113f8069f1bf162e58048e7da3b5e76" category="list-text">[[step13]] Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:</block>
+  <block id="8024b8439487d862ebc200f269b3fd06" category="list-text">[[step6]] Herunterfahren der ISL-Ports 1/35 und 1/36 auf dem Nexus 9336C-FX2-Switch cs1:</block>
+  <block id="179cedfc35b7060884a77fceb9fb4188" category="list-text">[[step14]] Bestätigen Sie die folgende Clusternetzwerkkonfiguration:<block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block></block>
+  <block id="ed6ec01ef9cf24a0e109957a15ef2abc" category="list-text">[[step10]] Migration von clus1 zu Port e2a auf der Konsole jedes Knotens:</block>
+  <block id="8454a3a0cd1d8a969c0433bdbb3e8b5f" category="list-text">[[step3]] Stellen Sie sicher, dass beide Knoten zwei Verbindungen zu jedem Switch haben:</block>
+  <block id="0e18e00d28d8ccbabfbea2b32f607774" category="list-text">[[step6]] Ändern Sie die Berechtigungsebene zurück zu admin:</block>
+  <block id="ff518749d3663227de48008bfca511bb" category="list-text">[[step5]] bei Switch c2 fahren Sie die mit den Cluster-Ports der Knoten verbundenen Ports herunter, um ein Failover der Cluster-LIFs durchzuführen.</block>
+  <block id="c47f8dc188da37844fcf13bca92e64bd" category="list-text">[[step8]] Aktivieren Sie die Protokollerfassungsfunktion zur Statusüberwachung des Ethernet-Switches, um Switch-bezogene Protokolldateien zu erfassen. Verwenden Sie dazu die folgenden Befehle:</block>
+  <block id="d2370f0d6957d5e8b2747d5a02f35221" category="list-text">[[step8]] fahren Sie bei Switch c2 die Ports herunter, die mit den Clusterports der Knoten verbunden sind.</block>
 </blocks>

@@ -581,7 +581,7 @@ Sie können das verwenden `network interface check cluster-connectivity` Befehl,
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
