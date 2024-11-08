@@ -27,6 +27,8 @@ entries:
     url: "/switch-bes-53248/configure-software-overview-bes53248.html"
   - title: Installieren Sie die EFOS-Software
     url: "/switch-bes-53248/configure-efos-software.html"
+  - title: Installieren Sie RCF und Lizenzdatei für EFOS 3.12 und höher
+    url: "/switch-bes-53248/efos-install-rcf-license-file.html"
   - title: Installieren von Lizenzen
     url: "/switch-bes-53248/configure-licenses.html"
   - title: Installieren Sie die RCF-Konfigurationsdatei

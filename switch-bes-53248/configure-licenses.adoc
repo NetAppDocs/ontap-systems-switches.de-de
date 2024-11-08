@@ -14,6 +14,9 @@ summary: Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw
 Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw. 25-GbE-Ports und zwei 100-GbE-Ports lizenziert. Sie können neue Ports hinzufügen, indem Sie mehr Lizenzen erwerben.
 
 
+CAUTION: Für EFOS 3.12 und höher befolgen Sie die Installationsschritte in link:efos-install-rcf-license-file.html["Installieren Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei"].
+
+
 
 == Prüfen Sie verfügbare Lizenzen
 

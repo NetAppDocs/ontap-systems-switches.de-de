@@ -4076,7 +4076,6 @@
   <block id="b211f67e6e9195c32683368a53542802" category="paragraph">Dieses Beispiel zeigt SFTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:</block>
   <block id="c77174e35b7f7fc235a87561809ad614" category="list-text">Untersuchen Sie die Bannerausgabe aus dem<block ref="db837131dc56fab41bddc52d5aff8865" prefix=" " category="inline-code"></block> Befehl. Sie müssen diese Anweisungen lesen und befolgen, um sicherzustellen, dass der Schalter ordnungsgemäß konfiguriert und betrieben wird.</block>
   <block id="420b545896cb1c9b03dbccd44bf33f86" category="list-text">Überprüfen Sie auf dem Switch, ob die zusätzlichen lizenzierten Ports nach der Anwendung des RCF angezeigt werden:</block>
-  <block id="e23c199f14d9e7bf9dbb9da03bf726a2" category="list-text">Schalter cs1 neu starten. Sie führen dies aus, um die Cluster-LIFs auszulösen, die auf die Home-Ports zurückgesetzt werden. Sie können die Ereignisse „Cluster Ports down“ ignorieren, die auf den Knoten gemeldet wurden, während der Switch neu startet.</block>
   <block id="6285269d7b8b003aed53cad1f3d13717" category="list-text">Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten cs2-Switch auf den neuen cs2-New-Switch.</block>
   <block id="f8e1e48a80ce2fac4d53a95f1f1ffd18" category="paragraph">*Clusterknoten-Verbindungskabel wurden auf den cs2-New Switch* verlegt</block>
   <block id="e07ca5d2322ee212c9dcb668e9db443a" category="image-alt">Verbindungskabel für Clusterknoten wurden auf den cs2-New-Switch verlegt</block>
@@ -5059,4 +5058,21 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="c509ae209503be0a774ac204f0f2dc91" category="paragraph">4 x 100-GbE-Node 35</block>
   <block id="f992d2e7f110147780c9ce8e305e4981" category="paragraph">4 x 100-GbE-Node 36</block>
   <block id="cb02ea2e8f595e77e5e6585ac0421c1a" category="paragraph">Erfahren Sie mehr über die neuen Switches für FAS und AFF Systeme. Weitere Informationen zu den Schaltern finden Sie im<block ref="341c1c8afc925d24c41903215e7d4958" category="inline-link-rx"></block>.</block>
+  <block id="d217db6e5c9fe01778df762ef953150e" category="inline-link-macro">Installieren Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei</block>
+  <block id="6503ea0189c5cfc2f7fbdef509813892" category="admonition">Für EFOS 3.12 und höher befolgen Sie die Installationsschritte in <block ref="2875012234c5bc616da894d0cc04d2b5" category="inline-link-macro-rx"></block>.</block>
+  <block id="138707357e50e83ca9a6f1bf487a4c4b" category="paragraph">Stellen Sie sicher, dass die folgenden Komponenten vorhanden sind:</block>
+  <block id="f3f5793bcca1ebb5ebbd53986eeb7aa2" category="admonition">Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, verwenden Sie den Knowledge Base-Artikel<block ref="18b4271d2bf70dbfb01e42cb4850cea6" category="inline-link-rx"></block>. Wenn Sie die Switch-Einstellungen vollständig löschen müssen, müssen Sie die Grundkonfiguration erneut durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein, da durch eine vollständige Löschung der Konfiguration die Konfiguration des Managementnetzwerks zurückgesetzt wird.</block>
+  <block id="760a43dbe67e92dafc9be460c7ec7a71" category="open-title">EFOS Version 3.12.x und höher</block>
+  <block id="b901c25333441ff036da53fab081d9f0" category="list-text">Überprüfen Sie, ob das Skript heruntergeladen und unter dem Dateinamen gespeichert wurde, den Sie ihm gegeben haben:</block>
+  <block id="c996550fa25e7bc14821abd9c8d23ed7" category="open-title">Alle anderen EFOS-Versionen</block>
+  <block id="cbaf87b69b101c8da09eb66a7e118196" category="list-text">Überprüfen Sie die Bannerausgabe des<block ref="db837131dc56fab41bddc52d5aff8865" prefix=" " category="inline-code"></block> Befehls. Sie müssen diese Anweisungen lesen und befolgen, um die ordnungsgemäße Konfiguration und den Betrieb des Switches zu überprüfen.</block>
+  <block id="d8b62ff42020df981e759bfaae3ea683" category="list-text">Starten Sie den Switch cs1 neu. Dies löst das Cluster-LIFs aus, um auf ihre Home Ports zurückzusetzen. Sie können die Ereignisse „Cluster Ports down“ ignorieren, die auf den Knoten gemeldet wurden, während der Switch neu startet.</block>
+  <block id="44b28482ab8476e86718a1ca5ff60e37" category="paragraph">Ab EFOS 3.12.0 können Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei nach der Konfiguration des BES-53248-Cluster-Switches installieren.</block>
+  <block id="9a155684dd1562ffdaa25731d825bbe9" category="admonition">Sall-Ports werden bei der Installation des RCF konfiguriert, Sie müssen jedoch Ihre Lizenz installieren, um die konfigurierten Ports zu aktivieren.</block>
+  <block id="fbec2ebb075cb19757cff7017cb93af5" category="list-text">Der aktuelle RCF, verfügbar auf der<block ref="b4c2fb45a290e6214474529bd84dd3bc" category="inline-link-rx"></block> Seite.</block>
+  <block id="4456b97c43334b2054b59141ede95e7a" category="list-text">Kopieren Sie den RCF mit einem der folgenden Übertragungsprotokolle auf den Bootflash von Switch cs2: FTP, HTTP, TFTP, SFTP oder SCP.</block>
+  <block id="f33dd0ad3ffde0d7eeaba1d3a85f7205" category="paragraph">Dieses Beispiel zeigt HTTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:</block>
+  <block id="7bbcf8e324817b180739b7f7d821945a" category="list-text">Überprüfen Sie auf dem Switch, ob Ihre Änderungen vorgenommen wurden:</block>
+  <block id="a84263d893b250f940f2cfa8e599b7e2" category="list-text">[[step21]]fahren Sie bei Cluster-Switch cs1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.</block>
+  <block id="5bd6c874b20210387cbc3fd552b0e8bc" category="sidebar">Installieren Sie RCF und Lizenzdatei für EFOS 3.12 und höher</block>
 </blocks>

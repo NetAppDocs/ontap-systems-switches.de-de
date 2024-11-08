@@ -63,9 +63,9 @@ Die Konfigurationsbefehle im folgenden Beispiel gelten für FASTPATH 1.2.0.7:
 ====
 [listing, subs="+quotes"]
 ----
-(old_cs1) *>enable*
-(old_cs1) *#show running-config*
-(old_cs1) *#show startup-config*
+(old_cs1)> *enable*
+(old_cs1)# *show running-config*
+(old_cs1)# *show startup-config*
 ----
 ====
 . Erstellen Sie eine Kopie der ausgeführten Konfigurationsdatei.
@@ -78,7 +78,7 @@ Der Befehl im folgenden Beispiel ist für FASTPATH 1.2.0.7:
 ====
 [listing, subs="+quotes"]
 ----
-(old_cs1) *#show running-config filename.scr*
+(old_cs1)# *show running-config filename.scr*
 Config script created successfully.
 ----
 ====
@@ -94,7 +94,7 @@ NOTE: Sie können jeden Dateinamen außer verwenden `CN1610_CS_RCF_v1.2.scr`. De
 ====
 [listing, subs="+quotes"]
 ----
-(old_cs1) #*copy nvram:script filename.scr scp://<Username>@<remote_IP_address>/path_to_file/filename.scr*
+(old_cs1)# *copy nvram:script filename.scr scp://<Username>@<remote_IP_address>/path_to_file/filename.scr*
 ----
 ====
 . Überprüfen Sie, ob die Switch- und ONTAP-Versionen in der Kompatibilitätsmatrix übereinstimmen. Siehe https://mysupport.netapp.com/site/info/netapp-cluster-switch["NetApp CN1601 und CN1610 Switches"^] Für Details.
@@ -124,7 +124,7 @@ Um eine statische IP-Adresse festzulegen, sollten Sie die befehle serviceport-Pr
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*serviceport ip <ipaddr> <netmask> <gateway>*
+(new_cs1)# *serviceport ip <ipaddr> <netmask> <gateway>*
 ----
 ====
 . Wenn sich der TFTP-Server auf einem Laptop befindet, schließen Sie den CN1610-Switch optional über ein Standard-Ethernet-Kabel an den Laptop an, und konfigurieren Sie dann den Netzwerkanschluss im gleichen Netzwerk mit einer alternativen IP-Adresse.
@@ -140,8 +140,8 @@ Sie können das verwenden `ping` Befehl zum Verifizieren der Adresse. Wenn Sie d
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) >*enable*
-(new_cs1) #*show version*
+(new_cs1)> *enable*
+(new_cs1)# *show version*
 ----
 ====
 .. Laden Sie den RCF auf den neuen Switch herunter.
@@ -151,7 +151,7 @@ Sie können das verwenden `ping` Befehl zum Verifizieren der Adresse. Wenn Sie d
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*copy tftp://<server_ip_address>/CN1610_CS_RCF_v1.2.txt nvram:script CN1610_CS_RCF_v1.2.scr*
+(new_cs1)# *copy tftp://<server_ip_address>/CN1610_CS_RCF_v1.2.txt nvram:script CN1610_CS_RCF_v1.2.scr*
 Mode.	TFTP
 Set Server IP.	172.22.201.50
 Path.	/
@@ -180,7 +180,7 @@ File transfer operation completed successfully.
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*script list*
+(new_cs1)# *script list*
 Configuration Script Nam   Size(Bytes)
 -------------------------- -----------
 CN1610_CS_RCF_v1.1.scr            2191
@@ -200,7 +200,7 @@ latest_config.scr                 2356
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*script apply CN1610_CS_RCF_v1.2.scr*
+(new_cs1)# *script apply CN1610_CS_RCF_v1.2.scr*
 Are you sure you want to apply the configuration script? (y/n) *y*
 ...
 (the entire script is displayed line by line)
@@ -219,7 +219,7 @@ After the script is applied, those settings will be active in the running-config
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*write memory*
+(new_cs1)# *write memory*
 This operation may take a few minutes.
 Management interfaces will not be available during this time.
 
@@ -237,7 +237,7 @@ Configuration Saved!
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*copy tftp://<server_ip_address>/NetApp_CN1610_1.2.0.7.stk active*
+(new_cs1)# *copy tftp://<server_ip_address>/NetApp_CN1610_1.2.0.7.stk active*
 Mode.	TFTP
 Set Server IP.	tftp_server_ip_address
 Path.	/
@@ -264,7 +264,7 @@ Der Switch muss neu gestartet werden, damit der Befehl in Schritt 6 das neue Ima
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*reload*
+(new_cs1)# *reload*
 The system has unsaved changes.
 Would you like to save them now? (y/n) *y*
 
@@ -286,7 +286,7 @@ User:admin Password: (new_cs1) >*enable*
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*copy tftp://<server_ip_address>/<filename>.scr nvram:script <filename>.scr*
+(new_cs1)# *copy tftp://<server_ip_address>/<filename>.scr nvram:script <filename>.scr*
 ----
 ====
 .. Wenden Sie die zuvor gespeicherte Konfiguration auf den neuen Switch an.
@@ -296,7 +296,7 @@ User:admin Password: (new_cs1) >*enable*
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*script apply <filename>.scr*
+(new_cs1)# *script apply <filename>.scr*
 Are you sure you want to apply the configuration script? (y/n) *y*
 
 The system has unsaved changes.
@@ -314,7 +314,7 @@ Configuration Saved!
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) #*write memory*
+(new_cs1)# *write memory*
 ----
 ====
 
@@ -339,14 +339,13 @@ Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe bena
 ----
 User:*admin*
 Password:
-(new_cs1) >*enable*
-(new_cs1) #
-
-(new_cs1) #*config*
-(new_cs1)(config)#*interface 0/1-0/12*
-(new_cs1)(interface 0/1-0/12)#*shutdown*
-(new_cs1)(interface 0/1-0/12)#*exit*
-(new_cs1) #*write memory*
+(new_cs1)> *enable*
+(new_cs1)#
+(new_cs1)# *config*
+(new_cs1)(config)# *interface 0/1-0/12*
+(new_cs1)(interface 0/1-0/12)# *shutdown*
+(new_cs1)(interface 0/1-0/12)# *exit*
+(new_cs1)# *write memory*
 ----
 ====
 . Migrieren Sie die Cluster-LIFs von den Ports, die mit dem Switch old_cs1 verbunden sind.
@@ -410,10 +409,10 @@ cluster::*> *cluster ping-cluster -node <node_name>*
 ====
 [listing, subs="+quotes"]
 ----
-(cs2) #*config*
-(cs2)(config)#*interface 0/13-0/16*
-(cs2)(interface 0/13-0/16)#*shutdown*
-(cs2) #*show port-channel 3/1*
+(cs2)# *config*
+(cs2)(config)# *interface 0/13-0/16*
+(cs2)(interface 0/13-0/16)# *shutdown*
+(cs2)# *show port-channel 3/1*
 ----
 ====
 . Überprüfen Sie, ob der Speicheradministrator für den Austausch des Switches bereit ist.
@@ -425,9 +424,9 @@ cluster::*> *cluster ping-cluster -node <node_name>*
 ====
 [listing, subs="+quotes"]
 ----
-(cs2) #*config*
-(cs2)(config)#*interface 0/13-0/16*
-(cs2)(interface 0/13-0/16)#*no shutdown*
+(cs2)# *config*
+(cs2)(config)# *interface 0/13-0/16*
+(cs2)(interface 0/13-0/16)# *no shutdown*
 ----
 ====
 . Aktivieren Sie die Ports auf dem neuen Switch, der den Clusterknoten zugeordnet ist.
@@ -437,9 +436,9 @@ cluster::*> *cluster ping-cluster -node <node_name>*
 ====
 [listing, subs="+quotes"]
 ----
-(cs2) #*config*
-(cs2)(config)#*interface 0/1-0/12*
-(cs2)(interface 0/13-0/16)#*no shutdown*
+(new_cs1)# *config*
+(new_cs1)(config)# *interface 0/1-0/12*
+(new_cs1)(interface 0/13-0/16)# *no shutdown*
 ----
 ====
 . Rufen Sie auf einem einzelnen Node den Clusterknoten-Port auf, der mit dem ausgetauschten Switch verbunden ist, und bestätigen Sie anschließend, dass die Verbindung hergestellt ist.
@@ -485,9 +484,9 @@ cluster::*> *cluster show*
 ====
 [listing, subs="+quotes"]
 ----
-(new_cs1) >*enable*
-(new_cs1) #*show running-config*
-(new_cs1) #*show startup-config*
+(new_cs1)> *enable*
+(new_cs1)# *show running-config*
+(new_cs1)# *show startup-config*
 ----
 ====
 . Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
