@@ -124,17 +124,67 @@ unreachable default metric 4278198272
 10.233.204.0/23 dev eth0 proto kernel scope link src 10.233.204.71
 127.0.0.0/8 dev mgmt proto kernel scope link src 127.0.0.1
 ----
-. Konfigurieren Sie die Zeitzone mithilfe des interaktiven NTP-Modus.
+. Legen Sie Datum, Uhrzeit, Zeitzone und NTP-Server auf dem Switch fest.
 +
-.. Führen Sie auf einem Terminal den folgenden Befehl aus:
+.. Überprüfen Sie die aktuelle Zeitzone:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *cat /etc/timezone*
+----
+.. Auf die neue Zeitzone aktualisieren:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *sudo dpkg-reconfigure --frontend noninteractive tzdata*
+----
+.. Überprüfen Sie Ihre aktuelle Zeitzone:
++
+[listing, subs="+quotes"]
+----
+cumulus@switch:~$ *date +%Z*
+----
+.. Führen Sie den folgenden Befehl aus, um die Zeitzone mit dem Assistenten festzulegen:
 +
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *sudo dpkg-reconfigure tzdata*
 ----
-.. Folgen Sie den Menüoptionen auf dem Bildschirm, um den geografischen Bereich und die Region auszuwählen.
-.. Um die Zeitzone für alle Dienste und Dämonen einzustellen, starten Sie den Switch neu.
-.. Überprüfen Sie, ob das Datum und die Uhrzeit auf dem Switch korrekt sind, und aktualisieren Sie ggf..
+.. Stellen Sie die Softwareuhr entsprechend der konfigurierten Zeitzone ein:
++
+[listing, subs="+quotes"]
+----
+cumulus@switch:~$ *sudo date -s "Tue Oct 28 00:37:13 2023"*
+----
+.. Stellen Sie den aktuellen Wert der Softwareuhr auf die Hardware-Uhr ein:
++
+[listing, subs="+quotes"]
+----
+cumulus@switch:~$ *sudo hwclock -w*
+----
+.. Fügen Sie bei Bedarf einen NTP-Server hinzu:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *net add time ntp server _<cumulus.network.ntp.org>_ iburst*
+cumulus@sw1:~$ *net pending*
+cumulus@sw1:~$ *net commit*
+----
+.. Überprüfen Sie, ob `ntpd` auf dem System ausgeführt wird:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *ps -ef | grep ntp*
+ntp       4074     1  0 Jun20 ?        00:00:33 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 101:102
+----
+.. Geben Sie die NTP-Quellschnittstelle an. Standardmäßig ist die von NTP verwendete Quellschnittstelle `eth0` . Sie können eine andere NTP-Quellschnittstelle wie folgt konfigurieren:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *net add time ntp source _<src_int>_*
+cumulus@sw1:~$ *net pending*
+cumulus@sw1:~$ *net commit*
+----
 
 
 . Installieren Sie Cumulus Linux 4.4.3:
@@ -290,17 +340,61 @@ unreachable default metric 4278198272
 10.233.204.0/23 dev eth0 proto kernel scope link src 10.233.204.71
 127.0.0.0/8 dev mgmt proto kernel scope link src 127.0.0.1
 ----
-. Konfigurieren Sie die Zeitzone mithilfe des interaktiven NTP-Modus.
+. Legen Sie Zeitzone, Datum, Uhrzeit und NTP-Server auf dem Switch fest.
 +
-.. Führen Sie auf einem Terminal den folgenden Befehl aus:
+.. Zeitzone einstellen:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv set system timezone US/Eastern*
+cumulus@sw1:~$ *nv config apply*
+----
+.. Überprüfen Sie Ihre aktuelle Zeitzone:
++
+[listing, subs="+quotes"]
+----
+cumulus@switch:~$ *date +%Z*
+----
+.. Führen Sie den folgenden Befehl aus, um die Zeitzone mit dem Assistenten festzulegen:
 +
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *sudo dpkg-reconfigure tzdata*
 ----
-.. Folgen Sie den Menüoptionen auf dem Bildschirm, um den geografischen Bereich und die Region auszuwählen.
-.. Um die Zeitzone für alle Dienste und Dämonen einzustellen, starten Sie den Switch neu.
-.. Überprüfen Sie, ob das Datum und die Uhrzeit auf dem Switch korrekt sind, und aktualisieren Sie ggf..
+.. Stellen Sie die Softwareuhr entsprechend der konfigurierten Zeitzone ein:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *sudo date -s "Tue Oct 28 00:37:13 2023"*
+----
+.. Stellen Sie den aktuellen Wert der Softwareuhr auf die Hardware-Uhr ein:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *sudo hwclock -w*
+----
+.. Fügen Sie bei Bedarf einen NTP-Server hinzu:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv set service ntp default server _<cumulus.network.ntp.org>_ iburst on*
+cumulus@sw1:~$ *nv config apply*
+cumulus@sw1:~$ *nv config save*
+----
+.. Überprüfen Sie, ob `ntpd` auf dem System ausgeführt wird:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *ps -ef | grep ntp*
+ntp       4074     1  0 Jun20 ?        00:00:33 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 101:102
+----
+.. Geben Sie die NTP-Quellschnittstelle an. Standardmäßig ist die von NTP verwendete Quellschnittstelle `eth0` . Sie können eine andere NTP-Quellschnittstelle wie folgt konfigurieren:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv set service ntp default listen _<src_int>_*
+cumulus@sw1:~$ *nv config apply*
+----
 
 
 . Installieren Sie Cumulus Linux 5.4:

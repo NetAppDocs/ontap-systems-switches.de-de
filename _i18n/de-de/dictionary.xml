@@ -3982,7 +3982,6 @@
   <block id="b6a9bacb15977dcaaa1e05f20cc4d13b" category="paragraph">Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Laden Sie RCFs von herunter<block ref="89efcd657168a1e707caf54da1923871" category="inline-link-rx"></block>. Das Verfahren für jedes ist gleich.</block>
   <block id="54d4022f2a747cb4974fcf06961bdb21" category="list-text">Cluster: *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*</block>
   <block id="eac7436c884133e6b945a51430510a32" category="list-text">Speicher: *MSN2100-RCF-v1._x_-Speicher*</block>
-  <block id="196428336c87b3c0c9bf24432335bd6f" category="list-text">Wenden Sie das Skript RCF Python an *MSN2100-RCF-v1.x-Cluster-HA-Breakout-LLDP*.</block>
   <block id="b9dfe38b5e91454220a6cd1f3cfb9ac8" category="admonition">In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl<block ref="900d965bd90d181d344d976a0e3093d8" prefix=" " category="inline-code"></block> Wird ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
   <block id="0440c59cc67785ca7939ff4e3eba86ed" category="admonition">In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl<block ref="79a5f2bb850da898bd092e3a61bda06c" prefix=" " category="inline-code"></block> Wird ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Beispiel:</block>
@@ -4016,7 +4015,6 @@
   <block id="0d151e82f107d3039ec4952c010d46c4" category="admonition">Das Standardpasswort für das Cumulus-Benutzerkonto lautet *Cumulus*. Wenn Sie sich das erste Mal bei Cumulus Linux anmelden, müssen Sie dieses Standardpasswort ändern. Sie müssen Automatisierungsskripts aktualisieren, bevor Sie ein neues Image installieren. Cumulus Linux bietet Befehlszeilenoptionen zum automatischen Ändern des Standardpassworts während des Installationsvorgangs.</block>
   <block id="324fe5adbd1d84e1635133b2f3572f6d" category="open-title">Von Cumulus Linux 4.4.x auf Cumulus Linux 5.x</block>
   <block id="6e86c333c0b662bb6dee3495ec26ec21" category="list-text">Überprüfen Sie die aktuelle Version von Cumulus Linux und die angeschlossenen Ports:</block>
-  <block id="698eeac576f2a03927debdd14725ba5e" category="list-text">Laden Sie das Cumulux Linux 5.x-Image herunter:</block>
   <block id="a034a19ca9c1623f94c8f52b386d5a41" category="list-text">Ändern Sie das Passwort:</block>
   <block id="d853eef2a857cbfcf5b1ef1abe8db17e" category="list-text">Prüfen Sie die Cumulus Linux-Version:<block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix=" " category="inline-code"></block></block>
   <block id="985599684d8f5a06353d35110138f1b2" category="list-text">Ändern Sie den Hostnamen:</block>
@@ -5068,11 +5066,27 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="cbaf87b69b101c8da09eb66a7e118196" category="list-text">Überprüfen Sie die Bannerausgabe des<block ref="db837131dc56fab41bddc52d5aff8865" prefix=" " category="inline-code"></block> Befehls. Sie müssen diese Anweisungen lesen und befolgen, um die ordnungsgemäße Konfiguration und den Betrieb des Switches zu überprüfen.</block>
   <block id="d8b62ff42020df981e759bfaae3ea683" category="list-text">Starten Sie den Switch cs1 neu. Dies löst das Cluster-LIFs aus, um auf ihre Home Ports zurückzusetzen. Sie können die Ereignisse „Cluster Ports down“ ignorieren, die auf den Knoten gemeldet wurden, während der Switch neu startet.</block>
   <block id="44b28482ab8476e86718a1ca5ff60e37" category="paragraph">Ab EFOS 3.12.0 können Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei nach der Konfiguration des BES-53248-Cluster-Switches installieren.</block>
-  <block id="9a155684dd1562ffdaa25731d825bbe9" category="admonition">Sall-Ports werden bei der Installation des RCF konfiguriert, Sie müssen jedoch Ihre Lizenz installieren, um die konfigurierten Ports zu aktivieren.</block>
   <block id="fbec2ebb075cb19757cff7017cb93af5" category="list-text">Der aktuelle RCF, verfügbar auf der<block ref="b4c2fb45a290e6214474529bd84dd3bc" category="inline-link-rx"></block> Seite.</block>
   <block id="4456b97c43334b2054b59141ede95e7a" category="list-text">Kopieren Sie den RCF mit einem der folgenden Übertragungsprotokolle auf den Bootflash von Switch cs2: FTP, HTTP, TFTP, SFTP oder SCP.</block>
   <block id="f33dd0ad3ffde0d7eeaba1d3a85f7205" category="paragraph">Dieses Beispiel zeigt HTTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:</block>
   <block id="7bbcf8e324817b180739b7f7d821945a" category="list-text">Überprüfen Sie auf dem Switch, ob Ihre Änderungen vorgenommen wurden:</block>
   <block id="a84263d893b250f940f2cfa8e599b7e2" category="list-text">[[step21]]fahren Sie bei Cluster-Switch cs1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.</block>
   <block id="5bd6c874b20210387cbc3fd552b0e8bc" category="sidebar">Installieren Sie RCF und Lizenzdatei für EFOS 3.12 und höher</block>
+  <block id="939b4bb2ac041f54295eebf712381c6e" category="admonition">Alle Ports werden bei der Installation des RCF konfiguriert, Sie müssen jedoch Ihre Lizenz installieren, um die konfigurierten Ports zu aktivieren.</block>
+  <block id="95a409c28581e60b63d6744a63cec56e" category="list-text">Legen Sie Datum, Uhrzeit, Zeitzone und NTP-Server auf dem Switch fest.</block>
+  <block id="506fa9ce3fedb50c852bedfbf3a7cdd3" category="list-text">Überprüfen Sie die aktuelle Zeitzone:</block>
+  <block id="a50a0e5cb483409f1fab325fb98837b7" category="list-text">Auf die neue Zeitzone aktualisieren:</block>
+  <block id="6da016a8d1ac9135eb58f58229421640" category="list-text">Überprüfen Sie Ihre aktuelle Zeitzone:</block>
+  <block id="f7831e2ba83d46ea1e5fff4e74fc5fa7" category="list-text">Führen Sie den folgenden Befehl aus, um die Zeitzone mit dem Assistenten festzulegen:</block>
+  <block id="73780f50cf375867a0588e7492720e92" category="list-text">Stellen Sie die Softwareuhr entsprechend der konfigurierten Zeitzone ein:</block>
+  <block id="79f42127edb075c94bf534a70bd9670a" category="list-text">Stellen Sie den aktuellen Wert der Softwareuhr auf die Hardware-Uhr ein:</block>
+  <block id="cc4d69e34240960e74993e23c384c9dd" category="list-text">Fügen Sie bei Bedarf einen NTP-Server hinzu:</block>
+  <block id="f24cc7b4e9b9029f28ce1ca2f70cdf80" category="list-text">Überprüfen Sie, ob<block ref="0453ce67cb028d800c9476a4d09364c9" prefix=" " category="inline-code"></block> auf dem System ausgeführt wird:</block>
+  <block id="5f71b9c43a90b0d5c1da4caaf97582b9" category="list-text">Geben Sie die NTP-Quellschnittstelle an. Standardmäßig ist die von NTP verwendete Quellschnittstelle<block ref="a1a5b3d22e82bbd6f878d26feacc2c7d" prefix=" " category="inline-code"></block> . Sie können eine andere NTP-Quellschnittstelle wie folgt konfigurieren:</block>
+  <block id="49a81a8314008caafc812f9c76617125" category="list-text">Legen Sie Zeitzone, Datum, Uhrzeit und NTP-Server auf dem Switch fest.</block>
+  <block id="2747cbba0e5a031af50361e087bd59bb" category="list-text">Zeitzone einstellen:</block>
+  <block id="7db58b1ced05f0a1e8e0257017cd6c5b" category="list-text">Wenden Sie das Skript RCF Python an *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*.</block>
+  <block id="11b037d97237564e7d301df86420a468" category="inline-link">Installieren eines neuen Cumulus Linux-Images</block>
+  <block id="ab12f4d1e56479a81a361f6109b978de" category="paragraph">Weitere Informationen finden Sie unter<block ref="63da15f7ab7ce2a7550fdbf1e5e5d879" category="inline-link-rx"></block>.</block>
+  <block id="43622a7160f0cabed379e73776c14454" category="list-text">Laden Sie das Cumulux Linux 5.x-Image:tmp herunter</block>
 </blocks>

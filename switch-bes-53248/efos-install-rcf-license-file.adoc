@@ -14,7 +14,7 @@ summary: 'Sie können die Referenzkonfigurationsdatei (RCF) installieren, nachde
 Ab EFOS 3.12.0 können Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei nach der Konfiguration des BES-53248-Cluster-Switches installieren.
 
 
-CAUTION: Sall-Ports werden bei der Installation des RCF konfiguriert, Sie müssen jedoch Ihre Lizenz installieren, um die konfigurierten Ports zu aktivieren.
+CAUTION: Alle Ports werden bei der Installation des RCF konfiguriert, Sie müssen jedoch Ihre Lizenz installieren, um die konfigurierten Ports zu aktivieren.
 
 
 
