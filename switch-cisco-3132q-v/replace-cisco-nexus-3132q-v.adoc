@@ -67,7 +67,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * n1_clus2 ist die erste Cluster-LIF, die mit Cluster-Switch CL2 oder C2 für Node n1 verbunden ist.
 * n1_clus3 ist die zweite logische Schnittstelle, die mit Cluster-Switch C2 für Node n1 verbunden ist.
 * n1_clus4 ist die zweite logische Schnittstelle, die mit Cluster-Switch CL1 für Node n1 verbunden ist.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert link:https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Anzahl der 10-GbE- und 40-GbE-Ports wird in den auf der  Seite verfügbaren Referenzkonfigurationsdateien (RCFs) definiertlink:https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^].
 * Die Knoten sind n1, n2, n3 und n4. - Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe link:https://hwu.netapp.com/["Hardware Universe"^] Für die tatsächlichen Cluster-Ports auf Ihren Plattformen.
 
 

@@ -45,6 +45,9 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 --
 . Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
 +
+*HINWEIS:* Wenn Sie auf die Eingabeaufforderung der Benutzerspezifikation antworten `y`, stellen Sie sicher, dass der Benutzer die erforderlichen Berechtigungen hat, wie in beschrieben<<Bevor Sie beginnen>>.
+
++
 [source, cli]
 ----
 system switch ethernet log setup-password
@@ -111,6 +114,9 @@ system switch ethernet log show
 .ONTAP 9.15.1 und höher
 --
 . Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
++
+*HINWEIS:* Wenn Sie auf die Eingabeaufforderung der Benutzerspezifikation antworten `y`, stellen Sie sicher, dass der Benutzer die erforderlichen Berechtigungen hat<<Bevor Sie beginnen>>, wie in beschrieben.
+
 +
 [source, cli]
 ----
