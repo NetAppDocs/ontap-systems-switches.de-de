@@ -1,0 +1,392 @@
+---
+permalink: switch-cisco-3232c/migrate-from-switchless-configure-ports.html 
+sidebar: sidebar 
+keywords: cisco 3232c, cluster switches 
+summary: Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Cluster einsetzen. 
+---
+= Konfigurieren Sie die Ports für die Migration von einem 2-Node-Cluster ohne Switches zu einem 2-Node-Cluster mit Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Befolgen Sie diese Schritte, um Ihre Ports für die Migration von einem 2-Node-Cluster ohne Switch zu einem 2-Node-Cluster mit Switch auf Nexus 3232C-Switches zu konfigurieren.
+
+.Schritte
+. Migrieren Sie die LIFs n1_clus1 und n2_clug1 zu den physischen Ports ihrer Ziel-Knoten:
++
+`network interface migrate -vserver _vserver-name_ -lif _lif-name_ source-node _source-node-name_ -destination-port _destination-port-name_`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Sie müssen den Befehl für jeden lokalen Node ausführen, wie im folgenden Beispiel gezeigt:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface migrate -vserver cluster -lif n1_clus1 -source-node n1
+-destination-node n1 -destination-port e4e*
+cluster::*> *network interface migrate -vserver cluster -lif n2_clus1 -source-node n2
+-destination-node n2 -destination-port e4e*
+----
+====
+. Überprüfen Sie, ob die Cluster-Schnittstellen erfolgreich migriert wurden:
++
+`network interface show -role cluster`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt den Status „is Home“ für die LIFs n1_clus1 und n2_clug1 ist nach Abschluss der Migration „false“ geworden:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface show -role cluster*
+ (network interface show)
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+Cluster
+            n1_clus1   up/up      10.10.0.1/24       n1            e4e     false
+            n1_clus2   up/up      10.10.0.2/24       n1            e4e     true
+            n2_clus1   up/up      10.10.0.3/24       n2            e4e     false
+            n2_clus2   up/up      10.10.0.4/24       n2            e4e     true
+ 4 entries were displayed.
+----
+====
+. Beenden Sie die Cluster-Ports für die LIFs n1_clus1 und n2_clue1, die in Schritt 9 migriert wurden:
++
+`network port modify -node _node-name_ -port _port-name_ -up-admin false`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Sie müssen den Befehl für jeden Port ausführen, wie im folgenden Beispiel gezeigt:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network port modify -node n1 -port e4a -up-admin false*
+cluster::*> *network port modify -node n2 -port e4a -up-admin false*
+----
+====
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.9.1 und höher
+--
+Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+
+`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source           Destination      Packet
+Node   Date                       LIF              LIF              Loss
+------ -------------------------- ---------------- ---------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2         n2-clus1         none
+       3/5/2022 19:21:20 -06:00   n1_clus2         n2_clus2         none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2         n1_clus1         none
+       3/5/2022 19:21:20 -06:00   n2_clus2         n1_clus2         none
+----
+--
+.Alle ONTAP Versionen
+--
+Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster ping-cluster -node local*
+Host is n1
+Getting addresses from network interface table...
+Cluster n1_clus1 n1        e4a    10.10.0.1
+Cluster n1_clus2 n1        e4e    10.10.0.2
+Cluster n2_clus1 n2        e4a    10.10.0.3
+Cluster n2_clus2 n2        e4e    10.10.0.4
+Local = 10.10.0.1 10.10.0.2
+Remote = 10.10.0.3 10.10.0.4
+Cluster Vserver Id = 4294967293 Ping status:
+....
+Basic connectivity succeeds on 4 path(s)
+Basic connectivity fails on 0 path(s) ................
+Detected 9000 byte MTU on 32 path(s):
+    Local 10.10.0.1 to Remote 10.10.0.3
+    Local 10.10.0.1 to Remote 10.10.0.4
+    Local 10.10.0.2 to Remote 10.10.0.3
+    Local 10.10.0.2 to Remote 10.10.0.4
+Larger than PMTU communication succeeds on 4 path(s) RPC status:
+1 paths up, 0 paths down (tcp check)
+1 paths up, 0 paths down (ucp check)
+----
+--
+====
+. [[step5]] Trennen Sie das Kabel von e4a auf Knoten n1.
++
+Sie können sich auf die laufende Konfiguration beziehen und den ersten 40-GbE-Port am Switch C1 (Port 1/7 in diesem Beispiel) mit e4a auf n1 verbinden, indem die Verkabelung unterstützt für Nexus 3232C-Switches.
+
+. Trennen Sie das Kabel von e4a auf Knoten n2.
++
+Sie können sich auf die laufende Konfiguration beziehen und e4a mit dem nächsten verfügbaren 40 GbE-Port von C1, Port 1/8, über unterstützte Verkabelung verbinden.
+
+. Aktivieren Sie alle Ports, die an Knoten gerichtet sind, auf C1.
++
+Weitere Informationen zu Cisco-Befehlen finden Sie in den Handbüchern im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die Ports 1 bis 30, die bei Nexus 3232C-Cluster-Switches C1 und C2 unter Verwendung der in RCF unterstützten Konfiguration aktiviert sind `NX3232_RCF_v1.0_24p10g_26p100g.txt`:
+
+[listing, subs="+quotes"]
+----
+C1# *configure*
+C1(config)# *int e1/1/1-4,e1/2/1-4,e1/3/1-4,e1/4/1-4,e1/5/1-4,e1/6/1-4,e1/7-30*
+C1(config-if-range)# *no shutdown*
+C1(config-if-range)# *exit*
+C1(config)# *exit*
+----
+====
+. Aktivieren Sie den ersten Cluster-Port e4a auf jedem Knoten:
++
+`network port modify -node _node-name_ -port _port-name_ -up-admin true`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster::*> *network port modify -node n1 -port e4a -up-admin true*
+cluster::*> *network port modify -node n2 -port e4a -up-admin true*
+----
+====
+. Vergewissern Sie sich, dass die Cluster auf beiden Nodes aktiv sind:
++
+`network port show -role cluster`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster::*> *network port show -role cluster*
+  (network port show)
+Node: n1
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- -----
+e4a       Cluster      Cluster          up   9000 auto/40000  -
+e4e       Cluster      Cluster          up   9000 auto/40000  -        -
+
+Node: n2
+                                                                       Ignore
+                                                  Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
+--------- ------------ ---------------- ---- ---- ----------- -------- -----
+e4a       Cluster      Cluster          up   9000 auto/40000  -
+e4e       Cluster      Cluster          up   9000 auto/40000  -
+
+4 entries were displayed.
+----
+====
+. Setzen Sie für jeden Node alle migrierten Cluster Interconnect LIFs zurück:
++
+`network interface revert -vserver cluster -lif _lif-name_`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Sie müssen jede LIF einzeln wie im folgenden Beispiel gezeigt auf ihren Home-Port zurücksetzen:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface revert -vserver cluster -lif n1_clus1*
+cluster::*> *network interface revert -vserver cluster -lif n2_clus1*
+----
+====
+. Vergewissern Sie sich, dass alle LIFs nun auf ihre Home-Ports zurückgesetzt werden:
++
+`network interface show -role cluster`
+
++
+Der `Is Home` Spalte sollte einen Wert von anzeigen `true` Für alle im aufgeführten Ports `Current Port` Spalte. Wenn der angezeigte Wert lautet `false`, Der Hafen wurde nicht zurückgesetzt.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface show -role cluster*
+ (network interface show)
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+Cluster
+            n1_clus1   up/up      10.10.0.1/24       n1            e4a     true
+            n1_clus2   up/up      10.10.0.2/24       n1            e4e     true
+            n2_clus1   up/up      10.10.0.3/24       n2            e4a     true
+            n2_clus2   up/up      10.10.0.4/24       n2            e4e     true
+4 entries were displayed.
+----
+====
+. Zeigen Sie die Cluster-Port-Konnektivität auf jedem Node an:
++
+`network device-discovery show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster::*> *network device-discovery show*
+            Local  Discovered
+Node        Port   Device              Interface        Platform
+----------- ------ ------------------- ---------------- ----------------
+n1         /cdp
+            e4a    C1                  Ethernet1/7      N3K-C3232C
+            e4e    n2                  e4e              FAS9000
+n2         /cdp
+            e4a    C1                  Ethernet1/8      N3K-C3232C
+            e4e    n1                  e4e              FAS9000
+----
+====
+. Migrieren von Fazit 2 zu Port e4a auf der Konsole jedes Knotens:
++
+`network interface migrate cluster -lif _lif-name_ -source-node _source-node-name_ -destination-node _destination-node-name_ -destination-port _destination-port-name_`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Sie müssen jede LIF individuell wie im folgenden Beispiel dargestellt zu ihrem Home Port migrieren:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface migrate -vserver cluster -lif n1_clus2 -source-node n1
+-destination-node n1 -destination-port e4a*
+cluster::*> *network interface migrate -vserver cluster -lif n2_clus2 -source-node n2
+-destination-node n2 -destination-port e4a*
+----
+====
+. Herunterfahren von Cluster-Ports clu2 LIF auf beiden Knoten:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Im folgenden Beispiel werden die angegebenen Ports angezeigt, die auf festgelegt sind `false`, Herunterfahren der Ports auf beiden Nodes:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network port modify -node n1 -port e4e -up-admin false*
+cluster::*> *network port modify -node n2 -port e4e -up-admin false*
+----
+====
+. Überprüfen Sie den LIF-Status des Clusters:
++
+`network interface show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface show -role cluster*
+ (network interface show)
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+Cluster
+            n1_clus1   up/up      10.10.0.1/24       n1            e4a     true
+            n1_clus2   up/up      10.10.0.2/24       n1            e4a     false
+            n2_clus1   up/up      10.10.0.3/24       n2            e4a     true
+            n2_clus2   up/up      10.10.0.4/24       n2            e4a     false
+4 entries were displayed.
+----
+====
+. Trennen Sie das Kabel von e4e am Knoten n1.
++
+Sie können auf die laufende Konfiguration verweisen und den ersten 40-GbE-Port am Switch C2 (Port 1/7 in diesem Beispiel) mit e4e am Node n1 verbinden. Dabei wird die entsprechende Verkabelung für das Nexus 3232C-Switch-Modell verwendet.
+
+. Trennen Sie das Kabel von e4e am Knoten n2.
++
+Sie können sich auf die laufende Konfiguration beziehen und e4e mithilfe der entsprechenden Verkabelung für das Nexus 3232C-Switch-Modell mit dem nächsten verfügbaren 40 GbE-Port auf C2, Port 1/8 verbinden.
+
+. Aktivieren Sie alle Anschlüsse für Knoten auf C2.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die Ports 1 bis 30, die bei Nexus 3132Q-V Cluster Switches C1 und C2 aktiviert sind und eine in RCF unterstützte Konfiguration verwenden `NX3232C_RCF_v1.0_24p10g_26p100g.txt`:
+
+[listing, subs="+quotes"]
+----
+C2# *configure*
+C2(config)# *int e1/1/1-4,e1/2/1-4,e1/3/1-4,e1/4/1-4,e1/5/1-4,e1/6/1-4,e1/7-30*
+C2(config-if-range)# *no shutdown*
+C2(config-if-range)# *exit*
+C2(config)# *exit*
+----
+====
+. Aktivieren Sie den zweiten Cluster-Port e4e auf jedem Node:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, dass der zweite Cluster-Port e4e auf jedem Node hochgebracht wird:
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network port modify -node n1 -port e4e -up-admin true*
+cluster::*> *network port modify -node n2 -port e4e -up-admin true*s
+----
+====
+. Setzen Sie für jeden Node alle migrierten Cluster Interconnect LIFs zurück:
++
+`network interface revert`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, dass die migrierten LIFs auf die Home-Ports zurückgesetzt werden.
+
+[listing, subs="+quotes"]
+----
+cluster::*> *network interface revert -vserver Cluster -lif n1_clus2*
+cluster::*> *network interface revert -vserver Cluster -lif n2_clus2*
+----
+====
+
+
+.Was kommt als Nächstes?
+link:migrate-from-switchless-complete-migration.html["Schließen Sie die Migration ab"].

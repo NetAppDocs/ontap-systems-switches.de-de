@@ -17,7 +17,7 @@ Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem Nexus 3132Q-V Clust
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 

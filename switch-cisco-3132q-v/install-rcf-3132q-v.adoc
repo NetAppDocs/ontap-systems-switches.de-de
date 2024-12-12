@@ -17,7 +17,7 @@ Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Die aktuelle Referenzkonfigurationsdatei (RCF).

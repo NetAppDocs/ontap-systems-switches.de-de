@@ -19,7 +19,7 @@ Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisiere
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Die aktuelle Referenzkonfigurationsdatei (RCF).

@@ -13,7 +13,7 @@ summary: Sie können den Cisco Nexus 3232C-Switch und die Pass-Through-Panel in 
 [role="lead"]
 Je nach Konfiguration müssen möglicherweise der Cisco Nexus 3232C Cluster-Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Switch enthaltenen Standardhalterungen installiert werden.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 * Die anfänglichen Vorbereitungsanforderungen, Inhalt des Kits und Sicherheitsvorkehrungen im link:http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/hw/installation/guide/b_n3000_hardware_install_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 3000-Serie"^].
 * Die acht 10-32- oder 12-24-Schrauben und Muttern für jeden Schalter, um die Halterungen und Gleitschienen an den vorderen und hinteren Schrankleisten zu befestigen.
 * Cisco Standard-Schienensatz zur Installation des Switches in einem NetApp Rack

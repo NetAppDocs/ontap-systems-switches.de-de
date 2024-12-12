@@ -1,10 +1,39 @@
-= Schritt 1: Bereiten Sie sich auf das Upgrade vor
+---
+permalink: switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html 
+sidebar: sidebar 
+keywords: install rcf, cisco switches 
+summary: Sie können das RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Schalters installieren.Sie können auch dieses Verfahren verwenden, um Ihre RCF-Version zu aktualisieren. 
+---
+= Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF)
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie aktualisieren Ihre RCF-Version, wenn auf Ihren Betriebsschaltern eine vorhandene Version der RCF-Datei installiert ist.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
+* Ein aktuelles Backup der Switch-Konfiguration.
+* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
+* Der aktuelle RZB.
+* Wenn Sie Ihre RCF-Version aktualisieren, benötigen Sie eine Startkonfiguration im RCF, die die gewünschten Startabbilder widerspiegelt.
++
+Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
 
 
 
 
-=== Schritt 1: Bereiten Sie sich auf das Upgrade vor
+NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+
+
+CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein oder grundlegende Konfigurationsinformationen beibehalten haben, bevor Sie die Switch-Einstellungen löschen.
+
+
+
+== Schritt 1: Bereiten Sie sich auf das Upgrade vor
 
 . Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
 +
@@ -153,7 +182,7 @@ cluster1::*>
 
 
 
-=== Schritt 2: Ports konfigurieren
+== Schritt 2: Ports konfigurieren
 
 . Fahren Sie beim Cluster-Switch cs1 die mit den Cluster-Ports der Nodes verbundenen Ports herunter.
 +
@@ -509,7 +538,7 @@ cluster1::*>
 
 
 
-=== Schritt 3: Überprüfen Sie die Cluster-Netzwerkkonfiguration und den Zustand des Clusters
+== Schritt 3: Überprüfen Sie die Cluster-Netzwerkkonfiguration und den Zustand des Clusters
 
 . Stellen Sie sicher, dass die mit den Cluster-Ports verbundenen Switch-Ports *up* sind.
 +

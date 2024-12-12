@@ -38,12 +38,45 @@ entries:
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_3132q-V
   entries:
-  - title: Migrieren Sie von CN5596 Switches
-    url: "/switch-cisco-3132q-v/migrate-from-cisco-nexus-5596-to-cisco-nexus-3232c.html"
-  - title: Migration von CN1610 Switches
-    url: "/switch-cisco-3132q-v/replace-cn1610-with-cisco-nexus-3232c.html"
-  - title: Migrieren Sie Cluster mit Switches von ohne Switch zu Clustern
-    url: "/switch-cisco-3132q-v/migrate-from-switchless-cluster-to-cisco-nexus-3132q-v.html"
+  - title: CN1610-Switch-Migration
+    pdf-filename: CN1610_switch_migration
+    entries:
+    - title: Workflow für die Switch-Migration CN1610
+      url: "/switch-cisco-3132q-v/cn1610-migrate-workflow.html"
+    - title: Migrationsanforderungen
+      url: "/switch-cisco-3132q-v/cn1610-migrate-requirements.html"
+    - title: Vorbereitung der Migration
+      url: "/switch-cisco-3132q-v/cn1610-prepare-to-migrate.html"
+    - title: Konfigurieren Sie Ihre Ports
+      url: "/switch-cisco-3132q-v/cn1610-configure-ports.html"
+    - title: Die Migration ist abgeschlossen
+      url: "/switch-cisco-3132q-v/cn1610-complete-migration.html"
+  - title: Cisco Nexus 5596 Switch-Migration
+    pdf-filename: CN5596_switch_migration
+    entries:
+    - title: Workflow für die Migration mit Cisco Nexus 5596 Switches
+      url: "/switch-cisco-3132q-v/cn5596-migrate-workflow.html"
+    - title: Migrationsanforderungen
+      url: "/switch-cisco-3132q-v/cn5596-migrate-requirements.html"
+    - title: Vorbereitung der Migration
+      url: "/switch-cisco-3132q-v/cn5596-prepare-to-migrate.html"
+    - title: Konfigurieren Sie Ihre Ports
+      url: "/switch-cisco-3132q-v/cn5596-configure-ports.html"
+    - title: Schließen Sie die Migration ab
+      url: "/switch-cisco-3132q-v/cn5596-complete-migration.html"
+  - title: Migration von Clustern ohne Switch zu 2-Node-Clustern mit Switches
+    pdf-filename: Migration_von_switchless_to_Switched_Cluster
+    entries:
+    - title: Migration von Switch-losen zu Switch-basierten 2-Node-Workflows
+      url: "/switch-cisco-3132q-v/migrate-switchless-to-switched-workflow.html"
+    - title: Migrationsanforderungen
+      url: "/switch-cisco-3132q-v/migrate-switchless-to-switched-requirements.html"
+    - title: Vorbereitung der Migration
+      url: "/switch-cisco-3132q-v/migrate-switchless-prepare-to-migrate.html"
+    - title: Konfigurieren Sie Ihre Ports
+      url: "/switch-cisco-3132q-v/migrate-switchless-configure-ports.html"
+    - title: Schließen Sie die Migration ab
+      url: "/switch-cisco-3132q-v/migrate-switchless-complete-migration.html"
 - title: Tauschen Sie die Schalter aus
   pdf-filename: Replace_Switches_3132q-V
   entries:

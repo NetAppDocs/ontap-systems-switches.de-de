@@ -17,11 +17,8 @@ Wenn Sie über einen 2-Node-_Switch-_Cluster verfügen, können Sie zu einem _Sw
 
 == Prüfen Sie die Anforderungen
 
-.Migrationsanforderungen
-Vor der Migration sollten Sie unbedingt prüfen link:migrate-requirements-3232c.html["Migrationsanforderungen"].
-
-.Was Sie benötigen
-Stellen Sie sicher, dass:
+.Bevor Sie beginnen
+Überprüfen Sie die folgenden Installationen und Verbindungen:
 
 * Für Node-Verbindungen sind Ports verfügbar. Die Cluster-Switches verwenden die Inter-Switch-Link-Ports (ISL) e1/31-32.
 * Sie verfügen über die entsprechenden Kabel für Cluster-Verbindungen:
@@ -50,10 +47,6 @@ Die beiden Nodes müssen verbunden und in einer 2-Node-Cluster-Einstellung ohne 
 
 
 
-
-
-== Migrieren Sie die Switches
-
 .Zu den Beispielen
 Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
 
@@ -77,7 +70,7 @@ Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der C
 ====
 
 
-=== Schritt: Physische und logische Ports anzeigen und migrieren
+== Schritt: Physische und logische Ports anzeigen und migrieren
 
 . Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
 +
@@ -330,7 +323,7 @@ cluster::*> *network interface migrate -vserver cluster -lif n2_clus1 -source-no
 
 
 
-=== Schritt 2: Schalten Sie die neu zugeordneten LIFs ab und trennen Sie die Kabel
+== Schritt 2: Schalten Sie die neu zugeordneten LIFs ab und trennen Sie die Kabel
 
 . Überprüfen Sie, ob die Cluster-Schnittstellen erfolgreich migriert wurden:
 +
@@ -445,7 +438,7 @@ Sie können sich auf die laufende Konfiguration beziehen und den ersten 40-GbE-P
 
 
 
-=== Schritt 3: Aktivieren Sie die Cluster-Ports
+== Schritt 3: Aktivieren Sie die Cluster-Ports
 
 . Trennen Sie das Kabel von e4a auf Knoten n2.
 +
@@ -561,7 +554,7 @@ Cluster
 
 
 
-=== Schritt 4: Aktivieren Sie die neu signierten LIFs
+== Schritt 4: Aktivieren Sie die neu signierten LIFs
 
 . Zeigen Sie die Cluster-Port-Konnektivität auf jedem Node an:
 +

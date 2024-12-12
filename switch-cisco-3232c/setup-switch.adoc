@@ -13,7 +13,7 @@ summary: Wenn Sie noch nicht über die erforderlichen Konfigurationsinformatione
 [role="lead"]
 Befolgen Sie diese Anweisungen, um den Cisco Nexus 3232C Switch einzurichten und zu konfigurieren.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 * Zugriff auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zum Herunterladen der entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File).
 * Entsprechende NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
 * Erforderliche Dokumentation für das Cluster-Netzwerk und den Switch des Management-Netzwerks

@@ -1,12 +1,23 @@
-= Schritt 1: Installieren Sie die RCF auf den Schaltern
+---
+permalink: switch-cisco-9336c-fx2/install-rcf-software-9336c-cluster.html 
+sidebar: sidebar 
+keywords: install rcf, cisco switches 
+summary: Sie können das RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Schalters installieren.Sie können auch dieses Verfahren verwenden, um Ihre RCF-Version zu aktualisieren. 
+---
+= Installieren Sie die Referenzkonfigurationsdatei (RCF).
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
+
+[role="lead"]
+Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben.
 
 .Bevor Sie beginnen
-Stellen Sie Folgendes sicher:
+Überprüfen Sie die folgenden Installationen und Verbindungen:
 
 * Eine Konsolenverbindung zum Switch. Die Konsolenverbindung ist optional, wenn Sie Remote-Zugriff auf den Switch haben.
-* Switch cs1 und Switch cs2 werden eingeschaltet und die Ersteinrichtung des Switches ist abgeschlossen (Management-IP-Adresse und SSH sind eingerichtet)
+* Switch cs1 und Switch cs2 werden eingeschaltet und die Ersteinrichtung des Switches ist abgeschlossen (die Management-IP-Adresse und SSH sind eingerichtet).
 * Die gewünschte NX-OS-Version wurde installiert.
 * ISL-Verbindungen zwischen Switches sind angeschlossen.
 * Die ONTAP Node-Cluster-Ports sind nicht verbunden.
@@ -14,7 +25,7 @@ Stellen Sie Folgendes sicher:
 
 
 
-=== Schritt 1: Installieren Sie die RCF auf den Schaltern
+== Schritt 1: Installieren Sie die RCF auf den Schaltern
 
 . Melden Sie sich an, um cs1 über SSH oder über eine serielle Konsole zu wechseln.
 . Kopieren Sie den RCF mit einem der folgenden Übertragungsprotokolle auf den Bootflash von Switch cs1: FTP, TFTP, SFTP oder SCP.
@@ -140,7 +151,7 @@ Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im
 
 
 
-=== Schritt 2: Überprüfen Sie die Switch-Verbindungen
+== Schritt 2: Überprüfen Sie die Switch-Verbindungen
 
 . Stellen Sie sicher, dass die mit den Cluster-Ports verbundenen Switch-Ports *up* sind.
 +
@@ -350,7 +361,7 @@ cs1#
 
 
 
-=== Schritt 3: Richten Sie Ihren ONTAP-Cluster ein
+== Schritt 3: Richten Sie Ihren ONTAP-Cluster ein
 
 NetApp empfiehlt, zum Einrichten neuer Cluster System Manager zu verwenden.
 
