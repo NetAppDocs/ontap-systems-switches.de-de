@@ -16,5 +16,4 @@ So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2-
 . link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
 . link:install-nxos-software-9336c-storage.html["Installieren Sie die NX-OS-Software"].
 . link:install-nxos-rcf-9336c-storage.html["Installieren Sie die RCF-Konfigurationsdatei"].
-. link:configure-ssh.html["Aktivieren Sie SSH"].
 

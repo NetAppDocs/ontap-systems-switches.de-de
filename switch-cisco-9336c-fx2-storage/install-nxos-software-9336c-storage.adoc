@@ -694,4 +694,4 @@ Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie m
 
 
 .Was kommt als Nächstes?
-link:install-nxos-rcf-9336c-storage.html["Installieren Sie die RCF-Konfigurationsdatei"].
+link:install-rcf-software-9336c-storage.html["Installieren Sie RCF"].

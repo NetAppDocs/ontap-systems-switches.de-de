@@ -2631,7 +2631,6 @@
   <block id="feb8e402dbfa149a080f8f87ee22069f" category="list-text">Die Node-Namen sind cluster1-01, cluster1-02, cluster1-03 und cluster1-04.</block>
   <block id="1a4c52cc090c463e0a3949fd93af9ca2" category="section-title">Installieren Sie die Software</block>
   <block id="ec8855627efbb26afaa912164ff82dbd" category="inline-link-macro">Installieren Sie die RCF-Konfigurationsdatei</block>
-  <block id="afe6bd84cf9f314186e891843eba49cc" category="paragraph"><block ref="41aae7f405e62aa01d791efeede3f9c2" category="inline-link-macro-rx"></block>.</block>
   <block id="2563a96fdb66dda5382058af89e8a58c" category="paragraph-title">Switch- und Node-Terminologie</block>
   <block id="a2d07f4e7a36ed872e60c08cdcc73771" category="doc">Migration auf Cluster mit zwei Nodes</block>
   <block id="5b1bedb3dd2208af0449bbbfcc022136" category="paragraph">Wenn Sie über eine bestehende Cluster-Umgebung mit zwei Nodes (ohne Switch) verfügen, können Sie mit Cisco Nexus 9336C-FX2 Switches zu einer 2-Node-_Switched_-Cluster-Umgebung migrieren, um eine Skalierung über zwei Nodes im Cluster hinaus zu ermöglichen.</block>
@@ -2818,7 +2817,6 @@
   <block id="c35204e874fcafc94c7c67e31162e966" category="paragraph">Stellen Sie sicher, dass die automatische Umrüstung deaktiviert ist, nachdem Sie diesen Befehl ausgeführt haben.</block>
   <block id="d08074ca4afc3cad1b1b41c1134b3f1e" category="section-title">Schritt 2: Konfigurieren und überprüfen Sie das Setup</block>
   <block id="b6ec5ccd50e4a92a636c1dc432c89581" category="admonition">Es kann bis zu 5 Minuten dauern, bis die Cluster-Nodes einen ordnungsgemäßen Zustand melden.</block>
-  <block id="442f3bc68fd4ab1c760b482d02f7ca71" category="list-text">Wiederholen Sie die Schritte 1 bis 10 am Schalter cs1.</block>
   <block id="af4d9c4c765c5c1d9c279c35191c82da" category="paragraph"><block ref="e39b44798f52b1532971ab295180e1b0" prefix="" category="inline-code"></block></block>
   <block id="a96967612c6864aa22be45f265f4c533" category="paragraph">Befolgen Sie diese Vorgehensweise, um einen fehlerhaften Cisco Nexus 3132Q-V Switch in einem Cluster-Netzwerk zu ersetzen. Beim Austausch handelt es sich um einen unterbrechungsfreien Vorgang (Non-Disruptive Procedure, NDO).</block>
   <block id="f3f6fdd1ea886344c6b4f8b4ee91d661" category="paragraph-title">Switch-Anforderungen</block>
@@ -5185,4 +5183,15 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="6697bf1c75a0d4d8868afeab04858bc3" category="sidebar">Upgrade_switches_3232C</block>
   <block id="253d101ba7a8a0f1e24c1a3b13a1b5b5" category="sidebar">Install_Upgrade_rcf</block>
   <block id="2b8efdb0e77054ffe22b4bfb75564155" category="sidebar">RCF-Übersicht installieren oder aktualisieren</block>
+  <block id="b6503bc6a2e6ede86368a60473711626" category="list-text">Wiederholen Sie die Schritte 1 bis 11 am Schalter cs1.</block>
+  <block id="604f0b8e46b056f4f2f05bb3ea87a5a7" category="inline-link-macro">Installieren Sie RCF</block>
+  <block id="f398a91a8a2500b4ebd90095482c2638" category="paragraph"><block ref="032b77b792344ea711cbb6f8f0bfe3cc" category="inline-link-macro-rx"></block>.</block>
+  <block id="ea6719e8ba4a5a7aea0b4185afc5408b" category="summary">Sie können den RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Speicherschalters installieren. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.</block>
+  <block id="fc3ebe0c41be566a2062e99eee81c6ba" category="paragraph">Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Speicherschalter zum ersten Mal eingerichtet haben.</block>
+  <block id="0d54a8a99337a48199414ba38d122135" category="list-text">Switch cs1 und Switch cs2 werden eingeschaltet und die Ersteinrichtung des Switches ist abgeschlossen (die Management-IP-Adresse und SSH sind eingerichtet).</block>
+  <block id="f1de50ac922202c9581e806906499ae8" category="paragraph">Dieses Beispiel zeigt die RCF<block ref="fcd688c0fb8c0256c7fc0b5ca2fd673d" prefix=" " category="inline-code"></block>, die auf Switch cs1 installiert wird:</block>
+  <block id="a697c9a980376d3a62210b2b53d5b0b8" category="list-text">Überprüfen Sie die Bannerausgabe des<block ref="6d53824b9996e36fd31937e922967215" prefix=" " category="inline-code"></block> Befehls. Sie müssen diese Anweisungen lesen und befolgen, um die richtige Konfiguration und den korrekten Betrieb des Switches sicherzustellen.</block>
+  <block id="b0d1465a243b273a8f71d6084fd2c12c" category="list-text">Stellen Sie sicher, dass der RCF die richtige neuere Version ist:</block>
+  <block id="7fd5f97719ed93b62ce57a2401ebb179" category="list-text">Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Startup-config-Datei:</block>
+  <block id="f7b017d791fb57f4bbb1b2ce01659ed8" category="paragraph">System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Einrichtung und -Konfiguration, einschließlich der Zuweisung einer Node-Management-IP-Adresse, Initialisierung des Clusters, Erstellung eines lokalen Tiers, Konfiguration von Protokollen und Bereitstellung des anfänglichen Storage.</block>
 </blocks>

@@ -621,7 +621,7 @@ cluster1-04          true     true          false
 cluster1::*>
 ----
 ====
-. Wiederholen Sie die Schritte 1 bis 10 am Schalter cs1.
+. Wiederholen Sie die Schritte 1 bis 11 am Schalter cs1.
 . Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
 +
 .Beispiel anzeigen
