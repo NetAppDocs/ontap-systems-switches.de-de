@@ -1606,9 +1606,7 @@
   <block id="f3f7e5eecbbda44d56a585304c3a8d15" category="paragraph">FIPS-konform</block>
   <block id="ba9e418ff064efca86945643e9b87680" category="list-text">Verbinden Sie den BES-53248-Cluster-Switch mit dem Managementnetzwerk.</block>
   <block id="674d78e1dac3bea340dfeacf46be187b" category="list-text">Verwenden Sie die<block ref="df911f0151f9ef021d410b4be5060972" prefix=" " category="inline-code"></block> Befehl zum Überprüfen der Verbindung mit dem Server, der EFOS, Lizenzen und der RCF-Datei hostet.</block>
-  <block id="c95aaaacb482fe42dce56ee7cd8615a6" category="list-text">Sichern Sie das aktuelle aktive Bild auf cs2:</block>
   <block id="2ab6a6c6e3efa9ded96d007db3c8ddd6" category="paragraph"><block ref="d952dcd329fa507e9e731ce0c7d8dbc1" prefix="" category="inline-code"></block></block>
-  <block id="19cb75d1f662e01942f8d897534baeb7" category="list-text">Überprüfen Sie die laufende Version der EFOS-Software:</block>
   <block id="6c3f6a049adc76db29ca1df525b7c235" category="list-text">Laden Sie die Bilddatei auf den Switch herunter.</block>
   <block id="9f5a2906a0e63ca6b46604a272791779" category="paragraph">Durch Kopieren der Bilddatei auf das aktive Image wird bei einem Neustart die aktuell ausgeführte EFOS-Version erstellt. Das vorherige Bild bleibt als Backup verfügbar.</block>
   <block id="f471b461fb47a6debd83122cd8a01983" category="list-text">Anzeigen der Boot-Images für die aktive und die Backup-Konfiguration:</block>
@@ -2698,7 +2696,6 @@
   <block id="f8a26b1330fe6b7b741993630dd932e2" category="list-text">Überprüfen Sie, ob die Cluster-LIFs auf ihre Home-Ports zurückgesetzt wurden (dies kann eine Minute dauern):</block>
   <block id="65201dcfc7c620613613b15eb161d307" category="paragraph">Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Sie sie manuell zurück:</block>
   <block id="88fb2189d22d2886ab33f16fdca0bb5b" category="paragraph"><block ref="7eaac8e45910aa8bf3a06f6966ab0656" prefix="" category="inline-code"></block></block>
-  <block id="ea4cd01e183524e8bbb487095fe3c5d9" category="list-text">Die aktuelle RCF-Datei.</block>
   <block id="03c93e08ed4f9a68f6b404202d454262" category="list-text">Eine Boot-Konfiguration im RCF, die die gewünschten Boot-Images wiedergibt, erforderlich, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten. Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.</block>
   <block id="a0f6e8eb6b5f6a47b9079727da7ff23a" category="list-text">Eine Konsolenverbindung mit dem Switch, die bei der Installation des RCF erforderlich ist.</block>
   <block id="adbc02a7e46081db3727786cb62cdc0f" category="list-title">Vorgeschlagene Dokumentation</block>
@@ -3200,7 +3197,6 @@
   <block id="5e13628627abec712f77b1d757bfe59f" category="list-text">Lesen Sie die folgenden Hinweise zu EFOS-Versionen.</block>
   <block id="9b2d3fb1dc09edda79dfe09e637f9716" category="list-text">Ab EFOS Version 3.7.x.x oder höher ist eine FIPS-konforme Version und eine FIPS-konforme Version verfügbar. Verschiedene Schritte gelten für den Wechsel von einer nicht FIPS-konformen Version auf eine FIPS-konforme Version oder umgekehrt. Wenn EFOS von einer nicht FIPS-konformen Version oder umgekehrt geändert wird, wird der Switch auf die Werkseinstellungen zurückgesetzt. Für dieses Verfahren ist ein Zugriff über den seriellen Konsolen-Port erforderlich.</block>
   <block id="7f824481c3b83fffcad8abfa0af8b312" category="inline-link">NDU für Cluster-Switch BES-53248 konnte nicht auf EFOS 3.7.0.4 und höher aktualisiert werden</block>
-  <block id="cec6ec2be042120b7ff4b5d0f1e40dee" category="admonition">Beachten Sie, dass nach dem Upgrade von BES-53248-Cluster-Switches von EFOS 3.3.x.x oder 3.4.x.x auf EFOS 3.7.0.4 oder 3.8.0.2 Inter-Switch Links (ISLs) und Port Channel im Status *Down* markiert sind. Lesen Sie diesen KB-Artikel:<block ref="eb6085a70a8e8bb2aba905d5e75797ab" category="inline-link-rx"></block> Entnehmen.</block>
   <block id="0fa8ca6cfd731f93388f2f318c1fb1d3" category="paragraph">Verwenden Sie eine der folgenden Methoden:</block>
   <block id="420b291d479da153c96fd1143e9d0e2f" category="list-text"><block ref="c306cecb30107650b346d91b7d7c74b6" category="inline-xref-macro-rx"></block>. Verwenden Sie diese Option, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist.</block>
   <block id="fa6c2d2a92519a714fe25ca830427ee1" category="section-title">Methode 1: EFOS installieren</block>
@@ -3757,7 +3753,6 @@
   <block id="73cb4c03f2757beb35ad69fd322003be" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="e0b55f136d815f7a36c41fd7fe28e0fd" category="inline-link-macro-rx"></block>Entnehmen.</block>
   <block id="12bc639206c2ca12e8a65041a697e4fc" category="paragraph">Gehen Sie zu<block ref="c686ee523547302c3fa5199eafd95753" category="inline-link-rx"></block>.</block>
   <block id="6446fc62a2115815d4bdbe55f18815c1" category="list-text"><block ref="47109c7943148b2a9617cfcb4b49a79f" category="inline-link-macro-rx"></block>.</block>
-  <block id="22eb01d1e7d6584a0da20f490dc5af77" category="paragraph"><block ref="22eb01d1e7d6584a0da20f490dc5af77" category="inline-link-macro-rx"></block></block>
   <block id="6f773061a9b11739f4b04a8b170f8f8e" category="paragraph">Je nach Konfiguration können Sie dies tun <block ref="bd7e5f56c6474a1d0a59eeac0ce681d7" category="inline-link-macro-rx"></block>. Andernfalls fahren Sie mit fort <block ref="cd3d2c6d0c8a0c43f0a0e10375ad6bbc" category="inline-link-macro-rx"></block>.</block>
   <block id="7f81bc06b8e7a4bfd515767a4b4385fe" category="list-text">[[Schritt6]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="2b888f1fbb1010b5a426f7a2a88e0914" category="list-text">[[step 12]] ersetzen Sie die Speicher-RCF-Datei auf Shared-Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
@@ -4441,9 +4436,7 @@ Bild:../media/FEC_copper_table.jpg[25G Ports mit Kupferkabel]</block>
   <block id="32559ee483b61b36141f9b9e0f4bbfff" category="paragraph">In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen auf der NetApp Support-Website. Beachten Sie, dass es zwischen der Befehlssyntax in der RCF und der Syntax in bestimmten Versionen von NX-OS Befehlssyntax bestehen kann.</block>
   <block id="ad0d19783ccfa19f931108b838e4b7e4" category="list-text"><block ref="ad0d19783ccfa19f931108b838e4b7e4" category="inline-link-macro-rx"></block></block>
   <block id="79509ba15c2970f327dd8610e3b4628c" category="paragraph-title">Verwendete Befehle</block>
-  <block id="1ad593dd61af4356ce9ba12d276c4336" category="section-title">Option 1: Installieren Sie die RCF-Datei auf einem neuen Switch</block>
   <block id="d061b4842fee7f503446ba29253d182f" category="paragraph">Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben.</block>
-  <block id="121f18688d36f2438eb17eb52e61e7e8" category="section-title">Option 2: Upgrade vorhandener Switches mit einer neuen RCF-Version</block>
   <block id="eba0713505eba2aab08d4d6fa9ca2cf7" category="paragraph">Sie aktualisieren Ihre RCF-Version, wenn auf Ihren Betriebsschaltern eine vorhandene Version der RCF-Datei installiert ist.</block>
   <block id="ddd0020a0684c14dbd50622f84d8917a" category="paragraph">Stellen Sie sicher, dass Sie Folgendes haben:</block>
   <block id="28dbd722b252673fdce3f809670e34b8" category="list-text">Wenn Sie Ihre RCF-Version aktualisieren, benötigen Sie eine Startkonfiguration im RCF, die die gewünschten Startabbilder widerspiegelt.</block>
@@ -4549,8 +4542,6 @@ Setzen Sie den Schalter auf die Werkseinstellungen zurück, und wenden Sie die R
   <block id="56e7024dc2e812be7449228dc66597d9" category="admonition">Aktualisieren Sie EFOS auf jeweils einem Switch, um den kontinuierlichen Betrieb des Cluster-Netzwerks sicherzustellen.</block>
   <block id="c3e2e765c3744c1b19452b2f233fdd15" category="section-title">Methode 1: Aktualisieren Sie EFOS</block>
   <block id="c117ec58c236a456904edaa76f1cc5a9" category="paragraph">Führen Sie die folgenden Schritte durch, um die EFOS-Software zu aktualisieren.</block>
-  <block id="061be1b61be0d3e5b21e6a5912639344" category="admonition">Wenn Sie Lizenzen installiert haben, überprüfen Sie deren Status.</block>
-  <block id="84d3d1386241334d40a809878bbb05d9" category="list-text">Wiederholen Sie die Schritte 5 bis 10 am Switch cs1.</block>
   <block id="83b8a0042e3650c5af884c9601f53043" category="inline-link-macro">Zurücksetzen eines LIF auf seinen Home Port</block>
   <block id="870c6c263570c51afc056f510d552e1f" category="paragraph">Weitere Informationen finden Sie unter <block ref="b9ea844d3dd5520c7767de46f1c99a2b" category="inline-link-macro-rx"></block>.</block>
   <block id="d0dc5dfd4c3b3be079653b7f0ac8d844" category="paragraph">Sie können die folgenden Schritte durchführen, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist. Mit diesen Schritten kann das nicht-FIPS- oder FIPS-konforme EFOS 3.7.x.x-Image von ONIE aktualisiert werden, wenn der Switch nicht startet.</block>
@@ -4784,7 +4775,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="e4da4813fef5b96a216a043d594bf245" category="list-text">Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. <block ref="75ce5666fba6992a0719935651dd5b1b" category="inline-link-macro-rx"></block>Weitere Informationen zu erforderlichen Änderungen finden Sie unter.</block>
   <block id="bdbcf1c0d7f9cba19eb12819b953fbf1" category="inline-link">Kein Quorum mehr aus dem Node bei der Migration von LIF auf Cluster während des Upgrades des Switch-Betriebssystems</block>
   <block id="e6ab3c0f7886a69b4cd4dc70d1d4afa9" category="admonition">Stellen Sie sicher, dass Sie *alle* verbundenen Cluster-Ports herunterfahren, um Probleme mit der Netzwerkverbindung zu vermeiden. <block ref="c9b140831402716d03d51afcd09ff177" category="inline-link-rx"></block>Weitere Informationen finden Sie im Knowledge Base-Artikel.</block>
-  <block id="263b9f10fe7e073e656b08a5b6da7e5a" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. <block ref="cd25cbe53f0a314145c84729c6ce2c78" category="inline-link-rx"></block>Überprüfen Sie im die richtigen Cluster-Ports auf Ihren Plattformen.</block>
   <block id="fc9b57bfb616bf5697d55f4dc656cead" category="inline-link-macro">SSH-Konfiguration überprüfen</block>
   <block id="1046b0a81eea5dae9091290036b99362" category="paragraph"><block ref="4767a0bcf3ab94aeda87c79dd4096ef4" category="inline-link-macro-rx"></block>.</block>
   <block id="95baf91c437105360687405b916b57fa" category="list-text">Verschlüsseln Sie die SSH-Schlüssel (nur für *FIPS-Modus*):</block>
@@ -5142,7 +5132,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="5f9610f3409d9abe96cc344156486c5e" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="4c0a19683ab4dd37cd0517d25639fa78" category="inline-link-macro-rx"></block></block>
   <block id="e796841df950e342f76a5b538574f5f6" category="paragraph">Führen Sie die Migration zu einem Switch-Cluster mit zwei Nodes durch.</block>
   <block id="e4ff582cba38e556dc88b3e74baf1ec1" category="paragraph">Ungelöste Direktive in &lt;stdin&gt; - include:../_include/install-rcf-Software-9336c-Cluster.adoc[]</block>
-  <block id="688523fe289426758745102b5d3ea37f" category="paragraph">Ungelöste Direktive in &lt;stdin&gt; - include:../_include/Upgrade-rcf-Software-9336c-Cluster.adoc[]</block>
   <block id="1ececed2a569720ced41e9cd50d7b238" category="list-text">Switch cs1 und Switch cs2 werden eingeschaltet und die Ersteinrichtung des Switches ist abgeschlossen (die Management-IP-Adresse und SSH sind eingerichtet).</block>
   <block id="c3109b36f2c8edda93835ccefa0e4dc3" category="doc">Installieren oder aktualisieren Sie die Übersicht über die Referenzkonfigurationsdatei (RCF)</block>
   <block id="6d7b8066e6c7166408cb61e68a705e7f" category="list-text">Die Namen der beiden Cisco-Switches lauten *cs1* und *cs2*.</block>
@@ -5151,7 +5140,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="1c319a6cce094508e045c5bb62d6664e" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Knoten verwenden zwei 10GbE Cluster Interconnect Ports *e0a* und *e0b*. <block ref="cd25cbe53f0a314145c84729c6ce2c78" category="inline-link-rx"></block>Überprüfen Sie im die richtigen Cluster-Ports auf Ihren Plattformen.</block>
   <block id="88870df2dabeaf8bc50daf8d504498e0" category="inline-link-macro">Aktualisieren Sie Ihren RCF</block>
   <block id="d1d882c0929e664f5d3052ad227ecec9" category="paragraph"><block ref="51640e6af8359470cbd047034716b7ac" category="inline-link-macro-rx"></block> Oder <block ref="d9cc2c4eec198e8f90466b5b89bfc33e" category="inline-link-macro-rx"></block>.</block>
-  <block id="fd7fe8bcb397a94d6c1c59e351072eac" category="doc">Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF)</block>
   <block id="df73b0f89510f793b71a90bf50d82c10" category="list-text">Der aktuelle RZB.</block>
   <block id="85e086d364dc39fb9a01f1b57e7afc52" category="list-text">ONTAP 9.10.1P3 und höher</block>
   <block id="e6645191453a89d37ca94dbd791a1499" category="paragraph">Der SN2100-Switch dient Cluster- und Speicheranwendungen in ONTAP 9.10.1P3 und höher über verschiedene Switch-Paare.</block>
@@ -5194,4 +5182,15 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="b0d1465a243b273a8f71d6084fd2c12c" category="list-text">Stellen Sie sicher, dass der RCF die richtige neuere Version ist:</block>
   <block id="7fd5f97719ed93b62ce57a2401ebb179" category="list-text">Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Startup-config-Datei:</block>
   <block id="f7b017d791fb57f4bbb1b2ce01659ed8" category="paragraph">System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Einrichtung und -Konfiguration, einschließlich der Zuweisung einer Node-Management-IP-Adresse, Initialisierung des Clusters, Erstellung eines lokalen Tiers, Konfiguration von Protokollen und Bereitstellung des anfänglichen Storage.</block>
+  <block id="7ff4d12d3e81fb159ea571275dbbb3fd" category="admonition">Beachten Sie, dass nach dem Upgrade von BES-53248-Cluster-Switches von EFOS 3.3.x.x oder 3.4.x.x auf EFOS 3.7.0.4 oder 3.8.0.2 Inter-Switch Links (ISLs) und Port-Kanäle im Status *Down* markiert sind. Dies ist erwartetes Verhalten, und es ist sicher, mit dem Upgrade fortzufahren, es sei denn, Sie haben Probleme mit dem automatischen Zurücksetzen von LIFs. Weitere Informationen finden Sie im Knowledge Base Artikel:<block ref="eb6085a70a8e8bb2aba905d5e75797ab" category="inline-link-rx"></block></block>
+  <block id="4624388fca013386d1c7314566aa1510" category="list-text">Starten Sie das System von der Backup-Konfiguration aus:</block>
+  <block id="ae791522c9f7834f0edc56277ffe2340" category="paragraph"><block ref="f2210f21804aee53def01718125f3f18" prefix="" category="inline-code"></block></block>
+  <block id="892854a85c10d8b7b832a094d0b2b95e" category="list-text">Wiederholen Sie die Schritte 5 bis 11 am Switch cs1.</block>
+  <block id="b0411eb90c7d5ca211940fcb5d8f219a" category="doc">Aktualisieren der Referenzkonfigurationsdatei (RCF)</block>
+  <block id="657454366cb4a451c5905310b7f4d2cc" category="paragraph">Sie können die Referenzkonfigurationsdatei (RCF) nach dem ersten Einrichten des Nexus 9336C-FX2-Switches installieren.</block>
+  <block id="34b61fdbe20d7b5fdf2f4d5655d2dc71" category="list-text">ISL-Verbindungen (Inter-Switch Link) zwischen Switches sind angeschlossen.</block>
+  <block id="5e9fc634461251750aac2012c638665a" category="doc">Aktualisieren der Referenzkonfigurationsdatei (RCF)</block>
+  <block id="9129459f5b5477d59e1fbb13abc9bbd4" category="admonition">Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein oder grundlegende Konfigurationsinformationen beibehalten haben, bevor Sie die Switch-Einstellungen löschen.</block>
+  <block id="4c4876d5d981da2e6943a052d93bb189" category="list-text">Verwenden Sie für NX-OS 10.2 und höher den Befehl,<block ref="9c370f72db0e0d920841657ac5268365" prefix=" " category="inline-code"></block> um mit der gespeicherten RCF-Datei im Bootflash zu vergleichen. Verwenden Sie andernfalls ein diff- oder Vergleichstool eines Drittanbieters.</block>
+  <block id="0a306731a6993e7a08026ab2d7ca2d97" category="paragraph">Möglicherweise müssen Sie die Einträge der Host-Datei im Zusammenhang mit den SSH-Schlüsseln aktualisieren.</block>
 </blocks>

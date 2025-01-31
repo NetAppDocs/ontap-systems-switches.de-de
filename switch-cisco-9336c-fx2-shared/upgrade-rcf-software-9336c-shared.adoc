@@ -1,5 +1,5 @@
 ---
-permalink: switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html 
+permalink: switch-cisco-9336c-fx2-shared/upgrade-rcf-software-9336c-shared.html 
 sidebar: sidebar 
 keywords: install rcf, cisco switches 
 summary: Sie können das RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Schalters installieren.Sie können auch dieses Verfahren verwenden, um Ihre RCF-Version zu aktualisieren. 
@@ -249,7 +249,7 @@ cluster1::*>
 
 +
 .. Notieren Sie alle benutzerdefinierten Ergänzungen zwischen der aktuellen Running-config und der verwendeten RCF-Datei (z. B. eine SNMP-Konfiguration für Ihr Unternehmen).
-.. Verwenden Sie für NX-OS 10.2 und neuer die `show diff running-config` Befehl zum Vergleich mit der gespeicherten RCF-Datei im Bootflash.  Verwenden Sie andernfalls ein Werkzeug zum Vergleichen/Vergleichen des dritten Teils.
+.. Verwenden Sie für NX-OS 10.2 und höher den Befehl, `show diff running-config` um mit der gespeicherten RCF-Datei im Bootflash zu vergleichen. Verwenden Sie andernfalls ein diff- oder Vergleichstool eines Drittanbieters.
 
 
 . Speichern Sie die grundlegenden Konfigurationsdetails in der Datei write_erase.cfg auf dem Bootflash.
@@ -903,4 +903,4 @@ RPC status:
 --
 ====
 .Was kommt als Nächstes?
-link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"].
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
