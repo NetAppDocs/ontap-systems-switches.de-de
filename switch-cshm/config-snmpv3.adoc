@@ -27,25 +27,25 @@ Die folgenden Befehle werden verwendet, um einen SNMPv3-Benutzernamen auf den Sw
 ====
 .Broadcom-Switches
 --
-Konfigurieren Sie einen NETZWERKBETREIBER für SNMPv3-Benutzernamen auf Broadcom BES-53248-Switches.
+Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf Broadcom BES-53248-Switches.
 
 * Für *keine Authentifizierung*:
 +
 [source, cli]
 ----
-snmp-server user SNMPv3UserNoAuth NETWORK-OPERATOR noauth
+snmp-server user SNMPv3UserNoAuth SNMPv3_USER noauth
 ----
 * Für * MD5/SHA-Authentifizierung*:
 +
 [source, cli]
 ----
-snmp-server user SNMPv3UserAuth NETWORK-OPERATOR [auth-md5|auth-sha]
+snmp-server user SNMPv3UserAuth SNMPv3_USER [auth-md5|auth-sha]
 ----
 * Für *MD5/SHA-Authentifizierung mit AES/DES-Verschlüsselung*:
 +
 [source, cli]
 ----
-snmp-server user SNMPv3UserAuthEncrypt NETWORK-OPERATOR [auth-md5|auth-sha] [priv-aes128|priv-des]
+snmp-server user SNMPv3UserAuthEncrypt SNMPv3_USER [auth-md5|auth-sha] [priv-aes128|priv-des]
 ----
 
 

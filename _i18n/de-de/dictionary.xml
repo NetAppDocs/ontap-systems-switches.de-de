@@ -4707,7 +4707,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="c76d1ab1bab3f2bc0c89856d8d6e3d40" category="paragraph">Gehen Sie wie folgt vor, um SNMPv3 für Ihren speziellen Switch zu konfigurieren, der CSHM unterstützt.</block>
   <block id="5fb3828593766d454e79a0dcf52fed9d" category="paragraph">Die folgenden Befehle werden verwendet, um einen SNMPv3-Benutzernamen auf den Switches *Broadcom*, *Cisco* und *NVIDIA* zu konfigurieren:</block>
   <block id="77f3beca20fcd78f77236507e8d9b4af" category="open-title">Broadcom-Switches</block>
-  <block id="89fe808c6ef5fe301085b5abe4406d35" category="paragraph">Konfigurieren Sie einen NETZWERKBETREIBER für SNMPv3-Benutzernamen auf Broadcom BES-53248-Switches.</block>
   <block id="c59df2c71925eefec8dc03aa685125c8" category="list-text">Für *keine Authentifizierung*:</block>
   <block id="4c58055d9b16c25c354c591188cb27ae" category="list-text">Für * MD5/SHA-Authentifizierung*:</block>
   <block id="b00500f501ccb5c8ab2313d810b6ff29" category="list-text">Für *MD5/SHA-Authentifizierung mit AES/DES-Verschlüsselung*:</block>
@@ -5193,4 +5192,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="9129459f5b5477d59e1fbb13abc9bbd4" category="admonition">Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein oder grundlegende Konfigurationsinformationen beibehalten haben, bevor Sie die Switch-Einstellungen löschen.</block>
   <block id="4c4876d5d981da2e6943a052d93bb189" category="list-text">Verwenden Sie für NX-OS 10.2 und höher den Befehl,<block ref="9c370f72db0e0d920841657ac5268365" prefix=" " category="inline-code"></block> um mit der gespeicherten RCF-Datei im Bootflash zu vergleichen. Verwenden Sie andernfalls ein diff- oder Vergleichstool eines Drittanbieters.</block>
   <block id="0a306731a6993e7a08026ab2d7ca2d97" category="paragraph">Möglicherweise müssen Sie die Einträge der Host-Datei im Zusammenhang mit den SSH-Schlüsseln aktualisieren.</block>
+  <block id="8b4a2ab0394283209f67c0b0e8ca9f94" category="list-text">Für die Protokollerfassung mit Broadcom- und Cisco-Switches sollte für jedes Setup ein neuer Benutzer auf dem Switch erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.</block>
+  <block id="1d768064a88b1cd8a98efaa14d7f9949" category="paragraph">Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf Broadcom BES-53248-Switches.</block>
 </blocks>
