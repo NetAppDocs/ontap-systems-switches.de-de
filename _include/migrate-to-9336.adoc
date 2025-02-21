@@ -252,7 +252,7 @@ cs2                         cluster-network     10.233.205.93   N5K-C5596UP
 ====
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs.
+. [[step_4]]Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs.
 +
 Wenn Sie die automatische Zurücksetzung für dieses Verfahren deaktivieren, werden die Cluster-LIFs nicht automatisch zurück zu ihrem Home Port verschoben. Sie verbleiben im aktuellen Port, während er weiterhin betriebsbereit ist.
 
@@ -267,8 +267,12 @@ NOTE: Durch die Deaktivierung der automatischen Zurücksetzung wird sichergestel
 +
 [listing, subs="+quotes"]
 ----
+cs2# *configure*
 cs2(config)# *interface eth1/1-1/2*
 cs2(config-if-range)# *shutdown*
+cs2(config-if-range)# *exit*
+cs2(config)# *exit*
+cs2#
 ----
 . Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
 +
@@ -308,7 +312,61 @@ node1      true    true          false
 node2      true    true          false
 ----
 ====
-. Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten cs2-Switch auf den neuen cs2-New-Switch.
+. Wenn die Cluster-LIFs ein Failover für den Switch cs1 durchgeführt haben und der Cluster sich in <<step_10,Schritt. 10>>einem ordnungsgemäßen Zustand befindet, fahren Sie mit fort. Wenn einige Cluster-LIFs nicht ordnungsgemäß arbeiten oder das Cluster nicht funktionsfähig ist, können Sie wie folgt ein Rollback der Konnektivität zum Switch cs2 durchführen:
++
+.. Die mit den Cluster-Ports von *all* verbundenen Ports aufrufen die Knoten:
++
+[listing, subs="+quotes"]
+----
+cs2# *configure*
+cs2(config)# *interface eth1/1-1/2*
+cs2(config-if-range)# *no shutdown*
+cs2(config-if-range)# *exit*
+cs2(config)# *exit*
+cs2#
+----
+.. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
++
+`network interface show -vserver Cluster`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -vserver Cluster*
+            Logical       Status     Network            Current    Current Is
+Vserver     Interface     Admin/Oper Address/Mask       Node       Port    Home
+----------- ------------- ---------- ------------------ ---------- ------- ----
+Cluster
+            node1_clus1   up/up      169.254.3.4/16     node1      e0a     true
+            node1_clus2   up/up      169.254.3.5/16     node1      e0a     false
+            node2_clus1   up/up      169.254.3.8/16     node2      e0a     true
+            node2_clus2   up/up      169.254.3.9/16     node2      e0a     false
+----
+====
+.. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
++
+`cluster show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> cluster show
+Node       Health  Eligibility   Epsilon
+---------- ------- ------------- -------
+node1      true    true          false
+node2      true    true          false
+----
+====
+
+
+. Sobald Sie die LIF und den Clusterzustand wiederhergestellt haben, starten Sie den Prozess von neu<<step_4,Schritt. 4>>.
+. [[Step_10]]Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten cs2-Switch auf den neuen cs2-New-Switch.
 +
 *Clusterknoten-Verbindungskabel wurden auf den cs2-New Switch* verlegt
 
@@ -385,8 +443,12 @@ cs2-new# *show cdp neighbors*
 +
 [listing, subs="+quotes"]
 ----
+cs1# *configure*
 cs1(config)# *interface eth1/1-1/2*
 cs1(config-if-range)# *shutdown*
+cs1(config-if-range)# *exit*
+cs1(config)# *exit*
+cs1#
 ----
 +
 Alle Cluster-LIFs führen einen Failover zum cs2-neuen Switch durch.

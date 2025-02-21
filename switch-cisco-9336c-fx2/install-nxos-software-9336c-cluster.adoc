@@ -694,4 +694,4 @@ Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie m
 
 
 .Was kommt als Nächstes?
-link:install-nxos-rcf-9336c-cluster.html["Referenzkonfigurationsdatei (RCF) installieren oder aktualisieren"]
+link:install-upgrade-rcf-overview-cluster.html["Referenzkonfigurationsdatei (RCF) installieren oder aktualisieren"]

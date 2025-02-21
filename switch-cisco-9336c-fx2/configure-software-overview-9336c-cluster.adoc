@@ -21,7 +21,7 @@ Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien (RCFs) müssen au
 +
 Laden Sie die NX-OS-Software auf dem Cisco Nexus 9336C-FX2 Cluster-Switch herunter, und installieren Sie sie, oder aktualisieren Sie sie.
 
-. link:install-nxos-rcf-9336c-cluster.html["Installieren oder aktualisieren Sie den RCF"].
+. link:install-upgrade-rcf-overview-cluster.html["Installieren oder aktualisieren Sie den RCF"].
 +
 Installieren oder aktualisieren Sie den RCF, nachdem Sie den Cisco Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
 

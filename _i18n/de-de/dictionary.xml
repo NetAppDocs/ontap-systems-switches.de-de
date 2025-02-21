@@ -600,19 +600,10 @@
   <block id="d51ed7f10b5732d6e9ec975c89648212" category="list-text">Überprüfen Sie die Konfigurationseinstellungen, die Sie am Ende der Einrichtung in der Anzeige vorgenommen haben, und stellen Sie sicher, dass Sie die Konfiguration speichern.</block>
   <block id="70399670eb37f7ebf7bbd91e15766e17" category="inline-link">Cisco Ethernet-Switches</block>
   <block id="f4041989c699a535116c689437df5c7f" category="inline-link">NetApp Software-Download</block>
-  <block id="474f795914b70c8d0fc4aa239c11011e" category="list-text">Laden Sie die ZIP-Datei für die Cluster-Switch-Systemzustandsüberwachung auf Basis der entsprechenden ONTAP Release-Version herunter. Diese Datei ist im verfügbar<block ref="cb382f539d8e67a00135c8306b3d74b6" category="inline-link-rx"></block> Seite.</block>
   <block id="87a71c7310f603842228cb9ab1b19ec2" category="list-text">Wählen Sie auf der Software-Download-Seite *Switch Health Monitor Configuration Files*</block>
-  <block id="71e7226148073765129cd7907345e8d0" category="list-text">Wählen Sie Plattform = *ONTAP* und klicken Sie auf *Los!*</block>
-  <block id="10ecf803d0b4415af42ea78c998ea4d0" category="list-text">Klicken Sie auf der Seite Switch Health Monitor Configuration Files for ONTAP auf *Anzeigen &amp; Download*</block>
-  <block id="7b5f1af07f17424faae23117b93de4fb" category="list-text">Klicken Sie auf der Seite Switch Health Monitor Configuration Files for ONTAP - Description auf *Download* für das entsprechende Cluster Switch-Modell, zum Beispiel: *Cisco Nexus 92300YC*</block>
-  <block id="89d871d0880e9496071a54d271f32095" category="list-text">Klicken Sie auf der Seite Endbenutzer-Lizenzvereinbarung auf *Akzeptieren*</block>
-  <block id="d9342955a19c127d0b1dd4e72f3e86b1" category="list-text">Wählen Sie auf der Seite Switch Health Monitor Configuration Files for ONTAP - Download die entsprechende Konfigurationsdatei aus, beispielsweise *Cisco_Nexus_92300YC.zip*</block>
   <block id="3a1759e54cb06a13c2c5b9b85a4c5282" category="list-text">Laden Sie die entsprechende Zip-Datei auf Ihren internen Webserver hoch, wobei DIE IP-Adresse X.X.X.X ist</block>
   <block id="903944fca05d1da45a504e69ed5609fb" category="paragraph">Für einen internen Webserver IP-Adresse von 192.168.2.20 und unter der Annahme, dass ein Verzeichnis /usr/download existiert, können Sie Ihre ZIP-Datei mit scp auf Ihren Webserver hochladen:</block>
-  <block id="eacf976afedcff2a1b48626c95df5ae6" category="list-text">Greifen Sie mit dem Befehl set-Privilege Advanced von einem der ONTAP Systeme im Cluster auf die Einstellung des erweiterten Modus zu:</block>
-  <block id="5b1c58aff8e7e4b9950fac4fb9b4f420" category="list-text">Führen Sie den Switch Health Monitor configure command System Cluster-Switch configure-Health-Monitor -Node * -package-url X. X. X. X. X. übers.X/location_to_download_zip_file aus:</block>
   <block id="f4ab3be3915b88f9d23c5faf297e78ff" category="list-text">Überprüfen Sie, ob die Befehlsausgabe den Textstring „das heruntergeladene Paket wurde erfolgreich verarbeitet“ enthält. Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.</block>
-  <block id="56900e070e593f86cfcbc92add3c9eda" category="admonition">Wenn Sie zu einem beliebigen Zeitpunkt auf eine frühere Version von ONTAP zurückkehren, müssen Sie die CSHM-Konfigurationsdatei erneut installieren, um die Überwachung des Switch-Funktionszustands von 92300YC-Clusterschaltern zu ermöglichen.</block>
   <block id="a4998c66149f8a98001c236183094243" category="summary">Zum Konfigurieren des Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für Ihre Switches. Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.</block>
   <block id="601b1c0673eb2ee2db12a0f15d9e12c3" category="paragraph">Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfigurationen:</block>
   <block id="31ecd7552867bf00e0a88fbcbfd147a0" category="list-text">IP-Subnetz für den Management-Netzwerkdatenverkehr</block>
@@ -3553,12 +3544,6 @@
   <block id="b37ec6b5e583c4d4165c4f6468ff4c8d" category="paragraph"><block ref="ec4312d0db3bce928129e7e5c3a58d73" category="inline-link-rx"></block> Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.</block>
   <block id="932e02f4dd5ce2afc5f1d337171bbe3b" category="paragraph">+ das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs2 sind:</block>
   <block id="a0913b1d0ca305ccc8a7cd70035752bf" category="paragraph">+ im folgenden Beispiel werden die benachbarten Geräte auf Switch cs2 aufgelistet:</block>
-  <block id="e14d75f19493380754a91f619e066d40" category="summary">Sie können dieses Verfahren verwenden, um die entsprechende Konfigurationsdatei für die Integritätsüberwachung des Cluster-Switch von Nexus 92300YC Cluster Switches zu installieren.</block>
-  <block id="1ff6e6ca835c55f7604fe145c9b7b1a0" category="paragraph">Befolgen Sie diese Vorgehensweise, um die betreffende Konfigurationsdatei für die Integritätsüberwachung des Cluster Switch von Nexus 92300YC Cluster Switches zu installieren.</block>
-  <block id="a83f4b45204cd2c802ce925a2c2acf4e" category="paragraph">Bei ONTAP Releases 9.5P7 und früher sowie 9.6P2 und früher müssen Sie die Konfigurationsdatei des Cluster Switch zur Systemzustandsüberwachung separat herunterladen. In ONTAP Versionen 9.5P8 und höher, 9.6P3 und höher und 9.7 und höher wird die Konfigurationsdatei des Cluster-Switch-Systemzustandsüberwachung mit ONTAP gebündelt.</block>
-  <block id="742faf5d1d23380cf8bd803a6d0e5587" category="paragraph">Bevor Sie die Switch-Systemzustandsüberwachung für 92300YC-Cluster-Switches einrichten, stellen Sie sicher, dass der ONTAP-Cluster aktiv ist.</block>
-  <block id="5b9e24c0df9b0a3c36ea2bc4f8f5689d" category="admonition">Sie sollten SSH auch aktivieren, um alle in CSHM verfügbaren Funktionen zu nutzen.</block>
-  <block id="9c25093bf19e7e3701836da707bde234" category="list-text">Führen Sie den Befehl System Cluster-Switch show auf dem ONTAP System aus und stellen Sie sicher, dass die Cluster-Switches erkannt werden, während das überwachte Feld auf „true“ gesetzt ist.</block>
   <block id="a0a9cbf20cafab0efc048f27174d4b6b" category="paragraph">Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem Nexus 92300YC-Switch zu installieren.</block>
   <block id="4467c0e8315716749952b403b5a34f1e" category="list-title">Unterstützte Ports und Node-Verbindungen</block>
   <block id="4f1029afef8c698983cd55b4b7196076" category="list-text">Anwendbare NetApp Cisco NX-OS Software für Ihre Switches über die NetApp Support Site, erhältlich über<block ref="7bc6752d2076d2c755eaebbdfeb91d23" category="inline-link-rx"></block></block>
@@ -3687,7 +3672,6 @@
   <block id="be822dc3c2f09a2076f72c87018d7d7b" category="list-text"><block ref="8e341dc1e80127ca0dc2c12db6d0237a" category="inline-link-macro-rx"></block>.</block>
   <block id="279268b426208b389290aef165bbd309" category="paragraph">Je nach Konfiguration können Sie den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.</block>
   <block id="04d079026b4a7b63a084b7ab24426723" category="list-text"><block ref="16a9a5fa8979bab3106e7aad0dfd20d9" category="inline-link-macro-rx"></block>.</block>
-  <block id="b7f670881100cb5015f24ab017668ff1" category="list-text"><block ref="1310b35f96fb7b8136de7cec708b0834" category="inline-link-macro-rx"></block>.</block>
   <block id="fd280d62f276e98d2c1156b6a7cd8932" category="paragraph">Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.</block>
   <block id="e5e0ceddda654af2c9e3c1386537e4f7" category="paragraph">Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.</block>
   <block id="b983f14988f359bc65d91f081089597f" category="list-text"><block ref="e2b4c4f5313b05dff7c4a02a4e9e0df6" category="inline-link-macro-rx"></block>.</block>
@@ -3829,8 +3813,6 @@
   <block id="b2fa408052dc67c0683eaf90858b073f" category="inline-link">NVIDIA Benutzerkonten</block>
   <block id="9fce5f0b8e1dcabf168f42a400a2d10d" category="paragraph">Siehe<block ref="2d38cb404d4e76c701a1714802ee2c54" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
   <block id="be8d2db807f6ccc0599691b80f14b976" category="list-text">Cumulus Linux ist installiert. Siehe<block ref="c043e01cdc55399f824e6d1e4eb8a5b5" category="inline-link-rx"></block> Für unterstützte Versionen.</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">Hier</block>
-  <block id="b6a9bacb15977dcaaa1e05f20cc4d13b" category="paragraph">Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Laden Sie RCFs von herunter<block ref="89efcd657168a1e707caf54da1923871" category="inline-link-rx"></block>. Das Verfahren für jedes ist gleich.</block>
   <block id="54d4022f2a747cb4974fcf06961bdb21" category="list-text">Cluster: *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*</block>
   <block id="eac7436c884133e6b945a51430510a32" category="list-text">Speicher: *MSN2100-RCF-v1._x_-Speicher*</block>
   <block id="b9dfe38b5e91454220a6cd1f3cfb9ac8" category="admonition">In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl<block ref="900d965bd90d181d344d976a0e3093d8" prefix=" " category="inline-code"></block> Wird ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
@@ -3923,7 +3905,6 @@
   <block id="b211f67e6e9195c32683368a53542802" category="paragraph">Dieses Beispiel zeigt SFTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:</block>
   <block id="c77174e35b7f7fc235a87561809ad614" category="list-text">Untersuchen Sie die Bannerausgabe aus dem<block ref="db837131dc56fab41bddc52d5aff8865" prefix=" " category="inline-code"></block> Befehl. Sie müssen diese Anweisungen lesen und befolgen, um sicherzustellen, dass der Schalter ordnungsgemäß konfiguriert und betrieben wird.</block>
   <block id="420b545896cb1c9b03dbccd44bf33f86" category="list-text">Überprüfen Sie auf dem Switch, ob die zusätzlichen lizenzierten Ports nach der Anwendung des RCF angezeigt werden:</block>
-  <block id="6285269d7b8b003aed53cad1f3d13717" category="list-text">Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten cs2-Switch auf den neuen cs2-New-Switch.</block>
   <block id="f8e1e48a80ce2fac4d53a95f1f1ffd18" category="paragraph">*Clusterknoten-Verbindungskabel wurden auf den cs2-New Switch* verlegt</block>
   <block id="e07ca5d2322ee212c9dcb668e9db443a" category="image-alt">Verbindungskabel für Clusterknoten wurden auf den cs2-New-Switch verlegt</block>
   <block id="604d674dc95a98cb2db636e889289949" category="list-text">Verschieben Sie die Verbindungskabel des Clusterknoten von cs1 zum neuen cs1-New-Switch.</block>
@@ -4587,7 +4568,6 @@ Setzen Sie den Schalter auf die Werkseinstellungen zurück, und wenden Sie die R
   <block id="7d48e882dc8cfcd3a44f3f59ba949595" category="paragraph">Enthält Informationen zu störenden Upgrades/Downgrades für Cisco NX-OS-Software auf Switches der Nexus 9000-Serie
 Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="d6221baaf45cc1f4ed9ce13f32541fa8" category="paragraph">Wählen Sie auf der Seite *Disruptive Upgrade* aus, und wählen Sie aus der Dropdown-Liste Ihr aktuelles Release und Ihr Ziel-Release aus.</block>
-  <block id="103347887335950e25df4c7b93bdd950" category="paragraph"><block ref="103347887335950e25df4c7b93bdd950" category="inline-link-macro-rx"></block></block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="list-text">Beachten Sie Folgendes:</block>
   <block id="3ee80345befd8ba67ee5e3200beb2fd8" category="list-text">Wenn zusätzliche Portlizenzen auf dem Switch installiert wurden, müssen Sie den RCF ändern, um die zusätzlichen lizenzierten Ports zu konfigurieren. Siehe <block ref="029ce138066352981401c2da3f4be7ea" category="inline-link-macro-rx"></block> Entsprechende Details.</block>
   <block id="febb316f33bb4f57154038c792c90fc0" category="list-text">Notieren Sie alle Anpassungen, die in der vorherigen RCF vorgenommen wurden, und wenden Sie diese auf die neue RCF an. Zum Beispiel die Portgeschwindigkeit oder den FEC-Modus mit hartem Kodieren einstellen.</block>
@@ -4626,11 +4606,7 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="c36caaf00f9a67804cb39871b93b4fb1" category="list-text">Aktivieren Sie auf der Seite Endbenutzer-Lizenzvereinbarung das Kontrollkästchen, um zuzustimmen, und klicken Sie auf *Akzeptieren und Fortfahren*.</block>
   <block id="e5e0b87b73538c14eb1223ba2685b479" category="list-text">Wählen Sie auf der Seite Nvidia CSHM File - Download die entsprechende Konfigurationsdatei aus. Folgende Dateien sind verfügbar:</block>
   <block id="4b96de8aec25594d2021f91d86aa38cb" category="open-title">ONTAP 9.15.1 und höher</block>
-  <block id="b834fb250d0f1e06556ff2af9ce370ff" category="list-text">X190006-PE.zip</block>
-  <block id="33ab7322815a985fdb6cbba64b9ffda9" category="list-text">X190006-PI.zip</block>
   <block id="9fc9e8ea7a5cdfe68b4528fb16936bf1" category="open-title">ONTAP 9.11.1 bis 9.14.1</block>
-  <block id="00032ac6acd20eb8310604aa0ac6a200" category="list-text">X190006-PE_PRIOR_9.15.1.zip</block>
-  <block id="6a9e7f50780a2f2b4e2b5999c1b1ae2b" category="list-text">X190006-PI_PRIOR_9.15.1.zip</block>
   <block id="3e5315d19591c6790a6c062127cf9a8e" category="list-text">[[step2]]Laden Sie die entsprechende ZIP-Datei auf Ihren internen Webserver hoch.</block>
   <block id="e319ecf1cb942a0710da7d0d525af1db" category="list-text">Greifen Sie von einem der ONTAP-Systeme im Cluster aus auf den erweiterten Modus zu.</block>
   <block id="4072831dc74599297a173c0e1d86b538" category="list-text">Führen Sie den Befehl Switch Health Monitor configure aus.</block>
@@ -5193,5 +5169,46 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="4c4876d5d981da2e6943a052d93bb189" category="list-text">Verwenden Sie für NX-OS 10.2 und höher den Befehl,<block ref="9c370f72db0e0d920841657ac5268365" prefix=" " category="inline-code"></block> um mit der gespeicherten RCF-Datei im Bootflash zu vergleichen. Verwenden Sie andernfalls ein diff- oder Vergleichstool eines Drittanbieters.</block>
   <block id="0a306731a6993e7a08026ab2d7ca2d97" category="paragraph">Möglicherweise müssen Sie die Einträge der Host-Datei im Zusammenhang mit den SSH-Schlüsseln aktualisieren.</block>
   <block id="8b4a2ab0394283209f67c0b0e8ca9f94" category="list-text">Für die Protokollerfassung mit Broadcom- und Cisco-Switches sollte für jedes Setup ein neuer Benutzer auf dem Switch erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.</block>
-  <block id="1d768064a88b1cd8a98efaa14d7f9949" category="paragraph">Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf Broadcom BES-53248-Switches.</block>
+  <block id="89fe808c6ef5fe301085b5abe4406d35" category="paragraph">Konfigurieren Sie einen NETZWERKBETREIBER für SNMPv3-Benutzernamen auf Broadcom BES-53248-Switches.</block>
+  <block id="97e3bfa41185c29b8e204545b638d532" category="open-title">NVIDIA – CLI 5.11</block>
+  <block id="3a5cc736f1918e798338d9e890393631" category="paragraph">Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.11:</block>
+  <block id="01fabc1436d158d1079e5aac28e9fdc4" category="list-text">[[step_4]]Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs.</block>
+  <block id="5b7bd3025678f1b622b4cfd0f4313991" category="inline-xref">Schritt. 10</block>
+  <block id="4ea7139be4dc5337c4d5a24c536b310e" category="list-text">Wenn die Cluster-LIFs ein Failover für den Switch cs1 durchgeführt haben und der Cluster sich in <block ref="1d8bc3843ab5c78170d8cf97ded2a73f" category="inline-xref-macro-rx"></block>einem ordnungsgemäßen Zustand befindet, fahren Sie mit fort. Wenn einige Cluster-LIFs nicht ordnungsgemäß arbeiten oder das Cluster nicht funktionsfähig ist, können Sie wie folgt ein Rollback der Konnektivität zum Switch cs2 durchführen:</block>
+  <block id="b52df29b27288e7509af85c891cfa88b" category="list-text">Die mit den Cluster-Ports von *all* verbundenen Ports aufrufen die Knoten:</block>
+  <block id="ca0787e835ac5a719db1548573613d0f" category="inline-xref">Schritt. 4</block>
+  <block id="bee24c21734f4c3230186de99029991e" category="list-text">Sobald Sie die LIF und den Clusterzustand wiederhergestellt haben, starten Sie den Prozess von neu<block ref="6f1447d50cf784e5bfe7d2099a4e4237" category="inline-xref-macro-rx"></block>.</block>
+  <block id="701f1b96f3c7f1e9d631ebd244cb5751" category="list-text">[[Step_10]]Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten cs2-Switch auf den neuen cs2-New-Switch.</block>
+  <block id="e443d0981e8ed96d62afd1a1990bd924" category="list-text"><block ref="e1c53d78ceb09f1d765f98cd902707bb" category="inline-link-macro-rx"></block>.</block>
+  <block id="dbe9b3c650ae4dca2117921c884a54d2" category="paragraph"><block ref="dbe9b3c650ae4dca2117921c884a54d2" category="inline-link-macro-rx"></block></block>
+  <block id="04809177ba282c138a7aa6bfb72e2303" category="list-text"><block ref="a01edf94205db0a19942e0d6099d8722" category="inline-link-macro-rx"></block>.</block>
+  <block id="4e83c3d43e8660c85f2e2b6e1374c91c" category="inline-link">NVIDIA SN2100 Software-Download</block>
+  <block id="618905d758007147320232ab81a98bf3" category="paragraph">Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. RCFs von Seite herunterladen<block ref="5baf2e10c7d5342617f6966efa0bb2fe" category="inline-link-rx"></block>. Das Verfahren für jedes ist gleich.</block>
+  <block id="ad1d45bcb656bf91a079869a2361d735" category="open-title">Cumulus Linux 5.4</block>
+  <block id="ccd8680433ee6ee996cb1f0a2ae6fb85" category="admonition">Die aufgeführten Ausnahmen haben keine Auswirkungen auf die Leistung und können sicher ignoriert werden.</block>
+  <block id="a8b6e34450406e412ecb8d40596d9a8d" category="open-title">Cumulus Linux 5.11</block>
+  <block id="554b50c45dae7ea0e30a60829694ee3a" category="admonition">Obwohl<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> in diesem Beispiel verwendet wird, können Sie Ihre bevorzugte Methode der Dateiübertragung verwenden.</block>
+  <block id="9cb95d38203cf6445dec8201a9a5b8df" category="paragraph">Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches über Ethernet-Switches zu installieren.</block>
+  <block id="118235a8412030b4348eaf7beb295e9a" category="paragraph">Folgende Modelle werden unterstützt:</block>
+  <block id="4439fd91d84b3562f1b65b6624b8e4af" category="list-text">MSN2100-CB2FC</block>
+  <block id="95457e019d4e34bf1527cfc720276bde" category="list-text">MSN2100-CB2RC</block>
+  <block id="0a7c753e8699d579b1dd4105b9e6b566" category="list-text">Löschen Sie das<block ref="8be5dd683a73b3d7c1a85aa778b3c099" prefix=" " category="inline-code"></block> Verzeichnis auf allen Knoten:</block>
+  <block id="ccbc1b6fe0fb2c14a182936d44b7998a" category="list-text">Betreten Sie die Nodeshell:</block>
+  <block id="fbae52a4debd6c92af11b0063f9a23d8" category="paragraph"><block ref="ce0584b63a66ddeac8919682fc93ce1a" prefix="" category="inline-code"></block></block>
+  <block id="efe7a477280f5bfdffb85faa6e94d148" category="list-text">Zu erweiterten Berechtigungen wechseln:</block>
+  <block id="04f8c8c881d9c66c4b51ab93a42ab746" category="paragraph"><block ref="37c965129cc09840500d7671b0accef3" prefix="" category="inline-code"></block></block>
+  <block id="771d6c6c56d83746eaa82bd62e11363c" category="list-text">Listen Sie die Konfigurationsdateien im<block ref="e4b3e6938bc5f3e3c811cf46ae8b7d53" prefix=" " category="inline-code"></block> Verzeichnis auf. Wenn das Verzeichnis existiert und Konfigurationsdateien enthält, werden die Dateinamen aufgelistet.</block>
+  <block id="6e89d35fb8a737baae7064c5ba2d6485" category="paragraph"><block ref="47f0187f585158fcdf3257a96c5d4bab" prefix="" category="inline-code"></block></block>
+  <block id="804c8f34f92745eacda3674d93c6ede1" category="list-text">Löschen Sie alle NOD-Dateien, die Ihren angeschlossenen Switch-Modellen entsprechen.</block>
+  <block id="f938cfce39fe890a9f9b521c87a02106" category="paragraph">Wenn Sie sich nicht sicher sind, entfernen Sie alle NOD-Dateien für die oben aufgeführten unterstützten Modelle, laden Sie dann die neuesten NOD-Dateien für die gleichen Modelle herunter und installieren Sie sie.</block>
+  <block id="ff9495347e1ccb9f937f04b4bbdd58bb" category="paragraph"><block ref="529be1cf6940ca38f1fda287a22c9fda" prefix="" category="inline-code"></block></block>
+  <block id="410e37690b6661c1eaeb818d9bed27c0" category="list-text">Bestätigen Sie, dass die gelöschten NOD-Dateien nicht mehr im Verzeichnis sind:</block>
+  <block id="76bde9294ef84452f21b2745228ae290" category="list-text">MSN2100-CB2FC-v1.4.zip</block>
+  <block id="85c07a49f236d7b33a2e8b48d076ed48" category="list-text">MSN2100-CB2RC-v1.4.zip</block>
+  <block id="ae5e87300b042b85bdd2853f386265e7" category="list-text">X190006-PE-v1.4.zip</block>
+  <block id="ab58ebe2dd50e3692c204585184a34f7" category="list-text">X190006-PI-v1.4.zip</block>
+  <block id="c3a1ef8a44fcace6af948f51ef4d8258" category="list-text">MSN2100-CB2FC_PRIOR_R9.15.1-v1.4.zip</block>
+  <block id="11ef8d241b319efa4a76430a0c6a78dd" category="list-text">MSN2100-CB2RC_PRIOR_R9.15.1-v1.4.zip</block>
+  <block id="0179c8f8dd0b9cba4199d46bd95ddd3b" category="list-text">X190006-PE_PRIOR_9.15.1-v1.4.zip</block>
+  <block id="3dd005cf004a39e1cb3e400094afa4c6" category="list-text">X190006-PI_PRIOR_9.15.1-v1.4.zip</block>
 </blocks>
