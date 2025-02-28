@@ -26,7 +26,8 @@ Stellen Sie sicher, dass:
 * Die anfängliche Anpassung der Cisco Nexus 9336C-FX2 Switches lautet folgendermaßen:
 +
 ** 9336C-FX2-Switches führen die neueste empfohlene Version der Software aus.
-** Auf die Switches wurden Referenzkonfigurationsdateien (RCFs) angewendet.
+** Vergewissern Sie sich, dass die Referenzkonfigurationsdateien (RCFs, Reference Configuration Files) vollständig auf neue Switches angewendet wurden, bevor Sie die LIFs auf die neuen Switches migrieren.
+** Überprüfen Sie die laufenden und Startkonfigurationen auf beiden Switches, bevor Sie den Netzwerkverkehr verschieben.
 ** Anpassung von Websites, z. B. DNS, NTP, SMTP, SNMP, Und SSH werden auf den neuen Switches konfiguriert.
 
 

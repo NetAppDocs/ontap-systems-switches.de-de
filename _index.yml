@@ -17,14 +17,14 @@ indexpage:
     links:
     - title: Cluster-Switch – Broadcom BES-53248
       url: "/switch-bes-53248/configure-new-switch-overview.html"
-    - title: Cluster-Switch – Cisco Nexus 9336C-FX2
+    - title: Cluster-Switch - Cisco Nexus 9336C-FX2 oder 9336C-FX2-T
       url: "/switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html"
-    - title: Cluster-Switch – NVIDIA SN2100
+    - title: Cluster-Switch – NVIDIA SN2100-Cluster-Switch
       url: "/switch-nvidia-sn2100/configure-overview-sn2100-cluster.html"
     - title: Storage-Switch – Cisco Nexus 9336C-FX2
       url: "/switch-cisco-9336c-fx2-storage/configure-switch-overview-9336c-storage.html"
     - title: Storage-Switch – NVIDIA SN2100
-      url: "/switch-nvidia-sn2100-storage/configure-overview-sn2100-storage.html"
+      url: "/switch-nvidia-sn2100/configure-overview-sn2100-storage.html"
     - title: Gemeinsamer Switch – Cisco Nexus 9336C-FX2
       url: "/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html"
   - title: Switches für das Ende der Verfügbarkeit

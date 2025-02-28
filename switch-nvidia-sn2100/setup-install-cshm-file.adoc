@@ -45,14 +45,14 @@ Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* a
 +
 `ls /etc/cshm_nod/nod_sign`
 
-.. Löschen Sie alle NOD-Dateien, die Ihren angeschlossenen Switch-Modellen entsprechen.
+.. Löschen Sie alle Konfigurationsdateien, die Ihren angeschlossenen Switch-Modellen entsprechen.
 +
-Wenn Sie sich nicht sicher sind, entfernen Sie alle NOD-Dateien für die oben aufgeführten unterstützten Modelle, laden Sie dann die neuesten NOD-Dateien für die gleichen Modelle herunter und installieren Sie sie.
+Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für die oben aufgeführten unterstützten Modelle, laden Sie die neuesten Konfigurationsdateien für dieselben Modelle herunter, und installieren Sie sie.
 
 +
 `rm /etc/cshm_nod/nod_sign/<filename>`
 
-.. Bestätigen Sie, dass die gelöschten NOD-Dateien nicht mehr im Verzeichnis sind:
+.. Vergewissern Sie sich, dass die gelöschten Konfigurationsdateien nicht mehr im Verzeichnis sind:
 +
 `ls /etc/cshm_nod/nod_sign`
 

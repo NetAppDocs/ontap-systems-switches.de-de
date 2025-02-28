@@ -25,7 +25,7 @@ Befolgen Sie diese Anweisungen, um gemeinsam genutzte Cisco Nexus 9336C-FX2-Swit
 .Schritte
 . Racks für Switches, Controller und NS224 NVMe Storage-Shelfs
 +
-Siehe https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-sw-9336c-install-cabinet/GUID-92287262-E7A6-4A62-B159-7F148097B33B.html["Anweisungen zum Rack"] Erfahren Sie, wie Sie den Switch in einem NetApp Rack unterbringen.
+Im link:../switch-cisco-9336c-fx2/install-switch-and-passthrough-panel-9336c-cluster.html["Anweisungen zum Rack"]erfahren Sie, wie Sie den Switch in einem NetApp-Schrank einmontieren.
 
 . Schalten Sie die Switches, Controller und NS224 NVMe Storage-Shelfs ein.
 
