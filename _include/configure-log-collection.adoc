@@ -1,16 +1,7 @@
----
-permalink: switch-cshm/config-log-collection.html 
-sidebar: sidebar 
-keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation 
-summary: 'Die CSHM-Protokollerfassungsfunktion (Ethernet Switch Health Monitor) wird verwendet, um Protokolle von Cluster- oder Storage-Netzwerk-Switches in ONTAP zu erfassen.' 
----
-= Konfigurieren der Protokollerfassung
+= Bevor Sie beginnen
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
-[role="lead"]
 Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich. Dieses Verfahren führt Sie durch den Prozess der Einrichtung der Erfassung, der Anforderung detaillierter *Support* Protokolle und der Aktivierung einer stündlichen Erfassung von *periodischen* Daten, die von AutoSupport gesammelt werden.
 
 *HINWEIS:* Wenn Sie den FIPS-Modus aktivieren, müssen Sie Folgendes ausführen:
@@ -240,8 +231,3 @@ cluster1::*> *system switch ethernet log show -instance*
 
 --
 ====
-
-CAUTION: Wenn Fehlerzustände durch die Log-Collection-Funktion (sichtbar in der Ausgabe von ) gemeldet werden `system switch ethernet log show`, siehe link:log-collection-troubleshoot.html["Fehlerbehebung bei der Protokollerfassung"] für weitere Details.
-
-.Was kommt als Nächstes?
-link:config-snmpv3.html["SNMPv3 konfigurieren (optional)"].

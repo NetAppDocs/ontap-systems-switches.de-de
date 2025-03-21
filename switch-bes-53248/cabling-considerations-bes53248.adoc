@@ -68,12 +68,11 @@ Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informat
 == FEC-Anforderungen
 
 * Für 25G-Ports mit Kupferkabel siehe folgende Tabelle für Details.
-
-
++
 Wenn die Controllerseite ist `auto`Die Schalterseite ist auf FEC 25G eingestellt.
 
 +
-Bild:../media/FEC_copper_table.jpg[25G Ports mit Kupferkabel]
+image::../media/FEC_copper_table.jpg[25-Gbit-Ports mit Kupferkabel]
 
 * Informationen zu 25-Gbit-Ports mit Glasfaser-/optischen Kabeln finden Sie in der folgenden Tabelle:
 +

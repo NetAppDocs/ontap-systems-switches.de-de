@@ -20,6 +20,8 @@ entries:
     url: "/switch-bes-53248/install-hardware-bes53248.html"
   - title: Konfigurieren Sie den Switch
     url: "/switch-bes-53248/configure-install-initial.html"
+  - title: Überprüfung der Verkabelung und Konfiguration
+    url: "/switch-bes-53248/cabling-considerations-bes-53248.html"
 - title: Software konfigurieren
   pdf-filename: Configure_Software_bes53248
   entries:

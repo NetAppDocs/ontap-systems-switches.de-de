@@ -1,0 +1,127 @@
+= 
+:allow-uri-read: 
+
+
+Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches über Ethernet-Switches zu installieren.
+
+Folgende Modelle werden unterstützt:
+
+* MSN2100-CB2FC
+* MSN2100-CB2RC
+* X190006-PE
+* X190006-PI
+
+
+
+NOTE: Dieses Installationsverfahren gilt für ONTAP 9.10.1 und höher.
+
+.Bevor Sie beginnen
+* Überprüfen Sie, ob Sie die Konfigurationsdatei herunterladen müssen, indem Sie ausführen `system switch ethernet show` und prüfen, ob *ANDERE* für Ihr Modell angezeigt wird.
++
+Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
+
+* Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
+* Aktivieren Sie SSH, um alle in CSHM verfügbaren Funktionen zu verwenden.
+* Löschen Sie das `/mroot/etc/cshm_nod/nod_sign/` Verzeichnis auf allen Knoten:
++
+.. Betreten Sie die Nodeshell:
++
+`system node run -node <name>`
+
+.. Zu erweiterten Berechtigungen wechseln:
++
+`priv set advanced`
+
+.. Listen Sie die Konfigurationsdateien im `/etc/cshm_nod/nod_sign` Verzeichnis auf. Wenn das Verzeichnis existiert und Konfigurationsdateien enthält, werden die Dateinamen aufgelistet.
++
+`ls /etc/cshm_nod/nod_sign`
+
+.. Löschen Sie alle Konfigurationsdateien, die Ihren angeschlossenen Switch-Modellen entsprechen.
++
+Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für die oben aufgeführten unterstützten Modelle, laden Sie die neuesten Konfigurationsdateien für dieselben Modelle herunter, und installieren Sie sie.
+
++
+`rm /etc/cshm_nod/nod_sign/<filename>`
+
+.. Vergewissern Sie sich, dass die gelöschten Konfigurationsdateien nicht mehr im Verzeichnis sind:
++
+`ls /etc/cshm_nod/nod_sign`
+
+
+
+
+
+.Schritte
+. Laden Sie die ZIP-Datei für die Konfiguration der Ethernet-Switch-Systemzustandsüberwachung basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der Seite verfügbar https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] .
++
+.. Wählen Sie auf der Download-Seite der NVIDIA SN2100-Software *Nvidia CSHM-Datei* aus.
+.. Aktivieren Sie auf der Seite Achtung/muss gelesen werden das Kontrollkästchen, um zuzustimmen.
+.. Aktivieren Sie auf der Seite Endbenutzer-Lizenzvereinbarung das Kontrollkästchen, um zuzustimmen, und klicken Sie auf *Akzeptieren und Fortfahren*.
+.. Wählen Sie auf der Seite Nvidia CSHM File - Download die entsprechende Konfigurationsdatei aus. Folgende Dateien sind verfügbar:
+
+
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 und höher
+--
+* MSN2100-CB2FC-v1.4.zip
+* MSN2100-CB2RC-v1.4.zip
+* X190006-PE-v1.4.zip
+* X190006-PI-v1.4.zip
+
+
+--
+.ONTAP 9.11.1 bis 9.14.1
+--
+* MSN2100-CB2FC_PRIOR_R9.15.1-v1.4.zip
+* MSN2100-CB2RC_PRIOR_R9.15.1-v1.4.zip
+* X190006-PE_PRIOR_9.15.1-v1.4.zip
+* X190006-PI_PRIOR_9.15.1-v1.4.zip
+
+
+--
+====
+. [[step2]]Laden Sie die entsprechende ZIP-Datei auf Ihren internen Webserver hoch.
+. Greifen Sie von einem der ONTAP-Systeme im Cluster aus auf den erweiterten Modus zu.
++
+`set -privilege advanced`
+
+. Führen Sie den Befehl Switch Health Monitor configure aus.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system cluster-switch configure-health-monitor -node * -package-url http://192.168.2.20/usr/download/_[filename.zip]_*
+----
+. Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.15.1 und höher
+--
+Die Konfigurationsdatei wurde von der Statusüberwachung des Ethernet-Switches installiert.
+
+--
+.ONTAP 9.11.1 bis 9.14.1
+--
+SHM hat die Konfigurationsdatei installiert.
+
+--
+.ONTAP 9.10.1
+--
+Das heruntergeladene CSHM-Paket wurde erfolgreich verarbeitet.
+
+--
+====
+Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
+
+. [[step6]]Warten Sie bis zu zweimal das Abfrageintervall der Ethernet-Switch-Integritätsüberwachung, das durch Ausführen gefunden `system switch ethernet polling-interval show`wird, bevor Sie den nächsten Schritt abschließen.
+. Führen Sie den Befehl auf dem ONTAP-System aus `system switch ethernet show` , und stellen Sie sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *true* und das Seriennummernfeld nicht *Unknown* anzeigt.
++
+[listing, subs="+quotes"]
+----
+cluster1::> *system switch ethernet show*
+----
+
