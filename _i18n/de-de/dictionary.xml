@@ -105,12 +105,9 @@
   <block id="71a98c939bf9fe1ba2c2453cd7777824" category="list-text">Cumulus Linux Installieren:</block>
   <block id="5bb8ca227d3f9b0b9fc45003bbe7d06c" category="list-text">Nach Abschluss der Installation melden Sie sich beim Switch an:</block>
   <block id="098d312f939d7511ad5f9bf80ccaea96" category="list-text">Überprüfen Sie die Cumulus Linux-Version:</block>
-  <block id="3722090c5c0b0496759b23b1db5566cd" category="doc">Installieren Sie das RCF-Skript</block>
   <block id="90bd80eefde443be8809a3edf64f7ef2" category="list-text">IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.</block>
   <block id="1d9152605063cf1b257a36675cece81c" category="inline-link-macro">Überlegungen zur Verkabelung und Konfiguration</block>
   <block id="526990b43ff7cafabc1a3c5dda4e8c9b" category="paragraph">Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.</block>
-  <block id="d43ffd29b9c1918eacb74ce61ab9c93d" category="list-text">Clustering: *MSN2100-RCF-v1.8-Cluster*</block>
-  <block id="85948408e24eaebde36ef1a070afa259" category="list-text">Storage: *MSN2100-RCF-v1.8-Storage*</block>
   <block id="47a90a8bc6531c96684b95f438b570ff" category="admonition">Das folgende Beispiel zeigt, wie das RCF-Skript für Cluster-Switches heruntergeladen und angewendet wird.</block>
   <block id="8e7538255f1b89e8cb901d939793795e" category="admonition">Die Befehlsausgabe des Switch-Management verwendet die Switch-Management-IP-Adresse 10.233.204.71, die Netmask 255.255.254.0 und das Standard-Gateway 10.233.204.1.</block>
   <block id="cba289d19a283a01be4ec7d5598b25e8" category="list-text">Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:</block>
@@ -2370,7 +2367,6 @@
   <block id="e0ab29823a477894018f5c53cfabeece" category="summary">Überprüfen Sie bei Installation und Wartung von NVIDIA SN2100-Switches alle empfohlenen Dokumente.</block>
   <block id="7ec5693d2c180df872f5e23364ecd351" category="doc">Dokumentationsanforderungen für NVIDIA SN2100-Switches</block>
   <block id="5a5096484954db754c9fdc1d20f50720" category="summary">Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren.</block>
-  <block id="2123b47f46a6b2a44de513e0c343098f" category="paragraph">Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch folgende Funktionen verfügbar sind:</block>
   <block id="6b05439cc5176e82c5cfdc0d918624ea" category="paragraph"><block ref="e82a1249d31ab6e6d4064390013e6c55" prefix="" category="inline-code"></block></block>
   <block id="458ab89f862895d8f5ce855c654868d6" category="paragraph">Das RCF-Skript führt die oben aufgeführten Schritte durch.</block>
   <block id="8d64daaea35553b232a39d8de9b07201" category="list-text">Überprüfen Sie die Informationen für den Transceiver in der Schnittstelle:</block>
@@ -5231,4 +5227,15 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="1422bf436bfd810c807aacf3aab99615" category="paragraph">Nachdem Sie die Switches konfiguriert und die erforderliche Software installiert haben, rufen Sie die Installations- und Setup-Anleitung für Ihr ONTAP Systemplattform-Modell auf, um die System-Einrichtung abzuschließen.</block>
   <block id="ce85a54726781b89fe08c28de38285c0" category="paragraph">Nach der Installation und Einrichtung der ONTAP System-Controller und -Switches müssen Sie die Storage-Konfiguration in ONTAP abschließen. Greifen Sie entsprechend der Bereitstellungskonfiguration auf die folgenden Anweisungen zu.</block>
   <block id="674426100287eb3a5e16cf5705c524ea" category="image-alt">25-Gbit-Ports mit Kupferkabel</block>
+  <block id="ec65012ad6ac37ed9d5b425acfa4cdea" category="doc">Installieren oder aktualisieren Sie das RCF-Skript (Reference Configuration File)</block>
+  <block id="60db3c5b6db09c40831f96fad7f5b5c4" category="paragraph">Gehen Sie wie folgt vor, um das RCF-Skript zu installieren oder zu aktualisieren.</block>
+  <block id="a26beebaedce14e4e55b90d7a8d895f4" category="paragraph">Stellen Sie vor der Installation oder Aktualisierung des RCF-Skripts sicher, dass auf dem Switch Folgendes verfügbar ist:</block>
+  <block id="3a0aebe04bfa1f6aaf965b9c027512bc" category="open-title">Cumulus Linux 5.4.0</block>
+  <block id="9ec751f6f6fe23e217638410987b5aab" category="open-title">Cumulus Linux 5.11.0</block>
+  <block id="2340bc2649383727b40f4420d1b47844" category="doc">Aktualisieren Sie das RCF-Skript (Reference Configuration File)</block>
+  <block id="8ab41648ed191efe1d9524e2535c7f4d" category="paragraph">Gehen Sie wie folgt vor, um das RCF-Skript zu aktualisieren.</block>
+  <block id="b3be7362d2d8f250dc5fcbfaf784efd0" category="paragraph">Stellen Sie vor dem Upgrade des RCF-Skripts sicher, dass auf dem Switch folgende Optionen verfügbar sind:</block>
+  <block id="997f5023d76908d72d993d6b09390a5e" category="doc">Installieren oder aktualisieren Sie das RCF-Skript</block>
+  <block id="7baa7758ed49797651dc1e276762ae15" category="list-text">Clustering: *MSN2100-RCF-v1._x_-Cluster*</block>
+  <block id="dd584ffba0b7534139645967bf24df84" category="sidebar">Installieren oder aktualisieren Sie das RCF-Skript</block>
 </blocks>

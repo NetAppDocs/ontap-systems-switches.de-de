@@ -4,17 +4,17 @@ sidebar: sidebar
 keywords: install rcf script, python script, sn2100 SN2100 switches, cumulus 
 summary: Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren. 
 ---
-= Installieren Sie das RCF-Skript
+= Installieren oder aktualisieren Sie das RCF-Skript
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren.
+Gehen Sie wie folgt vor, um das RCF-Skript zu installieren oder zu aktualisieren.
 
 .Was Sie benötigen
-Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch folgende Funktionen verfügbar sind:
+Stellen Sie vor der Installation oder Aktualisierung des RCF-Skripts sicher, dass auf dem Switch Folgendes verfügbar ist:
 
 * Cumulus Linux 4.4.3 ist installiert.
 * IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.
@@ -23,8 +23,8 @@ Stellen Sie vor der Installation des RCF-Skripts sicher, dass auf dem Switch fol
 .Aktuelle RCF-Skriptversionen
 Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.
 
-* Clustering: *MSN2100-RCF-v1.8-Cluster*
-* Storage: *MSN2100-RCF-v1.8-Storage*
+* Clustering: *MSN2100-RCF-v1._x_-Cluster*
+* Speicher: *MSN2100-RCF-v1._x_-Speicher*
 
 
 
