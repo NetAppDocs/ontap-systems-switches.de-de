@@ -5213,7 +5213,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="49e57b2c31c8feba776b7a2916673678" category="sidebar">Cisco Nexus 9336C-FX2 oder 9336C-FX2-T</block>
   <block id="c66ea64be71d87967746ef74fac6ec75" category="list-text">[[step11]]Prüfen Sie die Bannerausgabe über den<block ref="db837131dc56fab41bddc52d5aff8865" prefix=" " category="inline-code"></block> Befehl. Sie müssen diese Anweisungen lesen und befolgen, um sicherzustellen, dass der Schalter ordnungsgemäß konfiguriert und betrieben wird.</block>
   <block id="8b084baecf96a692280d1a024d86081d" category="list-text"><block ref="cf3a409f8782a7944244632e6a1adb8e" category="inline-link-macro-rx"></block>.</block>
-  <block id="a0483532706ba341300191e20cafc42e" category="list-text">Für die Protokollerfassung mit Broadcom- und Cisco-Switches sollte für jedes Cluster-Setup ein neuer Benutzer auf dem Switch erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.</block>
   <block id="1fcbc8802637b04b8fe9a86ac3d545c9" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Die Switch-Hardware einbauen</block>
   <block id="b11226c776ec1b74f6a42f871e3194c9" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Installation des Storage-Systems und der Storage-Shelfs</block>
   <block id="130792cb3edc8d0afffb557e50b218c3" category="paragraph">Installieren Sie das Speichersystem und die Lagerregale im Schrank oder Rack. Rufen Sie die Installations- und Setup-Anweisungen für Ihr Plattformmodell auf.</block>
@@ -5238,4 +5237,9 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="997f5023d76908d72d993d6b09390a5e" category="doc">Installieren oder aktualisieren Sie das RCF-Skript</block>
   <block id="7baa7758ed49797651dc1e276762ae15" category="list-text">Clustering: *MSN2100-RCF-v1._x_-Cluster*</block>
   <block id="dd584ffba0b7534139645967bf24df84" category="sidebar">Installieren oder aktualisieren Sie das RCF-Skript</block>
+  <block id="40b03f9635c63b20aade0ff8145eafb8" category="list-text">Für die Protokollerfassung mit Broadcom- und Cisco-Switches:</block>
+  <block id="89f1dd995a5c07ea1e13abc5993d9d59" category="list-text">Benutzer müssen über Privileges für Netzwerkadministratoren verfügen.</block>
+  <block id="60f743043272b873831b17c5e7290445" category="list-text">Für jedes Cluster-Setup sollte auf dem Switch ein neuer Benutzer erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.</block>
+  <block id="63229fc9218a5e1a57243ce033e91a3b" category="paragraph">Weitere Informationen zur Installation oder Aktualisierung Ihres RCF finden Sie im Knowledge Base-Artikel<block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block>.</block>
+  <block id="26552c2532e5b34c96d8cef5f736c6ff" category="paragraph">Weitere Informationen zur Installation des RCF finden Sie im Knowledge Base-Artikel<block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block>.</block>
 </blocks>

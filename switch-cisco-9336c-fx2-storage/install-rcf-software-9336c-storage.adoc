@@ -13,6 +13,8 @@ summary: Sie können den RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Spei
 [role="lead"]
 Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Speicherschalter zum ersten Mal eingerichtet haben.
 
+Weitere Informationen zur Installation des RCF finden Sie im Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^].
+
 .Bevor Sie beginnen
 Überprüfen Sie die folgenden Installationen und Verbindungen:
 
