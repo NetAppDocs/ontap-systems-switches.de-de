@@ -19,6 +19,10 @@ entries:
   entries:
   - title: Übersicht über den Systemcheck
     url: "/switch-cshm/monitor-overview.html"
+  - title: Verwalten der Switch-Überwachung
+    url: "/switch-cshm/monitor-manage.html"
+  - title: Überprüfen Sie die Switch-Überwachung
+    url: "/switch-cshm/monitor-verify.html"
   - title: Fehlerbehebung bei Warnmeldungen
     url: "/switch-cshm/monitor-troubleshoot.html"
 - title: Log-Datei-Sammlungen

@@ -313,6 +313,10 @@ RPC status:
 ====
 . [[step5]] bei Switch C2 fahren Sie die mit den Cluster-Ports der Knoten verbundenen Ports herunter, um ein Failover der Cluster-LIFs durchzuführen.
 +
+
+CAUTION: Versuchen Sie nicht, die Cluster-LIFs manuell zu migrieren.
+
++
 [listing, subs="+quotes"]
 ----
 (C2)# *configure*

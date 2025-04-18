@@ -1,0 +1,47 @@
+= Überwachung der angeschlossenen Ethernet-Switches bestätigen
+:allow-uri-read: 
+
+
+
+
+== Überwachung der angeschlossenen Ethernet-Switches bestätigen
+
+Um zu überprüfen, ob die angeschlossenen Ethernet-Switches überwacht werden, führen Sie Folgendes aus:
+
+[source, cli]
+----
+system switch ethernet show
+----
+Wenn in der `Model` Spalte *OTHER* angezeigt wird oder im `IS Monitored` Feld *false* angezeigt wird, kann ONTAP den Switch nicht überwachen. Ein Wert von *ANDERE* zeigt in der Regel an, dass ONTAP diesen Switch für die Integritätsüberwachung nicht unterstützt.
+
+Das `IS Monitored` Feld wird aus dem im Feld angegebenen Grund auf *false* gesetzt `Reason`.
+
+[NOTE]
+====
+Wenn ein Switch in der Befehlsausgabe nicht aufgeführt ist, hat ONTAP ihn wahrscheinlich nicht erkannt. Vergewissern Sie sich, dass der Switch ordnungsgemäß verkabelt ist. Bei Bedarf können Sie den Schalter manuell hinzufügen. Weitere Informationen finden Sie unter link:manage-monitor.html["Verwalten Sie die Überwachung von Ethernet-Switches"] .
+
+====
+
+
+== Vergewissern Sie sich, dass die Firmware- und RCF-Versionen auf dem neuesten Stand sind
+
+Stellen Sie sicher, dass auf dem Switch die neueste unterstützte Firmware ausgeführt wird und dass eine kompatible Referenzkonfigurationsdatei (RCF) angewendet wurde. Weitere Informationen finden Sie auf der https://mysupport.netapp.com/site/downloads["NetApp Support Downloads Seite"^].
+
+Standardmäßig verwendet der Gesundheitsmonitor SNMPv2c mit der Community-Zeichenfolge *cshm1!* für die Überwachung, aber SNMPv3 kann auch konfiguriert werden.
+
+Wenn Sie die Standard-SNMPv2c-Community-Zeichenfolge ändern müssen, stellen Sie sicher, dass die gewünschte SNMPv2c-Community-Zeichenfolge auf dem Switch konfiguriert wurde.
+
+[source, cli]
+----
+system switch ethernet modify -device SwitchA -snmp-version SNMPv2c -community-or-username newCommunity!
+----
+
+NOTE: Weitere Informationen zur Konfiguration von SNMPv3 für die Verwendung finden Sie unterlink:config-snmpv3.html["Optional: SNMPv3 konfigurieren"].
+
+
+
+== Bestätigen Sie die Verbindung zum Managementnetzwerk
+
+Vergewissern Sie sich, dass der Managementport des Switch mit dem Managementnetzwerk verbunden ist.
+
+Für die Ausführung von SNMP-Abfragen und Protokollerfassung ist eine korrekte Management-Port-Verbindung für ONTAP erforderlich.
