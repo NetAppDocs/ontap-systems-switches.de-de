@@ -151,11 +151,11 @@ Mit den folgenden Befehlen werden die Knotenanschlüsse an den Switches sw1 und 
 ----
 cumulus@sw1:~$ *nv set interface swp1s0-3,swp2s0-3,swp3-14 link state down*
 cumulus@sw1:~$ *nv config apply*
-cumulus@sw1:~$ *nv save*
+cumulus@sw1:~$ *nv config save*
 
 cumulus@sw2:~$ *nv set interface swp1s0-3,swp2s0-3,swp3-14 link state down*
 cumulus@sw2:~$ *nv config apply*
-cumulus@sw2:~$ *nv save*
+cumulus@sw2:~$ *nv config save*
 ----
 . Stellen Sie sicher, dass sich die ISL und die physischen Ports auf der ISL zwischen den beiden SN2100-Switches sw1 und sw2 auf den Ports swp15 und swp16 befinden:
 +

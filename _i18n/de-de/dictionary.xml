@@ -3835,7 +3835,6 @@
   <block id="5e7f834bb6ce37fe7786c30951681705" category="list-text">Überprüfen Sie, ob die Cumulus Linux-Version 4.4.3 lautet:<block ref="98f5dff8534e8c39673b544f567273e7" prefix=" " category="inline-code"></block></block>
   <block id="d3197ab8aed6376fa7796149e9bb5d76" category="paragraph">Das Installationsprogramm startet den Download. Geben Sie bei Aufforderung * y* ein.</block>
   <block id="0d5b4669d0f67490dffe38df0a47c207" category="list-text">Die Installation wird automatisch gestartet, und die folgenden GRUB-Bildschirmoptionen werden angezeigt. Wählen Sie bitte * nicht* aus.</block>
-  <block id="caf789a40cb327fa8f64258a010c13e0" category="list-text">Überprüfen Sie, ob die Cumulus Linux-Version 5.4 lautet:<block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix=" " category="inline-code"></block></block>
   <block id="ebf243f9c791c52799ecfef9dba7e609" category="doc">Ersetzen Sie NetApp CN1610 Cluster Switches durch Verbindungen ohne Switches</block>
   <block id="261de3e636d4ab259e73f4993ea87a6a" category="sidebar">Aktualisieren Sie die Cumulus Linux-Version</block>
   <block id="f854d13ce34c20dd774e2f26c0bcbec7" category="paragraph">Um zu überprüfen, ob Ihre EFOS-Version FIPS-konform oder nicht-FIPS-konform ist, verwenden Sie die<block ref="861d2504fbcbe4985de13f1d87bfc483" prefix=" " category="inline-code"></block> Befehl. In den folgenden Beispielen verwendet *IP_Switch_a1* FIPS-konformes EFOS und *IP_Switch_a2* verwendet nicht-FIPS-konformes EFOS.</block>
@@ -5275,4 +5274,12 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="7d446387be9f1d7a1583327a693c81a1" category="paragraph">Die Ethernet-Switch-Systemzustandsüberwachung (CSHM) versucht automatisch, die erkannten Switches zu überwachen. Wenn die Switches jedoch nicht richtig konfiguriert sind, erfolgt die Überwachung möglicherweise nicht automatisch. Sie sollten überprüfen, ob die Systemzustandsüberwachung ordnungsgemäß für das Monitoring Ihrer Switches konfiguriert ist.</block>
   <block id="a6227aae637a0baad0de1335f2d71396" category="sidebar">Verwalten der Switch-Überwachung</block>
   <block id="5c46a4758dcc5f666eee202daef67af4" category="sidebar">Überprüfen Sie die Switch-Überwachung</block>
+  <block id="41cda86775eebf53199061928eb39a74" category="list-text">Installieren Sie Cumulus Linux 5.4.0:</block>
+  <block id="a731c9953cb3178b61fd688f2c10ea64" category="list-text">Stellen Sie sicher, dass die Cumulus Linux-Version 5.4 ist:<block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix=" " category="inline-code"></block></block>
+  <block id="7fe163201519200ade1c23cd052b6611" category="paragraph">Wenn Sie sich zum ersten Mal beim Switch anmelden, benötigt er den Benutzernamen/das Passwort von *cumulus*/*cumulus* mit<block ref="d338b3f0f405eb5e51c8cc1e5ca66f02" prefix=" " category="inline-code"></block> Privileges.</block>
+  <block id="b133f5ec9f6f691880079c684d878177" category="list-text">Installieren Sie Cumulus Linux 5.11.0:</block>
+  <block id="528379fa0d040e8e6455094df07828d8" category="list-text">Überprüfen Sie, ob die Cumulus Linux-Version 5.11.0 lautet:</block>
+  <block id="f90f747e373fe6ad78e15dd0d320ce66" category="paragraph"><block ref="9fcc1ae85aac3dbd490f575cf5eb3d52" prefix="" category="inline-code"></block></block>
+  <block id="fd5f0f669932a550ea7400efc749cfc5" category="list-text">Überprüfen Sie, ob jeder Node mit jedem Switch verbunden ist:</block>
+  <block id="2d3e15002e9f668635d184afe49a634e" category="paragraph">Weitere Informationen finden Sie unter<block ref="9fa647797c0e0305f4f3b2116b6db003" category="inline-link-rx"></block> .</block>
 </blocks>
