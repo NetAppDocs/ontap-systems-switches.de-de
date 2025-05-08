@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: document, support, platform, complete, blank, cabling, worksheet, guide, cisco, nexus, cisco nexus 9336c-fx2 cabling worksheet - cisco nexus 9336-fx2 
 summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden. 
 ---
-= Füllen Sie das Cisco Nexus 9336C-FX2-Verkabelungsarbeitsblatt aus
+= Füllen Sie das Arbeitsblatt zur Verkabelung des Cisco Nexus 9336C-FX2 oder 9336C-FX2-T aus
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,9 +15,15 @@ Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine P
 
 Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
 
+* <<9336C-FX2 – Beispieldokument für Verkabelung>>
+* <<9336C-FX2 Arbeitsblatt für leere Verkabelung>>
+* <<Arbeitsblatt zur 9336C-FX2-T-Beispielverkabelung (12 Anschlüsse)>>
+* <<Arbeitsblatt für die Verkabelung 9336C-FX2-T-Leereinschub (12 Anschlüsse)>>
 
 
-== Beispiel für eine Verkabelung
+
+
+== 9336C-FX2 – Beispieldokument für Verkabelung
 
 Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
 
@@ -437,7 +443,7 @@ Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
 |===
 
 
-== Leeres Verkabelungsarbeitsblatt
+== 9336C-FX2 Arbeitsblatt für leere Verkabelung
 
 Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
 
@@ -769,3 +775,249 @@ Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu 
  a| 
 
 |===
+
+
+== Arbeitsblatt zur 9336C-FX2-T-Beispielverkabelung (12 Anschlüsse)
+
+Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+
+[cols="1,3,1,3"]
+|===
+2+| Cluster-Switch A 2+| Cluster-Switch B 
+
+
+| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+
+
+ a| 
+1
+ a| 
+4 x 100-GbE-Node 1
+ a| 
+1
+ a| 
+4 x 100-GbE-Node 1
+
+
+
+ a| 
+2
+ a| 
+4 x 100-GbE-Node 2
+ a| 
+2
+ a| 
+4 x 100-GbE-Node 2
+
+
+
+ a| 
+3
+ a| 
+4 x 100-GbE-Node 3
+ a| 
+3
+ a| 
+4 x 100-GbE-Node 3
+
+
+
+ a| 
+4
+ a| 
+4 x 100-GbE-Node 4
+ a| 
+4
+ a| 
+4 x 100-GbE-Node 4
+
+
+
+ a| 
+5
+ a| 
+4 x 100-GbE-Node 5
+ a| 
+5
+ a| 
+4 x 100-GbE-Node 5
+
+
+
+ a| 
+6
+ a| 
+4 x 100-GbE-Node 6
+ a| 
+6
+ a| 
+4 x 100-GbE-Node 6
+
+
+
+ a| 
+7
+ a| 
+4 x 100-GbE-Node 7
+ a| 
+7
+ a| 
+4 x 100-GbE-Node 7
+
+
+
+ a| 
+8
+ a| 
+4 x 100-GbE-Node 8
+ a| 
+8
+ a| 
+4 x 100-GbE-Node 8
+
+
+
+ a| 
+9
+ a| 
+4 x 100-GbE-Node 9
+ a| 
+9
+ a| 
+4 x 100-GbE-Node 9
+
+
+
+ a| 
+10
+ a| 
+4 x 100-GbE-Node 10
+ a| 
+10
+ a| 
+4 x 100-GbE-Node 10
+
+
+
+ a| 
+11 bis 36
+ a| 
+Erfordert Lizenz
+ a| 
+11 bis 36
+ a| 
+Erfordert Lizenz
+
+|===
+
+
+== Arbeitsblatt für die Verkabelung 9336C-FX2-T-Leereinschub (12 Anschlüsse)
+
+Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden.
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Cluster-Switch A 2+| Cluster-Switch B 
+
+
+ a| 
+1
+ a| 
+ a| 
+1
+ a| 
+
+
+
+ a| 
+2
+ a| 
+ a| 
+2
+ a| 
+
+
+
+ a| 
+3
+ a| 
+ a| 
+3
+ a| 
+
+
+
+ a| 
+4
+ a| 
+ a| 
+4
+ a| 
+
+
+
+ a| 
+5
+ a| 
+ a| 
+5
+ a| 
+
+
+
+ a| 
+6
+ a| 
+ a| 
+6
+ a| 
+
+
+
+ a| 
+7
+ a| 
+ a| 
+7
+ a| 
+
+
+
+ a| 
+8
+ a| 
+ a| 
+8
+ a| 
+
+
+
+ a| 
+9
+ a| 
+ a| 
+9
+ a| 
+
+
+
+ a| 
+10
+ a| 
+ a| 
+10
+ a| 
+
+
+
+ a| 
+11 bis 36
+ a| 
+Erfordert Lizenz
+ a| 
+11 bis 36
+ a| 
+Erfordert Lizenz
+
+|===
+Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.

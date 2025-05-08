@@ -20,12 +20,33 @@ Der Cisco Nexus 9336C-FX2-Switch ist Teil der Cisco Nexus 9000-Plattform und kan
 Gehen Sie wie folgt vor, um einen Cisco Nexus 9336C-FX2 Switch auf Systemen mit ONTAP zu konfigurieren:
 
 . link:setup-worksheet-9336c-storage.html["Füllen Sie das Verkabelungsarbeitsblatt aus"].
++
+Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+
 . link:install-9336c-storage.html["Den Schalter einbauen"].
++
+Richten Sie die Switch-Hardware ein.
+
 . link:setup-switch-9336c-storage.html["Konfigurieren Sie den Switch"].
++
+Richten Sie den Cisco Nexus 9336C-FX2-Speicher-Switch ein.
+
 . link:install-switch-and-passthrough-panel-9336c-storage.html["Den Switch in einen NetApp-Schrank einbauen"].
-. link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
-. link:install-nxos-software-9336c-storage.html["Installieren Sie die NX-OS-Software"].
-. link:install-rcf-software-9336c-storage.html["Installieren Sie die RCF-Konfigurationsdatei"].
++
+Je nach Konfiguration können Sie den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.
+
+. link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation oder das Upgrade von NX-OS und RCF vor"].
++
+Befolgen Sie die vorbereitenden Verfahren zur Installation der Cisco NX-OS-Software und der Referenzkonfigurationsdateien (RCFs).
+
+. link:install-nxos-software-9336c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software"].
++
+Installieren oder aktualisieren Sie die NX-OS-Software auf dem Nexus 9336C-FX2 Storage Switch.
+
+. link:install-rcf-software-9336c-storage.html["Installieren oder aktualisieren Sie die RCF-Konfigurationsdatei"].
++
+Installieren oder aktualisieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+
 
 
 

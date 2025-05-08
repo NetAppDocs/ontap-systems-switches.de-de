@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install rcf, cisco switches, storage 
 summary: Sie können den RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Speicherschalters installieren. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
 ---
-= Installieren Sie die Referenzkonfigurationsdatei
+= Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
