@@ -40,6 +40,41 @@ Die Befehlsausgabe des Switch-Management verwendet die Switch-Management-IP-Adre
 ====
 .Cumulus Linux 4.4.3
 --
+. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verwenden Sie die  `ping` Befehl zum Überprüfen der Konnektivität mit dem Server, auf dem Cumulus Linux und RCF gehostet werden.
+. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
++
+`network device-discovery show`
+
+. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
++
+.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
++
+`network port show -role cluster`
+
+.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
++
+`network interface show -role cluster`
+
+.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
++
+`system cluster-switch show -is-monitoring-enabled-operational true`
+
+
+
+. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
++
+`network interface modify -vserver Cluster -lif * -auto-revert false`
+
++
+[NOTE]
+.Beachten Sie Folgendes:
+====
+** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Rücksetzung deaktivieren.
+** Wenn Sie Ihre Cumulus Linux-Version gerade aktualisiert haben, müssen Sie die automatische Wiederherstellung für diesen Schritt nicht deaktivieren, da sie bereits deaktiviert ist.
+
+
+====
 . Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
 +
 [listing, subs="+quotes"]
@@ -264,11 +299,55 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 ----
 
 
+. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
++
+`cluster show`
+
+. Wiederholen Sie die Schritte 1 bis 14 am zweiten Schalter.
+. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
+
 
 
 --
 .Cumulus Linux 5.4.0
 --
+. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verwenden Sie die  `ping` Befehl zum Überprüfen der Konnektivität mit dem Server, auf dem Cumulus Linux und RCF gehostet werden.
+. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
++
+`network device-discovery show`
+
+. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
++
+.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
++
+`network port show -role cluster`
+
+.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
++
+`network interface show -role cluster`
+
+.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
++
+`system cluster-switch show -is-monitoring-enabled-operational true`
+
+
+
+. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
++
+`network interface modify -vserver Cluster -lif * -auto-revert false`
+
++
+[NOTE]
+.Beachten Sie Folgendes:
+====
+** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Rücksetzung deaktivieren.
+** Wenn Sie Ihre Cumulus Linux-Version gerade aktualisiert haben, müssen Sie die automatische Wiederherstellung für diesen Schritt nicht deaktivieren, da sie bereits deaktiviert ist.
+
+
+====
 . Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
 +
 [listing, subs="+quotes"]
@@ -586,11 +665,55 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 ----
 
 
+. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
++
+`cluster show`
+
+. Wiederholen Sie die Schritte 1 bis 14 am zweiten Schalter.
+. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
+
 
 
 --
 .Cumulus Linux 5.11.0
 --
+. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verwenden Sie die  `ping` Befehl zum Überprüfen der Konnektivität mit dem Server, auf dem Cumulus Linux und RCF gehostet werden.
+. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
++
+`network device-discovery show`
+
+. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
++
+.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
++
+`network port show -role cluster`
+
+.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
++
+`network interface show -role cluster`
+
+.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
++
+`system cluster-switch show -is-monitoring-enabled-operational true`
+
+
+
+. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
++
+`network interface modify -vserver Cluster -lif * -auto-revert false`
+
++
+[NOTE]
+.Beachten Sie Folgendes:
+====
+** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Rücksetzung deaktivieren.
+** Wenn Sie Ihre Cumulus Linux-Version gerade aktualisiert haben, müssen Sie die automatische Wiederherstellung für diesen Schritt nicht deaktivieren, da sie bereits deaktiviert ist.
+
+
+====
 . Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
 +
 [listing, subs="+quotes"]
@@ -907,6 +1030,15 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
     Version Source: LLDP
 ----
 
+
+. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
++
+`cluster show`
+
+. Wiederholen Sie die Schritte 1 bis 14 am zweiten Schalter.
+. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
 
 
 

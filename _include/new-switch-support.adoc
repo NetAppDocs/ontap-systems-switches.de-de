@@ -8,6 +8,15 @@
 
 
  a| 
+12-Port 10/25/40/100GbE Cisco Nexus 9336C-FX2-T Cluster- und Speicher-Switch (X190212-CS-PE und X190212-CS-PI)
+ a| 
+Unterstützt 10/25/40/100GbE-Clusterkonfigurationen und 100GbE-Speicherkonfigurationen (Switch-Attached Storage).
+ a| 
+ONTAP 9.10.1
+
+
+
+ a| 
 16-Port 100-GbE-NVIDIA-Switch (X190006-PE und X190006-PI)
  a| 
 NVIDIA SN2100 Cluster Interconnect Switch und Storage Switch Unterstützung, einschließlich Unterstützung für MetroCluster IP-Konfigurationen.

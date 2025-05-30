@@ -11,15 +11,22 @@ summary: 'Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch
 
 
 [role="lead"]
-SNMP wird verwendet, um die Switches zu überwachen. Der Ethernet Switch Health Monitor (CSHM) verwendet SNMP zur Überwachung von Zustand und Performance von Cluster- und Speicher-Switches. SNMPv2c wird standardmäßig automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert.
+SNMP wird verwendet, um die Switches zu überwachen. Die Überwachung durch SNMPv3 wird durch Befolgen dieses Verfahrens konfiguriert.
 
-SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität bietet, die vor unbefugtem Zugriff schützen und die Vertraulichkeit und Integrität der Daten während der Übertragung gewährleisten.
+Der Ethernet Switch Health Monitor (CSHM) verwendet SNMP zur Überwachung von Zustand und Performance von Cluster- und Speicher-Switches. SNMPv2c wird standardmäßig automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert. SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität bietet, die vor unbefugtem Zugriff schützen und die Vertraulichkeit und Integrität der Daten während der Übertragung gewährleisten.
+
+[NOTE]
+====
+* SNMPv3 wird nur auf ONTAP 9.12.1 und höher unterstützt.
+* ONTAP 9.13.1P12, 9.14.1P9, 9.15.1P5, 9.16.1 und spätere Versionen beheben diese beiden Probleme:
++
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CONTAP-82891["Bei der ONTAP-Integritätsüberwachung von Cisco-Switches kann der SNMPv2-Verkehr nach der Umstellung auf SNMPv3 zur Überwachung weiterhin sichtbar sein."^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CONTAP-119131["Falsch-positive Switch-Lüfter- und Stromwarnungen bei SNMP-Fehlern"^]
 
 
-NOTE: SNMPv3 wird nur auf ONTAP 9.12.1 und höher unterstützt.
 
-Gehen Sie wie folgt vor, um SNMPv3 für Ihren speziellen Switch zu konfigurieren, der CSHM unterstützt.
 
+====
 .Über diese Aufgabe
 Die folgenden Befehle werden verwendet, um einen SNMPv3-Benutzernamen auf den Switches *Broadcom*, *Cisco* und *NVIDIA* zu konfigurieren:
 
@@ -134,7 +141,7 @@ DEPRECATED-Community String or SNMPv3 Username: -
 cluster1::*>
 cluster1::*> *system switch ethernet modify -device "sw1" -snmp-version SNMPv3 -community-or-username <username>*
 ----
-. Stellen Sie sicher, dass die Seriennummer, die mit dem neu erstellten SNMPv3-Benutzer abgefragt werden soll, mit der im vorherigen Schritt nach Abschluss des CSHM-Abfragezeitraums enthaltenen identisch ist.
+. Überprüfen Sie nach dem Abwarten der CSHM-Abfrageperiode, ob die Seriennummer für den Ethernet-Switch eingetragen ist.
 +
 [source, cli]
 ----
@@ -322,9 +329,9 @@ cluster1::*>
 
 
 --
-.NVIDIA – CLI 5.4
+.NVIDIA – CL 5.4.0
 --
-Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.4:
+Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.4.0:
 
 * Für *keine Authentifizierung*:
 +
@@ -518,9 +525,9 @@ DEPRECATED-Community String or SNMPv3 Username: -
 
 
 --
-.NVIDIA – CLI 5.11
+.NVIDIA – CL 5.11.0
 --
-Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.11:
+Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.11.0:
 
 * Für *keine Authentifizierung*:
 +

@@ -47,81 +47,11 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 
 [role="tabbed-block"]
 ====
-.ONTAP 9.14.1 und frühere Versionen
---
-. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
-+
-*HINWEIS:* Wenn Sie auf die Eingabeaufforderung der Benutzerspezifikation antworten `y`, stellen Sie sicher, dass der Benutzer die erforderlichen Berechtigungen hat, wie in beschrieben<<Bevor Sie beginnen>>.
-
-+
-[source, cli]
-----
-system switch ethernet log setup-password
-----
-+
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log setup-password*
-Enter the switch name: <return>
-The switch name entered is not recognized.
-Choose from the following list:
-*cs1*
-*cs2*
-
-cluster1::*> *system switch ethernet log setup-password*
-
-Enter the switch name: *cs1*
-Would you like to specify a user other than admin for log collection? {y|n}: *n*
-
-Enter the password: *<enter switch password>*
-Enter the password again: *<enter switch password>*
-
-cluster1::*> *system switch ethernet log setup-password*
-
-Enter the switch name: *cs2*
-
-Would you like to specify a user other than admin for log collection? {y|n}: *n*
-
-Enter the password: *<enter switch password>*
-Enter the password again: *<enter switch password>*
-----
-. Führen Sie den folgenden Befehl aus, um die Erfassung von Support-Protokollen anzufordern und die regelmäßige Erfassung zu aktivieren. Damit werden beide Arten der Protokollerfassung gestartet: Die detaillierten `Support` Protokolle und eine stündliche Datenerfassung `Periodic` .
-+
-[source, cli]
-----
-system switch ethernet log modify -device <switch-name> -log-request true
-----
-+
-[listing, subs="+quotes"]
-----
-cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
-
-Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-
-cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
-
-Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
-
-Enabling cluster switch log collection.
-----
-+
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
-
-+
-[source, cli]
-----
-system switch ethernet log show
-----
-
-
---
 .ONTAP 9.15.1 und höher
 --
 . Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
 +
-*HINWEIS:* Wenn Sie auf die Eingabeaufforderung der Benutzerspezifikation antworten `y`, stellen Sie sicher, dass der Benutzer die erforderlichen Berechtigungen hat<<Bevor Sie beginnen>>, wie in beschrieben.
+*HINWEIS:* Wenn Sie bei der Benutzerspezifikationsabfrage mit *y* antworten, stellen Sie sicher, dass der Benutzer über die erforderlichen Berechtigungen verfügt, wie in <<Bevor Sie beginnen>> .
 
 +
 [source, cli]
@@ -155,7 +85,12 @@ Would you like to specify a user other than admin for log collection? {y|n}: *n*
 Enter the password: *<enter switch password>*
 Enter the password again: *<enter switch password>*
 ----
-. Periodische Protokollerfassung aktivieren:
+
+
+
+NOTE: Erstellen Sie für CL 5.11.1 den Benutzer *cumulus* und antworten Sie mit *y* auf die folgende Eingabeaufforderung: Möchten Sie für die Protokollerfassung einen anderen Benutzer als den Administrator angeben? {y|n}: *y*
+
+. [[Schritt 2]]Aktivieren Sie die regelmäßige Protokollerfassung:
 +
 [source, cli]
 ----
@@ -240,6 +175,81 @@ cluster1::*> *system switch ethernet log show -instance*
      Last Support Log Timestamp: 3/11/2024 11:18:54
            Support Log Filename: cluster1:/mroot/etc/log/shm-cluster-log.tgz
 2 entries were displayed.
+----
+
+
+--
+.ONTAP 9.14.1 und frühere Versionen
+--
+. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
++
+*HINWEIS:* Wenn Sie auf die Eingabeaufforderung der Benutzerspezifikation antworten `y`, stellen Sie sicher, dass der Benutzer die erforderlichen Berechtigungen hat<<Bevor Sie beginnen>>, wie in beschrieben.
+
++
+[source, cli]
+----
+system switch ethernet log setup-password
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log setup-password*
+Enter the switch name: <return>
+The switch name entered is not recognized.
+Choose from the following list:
+*cs1*
+*cs2*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs1*
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+
+cluster1::*> *system switch ethernet log setup-password*
+
+Enter the switch name: *cs2*
+
+Would you like to specify a user other than admin for log collection? {y|n}: *n*
+
+Enter the password: *<enter switch password>*
+Enter the password again: *<enter switch password>*
+----
+
+
+
+NOTE: Erstellen Sie für CL 5.11.1 den Benutzer *cumulus* und antworten Sie mit *y* auf die folgende Eingabeaufforderung: Möchten Sie für die Protokollerfassung einen anderen Benutzer als den Administrator angeben? {y|n}: *y*
+
+. [[Schritt 2]] Um die Erfassung des Support-Protokolls anzufordern und die regelmäßige Erfassung zu aktivieren, führen Sie den folgenden Befehl aus. Damit werden beide Arten der Protokollerfassung gestartet: Die detaillierten `Support` Protokolle und eine stündliche Datenerfassung `Periodic` .
++
+[source, cli]
+----
+system switch ethernet log modify -device <switch-name> -log-request true
+----
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet log modify -device cs1 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+
+cluster1::*> *system switch ethernet log modify -device cs2 -log-request true*
+
+Do you want to modify the cluster switch log collection configuration? {y|n}: [n] *y*
+
+Enabling cluster switch log collection.
+----
++
+Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
+
++
+[source, cli]
+----
+system switch ethernet log show
 ----
 
 

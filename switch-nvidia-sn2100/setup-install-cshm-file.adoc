@@ -11,26 +11,21 @@ summary: Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei 
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches über Ethernet-Switches zu installieren.
+Um die Integritätsüberwachung von Ethernet-Switches auf NVIDIA-Ethernet-Switches zu konfigurieren, befolgen Sie dieses Verfahren.
 
-Folgende Modelle werden unterstützt:
+Diese Anweisungen gelten, wenn NVIDIA X190006-PE und X190006-PI Switches nicht richtig erkannt werden. Dies kann durch Ausführen von  `system switch ethernet show` und prüfen Sie, ob *OTHER* für Ihr Modell angezeigt wird. Um Ihr NVIDIA-Switch-Modell zu identifizieren, suchen Sie die Teilenummer mit dem Befehl  `nv show platform hardware` für NVIDIA CL 5.8 und früher oder  `nv show platform` für spätere Versionen.
 
-* MSN2100-CB2FC
-* MSN2100-CB2RC
-* X190006-PE
-* X190006-PI
+[NOTE]
+====
+Diese Schritte werden auch empfohlen, wenn Sie möchten, dass die Integritätsüberwachung und Protokollerfassung bei Verwendung von NVIDIA CL 5.11.x mit den folgenden ONTAP-Versionen wie vorgesehen funktioniert. Auch ohne diese Schritte funktionieren Integritätsüberwachung und Protokollerfassung möglicherweise weiterhin, aber durch deren Befolgung wird sichergestellt, dass alles ordnungsgemäß funktioniert.
+
+* 9.10.1P20, 9.11.1P18, 9.12.1P16, 9.13.1P8, 9.14.1, 9.15.1 und spätere Patch-Versionen
 
 
-
-NOTE: Dieses Installationsverfahren gilt für ONTAP 9.10.1 und höher.
-
+====
 .Bevor Sie beginnen
-* Überprüfen Sie, ob Sie die Konfigurationsdatei herunterladen müssen, indem Sie ausführen `system switch ethernet show` und prüfen, ob *ANDERE* für Ihr Modell angezeigt wird.
-+
-Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
-
 * Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
-* Aktivieren Sie SSH, um alle in CSHM verfügbaren Funktionen zu verwenden.
+* Aktivieren Sie SSH auf dem Switch, um alle in CSHM verfügbaren Funktionen zu nutzen.
 * Löschen Sie das `/mroot/etc/cshm_nod/nod_sign/` Verzeichnis auf allen Knoten:
 +
 .. Betreten Sie die Nodeshell:
@@ -101,7 +96,7 @@ Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für d
 +
 [listing, subs="+quotes"]
 ----
-cluster1::> *system cluster-switch configure-health-monitor -node * -package-url http://192.168.2.20/usr/download/_[filename.zip]_*
+cluster1::> *system switch ethernet*
 ----
 . Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:
 
@@ -134,6 +129,9 @@ Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
 cluster1::> *system switch ethernet show*
 ----
 
+
+
+NOTE: Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
 
 .Was kommt als Nächstes?
 link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

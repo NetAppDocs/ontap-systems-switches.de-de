@@ -86,7 +86,7 @@ Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen f�
 
 == Dokumentation der ONTAP Systeme
 
-Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Betriebssystemversion über das https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9 Dokumentationszentrum"^].
+Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Version des Betriebssystems von  https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9"^] .
 
 [cols="1,2"]
 |===

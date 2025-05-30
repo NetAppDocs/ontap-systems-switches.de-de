@@ -176,68 +176,60 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 === Schritt: Ports und Verkabelung konfigurieren
 
+[role="tabbed-block"]
+====
+.Cumulus Linux 4.4.3
+--
 . Melden Sie sich beim neuen Switch nsw2 als admin an und fahren Sie alle Ports herunter, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports swp1 bis swp14).
 +
 Die LIFs auf den Cluster-Nodes sollten für jeden Node bereits ein Failover auf den anderen Cluster-Port durchgeführt haben.
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@nsw2:~$ *net add interface swp1s0-3, swp2s0-3, swp3-14 link down*
 cumulus@nsw2:~$ *net pending*
 cumulus@nsw2:~$ *net commit*
 ----
-====
 . Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
 
 Warning: Disabling the auto-revert feature of the cluster logical interface may effect the availability of your cluster network. Are you sure you want to continue? {y|n}: *y*
 ----
-====
-. Vergewissern Sie sich, dass für alle Cluster-LIFs die automatische Zurücksetzung aktiviert ist:
+. Stellen Sie sicher, dass die automatische Rücksetzung bei allen Cluster-LIFs deaktiviert ist:
 +
 `net interface show -vserver Cluster -fields auto-revert`
 
 . Schließen Sie die ISL-Ports swp15 und swp16 am SN2100-Switch sw1 ab.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *net add interface swp15-16 link down*
 cumulus@sw1:~$ *net pending*
 cumulus@sw1:~$ *net commit*
 ----
-====
 . Entfernen Sie alle Kabel vom SN2100 sw1-Switch, und verbinden Sie sie dann mit den gleichen Ports am SN2100 nsw2-Switch.
 . Die ISL-Ports swp15 und swp16 zwischen den Switches sw1 und nsw2.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Die folgenden Befehle ermöglichen ISL-Ports swp15 und swp16 auf Switch sw1:
 
++
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *net del interface swp15-16 link down*
 cumulus@sw1:~$ *net pending*
 cumulus@sw1:~$ *net commit*
 ----
++
 Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch sw1 aufstehen:
 
++
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *net show interface*
@@ -249,10 +241,10 @@ State  Name         Spd   MTU    Mode        LLDP           Summary
 UP     swp15        100G  9216   BondMember  nsw2 (swp15)   Master: cluster_isl(UP)
 UP     swp16        100G  9216   BondMember  nsw2 (swp16)   Master: cluster_isl(UP)
 ----
-+ das folgende Beispiel zeigt, dass die ISL-Ports auf Switch nsw2 sind:
++
+Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch nsw2 aktiv sind:
 
 +
-
 [listing, subs="+quotes"]
 ----
 cumulus@nsw2:~$ *net show interface*
@@ -264,17 +256,14 @@ State  Name         Spd   MTU    Mode        LLDP           Summary
 UP     swp15        100G  9216   BondMember  sw1 (swp15)    Master: cluster_isl(UP)
 UP     swp16        100G  9216   BondMember  sw1 (swp16)    Master: cluster_isl(UP)
 ----
-====
 . Überprüfen Sie diesen Port `e3b` Ist auf allen Knoten aktiv:
 +
 `network port show -ipspace Cluster`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Die Ausgabe sollte wie folgt aussehen:
 
++
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network port show -ipspace Cluster*
@@ -296,12 +285,8 @@ Port      IPspace      Broadcast Domain Link MTU   Admin/Oper  Status    Status
 e3a       Cluster      Cluster          up   9000  auto/100000  healthy  false
 e3b       Cluster      Cluster          up   9000  auto/100000  healthy  false
 ----
-====
 . Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network device-discovery show -protocol lldp*
@@ -315,15 +300,11 @@ node2      /lldp
             e3a    sw1  (b8:ce:f6:19:1a:7e)   swp4          -
             e3b    nsw2 (b8:ce:f6:19:1b:b6)   swp4          -
 ----
-====
 . Vergewissern Sie sich, dass alle Node-Cluster-Ports aktiv sind:
 +
 `net show interface`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@nsw2:~$ *net show interface*
@@ -337,17 +318,14 @@ UP     swp4         100G  9216   Trunk/L2                      Master: bridge(UP
 UP     swp15        100G  9216   BondMember  sw1 (swp15)       Master: cluster_isl(UP)
 UP     swp16        100G  9216   BondMember  sw1 (swp16)       Master: cluster_isl(UP)
 ----
-====
 . Vergewissern Sie sich, dass beide Knoten jeweils eine Verbindung zu jedem Switch haben:
 +
 `net show lldp`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
 
++
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *net show lldp*
@@ -369,33 +347,26 @@ swp4       100G   Trunk/L2    node2                e3b
 swp15      100G   BondMember  sw1                swp15
 swp16      100G   BondMember  sw1                swp16
 ----
-====
 . Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
 +
 `cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
 
 . Bringen Sie auf Switch nsw2 die Ports an, die mit den Netzwerkports der Knoten verbunden sind.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@nsw2:~$ *net del interface swp1-14 link down*
 cumulus@nsw2:~$ *net pending*
 cumulus@nsw2:~$ *net commit*
 ----
-====
 . Zeigen Sie Informationen über die Nodes in einem Cluster an:
 +
 `cluster show`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Dieses Beispiel zeigt, dass der Zustand des Node für Node 1 und node2 in diesem Cluster „true“ lautet:
 
++
 [listing, subs="+quotes"]
 ----
 cluster1::*> *cluster show*
@@ -405,15 +376,11 @@ Node          Health  Eligibility
 node1         true    true
 node2         true    true
 ----
-====
 . Vergewissern Sie sich, dass alle physischen Cluster-Ports aktiv sind:
 +
 `network port show ipspace Cluster`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network port show -ipspace Cluster*
@@ -433,18 +400,241 @@ Port      IPspace      Broadcast Domain Link  MTU   Admin/Oper  Status   Status
 e3a       Cluster      Cluster          up    9000  auto/10000  healthy  false
 e3b       Cluster      Cluster          up    9000  auto/10000  healthy  false
 ----
+
+
+--
+.Cumulus Linux 5.x
+--
+. Melden Sie sich beim neuen Switch nsw2 als admin an und fahren Sie alle Ports herunter, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports swp1 bis swp14).
++
+Die LIFs auf den Cluster-Nodes sollten für jeden Node bereits ein Failover auf den anderen Cluster-Port durchgeführt haben.
+
++
+[listing, subs="+quotes"]
+----
+cumulus@nsw2:~$ *nv set interface swp15-16 link state down*
+cumulus@nsw2:~$ *nv config apply*
+----
+. Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
++
+`network interface modify -vserver Cluster -lif * -auto-revert false`
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
+
+Warning: Disabling the auto-revert feature of the cluster logical interface may effect the availability of your cluster network. Are you sure you want to continue? {y|n}: *y*
+----
+. Stellen Sie sicher, dass die automatische Rücksetzung bei allen Cluster-LIFs deaktiviert ist:
++
+`network interface show -vserver Cluster -fields auto-revert`
+
+. Schließen Sie die ISL-Ports swp15 und swp16 am SN2100-Switch sw1 ab.
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv set interface swp15-16 link state down*
+cumulus@sw1:~$ *nv config apply*
+----
+. Entfernen Sie alle Kabel vom SN2100 sw1-Switch, und verbinden Sie sie dann mit den gleichen Ports am SN2100 nsw2-Switch.
+. Die ISL-Ports swp15 und swp16 zwischen den Switches sw1 und nsw2.
++
+Die folgenden Befehle ermöglichen ISL-Ports swp15 und swp16 auf Switch sw1:
+
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv set interface swp15-16 link state down*
+cumulus@sw1:~$ *nv config apply*
+----
++
+Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch sw1 aufstehen:
+
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv show interface*
+
+State  Name         Spd   MTU    Mode        LLDP           Summary
+-----  -----------  ----  -----  ----------  -------------- ----------------------
+...
+...
+UP     swp15        100G  9216   BondMember  nsw2 (swp15)   Master: cluster_isl(UP)
+UP     swp16        100G  9216   BondMember  nsw2 (swp16)   Master: cluster_isl(UP)
+----
++
+Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch nsw2 aktiv sind:
+
++
+[listing, subs="+quotes"]
+----
+cumulus@nsw2:~$ *nv show interface*
+
+State  Name         Spd   MTU    Mode        LLDP           Summary
+-----  -----------  ----  -----  ----------  -------------  -----------------------
+...
+...
+UP     swp15        100G  9216   BondMember  sw1 (swp15)    Master: cluster_isl(UP)
+UP     swp16        100G  9216   BondMember  sw1 (swp16)    Master: cluster_isl(UP)
+----
+. Überprüfen Sie diesen Port `e3b` Ist auf allen Knoten aktiv:
++
+`network port show -ipspace Cluster`
+
++
+Die Ausgabe sollte wie folgt aussehen:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network port show -ipspace Cluster*
+
+Node: node1
+                                                                         Ignore
+                                                   Speed(Mbps)  Health   Health
+Port      IPspace      Broadcast Domain Link MTU   Admin/Oper   Status   Status
+--------- ------------ ---------------- ---- ----- ------------ -------- -------
+e3a       Cluster      Cluster          up   9000  auto/100000  healthy  false
+e3b       Cluster      Cluster          up   9000  auto/100000  healthy  false
+
+
+Node: node2
+                                                                         Ignore
+                                                   Speed(Mbps) Health    Health
+Port      IPspace      Broadcast Domain Link MTU   Admin/Oper  Status    Status
+--------- ------------ ---------------- ---- ----- ----------- --------- -------
+e3a       Cluster      Cluster          up   9000  auto/100000  healthy  false
+e3b       Cluster      Cluster          up   9000  auto/100000  healthy  false
+----
+. Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network device-discovery show -protocol lldp*
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface     Platform
+----------- ------ ------------------------- ------------  ----------------
+node1      /lldp
+            e3a    sw1  (b8:ce:f6:19:1a:7e)   swp3          -
+            e3b    nsw2 (b8:ce:f6:19:1b:b6)   swp3          -
+node2      /lldp
+            e3a    sw1  (b8:ce:f6:19:1a:7e)   swp4          -
+            e3b    nsw2 (b8:ce:f6:19:1b:b6)   swp4          -
+----
+. Vergewissern Sie sich, dass alle Node-Cluster-Ports aktiv sind:
++
+`nv show interface`
+
++
+[listing, subs="+quotes"]
+----
+cumulus@nsw2:~$ *nv show interface*
+
+State  Name         Spd   MTU    Mode        LLDP              Summary
+-----  -----------  ----  -----  ----------  ----------------- ----------------------
+...
+...
+UP     swp3         100G  9216   Trunk/L2                      Master: bridge(UP)
+UP     swp4         100G  9216   Trunk/L2                      Master: bridge(UP)
+UP     swp15        100G  9216   BondMember  sw1 (swp15)       Master: cluster_isl(UP)
+UP     swp16        100G  9216   BondMember  sw1 (swp16)       Master: cluster_isl(UP)
+----
+. Vergewissern Sie sich, dass beide Knoten jeweils eine Verbindung zu jedem Switch haben:
++
+`nv show interface lldp`
+
++
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv show interface lldp*
+
+LocalPort  Speed  Mode        RemoteHost         RemotePort
+---------  -----  ----------  -----------------  -----------
+swp3       100G   Trunk/L2    node1              e3a
+swp4       100G   Trunk/L2    node2              e3a
+swp15      100G   BondMember  nsw2               swp15
+swp16      100G   BondMember  nsw2               swp16
+
+
+cumulus@nsw2:~$ *nv show interface lldp*
+
+LocalPort  Speed  Mode        RemoteHost         RemotePort
+---------  -----  ----------  -----------------  -----------
+swp3       100G   Trunk/L2    node1                e3b
+swp4       100G   Trunk/L2    node2                e3b
+swp15      100G   BondMember  sw1                swp15
+swp16      100G   BondMember  sw1                swp16
+----
+. Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
++
+`cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
+
+. Bringen Sie auf Switch nsw2 die Ports an, die mit den Netzwerkports der Knoten verbunden sind.
++
+[listing, subs="+quotes"]
+----
+cumulus@nsw2:~$ *nv set interface swp1-14 link state up*
+cumulus@nsw2:~$ *nv config apply*
+----
+. Zeigen Sie Informationen über die Nodes in einem Cluster an:
++
+`cluster show`
+
++
+Dieses Beispiel zeigt, dass der Zustand des Node für Node 1 und node2 in diesem Cluster „true“ lautet:
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster show*
+
+Node          Health  Eligibility
+------------- ------- ------------
+node1         true    true
+node2         true    true
+----
+. Vergewissern Sie sich, dass alle physischen Cluster-Ports aktiv sind:
++
+`network port show ipspace Cluster`
+
++
+[listing, subs="+quotes"]
+----
+cluster1::*> *network port show -ipspace Cluster*
+
+Node node1                                                               Ignore
+                                                    Speed(Mbps) Health   Health
+Port      IPspace     Broadcast Domain  Link  MTU   Admin/Oper  Status   Status
+--------- ----------- ----------------- ----- ----- ----------- -------- ------
+e3a       Cluster     Cluster           up    9000  auto/10000  healthy  false
+e3b       Cluster     Cluster           up    9000  auto/10000  healthy  false
+
+Node: node2
+                                                                         Ignore
+                                                    Speed(Mbps) Health   Health
+Port      IPspace      Broadcast Domain Link  MTU   Admin/Oper  Status   Status
+--------- ------------ ---------------- ----- ----- ----------- -------- ------
+e3a       Cluster      Cluster          up    9000  auto/10000  healthy  false
+e3b       Cluster      Cluster          up    9000  auto/10000  healthy  false
+----
+
+
+--
 ====
-
-
 
 
 === Schritt 3: Überprüfen Sie die Konfiguration
 
+[role="tabbed-block"]
+====
+.Cumulus Linux 4.4.3
+--
 . Vergewissern Sie sich, dass das Cluster-Netzwerk ordnungsgemäß funktioniert.
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 cumulus@sw1:~$ *net show lldp*
@@ -456,8 +646,29 @@ swp4       100G   Trunk/L2    node2           e3a
 swp15      100G   BondMember  nsw2            swp15
 swp16      100G   BondMember  nsw2            swp16
 ----
+
+
+--
+.Cumulus Linux 5.x
+--
+. Vergewissern Sie sich, dass das Cluster-Netzwerk ordnungsgemäß funktioniert.
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:~$ *nv show interface lldp*
+
+LocalPort  Speed  Mode        RemoteHost      RemotePort
+---------  -----  ----------  --------------  -----------
+swp3       100G   Trunk/L2    node1           e3a
+swp4       100G   Trunk/L2    node2           e3a
+swp15      100G   BondMember  nsw2            swp15
+swp16      100G   BondMember  nsw2            swp16
+----
+
+
+--
 ====
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. [[step2]] Ändern Sie die Berechtigungsebene zurück zu admin:
 +
 `set -privilege admin`
 
