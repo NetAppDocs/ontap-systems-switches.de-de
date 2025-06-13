@@ -206,9 +206,17 @@ Stellen Sie sicher, dass die automatische Umrüstung deaktiviert ist, nachdem Si
 +
 [listing, subs="+quotes"]
 ----
+cs2> *enable*
+cs2# *configure*
 cs2(config)# *interface eth1/1/1-2,eth1/7-8*
 cs2(config-if-range)# *shutdown*
+cs2(config-if-range)# *exit*
+cs2# *exit*
 ----
++
+
+NOTE: Die Anzahl der angezeigten Ports variiert je nach Anzahl der Knoten im Cluster.
+
 . Überprüfen Sie, ob die Cluster-Ports zu den Ports migriert wurden, die auf Cluster-Switch cs1 gehostet werden. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster`
@@ -570,10 +578,18 @@ NOTE: Es kann bis zu 5 Minuten dauern, bis die Cluster-Nodes einen ordnungsgemä
 ====
 [listing, subs="+quotes"]
 ----
+cs1> *enable*
+cs1# *configure*
 cs1(config)# *interface eth1/1/1-2,eth1/7-8*
 cs1(config-if-range)# *shutdown*
+cs1(config-if-range)# *exit*
+cs1# *exit*
 ----
 ====
++
+
+NOTE: Die Anzahl der angezeigten Ports variiert je nach Anzahl der Knoten im Cluster.
+
 . Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert wurden, die auf dem Switch cs2 gehostet werden. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster`

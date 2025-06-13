@@ -66,25 +66,40 @@ Password:
 (Routing)# *hostname cs2*
 (cs2)#
 ----
-. Verwenden Sie zum Festlegen einer statischen IP-Adresse das `serviceport protocol`, `network protocol`, und `serviceport ip` Befehle, wie im Beispiel gezeigt.
-+
+. So legen Sie eine statische IPv4- oder IPv6-Verwaltungsadresse für den Service-Port des Switches fest:
+
+
+[role="tabbed-block"]
+====
+.IPv4
+--
 für den serviceport ist standardmäßig DHCP verwendet. Die IP-Adresse, die Subnetzmaske und die Standard-Gateway-Adresse werden automatisch zugewiesen.
 
-+
 [listing, subs="+quotes"]
 ----
 (cs2)# *serviceport protocol none*
 (cs2)# *network protocol none*
-(cs2)# *serviceport ip ipaddr netmask gateway*
+(cs2)# *serviceport ip <ip-address> <netmask> <gateway>*
 ----
-. Überprüfen Sie die Ergebnisse mit dem Befehl:
+--
+.IPv6
+--
+für den serviceport ist standardmäßig DHCP verwendet. Die IP-Adresse, die Subnetzmaske und die Standard-Gateway-Adresse werden automatisch zugewiesen.
+
+[listing, subs="+quotes"]
+----
+(cs2)# *serviceport protocol none*
+(cs2)# *network protocol none*
+(cs2)# *serviceport ipv6 <address>*
+(cs2)# *serviceport ipv6 <gateway>*
+----
+--
+====
+. [[Schritt 7]]Überprüfen Sie die Ergebnisse mit dem folgenden Befehl:
 +
 `show serviceport`
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
 (cs2)# *show serviceport*
@@ -100,7 +115,6 @@ Configured IPv6 Protocol....................... None
 IPv6 AutoConfig Mode........................... Disabled
 Burned In MAC Address.......................... D8:C4:97:71:12:3C
 ----
-====
 . Konfigurieren Sie die Domäne und den Namensserver:
 +
 [source, cli]
