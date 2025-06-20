@@ -5320,4 +5320,11 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="fdb7cb8f657426e7c409bfd6d1a36ce4" category="open-title">IPv6</block>
   <block id="eac292441a720b0a0f4b67dcb9db6398" category="list-text">[[Schritt 7]]Überprüfen Sie die Ergebnisse mit dem folgenden Befehl:</block>
   <block id="c946088bdd01d4ceb54099911c69adbe" category="admonition">Die Anzahl der angezeigten Ports variiert je nach Anzahl der Knoten im Cluster.</block>
+  <block id="bfa3caeccd381a6edc0d03bcf593415d" category="paragraph">In ONTAP 9.3 und höher können Sie von einem Cluster mit einem Switched-Cluster-Netzwerk zu einem Cluster migrieren, bei dem zwei Knoten direkt verbunden sind.</block>
+  <block id="c9a6054069261a928a7c1dab82eb88fe" category="paragraph">NetApp empfiehlt, dass Sie Ihre ONTAP-Version aktualisieren, bevor Sie mit dem Switchless-Clusterbetrieb für Cisco Nexus 3132Q-V-Switches fortfahren.</block>
+  <block id="144a250e90b7036b16f6df3cfd1f5f99" category="paragraph">Im Folgenden finden Sie weitere Informationen:</block>
+  <block id="87f018a0abede0248ff577d1557531c0" category="inline-link-macro">SU540: Chelsio T6 NIC-Fehler führen zum Systemabsturz beim Upgrade von 40G- auf 100G-Netzwerk-Switches</block>
+  <block id="de7ffa00f75520afd4312c03db0da03c" category="list-text"><block ref="de7ffa00f75520afd4312c03db0da03c" category="inline-link-macro-rx"></block></block>
+  <block id="c409f8a3c1a31991297c71a6ef92dff2" category="inline-link-macro">Knotenpanik nach der Migration vom Switched- zum Switchless-Cluster</block>
+  <block id="55f49c71e99a86d3514c015252eee468" category="list-text"><block ref="55f49c71e99a86d3514c015252eee468" category="inline-link-macro-rx"></block></block>
 </blocks>
