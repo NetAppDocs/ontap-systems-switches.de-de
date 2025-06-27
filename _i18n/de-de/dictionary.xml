@@ -4149,7 +4149,6 @@
   <block id="88948f2b657a3c9e5eec3736dcca6cdf" category="paragraph">100-GbE-ISL für Switch A-Port 35</block>
   <block id="56299051abd1af0cbe5dbee773fed3d5" category="paragraph">100-GbE-ISL zu Switch B-Port 36</block>
   <block id="5e596a6e5f0ffe0604d651cde90e34f0" category="paragraph">100-GbE-ISL für Switch A-Port 36</block>
-  <block id="b6deba442a3eaadb05f02285eb6e8113" category="admonition">Stellen Sie sicher, dass SSH deaktiviert ist, bevor Sie die Schlüssel ändern. Andernfalls wird eine Warnung auf dem Switch gemeldet.</block>
   <block id="19d577c8c5ac871bd4528e45b94e3215" category="paragraph">40/100-GbE-Node 7</block>
   <block id="6eabf22260c7ae80ec5e2274e9c4f09e" category="paragraph">40/100-GbE-Node 8</block>
   <block id="bea5a6b9eaf26fd0f9b528724d800b60" category="paragraph">40/100-GbE-Node 9</block>
@@ -5327,4 +5326,8 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="de7ffa00f75520afd4312c03db0da03c" category="list-text"><block ref="de7ffa00f75520afd4312c03db0da03c" category="inline-link-macro-rx"></block></block>
   <block id="c409f8a3c1a31991297c71a6ef92dff2" category="inline-link-macro">Knotenpanik nach der Migration vom Switched- zum Switchless-Cluster</block>
   <block id="55f49c71e99a86d3514c015252eee468" category="list-text"><block ref="55f49c71e99a86d3514c015252eee468" category="inline-link-macro-rx"></block></block>
+  <block id="a9a5bde505ea573688279b9aed85b83d" category="paragraph">Wenn SSH nicht deaktiviert ist, deaktivieren Sie es wie folgt:</block>
+  <block id="1991f73b95765ab4d1861d2717ed45f2" category="admonition">Stellen Sie sicher, dass Sie SSH deaktivieren, bevor Sie die Schlüssel ändern. Andernfalls wird auf dem Switch eine Warnung ausgegeben.</block>
+  <block id="5046b85a70c9d571be19e2a0283d236b" category="admonition">In Schritt 3 *Aktualisieren der MOTD-Datei* oben, der Befehl <block ref="633fe61df4a2e20028fd063d6108557f" prefix=" " category="inline-code"></block> ausgeführt wird. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
+  <block id="1767f5d7b100e3d4d6c5fea66216a39c" category="admonition">In Schritt 3 *Aktualisieren der MOTD-Datei* oben wird der Befehl „cat /etc/issue.net“ ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
 </blocks>
