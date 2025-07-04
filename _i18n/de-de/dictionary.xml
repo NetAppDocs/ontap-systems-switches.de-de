@@ -5330,4 +5330,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="1991f73b95765ab4d1861d2717ed45f2" category="admonition">Stellen Sie sicher, dass Sie SSH deaktivieren, bevor Sie die Schlüssel ändern. Andernfalls wird auf dem Switch eine Warnung ausgegeben.</block>
   <block id="5046b85a70c9d571be19e2a0283d236b" category="admonition">In Schritt 3 *Aktualisieren der MOTD-Datei* oben, der Befehl <block ref="633fe61df4a2e20028fd063d6108557f" prefix=" " category="inline-code"></block> ausgeführt wird. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
   <block id="1767f5d7b100e3d4d6c5fea66216a39c" category="admonition">In Schritt 3 *Aktualisieren der MOTD-Datei* oben wird der Befehl „cat /etc/issue.net“ ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.</block>
+  <block id="86f7f66cb381cc46fe300e0c2c8f0499" category="inline-link-macro">Die NTP-Serverkonfiguration funktioniert nicht mit NVIDIA SN2100-Switches</block>
+  <block id="c77e68e056a1f231532a65076ed213f7" category="paragraph">Lesen Sie den Knowledge Base-Artikel <block ref="54a4a8d8880601232d1c62bd5f55e05a" category="inline-link-macro-rx"></block> für weitere Details.</block>
 </blocks>
