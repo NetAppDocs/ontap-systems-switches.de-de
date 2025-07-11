@@ -417,7 +417,6 @@ NOTE: Wie Sie Ihre 10-GbE-Ports nach einem Upgrade des RCF online schalten könn
 
 
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-3132q-v.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Start-config-Datei.
 +
 Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
@@ -453,6 +452,7 @@ cs2# copy Nexus_3132QV_RCF_v1.6-Cluster-HA-Breakout.txt running-config echo-comm
 cs2# copy running-config startup-config [########################################] 100% Copy complete
 ----
 ====
+. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-3132q-v.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
 . Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
 +
 .. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
