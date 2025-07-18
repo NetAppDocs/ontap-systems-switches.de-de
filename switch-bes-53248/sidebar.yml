@@ -37,6 +37,8 @@ entries:
     url: "/switch-bes-53248/configure-install-rcf.html"
   - title: Aktivieren Sie SSH für die Protokollerfassung
     url: "/switch-bes-53248/configure-ssh.html"
+  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+    url: "/switch-bes-53248/reset-switch-bes-53248.html"
 - title: Switch aktualisieren
   pdf-filename: Upgrade_Switches_bes53248
   entries:

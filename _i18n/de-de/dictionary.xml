@@ -3110,7 +3110,6 @@
   <block id="ce4c0c35cac0cafac061a49da52f93cd" category="paragraph"><block ref="74dd19c11d43cfa2dd387ecf7d984746" category="inline-link-macro-rx"></block>.</block>
   <block id="d007743863da413e0445811c05d574db" category="summary">Lesen Sie die Software-Übersicht.</block>
   <block id="93d9f7b647768c2633a5b9f8a68e2b52" category="doc">Workflow für die Softwareinstallation für BES-53248-Switches</block>
-  <block id="6dd4b5e58bd32b079e19b1dda5c2f1bc" category="paragraph">Gehen Sie wie folgt vor, um die Software für einen BES-53248 Cluster-Switch zu installieren und zu konfigurieren:</block>
   <block id="9302ce88c481ebfe72d64373c7b0d0e5" category="doc">Aktualisieren Sie den BES-53248 Cluster-Switch</block>
   <block id="db3a43c92e9a5ccc39b5fabb1bd97719" category="paragraph">Führen Sie diese Schritte aus, um einen BES-53248-Cluster-Switch zu aktualisieren.</block>
   <block id="8ac36f1d8b0fc917225a100d2cd4a4c3" category="paragraph">Vor der Installation der EFOS Software, der Lizenzen und der RCF-Datei auf einem vorhandenen NetApp BES-53248 Cluster-Switch stellen Sie sicher, dass:</block>
@@ -5207,7 +5206,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="7baa7758ed49797651dc1e276762ae15" category="list-text">Clustering: *MSN2100-RCF-v1._x_-Cluster*</block>
   <block id="dd584ffba0b7534139645967bf24df84" category="sidebar">Installieren oder aktualisieren Sie das RCF-Skript</block>
   <block id="40b03f9635c63b20aade0ff8145eafb8" category="list-text">Für die Protokollerfassung mit Broadcom- und Cisco-Switches:</block>
-  <block id="89f1dd995a5c07ea1e13abc5993d9d59" category="list-text">Benutzer müssen über Privileges für Netzwerkadministratoren verfügen.</block>
   <block id="60f743043272b873831b17c5e7290445" category="list-text">Für jedes Cluster-Setup sollte auf dem Switch ein neuer Benutzer erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.</block>
   <block id="63229fc9218a5e1a57243ce033e91a3b" category="paragraph">Weitere Informationen zur Installation oder Aktualisierung Ihres RCF finden Sie im Knowledge Base-Artikel<block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block>.</block>
   <block id="26552c2532e5b34c96d8cef5f736c6ff" category="paragraph">Weitere Informationen zur Installation des RCF finden Sie im Knowledge Base-Artikel<block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block>.</block>
@@ -5339,4 +5337,19 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="255946ce0bdffe025ba4bdaa710146e6" category="list-text">Überprüfen Sie, ob die Datei write_erase.cfg wie erwartet gefüllt ist:</block>
   <block id="c8608e8042094ff03aff5d73acbce651" category="paragraph"><block ref="aa69f627a489063557f4707be7ba43f0" prefix="" category="inline-code"></block></block>
   <block id="90b56b330f7736518fea2723b6853482" category="list-text">Wiederholen Sie die Schritte 1 bis 20 am Schalter cs2.</block>
+  <block id="fb945b959f6754639fad6c6e9e9469b9" category="list-text">Der lokale Benutzer muss über Netzwerkadministratorrechte verfügen.</block>
+  <block id="47547bd96a2d76e2174e671baccc263a" category="paragraph">Um die Software für einen BES-53248-Cluster-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:</block>
+  <block id="7a81f2c0648b303fec3fe1081158d0e3" category="inline-link-macro">Setzen Sie den Switch auf die Werkseinstellungen zurück</block>
+  <block id="842f57c662529f95b306feb653984af0" category="list-text"><block ref="6356dc79de453379cf58db845e7c3b08" category="inline-link-macro-rx"></block>.</block>
+  <block id="585a6fd0f28eaade2a16ccaba1bb9b0d" category="paragraph">Löschen Sie die Cluster-Switch-Einstellungen des BES-53248.</block>
+  <block id="b879f523acbbe3c8d6ea83060443367e" category="doc">Setzen Sie den Cluster-Switch BES-53248 auf die Werkseinstellungen zurück</block>
+  <block id="7515349dce34258a6f65c5f9b6b0bc58" category="paragraph">Um den Cluster-Switch BES-53248 auf die Werkseinstellungen zurückzusetzen, müssen Sie die Switch-Einstellungen BES-53248 löschen.</block>
+  <block id="cf8c4cbc63a2e42b70c4b4beddd2e366" category="list-text">Sie müssen über die serielle Konsole mit dem Switch verbunden sein.</block>
+  <block id="55b0c310e4703cc82f05f8c44c9d0d39" category="list-text">Mit dieser Aufgabe wird die Konfiguration des Managementnetzwerks zurückgesetzt.</block>
+  <block id="eceb40fbe3a93ae0c766b186cce3cba4" category="list-text">Wechseln Sie zur Eingabeaufforderung mit erhöhten Rechten.</block>
+  <block id="8045e733034738065ca77d531de9666f" category="list-text">Löschen Sie die Startkonfiguration.</block>
+  <block id="91f81f9cd1a23a248e317b6b22a84ce3" category="paragraph"><block ref="1fb554759d9d32d450daa4da09330114" prefix="" category="inline-code"></block></block>
+  <block id="671537f32d06de75a977dc3008daeff5" category="admonition">Wenn das System fragt, ob die nicht gespeicherte oder geänderte Konfiguration vor dem erneuten Laden des Switches gespeichert werden soll, wählen Sie *Nein* aus.</block>
+  <block id="01abea5f71122f7491f5d67a54692187" category="list-text">[[Schritt 4]] Warten Sie, bis der Switch neu geladen ist, und melden Sie sich dann beim Switch an.</block>
+  <block id="3298c6d813bb0262584ca3882273ff2a" category="paragraph">Der Standardbenutzer ist „admin“ und es ist kein Passwort festgelegt. Es wird eine Eingabeaufforderung wie die folgende angezeigt:</block>
 </blocks>

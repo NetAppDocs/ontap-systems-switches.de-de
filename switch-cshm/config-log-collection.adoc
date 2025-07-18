@@ -31,7 +31,7 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 * Die Switch-Statusüberwachung muss für den Switch aktiviert sein. Überprüfen Sie dies, indem Sie sicherstellen, dass die `Is Monitored:` Feld wird in der Ausgabe des auf *true* gesetzt `system switch ethernet show` Befehl.
 * Für die Protokollerfassung mit Broadcom- und Cisco-Switches:
 +
-** Benutzer müssen über Privileges für Netzwerkadministratoren verfügen.
+** Der lokale Benutzer muss über Netzwerkadministratorrechte verfügen.
 ** Für jedes Cluster-Setup sollte auf dem Switch ein neuer Benutzer erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.
 
 
