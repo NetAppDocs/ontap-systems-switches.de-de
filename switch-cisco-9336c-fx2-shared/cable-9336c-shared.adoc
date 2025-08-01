@@ -69,3 +69,6 @@ Wo?
 * 100-GB-ISL zu Switch B-Port 35
 * 100-GB-ISL zu Switch B-Port 36
 
+
+.Was kommt als nächstes
+link:install-9336c-shared.html["Den Schalter einbauen"].

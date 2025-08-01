@@ -1,0 +1,26 @@
+---
+permalink: switch-cisco-9336c-fx2-shared/install-hardware-workflow.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Lesen Sie vor der Konfiguration der Cisco Nexus 9336C-FX2-Switches die Konfigurationsübersicht. 
+---
+= Workflow zur Hardwareinstallation für gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Hardware für einen gemeinsam genutzten Switch 9336C-FX2 zu installieren und zu konfigurieren, führen Sie die folgenden Schritte aus:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:cable-9336c-shared.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
+[role="quick-margin-para"]
+Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-9336c-shared.html["Den Schalter einbauen"]
+[role="quick-margin-para"]
+Installieren Sie den Schalter 9336C-FX2.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-switch-and-passthrough-panel-9336c-shared.html["Den Switch in einen NetApp-Schrank einbauen"]
+[role="quick-margin-para"]
+Installieren Sie den 9336C-FX2-Switch und das Durchgangspanel nach Bedarf in einem NetApp Schrank.

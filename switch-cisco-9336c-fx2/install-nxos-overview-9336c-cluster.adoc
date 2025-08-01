@@ -241,4 +241,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-link:install-nxos-software-9336c-cluster.html["Installieren oder aktualisieren Sie die NX-OS-Software"]
+link:install-nxos-software-9336c-cluster.html["Installieren oder aktualisieren Sie die NX-OS-Software"].

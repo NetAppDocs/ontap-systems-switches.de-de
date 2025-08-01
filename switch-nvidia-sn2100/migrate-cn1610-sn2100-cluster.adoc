@@ -28,7 +28,7 @@ Folgende Cluster-Switches werden unterstützt:
 
 Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://hwu.netapp.com/["Hardware Universe"^].
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 Stellen Sie sicher, dass Sie die folgenden Anforderungen für die Konfiguration erfüllen:
 
 * Der vorhandene Cluster ist ordnungsgemäß eingerichtet und funktioniert.

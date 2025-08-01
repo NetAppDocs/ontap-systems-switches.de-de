@@ -118,3 +118,6 @@ Um mehr als 12 Ports auf Ihrem Cisco Nexus 9336C-FX-T Storage Switch zu aktivier
 
 
 NOTE: Nachdem Sie Ihre Smart-Lizenz erworben haben, installieren Sie die entsprechende RCF, um alle 36 verfügbaren Ports zur Verwendung zu aktivieren und zu konfigurieren.
+
+.Was kommt als nächstes
+link:required-documentation-9336c-storage.html["Erforderliche Dokumentation"] .

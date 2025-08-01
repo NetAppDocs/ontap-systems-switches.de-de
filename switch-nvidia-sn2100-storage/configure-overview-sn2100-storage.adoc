@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: sn2100 SN2100 switches setup, sn2100 SN2100 switches install, cumulus linux 
 summary: Überprüfen Sie vor der Konfiguration von NVIDIA SN2100-Switches die Verfahrensübersicht. 
 ---
-= Überblick über den Konfigurationsprozess für NVIDIA SN2100 Storage Switches
+= Installations- und Einrichtungsworkflow für NVIDIA SN2100-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,49 +13,24 @@ summary: Überprüfen Sie vor der Konfiguration von NVIDIA SN2100-Switches die V
 [role="lead"]
 Der NVIDIA SN2100 ist ein Ethernet Switch, mit dem Sie Daten zwischen Controllern und Platten-Shelves wechseln können.
 
+Befolgen Sie diese Arbeitsschritte, um Ihre SN2100-Switches zu installieren und einzurichten.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-sn2100-storage.html["Überprüfen der Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Konfigurationsanforderungen für den SN2100-Speicherswitch.
 
-== Überblick über die Erstkonfiguration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:components-sn2100-storage.html["Überprüfen Sie die Komponenten und Teilenummern"]
+[role="quick-margin-para"]
+Überprüfen Sie die Komponenten und Teilenummern für den SN2100-Speicherschalter.
 
-Gehen Sie wie folgt vor, um einen NVIDIA SN2100-Switch auf Systemen mit ONTAP zu konfigurieren:
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-sn2100-storage.html["Überprüfen Sie die erforderlichen Unterlagen"]
+[role="quick-margin-para"]
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre SN2100-Switches und den ONTAP Cluster einzurichten.
 
-. link:install-hardware-sn2100-storage.html["Installieren Sie die Hardware für den NVIDIA SN2100 Switch"].
-+
-Anweisungen hierzu finden Sie im _NVIDIA Switch Installation Guide_.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-hardware-workflow.html["Installieren Sie die Hardware"]
+[role="quick-margin-para"]
+Installieren Sie die Switch-Hardware.
 
-. link:configure-sn2100-storage.html["Konfigurieren Sie den Switch"].
-+
-Anweisungen finden Sie in der NVIDIA-Dokumentation.
-
-. link:cabling-considerations-sn2100-storage.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"].
-+
-Prüfen Sie die Anforderungen für optische Verbindungen, den QSA-Adapter und die Switch-Port-Geschwindigkeit.
-
-. link:install-cable-shelves-sn2100-storage.html["Verkabelung der NS224 Shelfs als Switch-Attached Storage"].
-+
-Befolgen Sie diese Anweisungen, wenn Sie über ein System verfügen, in dem die NS224-Laufwerk-Shelfs als Switch-Attached Storage (nicht als Direct-Attached Storage) verkabelt werden müssen.
-
-. link:install-cumulus-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im Cumulus-Modus"] Oder link:install-onie-mode-sn2100-storage.html["Installieren Sie Cumulus Linux im ONIE-Modus"].
-+
-Sie können Cumulus Linux (CL) OS installieren, wenn der Switch Cumulus Linux oder ONIE ausführt.
-
-. link:install-rcf-sn2100-storage.html["Installieren Sie das Skript für die Referenzkonfigurationsdatei"].
-+
-Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.
-
-. link:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"].
-+
-Sie können die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches des Ethernet-Switches installieren.
-
-
-
-
-
-== Weitere Informationen
-
-Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
-
-* link:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"]
-* link:components-sn2100-storage.html["Komponenten und Teilenummern"]
-* link:required-documentation-sn2100-storage.html["Erforderliche Dokumentation"]
-
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-software-sn2100-storage.html["Konfigurieren der Software"]
+[role="quick-margin-para"]
+Konfigurieren Sie die Switch-Software.

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cisco nexus 92300YC 
 summary: Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden. 
 ---
-= Komponenten für Cisco Nexus 92300YC Switches
+= Komponenten und Teilenummern für Cisco Nexus 92300YC-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -66,3 +66,6 @@ Details zum Luftstrom des Cisco Nexus 92300YC-Switches:
 * Port-Side Abluftstrom (Standardluft) -- Kühle Luft dringt durch die Lüfter- und Stromversorgungsmodule im Kaltgang in das Gehäuse ein und auspufft durch das Anschlussende des Gehäuses im heißen Gang. Port-Side Abluftstrom mit blauer Färbung.
 * Port-Side Ansaugluftstrom (Rückwärtsluft) -- Kühle Luft dringt durch das Anschlussende im kalten Gang in das Gehäuse ein und entgastet durch die Lüfter- und Stromversorgungsmodule im heißen Gang. Port-Side-Luftstrom mit Burgunder Färbung.
 
+
+.Was kommt als nächstes
+link:required-documentation-92300.html["Erforderliche Dokumentation"] .

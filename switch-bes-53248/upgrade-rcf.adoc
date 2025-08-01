@@ -13,7 +13,9 @@ summary: 'Sie können die Referenzkonfigurationsdatei (RCF) nach der Konfigurati
 [role="lead"]
 Sie können die Referenzkonfigurationsdatei (RCF) nach dem Upgrade des EFOS-Switch des BES-53248-Clusters und nach dem Anwenden neuer Lizenzen aktualisieren.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Die aktuelle RCF-Datei, die im verfügbar ist https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite.

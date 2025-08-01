@@ -13,16 +13,26 @@ summary: Überblick über die Softwarekonfiguration oder NVIDIA SN2100-Switches.
 [role="lead"]
 Gehen Sie wie folgt vor, um die Software für einen NVIDIA SN2100-Switch zu installieren und zu konfigurieren:
 
-. link:install-cumulus-mode-sn2100-cluster.html["Installieren Sie Cumulus Linux im Cumulus-Modus"] Oder link:install-onie-mode-sn2100-cluster.html["Installieren Sie Cumulus Linux im ONIE-Modus"].
-+
-Sie können Cumulus Linux (CL) OS installieren, wenn der Switch Cumulus Linux oder ONIE ausführt.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-sn2100-cluster.html["Konfigurieren Sie den Switch"]
+[role="quick-margin-para"]
+Konfigurieren Sie den NVIDIA SN2100-Switch.
 
-. link:install-rcf-sn2100-cluster.html["Installieren Sie das RCF-Skript (Reference Configuration File)"].
-+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-cumulus-mode-sn2100-cluster.html["Installieren Sie Cumulus Linux im Cumulus-Modus"]
+[role="quick-margin-para"]
+Sie können das Betriebssystem Cumulus Linux (CL) installieren, wenn auf dem Switch Cumulus Linux ausgeführt wird.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-onie-mode-sn2100-cluster.html["Installieren Sie Cumulus Linux im ONIE-Modus"]
+[role="quick-margin-para"]
+Alternativ können Sie das Betriebssystem Cumulus Linux (CL) installieren, wenn auf dem Switch Cumulus Linux im ONIE-Modus ausgeführt wird.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:upgrade-cl-version.html["Aktualisieren Sie Ihre Cumulus Linux-Version nach Bedarf"]
+[role="quick-margin-para"]
+Sie können Ihr Cumulus Linux (CL)-Betriebssystem nach Bedarf aktualisieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:install-rcf-sn2100-cluster.html["Installieren oder aktualisieren Sie das RCF-Skript (Reference Configuration File)"]
+[role="quick-margin-para"]
 Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.
 
-. link:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"].
-+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"]
+[role="quick-margin-para"]
 Sie können die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches des Ethernet-Switches installieren.
-
-

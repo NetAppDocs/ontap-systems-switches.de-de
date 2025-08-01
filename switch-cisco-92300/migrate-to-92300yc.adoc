@@ -20,7 +20,9 @@ NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Ein vorhandenes Cluster mit vollem Funktionsumfang.
 * 10-GbE- und 40-GbE-Konnektivität zwischen Nodes und Nexus 92300YC Cluster-Switches.
 * Alle Cluster-Ports sind im Status up, um einen unterbrechungsfreien Betrieb zu gewährleisten.

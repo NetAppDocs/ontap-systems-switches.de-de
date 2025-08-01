@@ -24,8 +24,8 @@ Folgende Storage-Switches werden unterstützt:
 * Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
 
 
-.Was Sie benötigen
-Stellen Sie sicher, dass:
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 * Das vorhandene Cluster ist ordnungsgemäß eingerichtet und funktioniert.
 * Alle Storage-Ports befinden sich im Status up, um einen unterbrechungsfreien Betrieb zu gewährleisten.

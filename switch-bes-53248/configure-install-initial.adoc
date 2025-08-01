@@ -249,4 +249,4 @@ Configuration Saved!
 
 
 .Was kommt als Nächstes?
-link:configure-efos-software.html["Installieren Sie die EFOS-Software"]
+link:configure-efos-software.html["Installieren Sie die EFOS-Software"].

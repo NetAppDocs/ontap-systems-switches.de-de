@@ -17,7 +17,9 @@ Wenn Sie FAS22xx-Systeme in einem bestehenden 2-Node-Cluster ohne Switches einse
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Zwei Cluster-Verbindungen für die Migration von einer Konfiguration ohne Switches zu einer Switched-Konfiguration.
 * Das Cluster ist in einem ordnungsgemäßen Zustand und besteht aus zwei Nodes, die mit der Back-to-Back-Konnektivität verbunden sind.
 * Auf den Knoten wird ONTAP 8.2 oder höher ausgeführt.

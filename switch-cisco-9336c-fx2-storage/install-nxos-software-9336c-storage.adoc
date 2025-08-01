@@ -19,7 +19,9 @@ Bevor Sie beginnen, führen Sie den Vorgang in durch link:install-nxos-overview-
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 

@@ -6,7 +6,9 @@
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Bei der Konfiguration mit zwei Nodes ohne Switches:
 +
 ** Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.

@@ -80,3 +80,6 @@ Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informati
 * Informationen zum Erwerb zusätzlicher Lizenzen finden Sie unter link:configure-licenses.html["Aktivieren Sie neu lizenzierende Ports"] Für Details, wie sie aktiviert werden.
 * Wenn SSH aktiv ist, müssen Sie es nach dem Ausführen des Befehls manuell erneut aktivieren `erase startup-config` Und den Switch neu zu starten.
 
+
+.Was kommt als nächstes
+link:components-bes53248.html["Komponenten und Teilenummern"] .

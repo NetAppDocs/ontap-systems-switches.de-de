@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: BES-53248 switches, initial installation, configure new bes-53248 switch 
 summary: Lesen Sie vor der Konfiguration von BES-53248-Cluster-Switches die Konfigurationsübersicht. 
 ---
-= Überblick über die Installation und Konfiguration von BES-53248-Switches
+= Installations- und Einrichtungsablauf für BES-53248-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,45 +13,24 @@ summary: Lesen Sie vor der Konfiguration von BES-53248-Cluster-Switches die Konf
 [role="lead"]
 Der BES-53248 ist ein Bare Metal-Switch für den Einsatz in ONTAP Clustern mit zwei bis 24 Nodes.
 
+Befolgen Sie diese Arbeitsschritte, um Ihre BES-53248-Switches zu installieren und einzurichten.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-bes53248.html["Überprüfen der Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Konfigurationsanforderungen für den Cluster-Switch BES-53248.
 
-== Überblick über die Erstkonfiguration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:components-bes53248.html["Überprüfen Sie die Komponenten und Teilenummern"]
+[role="quick-margin-para"]
+Überprüfen Sie die Komponenten und Teilenummern für den Cluster-Switch BES-53248.
 
-Gehen Sie wie folgt vor, um einen BES-53248-Cluster-Switch auf Systemen mit ONTAP zu konfigurieren:
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-bes53248.html["Überprüfen Sie die erforderlichen Unterlagen"]
+[role="quick-margin-para"]
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre BES-53248-Switches und den ONTAP Cluster einzurichten.
 
-. link:install-hardware-bes53248.html["Installieren Sie die Hardware für den BES-53248 Cluster-Switch"].
-+
-Anweisungen hierzu finden Sie im Installationshandbuch für den Cluster Switch _Broadcom-unterstützte BES-53248 Cluster Switch_.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-hardware-workflow.html["Installieren Sie die Hardware"]
+[role="quick-margin-para"]
+Installieren Sie die Switch-Hardware.
 
-. link:configure-install-initial.html["Konfigurieren Sie den BES-53248 Cluster-Switch"].
-+
-Führen Sie eine Ersteinrichtung des BES-53248-Cluster-Switch durch.
-
-. link:configure-efos-software.html["Installieren Sie die EFOS-Software"].
-+
-Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.
-
-. link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"].
-+
-Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.
-
-. link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."].
-+
-Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.
-
-. link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"].
-+
-Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, aktivieren Sie SSH auf den Switches.
-
-
-
-
-
-== Weitere Informationen
-
-Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
-
-* link:configure-reqs-bes53248.html["Konfigurationsanforderungen"]
-* link:components-bes53248.html["Komponenten und Teilenummern"]
-* link:required-documentation-bes53248.html["Erforderliche Dokumentation"]
-
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-software-overview-bes53248.html["Konfigurieren der Software"]
+[role="quick-margin-para"]
+Konfigurieren Sie die Switch-Software.

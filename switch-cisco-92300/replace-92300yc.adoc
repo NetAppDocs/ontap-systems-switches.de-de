@@ -17,7 +17,7 @@ Der Austausch eines defekten Nexus 92300YC Switches in einem Cluster-Netzwerk is
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 Stellen Sie vor dem Austausch des Switches Folgendes sicher:
 
 * In dem vorhandenen Cluster und der Netzwerkinfrastruktur:

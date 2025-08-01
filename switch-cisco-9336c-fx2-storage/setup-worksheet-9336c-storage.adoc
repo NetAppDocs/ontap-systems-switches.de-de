@@ -1021,3 +1021,6 @@ Erfordert Lizenz
 
 |===
 Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+
+.Was kommt als nächstes
+link:install-9336c-storage.html["Den Schalter einbauen"].

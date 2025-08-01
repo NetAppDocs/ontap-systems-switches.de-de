@@ -589,3 +589,5 @@ Reserviert
 100-GbE-ISL für Switch A-Port 32
 
 |===
+.Was kommt als nächstes
+link:install-switch-3232c.html["Den Schalter einbauen"] .

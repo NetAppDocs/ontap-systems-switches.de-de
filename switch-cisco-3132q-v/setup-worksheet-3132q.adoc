@@ -589,3 +589,5 @@ Reserviert
 40 Gbit ISL für Switch A Port 32
 
 |===
+.Was kommt als nächstes
+link:install-switch-3132qv.html["Den Schalter einbauen"] .

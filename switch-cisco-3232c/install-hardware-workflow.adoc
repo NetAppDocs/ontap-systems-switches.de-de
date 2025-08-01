@@ -1,0 +1,30 @@
+---
+permalink: switch-cisco-3232c/install-hardware-workflow.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Lesen Sie vor der Konfiguration der Cisco Nexus 3232C-Cluster-Switches die Konfigurationsübersicht. 
+---
+= Workflow zur Hardwareinstallation für Cisco Nexus 3232C-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+So installieren und konfigurieren Sie die Hardware für einen 3232C-Cluster-Switch:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup_worksheet_3232c.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
+[role="quick-margin-para"]
+Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-switch-3232c.html["Den Schalter einbauen"]
+[role="quick-margin-para"]
+Installieren Sie den 3232C-Switch.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-switch-and-passthrough-panel-9336c-cluster.html["Den Switch in einen NetApp-Schrank einbauen"]
+[role="quick-margin-para"]
+Installieren Sie den 3232C-Switch und das Durchgangspanel nach Bedarf in einem NetApp Schrank.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cabling-considerations-3232c.html["Überprüfung der Verkabelung und Konfiguration"]
+[role="quick-margin-para"]
+Überprüfen Sie die Unterstützung für NVIDIA -Ethernet-Ports.

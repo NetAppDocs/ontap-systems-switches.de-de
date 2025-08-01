@@ -1,0 +1,136 @@
+---
+permalink: switch-cisco-92300/install-switch-netapp-cabinet-92300yc.html 
+sidebar: sidebar 
+keywords: install, cisco nexus, 92300yc cluster switch, pass-through panel, netapp cabinet 
+summary: Sie können den Cisco Nexus 92300YC-Switch und das Pass-Through-Panel mit den im Lieferumfang des Switches enthaltenen Standardhalterungen in einem NetApp -Schrank installieren. 
+---
+= Installieren Sie einen Cisco Nexus 92300YC-Cluster-Switch in einem NetApp Schrank
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Abhängig von Ihrer Konfiguration müssen Sie den Cisco Nexus 92300YC-Cluster-Switch und das Pass-Through-Panel möglicherweise mit den im Lieferumfang des Switches enthaltenen Standardhalterungen in einem NetApp -Schrank installieren.
+
+.Bevor Sie beginnen
+* Die anfänglichen Vorbereitungsanforderungen, Kit-Inhalte und Sicherheitsvorkehrungen in derlink:http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexu9000/hw/installation/guide/b_n3000_hardware_install_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 9000-Serie"^] .
+* Die acht 10-32- oder 12-24-Schrauben und Muttern für jeden Schalter, um die Halterungen und Gleitschienen an den vorderen und hinteren Schrankleisten zu befestigen.
+* Cisco Standard-Schienensatz zur Installation des Switches in einem NetApp Rack
+
+
+[NOTE]
+====
+Die Jumper-Kabel sind nicht im Lieferumfang des Pass-Through-Kits enthalten und sollten in Ihrem Switch enthalten sein. Wenn die Switches nicht im Lieferumfang enthalten sind, können Sie sie bei NetApp bestellen (Teilenummer X1558A-R6).
+
+====
+.Schritte
+. Die Pass-Through-Blindplatte in den NetApp-Schrank einbauen.
++
+Die Pass-Through-Panel-Kit ist bei NetApp erhältlich (Teilenummer X8784-R6).
+
++
+Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
+
++
+** Ein Durchlauf-Blindblech
+** Vier 10-32 x 0,75 Schrauben
+** Vier 10-32-Clip-Muttern
++
+... Stellen Sie die vertikale Position der Schalter und der Blindplatte im Schrank fest.
++
+Bei diesem Verfahren wird die Blindplatte in U40 installiert.
+
+... Bringen Sie an jeder Seite zwei Klemmmuttern an den entsprechenden quadratischen Löchern für die vorderen Schrankschienen an.
+... Zentrieren Sie die Abdeckung senkrecht, um ein Eindringen in den benachbarten Rack zu verhindern, und ziehen Sie die Schrauben fest.
+... Stecken Sie die Buchsen der beiden 48-Zoll-Jumper-Kabel von der Rückseite der Abdeckung und durch die Bürstenbaugruppe.
++
+image::../media/cisco_9148_jumper_cords.gif[cisco 9148-Jumper-Kabel]
+
+
+
+
+
+
+
+_(1) Buchsenleiste des Überbrückungskabels._
+
+. Installieren Sie die Rackmontagehalterungen am Nexus 92300YC-Switch-Gehäuse.
++
+.. Positionieren Sie eine vordere Rack-Mount-Halterung auf einer Seite des Switch-Gehäuses so, dass das Montagewinkel an der Gehäusefaceplate (auf der Netzteilseite oder Lüfterseite) ausgerichtet ist. Verwenden Sie dann vier M4-Schrauben, um die Halterung am Gehäuse zu befestigen.
++
+image::../media/3132q_front_bracket.gif[Vordere Halterung]
+
+.. Wiederholen Sie Schritt 2a mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Setzen Sie die hintere Rack-Halterung am Switch-Gehäuse ein.
+.. Wiederholen Sie Schritt 2c mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
+
+
+. Die Klemmmuttern für alle vier IEA-Stützen an den Stellen der quadratischen Bohrung anbringen.
++
+image::../media/ru_locations_for_3132q_v.gif[ru Standorte für 3132q V]
+
++
+Die beiden 92300YC-Switches werden immer in den oberen 2 HE der Schränke RU41 und 42 montiert.
+
+. Installieren Sie die Gleitschienen im Schrank.
++
+.. Positionieren Sie die erste Gleitschiene an der RU42-Markierung auf der Rückseite des hinteren linken Pfosten, legen Sie die Schrauben mit dem entsprechenden Gewindetyp ein und ziehen Sie die Schrauben mit den Fingern fest.
++
+image::../media/3132q_v_slider_rails.gif[3132q V Gleitschienen]
+
++
+_(1) beim sanften Schieben der Gleitschiene richten Sie sie an den Schraubenbohrungen im Rack aus._ + _(2) ziehen Sie die Schrauben der Gleitschienen an den Schrankleisten fest._
+
+.. Wiederholen Sie Schritt 4a für den hinteren Pfosten auf der rechten Seite.
+.. Wiederholen Sie die Schritte 4a und 4b an den RU41-Stellen im Schrank.
+
+
+. Den Schalter in den Schrank einbauen.
++
+[NOTE]
+====
+Für diesen Schritt sind zwei Personen erforderlich: Eine Person muss den Schalter von vorne und von der anderen in die hinteren Gleitschienen führen.
+
+====
++
+.. Positionieren Sie die Rückseite des Schalters an RU41.
++
+image::../media/3132q_v_positioning.gif[92300YC Positionierung bei U39-40]
+
++
+_(1) Da das Gehäuse in Richtung der hinteren Pfosten geschoben wird, richten Sie die beiden hinteren Rackmontageführungen an den Gleitschienen aus._
+
++
+_(2) Schieben Sie den Schalter vorsichtig, bis die vorderen Halterungen der Rackmontage bündig mit den vorderen Pfosten sind._
+
+.. Befestigen Sie den Schalter am Gehäuse.
++
+image::../media/3132q_attaching.gif[3132q Befestigung]
+
++
+_(1) mit einer Person, die die Vorderseite des Chassis hält, sollte die andere Person die vier hinteren Schrauben vollständig an den Schrankpfosten festziehen._
+
+.. Wenn das Gehäuse nun ohne Unterstützung unterstützt wird, ziehen Sie die vorderen Schrauben fest an den Stützen.
+.. Wiederholen Sie die Schritte 5a bis 5c für den zweiten Schalter an der Position RU42.
++
+[NOTE]
+====
+Durch die Verwendung des vollständig installierten Schalters als Unterstützung ist es nicht erforderlich, während des Installationsvorgangs die Vorderseite des zweiten Schalters zu halten.
+
+====
+
+
+. Wenn die Switches installiert sind, verbinden Sie die Jumper-Kabel mit den Switch-Netzeinkabeln.
+. Verbinden Sie die Stecker beider Überbrückungskabel mit den am nächsten verfügbaren PDU-Steckdosen.
++
+[NOTE]
+====
+Um Redundanz zu erhalten, müssen die beiden Kabel mit verschiedenen PDUs verbunden werden.
+
+====
+. Verbinden Sie den Verwaltungsport an jedem 92300YC-Switch mit einem der Verwaltungsswitches (falls bestellt) oder verbinden Sie sie direkt mit Ihrem Verwaltungsnetzwerk.
++
+Der Management-Port ist der oben rechts gelegene Port auf der PSU-Seite des Switch. Das CAT6-Kabel für jeden Switch muss über die Passthrough-Leiste geführt werden, nachdem die Switches zur Verbindung mit den Management-Switches oder dem Management-Netzwerk installiert wurden.
+
+

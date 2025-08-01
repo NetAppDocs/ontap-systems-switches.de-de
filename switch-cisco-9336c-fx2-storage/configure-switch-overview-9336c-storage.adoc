@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
 summary: Überblick über die Installation und Konfiguration der Cisco Nexus 9336C-FX2 Storage-Switches 
 ---
-= Überblick über die Installation und Konfiguration der Cisco Nexus 9336C-FX2 Storage-Switches
+= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2-Speicherswitches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,50 +13,28 @@ summary: Überblick über die Installation und Konfiguration der Cisco Nexus 933
 [role="lead"]
 Der Cisco Nexus 9336C-FX2-Switch ist Teil der Cisco Nexus 9000-Plattform und kann in einem NetApp-Systemschrank installiert werden. Der Nexus 9336C-FX2 ist ein Ethernet-Switch, mit dem Daten zwischen Controllern und Festplatten-Shelfs ausgetauscht werden können.
 
+Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2-Switches zu installieren und einzurichten.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-9336c-storage.html["Überprüfen der Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Konfigurationsanforderungen für den Speicher-Switch 9336C-FX2.
 
-== Überblick über die Erstkonfiguration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:components-9336c-storage.html["Überprüfen Sie die Komponenten und Teilenummern"]
+[role="quick-margin-para"]
+Überprüfen Sie die Komponenten und Teilenummern für den Speicherschalter 9336C-FX2.
 
-Gehen Sie wie folgt vor, um einen Cisco Nexus 9336C-FX2 Switch auf Systemen mit ONTAP zu konfigurieren:
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-9336c-storage.html["Überprüfen Sie die erforderlichen Unterlagen"]
+[role="quick-margin-para"]
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2-Switches und den ONTAP Cluster einzurichten.
 
-. link:setup-worksheet-9336c-storage.html["Füllen Sie das Verkabelungsarbeitsblatt aus"].
-+
-Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:smart-call-9336c-storage.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
 
-. link:install-9336c-storage.html["Den Schalter einbauen"].
-+
-Richten Sie die Switch-Hardware ein.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:install-9336c-storage.html["Installieren Sie die Hardware"]
+[role="quick-margin-para"]
+Installieren Sie die Switch-Hardware.
 
-. link:setup-switch-9336c-storage.html["Konfigurieren Sie den Switch"].
-+
-Richten Sie den Cisco Nexus 9336C-FX2-Speicher-Switch ein.
-
-. link:install-switch-and-passthrough-panel-9336c-storage.html["Den Switch in einen NetApp-Schrank einbauen"].
-+
-Je nach Konfiguration können Sie den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.
-
-. link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation oder das Upgrade von NX-OS und RCF vor"].
-+
-Befolgen Sie die vorbereitenden Verfahren zur Installation der Cisco NX-OS-Software und der Referenzkonfigurationsdateien (RCFs).
-
-. link:install-nxos-software-9336c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software"].
-+
-Installieren oder aktualisieren Sie die NX-OS-Software auf dem Nexus 9336C-FX2 Storage Switch.
-
-. link:install-rcf-software-9336c-storage.html["Installieren oder aktualisieren Sie die RCF-Konfigurationsdatei"].
-+
-Installieren oder aktualisieren Sie den RCF, nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
-
-
-
-
-
-== Weitere Informationen
-
-Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
-
-* link:configure-reqs-9336c-storage.html["Konfigurationsanforderungen"]
-* link:components-9336c-storage.html["Komponenten und Teilenummern"]
-* link:required-documentation-9336c-storage.html["Erforderliche Dokumentation"]
-* link:smart-call-9336c-storage.html["Anforderungen für Smart Call Home"]
-
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:configure-software-overview-9336c-storage.html["Konfigurieren der Software"]
+[role="quick-margin-para"]
+Konfigurieren Sie die Switch-Software.

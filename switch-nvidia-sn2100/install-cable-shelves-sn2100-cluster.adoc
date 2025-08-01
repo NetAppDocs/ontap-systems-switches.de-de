@@ -24,4 +24,4 @@ https://hwu.netapp.com/["NetApp Hardware Universe"^]
 
 
 .Was kommt als Nächstes?
-link:install-cumulus-mode-sn2100-cluster.html["Installieren Sie Cumulus Linux im Cumulus-Modus"] Oder link:install-onie-mode-sn2100-cluster.html["Installieren Sie Cumulus Linux im ONIE-Modus"].
+link:configure-sn2100-cluster.html["Konfigurieren Sie den Switch"].

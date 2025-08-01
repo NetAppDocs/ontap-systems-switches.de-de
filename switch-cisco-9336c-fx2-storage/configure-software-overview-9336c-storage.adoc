@@ -13,16 +13,18 @@ summary: Überblick über die Software-Konfiguration für Cisco Nexus 9336C-FX2 
 [role="lead"]
 So installieren und konfigurieren Sie Software für einen Cisco Nexus 9336C-FX2-Speicher-Switch:
 
-. link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation oder das Upgrade von NX-OS und RCF vor"].
-+
-Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien (RCFs) müssen auf Cisco Nexus 9336C-FX2-Speicherswitches installiert sein.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch-9336c-storage.html["Konfigurieren Sie den Switch"]
+[role="quick-margin-para"]
+Konfigurieren Sie den Speicher-Switch 9336C-FX2.
 
-. link:install-nxos-software-9336c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software"].
-+
-Laden Sie die NX-OS-Software auf dem Cisco Nexus 9336C-FX2-Speicherschalter herunter, und installieren Sie sie oder aktualisieren Sie sie.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation der NX-OS-Software und der RCF vor"]
+[role="quick-margin-para"]
+Die Cisco NX-OS-Software und Referenzkonfigurationsdateien (RCFs) müssen auf Cisco 9336C-FX2-Speicher-Switches installiert werden.
 
-. link:install-rcf-software-9336c-storage.html["Installieren oder aktualisieren Sie die RCF-Konfigurationsdatei"].
-+
-Installieren oder aktualisieren Sie den RCF, nachdem Sie den Cisco Nexus 9336C-FX2-Speicherschalter zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-nxos-software-9336c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software"]
+[role="quick-margin-para"]
+Laden Sie die NX-OS-Software herunter und installieren oder aktualisieren Sie sie auf dem Cisco 9336C-FX2-Speicherswitch.
 
-
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-rcf-software-9336c-storage.html["Installieren oder aktualisieren Sie den RCF"]
+[role="quick-margin-para"]
+Installieren oder aktualisieren Sie das RCF, nachdem Sie den Cisco 9336C-FX2-Switch zum ersten Mal eingerichtet haben.  Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.

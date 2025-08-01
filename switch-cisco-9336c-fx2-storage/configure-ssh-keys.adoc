@@ -1,0 +1,67 @@
+---
+permalink: switch-cisco-9336c-fx2-storage/configure-ssh-keys.html 
+sidebar: sidebar 
+keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9336c-fx2 
+summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Um SSH auf Cisco 9336c-fx2 Cluster Switches zu aktivieren, generieren Sie zunächst die SSH-Schlüssel und aktivieren dann SSH.' 
+---
+= Überprüfen Sie Ihre SSH-Konfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die Funktionen des Ethernet Switch Health Monitor (CSHM) und der Protokollsammlung verwenden, überprüfen Sie, ob SSH- und SSH-Schlüssel auf den Cluster-Switches aktiviert sind.
+
+.Schritte
+. Vergewissern Sie sich, dass SSH aktiviert ist:
++
+[listing, subs="+quotes"]
+----
+(switch) *show ssh server*
+ssh version 2 is enabled
+----
+. Überprüfen Sie, ob die SSH-Schlüssel aktiviert sind:
++
+`show ssh key`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(switch)# *show ssh key*
+
+rsa Keys generated:Fri Jun 28 02:16:00 2024
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDiNrD52Q586wTGJjFAbjBlFaA23EpDrZ2sDCewl7nwlioC6HBejxluIObAH8hrW8kR+gj0ZAfPpNeLGTg3APj/yiPTBoIZZxbWRShywAM5PqyxWwRb7kp9Zt1YHzVuHYpSO82KUDowKrL6lox/YtpKoZUDZjrZjAp8hTv3JZsPgQ==
+
+bitcount:1024
+fingerprint:
+SHA256:aHwhpzo7+YCDSrp3isJv2uVGz+mjMMokqdMeXVVXfdo
+
+could not retrieve dsa key information
+
+ecdsa Keys generated:Fri Jun 28 02:30:56 2024
+
+ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABJ+ZX5SFKhS57evkE273e0VoqZi4/32dt+f14fBuKv80MjMsmLfjKtCWy1wgVt1Zi+C5TIBbugpzez529zkFSF0ADb8JaGCoaAYe2HvWR/f6QLbKbqVIewCdqWgxzrIY5BPP5GBdxQJMBiOwEdnHg1u/9Pzh/Vz9cHDcCW9qGE780QHA==
+
+bitcount:521
+fingerprint:
+SHA256:TFGe2hXn6QIpcs/vyHzftHJ7Dceg0vQaULYRAlZeHwQ
+
+(switch)# *show feature | include scpServer*
+scpServer              1          enabled
+(switch)# *show feature | include ssh*
+sshServer              1          enabled
+(switch)#
+----
+====
+
+
+
+IMPORTANT: Wenn Sie FIPS aktivieren, müssen Sie den Bitcount mit dem Befehl auf dem Switch auf 256 ändern `ssh key ecdsa 256 force`.  https://docs.netapp.com/us-en/ontap/networking/configure_network_security_using_federal_information_processing_standards_@fips@.html#enable-fips["Konfiguration der Netzwerksicherheit mit FIPS"^]Weitere Informationen finden Sie unter.
+
+.Was kommt als Nächstes?
+link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].

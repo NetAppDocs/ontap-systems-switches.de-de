@@ -16,7 +16,9 @@ summary:
 [role="lead"]
 Befolgen Sie diese Anweisungen, um gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches zu konfigurieren.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Erforderliche Dokumentation für gemeinsamen Switch, Controller-Dokumentation und ONTAP-Dokumentation Siehe link:required-documentation-9336c-shared.html["Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 Shared-Switches"] Und https://docs.netapp.com/us-en/ontap/index.html["NetApp ONTAP-Dokumentation"^].
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen und Kabel
 * Abgeschlossene Verkabelungsarbeitsblätter. Siehe link:cable-9336c-shared.html["Füllen Sie das Cisco Nexus 9336C-FX2-Verkabelungsarbeitsblatt aus"]. Weitere Informationen zur Verkabelung finden Sie im https://hwu.netapp.com["Hardware Universe"].
@@ -31,4 +33,4 @@ Im link:../switch-cisco-9336c-fx2/install-switch-and-passthrough-panel-9336c-clu
 
 
 .Was kommt als Nächstes?
-Gehen Sie zu https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2-shared/setup-and-configure-9336c-shared.html["Konfigurieren Sie den gemeinsamen Cisco Nexus 9336C-FX2 Switch"].
+Optional können Sielink:install-switch-and-passthrough-panel-9336c-shared.html["Installation eines Cisco Nexus 9336C-FX2 Switch in einem NetApp Rack"] .  Andernfalls gehen Sie zulink:setup-and-configure-9336c-shared.html["Konfigurieren Sie den Switch"] .

@@ -13,7 +13,7 @@ summary: Stellen Sie vor der Installation des RCF-Skripts sicher, dass folgende 
 [role="lead"]
 Gehen Sie wie folgt vor, um das RCF-Skript zu aktualisieren.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 Stellen Sie vor dem Upgrade des RCF-Skripts sicher, dass auf dem Switch folgende Optionen verfügbar sind:
 
 * Cumulus Linux ist installiert. Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Für unterstützte Versionen.

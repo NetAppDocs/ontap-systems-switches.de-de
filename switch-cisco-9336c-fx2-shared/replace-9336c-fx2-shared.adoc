@@ -16,7 +16,7 @@ summary:
 [role="lead"]
 Sie können einen defekten Nexus 9336C-FX2 Shared Switch ersetzen. Dies ist ein NDU (Non Disruptive Procedure, NDU).
 
-.Was Sie benötigen
+.Bevor Sie beginnen
 Stellen Sie vor dem Austausch des Switches Folgendes sicher:
 
 * In dem vorhandenen Cluster und der Netzwerkinfrastruktur:

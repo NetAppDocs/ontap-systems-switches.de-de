@@ -19,7 +19,9 @@ Vor dem Installieren eines RCF müssen Sie zuerst die Cluster-LIFs vom Switch cs
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Ein aktuelles Backup der Switch-Konfiguration.
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen und keine fehlerhaften Cluster Network Interface Cards (NICs) oder ähnlichen Problemen).
 * Voll funktionsfähige Portverbindungen am Cluster-Switch.

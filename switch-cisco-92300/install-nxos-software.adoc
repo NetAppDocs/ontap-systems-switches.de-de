@@ -24,7 +24,9 @@ Bei NX-OS handelt es sich um ein Netzwerkbetriebssystem für die Ethernet Switch
 * Die für Nexus 92300YC-Switches unterstützten Node-Verbindungen sind die Ports 1/1 bis 1/66.
 
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Anwendbare NetApp Cisco NX-OS Software für Ihre Switches über die NetApp Support Site, erhältlich über http://mysupport.netapp.com/["mysupport.netapp.com"]
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch Seite"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und NX-OS-Versionen.

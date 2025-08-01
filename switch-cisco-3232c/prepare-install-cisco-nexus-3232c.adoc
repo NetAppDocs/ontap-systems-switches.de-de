@@ -226,4 +226,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-link:install-nx-os-software-3232c.html["Installation der NX-OS Software"]
+link:install-nx-os-software-3232c.html["Installation der NX-OS Software"] .

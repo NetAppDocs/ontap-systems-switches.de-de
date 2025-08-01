@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, Cisco Nexus 3132Q-V 
 summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3132Q-V-Switches einen Überblick über den Prozess und die Terminologie. 
 ---
-= Überblick über die Installation und Konfiguration von Cisco Nexus 3132Q-V Switches
+= Installations- und Einrichtungsworkflow für Cisco Nexus 3132Q-V-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,27 +13,24 @@ summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3132Q-V-Switches einen 
 [role="lead"]
 Die Cisco Nexus 3132Q-V Switches können als Cluster Switches in Ihrem AFF oder FAS Cluster verwendet werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
 
+Befolgen Sie diese Arbeitsschritte, um Ihren Cisco Nexus 3132Q-V-Switch zu installieren und einzurichten.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-3132q.html["Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Konfigurationsanforderungen für den Cluster-Switch 3132Q-V.
 
-== Überblick über die Erstkonfiguration
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:required-documentation-3132q.html["Erforderliche Dokumentation"]
+[role="quick-margin-para"]
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 3132Q-V-Switches und den ONTAP Cluster einzurichten.
 
-Gehen Sie wie folgt vor, um einen Cisco Nexus 3132Q-V Switch auf Systemen mit ONTAP zu konfigurieren:
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:smart-call-home-3132q.html["Anforderungen für Smart Call Home"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
 
-. link:setup_worksheet_3132q.html["Füllen Sie das Cisco Nexus 3132Q-V-Verkabelungsarbeitsblatt aus"]. Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
-. link:install-cisco-nexus-3132qv.html["Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch in einem NetApp Rack"]. Installieren Sie den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.
-. link:setup-switch.html["Konfigurieren Sie den Cisco Nexus 3132Q-V Switch"]. Richten Sie den Cisco Nexus 3132Q-V Switch ein und konfigurieren Sie ihn.
-. link:prepare-install-cisco-nexus-3132q.html["Bereiten Sie die Installation der NX-OS-Software und der Referenzkonfigurationsdatei vor"]. Bereiten Sie die Installation der NX-OS-Software und der Referenz-Konfigurationsdatei (RCF) vor.
-. link:install-nx-os-software-3132q-v.html["Installieren Sie die NX-OS-Software"]. Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem Nexus 3132Q-V Cluster Switch zu installieren.
-. link:install-rcf-3132q-v.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]. Gehen Sie folgendermaßen vor, um den RCF nach dem ersten Einrichten des Nexus 3132Q-V-Schalters zu installieren. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren.
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-hardware-workflow.html["Installieren Sie die Hardware"]
+[role="quick-margin-para"]
+Installieren Sie die Switch-Hardware.
 
-
-
-
-== Weitere Informationen
-
-Bevor Sie mit der Installation oder Wartung beginnen, überprüfen Sie bitte die folgenden Punkte:
-
-* link:configure-reqs-3132q.html["Konfigurationsanforderungen"]
-* link:required-documentation-3132q.html["Erforderliche Dokumentation"]
-* link:smart-call-home-3132q.html["Anforderungen für Smart Call Home"]
-
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-software-overview-3132q-v-cluster.html["Konfigurieren der Software"]
+[role="quick-margin-para"]
+Konfigurieren Sie die Switch-Software.

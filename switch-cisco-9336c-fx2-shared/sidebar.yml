@@ -6,7 +6,7 @@ entries:
 - title: Überblick
   pdf-filename: Overview_9336c-fx2-shared
   entries:
-  - title: Konfigurationsübersicht
+  - title: Schnellstart
     url: "/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html"
   - title: Konfigurationsanforderungen
     url: "/switch-cisco-9336c-fx2-shared/configure-reqs-9336c-shared.html"
@@ -14,22 +14,24 @@ entries:
     url: "/switch-cisco-9336c-fx2-shared/components-9336c-shared.html"
   - title: Erforderliche Dokumentation
     url: "/switch-cisco-9336c-fx2-shared/required-documentation-9336c-shared.html"
-- title: Hardware installieren
+- title: Installieren Sie die Hardware
   pdf-filename: Install_Hardware_9336c-fx2-gemeinsam genutzt
   entries:
+  - title: Arbeitsablauf bei der Hardwareinstallation
+    url: "/switch-cisco-9336c-fx2-shared/install-hardware-workflow.html"
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-9336c-fx2-shared/cable-9336c-shared.html"
-  - title: Installieren Sie den Schalter
+  - title: Den Schalter einbauen
     url: "/switch-cisco-9336c-fx2-shared/install-9336c-shared.html"
-  - title: Konfigurieren Sie den Switch
-    url: "/switch-cisco-9336c-fx2-shared/setup-and-configure-9336c-shared.html"
   - title: Switch in NetApp-Schrank einbauen
     url: "/switch-cisco-9336c-fx2-shared/install-switch-and-passthrough-panel-9336c-shared.html"
-- title: Software konfigurieren
+- title: Konfigurieren der Software
   pdf-filename: Configure_Software_9336c-fx2-shared
   entries:
   - title: Workflow für die Softwareinstallation
     url: "/switch-cisco-9336c-fx2-shared/configure-software-overview-9336c-shared.html"
+  - title: Konfigurieren Sie den Switch
+    url: "/switch-cisco-9336c-fx2-shared/setup-and-configure-9336c-shared.html"
   - title: Bereiten Sie sich auf die Installation der NX-OS-Software und der RCF vor
     url: "/switch-cisco-9336c-fx2-shared/prepare-nxos-rcf-9336c-shared.html"
   - title: Installation der NX-OS Software

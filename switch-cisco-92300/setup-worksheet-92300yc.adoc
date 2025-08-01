@@ -1365,3 +1365,5 @@ ISL zu Switch B Port 66
 ISL für Switch A Port 66
 
 |===
+.Was kommt als nächstes
+link:install-switch-92300yc.html["Den Schalter einbauen"] .

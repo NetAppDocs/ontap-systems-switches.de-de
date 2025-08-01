@@ -17,7 +17,9 @@ Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, k
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 Stellen Sie bei einer Konfiguration mit zwei Nodes ohne Switches Folgendes sicher:
 
 * Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.

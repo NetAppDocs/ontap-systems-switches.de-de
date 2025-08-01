@@ -6,7 +6,7 @@ entries:
 - title: Überblick
   pdf-filename: Overview_9336c-fx2-Speicher
   entries:
-  - title: Konfigurationsübersicht
+  - title: Schnellstart
     url: "/switch-cisco-9336c-fx2-storage/configure-switch-overview-9336c-storage.html"
   - title: Konfigurationsanforderungen
     url: "/switch-cisco-9336c-fx2-storage/configure-reqs-9336c-storage.html"
@@ -16,28 +16,32 @@ entries:
     url: "/switch-cisco-9336c-fx2-storage/required-documentation-9336c-storage.html"
   - title: Anforderungen für Smart Call Home
     url: "/switch-cisco-9336c-fx2-storage/smart-call-9336c-storage.html"
-- title: Hardware installieren
+- title: Installieren Sie die Hardware
   pdf-filename: Install_Hardware_9336c-fx2-Speicher
   entries:
+  - title: Arbeitsablauf bei der Hardwareinstallation
+    url: "/switch-cisco-9336c-fx2-storage/install-hardware-workflow.html"
   - title: Füllen Sie das Verkabelungsarbeitsblatt aus
     url: "/switch-cisco-9336c-fx2-storage/setup-worksheet-9336c-storage.html"
-  - title: Installieren Sie den Schalter
+  - title: Den Schalter einbauen
     url: "/switch-cisco-9336c-fx2-storage/install-9336c-storage.html"
-  - title: Konfigurieren Sie den Switch
-    url: "/switch-cisco-9336c-fx2-storage/setup-switch-9336c-storage.html"
-  - title: Switch in NetApp-Schrank einbauen
+  - title: Installieren Sie den Switch im NetApp Schrank
     url: "/switch-cisco-9336c-fx2-storage/install-switch-and-passthrough-panel-9336c-storage.html"
-- title: Software konfigurieren
+- title: Konfigurieren der Software
   pdf-filename: Configure_Software_9336c-fx2-Storage
   entries:
   - title: Workflow für die Softwareinstallation
     url: "/switch-cisco-9336c-fx2-storage/configure-software-overview-9336c-storage.html"
+  - title: Konfigurieren Sie den Switch
+    url: "/switch-cisco-9336c-fx2-storage/setup-switch-9336c-storage.html"
   - title: Bereiten Sie sich auf die Installation von NX-OS und RCF vor
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-overview-9336c-storage.html"
   - title: Installation oder Upgrade der NX-OS-Software
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-software-9336c-storage.html"
   - title: Installieren oder aktualisieren Sie RCF
     url: "/switch-cisco-9336c-fx2-storage/install-rcf-software-9336c-storage.html"
-- title: Storage-Switch austauschen
+  - title: SSH-Konfiguration überprüfen
+    url: "/switch-cisco-9336c-fx2-storage/configure-ssh-keys.html"
+- title: Ersetzen Sie den Speicherschalter
   pdf-filename: Replace_Switch_9336c-fx2-Speicher
   url: "/switch-cisco-9336c-fx2-storage/replace-storage-switch-9336c-storage.html"

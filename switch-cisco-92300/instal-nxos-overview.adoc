@@ -13,7 +13,9 @@ summary: 'Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien \(RCFs\
 [role="lead"]
 Bevor Sie die NX-OS-Software und die RCF-Datei (Reference Configuration File) installieren, gehen Sie wie folgt vor:
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
 * Entsprechende Leitfäden für Software und Upgrades, die bei verfügbar sind https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Switches Der Cisco Nexus 9000-Serie"^].
 

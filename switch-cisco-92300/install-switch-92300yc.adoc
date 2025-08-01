@@ -1,0 +1,53 @@
+---
+permalink: switch-cisco-92300/install-switch-92300yc.html 
+sidebar: sidebar 
+keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 92300YC 
+summary: Befolgen Sie dieses Verfahren, um den Cisco Nexus 92300YC-Switch zu installieren. 
+---
+= Installieren Sie den Cluster-Switch 92300YC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gehen Sie wie folgt vor, um den Cisco Nexus 92300YC-Switch einzurichten und zu konfigurieren.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
+* Zugriff auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zum Herunterladen der entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File).
+* Entsprechende NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
+* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen und Kabel
+* Vollendetlink:setup-worksheet-92300yc.html["Verkabelungsarbeitsblätter"] .
+* Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden http://mysupport.netapp.com/["mysupport.netapp.com"^]. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, aber nicht über die RCFs geladen.
+* link:required-documentation-92300.html["Erforderliche Switch- und ONTAP-Dokumentation"] .
+
+
+.Schritte
+. Rack-Aufbau des Cluster-Netzwerks und der Management-Netzwerk-Switches und -Controller
++
+[cols="1,2"]
+|===
+| Wenn Sie den installieren... | Dann... 
+
+
+ a| 
+Cisco Nexus 92300YC in einem NetApp -Systemschrank
+ a| 
+Anweisungen zur Installation des Switches in einem NetApp -Schrank finden Sie im Handbuch „Installieren eines Cisco Nexus 92300YC-Cluster-Switches und Pass-Through-Panels in einem NetApp -Schrank“.
+
+
+
+ a| 
+Geräte in einem Telco-Rack
+ a| 
+Siehe die Verfahren in den Installationsleitfäden für die Switch-Hardware sowie in den Installations- und Setup-Anleitungen für NetApp.
+
+|===
+. Verkabeln Sie die Switches für das Cluster-Netzwerk und das Management-Netzwerk mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
+. Schalten Sie das Cluster-Netzwerk sowie die Switches und Controller des Managementnetzwerks ein.
+
+
+.Was kommt als Nächstes?
+Optional können Sielink:install-switch-netapp-cabinet-92300yc.html["Installieren Sie einen Cisco Nexus 3223C-Switch in einem NetApp -Schrank"] .  Andernfalls gehen Sie zulink:cabling-considerations-92300.html["Überprüfung der Verkabelung und Konfiguration"] .

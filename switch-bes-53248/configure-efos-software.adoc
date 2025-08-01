@@ -424,3 +424,6 @@ Der Switch wird ohne angewendete Konfiguration neu gestartet und auf die Werksei
 
 . Wiederholen Sie die Schritte 1 bis 8 auf dem Partner-Switch.
 
+
+.Was kommt als nächstes
+link:configure-licenses.html["Installieren von Lizenzen"] .

@@ -19,4 +19,4 @@ Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokument
 
 
 .Was kommt als Nächstes?
-link:configure-install-initial.html["Konfigurieren Sie den Switch"].
+link:cabling-considerations-bes-53248.html["Überprüfung der Verkabelung und Konfiguration"] .

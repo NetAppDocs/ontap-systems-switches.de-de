@@ -13,7 +13,9 @@ summary: Sie können den Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in 
 [role="lead"]
 Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Tafel in einem NetApp Rack installieren. Standardhalterungen sind im Lieferumfang des Schalters enthalten.
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 * Das Pass-Through-Panel-Kit, das von NetApp erhältlich ist (Teilenummer X8784-R6).
 +
 Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
