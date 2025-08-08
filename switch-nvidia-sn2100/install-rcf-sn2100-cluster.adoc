@@ -23,6 +23,22 @@ Stellen Sie vor der Installation oder Aktualisierung des RCF-Skripts sicher, das
 
 NOTE: Sie müssen im RCF (zusätzlich zum Admin-Benutzer) einen Benutzer angeben, der speziell für die Protokollerfassung verwendet werden soll.
 
+.Kundenkonfigurationen
+Folgende Referenzkonfigurationskategorien stehen zur Verfügung:
+
+[cols="1,2"]
+|===
+
+
+| Cluster | Bei Ports, die für 4x10GbE-Breakout konfiguriert sind, ist ein Port für 4x25GbE-Breakout und die anderen Ports für 40/100GbE konfiguriert.  Unterstützt gemeinsam genutzten Cluster-/HA-Verkehr auf Ports für Knoten, die gemeinsam genutzte Cluster-/HA-Ports verwenden.  Die Plattformtabelle finden Sie im Knowledge Base-Artikel. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_AFF_ASA_and_FAS_platforms_use_shared_Cluster_and_HA_Ethernet_ports["Welche AFF, ASA und FAS -Plattformen verwenden gemeinsam genutzte Cluster- und HA-Ethernet-Ports?"^] .  Alle Ports können auch als dedizierte Cluster-Ports verwendet werden. 
+
+
+ a| 
+Storage
+ a| 
+Alle Ports sind für 100GbE NVMe-Speicherverbindungen konfiguriert.
+
+|===
 .Aktuelle RCF-Skriptversionen
 Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. RCFs von Seite herunterladen https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA SN2100 Software-Download"^]. Das Verfahren für jedes ist gleich.
 

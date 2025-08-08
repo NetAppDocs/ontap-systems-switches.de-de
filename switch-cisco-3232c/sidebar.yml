@@ -41,6 +41,8 @@ entries:
     url: "/switch-cisco-3232c/install-rcf-3232c.html"
   - title: SSH-Konfiguration überprüfen
     url: "/switch-cisco-3232c/configure-ssh-keys.html"
+  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+    url: "/switch-cisco-3232c/reset-switch-3232c.html"
 - title: Switches migrieren
   pdf-filename: Migrate_switches_3232C
   entries:

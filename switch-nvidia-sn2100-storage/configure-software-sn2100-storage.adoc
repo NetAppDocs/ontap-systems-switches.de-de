@@ -32,3 +32,7 @@ Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"]
 [role="quick-margin-para"]
 Sie können die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches des Ethernet-Switches installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-sn2100-storage.html["Setzen Sie den Switch auf die Werkseinstellungen zurück"]
+[role="quick-margin-para"]
+Löschen Sie die Einstellungen des SN2100-Speicherschalters.

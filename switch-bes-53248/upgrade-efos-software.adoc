@@ -196,7 +196,7 @@ network interface modify -vserver Cluster -lif * -auto-revert false
 ====
 . Laden Sie die Bilddatei auf den Switch herunter.
 +
-Durch Kopieren der Bilddatei auf das aktive Image wird bei einem Neustart die aktuell ausgeführte EFOS-Version erstellt. Das vorherige Bild bleibt als Backup verfügbar.
+Durch das Kopieren der Image-Datei in das Backup-Image wird beim Neustart die laufende EFOS-Version dieses Images erstellt und das Update abgeschlossen.
 
 +
 [listing, subs="+quotes"]
@@ -273,7 +273,7 @@ Image Descriptions
 ------------------------------------------------------------------
  unit      active      backup      current-active    next-active
 ------------------------------------------------------------------
-    1    3.10.0.3    3.10.0.3            3.10.0.3       3.11.0.2
+    1    3.10.0.3    3.10.0.3            3.10.0.3       3.10.0.3
 ----
 ====
 . Speichern Sie die laufende Konfiguration in der Startkonfiguration:

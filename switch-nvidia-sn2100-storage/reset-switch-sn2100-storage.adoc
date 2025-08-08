@@ -1,0 +1,78 @@
+---
+permalink: switch-nvidia-sn2100-storage/reset-switch-sn2100-storage.html 
+sidebar: sidebar 
+keywords: SN2100 reset switch to factory defaults, SN2100 switches configuration, efos 
+summary: Lesen Sie die folgenden Informationen, bevor Sie Ihren Cisco Nexus SN2100-Switch konfigurieren. 
+---
+= Setzen Sie den SN2100-Speicherschalter auf die Werkseinstellungen zurück
+:allow-uri-read: 
+
+
+[role="lead"]
+So setzen Sie den SN2100-Speicherschalter auf die Werkseinstellungen zurück:
+
+* Für Cumulus Linux 5.10 und früher wenden Sie das Cumulus-Image an.
+* Für Cumulus Linux 5.11 und höher verwenden Sie die `nv action reset system factory-default` Befehl.
+
+
+.Über diese Aufgabe
+* Sie müssen über die serielle Konsole mit dem Switch verbunden sein.
+* Sie müssen über das Root-Passwort verfügen, um per Sudo auf die Befehle zugreifen zu können.
+
+
+
+NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unterlink:configure-software-overview-sn2100-cluster.html["Workflow für die Softwareinstallation von NVIDIA SN2100-Switches"] .
+
+.Schritte
+[role="tabbed-block"]
+====
+.Cumulus Linux 5.10 und früher
+--
+. Laden Sie die Switch-Softwareinstallation von der Cumulus-Konsole herunter und stellen Sie sie mit dem Befehl in die Warteschlange. `onie-install -a -i` gefolgt vom Dateipfad zur Switch-Software, zum Beispiel:
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *sudo onie-install -a -i http://<web-server>/<path>/cumulus-linux-5.10.0-mlx-amd64.bin*
+----
+. Das Installationsprogramm startet den Download.  Geben Sie *y* ein, wenn Sie aufgefordert werden, die Installation zu bestätigen, nachdem das Image heruntergeladen und überprüft wurde.
+. Starten Sie den Switch neu, um die neue Software zu installieren.
++
+`sudo reboot`
+
++
+[listing, subs="+quotes"]
+----
+cumulus@sw1:mgmt:~$ *sudo reboot*
+----
++
+
+NOTE: Der Switch startet neu und beginnt mit der Installation der Switch-Software, was einige Zeit in Anspruch nimmt.  Wenn die Installation abgeschlossen ist, startet der Switch neu und bleibt auf dem `log-in` prompt.
+
+
+
+--
+.Cumulus Linux 5.11 und höher
+--
+. Um den Switch auf die Werkseinstellungen zurückzusetzen und alle Konfigurations-, System- und Protokolldateien zu entfernen, führen Sie Folgendes aus:
++
+`nv action reset system factory-default`
+
++
+Beispiel:
+
++
+[listing, subs="+quotes"]
+----
+cumulus@switch:~$ *nv action reset system factory-default*
+
+This operation will reset the system configuration, delete the log files and reboot the switch.
+Type [y] continue.
+Type [n] to abort.
+Do you want to continue? [y/n] *y*
+----
+
+
+Sehen Sie sich die NVIDIA https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-511/Installation-Management/Factory-Reset/["Werksreset"^] Weitere Einzelheiten finden Sie in der Dokumentation.
+
+--
+====

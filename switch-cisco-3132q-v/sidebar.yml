@@ -41,6 +41,8 @@ entries:
     url: "/switch-cisco-3132q-v/install-rcf-3132q-v.html"
   - title: SSH-Konfiguration überprüfen
     url: "/switch-cisco-3132q-v/configure-ssh-keys.html"
+  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+    url: "/switch-cisco-3132q-v/reset-switch-3132q-v.html"
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_3132q-V
   entries:

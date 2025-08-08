@@ -40,6 +40,8 @@ entries:
     url: "/switch-cisco-9336c-fx2-shared/install-nxos-rcf-9336c-shared.html"
   - title: Aktualisieren Sie Ihre RCF-Version
     url: "/switch-cisco-9336c-fx2-shared/upgrade-rcf-software-9336c-shared.html"
+  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+    url: "/switch-cisco-9336c-fx2-shared/reset-switch-9336c-shared.html"
 - title: Switches migrieren
   pdf-filename: Migrate_Switches_9336c-fx2-shared
   entries:

@@ -42,6 +42,8 @@ entries:
     url: "/switch-cisco-9336c-fx2-storage/install-rcf-software-9336c-storage.html"
   - title: SSH-Konfiguration überprüfen
     url: "/switch-cisco-9336c-fx2-storage/configure-ssh-keys.html"
+  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+    url: "/switch-cisco-9336c-fx2-storage/reset-switch-9336c-storage.html"
 - title: Ersetzen Sie den Speicherschalter
   pdf-filename: Replace_Switch_9336c-fx2-Speicher
   url: "/switch-cisco-9336c-fx2-storage/replace-storage-switch-9336c-storage.html"
