@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install, rcf 
 summary: Sie können das RCF nach dem ersten Einrichten des Nexus 3232C-Switch installieren.Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
 ---
-= Installieren Sie die Referenzkonfigurationsdatei (RCF).
+= Referenzkonfigurationsdatei (RCF) installieren oder aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -262,42 +262,62 @@ cluster1::*>
 +
 `show running-config`
 
-. Reinigen Sie die Konfiguration auf Switch cs2, und starten Sie den Switch neu.
+. Notieren Sie alle benutzerdefinierten Ergänzungen zwischen der aktuellen laufenden Konfiguration und der verwendeten RCF-Datei.
+. Speichern Sie die grundlegenden Konfigurationsdetails in der Datei write_erase.cfg auf dem Bootflash.
 +
 
-CAUTION: Wenn Sie eine neue RCF aktualisieren oder anwenden, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten.
+NOTE: Beim Upgrade oder Anwenden eines neuen RCF müssen Sie die Switch-Einstellungen löschen und eine Grundkonfiguration durchführen.  Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten.
 
 +
-.. Konfiguration bereinigen:
+`cs2# show run | section "switchname" > bootflash:write_erase.cfg`
+
 +
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-(cs2)# *write erase*
+`cs2# show run | section "hostname" >> bootflash:write_erase.cfg`
 
-Warning: This command will erase the startup-configuration.
-
-Do you wish to proceed anyway? (y/n)  [n]  *y*
-----
-====
-.. Starten Sie den Switch neu:
 +
-.Beispiel anzeigen
-[%collapsible]
-====
-[listing, subs="+quotes"]
-----
-(cs2)# *reload*
+`cs2# show run | i "username admin password" >> bootflash:write_erase.cfg`
 
-Are you sure you would like to reset the system? (y/n) *y*
++
+`cs2# show run | section "vrf context management" >> bootflash:write_erase.cfg`
 
-----
-====
++
+`cs2# show run | section "interface mgmt0" >> bootflash:write_erase.cfg`
 
+. Führen Sie für RCF Version 1.12 und höher die folgenden Befehle aus:
++
+`cs2# echo "hardware access-list tcam region racl-lite 512" > bootflash:write_erase.cfg`
 
-. Führen Sie eine grundlegende Einrichtung des Switches durch. Siehe link:setup-switch.html["Konfigurieren Sie den 3232C-Cluster-Switch"] Entsprechende Details.
++
+`cs2# echo "hardware access-list tcam region qos 256" >> bootflash:write_erase.cfg`
+
++
+Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] für weitere Details.
+
+. Überprüfen Sie, ob die Datei write_erase.cfg wie erwartet gefüllt ist:
++
+`show file bootflash:write_erase.cfg`
+
+. Geben Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
++
+`cs2# *write erase*`
+
++
+`Warning: This command will erase the startup-configuration.`
+
++
+`Do you wish to proceed anyway? (y/n)  [n] *y*`
+
+. Kopieren Sie die zuvor gespeicherte Grundkonfiguration in die Startkonfiguration.
++
+`cs2# *copy write_erase.cfg startup-config*`
+
+. Führen Sie einen Neustart des Switches aus:
++
+`cs2# *reload*`
+
++
+`This command will reboot the system. (y/n)?  [n] *y*`
+
 . Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000-Serie NX-OS Command Reference"^] Leitfäden.
 +
 .Beispiel anzeigen
@@ -599,7 +619,7 @@ cluster1-04          true     true          false
 cluster1::*>
 ----
 ====
-. Wiederholen Sie die Schritte 7 bis 17 am Schalter cs1.
+. Wiederholen Sie die Schritte 7 bis 20 auf Switch cs1.
 . Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
 +
 [listing, subs="+quotes"]

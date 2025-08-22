@@ -123,3 +123,5 @@ cluster1::> *system switch ethernet show*
 
 
 NOTE: Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
+
+Siehe die https://docs.netapp.com/us-en/ontap-cli/system-switch-ethernet-configure-health-monitor.html["System-Switch-Ethernet-Konfigurations-Health-Monitor"^] Befehl für weitere Details.
