@@ -11,7 +11,7 @@ summary: Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches
 
 
 [role="lead"]
-Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne oder ohne Switches nutzen, können Sie mithilfe von Cisco Nexus 9336C-FX2 zu einer 2-Node-_Switched_-Cluster-Umgebung migrieren.
+Wenn Sie über eine vorhandene Clusterumgebung mit zwei Knoten und ohne Switch verfügen, können Sie mithilfe der Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T zu einer Clusterumgebung mit zwei Knoten und Switch migrieren.
 
 Der Migrationsprozess funktioniert bei allen Knoten mit optischen oder Twinax-Ports, wird von diesem Switch jedoch nicht unterstützt, wenn die Nodes integrierte 10 GB BASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.
 
@@ -629,4 +629,4 @@ RPC status:
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+Nachdem Sie Ihre Switches migriert haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .

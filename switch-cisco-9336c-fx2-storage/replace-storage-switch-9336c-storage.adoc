@@ -4,19 +4,19 @@ sidebar: sidebar
 keywords: replacing, replace, defective, nexus, switch, cluster, network, nondisruptive, procedure, ndu, replace a cisco nexus 9336c-fx2 cluster switch - cisco nexus 9336c-fx2 
 summary: 'Der Austausch eines defekten Nexus 9336C-FX2 Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren \ (NDU\).' 
 ---
-= Ersetzen Sie einen Cisco Nexus 9336C-FX2 Storage-Switch
+= Ersetzen Sie die Speicher-Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können einen defekten Nexus 9336C-FX2-Switch in einem Cluster-Netzwerk ersetzen. Hierbei handelt es sich um ein unterbrechungsfreies Verfahren.
+Sie können defekte Nexus 9336C-FX2- und 9336C-FX2-T-Switches in einem Clusternetzwerk ersetzen. Dies ist ein unterbrechungsfreies Verfahren.
 
 .Bevor Sie beginnen
-Stellen Sie vor der Installation der NX-OS-Software und der RCFs auf einem Cisco Nexus 9336C-FX2-Storage-Switch sicher, dass:
+Stellen Sie vor der Installation der NX-OS-Software und RCFs auf den Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Speicher-Switches Folgendes sicher:
 
-* Ihr System kann Cisco Nexus 9336C-FX2 Storage Switches unterstützen.
+* Ihr System kann die Speicher-Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T unterstützen.
 * Sie haben sich auf der Seite Cisco Ethernet Switch die Switch-Kompatibilitätstabelle für die unterstützten ONTAP-, NX-OS- und RCF-Versionen angehört.
 * Sie haben die entsprechenden Leitfäden zu Software und Upgrades auf der Cisco Website zur Verfügung gestellt.
 
@@ -267,4 +267,4 @@ storage::*>
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+Nachdem Sie Ihre Schalter ausgetauscht haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .

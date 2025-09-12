@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: migrate, switchless cluster interconnect, cisco nexus switch 9336C-FX2 
 summary: Sie können von einem Cluster mit einem Switch-Cluster-Netzwerk zu einem migrieren, mit dem zwei Nodes direkt für ONTAP 9.3 und höher verbunden sind. 
 ---
-= Ersetzen Sie Cisco Nexus 9336C-FX2 Cluster-Switches durch Switch-lose Verbindungen
+= Ersetzen Sie Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster-Switches durch Switchless-Verbindungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

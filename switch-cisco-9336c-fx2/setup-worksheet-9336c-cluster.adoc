@@ -882,4 +882,4 @@ Erfordert Lizenz
 Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
 
 .Was kommt als nächstes
-link:install-switch-9336c-cluster.html["Den Schalter einbauen"].
+Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben,link:install-switch-9336c-cluster.html["Installieren Sie den Schalter"] .

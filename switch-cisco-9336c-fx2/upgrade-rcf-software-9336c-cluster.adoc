@@ -920,4 +920,4 @@ RPC status:
 --
 ====
 .Was kommt als Nächstes?
-link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"].
+Nachdem Sie Ihr RCF aktualisiert haben,link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"] .

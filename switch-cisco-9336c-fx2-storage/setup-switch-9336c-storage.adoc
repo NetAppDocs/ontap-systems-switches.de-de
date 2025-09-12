@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
 summary: Wenn Sie noch nicht über die erforderlichen Konfigurationsinformationen und Dokumentation verfügen, müssen Sie diese Informationen erfassen, bevor Sie die Cluster- und Management-Netzwerk-Switches einrichten. 
 ---
-= Konfigurieren Sie den Speicherschalter 9336C-FX2
+= Konfigurieren der Speicher-Switches 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um den Cisco Nexus 9336C-FX2-Switch zu konfigurieren.
+Befolgen Sie dieses Verfahren, um die Cisco Nexus-Switches 9336C-FX2 und 9336C-FX2-T zu konfigurieren.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie Folgendes haben:
@@ -192,4 +192,4 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 
 .Was kommt als Nächstes?
-link:install-nxos-overview-9336c-storage.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"] .
+Nachdem Sie Ihre Switches konfiguriert haben,link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation der NX-OS-Software und RCF vor"] .

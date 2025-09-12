@@ -4,28 +4,30 @@ sidebar: sidebar
 keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
 summary: Überblick über die Installation und Konfiguration der Cisco Nexus 9336C-FX2 Storage-Switches 
 ---
-= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2-Speicherswitches
+= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2 9336C-FX2-T-Speicherswitches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Der Cisco Nexus 9336C-FX2-Switch ist Teil der Cisco Nexus 9000-Plattform und kann in einem NetApp-Systemschrank installiert werden. Der Nexus 9336C-FX2 ist ein Ethernet-Switch, mit dem Daten zwischen Controllern und Festplatten-Shelfs ausgetauscht werden können.
+Die Cisco Nexus 9336C-FX2 und 9336C-FX2-T Switches sind Teil der Cisco Nexus 9000 Plattform und können in einem NetApp Systemschrank installiert werden.
 
-Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2-Switches zu installieren und einzurichten.
+Cisco Nexus 9336C-FX2 (36 Ports) ist ein Cluster-/Speicher-/Daten-Switch mit hoher Portdichte. Cisco Nexus 9336C-FX2-T (12 Ports) ist ein Hochleistungs-Switch mit geringer Portdichte, der 10/25/40/100GbE-Konfigurationen unterstützt.
+
+Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2- und 9336C-FX2-T-Switches zu installieren und einzurichten.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-9336c-storage.html["Überprüfen der Konfigurationsanforderungen"]
 [role="quick-margin-para"]
-Überprüfen Sie die Konfigurationsanforderungen für den Speicher-Switch 9336C-FX2.
+Überprüfen Sie die Konfigurationsanforderungen für die Speicher-Switches 9336C-FX2 und 9336C-FX2-T.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:components-9336c-storage.html["Überprüfen Sie die Komponenten und Teilenummern"]
 [role="quick-margin-para"]
-Überprüfen Sie die Komponenten und Teilenummern für den Speicherschalter 9336C-FX2.
+Überprüfen Sie die Komponenten und Teilenummern für die Speicher-Switches 9336C-FX2 und 9336C-FX2-T.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-9336c-storage.html["Überprüfen Sie die erforderlichen Unterlagen"]
 [role="quick-margin-para"]
-Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2-Switches und den ONTAP Cluster einzurichten.
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2- und 9336C-FX2-T-Switches und den ONTAP Cluster einzurichten.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:smart-call-9336c-storage.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
 [role="quick-margin-para"]

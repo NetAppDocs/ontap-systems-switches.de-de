@@ -225,4 +225,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-link:install-nxos-software-9336c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software"].
+Nachdem Sie die Installation der NX-OS-Software und RCF vorbereitet haben,link:install-nxos-software-9336c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software"] .

@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: install, cisco, nexus, switch, pass-through, panel, netapp, cabinet, bracket, switch, install a cisco nexus 9336c-fx2 switch and pass-through panel in a netapp cabinet - cisco nexus 9336c-fx2 
 summary: Sie können den Cisco Nexus 9336C-FX2 Switch und Pass-Through-Panel in einem NetApp-Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind, installieren. 
 ---
-= Installation eines Cisco Nexus 9336C-FX2 Switch in einem NetApp Rack
+= Installieren Sie Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches in einem NetApp Schrank
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 9336C-FX2 Switch und die Pass-Through-Tafel in einem NetApp Rack installieren. Standardhalterungen sind im Lieferumfang des Schalters enthalten.
+Abhängig von Ihrer Konfiguration müssen Sie möglicherweise den Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switch und das Pass-Through-Panel in einem NetApp Schrank installieren. Standardhalterungen sind im Lieferumfang des Schalters enthalten.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie Folgendes haben:
@@ -70,7 +70,7 @@ image::../media/3132q_front_bracket.gif[Vordere Halterung]
 image::../media/ru_locations_for_3132q_v.gif[ru Standorte für 3132q V]
 
 +
-Die beiden 9336C-FX2 Schalter sind immer in der oberen 2 HE des Schrankes RU41 und 42 montiert.
+Die beiden Switches 9336C-FX2 und 9336C-FX2-T werden immer in den oberen 2HE der Schränke RU41 und 42 montiert.
 
 . Installieren Sie die Gleitschienen im Schrank.
 +
@@ -125,11 +125,11 @@ NOTE: Durch die Verwendung des vollständig installierten Schalters als Unterst�
 
 NOTE: Um Redundanz zu erhalten, müssen die beiden Kabel mit verschiedenen PDUs verbunden werden.
 
-. Verbinden Sie den Management Port an jedem 9336C-FX2 Switch mit einem der Management-Switches (falls bestellt) oder verbinden Sie sie direkt mit dem Management-Netzwerk.
+. Verbinden Sie den Verwaltungsport an jedem 9336C-FX2- und 9336C-FX2-T-Switch mit einem der Verwaltungsswitches (falls bestellt) oder verbinden Sie sie direkt mit Ihrem Verwaltungsnetzwerk.
 +
 Der Management-Port ist der oben rechts gelegene Port auf der PSU-Seite des Switch. Das CAT6-Kabel für jeden Switch muss über die Passthrough-Leiste geführt werden, nachdem die Switches zur Verbindung mit den Management-Switches oder dem Management-Netzwerk installiert wurden.
 
 
 
 .Was kommt als Nächstes?
-link:setup-switch-9336c-cluster.html["Konfigurieren Sie den Cisco Nexus 9336C-FX2 Switch"].
+Nachdem Sie die Switches im NetApp Schrank installiert haben,link:setup-switch-9336c-cluster.html["Konfigurieren Sie die Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches"] .

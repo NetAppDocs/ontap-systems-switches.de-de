@@ -4,26 +4,27 @@ sidebar: sidebar
 keywords: migrate cluster Cisco Nexus 9336C-FX2 cluster switches cn1610 
 summary: NetApp CN1610 Cluster Switches für ein ONTAP Cluster lassen sich unterbrechungsfrei zu Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migrieren. 
 ---
-= Migration von einem NetApp CN1610 Cluster-Switch zu einem Cisco 9336C-FX2 Cluster-Switch
+= Migrieren Sie von NetApp CN1610-Cluster-Switches zu Cisco 9336C-FX2- und 9336C-FX2-T-Cluster-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können NetApp CN1610-Cluster-Switches für ein ONTAP-Cluster zu Cisco 9336C-FX2 Cluster-Switches migrieren. Hierbei handelt es sich um ein unterbrechungsfreies Verfahren.
+Sie können NetApp CN1610-Cluster-Switches für einen ONTAP Cluster auf Cisco 9336C-FX2- und 9336C-FX2-T-Cluster-Switches migrieren. Dies ist ein unterbrechungsfreies Verfahren.
 
 
 
 == Prüfen Sie die Anforderungen
 
-Wenn Sie NetApp CN1610-Cluster-Switches durch Cisco 9336C-FX2 Cluster-Switches ersetzen, müssen Sie sich über bestimmte Konfigurationsdaten, Port-Verbindungen und Verkabelungsanforderungen im Klaren sein. Überprüfen Sie außerdem die Seriennummer des Switches, um sicherzustellen, dass der richtige Switch migriert wird.
+Sie müssen bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten, wenn Sie NetApp CN1610-Cluster-Switches durch Cisco 9336C-FX2- und 9336C-FX2-T-Cluster-Switches ersetzen. Sie müssen auch die Seriennummer des Switches überprüfen, um sicherzustellen, dass der richtige Switch migriert wird.
 
 .Unterstützte Switches
 Folgende Cluster-Switches werden unterstützt:
 
 * NetApp CN1610
 * Cisco 9336C-FX2
+* Cisco 9336C-FX2-T
 
 
 Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://hwu.netapp.com/["Hardware Universe"^].
@@ -33,7 +34,7 @@ Stellen Sie sicher, dass Ihre Konfiguration die folgenden Anforderungen erfüllt
 
 * Der vorhandene Cluster ist ordnungsgemäß eingerichtet und funktioniert.
 * Alle Cluster-Ports befinden sich im Status *up*, um einen unterbrechungsfreien Betrieb zu gewährleisten.
-* Die Cisco 9336C-FX2 Cluster-Switches werden unter der richtigen NX-OS-Version konfiguriert und betrieben, die mit der angewendeten Referenzkonfigurationsdatei (RCF) installiert ist.
+* Die Cluster-Switches Cisco 9336C-FX2 und 9336C-FX2-T sind konfiguriert und werden unter der richtigen Version von NX-OS mit angewendeter Referenzkonfigurationsdatei (RCF) betrieben.
 * Die vorhandene Cluster-Netzwerkkonfiguration verfügt über folgende Merkmale:
 +
 ** Ein redundantes und voll funktionsfähiges NetApp Cluster mit NetApp CN1610 Switches.
@@ -41,8 +42,8 @@ Stellen Sie sicher, dass Ihre Konfiguration die folgenden Anforderungen erfüllt
 ** Alle Cluster-LIFs im Status „up“ mit den Cluster-LIFs befinden sich auf den Home-Ports.
 
 
-* Einige der Ports sind auf Cisco 9336C-FX2 Switches konfiguriert, um mit 40 GbE oder 100 GbE zu laufen.
-* Sie haben die 40-GbE- und 100-GbE-Konnektivität von Nodes zu Cisco 9336C-FX2 Cluster-Switches geplant, migriert und dokumentiert.
+* Einige der Ports sind auf den Cisco 9336C-FX2- und 9336C-FX2-T-Switches für den Betrieb mit 40 GbE oder 100 GbE konfiguriert.
+* Sie haben 40GbE- und 100GbE-Konnektivität von Knoten zu Cisco 9336C-FX2- und 9336C-FX2-T-Cluster-Switches geplant, migriert und dokumentiert.
 
 
 
@@ -325,7 +326,7 @@ CAUTION: Versuchen Sie nicht, die Cluster-LIFs manuell zu migrieren.
 (C2)(Interface 0/1-0/12)# *exit*
 (C2)(Config)# *exit*
 ----
-. Verschieben Sie die Knoten-Cluster-Ports vom alten Switch C2 auf den neuen Switch cs2. Verwenden Sie dabei die entsprechende Verkabelung, die von Cisco 9336C-FX2 unterstützt wird.
+. Verschieben Sie die Knotencluster-Ports vom alten Switch C2 zum neuen Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von Cisco 9336C-FX2 und 9336C-FX2-T unterstützt wird.
 . Zeigen Sie die Attribute des Netzwerkports an:
 +
 `network port show -ipspace Cluster`
@@ -409,7 +410,7 @@ Cluster
 (C1)(Interface 0/1-0/12)# *exit*
 (C1)(Config)# *exit*
 ----
-. Verschieben Sie die Knoten-Cluster-Ports vom alten Switch C1 auf den neuen Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von Cisco 9336C-FX2 unterstützt wird.
+. Verschieben Sie die Knotencluster-Ports vom alten Switch C1 zum neuen Switch cs1. Verwenden Sie dazu die entsprechende Verkabelung, die von Cisco 9336C-FX2 und 9336C-FX2-T unterstützt wird.
 . Überprüfen der endgültigen Konfiguration des Clusters:
 +
 `network port show -ipspace Cluster`
@@ -562,4 +563,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+Nachdem Sie Ihre Switches migriert haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .

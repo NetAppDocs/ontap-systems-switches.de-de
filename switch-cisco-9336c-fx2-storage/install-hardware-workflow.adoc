@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: witches, initial installation, configure switch-cisco-9336c-fx2 switch 
 summary: Lesen Sie vor der Konfiguration der Cisco Nexus 9336C-FX2-Cluster-Switches die Konfigurationsübersicht. 
 ---
-= Workflow zur Hardwareinstallation für Cisco Nexus 9336C-FX2-Speicherswitches
+= Workflow zur Hardwareinstallation für die Speicherswitches Cisco Nexus 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um die Hardware für einen 9336C-FX2-Speicher-Switch zu installieren und zu konfigurieren:
+Gehen Sie folgendermaßen vor, um die Hardware für die Speicher-Switches 9336C-FX2 und 9336C-FX2-T zu installieren und zu konfigurieren:
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-worksheet-9336c-storage.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
 [role="quick-margin-para"]
@@ -19,8 +19,8 @@ Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-9336c-storage.html["Den Schalter einbauen"]
 [role="quick-margin-para"]
-Installieren Sie den Speicherschalter 9336C-FX2.
+Installieren Sie die Speicher-Switches 9336C-FX2 und 9336C-FX2-T.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-switch-and-passthrough-panel-9336c-storage.html["Den Switch in einen NetApp-Schrank einbauen"]
 [role="quick-margin-para"]
-Installieren Sie den 9336C-FX2-Switch und das Durchgangspanel nach Bedarf in einem NetApp Schrank.
+Installieren Sie die Switches 9336C-FX2 und 9336C-FX2-T und das Durchgangspanel nach Bedarf in einem NetApp Schrank.

@@ -2,7 +2,7 @@
 section: switch-netapp-cn1610
 title: NetApp CN1610
 entries:
-- title: Überblick
+- title: Los geht's
   pdf-filename: Übersicht_cn1610
   url: "/switch-netapp-cn1610/switch-overview-cn1610.html"
 - title: Installations- und Konfigurations-Workflow

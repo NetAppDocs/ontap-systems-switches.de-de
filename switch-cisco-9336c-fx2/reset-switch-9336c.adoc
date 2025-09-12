@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords: 9336C-FX2 reset switch to factory defaults, 9336C-FX2 switches configuration, efos 
 summary: Lesen Sie die folgenden Informationen, bevor Sie Ihren Cisco Nexus 9336C-FX2-Switch konfigurieren. 
 ---
-= Setzen Sie den 9336C-FX2-Cluster-Switch auf die Werkseinstellungen zurück
+= Setzen Sie die Cluster-Switches 9336C-FX2 und 9336C-FX2-T auf die Werkseinstellungen zurück
 :allow-uri-read: 
 
 
 [role="lead"]
-Um den Cluster-Switch 9336C-FX2 auf die Werkseinstellungen zurückzusetzen, müssen Sie die Switch-Einstellungen 9336C-FX2 löschen.
+Um die Cluster-Switches 9336C-FX2 und 9336C-FX2-T auf die Werkseinstellungen zurückzusetzen, müssen Sie die Switch-Einstellungen 9336C-FX2 und 9336C-FX2-T löschen.
 
 .Über diese Aufgabe
 * Sie müssen über die serielle Konsole mit dem Switch verbunden sein.

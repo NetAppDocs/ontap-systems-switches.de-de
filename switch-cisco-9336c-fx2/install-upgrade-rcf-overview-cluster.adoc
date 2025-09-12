@@ -11,7 +11,7 @@ summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) 
 
 
 [role="lead"]
-Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Switch zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
+Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Nexus-Switches 9336C-FX2 und 9336C-FX2-T zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
 
 Weitere Informationen zur Installation oder Aktualisierung Ihres RCF finden Sie im Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^].
 
@@ -104,4 +104,4 @@ Weitere Informationen zu den verfügbaren RCF-Konfigurationen finden Sie unter l
 Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 9000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
 
 .Was kommt als Nächstes?
-link:install-rcf-software-9336c-cluster.html["Installieren Sie das RCF"] Oder link:upgrade-rcf-software-9336c-cluster.html["Aktualisieren Sie Ihren RCF"].
+Nachdem Sie die Schritte zur Installation oder Aktualisierung von RCF gelesen haben,link:install-rcf-software-9336c-cluster.html["Installieren Sie den RCF"] oderlink:upgrade-rcf-software-9336c-cluster.html["Aktualisieren Sie Ihren RCF"] nach Bedarf.

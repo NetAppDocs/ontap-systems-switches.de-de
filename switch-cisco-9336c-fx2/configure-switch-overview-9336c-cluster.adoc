@@ -4,28 +4,30 @@ sidebar: sidebar
 keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
 summary: Überblick über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Cluster-Switches 
 ---
-= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2-Cluster-Switches
+= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Cluster-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Der Cisco Nexus 9336C-FX2 Cluster-Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp System-Rack installiert werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+Die Cluster-Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T sind Teil der Cisco Nexus 9000-Plattform und können in einem NetApp -Systemschrank installiert werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
-Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2-Switches zu installieren und einzurichten.
+Cisco Nexus 9336C-FX2 (36 Ports) ist ein Cluster-/Speicher-/Daten-Switch mit hoher Portdichte. Cisco Nexus 9336C-FX2-T (12 Ports) ist ein Hochleistungs-Switch mit geringer Portdichte, der 10/25/40/100GbE-Clusterkonfigurationen unterstützt.
+
+Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2- und 9336C-FX2-T-Switches zu installieren und einzurichten.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-9336c-cluster.html["Überprüfen der Konfigurationsanforderungen"]
 [role="quick-margin-para"]
-Überprüfen Sie die Konfigurationsanforderungen für den Cluster-Switch 9336C-FX2.
+Überprüfen Sie die Konfigurationsanforderungen für die Cluster-Switches 9336C-FX2 und 9336C-FX2-T.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:components-9336c-cluster.html["Überprüfen Sie die Komponenten und Teilenummern"]
 [role="quick-margin-para"]
-Überprüfen Sie die Komponenten und Teilenummern für den Cluster-Switch 9336C-FX2.
+Überprüfen Sie die Komponenten und Teilenummern für die Cluster-Switches 9336C-FX2 und 9336C-FX2-T.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-9336c-cluster.html["Überprüfen Sie die erforderlichen Unterlagen"]
 [role="quick-margin-para"]
-Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2-Switches und den ONTAP Cluster einzurichten.
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2- und 9336C-FX2-T-Switches und den ONTAP Cluster einzurichten.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:smart-call-9336c-cluster.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
 [role="quick-margin-para"]

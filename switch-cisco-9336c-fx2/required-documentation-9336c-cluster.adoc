@@ -4,7 +4,7 @@ permalink: switch-cisco-9336c-fx2/required-documentation-9336c-cluster.html
 keywords: shared storage cluster switch 
 summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C-FX2 Switches spezielle Switch- und Controller-Dokumentation, um Ihre Cisco 9336-FX2-Switches und das ONTAP-Cluster einzurichten. 
 ---
-= Dokumentationsanforderungen für Cisco Nexus 9336C-FX2-Switches
+= Dokumentationsanforderungen für Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C
 
 
 [role="lead"]
-Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C-FX2 Switches spezielle Switch- und Controller-Dokumentation, um Ihre Cisco 9336-FX2-Switches und das ONTAP-Cluster einzurichten.
+Lesen Sie zur Installation und Wartung der Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches unbedingt die spezifische Switch- und Controller-Dokumentation, um Ihre Cisco 9336-FX2-Switches und den ONTAP Cluster einzurichten.
 
 
 
 == Switch-Dokumentation
 
-Zum Einrichten der Cisco Nexus 9336C-FX2-Switches benötigen Sie die folgende Dokumentation über das https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
+Zur Einrichtung der Cisco Nexus 9336C-FX2 und 9336C-FX2-T Switches benötigen Sie folgende Dokumentation aus dem https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite:
 
 [cols="1,2"]
 |===
@@ -134,6 +134,6 @@ Beschreibt die FRUs, die dem 42U-Systemschrank zugeordnet sind, und bietet Anwei
  a| 
 link:install-switch-and-passthrough-panel-9336c-cluster.html["Installation eines Cisco 9336-FX2 Switch in einem NetApp Rack"^]
  a| 
-Beschreibt die Installation eines Cisco Nexus 9336C-FX2 Switches in einem NetApp Rack mit vier Pfosten.
+Beschreibt, wie Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches in einem NetApp Schrank mit vier Pfosten installiert werden.
 
 |===

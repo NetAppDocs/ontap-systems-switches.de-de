@@ -11,7 +11,7 @@ summary: Sie können den RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Spei
 
 
 [role="lead"]
-Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9336C-FX2-Speicherschalter zum ersten Mal eingerichtet haben.
+Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Speicher-Switches Nexus 9336C-FX2 und 9336C-FX2-T zum ersten Mal eingerichtet haben.
 
 Weitere Informationen zur Installation des RCF finden Sie im Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^].
 
@@ -118,7 +118,7 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 . Führen Sie für RCF Version 1.12 und höher die folgenden Befehle aus:
 +
-`cs1# echo "hardware access-list tcam region ing-racl 1024" > bootflash:write_erase.cfg`
+`cs1# echo "hardware access-list tcam region ing-racl 1024" >> bootflash:write_erase.cfg`
 
 +
 `cs1# echo "hardware access-list tcam region egr-racl 1024" >> bootflash:write_erase.cfg`
@@ -480,4 +480,4 @@ System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Ei
 Gehen Sie zu https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] Für Setup-Anweisungen.
 
 .Was kommt als Nächstes?
-link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
+Nachdem Sie Ihr RCF installiert oder aktualisiert haben,link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"]

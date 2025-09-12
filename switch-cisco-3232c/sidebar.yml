@@ -2,7 +2,7 @@
 section: switch-cisco-3232c
 title: Cisco Nexus 3232C
 entries:
-- title: Überblick
+- title: Los geht's
   pdf-filename: Overview_3232C
   entries:
   - title: Schnellstart

@@ -3,7 +3,7 @@ section: switch-nvidia-sn2100
 title: NVIDIA SN2100
 pdf-filename: Switch-nvidia-sn2100-Cluster
 entries:
-- title: Überblick
+- title: Los geht's
   pdf-filename: Übersicht_sn2100
   entries:
   - title: Schnellstart

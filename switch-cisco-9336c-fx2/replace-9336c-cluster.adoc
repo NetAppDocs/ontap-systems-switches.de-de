@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: replacing, replace, defective, nexus, switch, cluster, network, nondisruptive, procedure, ndu, replace a cisco nexus 9336c-fx2 cluster switch - cisco nexus 9336c-fx2 
 summary: 'Der Austausch eines defekten Nexus 9336C-FX2 Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren \ (NDU\).' 
 ---
-= Ersetzen Sie einen Cisco Nexus 9336C-FX2 Cluster-Switch
+= Ersetzen Sie die Cluster-Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um einen defekten Nexus 9336C-FX2-Switch in einem Cluster-Netzwerk zu ersetzen. Dies ist ein NDU (Non Disruptive Procedure, NDU).
+Befolgen Sie diese Schritte, um defekte Nexus 9336C-FX2- und 9336C-FX2-T-Switches in einem Clusternetzwerk zu ersetzen. Dies ist ein unterbrechungsfreies Verfahren (NDU).
 
 
 
@@ -618,4 +618,4 @@ Total entries displayed: 4
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+Nachdem Sie Ihre Schalter ausgetauscht haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .

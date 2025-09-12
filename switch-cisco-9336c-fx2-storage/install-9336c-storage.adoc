@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
 summary: Wenn Sie noch nicht über die erforderlichen Konfigurationsinformationen und Dokumentation verfügen, müssen Sie diese Informationen erfassen, bevor Sie die Cluster- und Management-Netzwerk-Switches einrichten. 
 ---
-= Installieren Sie den Speicherschalter 9336C-FX2
+= Installieren Sie die Speicher-Switches 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um den Cisco Nexus 9336C-FX2 Storage-Switch zu installieren.
+Befolgen Sie dieses Verfahren, um die Speicher-Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T zu installieren.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie Folgendes haben:
@@ -50,4 +50,4 @@ Siehe die Verfahren in den Installationsleitfäden für die Switch-Hardware sowi
 
 
 .Was kommt als Nächstes?
-Optional können Sielink:install-switch-and-passthrough-panel-9336c-storage.html["Installation eines Cisco Nexus 9336C-FX2 Switch in einem NetApp Rack"] .  Andernfalls gehen Sie zulink:setup-switch-9336c-storage.html["Konfigurieren Sie den Switch"] .
+Optional können Sielink:install-switch-and-passthrough-panel-9336c-storage.html["Installation eines Cisco Nexus 9336C-FX2 Switch in einem NetApp Rack"] . Andernfalls gehen Sie zulink:setup-switch-9336c-storage.html["Konfigurieren Sie den Switch"] .
