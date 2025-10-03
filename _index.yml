@@ -1,5 +1,10 @@
 ---
 indexpage:
+  title: Switches für ONTAP -Systeme
+  summary: Verwenden Sie die Dokumente auf dieser Seite, um den Cluster, die freigegebenen
+    Speicher und die MetroCluster Switches zu installieren, zu aktualisieren und zu
+    warten.
+  keywords: switches
   lead: NetApp bietet Cluster-, Storage- und Shared-Switches für die Konnektivität
     zwischen Host-Storage und zwei oder mehr NetApp-Controllern, sodass Daten und
     Netzwerkschnittstellen in der Storage-Infrastruktur unterbrechungsfrei verschoben
@@ -24,7 +29,7 @@ indexpage:
     - title: Speicherschalter - Cisco Nexus 9336C-FX2 oder 9336C-FX2-T
       url: "/switch-cisco-9336c-fx2-storage/configure-switch-overview-9336c-storage.html"
     - title: Storage-Switch – NVIDIA SN2100
-      url: "/switch-nvidia-sn2100/configure-overview-sn2100-storage.html"
+      url: "/switch-nvidia-sn2100-storage/configure-overview-sn2100-storage.html"
     - title: Gemeinsamer Switch – Cisco Nexus 9336C-FX2
       url: "/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html"
   - title: Switches für das Ende der Verfügbarkeit

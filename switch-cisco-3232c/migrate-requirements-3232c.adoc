@@ -66,11 +66,11 @@ Endgültig
 2 QSFP-Glasfaserkabel oder Kupfer-Direct-Attach-Kabel
 
 |===
-Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben. Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren RCFs definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben.  Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den RCFs definiert, die auf derlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
 
-Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen finden Sie auf der link:https://mysupport.netapp.com/NOW/download/software/cm_switches/.html["Seite zu Cisco Ethernet Switches"^].
+Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind aufgeführt unterlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] .
 
-Die in diesem Verfahren unterstützten ONTAP- und FASTPATH-Versionen werden auf der aufgeführt link:http://support.netapp.com/NOW/download/software/cm_switches_ntap/.html["Seite zu den NetApp CN1601 und CN1610 Switches"^].
+Die in diesem Verfahren unterstützten ONTAP und FASTPATH-Versionen sind aufgeführt unterlink:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610 Switches"^] .
 
 
 
@@ -123,7 +123,7 @@ Sie können die ersten sechs Ports mit dem in den 4x10 GbE-Modus versetzen `inte
 
 ====
 *** Sie haben die Planung, Migration und die erforderliche Dokumentation auf 10-GbE- und 40/100-GbE-Konnektivität zwischen den Nodes zu Nexus 3232C-Cluster-Switches gelesen.
-*** Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen befinden sich auf dem link:http://support.netapp.com/NOW/download/software/cm_switches/.html["Seite zu Cisco Ethernet Switches"^].
+*** Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sindlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] .
 
 
 

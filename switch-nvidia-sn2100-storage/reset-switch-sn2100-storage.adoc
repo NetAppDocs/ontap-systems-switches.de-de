@@ -21,7 +21,7 @@ So setzen Sie den SN2100-Speicherschalter auf die Werkseinstellungen zurück:
 
 
 
-NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unterlink:configure-software-overview-sn2100-cluster.html["Workflow für die Softwareinstallation von NVIDIA SN2100-Switches"] .
+NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unterlink:configure-software-sn2100-storage.html["Workflow für die Softwareinstallation von NVIDIA SN2100-Switches"] .
 
 .Schritte
 [role="tabbed-block"]

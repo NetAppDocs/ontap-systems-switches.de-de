@@ -14,7 +14,7 @@ summary: Sie können ältere Cisco Cluster Switches für einen ONTAP Cluster unt
 Sie können ältere Cisco Cluster Switches für einen ONTAP Cluster unterbrechungsfrei zu Cisco Nexus 92300YC Cluster Network Switches migrieren.
 
 
-NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC Cluster Switches zu unterstützen. Siehelink:setup-install-cshm-file.html["Installieren Sie den Cluster Switch Health Monitor (CSHM)."].
+NOTE: Nach Abschluss Ihrer Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC-Cluster-Switches zu unterstützen. Sehen link:../switch-cshm/cshm-overview.html["Switch-Zustandsüberwachung (CSHM)"] .
 
 
 

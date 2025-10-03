@@ -10,7 +10,7 @@ summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -34,7 +34,7 @@ Informationen zum Einrichten der gemeinsamen Cisco Nexus 9336C-FX2-Switches find
 | link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000-Serie NX-OS Command Reference Master Index"] | Enthält Links zu den verschiedenen von Cisco bereitgestellten Befehlsreferenzen. 
 
 
-| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/mib/quickreference/b_Cisco_Nexus_7000_Series_and_9000_Series_NX-OS_MIB_Quick_Reference.html["Cisco Nexus 9000 MIBs Referenz"] | Beschreibt die MIB-Dateien (Management Information Base) für die Nexus 9000-Switches. 
+| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/mib/reference/MIBRef.html["Cisco Nexus 9000 MIBs Referenz"] | Beschreibt die MIB-Dateien (Management Information Base) für die Nexus 9000-Switches. 
 
 
 | link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-system-message-guides-list.html["Nachrichtenreferenz für das NX-OS-System der Serie Nexus 9000"] | Beschreibt die Systemmeldungen für Switches der Cisco Nexus 9000 Serie, Informationen und andere, die bei der Diagnose von Problemen mit Links, interner Hardware oder der Systemsoftware helfen können. 

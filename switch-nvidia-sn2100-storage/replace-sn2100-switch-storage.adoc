@@ -24,8 +24,8 @@ Der http://hwu.netapp.com["Hardware Universe"^] Ausführliche Informationen zu u
 
 Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
 
-* Stellen Sie sicher, dass alle Fehlerbehebungsschritte durchgeführt wurden, um zu bestätigen, dass Ihr Switch ausgetauscht werden muss.
-* Management-Konnektivität muss auf beiden Switches vorhanden sein.
+* Führen Sie alle Schritte zur Fehlerbehebung durch, um zu bestätigen, dass Sie Ihren Switch ersetzen müssen.
+* Stellen Sie sicher, dass auf beiden Switches eine Verwaltungskonnektivität besteht.
 +
 
 NOTE: Stellen Sie sicher, dass alle Fehlerbehebungsschritte durchgeführt wurden, um zu bestätigen, dass Ihr Switch ausgetauscht werden muss.
@@ -35,7 +35,7 @@ NOTE: Stellen Sie sicher, dass alle Fehlerbehebungsschritte durchgeführt wurden
 Der Ersatz-NVIDIA SN2100-Switch muss die folgenden Eigenschaften aufweisen:
 
 * Die Management-Netzwerk-Konnektivität ist funktionsfähig.
-* Der Konsolenzugriff auf den Ersatz-Switch erfolgt.
+* Sie können über die Konsole auf den Ersatzschalter zugreifen.
 * Das entsprechende RCF- und Cumulus-Betriebssystemabbild wird auf den Switch geladen.
 * Die anfängliche Anpassung des Schalters ist abgeschlossen.
 
@@ -63,7 +63,7 @@ _X_ ist die Dauer des Wartungsfensters in Stunden.
 +
 `set -privilege advanced`
 
-. Überprüfen Sie den Integritätsstatus der Storage-Node-Ports, um sicherzustellen, dass eine Verbindung zum Storage-Switch S1 besteht:
+. Überprüfen Sie den Integritätsstatus der Speicherknotenports, um die Verbindung zum Speicherswitch S1 zu bestätigen:
 +
 `storage port show -port-type ENET`
 

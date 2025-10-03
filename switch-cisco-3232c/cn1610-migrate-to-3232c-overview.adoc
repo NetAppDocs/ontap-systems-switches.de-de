@@ -17,9 +17,9 @@ NOTE: Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches
 
 Weitere Informationen finden Sie bei Bedarf im folgenden Dokument:
 
-* http://support.netapp.com/NOW/download/software/cm_switches_ntap/["Beschreibungsseite zu NetApp CN1601 und CN1610"^]
-* http://support.netapp.com/NOW/download/software/cm_switches/["Beschreibungsseite für den Cisco Ethernet Switch"^]
-* http://hwu.netapp.com["Hardware Universe"^]
+* link:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610"^]
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
+* link:http://hwu.netapp.com["Hardware Universe"^]
 
 
 
@@ -75,11 +75,11 @@ Endgültig
 2 QSFP-Glasfaserkabel oder Kupfer-Direct-Attach-Kabel
 
 |===
-Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben. Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren RCFs definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben.  Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den RCFs definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
 
-Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen finden Sie auf der link:https://mysupport.netapp.com/NOW/download/software/cm_switches/.html["Seite zu Cisco Ethernet Switches"^].
+Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind aufgeführt unterlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] .
 
-Die in diesem Verfahren unterstützten ONTAP- und FASTPATH-Versionen werden auf der aufgeführt link:http://support.netapp.com/NOW/download/software/cm_switches_ntap/.html["Seite zu den NetApp CN1601 und CN1610 Switches"^].
+Die in diesem Verfahren unterstützten ONTAP und FASTPATH-Versionen sind aufgeführt unterlink:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610 Switches"^] .
 
 .Über die verwendeten Beispiele
 Die Beispiele im Migrationsverfahren verwenden vier Knoten:
@@ -101,7 +101,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 * *N1_clus2* ist die erste Cluster-LIF, die mit Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* verbunden ist.
 * *N1_clus3* ist die zweite LIF, die an Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* angeschlossen ist.
 * *N1_clus4* ist die zweite LIF, die mit Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* verbunden ist.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
 
 
 .Was kommt als Nächstes?

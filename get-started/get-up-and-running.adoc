@@ -33,7 +33,7 @@ Installieren Sie Ihre Switches im Rack oder Schrank. Lesen Sie die folgenden Anw
  a| 
 .Storage Switches
 * link:../switch-cisco-9336c-fx2-storage/install-9336c-storage.html["Installieren Sie den Cisco Nexus 9336C-FX2 Switch"]
-* link:../switch-nvidia-sn2100/install-hardware-sn2100-storage.html["Installieren Sie den NVIDIA SN2100-Switch"]
+* link:../switch-nvidia-sn2100-storage/install-hardware-sn2100-storage.html["Installieren Sie den NVIDIA SN2100-Switch"]
 
  a| 
 .Shared-Switches
@@ -78,7 +78,7 @@ Die Installations- und Setup-Anweisungen für ONTAP-Systeme enthalten Anweisunge
  a| 
 .Storage Switches
 * link:../switch-cisco-9336c-fx2-storage/setup-worksheet-9336c-storage.html["Cisco Nexus 9336C-FX2-Switch verkabeln"]
-* link:../switch-nvidia-sn2100/cabling-considerations-sn2100-storage.html["Verkabeln Sie den NVIDIA SN2100-Switch"]
+* link:../switch-nvidia-sn2100-storage/cabling-considerations-sn2100-storage.html["Verkabeln Sie den NVIDIA SN2100-Switch"]
 
  a| 
 .Shared-Switches
@@ -104,7 +104,7 @@ Führen Sie eine Ersteinrichtung Ihrer Switches durch. Lesen Sie die folgenden A
  a| 
 .Storage Switches
 * link:../switch-cisco-9336c-fx2-storage/setup-switch-9336c-storage.html["Konfigurieren Sie den Cisco Nexus 9336C-FX2 Switch"]
-* link:../switch-nvidia-sn2100/configure-sn2100-storage.html["Konfigurieren Sie den NVIDIA SN2100-Switch"]
+* link:../switch-nvidia-sn2100-storage/configure-sn2100-storage.html["Konfigurieren Sie den NVIDIA SN2100-Switch"]
 
  a| 
 .Shared-Switches
@@ -130,7 +130,7 @@ Um die Software auf Ihrem Switch zu installieren und zu konfigurieren, folgen Si
  a| 
 .Storage Switches
 * link:../switch-cisco-9336c-fx2-storage/configure-software-overview-9336c-storage.html["Installieren Sie Software für Cisco Nexus 9336C-FX2 Switch"]
-* link:../switch-nvidia-sn2100/configure-software-sn2100-storage.html["Software für NVIDIA SN2100-Switch installieren"]
+* link:../switch-nvidia-sn2100-storage/configure-software-sn2100-storage.html["Software für NVIDIA SN2100-Switch installieren"]
 
  a| 
 .Shared-Switches

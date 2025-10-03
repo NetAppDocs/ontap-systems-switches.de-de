@@ -19,8 +19,8 @@ Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der C
 ====
 Weitere Informationen finden Sie unter:
 
-* http://support.netapp.com/NOW/download/software/cm_switches/["Beschreibungsseite für den Cisco Ethernet Switch"^]
-* http://hwu.netapp.com["Hardware Universe"^]
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch"^]
+* link:http://hwu.netapp.com["Hardware Universe"^]
 
 
 
@@ -81,7 +81,7 @@ Sie können die ersten sechs Ports mit dem in den 4x10 GbE-Modus versetzen `inte
 
 ====
 * Sie haben die Planung und Migration durchgeführt und die erforderliche Dokumentation über 10-GbE- und 40/100-GbE-Konnektivität von den Nodes zu Nexus 3132Q-V-Cluster-Switches gelesen.
-* Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen befinden sich auf dem link:http://support.netapp.com/NOW/download/software/cm_switches/.html["Seite zu Cisco Ethernet Switches"^].
+* Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind hier:link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] .
 
 
 .Über die verwendeten Beispiele
@@ -96,7 +96,7 @@ Weiterhin verwendet das Verfahren die folgende Nomenklatur für Switches und Nod
 * *N1_clus2* ist die erste Cluster-LIF, die mit Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* verbunden ist.
 * *N1_clus3* ist die zweite LIF, die an Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* angeschlossen ist.
 * *N1_clus4* ist die zweite LIF, die mit Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* verbunden ist.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die auflink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
 * Die Knoten sind *n1*, *n2*, *n3* und *n4*.
 
 

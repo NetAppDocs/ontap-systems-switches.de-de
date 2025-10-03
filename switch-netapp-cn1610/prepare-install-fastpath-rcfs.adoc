@@ -46,6 +46,6 @@ Der https://hwu.netapp.com/["Hardware Universe"^] Bietet weitere Informationen z
 
 Dieses Verfahren besteht aus zwei Teilen:
 
-* link:task-install-fastpath-software.html["INSTALLIEREN Sie DIE FASTPATH Software"] Beschreibt die Installation der FASTPATH Software.
-* link:task-install-an-rcf-on-a-cn1610-switch.html["Installieren Sie ein RCF auf einem CN1610-Switch"] Beschreibt die Installation von RCFs.
+* link:install-fastpath-software.html["INSTALLIEREN Sie DIE FASTPATH Software"]beschreibt, wie die FASTPATH-Software installiert wird.
+* link:install-rcf-file.html["Installieren Sie ein RCF auf einem CN1610-Switch"]beschreibt, wie RCFs installiert werden.
 

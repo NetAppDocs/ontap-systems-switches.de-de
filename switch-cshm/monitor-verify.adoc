@@ -29,7 +29,7 @@ Das `IS Monitored` Feld wird aus dem im Feld angegebenen Grund auf *false* geset
 
 [NOTE]
 ====
-Wenn ein Switch in der Befehlsausgabe nicht aufgeführt ist, hat ONTAP ihn wahrscheinlich nicht erkannt. Vergewissern Sie sich, dass der Switch ordnungsgemäß verkabelt ist. Bei Bedarf können Sie den Schalter manuell hinzufügen. Weitere Informationen finden Sie unter link:manage-monitor.html["Verwalten Sie die Überwachung von Ethernet-Switches"] .
+Wenn ein Switch in der Befehlsausgabe nicht aufgeführt ist, hat ONTAP ihn wahrscheinlich nicht erkannt.  Stellen Sie sicher, dass der Switch richtig verkabelt ist.  Bei Bedarf können Sie den Schalter manuell hinzufügen. Siehe link:monitor-manage.html["Verwalten Sie die Überwachung von Ethernet-Switches"] für weitere Details.
 
 ====
 

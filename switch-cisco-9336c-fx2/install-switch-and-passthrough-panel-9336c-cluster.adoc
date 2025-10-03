@@ -47,7 +47,7 @@ Bei diesem Verfahren ist die Blindplatte in U40 installiert.
 .. Zentrieren Sie die Abdeckung senkrecht, um ein Eindringen in den benachbarten Rack zu verhindern, und ziehen Sie die Schrauben fest.
 .. Stecken Sie die Buchsen der beiden 48-Zoll-Jumper-Kabel von der Rückseite der Abdeckung und durch die Bürstenbaugruppe.
 +
-image::../media/cisco_9148_jumper_cords.gif[cisco 9148-Jumper-Kabel]
+image::../media/cisco_9148_jumper_cords.gif[]
 
 +
 _(1) Buchsenleiste des Überbrückungskabels._
@@ -60,14 +60,14 @@ _(1) Buchsenleiste des Überbrückungskabels._
 +
 image::../media/3132q_front_bracket.gif[Vordere Halterung]
 
-.. Wiederholen Sie den Schritt <<SUBSTEP_9F2E2DDAEE084FE5853D1A6C6D945941,2 a>> Mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Wiederholen Sie Schritt 2a mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
 .. Setzen Sie die hintere Rack-Halterung am Switch-Gehäuse ein.
-.. Wiederholen Sie den Schritt <<SUBSTEP_53A502380D6D4F058F62ED5ED5FC2000,2c>> Mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Wiederholen Sie Schritt 2c mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
 
 
 . Die Klemmmuttern für alle vier IEA-Stützen an den Stellen der quadratischen Bohrung anbringen.
 +
-image::../media/ru_locations_for_3132q_v.gif[ru Standorte für 3132q V]
+image::../media/ru_locations_for_3132q_v.gif[]
 
 +
 Die beiden Switches 9336C-FX2 und 9336C-FX2-T werden immer in den oberen 2HE der Schränke RU41 und 42 montiert.
@@ -76,7 +76,7 @@ Die beiden Switches 9336C-FX2 und 9336C-FX2-T werden immer in den oberen 2HE der
 +
 .. Positionieren Sie die erste Gleitschiene an der RU42-Markierung auf der Rückseite des hinteren linken Pfosten, legen Sie die Schrauben mit dem entsprechenden Gewindetyp ein und ziehen Sie die Schrauben mit den Fingern fest.
 +
-image::../media/3132q_v_slider_rails.gif[3132q V Gleitschienen]
+image::../media/3132q_v_slider_rails.gif[]
 
 +
 _(1) beim sanften Schieben der Gleitschiene richten Sie sie an den Schraubenbohrungen im Rack aus._
@@ -84,8 +84,8 @@ _(1) beim sanften Schieben der Gleitschiene richten Sie sie an den Schraubenbohr
 +
 _(2) Schrauben der Gleitschienen an den Schrankleisten festziehen._
 
-.. Wiederholen Sie den Schritt <<SUBSTEP_81651316D3F84964A76BC80A9DE48C0E,4 a>> Für die hintere Säule auf der rechten Seite.
-.. Wiederholen Sie die Schritte <<SUBSTEP_81651316D3F84964A76BC80A9DE48C0E,4 a>> Und <<SUBSTEP_593967A423024594B9A41A04703DC458,4b>> An den RU41 Standorten auf dem Schrank.
+.. Wiederholen Sie Schritt 4a für den rechten hinteren Pfosten.
+.. Wiederholen Sie die Schritte 4a und 4b an den RU41-Stellen im Schrank.
 
 
 . Den Schalter in den Schrank einbauen.
@@ -106,13 +106,13 @@ _(2) Schieben Sie den Schalter vorsichtig, bis die vorderen Halterungen der Rack
 
 .. Befestigen Sie den Schalter am Gehäuse.
 +
-image::../media/3132q_attaching.gif[3132q Befestigung]
+image::../media/3132q_attaching.gif[]
 
 +
 _(1) mit einer Person, die die Vorderseite des Chassis hält, sollte die andere Person die vier hinteren Schrauben vollständig an den Schrankpfosten festziehen._
 
 .. Wenn das Gehäuse nun ohne Unterstützung unterstützt wird, ziehen Sie die vorderen Schrauben fest an den Stützen.
-.. Wiederholen Sie die Schritte <<SUBSTEP_4F538C8C55E34C5FB5D348391088A0FE,5a>> Bis <<SUBSTEP_EB8FE2FED2CA4120B709CC753C0F50FC,5c>> Für den zweiten Schalter an der RU42-Position.
+.. Wiederholen Sie die Schritte 5a bis 5c für den zweiten Schalter an der Position RU42.
 +
 
 NOTE: Durch die Verwendung des vollständig installierten Schalters als Unterstützung ist es nicht erforderlich, während des Installationsvorgangs die Vorderseite des zweiten Schalters zu halten.

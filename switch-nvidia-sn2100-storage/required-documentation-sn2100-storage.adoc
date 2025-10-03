@@ -35,13 +35,6 @@ Eine Beschreibung der Migration von Umgebungen, in denen Cisco Cluster Switches 
 
 
  a| 
-https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/migrate-cisco-storage-switch-sn2100-storage.html["_Von einem Cisco Storage Switch zu einem NVIDIA Storage Switch migrieren_"^]
- a| 
-Eine Beschreibung der Migration von Umgebungen, die Cisco Storage Switches in Umgebungen verwenden, die NVIDIA SN2100 Storage-Switches verwenden.
-
-
-
- a| 
 https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/migrate-2n-switched-sn2100-cluster.html["_Migration zu einem Cluster mit zwei Nodes und NVIDIA SN2100 Cluster Switches_"^]
  a| 
 Hier wird die Migration zu einer Switch-Umgebung mit zwei Nodes mit NVIDIA SN2100-Cluster-Switches beschrieben.

@@ -61,7 +61,7 @@ Dieses Beispiel zeigt die RCF `Nexus_9336C_RCF_v1.6-Storage.txt`, die auf Switch
 
 [listing]
 ----
-cs1# copy NNexus_9336C_RCF_v1.6-Storage.txt running-config echo-commands
+cs1# copy Nexus_9336C_RCF_v1.6-Storage.txt running-config echo-commands
 ----
 ====
 . Überprüfen Sie die Bannerausgabe des `show banner motd` Befehls. Sie müssen diese Anweisungen lesen und befolgen, um die richtige Konfiguration und den korrekten Betrieb des Switches sicherzustellen.
@@ -102,8 +102,14 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 
 
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-9336c-fx2.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
-. Speichern Sie die grundlegenden Konfigurationsdetails in der Datei write_erase.cfg auf dem Bootflash.
+. Notieren Sie alle benutzerdefinierten Ergänzungen zwischen dem aktuellen `running-config` Datei und die verwendete RCF-Datei.
+. Nachdem Sie überprüft haben, dass die RCF-Versionen und Schaltereinstellungen korrekt sind, kopieren Sie die `running-config` Datei in die `startup-config` Datei.
++
+[listing]
+----
+cs1# copy running-config startup-config [########################################] 100% Copy complete
+----
+. Speichern Sie grundlegende Konfigurationsdetails im `write_erase.cfg` Datei auf dem Bootflash.
 +
 `cs1# show run | i "username admin password" > bootflash:write_erase.cfg`
 
@@ -127,9 +133,9 @@ Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Port
 `cs1# echo "hardware access-list tcam region ing-l2-qos 1280" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] für weitere Details.
+Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] für weitere Details.
 
-. Überprüfen Sie, ob die Datei write_erase.cfg wie erwartet gefüllt ist:
+. Überprüfen Sie, ob die `write_erase.cfg` Die Datei wird wie erwartet ausgefüllt:
 +
 `show file bootflash:write_erase.cfg`
 
@@ -154,7 +160,7 @@ Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/Switches/Cisco-KB
 +
 `This command will reboot the system. (y/n)?  [n] *y*`
 
-. Wiederholen Sie die Schritte 1 bis 12 auf Switch cs2.
+. Wiederholen Sie die Schritte 1 bis 13 auf Switch cs2.
 . Verbinden Sie die Cluster-Ports aller Knoten im ONTAP-Cluster mit den Switches cs1 und cs2.
 
 

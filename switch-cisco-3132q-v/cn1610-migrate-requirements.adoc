@@ -19,8 +19,8 @@ Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der C
 ====
 Weitere Informationen finden Sie unter:
 
-* http://support.netapp.com/NOW/download/software/cm_switches_ntap/["Beschreibungsseite zu NetApp CN1601 und CN1610"^]
-* http://support.netapp.com/NOW/download/software/cm_switches/["Beschreibungsseite für den Cisco Ethernet Switch"^]
+* https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["Beschreibungsseite zu NetApp CN1601 und CN1610"^]
+* https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Beschreibungsseite für den Cisco Ethernet Switch"^]
 * http://hwu.netapp.com["Hardware Universe"^]
 
 

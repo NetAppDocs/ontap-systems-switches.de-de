@@ -1,10 +1,8 @@
 ---
 section: switch-cisco-9336c-fx2-shared
 title: Cisco Nexus 9336C-FX2
-pdf-filename: cisco-9336c-fx2-gemeinsam genutzt
 entries:
 - title: Los geht's
-  pdf-filename: Overview_9336c-fx2-shared
   entries:
   - title: Schnellstart
     url: "/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html"

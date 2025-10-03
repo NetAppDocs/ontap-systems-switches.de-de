@@ -18,13 +18,15 @@ Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Control
 Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports.
 
 
-NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC Cluster Switches zu unterstützen. Siehelink:setup-install-cshm-file.html["Installieren Sie den Cluster Switch Health Monitor (CSHM)."].
+NOTE: Nach Abschluss Ihrer Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC-Cluster-Switches zu unterstützen. Sehen link:../switch-cshm/cshm-overview.html["Switch-Zustandsüberwachung (CSHM)"] .
 
 
 
 == Prüfen Sie die Anforderungen
 
-.Was Sie benötigen
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie Folgendes haben:
+
 Stellen Sie bei einer Konfiguration mit zwei Nodes ohne Switches Folgendes sicher:
 
 * Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.

@@ -107,14 +107,14 @@ Sie müssen beide Switches derzeit vorbereiten. Wenn Sie die RCF- und Bildsoftwa
 +
 .. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
 +
-http://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^]
+link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch/["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
 .. Laden Sie die entsprechende RCF-Version herunter.
 .. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
 .. Laden Sie die entsprechende Version der Bildsoftware herunter.
 +
-https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Download-Seite für die Referenzkonfigurationsdatei für den Cisco Cluster- und Management-Netzwerk-Switch"^]
+link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Download der Referenzkonfigurationsdatei für Cisco Cluster- und Management-Netzwerk-Switches"^]
 
 
 

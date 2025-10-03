@@ -21,7 +21,7 @@ Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unt
 
 Sie installieren den NVIDIA SN2100-Switch (X190006/X190106) im NVIDIA-Dual/Single-Switch-Gehäuse mit den im Lieferumfang des Switches enthaltenen Standardhalterungen.
 
-Hinweise zur Verkabelung finden Sie unter link:cabling-considerations-sn2100-cluster.html["Überlegungen zur Verkabelung und Konfiguration"].
+Richtlinien zur Verkabelung finden Sie unterlink:cabling-considerations-sn2100-storage.html["Überlegungen zur Verkabelung und Konfiguration"] .
 
 
 

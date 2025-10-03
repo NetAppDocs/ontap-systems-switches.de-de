@@ -60,7 +60,7 @@ Die Beispiele in diesem Verfahren verwenden zwei Knoten, von denen jeder zwei 40
 * n1_clus2 ist die erste Cluster-LIF, die für Node n1 mit Cluster-Switch C2 verbunden wird.
 * n2_clus1 ist die erste Cluster-LIF, die für Knoten n2 mit Cluster-Switch C1 verbunden wird.
 * n2_clus2 ist die zweite Cluster-LIF, die für Knoten n2 an Cluster-Switch C2 angeschlossen werden soll.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
 
 
 [NOTE]
@@ -165,14 +165,14 @@ Sie müssen beide Switches derzeit vorbereiten. Wenn Sie die RCF- und Bildsoftwa
 +
 .. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
 +
-http://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^]
+link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
 .. Laden Sie die entsprechende RCF-Version herunter.
 .. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um die RCF herunterzuladen.
 .. Laden Sie die entsprechende Version der Bildsoftware herunter.
 +
-https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Download-Seite für die Referenzkonfigurationsdatei für den Cisco Cluster- und Management-Netzwerk-Switch"^]
+link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Download der Referenzkonfigurationsdatei für Cisco Cluster- und Management-Netzwerk-Switches"^] .
 
 
 

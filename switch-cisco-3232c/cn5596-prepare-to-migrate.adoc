@@ -172,7 +172,7 @@ Wenn Sie ein RCF- und Image-Upgrade durchführen müssen, müssen Sie die folgen
 +
 .. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
 +
-http://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^]
+link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
 .. Laden Sie die entsprechende Version des RCF herunter.
