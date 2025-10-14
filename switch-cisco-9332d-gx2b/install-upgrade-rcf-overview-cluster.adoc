@@ -1,0 +1,53 @@
+---
+permalink: switch-cisco-9332d-gx2b/install-upgrade-rcf-overview-cluster.html 
+sidebar: sidebar 
+keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9332d-gx2b 
+summary: Sie können das RCF installieren, nachdem Sie den Nexus 9332D-GX2B-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
+---
+= Installieren oder aktualisieren Sie die Übersicht über die Referenzkonfigurationsdatei (RCF)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9332D-GX2B-Switch zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
+
+Weitere Informationen zur Installation oder Aktualisierung Ihres RCF finden Sie im Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^].
+
+.Verfügbare RCF-Konfiguration
+* *Cluster-HA-Storage* – Unterstützt gemeinsam genutzten Cluster-/HA-/Storage-Verkehr auf Ports (NX9332D-GX2B-RCF-v10.0-Shared.txt).
+
+
+Einzelheiten zur Port- und VLAN-Nutzung finden Sie im Abschnitt Banner und wichtige Hinweise in Ihrem RCF.
+
+.Vorgeschlagene Dokumentation
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches (NSS)"^]
++
+In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und RCF-Versionen auf der NetApp Support-Website. Beachten Sie, dass es zwischen der Befehlssyntax in der RCF und der Syntax in bestimmten Versionen von NX-OS Befehlssyntax bestehen kann.
+
+* link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie"^]
++
+Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website.
+
+
+
+.Zu den Beispielen
+Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+
+* Die Namen der beiden Cisco Switches sind cs1 und cs2.
+* Die Knotennamen sind node1-01, node1-02, node1-03 und node1-04.
+* Die Cluster-LIF-Namen sind node1-01_clus1, node1-01_clus2, node1-02_clus1, node1-02_clus2, node1-03_clus1, node1-03_clus2, node1-04_clus1 und node1-04_clus2.
+* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+
+
+Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die richtigen Ports auf Ihrer Plattform zu überprüfen.
+
+
+NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
+
+.Verwendete Befehle
+Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 9000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+
+.Was kommt als Nächstes?
+Nachdem Sie die Schritte zur Installation oder Aktualisierung von RCF gelesen haben,link:install-rcf-software-9332d-cluster.html["Installieren Sie den RCF"] oderlink:upgrade-rcf-software-9332d-cluster.html["Aktualisieren Sie Ihren RCF"] nach Bedarf.

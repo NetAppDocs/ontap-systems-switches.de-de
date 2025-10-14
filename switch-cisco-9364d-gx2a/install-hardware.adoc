@@ -1,0 +1,21 @@
+---
+permalink: switch-cisco-9364d-gx2a/install-hardware.html 
+sidebar: sidebar 
+keywords: switches, hardware installation, Cisco Nexus, 9332D-GX2B switches 
+summary: Details zur Installation und Einrichtung der Switch-Hardware und Controller-Hardware für Ihr System. 
+---
+= Hardware installieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gehen Sie zumlink:https://docs.netapp.com/us-en/ontap-afx/install-setup/install-setup-workflow.html["AFX-Installations- und Setup-Workflow"^] um zu erfahren, wie Sie die Switch-Hardware und Controller-Hardware für Ihr System installieren und einrichten.
+
+Die AFX-Installations- und Setup-Dokumentation enthält Informationen wie:
+
+* Anweisungen zum Vorbereiten der Site, zum Auspacken der Kartons und zum Vergleichen des Kartoninhalts mit dem Lieferschein sowie zum Registrieren des Systems, um auf Supportleistungen zugreifen zu können.
+* Anweisungen zum Installieren der Switches, Controller und des Speicherregals in einem NetApp -Schrank oder Telco-Rack.
+* Anweisungen zum Verkabeln Ihres Systems, einschließlich der Verkabelung des Controller-Speichers mit Switch-Verbindungen und der Verkabelung des Regals mit Switch-Verbindungen.
+

@@ -1,8 +1,8 @@
 ---
-permalink: switch-cisco-3232c/smart-call-home-3232c.html 
+permalink: switch-cisco-9332d-gx2b/smart-call-9332d-cluster.html 
 sidebar: sidebar 
-keywords: cisco 3232c, cluster switches 
-summary: Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Cluster einsetzen. 
+keywords: cisco smart call,small call home 
+summary: Smart Call Home überwacht die Hardware- und Softwarekomponenten in Ihrem Netzwerk, um eine E-Mail-basierte Benachrichtigung über wichtige Systembedingungen zu generieren. Wenn ein Ereignis auf Ihrem Gerät auftritt, wird Smart Call Home an alle Empfänger, die im Zielprofil konfiguriert sind, eine Warnmeldung ausgegeben. 
 ---
 = Anforderungen für Smart Call Home
 :allow-uri-read: 

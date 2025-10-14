@@ -22,6 +22,10 @@ sidebar:
       url: "/get-started/learn-switch-concept.html"
     - title: Starten Sie jetzt
       url: "/get-started/get-up-and-running.html"
+  - title: AFX-Systemschalter
+    entries:
+    - section: switch-cisco-9332d-gx2b
+    - section: switch-cisco-9364d-gx2a
   - title: Cluster-Switches
     entries:
     - section: switch-bes-53248

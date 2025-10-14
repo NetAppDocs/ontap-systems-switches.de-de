@@ -1,0 +1,34 @@
+---
+permalink: switch-cisco-9364d-gx2a/configure-switch-overview-9364d-cluster.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure 9364d-gx2ab switch 
+summary: Übersicht über die Installation und Einrichtung von Cisco Nexus 9364d-gx2a-Cluster-Switches 
+---
+= Installations- und Einrichtungsablauf für Cisco 9364D-GX2A-Switches
+:allow-uri-read: 
+
+
+[role="lead"]
+Der Cisco 9364D-GX2A-Switch ist Teil der Cisco Nexus 9000-Plattform.  Mit AFX-System-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
+
+Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9364D-GX2A-Switches zu installieren und einzurichten.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-setup-ports-9364d.html["Überprüfen Sie die Switch-Port-Details"]
+[role="quick-margin-para"]
+Überprüfen Sie die Portdetails für den Cisco 9364D-GX2A-Switch.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:required-documentation-9364d-cluster.html["Überprüfen Sie die erforderlichen Unterlagen"]
+[role="quick-margin-para"]
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9364D-GX2A-Switches und den ONTAP Cluster einzurichten.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:smart-call-9364d-cluster.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-hardware.html["Installieren Sie die Hardware"]
+[role="quick-margin-para"]
+Installieren Sie die Switch-Hardware.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-software-overview-9364d-cluster.html["Konfigurieren der Software"]
+[role="quick-margin-para"]
+Konfigurieren Sie die Switch-Software.

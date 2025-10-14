@@ -1,17 +1,17 @@
 ---
-permalink: switch-cisco-9336c-fx2-storage/migrate-to-9336-storage.html 
+permalink: switch-cisco-9332d-gx2b/migrate-to-9332d-cluster.html 
 sidebar: sidebar 
-keywords: migrating to a cluster with Cisco Nexus 9336C-FX2 cluster switches, how to migrate 
-summary: Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei auf Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migrieren. 
+keywords: migrating to a cluster with Cisco Nexus 9332D-GX2B cluster switches, how to migrate 
+summary: Sie können ältere Cisco -Cluster-Switches für einen ONTAP Cluster unterbrechungsfrei auf Cisco Nexus 9332D-GX2B-Cluster-Netzwerk-Switches migrieren. 
 ---
-= Migrieren Sie von älteren Cisco -Switches zu Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches
+= Migrieren Sie von einem älteren Cisco -Switch zu einem Cisco Nexus 9332D-GX2B-Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ältere Cisco -Switches für einen ONTAP Cluster auf Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Speichernetzwerk-Switches migrieren. Dies ist ein unterbrechungsfreies Verfahren.
+Sie können eine unterbrechungsfreie Migration von einem älteren Cisco -Cluster-Switch zu einem Cisco Nexus 9332D-GX2B-Cluster-Netzwerk-Switch durchführen.
 
 
 

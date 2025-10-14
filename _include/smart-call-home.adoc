@@ -4,7 +4,9 @@
 
 Smart Call Home überwacht die Hardware- und Softwarekomponenten in Ihrem Netzwerk. Wenn eine kritische Systemkonfiguration auftritt, wird eine E-Mail-Benachrichtigung generiert und ein Alarm an alle Empfänger gesendet, die in Ihrem Zielprofil konfiguriert sind.
 
-Bevor Sie Smart Call Home verwenden, beachten Sie die folgenden Anforderungen:
+Smart Call Home überwacht die Hardware- und Softwarekomponenten in Ihrem Netzwerk. Wenn eine kritische Systemkonfiguration auftritt, wird eine E-Mail-Benachrichtigung generiert und ein Alarm an alle Empfänger gesendet, die in Ihrem Zielprofil konfiguriert sind.
+
+Bevor Sie Smart Call Home verwenden können, beachten Sie die folgenden Anforderungen:
 
 * Es muss ein E-Mail-Server vorhanden sein.
 * Der Switch muss über eine IP-Verbindung zum E-Mail-Server verfügen.

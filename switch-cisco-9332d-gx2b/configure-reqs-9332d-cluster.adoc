@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9332d-gx2b/configure-reqs-9332d-cluster.html 
+keywords: shared storage cluster switch 
+summary: Ab ONTAP 9.9.1 können Sie Cisco Nexus 9332D-GX2B-Switches verwenden, um Speicher- und Clusterfunktionen in einem Shared-Switch-Szenario zu kombinieren. 
+---
+= Netzwerkanforderungen für Cisco Nexus 9332D-GX2B-Switches
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9332D-GX2B-Switches unbedingt die Verkabelungs- und Netzwerkanforderungen.
+
+
+
+== Netzwerkanforderungen
+
+Für alle Switch-Konfigurationen benötigen Sie die folgenden Netzwerkinformationen.
+
+* IP-Subnetz für den Management-Netzwerkdatenverkehr
+* Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
+* Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird.
+* Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+
+
+
+
+== Verkabelungsanforderungen
+
+* Sie verfügen über die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelstecker für Ihre Switches. Siehe https://hwu.netapp.com["Hardware Universe"^].
+* Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen.
+

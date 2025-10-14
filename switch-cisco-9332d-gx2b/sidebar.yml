@@ -1,0 +1,45 @@
+---
+section: switch-cisco-9332d-gx2b
+title: Cisco Nexus 9332D-GX2B
+entries:
+- title: Los geht's
+  pdf-filename: Overview_9332d-gx2b
+  entries:
+  - title: Schnellstart
+    url: "/switch-cisco-9332d-gx2b/configure-switch-overview-9332d-cluster.html"
+  - title: Details zum Switch-Port
+    url: "/switch-cisco-9332d-gx2b/configure-setup-ports-9332d.html"
+  - title: Erforderliche Dokumentation
+    url: "/switch-cisco-9332d-gx2b/required-documentation-9332d-cluster.html"
+  - title: Anforderungen für Smart Call Home
+    url: "/switch-cisco-9332d-gx2b/smart-call-9332d-cluster.html"
+- title: Hardware installieren
+  url: "/switch-cisco-9332d-gx2b/install-hardware.html"
+  pdf-filename: Install_hardware_9332d-gx2b
+- title: Software konfigurieren
+  pdf-filename: Configure_software_9332d-gx2b
+  entries:
+  - title: Software-Workflow konfigurieren
+    url: "/switch-cisco-9332d-gx2b/configure-software-overview-9332d-cluster.html"
+  - title: Konfigurieren Sie den Switch
+    url: "/switch-cisco-9332d-gx2b/setup-switch-9332d-cluster.html"
+  - title: Bereiten Sie sich auf die Installation von NX-OS und RCF vor
+    url: "/switch-cisco-9332d-gx2b/install-nxos-overview-9332d-cluster.html"
+  - title: Installation oder Upgrade der NX-OS-Software
+    url: "/switch-cisco-9332d-gx2b/install-nxos-software-9332d-cluster.html"
+  - title: Installieren oder aktualisieren Sie den RCF
+    pdf-filename: Install_Upgrade_rcf
+    entries:
+    - title: RCF-Übersicht installieren oder aktualisieren
+      url: "/switch-cisco-9332d-gx2b/install-upgrade-rcf-overview-cluster.html"
+    - title: Installieren Sie das RCF
+      url: "/switch-cisco-9332d-gx2b/install-rcf-software-9332d-cluster.html"
+    - title: Aktualisieren Sie Ihre RCF-Version
+      url: "/switch-cisco-9332d-gx2b/upgrade-rcf-software-9332d-cluster.html"
+  - title: Überprüfen Sie, ob SSH aktiviert ist
+    url: "/switch-cisco-9332d-gx2b/configure-ssh-keys.html"
+  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+    url: "/switch-cisco-9332d-gx2b/reset-switch-9332d.html"
+- title: Ersetzen Sie den 9332D-GX2B-Schalter
+  pdf-filename: Replace_switches_9332d-gx2b
+  url: "/switch-cisco-9332d-gx2b/replace-9332d-cluster.html"
