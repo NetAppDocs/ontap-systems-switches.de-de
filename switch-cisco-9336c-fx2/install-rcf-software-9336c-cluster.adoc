@@ -53,16 +53,13 @@ Copy complete, now saving to disk (please wait)...
 Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch imlink:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Führer.
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Dieses Beispiel zeigt die RCF-Datei `Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt` Installation auf Switch cs1:
 
-[listing]
++
+[listing, subs="+quotes"]
 ----
-cs1# copy Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt running-config echo-commands
+cs1# *copy Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt running-config echo-commands*
 ----
-====
 . Untersuchen Sie die Bannerausgabe aus dem `show banner motd` Befehl. Sie müssen diese Anweisungen lesen und befolgen, um sicherzustellen, dass der Schalter ordnungsgemäß konfiguriert und betrieben wird.
 +
 .Beispiel anzeigen
@@ -130,6 +127,18 @@ cs1# copy running-config startup-config [#######################################
 ----
 . Speichern Sie grundlegende Konfigurationsdetails im `write_erase.cfg` Datei auf dem Bootflash.
 +
+[NOTE]
+====
+Stellen Sie sicher, dass Sie Folgendes konfigurieren:
+
+** Benutzername und Passwort
+** Verwaltungs-IP-Adresse
+** Standardgateway
+** Schaltername
+
+
+====
++
 `cs1# show run | i "username admin password" > bootflash:write_erase.cfg`
 
 +
@@ -156,7 +165,7 @@ Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisc
 
 . Überprüfen Sie, ob die `write_erase.cfg` Die Datei wird wie erwartet ausgefüllt:
 +
-`show file bootflash:write_erase.cfg`
+`*show file bootflash:write_erase.cfg*`
 
 . Geben Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
 +

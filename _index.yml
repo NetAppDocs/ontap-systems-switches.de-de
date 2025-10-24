@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: Switches für ONTAP -Systeme
+  title: Switch-Dokumentation für ONTAP Hardwaresysteme
   summary: Verwenden Sie die Dokumente auf dieser Seite, um den Cluster, die freigegebenen
     Speicher und die MetroCluster Switches zu installieren, zu aktualisieren und zu
     warten.
@@ -26,8 +26,8 @@ indexpage:
       url: "/cluster/index.html"
     - title: Storage Switches
       url: "/storage/index.html"
-    - title: Gemeinsamer Switch – Cisco Nexus 9336C-FX2
-      url: "/switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html"
+    - title: Shared-Switches
+      url: "/shared/index.html"
   - title: Switches für das Ende der Verfügbarkeit
     links:
     - title: Cluster-Switch – Cisco Nexus 3232c

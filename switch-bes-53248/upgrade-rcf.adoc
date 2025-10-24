@@ -455,7 +455,7 @@ Are you sure you would like to reset the system? (y/n) *y*
 ====
 .EFOS Version 3.12.x und höher
 --
-. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP.
+. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs2: HTTP, HTTPS, FTP, TFTP, SFTP oder SCP.
 +
 Dieses Beispiel zeigt SFTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:
 
@@ -514,7 +514,7 @@ Configuration script 'reference-config.scr' applied.
 --
 .Alle anderen EFOS-Versionen
 --
-. Kopieren Sie die RCF auf den Bootflash von Switch cs2 mit einem der folgenden Übertragungsprotokolle: FTP, TFTP, SFTP oder SCP.
+. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs2: HTTP, HTTPS, FTP, TFTP, SFTP oder SCP.
 +
 Dieses Beispiel zeigt SFTP, mit dem eine RCF in den Bootflash auf Switch cs2 kopiert wird:
 

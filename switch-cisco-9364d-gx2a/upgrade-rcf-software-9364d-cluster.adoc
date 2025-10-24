@@ -952,7 +952,7 @@ node1-04          true     true          false
 4 entries were displayed.
 ----
 ====
-. Wiederholen Sie die Schritte 4 bis 16 auf Switch cs2.
+. Wiederholen Sie die Schritte 4 bis 18 auf Switch cs2.
 . Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
 +
 `network interface modify -vserver Cluster -lif  * -auto-revert True`
