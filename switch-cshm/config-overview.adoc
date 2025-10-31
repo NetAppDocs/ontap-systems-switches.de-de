@@ -14,5 +14,5 @@ summary: 'Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Siche
 Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich.
 
 * link:config-log-collection.html["Konfigurieren der Protokollerfassung"]
-* link:config-snmpv3.html["Optional: SNMPv3 konfigurieren"]
+* link:config-snmpv3.html["SNMPv3 konfigurieren (optional)"]
 

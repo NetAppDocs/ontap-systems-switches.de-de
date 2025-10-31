@@ -71,4 +71,4 @@ Wo?
 
 
 .Was kommt als nächstes
-link:install-9336c-shared.html["Den Schalter einbauen"].
+Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie link:install-9336c-shared.html["Installieren Sie den Schalter"]Die

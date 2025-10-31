@@ -225,4 +225,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-link:install-nx-os-software-3232c.html["Installation der NX-OS Software"] .
+Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, link:install-nx-os-software-3232c.html["Installieren Sie die NX-OS-Software"]Die

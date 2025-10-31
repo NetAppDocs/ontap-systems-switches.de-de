@@ -426,4 +426,4 @@ Der Switch wird ohne angewendete Konfiguration neu gestartet und auf die Werksei
 
 
 .Was kommt als nächstes
-link:configure-licenses.html["Installieren von Lizenzen"] .
+Nach der Installation der EFOS-Software können Sie link:configure-licenses.html["Installieren Sie Ihre Lizenzen"]Die

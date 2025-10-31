@@ -12,7 +12,7 @@ entries:
     url: "/switch-cshm/config-overview.html"
   - title: Konfigurieren der Protokollerfassung
     url: "/switch-cshm/config-log-collection.html"
-  - title: Optional - SNMPv3 konfigurieren
+  - title: SNMPv3 konfigurieren (optional)
     url: "/switch-cshm/config-snmpv3.html"
 - title: Überprüfen Sie den Zustand des Schalters
   pdf-filename: Monitor_Switch_Health

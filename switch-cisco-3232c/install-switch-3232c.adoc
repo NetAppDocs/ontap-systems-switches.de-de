@@ -50,4 +50,4 @@ Siehe die Verfahren in den Installationsleitfäden für die Switch-Hardware sowi
 
 
 .Was kommt als Nächstes?
-Optional können Sielink:install-cisco-nexus-3232c.html["Installieren Sie einen Cisco Nexus 3223C-Switch in einem NetApp -Schrank"] .  Andernfalls gehen Sie zulink:cabling-considerations-3232c.html["Überprüfung der Verkabelung und Konfiguration"] .
+Optional können Sie link:install-cisco-nexus-3232c.html["Installieren Sie einen Cisco Nexus 3223C-Switch in einem NetApp -Schrank"]Die Ansonsten gehen Sie zu link:cabling-considerations-3232c.html["Verkabelung und Konfiguration überprüfen"]Die

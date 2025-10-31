@@ -95,4 +95,4 @@ node2                true    true          false
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+Nachdem Sie das Upgrade Ihrer EFOS-Software oder Ihres RCF bestätigt haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

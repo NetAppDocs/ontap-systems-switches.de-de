@@ -689,4 +689,4 @@ Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie m
 
 
 .Was kommt als Nächstes?
-link:install-rcf-3232c.html["Installieren Sie die RCF-Konfigurationsdatei"].
+Nach der Installation der NX-OS-Software, link:install-upgrade-rcf-overview-3232c.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."]Die

@@ -2159,7 +2159,6 @@
   <block id="5fd6f50ffed943141f031543ab15c5c3" category="paragraph">Swp1s0-3</block>
   <block id="3226294083a7703912d2bb83f5ed65bd" category="paragraph">Swp2s0-3</block>
   <block id="a8b3385461e026cd59cbc121f290ce13" category="paragraph">Siehe<block ref="ba81a2074219dbc1e842c96a03d02ea8" category="inline-link-rx"></block> Weitere Informationen zu Switch-Ports.</block>
-  <block id="106f56409094e8675dc6d648c4e5ab5d" category="paragraph"><block ref="9a00636def01671b999a7c1df59762ff" category="inline-link-macro-rx"></block>.</block>
   <block id="efeb406865c5500553bf0ee6711eb714" category="summary">Für die Installation und Wartung von NVIDIA SN2100-Switches sollten Sie alle Anforderungen und die empfohlene Dokumentation prüfen.</block>
   <block id="c1bbeec855d76242340c5bdf0a270fb1" category="paragraph">Gehen Sie folgendermaßen vor, um Cumulus Linux (CL) OS zu installieren, wenn der Switch im Cumulus-Modus läuft.</block>
   <block id="eaeaa3cbb68f870319145c61053e1d67" category="inline-link-macro">Im ONIE-Modus installieren</block>
@@ -2243,7 +2242,6 @@
   <block id="b53f6b592c12fd5937d7b72a3bcbfcfb" category="list-text">Drücken Sie die Taste *Esc* auf dem GNU GRUB-Bildschirm, um den normalen Bootvorgang zu unterbrechen, wählen Sie *ONIE* und drücken Sie *Enter*.</block>
   <block id="bb8165c1c0d8416da1e318e1c0f54603" category="list-text">Wählen Sie auf dem nächsten Bildschirm *ONIE: Install OS* aus.</block>
   <block id="673b183eae1d985d3373995f15978e5b" category="inline-link-macro">Installieren Sie das RCF-Skript (Reference Configuration File)</block>
-  <block id="8dcb8ce87423e2f4276589483a457d92" category="paragraph"><block ref="464fe9c0adfef54cfb4c6fe21ef12b08" category="inline-link-macro-rx"></block>.</block>
   <block id="2eb103c9e878418bac314f3d0a12d9a6" category="paragraph">In der folgenden Tabelle sind die Teilenummer und Beschreibung der SN2100-Switches und Schienen-Kits aufgeführt:</block>
   <block id="67dfd4b7e3a80a311bee6d3c67d73ba2" category="doc">Verbinden Sie die NS224-Shelfs als Switch-Attached Storage</block>
   <block id="69fe2bd920008d1b6c35f9baad74d4f1" category="inline-link">Verkabelung, Switch-Attached NS224 Laufwerk-Shelfs</block>
@@ -2252,7 +2250,6 @@
   <block id="144a8e89f9c38ca949aede4fe56c2cb7" category="list-text">Kopieren Sie das RCF-Python-Skript auf den Switch.</block>
   <block id="39e77b4f608ccea6c3163df34d07da19" category="paragraph">Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte durch.</block>
   <block id="1a8981f50831032975e7c7ab919cf671" category="list-text">Überprüfen Sie die <block ref="d6c0afb29fcb19bc79e093e82e35e6bb" category="inline-link-macro-rx"></block>.</block>
-  <block id="0575b6ffe3df5337cb3759f533fd3151" category="paragraph"><block ref="00e0372232f46e972c663d4404b271c3" category="inline-link-macro-rx"></block>.</block>
   <block id="845296543f4c0f8578120a5e5c4e09f2" category="paragraph"><block ref="845296543f4c0f8578120a5e5c4e09f2" category="inline-link-rx"></block></block>
   <block id="a58b8710ff3e173d8d485d0f96fa1c4d" category="paragraph">Beschreibt die Installation Ihrer NVIDIA SN2100-Switches.</block>
   <block id="3946a95173cf2872b6b6e8309352d61b" category="inline-link">Shelf-Verkabelung bei NS224 NVMe-Laufwerken</block>
@@ -2318,7 +2315,6 @@
   <block id="2e7c59cc96135fe229b2eef0001efa1a" category="list-text">Vergewissern Sie sich bei den Switches sw1 und sw2, dass alle Knoten-Cluster-Ports aktiv sind:</block>
   <block id="496fe3dd70b4f5816f2c409909812bb5" category="list-text">Vergewissern Sie sich, dass alle Cluster-Netzwerk-LIFs wieder an ihren Home-Ports sind:</block>
   <block id="551d30a8d4eb4a668b69a7293c7a7b96" category="section-title">QSA-Adapter</block>
-  <block id="95014a22727b6c60eefe66a36ce9ded2" category="paragraph"><block ref="520f63525f898e977d91bb94f9da1129" category="inline-link-macro-rx"></block>.</block>
   <block id="b3ab991775278214a4482646f14a4804" category="paragraph">Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben. Der dokumentierte Prozess funktioniert bei allen Knoten über optische oder Twinax-Ports, wird bei diesem Switch jedoch nicht unterstützt, wenn Knoten integrierte 10GBASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.</block>
   <block id="52c5fb2d511e57cc084140509647dd1e" category="list-text">Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.</block>
   <block id="12840018be7e8eb67f53fbfb0d4257aa" category="list-text">Auf den Knoten wird ONTAP 9.10.1P3 und höher ausgeführt.</block>
@@ -2472,7 +2468,6 @@
   <block id="64af225baad7175531906842d9dee5e7" category="paragraph">Führen Sie den Vorgang in durch <block ref="c7d9f92acf90399e5467216f763af38e" category="inline-link-macro-rx"></block>, Und dann folgen Sie den Schritten unten.</block>
   <block id="47fde1d6f33f1e1831eabb5dbb44a901" category="inline-link">Cisco Nexus 3000 Series NX-OS Command Reference Guides</block>
   <block id="ec8e2c0b6ca60727d2402a49b67315ac" category="list-text">Kopieren Sie die NX-OS-Software mit einem der folgenden Übertragungsprotokolle auf den Nexus 3132Q-V-Switch: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch unter<block ref="d6b429c6adadc5e67023a0f5351e7ffd" category="inline-link-rx"></block>.</block>
-  <block id="ced2c729b002b1db52a54a7e9056ae20" category="paragraph"><block ref="a230254c929e1946d5af4ce09f0d3fb2" category="inline-link-macro-rx"></block>.</block>
   <block id="a48009e341ec5158a809b8ddefc65f61" category="doc">Füllen Sie das Cisco Nexus 3132Q-V-Verkabelungsarbeitsblatt aus</block>
   <block id="b4faaa394948e9aca63bbc431d9061e1" category="paragraph">Jeder Switch kann als einzelner 40-GbE-Port oder als 4-x-GbE-Ports konfiguriert werden.</block>
   <block id="1e7adbcd77a17bde5f2f970332192c58" category="paragraph">Wenn Sie zu einem Switch mit zwei Nodes und Cisco Nexus 3132Q-V Cluster Switches migrieren, sollten Sie die Verbindungen zu Ports und Nodes und die Verkabelungsanforderungen verstehen.</block>
@@ -2504,9 +2499,7 @@
   <block id="9c97aec7cdd4bc75bb47296acfbc45bd" category="list-text">Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden<block ref="28649c93049a329043d206ec7fa0c6f8" category="inline-link-rx"></block> Für die Switches, die Sie empfangen. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, haben aber die RCFs nicht geladen.</block>
   <block id="ce874b06f4fe47acb09deda5a20e5bc6" category="list-text">Verkabeln Sie die Switches für das Cluster-Netzwerk und das Management-Netzwerk mithilfe des vollständigen Verkabelungsarbeitsblatts mit den Controllern, wie in beschrieben <block ref="23d1fa41a61ba507d26b61266d9bc561" category="inline-link-macro-rx"></block>.</block>
   <block id="ee9b25a09da211887f0fa89abf6031a5" category="paragraph">Geben Sie die Schlüsselbits von 1024-2048 ein.</block>
-  <block id="83855999b3308477760994ec497ea43a" category="paragraph"><block ref="12fd8f733c82b6251ce762993bfda2b0" category="inline-link-macro-rx"></block>.</block>
   <block id="f62cbeef79975f2a60c9a80145b7741c" category="inline-link-macro">Installation der NX-OS Software</block>
-  <block id="bd599a74c6b6bb0488a3ffe28b84d972" category="paragraph"><block ref="fc3a2bdf8893a6559328b7345e1a1c31" category="inline-link-macro-rx"></block>.</block>
   <block id="5541ef2268c2ae16e69f03011e3e160c" category="paragraph">Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.</block>
   <block id="8c7ab8ec144d835d6b8e6d8c020901fa" category="list-text">Die anfänglichen Vorbereitungsanforderungen, Inhalt des Kits und Sicherheitsvorkehrungen im<block ref="5af883df35ff9fd9c3ef6c5532417452" category="inline-link-rx"></block>. Lesen Sie diese Dokumente, bevor Sie mit dem Verfahren beginnen.</block>
   <block id="1843176ae8cd66ed9a7b08aab08723f3" category="list-text">Das Pass-Through-Panel-Kit, erhältlich von NetApp (Teilenummer X8784-R6). Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:</block>
@@ -2645,7 +2638,6 @@
   <block id="b9f5f24ad90c4ea8ff15fad9ac408f42" category="list-text">Erforderliche Controller-Dokumentation und ONTAP-Dokumentation</block>
   <block id="19bf12997a2536b4572991e599e17801" category="list-text">Abgeschlossene Verkabelungsarbeitsblätter.</block>
   <block id="e7f4ab45950498df235454e086acfca4" category="paragraph">Geben Sie die Anzahl der Schlüsselbits von 1024-2048 ein.</block>
-  <block id="903eb4ad98b740ebeb449655751eb804" category="paragraph"><block ref="92ff606cd08828782a7061b88d8a96a2" category="inline-link-macro-rx"></block>.</block>
   <block id="ccc7541015670d615a3ac3ca54f328a2" category="doc">Migrationsanforderungen für Cisco Nexus 3232C Cluster Switches</block>
   <block id="095f3ce4df6c9efa0ac2ac584751cd57" category="paragraph">Vor der Migration zu Cisco Nexus 3232C Cluster-Switches. Überprüfen Sie die Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen.</block>
   <block id="3bede8234c2da7c7a1e8d9374ccb1072" category="section-title">Migrationsanforderungen für CN1610</block>
@@ -2746,7 +2738,6 @@
   <block id="fa1cada3dcf72cd1845a9b13f721353f" category="list-text">Legen Sie an der Konsole die seriellen Host-Einstellungen fest:</block>
   <block id="5774edcf06cc50000de075fa347fa292" category="list-text">Melden Sie sich beim Switch an<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> Und drücken Sie *Enter*, wenn Sie zur Eingabe eines Kennworts aufgefordert werden. Der Standard-Switch-Name lautet *Routing*. Geben Sie an der Eingabeaufforderung ein<block ref="208f156d4a803025c284bb595a7576b4" prefix=" " category="inline-code"></block>. Dadurch haben Sie Zugriff auf den privilegierten EXEC-Modus für die Switch-Konfiguration.</block>
   <block id="b51993b6b7e3ea50c17952db42c3a543" category="list-text">Ändern Sie den Switch-Namen in *cs2*.</block>
-  <block id="62d8b9841abbee3c8d144371f887a783" category="paragraph"><block ref="1233ecfc62f0bed40d830afa17eec2c7" category="inline-link-macro-rx"></block>.</block>
   <block id="5b987a205f558ab0653eabd5c075ecef" category="summary">Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokumentation von Broadcom.</block>
   <block id="07dc48432521e8881ac99696b791f50c" category="doc">Installieren Sie die Hardware für den BES-53248 Cluster-Switch</block>
   <block id="ffe7a2cdbe818a87c6dc07fcabe21b8d" category="list-text">Überprüfen Sie die <block ref="aefa00c6161012d4695cd8109566fb4d" category="inline-link-macro-rx"></block>.</block>
@@ -2901,7 +2892,6 @@
   <block id="0cc464fe26f2dccabb9644f27a14d078" category="list-text"><block ref="0cc464fe26f2dccabb9644f27a14d078" category="inline-link-macro-rx"></block></block>
   <block id="549f827e07761bafef053e8ca7564a39" category="inline-link">Konfigurieren Sie ONTAP</block>
   <block id="10775dd39d5bac0a859a7c2aa804576e" category="inline-link">Konfigurieren Sie MetroCluster mit ONTAP</block>
-  <block id="1e672cb0691529b9dab89394f7a5f58c" category="paragraph"><block ref="f9b2ed845567b21857ae5d0479088ab0" category="inline-link-macro-rx"></block>.</block>
   <block id="21f31f792b72c310b4fd5aa9c2e35835" category="paragraph">Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem gemeinsamen Switch Nexus 9336C-FX2 zu installieren.</block>
   <block id="3353682bf555dc374d0a35c53f69888f" category="paragraph">Sie können einen defekten Nexus 9336C-FX2 Shared Switch ersetzen. Dies ist ein NDU (Non Disruptive Procedure, NDU).</block>
   <block id="417613c56ec1e642135d2c1c9047771b" category="list-text">In dem vorhandenen Cluster und der Netzwerkinfrastruktur:</block>
@@ -3236,8 +3226,6 @@
   <block id="fd280d62f276e98d2c1156b6a7cd8932" category="paragraph">Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.</block>
   <block id="e5e0ceddda654af2c9e3c1386537e4f7" category="paragraph">Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.</block>
   <block id="89176363c7d28c567fb702f95f7eee23" category="list-text"><block ref="89176363c7d28c567fb702f95f7eee23" category="inline-link-macro-rx"></block></block>
-  <block id="fd5531349e673e037070aacc3a802f37" category="list-text"><block ref="2d5ab056fce0957a1995d7dbefe2460c" category="inline-link-macro-rx"></block>.</block>
-  <block id="cdb75160db01dcaff8578367832cc1a8" category="list-text"><block ref="cd3d2c6d0c8a0c43f0a0e10375ad6bbc" category="inline-link-macro-rx"></block>.</block>
   <block id="f179eebc625c94b5b94fc136b78506e5" category="inline-link-macro">Installieren Sie die Referenzkonfigurationsdatei</block>
   <block id="67bea00aeda47411a539357c5eea36bd" category="list-text"><block ref="67bea00aeda47411a539357c5eea36bd" category="inline-link-macro-rx"></block></block>
   <block id="a4cc27f030d5855528a867889ecb752b" category="list-text"><block ref="a4cc27f030d5855528a867889ecb752b" category="inline-link-macro-rx"></block></block>
@@ -3272,7 +3260,6 @@
   <block id="17467de5e625043cda6499d3541a20d4" category="list-text">[[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="636bbeffec3fc87e3384d539d543afee" category="list-text">[[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="73cb4c03f2757beb35ad69fd322003be" category="list-text">[[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe <block ref="e0b55f136d815f7a36c41fd7fe28e0fd" category="inline-link-macro-rx"></block>Entnehmen.</block>
-  <block id="6446fc62a2115815d4bdbe55f18815c1" category="list-text"><block ref="47109c7943148b2a9617cfcb4b49a79f" category="inline-link-macro-rx"></block>.</block>
   <block id="7f81bc06b8e7a4bfd515767a4b4385fe" category="list-text">[[Schritt6]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="2b888f1fbb1010b5a426f7a2a88e0914" category="list-text">[[step 12]] ersetzen Sie die Speicher-RCF-Datei auf Shared-Switch B durch die gemeinsam genutzte RCF-Datei. Siehe <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
   <block id="8ddcfbe457d5db5e61625624a6a20b33" category="list-text">[[steep16]]Migrieren Sie das Clusternetzwerk von den vorhandenen Cluster-Switches auf die gemeinsam genutzten Switches, indem Sie das Switch-Austauschverfahren und den gemeinsamen RCF verwenden. Der neue gemeinsam genutzte Schalter A ist „cs1“. Der neue gemeinsam genutzte Schalter B ist „cs2“. Siehe <block ref="79be7ff3aee9976e13251b5a88fadf5c" category="inline-link-macro-rx"></block> Und <block ref="2f595b9f03c1eca7e988cc615d685264" category="inline-link-macro-rx"></block> Entnehmen.</block>
@@ -3927,8 +3914,6 @@ Der Switch wird ohne angewendete Konfiguration neu gestartet und auf die Werksei
   <block id="322cf54023dcfab56a26576123959d58" category="inline-link-macro">Aktivieren Sie SSH für die Protokollerfassung</block>
   <block id="7b0ac22c525a61eb6a12e2267bf6ddea" category="doc">Überprüfen Sie das ONTAP-Cluster-Netzwerk nach einem EFOS-Software- oder RCF-Upgrade der BES-53248-Cluster-Switches</block>
   <block id="45f43daecf76cec34b1fa9cb5925aa48" category="paragraph">Sie können die folgenden Befehle verwenden, um den Zustand des ONTAP-Cluster-Netzwerks nach einem Upgrade der EFOS-Software oder RCF für BES-53248-Cluster-Switches zu überprüfen.</block>
-  <block id="d5c56d6c3abbb7dd20246c17ec16d101" category="inline-link-macro">Aktualisieren Sie den RCF</block>
-  <block id="3ff8146e3852dfcba1cfd255ac4f5576" category="paragraph"><block ref="74dd19c11d43cfa2dd387ecf7d984746" category="inline-link-macro-rx"></block> Oder <block ref="885efaf124d7da00a7a60364582f6275" category="inline-link-macro-rx"></block>.</block>
   <block id="18e822da210e93da8992e6b3c462671f" category="open-title">EFOS 3.10.0.3 und höher</block>
   <block id="85e9fe702698c7a1eb1de4500bc3fca4" category="paragraph">Konfigurieren Sie die Zeitzone und die Zeitsynchronisierung (NTP):</block>
   <block id="3cc87411e9c51d2b281718c8673c3219" category="open-title">EFOS 3.9.0.2 und früher</block>
@@ -4043,7 +4028,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="c7ca49e9f550dc9b18f2402f13ad9430" category="list-text">[[schritt5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
   <block id="58a19c530e54f6364edd838f35b1830e" category="inline-link-macro">Konfigurieren Sie die Überwachung des Switch-Systemzustands</block>
   <block id="d21243682bbd31fa9c0d32d291135394" category="paragraph"><block ref="5b8b393a675dcaaee97c02828356657c" category="inline-link-macro-rx"></block>.</block>
-  <block id="e0ac82c3ba84f3478af53619e7a13dc9" category="paragraph"><block ref="0ad0656927b565ff563d073b0158ec24" category="inline-link-macro-rx"></block>.</block>
   <block id="33446f9dc3d57cc65d0607602cea0067" category="paragraph">Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.</block>
   <block id="6839871c951e0451fa16484988485a69" category="paragraph">Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, aktivieren Sie SSH auf den Switches.</block>
   <block id="ace8956d8976d528bf22aab3553d5953" category="paragraph">Wenn Sie die Funktionen des Ethernet Switch Health Monitor (CSHM) und der Protokollsammlung verwenden, müssen Sie die SSH-Schlüssel generieren und dann SSH auf den Cluster-Switches aktivieren.</block>
@@ -4070,9 +4054,7 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="8ae4eeaa7baed19106cc30ea02483c5e" category="summary">Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich.</block>
   <block id="c4bf003fc396e9ee7d60812f1da24cfe" category="list-text"><block ref="c4bf003fc396e9ee7d60812f1da24cfe" category="inline-link-macro-rx"></block></block>
   <block id="2ae26c52de113e0592fc26619e9e73d1" category="inline-link-macro">Optional: SNMPv3 konfigurieren</block>
-  <block id="ec5440e4cc2d261dc76dac84e641c0ab" category="list-text"><block ref="ec5440e4cc2d261dc76dac84e641c0ab" category="inline-link-macro-rx"></block></block>
   <block id="5b62a4b03175f138ff64effec2560ed7" category="summary">Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch konfigurieren, der die Statusüberwachung des Ethernet-Switches (CSHM) unterstützt.</block>
-  <block id="7e26b49f49bdf462799729889a55fd9a" category="doc">Optional: Konfigurieren Sie SNMPv3 für Ihren Switch</block>
   <block id="1451684986f1c945fdb4e4f2a8b904be" category="admonition">SNMPv3 wird nur auf ONTAP 9.12.1 und höher unterstützt.</block>
   <block id="5fb3828593766d454e79a0dcf52fed9d" category="paragraph">Die folgenden Befehle werden verwendet, um einen SNMPv3-Benutzernamen auf den Switches *Broadcom*, *Cisco* und *NVIDIA* zu konfigurieren:</block>
   <block id="77f3beca20fcd78f77236507e8d9b4af" category="open-title">Broadcom-Switches</block>
@@ -4115,7 +4097,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="08b7ad798c66f1af0fba98a0107b6dfc" category="sidebar">Übersicht über die Statusüberwachung des Switches</block>
   <block id="6611dff3ec03954421335708f49af79d" category="sidebar">Switch_Health_cshm</block>
   <block id="37f6298ed21bb27b583654cebefb4620" category="sidebar">Configure_Switch_Health</block>
-  <block id="db15809ae693fa5aa50cb4b40454f055" category="sidebar">Optional - SNMPv3 konfigurieren</block>
   <block id="5bc599259e802db4cd19057399debd0b" category="sidebar">Überprüfen Sie den Zustand des Schalters</block>
   <block id="114c27cb863250ce041d62daae03a69e" category="sidebar">Monitor_Switch_Health</block>
   <block id="d4a8473f83e1246e0b3ab08e2034db7c" category="sidebar">Log-Datei-Sammlungen</block>
@@ -4123,7 +4104,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="d9566e63378c0ff8504c903128e5c6f6" category="inline-link-macro">SNMPv3 konfigurieren (optional)</block>
   <block id="e2101619626dc7b8ea25749787797515" category="paragraph"><block ref="a294afff18b68f8c1e4f78aeef5ef294" category="inline-link-macro-rx"></block>.</block>
   <block id="96a5ba855b4ee3dba60ecf722a706b29" category="inline-link-macro">Installieren Sie die CSHM-Datei</block>
-  <block id="54f593b53357d530cce6870c293a0379" category="list-text"><block ref="bc8e6b3d8a605e692bda90d2d873314b" category="inline-link-macro-rx"></block>.</block>
   <block id="446a9723b131c4606a1b6d581fef9f10" category="paragraph">Sie können die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches des Ethernet-Switches installieren.</block>
   <block id="2cd1b70f79d5acd7ffb2c204f4069175" category="summary">Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei für die Zustandsüberwachung von Cluster-Switches der NVIDIA SN2100-Speicher-Switches installieren.</block>
   <block id="d57382f230671f8cd52f47dc80838934" category="paragraph">Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.</block>
@@ -4221,7 +4201,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="28caefed3a29faf45a4d032d5b1006b4" category="inline-link">EPLD Upgrade - Versionshinweise, Version 9.3(11)</block>
   <block id="46ddffef0745adf199d35e9bbe4eec40" category="paragraph">Weitere Informationen finden Sie unter<block ref="a4e876354b2a6a79541beefead7e3974" category="inline-link-rx"></block>.</block>
   <block id="476acca7b2d84d147895203411c05eee" category="list-text">Wiederholen Sie die Schritte 6 bis 14 am Schalter cs1.</block>
-  <block id="11e210472a35f336b513b2c57b8cffab" category="paragraph"><block ref="7b1f8572a598b67cece8c82d64948766" category="inline-link-macro-rx"></block>.</block>
   <block id="d80fed14d08f5cc94b5972605f7b1264" category="paragraph">4 x 100-GbE-Node 1</block>
   <block id="f92dbce301746858220367bd16fe3670" category="paragraph">4 x 100-GbE-Node 2</block>
   <block id="b360b026e43659aaec27da3653619648" category="paragraph">4 x 100-GbE-Node 3</block>
@@ -4729,7 +4708,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="607ce262227aceccd2c5daca045a80dc" category="open-title">Cumulus Linux 5.4.0 bis Cumulus Linux 5.11.0</block>
   <block id="1793733c3fd6ed243dfcb1cd45582f6e" category="list-text">Laden Sie das Cumulux Linux 5.11.0-Image herunter:</block>
   <block id="3b17e95301e3d2dffb102ceff49ecd86" category="list-text">Melden Sie sich ab und erneut beim Switch an, um den aktualisierten Switch-Namen in der Eingabeaufforderung anzuzeigen:</block>
-  <block id="7c7a0b76c488baaa82c48a846faa8727" category="paragraph"><block ref="0d353ea2e4037b21b3bb06f2b69f1c6c" category="inline-link-macro-rx"></block>.</block>
   <block id="fc6063e37d3407a7d76fabb59f7a96a3" category="list-text">So legen Sie eine statische IPv4- oder IPv6-Verwaltungsadresse für den Service-Port des Switches fest:</block>
   <block id="42a9137a05a60eb752dcdf982e717626" category="open-title">IPv4</block>
   <block id="fdb7cb8f657426e7c409bfd6d1a36ce4" category="open-title">IPv6</block>
@@ -4767,8 +4745,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="01abea5f71122f7491f5d67a54692187" category="list-text">[[Schritt 4]] Warten Sie, bis der Switch neu geladen ist, und melden Sie sich dann beim Switch an.</block>
   <block id="3298c6d813bb0262584ca3882273ff2a" category="paragraph">Der Standardbenutzer ist „admin“ und es ist kein Passwort festgelegt. Es wird eine Eingabeaufforderung wie die folgende angezeigt:</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Was kommt als nächstes</block>
-  <block id="d29ee2143986e1790a9cd170344db5a2" category="paragraph"><block ref="30bc59659410cfda61387b34e1612b7c" category="inline-link-macro-rx"></block> .</block>
-  <block id="d7644dedcbfb5c562e4684e77d00a009" category="paragraph"><block ref="cc83c245da410495a294f033719b1669" category="inline-link-macro-rx"></block> .</block>
   <block id="30f6afd41919b41a456c94f0f66fa5d3" category="doc">Installations- und Einrichtungsablauf für BES-53248-Switches</block>
   <block id="a8707fcc977da1a092531cdd197f8ba9" category="paragraph">Befolgen Sie diese Arbeitsschritte, um Ihre BES-53248-Switches zu installieren und einzurichten.</block>
   <block id="a83565177e04591255a835fde719da37" category="inline-link-macro">Überprüfen der Konfigurationsanforderungen</block>
@@ -4785,14 +4761,12 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="cc6a7a00f2331df56d127235ab712a53" category="inline-link-macro">Konfigurieren der Software</block>
   <block id="09e3ea1c9ed929b9d5ba65aa0e1a2e57" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="cc407d015acb61c0e32d43737b9a7b52" category="inline-link-macro-rx"></block></block>
   <block id="50684e38d3c3e950bc58738bb16d0843" category="paragraph">Konfigurieren Sie die Switch-Software.</block>
-  <block id="e17e6fce1c9267a06663c214d3364910" category="paragraph"><block ref="8b21286de1f0b27e78e54a55a69f517f" category="inline-link-macro-rx"></block> .</block>
   <block id="a37cc2eef24d556279f24156644d2f76" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="b88c299eeb38820fb709454fcd144438" category="inline-link-macro-rx"></block></block>
   <block id="17fc3f3ff88ac99f3928ed20888ee5ad" category="paragraph">Konfigurieren Sie den Cluster-Switch BES-53248.</block>
   <block id="2fdc035f31f6f8e5dc2cc860f7ac2b5e" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="1233ecfc62f0bed40d830afa17eec2c7" category="inline-link-macro-rx"></block></block>
   <block id="d2fbaa7f212d11bb223bcb79e99d25a5" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="0f9f654882514557e57b19641aa7b563" category="inline-link-macro-rx"></block></block>
   <block id="039ac036dd5126741513b6ff02740aa3" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="74dd19c11d43cfa2dd387ecf7d984746" category="inline-link-macro-rx"></block></block>
   <block id="ba4ab00920641dfd5423a47fe9d7f3c9" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="e2b4c4f5313b05dff7c4a02a4e9e0df6" category="inline-link-macro-rx"></block></block>
-  <block id="b072aeefadd5f4debb10448ed0f78d3d" category="paragraph"><block ref="6750c4dc9d2505a8ea19f483ac83a6d9" category="inline-link-macro-rx"></block> .</block>
   <block id="df262d72a3f24d806e5173e9cf649e77" category="doc">Workflow zur Hardwareinstallation für BES-53248-Switches</block>
   <block id="28a0c60fdf5ca57b39720c3a8d882046" category="paragraph">Um die Hardware für einen BES-53248-Cluster-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:</block>
   <block id="cf1d9d7a26637db18765ddf010f65be6" category="inline-link-macro">Installieren Sie die Switch-Hardware</block>
@@ -4804,7 +4778,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="e0a521d00ae74b0c84db0c847fddb6ad" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="fea95d28df6c953ffdb2096099ec83e5" category="inline-link-macro-rx"></block></block>
   <block id="96fb740240c8f1bf5739883588c34128" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="b0d7a2164137f2036f3af1efcfb1968f" category="inline-link-macro-rx"></block></block>
   <block id="0c6171d657f447db9f7b65ec421619f2" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="ee9cd451d5dc1debab0286f89e5c8301" category="inline-link-macro-rx"></block></block>
-  <block id="4deb9a9ff2057f7c893692587e556260" category="paragraph"><block ref="3733ea959ea350d46ba403dfe4087bb4" category="inline-link-macro-rx"></block> .</block>
   <block id="926ea8223c35e0974ecfabb2c02ad4ff" category="summary">Übersicht über die Softwarekonfiguration für Cisco Nexus 3132Q-V Cluster-Switches</block>
   <block id="fddd0032cd4149fb7bfea4114a217072" category="doc">Workflow zur Softwareinstallation für Cisco Nexus 3132Q-V-Cluster-Switches</block>
   <block id="e87559d7fe5ea552cfe4b62d24bc8ae6" category="paragraph">Um die Software für einen Cisco Nexus 3132Q-V-Switch zu installieren und zu konfigurieren und die Referenzkonfigurationsdatei (RCF) zu installieren oder zu aktualisieren, gehen Sie wie folgt vor:</block>
@@ -4822,7 +4795,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="d4efb0e9c28005734b2cd25f396c4a48" category="doc">Workflow zur Hardwareinstallation für Cisco Nexus 3132Q-V-Switches</block>
   <block id="5f8a048748aa7a1283276d1b0da8b301" category="paragraph">So installieren und konfigurieren Sie die Hardware für einen 3132Q-V-Cluster-Switch:</block>
   <block id="4c915003076a6d86a9620d6756fba2c2" category="inline-link-macro">Vervollständigen Sie das Verkabelungsarbeitsblatt</block>
-  <block id="670b8bcb0f55091123c6ed29714c3705" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="53357c7c5c3be35085bc708441ee4e98" category="inline-link-macro-rx"></block></block>
   <block id="1678bed7696215f8954f4b86a7e8545c" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="207ad0352300a36b0c0e92c58f1c94c7" category="inline-link-macro-rx"></block></block>
   <block id="383ec28e4a088a104d47579bdb8c4764" category="paragraph">Installieren Sie den 3132Q-V-Schalter.</block>
   <block id="9da628940cacc721b9a48c0819528e51" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="1f00ece542bc54197fbab1596f438e3d" category="inline-link-macro-rx"></block></block>
@@ -4844,9 +4816,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="59f8816adc68d17a564a2adcb32f6df2" category="list-text">Vollendet<block ref="e253afe6db79a1011e9ed137315b003b" category="inline-link-macro-rx"></block> .</block>
   <block id="0941c5c2195dd31d0727420366f92c3a" category="list-text"><block ref="eb114e7f9419da2ed2795f56bdba3e97" category="inline-link-macro-rx"></block> .</block>
   <block id="0f4ae3cf88771c7467206da3010f8d36" category="inline-link-macro">Installieren Sie einen Cisco Nexus 3132Q-V-Switch in einem NetApp Schrank</block>
-  <block id="e20ca246755989fe82bdc30b472d4045" category="paragraph">Optional können Sie<block ref="18420978bb95dbc58537866fa2d7958a" category="inline-link-macro-rx"></block> .  Andernfalls gehen Sie zu<block ref="d0781e7a35581c9e242db456a8edbe98" category="inline-link-macro-rx"></block> .</block>
-  <block id="6f2cc65e666a9e05689591993e20b041" category="paragraph"><block ref="207ad0352300a36b0c0e92c58f1c94c7" category="inline-link-macro-rx"></block> .</block>
-  <block id="f84a74725677310e72a17907322dd85b" category="paragraph"><block ref="1dbca34b24162eb59cc33616a1549705" category="inline-link-macro-rx"></block> .</block>
   <block id="8a621cac0318aad5331388c261fff40d" category="summary">Übersicht über die Softwarekonfiguration für Cisco Nexus 3232C Cluster-Switches</block>
   <block id="d0e2537bdd90951e7c488815de10574a" category="doc">Workflow zur Softwareinstallation für Cisco Nexus 3232C-Cluster-Switches</block>
   <block id="7b97f12b51fcbcc014add4de101dcc01" category="paragraph">Um die Software für einen Cisco Nexus 3232C-Switch zu installieren und zu konfigurieren und die Referenzkonfigurationsdatei (RCF) zu installieren oder zu aktualisieren, gehen Sie wie folgt vor:</block>
@@ -4876,9 +4845,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="f66b7080792725ee57ea7f7b02c7d38b" category="doc">Installieren Sie den 3232C-Cluster-Switch</block>
   <block id="422598dd3d31832bfe941edd56d7d1bd" category="list-text"><block ref="405e8e3e93d725761176a326f99e4751" category="inline-link-macro-rx"></block> .</block>
   <block id="abdf142c465e75d188665a07134160d1" category="inline-link-macro">Installieren Sie einen Cisco Nexus 3223C-Switch in einem NetApp -Schrank</block>
-  <block id="1e6e456a14b9d3e18e246a85940b6a59" category="paragraph">Optional können Sie<block ref="2cea7f88b524cc550d065cf33c8d1c58" category="inline-link-macro-rx"></block> .  Andernfalls gehen Sie zu<block ref="76b532b4ae4cf629b8e1a3ede08fd7ff" category="inline-link-macro-rx"></block> .</block>
-  <block id="9dc1ae98b1a9d05149e769f392412112" category="paragraph"><block ref="d35b203e8fe0144f812f95e477dfc8ac" category="inline-link-macro-rx"></block> .</block>
-  <block id="dddd09d86cdbd9ad27e95c11d655ffd2" category="paragraph"><block ref="6fb43cd5c831afd08ed62ea7c301589a" category="inline-link-macro-rx"></block> .</block>
   <block id="ce6bf7cd47eb09b6a69cb1199b0e124b" category="doc">Komponenten und Teilenummern für Cisco Nexus 92300YC-Switches</block>
   <block id="374e26b57d48a3f53edf0eed7b8b9a0a" category="paragraph"><block ref="953b08a76549ddb5339056aaf68e6af4" category="inline-link-macro-rx"></block> .</block>
   <block id="6518e087ea131b7bbb106dea2f0c4eaf" category="paragraph"><block ref="94f89641c24a2c5acf155cedb6b917d3" category="inline-link-macro-rx"></block> .</block>
@@ -4945,8 +4911,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="5420b49f6bb2b4c6cd29f1d04f886142" category="paragraph">Installieren Sie den 9336C-FX2-Switch und das Durchgangspanel nach Bedarf in einem NetApp Schrank.</block>
   <block id="1a93d578061f1724e84a74106f164f03" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="f31e2218f7cf08b190abb8563911bffd" category="inline-link-macro-rx"></block></block>
   <block id="8608163382dad3a40accd48496936aa9" category="paragraph">Überprüfen Sie die Unterstützung für NVIDIA Ethernet-Ports, 25GbE-FEC-Anforderungen und Informationen zu TCAM-Ressourcen.</block>
-  <block id="be706a7a12c76624a9ad7568f3b79f1f" category="paragraph"><block ref="c05d7708e583b7d4b251d68f1130d2c6" category="inline-link-macro-rx"></block> .</block>
-  <block id="d91ea354659a63a988e9a43bfe660ac0" category="paragraph"><block ref="ce2926213e4f5e76e8b29ae87f344220" category="inline-link-macro-rx"></block> .</block>
   <block id="e2715c3387d9508dc033488d6e43c425" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="068ae9dc6825f9dcbe393c782d23d120" category="inline-link-macro-rx"></block></block>
   <block id="532d48076326d08b06c875806937e7fd" category="paragraph">Konfigurieren Sie den gemeinsam genutzten Switch 9336C-FX2.</block>
   <block id="876fcd8ffe61bb8affbdbb68b1e10baf" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="a56c4df2c3d1cf8a69dff5f1adb2c643" category="inline-link-macro-rx"></block></block>
@@ -4983,7 +4947,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="e89feb45a019aae43e7072a7606f97d8" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="35e16e47f4129ca15f5a4cfe7b290909" category="inline-link-macro-rx"></block></block>
   <block id="0f2fc5abf269bcd430c8f35e0203b2bd" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="8e341dc1e80127ca0dc2c12db6d0237a" category="inline-link-macro-rx"></block></block>
   <block id="986b831325814d3f0225e51df098b72b" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="d43bf43861b014b2f70de1c12cff1c76" category="inline-link-macro-rx"></block></block>
-  <block id="a7ba132631b64c7d74d24b772aacd919" category="paragraph"><block ref="fc89f8ef8daa08e9ffc121c5d5609d54" category="inline-link-macro-rx"></block> .</block>
   <block id="4e66bc15577ca34b137ec086186da6aa" category="doc">Installations- und Einrichtungsworkflow für NVIDIA SN2100-Switches</block>
   <block id="84a9509b45afdd4f172c9e97fb33aeae" category="paragraph">Befolgen Sie diese Arbeitsschritte, um Ihre NVIDIA SN2100-Switches zu installieren und einzurichten.</block>
   <block id="5f8f57ce76aa4b127e0ea13abdf1345e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="1d6fb5d005264e31a2bce3661d73104a" category="inline-link-macro-rx"></block></block>
@@ -4993,8 +4956,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="22b898a802e6ecf1efe4fd8447155ff8" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="02de3235c7d60510b0e45690ce72f0ca" category="inline-link-macro-rx"></block></block>
   <block id="de38f5bc18224a904a9da613e9e951b0" category="paragraph">Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre SN2100-Switches und den ONTAP Cluster einzurichten.</block>
   <block id="386ced704d131539551d82f287c24e19" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="f1c1619f8b1ed1d1d5c236b6f88e9555" category="inline-link-macro-rx"></block></block>
-  <block id="0b31070981ebc881be6e243852a30cab" category="paragraph"><block ref="e831ca446f09bd354bf76a86391af038" category="inline-link-macro-rx"></block> .</block>
-  <block id="db0d76db0abfe2ece0fea7cc312897cd" category="paragraph"><block ref="770c77dd441cd3adc4139ccb3c0d491b" category="inline-link-macro-rx"></block>oder<block ref="bba3ec5e6ca5e4f48b010488a5229b2c" category="inline-link-macro-rx"></block> .</block>
   <block id="713d4f97a0409024a758cf7996d847d7" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="00e0372232f46e972c663d4404b271c3" category="inline-link-macro-rx"></block></block>
   <block id="476f34e9325d1f5ca4e7f6764f1c37c4" category="paragraph">Konfigurieren Sie den NVIDIA SN2100-Switch.</block>
   <block id="51f9c4931826853711f81f0086b1be28" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="770c77dd441cd3adc4139ccb3c0d491b" category="inline-link-macro-rx"></block></block>
@@ -5006,7 +4967,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="4f5cad90763c2ce535c7e96c7cccdc28" category="paragraph">Sie können Ihr Cumulus Linux (CL)-Betriebssystem nach Bedarf aktualisieren.</block>
   <block id="6644a96995b52c5a8f8a5e5ce0f802e0" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="3d9967042c3cdfc5d68365a8b89192b1" category="inline-link-macro-rx"></block></block>
   <block id="a87966bc5780610e7f2d0b7124159db7" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="bc8e6b3d8a605e692bda90d2d873314b" category="inline-link-macro-rx"></block></block>
-  <block id="a30be21f198530b5b6b8978b4ae21e1f" category="paragraph"><block ref="586358657da9582be98d1a15e5fd7854" category="inline-link-macro-rx"></block> .</block>
   <block id="c7a001e5237d88fee0ed6a186bf5042e" category="summary">Lesen Sie vor der Konfiguration von NVIDIA SN2100-Cluster-Switches die Konfigurationsübersicht.</block>
   <block id="19613dba5f729ac14e1b40a3e61a1ab9" category="doc">Workflow zur Hardwareinstallation für NVIDIA SN2100-Switches</block>
   <block id="aa93083325d3660d1aed75b314e1270e" category="paragraph">Um die Hardware für einen SN2100-Cluster-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:</block>
@@ -5020,16 +4980,12 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="9fe54b1584b269535a10ca9757e0d633" category="paragraph">Überprüfen Sie die Komponenten und Teilenummern für den SN2100-Speicherschalter.</block>
   <block id="5c48143a21829dd93210328cf347b174" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="13fcbddd528de4209e7d23a68d1b9854" category="inline-link-macro-rx"></block></block>
   <block id="cf432b832643aab203cf324c0cdd3d2a" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="262cec1150ef38c9ea7540d7ae3a4889" category="inline-link-macro-rx"></block></block>
-  <block id="ed769f33f5e6396a5350c26d00e10952" category="paragraph"><block ref="6f29ea203d7917d9d35a7a8e4664773a" category="inline-link-macro-rx"></block> .</block>
-  <block id="0f017a1e017594e935437ab5c77ea9cf" category="paragraph"><block ref="3041b5118a03f510955dbbcc0f577290" category="inline-link-macro-rx"></block>oder<block ref="a2ff852c84f89fa9e1b524e12735250e" category="inline-link-macro-rx"></block> .</block>
   <block id="fcdc3fbb546ffe8444175e226eb7d6d8" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="d639995fde516a3ba2e60963b02aecc1" category="inline-link-macro-rx"></block></block>
   <block id="625b196242864fb625e827a05ba0ca8b" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="3041b5118a03f510955dbbcc0f577290" category="inline-link-macro-rx"></block></block>
   <block id="9d9be89e305913aa4f5fc1db511581ef" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="a2ff852c84f89fa9e1b524e12735250e" category="inline-link-macro-rx"></block></block>
   <block id="a29cf60e6a27ba607f38c03d72584ed6" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="042936408f11a0ab2085068400be81ab" category="inline-link-macro-rx"></block></block>
   <block id="5ec621045cf8b59339b967f20e718f17" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="bc8e6b3d8a605e692bda90d2d873314b" category="inline-link-macro-rx"></block></block>
   <block id="dc6a92646e360d6aebcb4ffde88fdaa1" category="paragraph">Stellen Sie sicher, dass Folgendes verfügbar ist:</block>
-  <block id="d59b6c21553d166822815063268759a9" category="paragraph"><block ref="02bab6a93984b80dbf6d1f4b3c04e68a" category="inline-link-macro-rx"></block> .</block>
-  <block id="0e245f17e1a2edaaad55998a79c7ba51" category="paragraph"><block ref="ec7a39e14153ae248be0af2fdfe579b9" category="inline-link-macro-rx"></block> .</block>
   <block id="9becc6b0b1c7536b40d8c1cc61107fca" category="doc">Workflow zur Hardwareinstallation für NVIDIA SN2100-Speicherswitches</block>
   <block id="aca9675b14d96b37e8250c7e8e7ee607" category="paragraph">Um die Hardware für einen SN2100-Speicher-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:</block>
   <block id="928d9ac7d5d1c965d93fe4d3435b9692" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="1fbc6a97823ab47111a560b4ffbc73ac" category="inline-link-macro-rx"></block></block>
@@ -5132,7 +5088,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="a2c7fa8f383a047f3591230c9b0234c9" category="list-text">Speichern Sie diese Änderungen in der Startkonfiguration:</block>
   <block id="7411e9f163d9baab36b5ebc3f80bda73" category="admonition">Während<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> Im Beispiel wird „http://www.sftp.org/docs/file ...</block>
   <block id="5b9b8dea15de063806f0306fe78872c8" category="admonition">Obwohl<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> Im Beispiel wird „http://www.sftp.org/docs/file ...</block>
-  <block id="bea4eb9c3f61f6fc9076a215ac1173fe" category="paragraph"><block ref="c1b3921cc8c2b4b51a888d2dc803623c" category="inline-link-macro-rx"></block> .</block>
   <block id="00a850fef80958a3c902c0d0b0fc20c4" category="inline-link-macro">Konfigurieren der Switch-Integritätsüberwachung</block>
   <block id="07c675c656e29cd460e1d99b7aa706f4" category="paragraph">Nachdem Sie die Switches migriert haben,<block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block> .</block>
   <block id="549a122380830b4e1927b9e610dcece8" category="paragraph">Smart Call Home überwacht die Hardware- und Softwarekomponenten in Ihrem Netzwerk. Wenn eine kritische Systemkonfiguration auftritt, wird eine E-Mail-Benachrichtigung generiert und ein Alarm an alle Empfänger gesendet, die in Ihrem Zielprofil konfiguriert sind.</block>
@@ -5345,7 +5300,6 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="0d76d085864e864b6fe18472ceadd96e" category="paragraph">Der<block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block> enthält die neuesten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.</block>
   <block id="93f48052b83573c9588c2e2a29f0d2f4" category="list-text"><block ref="bdfe1ecddcd4f86ab15c01ce788e67b1" category="inline-link-macro-rx"></block>beschreibt, wie die FASTPATH-Software installiert wird.</block>
   <block id="34a82aa346c0fcde4927e8ace4faeac1" category="list-text"><block ref="916de883b9541163d5e1b0ec103d976a" category="inline-link-macro-rx"></block>beschreibt, wie RCFs installiert werden.</block>
-  <block id="2761fa8eeeaa9de0cb19156fa8180759" category="paragraph"><block ref="b4874fc318a2d2906865491ec45c2419" category="inline-link-macro-rx"></block> .</block>
   <block id="bb3d2404d1e457b7cb2a94d3022caef9" category="paragraph">Richtlinien zur Verkabelung finden Sie unter<block ref="3660d2e2669921395eb817463df6e8d8" category="inline-link-macro-rx"></block> .</block>
   <block id="2793c83561f3221907ce0970e3c21030" category="list-text">Führen Sie alle Schritte zur Fehlerbehebung durch, um zu bestätigen, dass Sie Ihren Switch ersetzen müssen.</block>
   <block id="867dcc02c6629ff2e444919a943a2054" category="list-text">Stellen Sie sicher, dass auf beiden Switches eine Verwaltungskonnektivität besteht.</block>
@@ -5800,4 +5754,76 @@ Basierend auf Ihren aktuellen und Zielversionen.</block>
   <block id="da3536e3f4767ec4860d848c1b36098e" category="sidebar">Switch-Dokumente für ONTAP Hardwaresysteme</block>
   <block id="d0dfe2145063d5d6960f55dcbfb612c8" category="sidebar">install_upgrade_rcf</block>
   <block id="f3b17afc64da773efa83071745456131" category="sidebar">Überprüfen der SSH-Konfiguration</block>
+  <block id="2fcc83b51658ac7b52256ccd25ac6593" category="paragraph">Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die folgenden überprüfen: <block ref="898b788ce0d10fbe77260f597aa8c6e0" category="inline-link-macro-rx"></block>Die</block>
+  <block id="74af5112ab6cf8732ffe8eba910e2290" category="inline-link-macro">Installieren Sie Ihre Lizenzen</block>
+  <block id="85290349ee32e9f062a4795f3e1e06bb" category="paragraph">Nach der Installation der EFOS-Software können Sie <block ref="172517aa1fa2cd21dd6fb86167c00f86" category="inline-link-macro-rx"></block>Die</block>
+  <block id="8ec519db7b497274ec49e47d1d5805aa" category="inline-link-macro">Installieren Sie die EFOS-Software</block>
+  <block id="1cdfb67cf1efdfc117156b73520a6202" category="paragraph">Nachdem Sie Ihre Schalter konfiguriert haben, können Sie <block ref="5f8c635ef985b849c8790b2e319cc3c1" category="inline-link-macro-rx"></block>Die</block>
+  <block id="4d18a3e221b1f491180309c24ea50bd4" category="inline-link-macro">SSH aktivieren</block>
+  <block id="7c4e8f380d6fe0f7b87ed4f313261231" category="paragraph">Nach der Installation des RCF können Sie <block ref="e4ca236fba47af149933dade92f0dad2" category="inline-link-macro-rx"></block>Die</block>
+  <block id="c8ebf4a179068046dbdbcfb49a4f1dd5" category="inline-link-macro">Installieren Sie die Referenzkonfigurationsdatei (RCF).</block>
+  <block id="1505c4fc614b38764c22b241eaa0da89" category="inline-link-macro">RCF aufrüsten</block>
+  <block id="d3c28bc24f5e8dd1c938a675301f9dcd" category="paragraph">Nach der Installation der Lizenzen können Sie <block ref="6caac7e01ed877f3cbe38ea9f059e295" category="inline-link-macro-rx"></block> oder <block ref="0ed9a2b66ddf9814b21a0bf59aa0f37b" category="inline-link-macro-rx"></block>Die</block>
+  <block id="9d1f74f243e690a09970b31e96cfbf7d" category="paragraph">Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre <block ref="205362a34e39f230d5f9e0dfed8a4350" category="inline-link-macro-rx"></block>Die</block>
+  <block id="8aff8cebd8b9f73249a04d1015130ff5" category="paragraph">Nachdem Sie SSH aktiviert haben, können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="804977fd87512d500a4689120af8cf70" category="paragraph">Nach der Installation der RCF- und Lizenzdatei können Sie <block ref="e4ca236fba47af149933dade92f0dad2" category="inline-link-macro-rx"></block>Die</block>
+  <block id="99b9c101b9c51f15009f95c9edaf5a7e" category="paragraph">Nachdem Sie die Hardware für den Switch installiert haben, können Sie <block ref="c501fc5287782c51cee053d084046acf" category="inline-link-macro-rx"></block> Anforderungen.</block>
+  <block id="30e3b2cfb1c72e5b230d98750db3bf2b" category="paragraph">Nach der Migration Ihrer Switches können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="c79eef3140e00260a78d272576cfba3c" category="paragraph">Nachdem Sie Ihre Schalter ausgetauscht haben, können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="6d8754e81f6011fb9b29f77002c01275" category="paragraph">Nachdem Sie das Upgrade Ihrer EFOS-Software oder Ihres RCF bestätigt haben, können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="afcde3664e37d8f858999ffb7e9d8467" category="paragraph">Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie die <block ref="3bfe41df5ada7a5031db91489b512eed" category="inline-link-macro-rx"></block>Die</block>
+  <block id="553a821415dc28221ab327b526d188f2" category="paragraph">Nachdem Sie Ihre SSH-Konfiguration überprüft haben, können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="f7ab4643afdeb874561532068edda37b" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="047e8cec0867aa2536fa544cc6e11acf" category="inline-link-macro-rx"></block></block>
+  <block id="e2dcca837ccd11685f32aea9c011201b" category="paragraph">Nach der Installation der NX-OS-Software können Sie <block ref="fbf9c4918e420134d4383ce5a14b440d" category="inline-link-macro-rx"></block>Die</block>
+  <block id="b6ec1495188cac4c86c841f0ab2f8043" category="paragraph">Nach der Installation des RCF können Sie <block ref="9c2eadd0cc07686b4a17c38ca62f4a4c" category="inline-link-macro-rx"></block>Die</block>
+  <block id="227aef12ec3020452ced595834ad2e65" category="inline-link-macro">Überprüfen Sie die Verkabelung und Konfiguration.</block>
+  <block id="2a78b7ed86f724cd65058a1dd9259dfa" category="paragraph">Optional können Sie <block ref="18420978bb95dbc58537866fa2d7958a" category="inline-link-macro-rx"></block>Die Andernfalls können Sie <block ref="784e4f3e02f5e19f4a49a1542dbad39c" category="inline-link-macro-rx"></block> Anforderungen.</block>
+  <block id="9c7e872eafa4ce3bafe48b85e4dccabc" category="inline-link-macro">Installieren Sie die NX-OS-Software</block>
+  <block id="a83444c24e0333a8d2c26d5a4a4cb369" category="paragraph">Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, <block ref="d75ac7de135fb381613e594c611e5a43" category="inline-link-macro-rx"></block>Die</block>
+  <block id="0955b90a6dd9305ce1c157f3a6535248" category="inline-link-macro">Bereiten Sie die Installation von NX-OS und RCF vor.</block>
+  <block id="1b23eca6bd0e688418119caf9e4cb36b" category="paragraph">Nachdem Sie Ihre Schalter konfiguriert haben, <block ref="67415c224bad223c5c0fa6b21bfd239f" category="inline-link-macro-rx"></block>Die</block>
+  <block id="ff9a297b40cb610e8b48d97c5b2e8a60" category="paragraph">Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, <block ref="ba9ddce99e2d1f592840436be13feddd" category="inline-link-macro-rx"></block>Die</block>
+  <block id="4b0405f5d2ef385bf5dd1ca9741968d4" category="list-text">Beim Upgrade auf RCF Version 1.12 und höher führen Sie die folgenden Befehle aus:</block>
+  <block id="33a0b92f0ebac7efe8736828a29dff1a" category="paragraph">Nachdem Sie Ihre Konfigurationsanforderungen bestätigt haben, überprüfen Sie die <block ref="ebd73c3e74cc4ef5f3b03634c8dd9a01" category="inline-link-macro-rx"></block>Die</block>
+  <block id="b3418e071ad0af628321787bdfdb144a" category="paragraph">Nach der Installation der NX-OS-Software, <block ref="06b5548e8ac5164b226ba17b6e4d1fe4" category="inline-link-macro-rx"></block>Die</block>
+  <block id="2e595795ee7d7b27d6013ed4aa1edbe6" category="paragraph">Optional können Sie <block ref="2cea7f88b524cc550d065cf33c8d1c58" category="inline-link-macro-rx"></block>Die Ansonsten gehen Sie zu <block ref="3efd7bbc59a61a74defb48cf3f1c6fa7" category="inline-link-macro-rx"></block>Die</block>
+  <block id="738f308f5a85950565ca6768bbd1b6df" category="inline-link-macro">Installieren Sie die NX-OS-Software</block>
+  <block id="090d6ba973224b58ce14f935b1afaddc" category="paragraph">Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, <block ref="86658f2b70ba317271005496e806b03c" category="inline-link-macro-rx"></block>Die</block>
+  <block id="88fdc99e69a743a1eb164994c319127b" category="paragraph">Nachdem Sie Ihre Schalter konfiguriert haben, <block ref="cd06af6a9a8fb3236be1b579437fb58f" category="inline-link-macro-rx"></block>Die</block>
+  <block id="b23946ab85420318ad29297bc09065d0" category="paragraph">Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, <block ref="158345103486debcc0cfc10501f464f8" category="inline-link-macro-rx"></block>Die</block>
+  <block id="1fc28573c4253eea534a9b0a7346c2ae" category="paragraph">Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie <block ref="4952d250d292a65a90c0bebba6014799" category="inline-link-macro-rx"></block>Die</block>
+  <block id="1ef6eed0ebf9cc7427083a8bd2e14d4b" category="paragraph">Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, überprüfen Sie die <block ref="df0358fd02066e7e9ccbaff4c1a048a5" category="inline-link-macro-rx"></block>Die</block>
+  <block id="3c7137666241068803662df69a2b396f" category="paragraph">Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre <block ref="7f669d24d9aef19198d4056386b39684" category="inline-link-macro-rx"></block>Die</block>
+  <block id="fe8431277c54167a72c8b61fe4a00ac3" category="paragraph">Nach der Installation des RCF können Sie <block ref="5b8b393a675dcaaee97c02828356657c" category="inline-link-macro-rx"></block>Die</block>
+  <block id="fe7ed7c52d6e6e2009c6cf35bf3fe240" category="paragraph">Nach der Installation der NX-OS-Software können Sie <block ref="081d00f96e1fa5769dbf06cd540488d3" category="inline-link-macro-rx"></block>Die</block>
+  <block id="0753226c968a573c0f0e13bee0aef3d8" category="paragraph">Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, können Sie <block ref="9b6aa2dad0d0afce300d884800fc9c37" category="inline-link-macro-rx"></block>Die</block>
+  <block id="b843d161450c20e0071c16a2c9d56952" category="paragraph">Nachdem Sie Ihre Schalter konfiguriert haben, können Sie <block ref="746057c05111c8d98d05f7c2aa1f8967" category="inline-link-macro-rx"></block>Die</block>
+  <block id="3db6619adb39cede96d0fac5db0dc834" category="paragraph">Nach dem Upgrade des RCF können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="a294afff18b68f8c1e4f78aeef5ef294" category="list-text"><block ref="a294afff18b68f8c1e4f78aeef5ef294" category="inline-link-macro-rx"></block></block>
+  <block id="62f22218ea7fb3cf6669cdfdb6c908e0" category="doc">Konfigurieren Sie SNMPv3 für Ihren Switch (optional).</block>
+  <block id="f8f4eb0f97707e7f8ebb995321498794" category="inline-link-macro">Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrung.</block>
+  <block id="ff22d5f888f5a0913f853ce7392a315e" category="paragraph">Nachdem Sie Ihre Verkabelungs- und Konfigurationsanforderungen überprüft haben, <block ref="9b56153f8288ea213a61283aa51d0b66" category="inline-link-macro-rx"></block>Die</block>
+  <block id="21d99f2d550020c5a0b4816423b48ba6" category="paragraph">Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, überprüfen Sie die <block ref="49a5e49bddaeabf84f2ee5cfa4f2c2f8" category="inline-link-macro-rx"></block>Die</block>
+  <block id="e078b89c94c4240cd6dab3e59e8b1f98" category="paragraph">Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre <block ref="73d4a57b8c77c4dbdae06c6c07cd9dcc" category="inline-link-macro-rx"></block>Die</block>
+  <block id="732e3e82bec2d756529a769494dc70f8" category="inline-link-macro">Cumulus Linux im Cumulus-Modus installieren</block>
+  <block id="8043ee61c7f7379917235c3269fed7c9" category="inline-link-macro">Cumulus Linux im ONIE-Modus installieren</block>
+  <block id="88e5314f302655cbcf7f227e92429626" category="paragraph">Nachdem Sie Ihren Switch konfiguriert haben, <block ref="abc8e2fb5cb0373d7006d768e8dc0bfd" category="inline-link-macro-rx"></block> oder <block ref="28a30a7b340666b28d9a4222e714aaf7" category="inline-link-macro-rx"></block>Die</block>
+  <block id="255f37e0f64c267cbe1845aba29c7c7c" category="paragraph">Nachdem Sie Ihre Regale verkabelt haben, <block ref="a5a547b7e695aa3612b72d881f169519" category="inline-link-macro-rx"></block>Die</block>
+  <block id="81f5064b20459a10b0a452ae24733718" category="inline-link-macro">Installieren Sie das Skript der Referenzkonfigurationsdatei (RCF).</block>
+  <block id="ed3b40beeb91dc0a99c4580cb378b4b6" category="paragraph">Nachdem Sie Cumulus Linux im Cumulus-Modus installiert haben, <block ref="83ca9f457d58548616bdf5d734a73df4" category="inline-link-macro-rx"></block>Die</block>
+  <block id="482ccd1106eaba7536fd24593f4e76f2" category="paragraph">Nachdem Sie Ihre Hardware installiert haben, <block ref="b80562321e7105a297052828d3712cf7" category="inline-link-macro-rx"></block> Anforderungen.</block>
+  <block id="81b9a3178dc726848b0b45d04848ad99" category="paragraph">Nachdem Sie Cumulus Linux im ONIE-Modus installiert haben, <block ref="83ca9f457d58548616bdf5d734a73df4" category="inline-link-macro-rx"></block>Die</block>
+  <block id="86a6c0bf628510e354b0911c128a4e0e" category="inline-link-macro">Installieren Sie die CSHM-Datei</block>
+  <block id="4976123a345a946ae994590aa9c2dfa3" category="paragraph">Nach der Installation des RCF, <block ref="f3791ff783629f66fe5f05b40418ed92" category="inline-link-macro-rx"></block>Die</block>
+  <block id="ff10673c2cf2dcff4a056995095cf432" category="paragraph">Nachdem Sie die CSHM-Datei installiert haben, <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
+  <block id="2c2eb6e2450884003d431faa5248647a" category="inline-link-macro">Installieren oder aktualisieren Sie das RCF-Skript</block>
+  <block id="800f95ad6373c68fc216bece87093f65" category="paragraph">Nach dem Upgrade Ihrer Cumulus Linux-Version, <block ref="ac720c45794c201b5f80c4938224f8dc" category="inline-link-macro-rx"></block>Die</block>
+  <block id="548165e58dfad6461a9166d5091e701e" category="paragraph">Nachdem Sie Ihre Verkabelungs- und Konfigurationsanforderungen überprüft haben, <block ref="75b216e283a24f30a49086565a4dd379" category="inline-link-macro-rx"></block>Die</block>
+  <block id="3755fc7d8677ebe8f5018b192d76ecee" category="paragraph">Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, überprüfen Sie die <block ref="439fe3fb46bcc21d34c70ab0497fdf03" category="inline-link-macro-rx"></block>Die</block>
+  <block id="e151bfa4f47eb413c8e626e023b54eb2" category="paragraph">Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre <block ref="00ac7ae7a02f4d4916cc2e9a0c466e89" category="inline-link-macro-rx"></block>Die</block>
+  <block id="abe2721f38aeb4a52b34f031e63cb999" category="paragraph">Nachdem Sie Ihre Schalter konfiguriert haben, <block ref="393555469596ca2345e43e80c6e74ba5" category="inline-link-macro-rx"></block> oder <block ref="ac50052da6099ecd2d2a2ee1cd713de9" category="inline-link-macro-rx"></block>Die</block>
+  <block id="15d61e1a8c8e02ed201c6c136d785267" category="paragraph">Nachdem Sie Cumulus Linux im Cumulus-Modus installiert haben, <block ref="3acf483c9de841e025c40a5da17bc790" category="inline-link-macro-rx"></block>Die</block>
+  <block id="09398bfa676e806eeb6998df2ece8bef" category="paragraph">Nachdem Sie Ihre Hardware installiert haben, <block ref="9158e03ff3d3214abbf7c9c47bc446be" category="inline-link-macro-rx"></block> Anforderungen.</block>
+  <block id="9e54073d137b0a37710654f115f0a5c2" category="paragraph">Nachdem Sie Cumulus Linux im ONIE-Modus installiert haben, <block ref="3acf483c9de841e025c40a5da17bc790" category="inline-link-macro-rx"></block>Die</block>
+  <block id="b659527f486f2e9b0bf097bbf528b934" category="paragraph">Nach der Installation oder Aktualisierung des RCF, <block ref="f3791ff783629f66fe5f05b40418ed92" category="inline-link-macro-rx"></block>Die</block>
 </blocks>

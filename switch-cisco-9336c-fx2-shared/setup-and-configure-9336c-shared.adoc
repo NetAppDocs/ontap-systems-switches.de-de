@@ -136,4 +136,4 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 
 .Was kommt als Nächstes?
-link:prepare-nxos-rcf-9336c-shared.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
+Nachdem Sie Ihre Schalter konfiguriert haben, können Sie link:prepare-nxos-rcf-9336c-shared.html["Bereiten Sie die Installation von NX-OS und RCF vor"]Die

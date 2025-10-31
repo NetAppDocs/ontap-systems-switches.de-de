@@ -534,4 +534,4 @@ exit
 NOTE: Bei High-Speed-Ports zwischen 0/49 und 0/54 inklusiv, deaktivieren Sie jeden Port, aber lösen Sie nur eine *Speed*-Leitung in der RCF für jeden dieser Anschlüsse, entweder: *Speed 100G Vollduplex* oder *Speed 40G Vollduplex* wie im Beispiel gezeigt. Bei Low-Speed-Ports zwischen 0/17 und 0/48 inklusive, deaktivieren Sie den gesamten Abschnitt mit 8 Ports, wenn eine entsprechende Lizenz aktiviert wurde.
 
 .Was kommt als Nächstes?
-link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."] Oder link:upgrade-rcf.html["Aktualisieren Sie den RCF"].
+Nach der Installation der Lizenzen können Sie link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."] oder link:upgrade-rcf.html["RCF aufrüsten"]Die

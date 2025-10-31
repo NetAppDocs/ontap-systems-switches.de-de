@@ -127,4 +127,4 @@ Network Processing Device...................... BCM56873_A0
 ----
 ====
 .Was kommt als nächstes
-link:required-documentation-bes53248.html["Erforderliche Dokumentation"] .
+Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die folgenden überprüfen: link:required-documentation-bes53248.html["erforderliche Dokumentation"]Die

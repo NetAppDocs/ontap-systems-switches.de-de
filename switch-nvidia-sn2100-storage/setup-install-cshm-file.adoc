@@ -134,4 +134,4 @@ cluster1::> *system switch ethernet show*
 
 
 .Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+Nachdem Sie die CSHM-Datei installiert haben, link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

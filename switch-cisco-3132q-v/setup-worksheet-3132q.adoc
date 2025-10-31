@@ -590,4 +590,4 @@ Reserviert
 
 |===
 .Was kommt als nächstes
-link:install-switch-3132qv.html["Den Schalter einbauen"] .
+Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, link:install-switch-3132qv.html["Installieren Sie den Schalter"]Die

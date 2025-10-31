@@ -212,4 +212,4 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 
 .Was kommt als Nächstes?
-link:prepare-install-cisco-nexus-3132q.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"].
+Nachdem Sie Ihre Schalter konfiguriert haben, link:prepare-install-cisco-nexus-3132q.html["Bereiten Sie die Installation von NX-OS und RCF vor."]Die

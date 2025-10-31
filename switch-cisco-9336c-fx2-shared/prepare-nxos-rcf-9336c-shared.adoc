@@ -246,4 +246,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-link:install-nxos-software-9336c-shared.html["Installieren Sie die NX-OS-Software"].
+Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, können Sie link:install-nxos-software-9336c-shared.html["Installieren Sie die NX-OS-Software"]Die

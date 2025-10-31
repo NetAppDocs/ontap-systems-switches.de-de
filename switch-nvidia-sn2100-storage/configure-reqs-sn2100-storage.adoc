@@ -35,4 +35,4 @@ Der NVIDIA SN2100 Switch ist ein 10/25/40/100 GB Ethernet-Switch mit Cumulus Lin
 
 
 .Was kommt als nächstes
-link:components-sn2100-storage.html["Komponenten und Teilenummern"] .
+Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre link:components-sn2100-storage.html["Komponenten und Teilenummern"]Die

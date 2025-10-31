@@ -50,4 +50,4 @@ Siehe die Verfahren in den Installationsleitfäden für die Switch-Hardware sowi
 
 
 .Was kommt als Nächstes?
-Optional können Sielink:install-cisco-nexus-3132qv.html["Installieren Sie einen Cisco Nexus 3132Q-V-Switch in einem NetApp Schrank"] .  Andernfalls gehen Sie zulink:cabling-considerations-3132q-v.html["Überprüfung der Verkabelung und Konfiguration"] .
+Optional können Sie link:install-cisco-nexus-3132qv.html["Installieren Sie einen Cisco Nexus 3132Q-V-Switch in einem NetApp Schrank"]Die Andernfalls können Sie link:cabling-considerations-3132q-v.html["Überprüfen Sie die Verkabelung und Konfiguration."] Anforderungen.

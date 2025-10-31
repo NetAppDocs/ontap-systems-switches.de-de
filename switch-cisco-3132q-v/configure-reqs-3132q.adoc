@@ -33,4 +33,4 @@ Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfiguratio
 Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
 
 .Was kommt als nächstes
-link:required-documentation-3132q.html["Erforderliche Dokumentation"] .
+Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie die link:required-documentation-3132q.html["erforderliche Dokumentation"]Die

@@ -211,3 +211,6 @@ sh1 (config)# *exit*
 . Entfernen Sie die nicht verwendeten Cluster-Switches.
 . Entfernen Sie die nicht verwendeten Speicherschalter.
 
+
+.Was kommt als Nächstes?
+Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

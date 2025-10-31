@@ -249,4 +249,4 @@ Configuration Saved!
 
 
 .Was kommt als Nächstes?
-link:configure-efos-software.html["Installieren Sie die EFOS-Software"].
+Nachdem Sie Ihre Schalter konfiguriert haben, können Sie link:configure-efos-software.html["Installieren Sie die EFOS-Software"]Die

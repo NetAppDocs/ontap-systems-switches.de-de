@@ -82,4 +82,4 @@ Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informati
 
 
 .Was kommt als nächstes
-link:components-bes53248.html["Komponenten und Teilenummern"] .
+Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre link:components-bes53248.html["Komponenten und Teilenummern"]Die

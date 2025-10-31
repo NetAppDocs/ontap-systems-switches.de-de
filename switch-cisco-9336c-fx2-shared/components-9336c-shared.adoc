@@ -43,4 +43,4 @@ In der folgenden Tabelle sind die Teilenummer und Beschreibung für den Switch 9
 | X-NXA-LÜFTER-65CFM-PI | N9K-9336C 65 CFM, Luftstrom zur Ansaugöffnung an der Seite des Ports 
 |===
 .Was kommt als nächstes
-link:required-documentation-9336c-shared.html["Erforderliche Dokumentation"] .
+Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, überprüfen Sie die link:required-documentation-9336c-shared.html["erforderliche Dokumentation"]Die

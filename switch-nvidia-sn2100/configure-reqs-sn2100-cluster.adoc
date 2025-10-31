@@ -45,4 +45,4 @@ Der SN2100-Switch dient Cluster- und Speicheranwendungen in ONTAP 9.10.1P3 und h
 
 
 .Was kommt als Nächstes?
-link:components-sn2100-cluster.html["Komponenten und Teilenummern"] .
+Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre link:components-sn2100-cluster.html["Komponenten und Teilenummern"]Die

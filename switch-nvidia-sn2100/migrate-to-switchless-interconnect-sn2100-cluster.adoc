@@ -571,3 +571,6 @@ Weitere Informationen finden Sie unter link:https://kb.netapp.com/Advice_and_Tro
 `set -privilege admin`
 
 
+
+.Was kommt als Nächstes?
+Nachdem Sie Ihre Schalter ausgetauscht haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .
