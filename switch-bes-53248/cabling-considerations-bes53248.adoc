@@ -2,81 +2,81 @@
 permalink: switch-bes-53248/cabling-considerations-bes53248.html 
 sidebar: sidebar 
 keywords: BES-53248 cabling setup, BES-53248 switches configuration, efos 
-summary: Überprüfen Sie vor der Konfiguration des Broadcom BES-53248-Switches die folgenden Informationen. 
+summary: Bevor Sie Ihren Broadcom BES-53248 Switch konfigurieren, lesen Sie bitte die folgenden Informationen. 
 ---
-= Prüfen Sie die Verkabelung und Konfigurationsüberlegungen
+= Überprüfung der Verkabelung und Konfigurationsüberlegungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie den Broadcom BES-53248-Switch konfigurieren, lesen Sie die folgenden Überlegungen.
+Bevor Sie Ihren Broadcom BES-53248 Switch konfigurieren, beachten Sie bitte die folgenden Hinweise.
 
 
 
-== Zuweisungen von Cluster-Port-Switches
+== Cluster-Port-Switch-Zuweisungen
 
-Sie können die von Broadcom unterstützte Tabelle BES-53248-Cluster-Switch-Portzuweisungen als Leitfaden zur Konfiguration des Clusters verwenden.
+Sie können die von Broadcom unterstützte Tabelle der Portzuweisungen für den BES-53248 Cluster-Switch als Leitfaden für die Konfiguration Ihres Clusters verwenden.
 
 |===
 
 
-| *Switch-Ports* | *Verwendung von Ports* 
+| *Switch-Ports* | *Portnutzung* 
 
 
  a| 
 0-16
  a| 
-10/25-GbE-Cluster-Port-Nodes, Basiskonfiguration
+10/25GbE-Cluster-Portknoten, Basiskonfiguration
 
 
 
  a| 
 17-48
  a| 
-10/25-GbE-Cluster-Port-Nodes, mit Lizenzen
+10/25GbE-Cluster-Portknoten mit Lizenzen
 
 
 
  a| 
 49-54
  a| 
-40/100-GbE-Cluster-Port-Nodes mit Lizenzen, rechts nach links hinzugefügt
+40/100GbE-Cluster-Portknoten mit Lizenzen, hinzugefügt von rechts nach links
 
 
 
  a| 
 55-56
  a| 
-Ports mit 100 GbE Cluster Inter-Switch Link (ISL), Basiskonfiguration
+100GbE-Cluster-Inter-Switch-Link (ISL)-Ports, Basiskonfiguration
 
 |===
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports.
+Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.
 
 
 
-== Einschränkung bei der Geschwindigkeit der Port-Gruppe
+== Geschwindigkeitsbeschränkung der Portgruppe
 
-* Bei BES-53248 Cluster Switches werden die 48 10/25-GbE-Ports (SFP28/SFP+) wie folgt in 12 x 4-Port-Gruppen kombiniert: 1–4 Ports, 5–8, 9–12, 13–16, 17–20, 21–24, 25–28, 29–32, 33–36, 37–40, 41-44 und 45-48.
-* Die Port-Geschwindigkeit von SFP28/SFP+ muss für alle Ports der 4-Port-Gruppe gleich (10 GbE oder 25 GbE) sein.
+* Bei den Cluster-Switches BES-53248 sind die 48 10/25GbE (SFP28/SFP+)-Ports in 12 x 4-Port-Gruppen wie folgt zusammengefasst: Ports 1-4, 5-8, 9-12, 13-16, 17-20, 21-24, 25-28, 29-32, 33-36, 37-40, 41-44 und 45-48.
+* Die SFP28/SFP+-Portgeschwindigkeit muss bei allen Ports der 4-Port-Gruppe gleich sein (10GbE oder 25GbE).
 * Wenn die Geschwindigkeiten in einer 4-Port-Gruppe unterschiedlich sind, funktionieren die Switch-Ports nicht ordnungsgemäß.
 
 
 
 
-== FEC-Anforderungen
+== FEC Anforderungen
 
-* Für 25G-Ports mit Kupferkabel siehe folgende Tabelle für Details.
+* Für 25G-Ports mit Kupferkabeln siehe die folgende Tabelle für Details.
 +
-Wenn die Controllerseite ist `auto`Die Schalterseite ist auf FEC 25G eingestellt.
+Wenn die Controller-Seite `auto` Die Schalterseite ist auf FEC 25G eingestellt.
 
 +
-image::../media/FEC_copper_table.jpg[25-Gbit-Ports mit Kupferkabel]
+image::../media/FEC_copper_table.jpg[25G-Anschlüsse mit Kupferkabeln]
 
-* Informationen zu 25-Gbit-Ports mit Glasfaser-/optischen Kabeln finden Sie in der folgenden Tabelle:
+* Einzelheiten zu 25G-Ports mit Glasfaser-/Lichtwellenleiterkabeln finden Sie in der folgenden Tabelle:
 +
-image::../media/FEC_fiber_table.jpg[25-Gbit-Ports mit Glasfaser-/optischen Kabeln]
+image::../media/FEC_fiber_table.jpg[25G-Anschlüsse mit Glasfaser-/Lichtwellenleiterkabeln]
 
 
 
@@ -84,24 +84,24 @@ image::../media/FEC_fiber_table.jpg[25-Gbit-Ports mit Glasfaser-/optischen Kabel
 
 === Bootarg-Implementierung
 
-Verwenden Sie den folgenden Befehl, um den 25G-Port FEC auf einen der beiden Werte zu setzen `auto` Oder `fc`, Nach Bedarf:
+Verwenden Sie den folgenden Befehl, um die FEC des 25G-Ports auf einen der folgenden Werte einzustellen: `auto` oder `fc` , wie erforderlich:
 
 [listing]
 ----
 systemshell -node <node> -command sudo sysctl dev.ice.<X>.requested_fec=<auto/fc>
 ----
-* Wenn eingestellt auf *`auto`*:
+* Wenn eingestellt auf*`auto` *:
 +
-** Der `auto` Durch die Einstellung wird die Einstellung sofort auf die Hardware übertragen, und es ist kein Neustart erforderlich.
-** Wenn `bootarg.cpk_fec_fc_eXx already exists`, Wird es aus dem Bootarg-Speicher gelöscht.
-** Nach einem Neustart wird die angezeigt `auto` Die Einstellung bleibt seit erhalten `auto` Ist die Standard-FEC-Einstellung.
+** Der `auto` Die Einstellung wird sofort an die Hardware weitergegeben, ein Neustart ist nicht erforderlich.
+** Wenn `bootarg.cpk_fec_fc_eXx already exists` Es wird aus dem Bootargumentspeicher gelöscht.
+** Nach einem Neustart `auto` Die Einstellung bleibt bestehen, seitdem `auto` ist die Standardeinstellung für FEC.
 
 
-* Wenn eingestellt auf *`fc`*:
+* Wenn eingestellt auf*`fc` *:
 +
-** Der `FC-FEC` Durch die Einstellung wird die Einstellung sofort auf die Hardware übertragen, und es ist kein Neustart erforderlich.
-** Eine neue `bootarg.cpk_fec_fc_eXx` Wird mit dem Wert „true“ erstellt.
-** Nach einem Neustart `FC-FEC` Die Einstellung für den zu verwendenden Treibercode bleibt erhalten.
+** Der `FC-FEC` Die Einstellung wird sofort an die Hardware weitergegeben, ein Neustart ist nicht erforderlich.
+** Ein neues `bootarg.cpk_fec_fc_eXx` wird mit dem Wert "true" erstellt.
+** Nach einem Neustart `FC-FEC` Die Einstellungen bleiben für den Treibercode weiterhin gültig.
 
 
 

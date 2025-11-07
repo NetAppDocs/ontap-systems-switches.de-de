@@ -1,34 +1,34 @@
 ---
 section: switch-cshm
-title: Überwachen Sie den Zustand des Switches
+title: Zustand der Switches überwachen
 entries:
-- title: Übersicht über die Statusüberwachung des Switches
+- title: Überblick über die Zustandsüberwachung von Switches
   url: "/switch-cshm/cshm-overview.html"
-  pdf-filename: Switch_Health_cshm
-- title: Konfigurieren Sie die Überwachung des Switch-Systemzustands
-  pdf-filename: Configure_Switch_Health
+  pdf-filename: Switch_health_cshm
+- title: Switch-Zustandsüberwachung konfigurieren
+  pdf-filename: Configure_switch_health
   entries:
   - title: Konfigurationsübersicht
     url: "/switch-cshm/config-overview.html"
-  - title: Konfigurieren der Protokollerfassung
+  - title: Protokollerfassung konfigurieren
     url: "/switch-cshm/config-log-collection.html"
   - title: SNMPv3 konfigurieren (optional)
     url: "/switch-cshm/config-snmpv3.html"
-- title: Überprüfen Sie den Zustand des Schalters
-  pdf-filename: Monitor_Switch_Health
+- title: Überprüfen Sie den Zustand des Switches.
+  pdf-filename: Monitor_switch_health
   entries:
-  - title: Übersicht über den Systemcheck
+  - title: Überblick über den Gesundheitscheck
     url: "/switch-cshm/monitor-overview.html"
-  - title: Verwalten der Switch-Überwachung
+  - title: Überwachung von Verwaltungsschaltern
     url: "/switch-cshm/monitor-manage.html"
-  - title: Überprüfen Sie die Switch-Überwachung
+  - title: Überprüfen Sie die Schalterüberwachung.
     url: "/switch-cshm/monitor-verify.html"
   - title: Fehlerbehebung bei Warnmeldungen
     url: "/switch-cshm/monitor-troubleshoot.html"
-- title: Log-Datei-Sammlungen
-  pdf-filename: Log_Collection_Switch_Health
+- title: Protokollsammlung
+  pdf-filename: log_collection_switch_health
   entries:
-  - title: Überblick über die Protokollerfassung
+  - title: Übersicht der Protokollsammlung
     url: "/switch-cshm/log-collection-overview.html"
   - title: Fehlerbehebung
     url: "/switch-cshm/log-collection-troubleshoot.html"

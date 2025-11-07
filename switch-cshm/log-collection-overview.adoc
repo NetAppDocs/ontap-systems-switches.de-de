@@ -2,15 +2,15 @@
 permalink: switch-cshm/log-collection-overview.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Sie können die bereitgestellten Befehle verwenden .... 
+summary: Sie können die bereitgestellten Befehle verwenden... 
 ---
-= Überblick über die Protokollerfassung
+= Übersicht der Protokollsammlung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Über die Einrichtung der Protokollerfassung können Sie eine stündliche Erfassung von periodischen Daten aktivieren, die von AutoSupport erfasst werden, und detaillierte Support-Protokolle anfordern.
+Wenn die Protokollerfassung eingerichtet ist, können Sie eine stündliche Erfassung periodischer Daten aktivieren, die von AutoSupport gesammelt werden, und detaillierte Supportprotokolle anfordern.
 
-Weitere Informationen finden Sie unter link:config-log-collection.html["Konfigurieren der Protokollerfassung"] .
+Sehenlink:config-log-collection.html["Protokollerfassung konfigurieren"] für weitere Einzelheiten.

@@ -2,7 +2,7 @@
 permalink: switch-cisco-92300/configure-install-initial.html 
 sidebar: sidebar 
 keywords: install cisco 92300YC cluster switch, cisco nx 92300yc 
-summary: Sie können dieses Verfahren verwenden, um die Erstinstallation des Cisco Nexus 92300YC-Switch durchzuführen. 
+summary: Mit diesem Verfahren können Sie die Erstinstallation des Cisco Nexus 92300YC Switches durchführen. 
 ---
 = Konfigurieren Sie den Cisco Nexus 92300YC-Switch
 :allow-uri-read: 
@@ -11,23 +11,23 @@ summary: Sie können dieses Verfahren verwenden, um die Erstinstallation des Cis
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um den Cisco Nexus 92300YC-Switch einzurichten und zu konfigurieren.
+Gehen Sie wie folgt vor, um den Cisco Nexus 92300YC Switch einzurichten und zu konfigurieren.
 
 .Schritte
 . Verbinden Sie den seriellen Port mit einem Host oder einem seriellen Port.
-. Verbinden Sie den Verwaltungsport (auf der Seite des Switches ohne Port) mit dem gleichen Netzwerk, in dem sich der SFTP-Server befindet.
-. Legen Sie an der Konsole die seriellen Einstellungen der Host-Seite fest:
+. Verbinden Sie den Management-Port (auf der Nicht-Port-Seite des Switches) mit demselben Netzwerk, in dem sich Ihr SFTP-Server befindet.
+. Nehmen Sie an der Konsole die seriellen Einstellungen auf dem Host vor:
 +
 ** 9600 Baud
 ** 8 Datenbits
 ** 1 Stoppbit
-** Parität: Keine
-** Flusskontrolle: Keine
+** Parität: keine
+** Flusssteuerung: keine
 
 
-. Beim ersten Booten oder Neustart nach dem Löschen der laufenden Konfiguration wird der Nexus 92300YC-Switch in einem Boot-Zyklus ausgeführt. Unterbrechen Sie diesen Zyklus, indem Sie *yes* eingeben, um das Einschalten der automatischen Provisionierung abzubrechen.
+. Beim erstmaligen Hochfahren oder beim Neustart nach dem Löschen der laufenden Konfiguration gerät der Switch Nexus 92300YC in eine Boot-Schleife.  Unterbrechen Sie diesen Vorgang, indem Sie *ja* eingeben, um die automatische Stromversorgung abzubrechen.
 +
-Das Setup des Systemadministratorkontos wird angezeigt.
+Die Einrichtung des Systemadministratorkontos wird angezeigt.
 
 +
 .Beispiel anzeigen
@@ -44,20 +44,20 @@ Disabling POAP.......Disabling POAP
 Do you want to enforce secure password standard (yes/no) [y]:
 ----
 ====
-. Geben Sie * y* ein, um den sicheren Kennwortstandard durchzusetzen:
+. Geben Sie *y* ein, um den sicheren Passwortstandard zu erzwingen:
 +
 [listing, subs="+quotes"]
 ----
 Do you want to enforce secure password standard (yes/no) [y]: *y*
 ----
-. Geben Sie das Passwort für den Benutzer admin ein und bestätigen Sie es:
+. Geben Sie das Passwort für den Benutzer „admin“ ein und bestätigen Sie es:
 +
 [listing]
 ----
 Enter the password for "admin":
 Confirm the password for "admin":
 ----
-. Geben Sie *yes* ein, um das Dialogfeld Grundkonfiguration des Systems aufzurufen.
+. Geben Sie *ja* ein, um den Dialog „Systemgrundkonfiguration“ aufzurufen.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -79,13 +79,13 @@ to skip the remaining dialogs.
 Would you like to enter the basic configuration dialog (yes/no):
 ----
 ====
-. Ein weiteres Anmeldekonto erstellen:
+. Erstellen Sie ein weiteres Benutzerkonto:
 +
 [listing]
 ----
 Create another login account (yes/no) [n]:
 ----
-. Konfigurieren Sie die SNMP-Community-Strings Read-Only und read-write:
+. Konfigurieren von schreibgeschützten und Lese-/Schreib-SNMP-Community-Strings:
 +
 [listing]
 ----
@@ -93,13 +93,13 @@ Configure read-only SNMP community string (yes/no) [n]:
 
 Configure read-write SNMP community string (yes/no) [n]:
 ----
-. Konfigurieren Sie den Namen des Cluster-Switches:
+. Konfigurieren Sie den Cluster-Switch-Namen:
 +
 [listing, subs="+quotes"]
 ----
 Enter the switch name : *cs2*
 ----
-. Konfigurieren Sie die Out-of-Band-Managementoberfläche:
+. Konfigurieren Sie die Out-of-Band-Managementschnittstelle:
 +
 [listing, subs="+quotes"]
 ----
@@ -135,7 +135,7 @@ Enable the ssh service? (yes/no) [y]: *y*
 
        Number of rsa key bits <1024-2048> [1024]: *2048*
 ----
-. Weitere Einstellungen konfigurieren:
+. Konfigurieren Sie weitere Einstellungen:
 +
 [listing, subs="+quotes"]
 ----
@@ -147,7 +147,7 @@ Configure the ntp server? (yes/no) [n]: *n*
 
   Configure CoPP system profile (strict/moderate/lenient/dense) [strict]: *strict*
 ----
-. Bestätigen Sie die Switch-Informationen und speichern Sie die Konfiguration:
+. Schalterinformationen bestätigen und Konfiguration speichern:
 +
 [listing, subs="+quotes"]
 ----
@@ -161,5 +161,5 @@ Copy complete.
 ----
 
 
-.Was kommt als Nächstes?
-link:install-nxos-overview.html["Bereiten Sie sich auf die Installation der NX-OS-Software und der RCF vor"].
+.Wie geht es weiter?
+link:install-nxos-overview.html["Bereiten Sie die Installation der NX-OS-Software und von RCF vor."].

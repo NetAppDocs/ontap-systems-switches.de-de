@@ -2,7 +2,7 @@
 permalink: switch-nvidia-sn2100-storage/required-documentation-sn2100-storage.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
-summary: Überprüfen Sie bei Installation und Wartung von NVIDIA SN2100-Switches alle empfohlenen Dokumente. 
+summary: Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation lesen. 
 ---
 = Dokumentationsanforderungen für NVIDIA SN2100-Switches
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Überprüfen Sie bei Installation und Wartung von NVIDIA SN2100-Switche
 
 
 [role="lead"]
-Überprüfen Sie bei Installation und Wartung von NVIDIA SN2100-Switches alle empfohlenen Dokumente.
+Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation lesen.
 
-In der folgenden Tabelle ist die Dokumentation für die NVIDIA SN2100-Switches aufgeführt.
+Die folgende Tabelle listet die für die NVIDIA SN2100 Switches verfügbare Dokumentation auf.
 
 [cols="1,2"]
 |===
@@ -21,9 +21,9 @@ In der folgenden Tabelle ist die Dokumentation für die NVIDIA SN2100-Switches a
 
 
  a| 
-link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-hardware-sn2100-cluster.html["_NVIDIA SN2100 Switches einrichten und konfigurieren_"^]
+link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-hardware-sn2100-cluster.html["_Einrichten und Konfigurieren Ihrer NVIDIA SN2100-Switches_"^]
  a| 
-Hier wird beschrieben, wie Sie Ihre NVIDIA SN2100-Switches einrichten und konfigurieren, einschließlich der Installation von Cumulus Linux und entsprechenden RCFs.
+Beschreibt, wie Sie Ihre NVIDIA SN2100 Switches einrichten und konfigurieren, einschließlich der Installation von Cumulus Linux und den entsprechenden RCFs.
 
 
 
@@ -35,15 +35,15 @@ Beschreibt, wie Sie von Umgebungen, die Cisco -Speicher-Switches verwenden, zu U
 
 
  a| 
-link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/migrate-2n-switched-sn2100-cluster.html["_Migration zu einem Cluster mit zwei Nodes und NVIDIA SN2100 Cluster Switches_"^]
+link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/migrate-2n-switched-sn2100-cluster.html["_Migration zu einem Zwei-Knoten-Switch-Cluster mit NVIDIA SN2100 Cluster-Switches_"^]
  a| 
-Hier wird die Migration zu einer Switch-Umgebung mit zwei Nodes mit NVIDIA SN2100-Cluster-Switches beschrieben.
+Beschreibt, wie man mit NVIDIA SN2100 Cluster-Switches auf eine Zwei-Knoten-Switch-Umgebung migriert.
 
 
 
  a| 
-link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100-storage/replace-sn2100-switch-storage.html["_Einen NVIDIA SN2100-Storage-Switch ersetzen_"^]
+link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100-storage/replace-sn2100-switch-storage.html["NVIDIA SN2100 Speicherswitch austauschen_"^]
  a| 
-Beschreibt das Verfahren zum Austausch eines defekten NVIDIA SN2100-Speicherschalters und Herunterladen von Cumulus Linux und Referenzkonfigurationsdatei.
+Beschreibt das Vorgehen zum Austausch eines defekten NVIDIA SN2100 Speicherswitches und zum Herunterladen von Cumulus Linux und der zugehörigen Konfigurationsdatei.
 
 |===

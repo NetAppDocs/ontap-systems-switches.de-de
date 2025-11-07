@@ -2,52 +2,52 @@
 permalink: switch-netapp-cn1610/migrate-fas22xx-systems.html 
 sidebar: sidebar 
 keywords: migrate, two-node switched cluster, fas22xx systems, single, network connection 
-summary: Wenn Sie FAS22xx-Systeme in einem bestehenden 2-Node-Cluster ohne Switches einsetzen, bei dem jedes Controller-Modul über eine einzelne, Back-to-Back-10-GbE-Verbindung für die Cluster-Konnektivität verfügt, können Sie die Cluster-Netzwerkoption ohne Switch verwenden und die direkte Back-to-Back-Konnektivität durch Switch-Verbindungen ersetzen. 
+summary: Wenn Sie FAS22xx-Systeme in einem bestehenden Zwei-Knoten-Switchless-Cluster haben, in dem jedes Controller-Modul über eine einzelne, Back-to-Back-10-GbE-Verbindung für die Cluster-Konnektivität verfügt, können Sie die Switchless-Cluster-Netzwerkoption nutzen und die direkte Back-to-Back-Konnektivität durch Switch-Verbindungen ersetzen. 
 ---
-= Migration zu einem Switch-basierten 2-Node-Cluster in FAS22xx Systemen mit einer einzigen Cluster-Netzwerkverbindung
+= Migration zu einem Zwei-Knoten-Switched-Cluster in FAS22xx-Systemen mit einer einzigen Cluster-Netzwerkverbindung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie FAS22xx-Systeme in einem bestehenden 2-Node-Cluster ohne Switches einsetzen, bei dem jedes Controller-Modul über eine einzelne, Back-to-Back-10-GbE-Verbindung für die Cluster-Konnektivität verfügt, können Sie die Cluster-Netzwerkoption ohne Switch verwenden und die direkte Back-to-Back-Konnektivität durch Switch-Verbindungen ersetzen.
+Wenn Sie FAS22xx-Systeme in einem bestehenden Zwei-Knoten-Switchless-Cluster haben, in dem jedes Controller-Modul über eine einzelne, Back-to-Back-10-GbE-Verbindung für die Cluster-Konnektivität verfügt, können Sie die Switchless-Cluster-Netzwerkoption nutzen und die direkte Back-to-Back-Konnektivität durch Switch-Verbindungen ersetzen.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Zwei Cluster-Verbindungen für die Migration von einer Konfiguration ohne Switches zu einer Switched-Konfiguration.
-* Das Cluster ist in einem ordnungsgemäßen Zustand und besteht aus zwei Nodes, die mit der Back-to-Back-Konnektivität verbunden sind.
-* Auf den Knoten wird ONTAP 8.2 oder höher ausgeführt.
-* Die Cluster-Funktion ohne Switch kann nicht mit mehr als zwei Nodes verwendet werden.
-* Alle Cluster-Ports befinden sich im `up` Bundesland.
-
-
-.Verwandte Informationen
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB Artikel 1010449: Wie kann die automatische Case-Erstellung während geplanter Wartungszeiten unterdrückt werden"^]
+* Zwei Clusterverbindungen für die Migration von einer schalterlosen Konfiguration zu einer geschalteten Konfiguration.
+* Der Cluster ist intakt und besteht aus zwei Knoten, die direkt miteinander verbunden sind.
+* Auf den Knoten läuft ONTAP 8.2 oder höher.
+* Die Funktion „Switchless Cluster“ kann nicht mit mehr als zwei Knoten verwendet werden.
+* Alle Cluster-Ports befinden sich im `up` Zustand.
 
 
-
-== Migrieren Sie die Switches
-
-Bei diesem Verfahren wird die direkte Cluster-Konnektivität in einer Umgebung ohne Switches unterbrechungsfrei beseitigt und jede Verbindung zum Switch durch eine Verbindung zum Partner-Node ersetzt.
+.Ähnliche Informationen
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB-Artikel 1010449: So unterdrücken Sie die automatische Fallerstellung während geplanter Wartungsfenster"^]
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+== Migrieren Sie die Schalter
 
-. Ändern Sie die Berechtigungsebene in erweitert, indem Sie eingeben `y` Wenn Sie dazu aufgefordert werden, fortzufahren:
+Dieses Verfahren ist ein nicht-disruptives Verfahren, das die direkte Cluster-Konnektivität in einer switchlosen Umgebung aufhebt und jede Verbindung zum Switch durch eine Verbindung zum Partnerknoten ersetzt.
+
+
+
+=== Schritt 1: Vorbereitung auf die Migration
+
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie Folgendes eingeben `y` wenn Sie aufgefordert werden, fortzufahren:
 +
 `set -privilege advanced`
 
 +
-Die erweiterte Eingabeaufforderung (`*>`Erscheint.
+Die erweiterte Aufforderung(`*>` ) erscheint.
 
-. Überprüfen Sie den Cluster-Status der Nodes an der Systemkonsole eines der beiden Nodes:
+. Überprüfen Sie den Clusterstatus der Knoten an der Systemkonsole eines der beiden Knoten:
 +
 `cluster show`
 
@@ -55,7 +55,7 @@ Die erweiterte Eingabeaufforderung (`*>`Erscheint.
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster angezeigt:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster an:
 
 [listing]
 ----
@@ -69,12 +69,12 @@ node2                true    true          false
 2 entries were displayed.
 ----
 ====
-. Überprüfen Sie den Status des HA-Paars auf der Systemkonsole eines der beiden Nodes: `storage failover show`
+. Überprüfen Sie den Status des HA-Paares an der Systemkonsole eines der beiden Knoten: `storage failover show`
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt den Status von node1 und node2:
+Das folgende Beispiel zeigt den Status von Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -87,46 +87,46 @@ node2          node1          true      Connected to node1
 2 entries were displayed.
 ----
 ====
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-`x` Dies ist die Dauer des Wartungsfensters von Stunden.
+`x`ist die Dauer des Wartungsfensters in Stunden.
 
 +
 
-NOTE: Die Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit während des Wartungsfensters die automatische Case-Erstellung unterdrückt wird.
+NOTE: Die Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, damit die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+Der folgende Befehl unterdrückt die automatische Fallerstellung für zwei Stunden:
 
 [listing]
 ----
 cluster::*> system node autosupport invoke -node * -type all -message MAINT=2h
 ----
 ====
-. Vergewissern Sie sich, dass sich der aktuelle Status des Clusters ohne Switches befindet `true`, Und deaktivieren Sie dann den Cluster-Modus ohne Switches:
+. Überprüfen Sie, ob der aktuelle Status des schalterlosen Clusters `true` und deaktivieren Sie anschließend den schalterlosen Clustermodus:
 +
 `network options switchless-cluster modify -enabled false`
 
-. Übernehmen des Ziel-Node:
+. Übernehmen Sie den Zielknoten:
 +
 `storage failover takeover -ofnode _target_node_name_`
 
 +
-Es ist unerheblich, welcher Node der Ziel-Node ist. Nachdem der Ziel-Node übernommen wurde, wird er automatisch neu gebootet, und es wird angezeigt `Waiting for giveback...` Nachricht:
+Es spielt keine Rolle, welcher Knoten der Zielknoten ist.  Nach der Übernahme startet der Zielknoten automatisch neu und zeigt das `Waiting for giveback...` Nachricht.
 
 +
-Der aktive Node stellt jetzt Daten für den über den Partner (Ziel)-Node bereit.
+Der aktive Knoten dient nun der Datenbereitstellung für den übernommenen Partnerknoten (Zielknoten).
 
-. Warten Sie zwei Minuten nach der Übernahme des beeinträchtigten Knotens, um zu bestätigen, dass die Übernahme erfolgreich abgeschlossen wurde.
-. Wenn der Zielknoten das zeigt `Waiting for giveback...` Nachricht, Herunterfahren.
+. Warten Sie nach der Übernahme des betroffenen Knotens zwei Minuten, um zu bestätigen, dass die Übernahme erfolgreich abgeschlossen wurde.
+. Der Zielknoten zeigt Folgendes an: `Waiting for giveback...` Nachricht, schalte es ab.
 +
-Die Methode zum Herunterfahren des Node hängt davon ab, ob Sie Remote-Management über den Node Service Processor (SP) verwenden.
+Die Methode, mit der Sie den Knoten herunterfahren, hängt davon ab, ob Sie die Fernverwaltung über den Knoten-Serviceprozessor (SP) verwenden.
 
 +
 |===
@@ -136,37 +136,37 @@ Die Methode zum Herunterfahren des Node hängt davon ab, ob Sie Remote-Managemen
  a| 
 Ist konfiguriert
  a| 
-Melden Sie sich beim SP des beeinträchtigten Knotens an, und schalten Sie das System aus: `system power off`
+Melden Sie sich am beeinträchtigten Knoten SP an und schalten Sie dann das System aus: `system power off`
 
 
 
  a| 
 Ist nicht konfiguriert
  a| 
-Drücken Sie an der Eingabeaufforderung für beeinträchtigte Knoten die Taste `Ctrl-C`, Und dann antworten `y` Zum Anhalten des Knotens.
+Drücken Sie bei der Aufforderung zum Beeinträchtigen des Knotens `Ctrl-C` und dann antworten `y` den Knoten anhalten.
 
 |===
 
 
 
 
-=== Schritt: Kabel und Ports konfigurieren
+=== Schritt 2: Kabel und Anschlüsse konfigurieren
 
-. Trennen Sie an jedem Controller-Modul das Kabel, das den 10-GbE-Cluster-Port mit dem Cluster ohne Switches verbindet.
-. Verbinden Sie den 10 GbE-Cluster-Port mit dem Switch beider Controller-Module.
-. Vergewissern Sie sich, dass die 10-GbE-Cluster-Ports, die auf dem Switch verbunden sind, als Teil desselben VLANs konfiguriert sind.
+. Trennen Sie an jedem Controllermodul das Kabel, das den 10-GbE-Clusterport mit dem switchlosen Cluster verbindet.
+. Verbinden Sie den 10-GbE-Cluster-Port mit dem Switch auf beiden Controller-Modulen.
+. Überprüfen Sie, ob die am Switch angeschlossenen 10-GbE-Cluster-Ports so konfiguriert sind, dass sie Teil desselben VLANs sind.
 +
-Wenn Sie die Cluster-Ports an jedem Controller-Modul mit unterschiedlichen Switches verbinden möchten, müssen Sie überprüfen, ob die Ports, an denen die Cluster-Ports an jedem Switch angeschlossen sind, für dasselbe VLAN konfiguriert sind und dass das Trunking auf beiden Switches ordnungsgemäß konfiguriert ist.
+Wenn Sie die Cluster-Ports jedes Controller-Moduls mit verschiedenen Switches verbinden möchten, müssen Sie sicherstellen, dass die Ports, an denen die Cluster-Ports auf den jeweiligen Switches angeschlossen sind, für dasselbe VLAN konfiguriert sind und dass Trunking auf beiden Switches ordnungsgemäß konfiguriert ist.
 
-. Geben Sie dem Ziel-Node Storage zurück:
+. Speicher dem Zielknoten zurückgeben:
 +
 `storage failover giveback -ofnode node2`
 
-. Überwachen Sie den Status des Giveback-Vorgangs:
+. Überwachen Sie den Fortschritt der Rückgabeaktion:
 +
 `storage failover show-giveback`
 
-. Nach Abschluss des Giveback-Vorgangs bestätigen Sie, dass das HA-Paar ordnungsgemäß funktioniert und ein Takeover möglich ist:
+. Nach Abschluss der Rückgabeoperation ist zu bestätigen, dass das HA-Paar fehlerfrei funktioniert und eine Übernahme möglich ist:
 +
 `storage failover show`
 
@@ -174,7 +174,7 @@ Wenn Sie die Cluster-Ports an jedem Controller-Modul mit unterschiedlichen Switc
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die Ausgabe sollte wie folgt aussehen:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 [listing]
 ----
@@ -195,7 +195,7 @@ node2          node1          true      Connected to node1
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die LIFs sind `up` Auf node1 und node2 und dass die "is Home" Spalte Ergebnisse sind `true`:
+Das folgende Beispiel zeigt, dass die LIFs `up` auf Knoten 1 und Knoten 2 und dass die Ergebnisse der Spalte "Ist zu Hause" `true` :
 
 [listing]
 ----
@@ -212,7 +212,7 @@ node2
 2 entries were displayed.
 ----
 ====
-. Überprüfen Sie den Cluster-Status der Nodes an der Systemkonsole eines der beiden Nodes:
+. Überprüfen Sie den Clusterstatus der Knoten an der Systemkonsole eines der beiden Knoten:
 +
 `cluster show`
 
@@ -220,7 +220,7 @@ node2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster angezeigt:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster an:
 
 [listing]
 ----
@@ -241,15 +241,15 @@ node2                true    true          false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -267,7 +267,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -301,9 +301,9 @@ RPC status:
 ====
 
 
-=== Schritt 3: Führen Sie den Vorgang durch
+=== Schritt 3: Schließen Sie den Vorgang ab.
 
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
@@ -316,7 +316,7 @@ RPC status:
 cluster::*> system node autosupport invoke -node * -type all -message MAINT=END
 ----
 ====
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 

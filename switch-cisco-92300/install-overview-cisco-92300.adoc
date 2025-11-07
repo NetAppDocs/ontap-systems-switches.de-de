@@ -2,7 +2,7 @@
 permalink: switch-cisco-92300/install-overview-cisco-92300.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 92300 switch, 
-summary: Lesen Sie vor der Konfiguration von Cisco Nexus 92300-Switches eine Übersicht über den Prozess und die Terminologie. 
+summary: Bevor Sie Cisco Nexus 92300 Switches konfigurieren, sollten Sie sich einen Überblick über den Prozess und die Nomenklatur verschaffen. 
 ---
 = Installations- und Einrichtungsworkflow für Cisco Nexus 92300YC-Switches
 :allow-uri-read: 
@@ -11,19 +11,19 @@ summary: Lesen Sie vor der Konfiguration von Cisco Nexus 92300-Switches eine Üb
 
 
 [role="lead"]
-Cisco Nexus 92300YC-Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden.  Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
+Cisco Nexus 92300YC-Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 Befolgen Sie diese Arbeitsschritte, um Ihren Cisco Nexus 92300YC-Switch zu installieren und einzurichten.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-92300.html["Konfigurationsanforderungen"]
 [role="quick-margin-para"]
-Überprüfen Sie die Konfigurationsanforderungen für den Cluster-Switch 92300YC.
+Prüfen Sie die Konfigurationsanforderungen für den Cluster-Switch 92300YC.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:required-documentation-92300.html["Erforderliche Dokumentation"]
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 92300YC-Switches und den ONTAP Cluster einzurichten.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:smart-call-home-92300.html["Anforderungen für Smart Call Home"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:smart-call-home-92300.html["Anforderungen für Smart Call Home"]
 [role="quick-margin-para"]
 Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
 

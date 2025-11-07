@@ -2,114 +2,114 @@
 permalink: switch-cisco-92300/migrate-to-92300yc.html 
 sidebar: sidebar 
 keywords: migration steps for cisco nexus 92300yc cluster switch 
-summary: Sie können ältere Cisco Cluster Switches für einen ONTAP Cluster unterbrechungsfrei zu Cisco Nexus 92300YC Cluster Network Switches migrieren. 
+summary: Ältere Cisco Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf Cisco Nexus 92300YC Cluster-Netzwerk-Switches migriert werden. 
 ---
-= Migrieren Sie von einem Cisco Switch zu einem Cisco Nexus 92300YC Switch
+= Migration von einem Cisco Switch zu einem Cisco Nexus 92300YC-Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können ältere Cisco Cluster Switches für einen ONTAP Cluster unterbrechungsfrei zu Cisco Nexus 92300YC Cluster Network Switches migrieren.
+Ältere Cisco Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf Cisco Nexus 92300YC Cluster-Netzwerk-Switches migriert werden.
 
 
-NOTE: Nach Abschluss Ihrer Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC-Cluster-Switches zu unterstützen. Sehen link:../switch-cshm/cshm-overview.html["Switch-Zustandsüberwachung (CSHM)"] .
+NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC Cluster-Switches zu unterstützen. Sehenlink:../switch-cshm/cshm-overview.html["Switch-Zustandsüberwachung (CSHM)"] .
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Ein vorhandenes Cluster mit vollem Funktionsumfang.
-* 10-GbE- und 40-GbE-Konnektivität zwischen Nodes und Nexus 92300YC Cluster-Switches.
-* Alle Cluster-Ports sind im Status up, um einen unterbrechungsfreien Betrieb zu gewährleisten.
-* Korrekte Version von NX-OS und Referenzkonfigurationsdatei (RCF) auf den Nexus 92300YC Cluster Switches installiert.
-* Ein redundantes und voll funktionsfähiges NetApp Cluster unter Verwendung beider älteren Cisco Switches.
-* Management-Konnektivität und Konsolenzugriff auf die älteren Cisco Switches und die neuen Switches.
-* Alle Cluster-LIFs im Status „up“ mit den Cluster-LIFs befinden sich auf den Home-Ports.
-* ISL-Ports aktiviert und zwischen den älteren Cisco Switches und zwischen den neuen Switches verkabelt.
-
-
+* Ein voll funktionsfähiger, bereits bestehender Cluster.
+* 10-GbE- und 40-GbE-Konnektivität von Knoten zu Nexus 92300YC Cluster-Switches.
+* Alle Cluster-Ports sind aktiv, um einen unterbrechungsfreien Betrieb zu gewährleisten.
+* Die korrekte Version von NX-OS und die Referenzkonfigurationsdatei (RCF) sind auf den Nexus 92300YC Cluster-Switches installiert.
+* Ein redundanter und voll funktionsfähiger NetApp Cluster, der beide ältere Cisco Switches nutzt.
+* Management-Konnektivität und Konsolenzugriff sowohl auf die älteren Cisco Switches als auch auf die neuen Switches.
+* Alle Cluster-LIFs befinden sich im aktiven Zustand und sind an ihren Heimatports angeschlossen.
+* ISL-Ports wurden aktiviert und zwischen den älteren Cisco Switches sowie zwischen den neuen Switches verkabelt.
 
 
-== Migrieren Sie den Switch
+
+
+== Den Schalter migrieren
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
 * Die vorhandenen Cisco Nexus 5596UP Cluster-Switches sind c1 und c2.
-* Die neuen Nexus 92300YC Cluster Switches sind cs1 und cs2.
-* Die Knoten sind node1 und node2.
-* Die Cluster-LIFs sind node1_clut1 und node1_clus2 on Node 1, und node2_clus1 bzw. node2_clus2 on Node 2.
-* Schalter c2 wird zuerst durch Schalter cs2 ersetzt und dann Schalter c1 durch Schalter cs1 ersetzt.
+* Die neuen Nexus 92300YC Cluster-Switches sind cs1 und cs2.
+* Die Knoten sind Knoten1 und Knoten2.
+* Die Cluster-LIFs sind node1_clus1 und node1_clus2 auf Knoten 1 bzw. node2_clus1 und node2_clus2 auf Knoten 2.
+* Zuerst wird der Schalter c2 durch den Schalter cs2 ersetzt, dann wird der Schalter c1 durch den Schalter cs1 ersetzt.
 +
-** Ein temporäres ISL basiert auf cs1, das c1 mit cs1 verbindet.
+** Auf cs1 wird eine temporäre ISL aufgebaut, die c1 mit cs1 verbindet.
 ** Die Verkabelung zwischen den Knoten und c2 wird dann von c2 getrennt und wieder mit cs2 verbunden.
 ** Die Verkabelung zwischen den Knoten und c1 wird dann von c1 getrennt und wieder mit cs1 verbunden.
-** Die temporäre ISL zwischen c1 und cs1 wird dann entfernt.
+** Anschließend wird die temporäre ISL zwischen c1 und cs1 entfernt.
 
 
 
 
-.Für Verbindungen verwendete Ports
-* Einige der Ports sind auf Nexus 92300YC Switches konfiguriert, um mit 10 GbE oder 40 GbE zu laufen.
-* Die Cluster-Switches verwenden die folgenden Ports für Verbindungen zu den Nodes:
+.Anschlüsse, die für Verbindungen verwendet werden
+* Einige der Ports der Nexus 92300YC Switches sind für den Betrieb mit 10 GbE oder 40 GbE konfiguriert.
+* Die Cluster-Switches verwenden die folgenden Ports für die Verbindungen zu den Knoten:
 +
 ** Ports e1/1-48 (10/25 GbE), e1/49-64 (40/100 GbE): Nexus 92300YC
 ** Ports e1/1-40 (10 GbE): Nexus 5596UP
 ** Ports e1/1-32 (10 GbE): Nexus 5020
-** Ports e1/1-12, e2/1-6 (10 GbE): Nexus 5010 mit Erweiterungsmodul
+** Anschlüsse e1/1-12, e2/1-6 (10 GbE): Nexus 5010 mit Erweiterungsmodul
 
 
-* Bei den Cluster-Switches werden die folgenden Inter-Switch Link (ISL)-Ports verwendet:
+* Die Cluster-Switches verwenden die folgenden Inter-Switch Link (ISL)-Ports:
 +
 ** Ports e1/65-66 (100 GbE): Nexus 92300YC
-** Ports e1/41-48 (10 GbE): Nexus 5596UP
-** Ports e1/33-40 (10 GbE): Nexus 5020
-** Ports e1/13-20 (10 GbE): Nexus 5010
+** Ports e1/41–48 (10 GbE): Nexus 5596UP
+** Ports e1/33–40 (10 GbE): Nexus 5020
+** Ports e1/13–20 (10 GbE): Nexus 5010
 
 
-* https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Switches"^] Die enthält Informationen über die unterstützte Verkabelung aller Cluster Switches.
-* Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen befinden sich auf dem https://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^] Seite.
+* https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^]enthält Informationen zur unterstützten Verkabelung für alle Cluster-Switches.
+* Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind auf der https://support.netapp.com/NOW/download/software/cm_switches/["Cisco Ethernet-Switches"^] Seite.
 
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
 +
 Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei x die Dauer des Wartungsfensters in Stunden ist.
+wobei x die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+Der folgende Befehl unterdrückt die automatische Fallerstellung für zwei Stunden:
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *system node autosupport invoke -node * -type all -message MAINT=2h*
 ----
 ====
-. Vergewissern Sie sich, dass die automatische Umrüstung auf allen Cluster-LIFs aktiviert ist:
+. Stellen Sie sicher, dass die automatische Wiederherstellung auf allen Cluster-LIFs aktiviert ist:
 +
 `network interface show -vserver Cluster -fields auto-revert`
 
@@ -133,12 +133,12 @@ Cluster
 4 entries were displayed.
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus für jede Cluster-Schnittstelle fest:
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:
 +
-Jeder Port sollte für angezeigt werden `Link` Und gesund für `Health Status`.
+Jeder Port sollte angezeigt werden für `Link` und gesund für `Health Status` Die
 
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show -ipspace Cluster`
 
@@ -169,12 +169,12 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 4 entries were displayed.
 ----
 ====
-.. Informationen zu den logischen Schnittstellen und den zugehörigen Home-Nodes anzeigen:
+.. Informationen über die logischen Schnittstellen und ihre jeweiligen Heimatknoten anzeigen:
 +
 `network interface show -vserver Cluster`
 
 +
-Jedes LIF sollte für angezeigt werden `Status Admin/Oper` Und zwar für `Is Home`.
+Jeder LIF sollte „up/up“ anzeigen. `Status Admin/Oper` und wahr für `Is Home` Die
 
 +
 .Beispiel anzeigen
@@ -198,7 +198,7 @@ Cluster
 ====
 
 
-. Überprüfen Sie mithilfe des Befehls, ob die Cluster-Ports auf jedem Node mit vorhandenen Cluster-Switches auf folgende Weise (aus Sicht der Nodes) verbunden sind:
+. Überprüfen Sie mithilfe des folgenden Befehls, ob die Cluster-Ports auf jedem Knoten wie folgt mit den vorhandenen Cluster-Switches verbunden sind (aus Sicht der Knoten):
 +
 `network device-discovery show -protocol cdp`
 
@@ -222,7 +222,7 @@ node1      /cdp
 4 entries were displayed.
 ----
 ====
-. Überprüfen Sie mithilfe des Befehls, ob die Cluster-Ports und -Switches (aus Sicht der Switches) auf folgende Weise verbunden sind:
+. Überprüfen Sie mithilfe des folgenden Befehls, ob die Cluster-Ports und Switches wie folgt verbunden sind (aus Sicht der Switches):
 +
 `show cdp neighbors`
 
@@ -297,15 +297,15 @@ c1(FOX2025GEEX)     Eth1/48        176    S I s     N5K-C5596UP        Eth1/48
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -323,7 +323,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -358,9 +358,9 @@ RPC status:
 ====
 
 
-=== Schritt: Kabel und Ports konfigurieren
+=== Schritt 2: Kabel und Anschlüsse konfigurieren
 
-. Konfigurieren Sie eine temporäre ISL an den CS1on-Ports e1/41-48 zwischen c1 und cs1.
+. Konfigurieren Sie eine temporäre ISL auf cs1on Ports e1/41-48, zwischen c1 und cs1.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -386,8 +386,8 @@ cs1(config-if)# *exit*
 cs1(config)# *exit*
 ----
 ====
-. Entfernen Sie ISL-Kabel von den Ports e1/41-48 von c2, und verbinden Sie die Kabel mit den Ports e1/41-48 an cs1.
-. Vergewissern Sie sich, dass die ISL-Ports und der Port-Channel betriebsbereit sind, die C1 und cs1 verbinden:
+. Entfernen Sie die ISL-Kabel von den Ports e1/41-48 von c2 und verbinden Sie die Kabel mit den Ports e1/41-48 von cs1.
+. Überprüfen Sie, ob die ISL-Ports und der Portkanal, die c1 und cs1 verbinden, betriebsbereit sind:
 +
 `show port-channel summary`
 
@@ -395,7 +395,7 @@ cs1(config)# *exit*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass der Cisco show Port-Channel summary Befehl verwendet wird, um zu überprüfen, ob die ISL Ports auf c1 und cs1 funktionsfähig sind:
+Das folgende Beispiel zeigt die Verwendung des Cisco -Befehls „show port-channel summary“, um zu überprüfen, ob die ISL-Ports auf c1 und cs1 betriebsbereit sind:
 
 [listing, subs="+quotes"]
 ----
@@ -436,9 +436,9 @@ Group Port-       Type     Protocol  Member Ports
                                      Eth1/47(P)   Eth1/48(P)
 ----
 ====
-. Trennen Sie bei Node1 das Kabel von e1/1 auf c2, und schließen Sie das Kabel anschließend an e1/1 auf cs2 an. Verwenden Sie dazu die geeignete Verkabelung, die von Nexus 92300YC unterstützt wird.
-. Trennen Sie bei node2 das Kabel von e1/2 auf c2, und schließen Sie das Kabel anschließend an e1/2 auf cs2 an. Verwenden Sie dazu die geeignete Verkabelung, die von Nexus 92300YC unterstützt wird.
-. Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:
+. Für Knoten 1 trennen Sie das Kabel von e1/1 auf c2 und verbinden Sie es dann mit e1/1 auf cs2. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.
+. Für Knoten 2 trennen Sie das Kabel von e1/2 auf c2 und verbinden Sie es dann mit e1/2 auf cs2. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.
+. Die Cluster-Ports auf jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Cluster-Switches verbunden:
 +
 `network device-discovery show -protocol cdp`
 
@@ -463,9 +463,9 @@ node1      /cdp
 4 entries were displayed.
 ----
 ====
-. Trennen Sie bei Node1 das Kabel von e1/1 auf c1, und schließen Sie das Kabel anschließend an e1/1 am cs1 an. Verwenden Sie dazu die geeignete Verkabelung, die von Nexus 92300YC unterstützt wird.
-. Trennen Sie bei node2 das Kabel von e1/2 auf c1, und verbinden Sie das Kabel mit e1/2 am cs1. Verwenden Sie dazu die geeignete Verkabelung, die von Nexus 92300YC unterstützt wird.
-. Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:
+. Für Knoten 1 trennen Sie das Kabel von e1/1 auf c1 und verbinden Sie es dann mit e1/1 auf cs1. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.
+. Für Knoten 2 trennen Sie das Kabel von e1/2 auf c1 und verbinden Sie es dann mit e1/2 auf cs1. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.
+. Die Cluster-Ports auf jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Cluster-Switches verbunden:
 +
 `network device-discovery show -protocol cdp`
 
@@ -511,14 +511,14 @@ cs1(config)# *exit*
 
 
 
-=== Schritt 3: Beenden Sie die Migration
+=== Schritt 3: Schließen Sie die Migration ab.
 
-. Überprüfen der endgültigen Konfiguration des Clusters:
+. Überprüfen Sie die endgültige Konfiguration des Clusters:
 +
 `network port show -ipspace Cluster`
 
 +
-Jeder Port sollte für angezeigt werden `Link` Und gesund für `Health Status`.
+Jeder Port sollte angezeigt werden für `Link` und gesund für `Health Status` Die
 
 +
 .Beispiel anzeigen
@@ -615,15 +615,15 @@ Total entries displayed: 4
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -641,7 +641,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -674,7 +674,7 @@ RPC status:
 ----
 --
 ====
-. [[Schritt 3]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:
+. [[step3]] Falls Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
@@ -687,11 +687,11 @@ RPC status:
 cluster1::*> *system node autosupport invoke -node * -type all -message MAINT=END*
 ----
 ====
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].

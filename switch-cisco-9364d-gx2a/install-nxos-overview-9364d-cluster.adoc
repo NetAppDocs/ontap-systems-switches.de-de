@@ -4,17 +4,17 @@ sidebar: sidebar
 keywords: cisco, nx-os, software, reference, configuration, file, rcf, install, fx2, cluster, switch, install nx-os software and rcfs on cisco nexus 9364d-gx2a cluster switches - cisco nexus 9364d-gx2a 
 summary: Bereiten Sie die Installation der NX-OS-Software und von RCF vor. 
 ---
-= Bereiten Sie sich auf die Installation der NX-OS-Software und der RCF vor
+= Bereiten Sie die Installation der NX-OS-Software und von RCF vor.
 :allow-uri-read: 
 
 
 [role="lead"]
-Bevor Sie die NX-OS-Software und die RCF-Datei (Reference Configuration File) installieren, gehen Sie wie folgt vor:
+Bevor Sie die NX-OS-Software und die Referenzkonfigurationsdatei (RCF) installieren, befolgen Sie bitte diese Schritte.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Namen der beiden Cisco Switches sind cs1 und cs2.
+* Die Namen der beiden Cisco Switches lauten cs1 und cs2.
 * Die Knotennamen sind node1-01, node1-02, node1-03 und node1-04.
 * Die Cluster-LIF-Namen sind:
 +
@@ -24,35 +24,35 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 ** node1-04_clus1 und node1-04_clus2 für node1-04
 
 
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 
 
-.Über diese Aufgabe
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 9000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+.Informationen zu diesem Vorgang
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 9000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=x h`
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=x h`
 +
-Wobei x die Dauer des Wartungsfensters in Stunden ist.
+wobei x die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 [source, cli]
 ----
 set -privilege advanced
 ----
 +
-Die erweiterte Eingabeaufforderung (`*>`Erscheint.
+Die erweiterte Aufforderung(`*>` ) erscheint.
 
 . Überprüfen Sie den Verwaltungs- und Betriebsstatus jedes Ports.
 +
 .. *Cluster-Ports*
 +
-... Zeigen Sie an, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster Interconnect-Switch konfiguriert sind:
+... Zeigen Sie an, wie viele Cluster-Verbindungsschnittstellen in jedem Knoten für jeden Cluster-Verbindungs-Switch konfiguriert sind:
 +
 [source, cli]
 ----
@@ -98,7 +98,7 @@ node1-01/cdp
 .
 ----
 ====
-... Zeigen Sie die Attribute des Netzwerkports an:
+... Netzwerkportattribute anzeigen:
 +
 [source, cli]
 ----
@@ -372,7 +372,7 @@ shelf id connector-state remote-port    remote-device
 
 . Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen.
 +
-.. Sie können die `network interface check cluster-connectivity show` Befehl zum Anzeigen der Details einer Zugänglichkeitsprüfung für die Clusterkonnektivität:
+.. Sie können die `network interface check cluster-connectivity show` Befehl zum Anzeigen der Details einer Zugriffsprüfung für die Clusterkonnektivität:
 +
 [source, cli]
 ----
@@ -402,7 +402,7 @@ node1-02
 .
 ----
 ====
-.. Alternativ können Sie die `cluster ping-cluster -node <node-name>` Befehl zum Überprüfen der Konnektivität:
+.. Alternativ können Sie die `cluster ping-cluster -node <node-name>` Befehl zum Überprüfen der Verbindung:
 +
 `cluster ping-cluster -node <node-name>`
 
@@ -482,5 +482,5 @@ Cluster node1-04_clus2     true
 ====
 
 
-.Was kommt als Nächstes?
-Nachdem Sie die Installation der NX-OS-Software und RCF vorbereitet haben,link:install-nxos-software-9364d-cluster.html["Installieren oder aktualisieren Sie die NX-OS-Software"] .
+.Wie geht es weiter?
+Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, link:install-nxos-software-9364d-cluster.html["Installieren oder aktualisieren Sie die NX-OS-Software"]Die

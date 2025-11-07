@@ -2,25 +2,25 @@
 permalink: switch-bes-53248/configure-licenses.html 
 sidebar: sidebar 
 keywords: bes, cluster, switch, base, model, license, 10gbe, 25gbe, 100gbe, port, add, purchasing, purchase, install licenses for bes-53248 cluster switches - bes-53248 switches 
-summary: Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw. 25-GbE-Ports und zwei 100-GbE-Ports lizenziert. Neue Ports können durch den Kauf weiterer Lizenzen hinzugefügt werden. 
+summary: Das Basismodell des Cluster-Switches BES-53248 ist für 16 10GbE- oder 25GbE-Ports und zwei 100GbE-Ports lizenziert.  Neue Häfen können durch den Kauf weiterer Lizenzen hinzugefügt werden. 
 ---
-= Installation von Lizenzen für BES-53248 Cluster-Switches
+= Lizenzen für BES-53248 Cluster-Switches installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Das Basismodell BES-53248 für Cluster-Switches ist für 16 10-GbE- bzw. 25-GbE-Ports und zwei 100-GbE-Ports lizenziert. Sie können neue Ports hinzufügen, indem Sie mehr Lizenzen erwerben.
+Das Basismodell des Cluster-Switches BES-53248 ist für 16 10GbE- oder 25GbE-Ports und zwei 100GbE-Ports lizenziert.  Sie können neue Ports hinzufügen, indem Sie weitere Lizenzen erwerben.
 
 
-CAUTION: Für EFOS 3.12 und höher befolgen Sie die Installationsschritte in link:efos-install-rcf-license-file.html["Installieren Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei"].
+CAUTION: Für EFOS 3.12 und höher befolgen Sie die Installationsschritte inlink:efos-install-rcf-license-file.html["Installieren Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei."] Die
 
 
 
-== Prüfen Sie verfügbare Lizenzen
+== Prüfen Sie die verfügbaren Lizenzen.
 
-Die folgenden Lizenzen sind zur Verwendung auf dem BES-53248 Cluster-Switch verfügbar:
+Für die Verwendung auf dem Cluster-Switch BES-53248 stehen folgende Lizenzen zur Verfügung:
 
 [cols="1,2,3"]
 |===
@@ -39,7 +39,7 @@ EFOS 3.4.4.6 und höher
  a| 
 SW-BES-53248A2-8P-1025G
  a| 
-Broadcom 10G25G-Lizenzschlüssel mit 8 Anschlüssen, X190005/R
+Broadcom 8-Port 10G25G Lizenzschlüssel, X190005/R
  a| 
 EFOS 3.4.4.6 und höher
 
@@ -48,16 +48,16 @@ EFOS 3.4.4.6 und höher
  a| 
 SW-BES53248A2-6P-40-100G
  a| 
-Broadcom 40G100G-Lizenzschlüssel mit 6 Anschlüssen, X190005/R
+Broadcom 6-Port 40G100G Lizenzschlüssel, X190005/R
  a| 
 EFOS 3.4.4.6 und höher
 
 |===
 
 
-== Ältere Lizenzen
+== Legacy-Lizenzen
 
-In der folgenden Tabelle sind die älteren Lizenzen aufgeführt, die für den BES-53248-Cluster-Switch verfügbar waren:
+Die folgende Tabelle listet die älteren Lizenzen auf, die für die Verwendung auf dem Cluster-Switch BES-53248 verfügbar waren:
 
 [cols="1,2,3"]
 |===
@@ -94,7 +94,7 @@ EFOS 3.4.3.3 und höher
  a| 
 SW-BES54248-40-100G-LIC
  a| 
-Broadcom 6Port 40G100G Lizenzschlüssel, X190005/R
+Broadcom 6-Port 40G100G Lizenzschlüssel, X190005/R
  a| 
 EFOS 3.4.4.6 und höher
 
@@ -103,7 +103,7 @@ EFOS 3.4.4.6 und höher
  a| 
 SW-BES53248-8P-10G25G-LIC
  a| 
-Broadcom 8-Port 10 G25 G Lizenzschlüssel, X190005/R
+Broadcom 8Port 10G25G Lizenzschlüssel, X190005/R
  a| 
 EFOS 3.4.4.6 und höher
 
@@ -112,7 +112,7 @@ EFOS 3.4.4.6 und höher
  a| 
 SW-BES53248-16P-1025G-LIC
  a| 
-Broadcom 16-Port 10-G25-G-Lizenzschlüssel, X190005/R
+Broadcom 16-Port 10G25G Lizenzschlüssel, X190005/R
  a| 
 EFOS 3.4.4.6 und höher
 
@@ -121,7 +121,7 @@ EFOS 3.4.4.6 und höher
  a| 
 SW-BES53248-24P-1025G-LIC
  a| 
-Broadcom 24Port 10G25G Lizenzschlüssel, X190005/R
+Broadcom 24-Port 10G25G Lizenzschlüssel, X190005/R
  a| 
 EFOS 3.4.4.6 und höher
 
@@ -131,18 +131,18 @@ NOTE: Für die Basiskonfiguration ist keine Lizenz erforderlich.
 
 
 
-== Installieren Sie Lizenzdateien
+== Lizenzdateien installieren
 
-Führen Sie diese Schritte aus, um Lizenzen für BES-53248 Cluster-Switches zu installieren.
+Befolgen Sie diese Schritte, um Lizenzen für BES-53248 Cluster-Switches zu installieren.
 
 .Schritte
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der EFOS, Lizenzen und der RCF-Datei hostet.
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
+. Verwenden Sie die `ping` Befehl zur Überprüfung der Verbindung zum Server, auf dem EFOS, Lizenzen und die RCF-Datei gehostet werden.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird überprüft, ob der Switch mit der IP-Adresse 172.19.2 verbunden ist:
+Dieses Beispiel überprüft, ob der Switch mit dem Server unter der IP-Adresse 172.19.2.1 verbunden ist:
 
 [listing, subs="+quotes"]
 ----
@@ -152,7 +152,7 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Überprüfen Sie die aktuelle Lizenzverwendung auf Switch cs2:
+. Überprüfen Sie die aktuelle Lizenznutzung auf Switch CS2:
 +
 `show license`
 
@@ -174,13 +174,13 @@ No license file found.
 ====
 . Installieren Sie die Lizenzdatei.
 +
-Wiederholen Sie diesen Schritt, um weitere Lizenzen zu laden und verschiedene Schlüsselindizes zu verwenden.
+Wiederholen Sie diesen Schritt, um weitere Lizenzen zu laden und andere Schlüsselindexnummern zu verwenden.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird SFTP verwendet, um eine Lizenzdatei in einen Schlüsselindex 1 zu kopieren.
+Im folgenden Beispiel wird SFTP verwendet, um eine Lizenzdatei auf einen Schlüsselindex 1 zu kopieren.
 
 [listing, subs="+quotes"]
 ----
@@ -202,7 +202,7 @@ File transfer in progress. Management access will be blocked for the duration of
 License Key transfer operation completed successfully. System reboot is required.
 ----
 ====
-. Zeigen Sie alle aktuellen Lizenzinformationen an und notieren Sie sich den Lizenzstatus, bevor Switch cs2 neu gestartet wird:
+. Zeigen Sie alle aktuellen Lizenzinformationen an und notieren Sie den Lizenzstatus, bevor Switch CS2 neu gestartet wird:
 +
 `show license`
 
@@ -282,7 +282,7 @@ Configuration Saved!
 Are you sure you would like to reset the system? (y/n) *y*
 ----
 ====
-. Überprüfen Sie, ob die neue Lizenz aktiv ist, und beachten Sie, dass die Lizenz angewendet wurde:
+. Prüfen Sie, ob die neue Lizenz aktiv ist und vermerken Sie, dass die Lizenz angewendet wurde:
 +
 `show license`
 
@@ -304,7 +304,7 @@ License Index  License Type              Status
 1              Port                      License applied
 ----
 ====
-. Stellen Sie sicher, dass alle neuen Ports verfügbar sind:
+. Prüfen Sie, ob alle neuen Ports verfügbar sind:
 +
 `show port all | exclude Detach`
 
@@ -348,13 +348,13 @@ Intf      Type   Mode      Mode       Status     Status Trap    Mode   Timeout
 
 
 
-CAUTION: Wenn Sie zusätzliche Lizenzen installieren, müssen Sie die neuen Schnittstellen manuell konfigurieren. Wenden Sie einen RCF nicht auf einen vorhandenen funktionierenden Produktionsschalter an.
+CAUTION: Bei der Installation zusätzlicher Lizenzen müssen Sie die neuen Schnittstellen manuell konfigurieren.  Ein RCF darf nicht erneut auf einen bereits funktionierenden Produktionsschalter angewendet werden.
 
 
 
-== Beheben Sie Probleme bei der Installation
+== Behebung von Installationsproblemen
 
-Wenn beim Installieren einer Lizenz Probleme auftreten, führen Sie die folgenden Debug-Befehle aus, bevor Sie den ausführen `copy` Befehl erneut.
+Wenn bei der Installation einer Lizenz Probleme auftreten, führen Sie die folgenden Debug-Befehle aus, bevor Sie die Lizenz installieren. `copy` Den Befehl erneut geben.
 
 Zu verwendende Debug-Befehle: `debug transfer` Und `debug license`
 
@@ -369,7 +369,7 @@ Debug transfer output is enabled.
 Enabled capability licensing debugging.
 ----
 ====
-Wenn Sie den ausführen `copy` Befehl mit dem `debug transfer` Und `debug license` Aktivierte Optionen, die Protokollausgabe wird zurückgegeben.
+Wenn Sie die `copy` Befehl mit dem `debug transfer` Und `debug license` Wenn diese Optionen aktiviert sind, wird die Protokollausgabe zurückgegeben.
 
 .Beispiel anzeigen
 [%collapsible]
@@ -399,32 +399,32 @@ CAPABILITY LICENSING : Fri Sep 11 13:41:32 2020: Feature not found in license fi
 CAPABILITY LICENSING : Fri Sep 11 13:41:32 2020: Applying license file 1.
 ----
 ====
-Überprüfen Sie bei der Debug-Ausgabe auf Folgendes:
+Prüfen Sie in der Debug-Ausgabe Folgendes:
 
-* Überprüfen Sie, ob die Seriennummer übereinstimmt: `Serial number QTFCU38290012 matched.`
-* Überprüfen Sie, ob das Switch-Modell mit folgenden Punkten übereinstimmt: `Model BES-53248 matched.`
-* Überprüfen Sie, ob der angegebene Lizenzindex zuvor nicht verwendet wurde. Wenn bereits ein Lizenzindex verwendet wird, wird der folgende Fehler zurückgegeben: `License file /mnt/download//license.dat.1 already exists.`
-* Eine Port-Lizenz ist keine Feature-Lizenz. Daher wird folgende Aussage erwartet: `Feature not found in license file with index = 1.`
+* Prüfen Sie, ob die Seriennummer übereinstimmt: `Serial number QTFCU38290012 matched.`
+* Prüfen Sie, ob das Schaltermodell übereinstimmt: `Model BES-53248 matched.`
+* Prüfen Sie, ob der angegebene Lizenzindex nicht bereits verwendet wurde.  Wenn bereits ein Lizenzindex verwendet wird, wird folgender Fehler zurückgegeben: `License file /mnt/download//license.dat.1 already exists.`
+* Eine Portlizenz ist keine Funktionslizenz.  Daher ist folgende Aussage zu erwarten: `Feature not found in license file with index = 1.`
 
 
-Verwenden Sie die `copy` Befehl zum Sichern von Portlizenzen auf dem Server:
+Verwenden Sie die `copy` Befehl zum Sichern der Portlizenzen auf dem Server:
 
 [listing, subs="+quotes"]
 ----
 (cs2)# *copy nvram:license-key 1 scp://<UserName>@<IP_address>/saved_license_1.dat*
 ----
 
-CAUTION: Wenn Sie die Switch-Software von Version 3.4.4.6 herunterstufen müssen, werden die Lizenzen entfernt. Dieses Verhalten ist zu erwarten.
+CAUTION: Falls Sie die Switch-Software von Version 3.4.4.6 downgraden müssen, werden die Lizenzen entfernt.  Dies ist ein erwartbares Verhalten.
 
-Bevor Sie auf eine ältere Softwareversion zurücksetzen, müssen Sie eine entsprechende ältere Lizenz installieren.
+Bevor Sie auf eine ältere Version der Software zurückgreifen können, müssen Sie eine entsprechende ältere Lizenz installieren.
 
 
 
 == Aktivieren Sie neu lizenzierte Ports
 
-Um neue lizenzierte Ports zu aktivieren, müssen Sie die neueste Version des RCF bearbeiten und die entsprechenden Portdetails abkommentieren.
+Um neu lizenzierte Ports zu aktivieren, müssen Sie die neueste Version der RCF bearbeiten und die entsprechenden Portdetails einkommentieren.
 
-Die Standardlizenz aktiviert die Ports 0/1 bis 0/16 und 0/55 bis 0/56, während die neu lizenzierten Ports je nach Typ und Anzahl der verfügbaren Lizenzen zwischen den Ports 0/17 bis 0/54 liegen. Zum Beispiel, um die SW-BES54248-40-100G-LIC-Lizenz zu aktivieren, müssen Sie den folgenden Abschnitt im RCF entkommentieren:
+Die Standardlizenz aktiviert die Ports 0/1 bis 0/16 und 0/55 bis 0/56, während die neu lizenzierten Ports je nach Art und Anzahl der verfügbaren Lizenzen zwischen den Ports 0/17 und 0/54 liegen.  Um beispielsweise die Lizenz SW-BES54248-40-100G-LIC zu aktivieren, müssen Sie den folgenden Abschnitt in der RCF-Datei einkommentieren:
 
 .Beispiel anzeigen
 [%collapsible]
@@ -531,7 +531,7 @@ exit
 ----
 ====
 
-NOTE: Bei High-Speed-Ports zwischen 0/49 und 0/54 inklusiv, deaktivieren Sie jeden Port, aber lösen Sie nur eine *Speed*-Leitung in der RCF für jeden dieser Anschlüsse, entweder: *Speed 100G Vollduplex* oder *Speed 40G Vollduplex* wie im Beispiel gezeigt. Bei Low-Speed-Ports zwischen 0/17 und 0/48 inklusive, deaktivieren Sie den gesamten Abschnitt mit 8 Ports, wenn eine entsprechende Lizenz aktiviert wurde.
+NOTE: Bei Hochgeschwindigkeitsports zwischen 0/49 und 0/54 (einschließlich) entfernen Sie die Kommentarzeichen vor jedem Port, jedoch nur vor einer *speed*-Zeile in der RCF für jeden dieser Ports, entweder: *speed 100G full-duplex* oder *speed 40G full-duplex*, wie im Beispiel gezeigt.  Bei langsamen Ports zwischen 0/17 und 0/48 (einschließlich) muss der gesamte Abschnitt mit 8 Ports einkommentiert werden, sobald eine entsprechende Lizenz aktiviert wurde.
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation der Lizenzen können Sie link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."] oder link:upgrade-rcf.html["RCF aufrüsten"]Die

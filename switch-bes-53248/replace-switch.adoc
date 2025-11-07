@@ -2,7 +2,7 @@
 permalink: switch-bes-53248/replace-switch.html 
 sidebar: sidebar 
 keywords: replace, replacing, defective, broadcom-supported, bes, cluster, switch, network, nondisruptive, procedure, ndu, replace a broadcom-supported bes-53428 cluster switch - bes-53428 switches 
-summary: 'Der Austausch eines defekten Broadcom unterstützten BES-53248 Cluster-Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren \(NDU\).' 
+summary: 'Der Austausch eines defekten, von Broadcom unterstützten BES-53248 Cluster-Switches in einem Cluster-Netzwerk ist ein nicht-unterbrechendes Verfahren (NDU).' 
 ---
 = Ersetzen Sie einen von Broadcom unterstützten BES-53248-Cluster-Switch
 :allow-uri-read: 
@@ -11,21 +11,21 @@ summary: 'Der Austausch eines defekten Broadcom unterstützten BES-53248 Cluster
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um einen defekten Broadcom-unterstützten BES-53248-Cluster-Switch in einem Cluster-Netzwerk zu ersetzen. Dies ist ein NDU (Non Disruptive Procedure, NDU).
+Gehen Sie wie folgt vor, um einen defekten Broadcom-unterstützten BES-53248 Cluster-Switch in einem Cluster-Netzwerk auszutauschen. Dies ist ein unterbrechungsfreies Verfahren (NDU).
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Namen der vorhandenen BES-53248-Switches lauten `cs1` Und `cs2`.
-* Der Name des neuen BES-53248-Switch lautet `newcs2`.
-* Die Node-Namen sind `node1` Und `node2`.
-* Die Cluster-Ports an jedem Node werden mit benannt `e0a` Und `e0b`.
-* Die LIF-Namen des Clusters sind `node1_clus1` Und `node1_clus2` Für Node1, und `node2_clus1` Und `node2_clus2` Für Knoten 2.
-* Die Eingabeaufforderung für Änderungen an allen Cluster-Nodes lautet `cluster1::>`
+* Die Namen der bestehenden BES-53248-Switches lauten: `cs1` Und `cs2` Die
+* Die Bezeichnung des neuen BES-53248-Switches lautet: `newcs2` Die
+* Die Knotennamen lauten `node1` Und `node2` Die
+* Die Cluster-Ports auf jedem Knoten sind benannt `e0a` Und `e0b` Die
+* Die Cluster-LIF-Namen sind `node1_clus1` Und `node1_clus2` für Knoten1 und `node2_clus1` Und `node2_clus2` für Knoten 2.
+* Die Aufforderung zur Änderung aller Clusterknoten lautet: `cluster1::>`
 
 
-.Allgemeines zur Topologie
-Dieses Verfahren basiert auf der folgenden Cluster-Netzwerktopologie:
+.Zur Topologie
+Dieses Verfahren basiert auf folgender Cluster-Netzwerktopologie:
 
 .Beispieltopologie anzeigen
 [%collapsible]
@@ -103,38 +103,38 @@ cs1                      0/56      179       R          BES-53248        0/56
 ----
 ====
 .Schritte
-. Überprüfen Sie die link:replace-switch-reqs.html["Ersatzanforderungen"].
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Überprüfen Sie dielink:replace-switch-reqs.html["Ersatzbedarf"] Die
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
-. Installieren Sie die entsprechende Referenzkonfigurationsdatei (RCF) und das entsprechende Image auf dem Switch, newcs2, und nehmen Sie die erforderlichen Standortvorbereitungen vor.
+. Installieren Sie die entsprechende Referenzkonfigurationsdatei (RCF) und das Image auf dem Switch newcs2 und treffen Sie alle notwendigen Vorbereitungen vor Ort.
 +
-Überprüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und EFOS-Software für den neuen Switch. Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und EFOS-Software benötigt, fahren Sie mit Schritt 2 fort.
-
-+
-.. Sie können die entsprechende Broadcom EFOS-Software für Ihre Cluster-Switches von herunterladen https://www.broadcom.com/support/bes-switch["Unterstützung Für Broadcom Ethernet-Switches"^] Standort. Befolgen Sie die Schritte auf der Download-Seite, um die EFOS-Datei für die Version der zu installienden ONTAP-Software herunterzuladen.
-.. Das entsprechende RCF ist im erhältlich https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite. Befolgen Sie die Schritte auf der Download-Seite, um den korrekten RCF für die Version der von Ihnen installierenden ONTAP-Software herunterzuladen.
-
-
-. Beim neuen Switch melden Sie sich als an `admin` Fahren Sie außerdem alle Ports herunter, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports 1 zu 16).
-+
-
-NOTE: Wenn Sie zusätzliche Lizenzen für zusätzliche Ports erworben haben, fahren Sie diese Ports auch herunter.
+Prüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und EFOS-Software für den neuen Switch.  Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und EFOS-Software erforderlich sind, fahren Sie mit Schritt 2 fort.
 
 +
-Wenn der Switch, den Sie ersetzen, nicht funktionsfähig und heruntergefahren ist, sollten die LIFs auf den Cluster-Nodes bereits ein Failover zum anderen Cluster-Port für jeden Node durchgeführt haben.
+.. Sie können die passende Broadcom EFOS-Software für Ihre Cluster-Switches von der folgenden Website herunterladen: https://www.broadcom.com/support/bes-switch["Broadcom Ethernet-Switch-Unterstützung"^] Website.  Folgen Sie den Anweisungen auf der Downloadseite, um die EFOS-Datei für die Version der ONTAP -Software herunterzuladen, die Sie installieren.
+.. Die entsprechende RCF ist erhältlich bei der https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite.  Folgen Sie den Anweisungen auf der Downloadseite, um die richtige RCF-Datei für die Version der ONTAP -Software herunterzuladen, die Sie installieren.
+
+
+. Melden Sie sich auf dem neuen Switch an als `admin` und schalten Sie alle Ports ab, die mit den Schnittstellen des Knotenclusters verbunden werden (Ports 1 bis 16).
++
+
+NOTE: Falls Sie zusätzliche Lizenzen für weitere Ports erworben haben, schalten Sie auch diese Ports ab.
+
++
+Falls der zu ersetzende Switch nicht funktionsfähig und ausgeschaltet ist, sollten die LIFs auf den Clusterknoten bereits auf den anderen Clusterport für jeden Knoten umgeschaltet haben.
 
 +
 
-NOTE: Zur Eingabe ist kein Passwort erforderlich `enable` Modus.
+NOTE: Für die Anmeldung ist kein Passwort erforderlich. `enable` Modus.
 
 +
 .Beispiel anzeigen
@@ -153,7 +153,7 @@ Password:
 (newcs2)#
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-LIFs über diesen verfügen `auto-revert` Aktiviert:
+. Überprüfen Sie, ob alle Cluster-LIFs vorhanden sind. `auto-revert` ermöglicht:
 +
 `network interface show -vserver Cluster -fields auto-revert`
 
@@ -174,7 +174,7 @@ Cluster   node2_clus1  true
 Cluster   node2_clus2  true
 ----
 ====
-. Fahren Sie die ISL-Ports 0/55 und 0/56 auf dem BES-53248-Switch cs1 herunter:
+. Schalten Sie die ISL-Ports 0/55 und 0/56 am BES-53248-Switch cs1 ab:
 +
 .Beispieltopologie anzeigen
 [%collapsible]
@@ -186,16 +186,16 @@ Cluster   node2_clus2  true
 (cs1)(interface 0/55-0/56)# *shutdown*
 ----
 ====
-. Entfernen Sie alle Kabel vom BES-53248 cs2 Switch, und verbinden Sie sie dann mit den gleichen Ports am BES-53248 newc2 Switch.
-. Bringen Sie die ISLs-Ports 0/55 und 0/56 zwischen den switches cs1 und newcs2 auf, und überprüfen Sie dann den Betriebsstatus des Port-Kanals.
+. Entfernen Sie alle Kabel vom BES-53248 cs2 Switch und schließen Sie sie dann an die gleichen Ports am BES-53248 newcs2 Switch an.
+. Aktivieren Sie die ISL-Ports 0/55 und 0/56 zwischen den Switches cs1 und newcs2 und überprüfen Sie dann den Betriebsstatus des Portkanals.
 +
-Der Link-Status für Port-Kanal 1/1 sollte *up* sein und alle Mitgliedsports sollten unter der Überschrift Port Active wahr sein.
+Der Verbindungsstatus für Portkanal 1/1 sollte *up* sein und alle Mitgliedsports sollten unter der Überschrift „Port aktiv“ den Wert „True“ haben.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel aktiviert die ISL-Ports 0/55 und 0/56 und zeigt den Link-Status für Port-Channel 1/1 auf Switch cs1 an:
+Dieses Beispiel aktiviert die ISL-Ports 0/55 und 0/56 und zeigt den Verbindungsstatus für Portkanal 1/1 auf Switch cs1 an:
 
 [listing, subs="+quotes"]
 ----
@@ -223,10 +223,10 @@ Ports  Timeout       Speed      Active
        partner/long
 ----
 ====
-. Aktivieren Sie auf dem neuen Switch newcs2 alle Ports, die mit den Knoten-Cluster-Schnittstellen verbunden sind (Ports 1 bis 16).
+. Auf dem neuen Switch newcs2 müssen alle Ports, die mit den Schnittstellen des Knotenclusters verbunden sind (Ports 1 bis 16), wieder aktiviert werden.
 +
 
-NOTE: Wenn Sie zusätzliche Lizenzen für zusätzliche Ports erworben haben, fahren Sie diese Ports auch herunter.
+NOTE: Falls Sie zusätzliche Lizenzen für weitere Ports erworben haben, schalten Sie auch diese Ports ab.
 
 +
 .Beispiel anzeigen
@@ -244,7 +244,7 @@ Password:
 (newcs2)(config)# *exit*
 ----
 ====
-. Vergewissern Sie sich, dass Port e0b *up* ist:
+. Überprüfen Sie, ob Port e0b *aktiv* ist:
 +
 `network port show -ipspace Cluster`
 
@@ -252,7 +252,7 @@ Password:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die Ausgabe sollte wie folgt aussehen:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 [listing, subs="+quotes"]
 ----
@@ -275,14 +275,14 @@ e0a       Cluster      Cluster          up   9000  auto/10000  healthy  false
 e0b       Cluster      Cluster          up   9000  auto/auto   -        false
 ----
 ====
-. Auf dem gleichen Node, den Sie im vorherigen Schritt verwendet haben, warten Sie, bis der Cluster LIF node1_clus2 on node1 die automatische Wiederherstellung ermöglicht.
+. Warten Sie auf demselben Knoten, den Sie im vorherigen Schritt verwendet haben, bis der Cluster-LIF node1_clus2 auf Knoten 1 automatisch zurückgesetzt wird.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird LIF node1_clus2 auf node1 erfolgreich zurückgesetzt, wenn er umgekehrt wurde `Is Home` Ist `true` Und der Hafen ist e0b.
+In diesem Beispiel wird LIF node1_clus2 auf node1 erfolgreich zurückgesetzt, wenn `Is Home` Ist `true` und der Port ist e0b.
 
-Mit dem folgenden Befehl werden Informationen zu den LIFs auf beiden Nodes angezeigt. Wenn das Einrichten des ersten Node erfolgreich ist `Is Home` Ist `true` In diesem Beispiel werden für beide Cluster-Schnittstellen und sie die richtigen Port-Zuweisungen zeigen `e0a` Und `e0b` Auf Knoten 1.
+Der folgende Befehl zeigt Informationen über die LIFs auf beiden Knoten an.  Das Hochfahren des ersten Knotens ist erfolgreich, wenn `Is Home` Ist `true` für beide Cluster-Schnittstellen und sie zeigen die korrekten Portzuweisungen an, in diesem Beispiel `e0a` Und `e0b` auf Knoten1.
 
 [listing, subs="+quotes"]
 ----
@@ -298,7 +298,7 @@ Cluster
             node2_clus2  up/up      169.254.19.183/16  node2      e0a     false
 ----
 ====
-. Zeigen Sie Informationen über die Nodes in einem Cluster an:
+. Informationen über die Knoten in einem Cluster anzeigen:
 +
 `cluster show`
 
@@ -306,7 +306,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird der Systemzustand des Node für angegeben `node1` Und `node2` In diesem Cluster befindet sich `true`:
+Dieses Beispiel zeigt, dass der Knotenzustand für `node1` Und `node2` in diesem Cluster ist `true` :
 
 [listing, subs="+quotes"]
 ----
@@ -317,7 +317,7 @@ node1  true     true          true
 node2  true     true          true
 ----
 ====
-. Bestätigen Sie die folgende Clusternetzwerkkonfiguration:
+. Bestätigen Sie die folgende Cluster-Netzwerkkonfiguration:
 +
 `network port show`
 
@@ -361,7 +361,7 @@ Cluster
 4 entries were displayed.
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster-Netzwerk ordnungsgemäß ist:
+. Überprüfen Sie, ob das Clusternetzwerk fehlerfrei funktioniert:
 +
 `show isdp neighbors`
 
@@ -393,11 +393,11 @@ cs1          0/55    179         R             BES-53248   0/55
 cs1          0/56    179         R             BES-53248   0/56
 ----
 ====
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie Ihre Schalter ausgetauscht haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

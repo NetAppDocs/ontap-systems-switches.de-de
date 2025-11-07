@@ -2,22 +2,22 @@
 permalink: other/switch_linkout.html 
 sidebar: sidebar 
 keywords: cisco, Nexus 5596, CN1601 
-summary: Sie können diese Links für andere Switch-Modelle verwenden. 
+summary: Über diese Links können Sie auch andere Schaltermodelle aufrufen. 
 ---
-= Frühere Modelle
+= Ältere Modelle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Über diese Links finden Sie Dokumentationen zu früheren Modellen von Cluster- und Speicher-Switches.  Über die Links gelangen Sie zu einer anderen Dokumentationsseite.
+Über diese Links finden Sie die Dokumentation für ältere Modelle von Cluster- und Speicher-Switches.  Die Links führen Sie zu einer anderen Dokumentationsseite.
 
 * https://mysupport.netapp.com/documentation/docweb/index.html?productID=62376&language=en-US["Cisco Nexus 5596"]
 * https://mysupport.netapp.com/documentation/docweb/index.html?productID=62373&language=en-USNetApp["CN1601"]
 
 
 
-NOTE: Die Nexus 5596UP/5596T Cluster Switches sind bei NetApp nicht mehr erhältlich, werden von Cisco aber bei begrenztem tim unterstützt.
+NOTE: Die Cluster-Switches Nexus 5596UP/5596T sind nicht mehr bei NetApp erhältlich, werden aber von Cisco noch für eine begrenzte Zeit unterstützt.
 
-Die Dokumentation für die Switch-Modelle AFF und FAS, die das Ende des Hardware Support erreicht haben, steht dem Kunden im zur Verfügung https://mysupport.netapp.com/documentation/productsatoz/index.html?archive=true["Archivierung"].
+Die Dokumentation für AFF und FAS Switch-Modelle, deren Hardware-Support ausgelaufen ist, steht Kunden zur Verfügung im https://mysupport.netapp.com/documentation/productsatoz/index.html?archive=true["Archiv"] Die

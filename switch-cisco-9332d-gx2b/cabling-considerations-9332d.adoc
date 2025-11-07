@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: 9332d-gx2b cabling setup, 9332d-gx2b switches configuration, nx-os 
 summary: Lesen Sie die folgenden Informationen, bevor Sie Ihren Cisco 9332D-GX2B-Switch konfigurieren. 
 ---
-= Prüfen Sie die Verkabelung und Konfigurationsüberlegungen
+= Überprüfung der Verkabelung und Konfigurationsüberlegungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -29,4 +29,4 @@ Wenn Sie einen Switch-Port mithilfe von NVIDIA ConnectX-6 Dx (CX6-DX) NIC-Ports 
 (cs1)(config)# *exit*
 (cs1)# *copy running-config startup-config*
 ----
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports.
+Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.

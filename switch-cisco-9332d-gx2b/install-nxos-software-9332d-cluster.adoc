@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: procedure, install, nx-os, software, nexus, cluster, switch, install the nx-os software - cisco nexus 9332d-gc2b 
 summary: Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 9332D-GX2B-Cluster-Switch installieren oder aktualisieren. 
 ---
-= Installieren oder aktualisieren Sie die NX-OS-Software
+= Installieren oder aktualisieren Sie die NX-OS-Software.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -15,49 +15,48 @@ Befolgen Sie dieses Verfahren, um die NX-OS-Software auf dem Nexus 9332D-GX2B-Sw
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
 Überprüfen Sie Folgendes:
 
-* Schließen Sie den Vorgang inlink:install-nxos-overview-9332d-cluster.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"] .
-* Ein aktuelles Backup der Switch-Konfiguration.
-* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
+* Führen Sie die Prozedur inlink:install-nxos-overview-9332d-cluster.html["Bereiten Sie die Installation von NX-OS und RCF vor."] Die
+* Eine aktuelle Sicherungskopie der Switch-Konfiguration.
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
 
 
-.Vorgeschlagene Dokumentation
-* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch Seite"^]
+.Empfohlene Dokumentation
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switch-Seite"^]
 +
-In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und NX-OS-Versionen.
+In der Switch-Kompatibilitätstabelle finden Sie die unterstützten ONTAP und NX-OS-Versionen.
 
-* link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-guides-list.html["Software-Upgrade- und Downgrade-Anleitungen"^]
+* link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-guides-list.html["Anleitungen für Software-Upgrades und -Downgrades"^]
 +
-Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website.
+Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco -Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco -Website.
 
-* link:https://www.cisco.com/c/dam/en/us/td/docs/dcn/tools/nexus-9k3k-issu-matrix/index.html["Cisco Nexus 9000 und 3000 Upgrade und ISSU Matrix"^]
+* link:https://www.cisco.com/c/dam/en/us/td/docs/dcn/tools/nexus-9k3k-issu-matrix/index.html["Cisco Nexus 9000 und 3000 Upgrade- und ISSU-Matrix"^]
 +
-Enthält Informationen zu störenden Upgrades/Downgrades für Cisco NX-OS-Software auf Switches der Nexus 9000-Serie
-Basierend auf Ihren aktuellen und Zielversionen.
+Bietet Informationen zu unterbrechenden Upgrades/Downgrades der Cisco NX-OS-Software auf Switches der Nexus 9000-Serie basierend auf Ihren aktuellen und Zielversionen.
 
 +
-Wählen Sie auf der Seite *Disruptive Upgrade* aus, und wählen Sie aus der Dropdown-Liste Ihr aktuelles Release und Ihr Ziel-Release aus.
+Wählen Sie auf der Seite *Disruptives Upgrade* aus und wählen Sie Ihre aktuelle Version und die Zielversion aus der Dropdown-Liste.
 
 
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Namen der beiden Cisco Switches sind cs1 und cs2.
+* Die Namen der beiden Cisco Switches lauten cs1 und cs2.
 * Die Knotennamen sind node1-01, node1-02, node1-03 und node1-04.
 * Die Cluster-LIF-Namen sind node1-01_clus1, node1-01_clus2, node1-02_clus1, node1-02_clus2, node1-03_clus1, node1-03_clus2, node1-04_clus1 und node1-04_clus2.
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 
 
 
 
 == Installieren Sie die Software
 
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 9000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 9000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 [IMPORTANT]
 ====
@@ -68,12 +67,12 @@ Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der C
 ====
 .Schritte
 . Verbinden Sie den Switch mit dem Verwaltungsnetzwerk.
-. Überprüfen Sie mit dem Ping-Befehl die Verbindung zum Server, der die NX-OS-Software und die RCF hostet.
+. Verwenden Sie den Ping-Befehl, um die Verbindung zum Server zu überprüfen, auf dem die NX-OS-Software und die RCF gehostet werden.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird überprüft, ob der Switch den Server unter der IP-Adresse 172.19.2 erreichen kann:
+Dieses Beispiel bestätigt, dass der Switch den Server unter der IP-Adresse 172.19.2.1 erreichen kann:
 
 [listing, subs="+quotes"]
 ----
@@ -83,7 +82,7 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 [source, cli]
 ----
@@ -134,7 +133,7 @@ node1-01/lldp
 +
 .. *Cluster-Ports*
 +
-... Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+... Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 [source, cli]
 ----
@@ -182,7 +181,7 @@ e7a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e7b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
-... Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+... Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 [source, cli]
 ----
@@ -212,7 +211,7 @@ Cluster
 8 entries were displayed.
 ----
 ====
-... Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+... Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 [source, cli]
 ----
@@ -439,7 +438,7 @@ shelf id connector-state remote-port    remote-device
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 [source, cli]
 ----
@@ -553,9 +552,9 @@ Active Package(s):
 cs2#
 ----
 ====
-. Installieren Sie das NX-OS Image.
+. Installieren Sie das NX-OS-Image.
 +
-Durch die Installation der Image-Datei wird sie bei jedem Neustart des Switches geladen.
+Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switches geladen.
 
 +
 .Beispiel anzeigen
@@ -692,7 +691,7 @@ Active Package(s):
 cs2#
 ----
 ====
-. Aktualisieren Sie das EPLD-Bild, und starten Sie den Switch neu.
+. Aktualisieren Sie das EPLD-Image und starten Sie den Switch neu.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -743,7 +742,7 @@ EPLDs upgraded.
 Module 1 EPLD upgrade is successful.
 ----
 ====
-. Melden Sie sich nach dem Neustart des Switches erneut an, und überprüfen Sie, ob die neue EPLD-Version erfolgreich geladen wurde.
+. Nach dem Neustart des Switches melden Sie sich erneut an und überprüfen Sie, ob die neue Version von EPLD erfolgreich geladen wurde.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -767,7 +766,7 @@ GEM  FPGA                        0x2
 +
 .. *Cluster-Ports*
 +
-... Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
+... Überprüfen Sie, ob die Cluster-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 [source, cli]
 ----
@@ -814,7 +813,7 @@ e7a       Cluster      Cluster          up   9000  auto/100000 healthy false
 e7b       Cluster      Cluster          up   9000  auto/100000 healthy false
 ----
 ====
-... Überprüfen Sie den Switch-Systemzustand des Clusters:
+... Überprüfen Sie den Zustand der Switches im Cluster:
 +
 [source, cli]
 ----
@@ -1074,7 +1073,7 @@ shelf id connector-state remote-port    remote-device
 
 
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -1098,11 +1097,11 @@ node1-04             true    true          true
 ----
 ====
 . Wiederholen Sie die Schritte 6 bis 13, um die NX-OS-Software und EPLD-Images auf Switch cs1 zu installieren.
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Vergewissern Sie sich, dass die Cluster-LIFs auf ihren Home-Port zurückgesetzt wurden:
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihren Heimatport zurückgekehrt sind:
 +
 [source, cli]
 ----
@@ -1131,12 +1130,12 @@ Cluster
 ----
 ====
 +
-Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie manuell vom lokalen Node zurück:
+Falls Cluster-LIFs nicht zu ihren Heimatports zurückgekehrt sind, setzen Sie sie manuell vom lokalen Knoten aus zurück:
 
 +
 `network interface revert -vserver Cluster -lif <lif-name>`
 
 
 
-.Was kommt als Nächstes?
-Nachdem Sie die NX-OS-Software installiert oder aktualisiert haben,link:install-upgrade-rcf-overview-cluster.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."] .
+.Wie geht es weiter?
+Nach der Installation oder Aktualisierung der NX-OS-Software,link:install-upgrade-rcf-overview-cluster.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."] Die

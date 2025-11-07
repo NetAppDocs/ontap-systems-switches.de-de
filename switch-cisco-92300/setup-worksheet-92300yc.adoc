@@ -2,770 +2,770 @@
 permalink: switch-cisco-92300/setup-worksheet-92300yc.html 
 sidebar: sidebar 
 keywords: cable worksheet, Cisco NX 92300YC 
-summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden. 
+summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt anhand des ausgefüllten Beispiel-Verkabelungsarbeitsblatts ausfüllen. 
 ---
-= Füllen Sie das Cisco Nexus 92300YC-Verkabelungsarbeitsblatt aus
+= Vollständiges Verkabelungs-Arbeitsblatt für Cisco Nexus 92300YC
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter, und füllen Sie das Verkabelungsarbeitsblatt aus.
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter und füllen Sie das Verkabelungsarbeitsblatt aus.
 
-Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
 
 
 
-== Beispiel für eine Verkabelung
+== Beispiel-Verkabelungsarbeitsblatt
 
-Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
-| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+| Switch-Port | Knoten- und Portnutzung | Switch-Port | Knoten- und Portnutzung 
 
 
  a| 
 1
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 1
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 2
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 2
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 3
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 3
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 4
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 4
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 5
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 5
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 6
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 6
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 7
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 7
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 8
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 8
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 9
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 9
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 10
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 10
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 11
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 11
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 12
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 12
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 13
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 13
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 14
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 14
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 15
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 15
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 16
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 16
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 17
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 17
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 18
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 18
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 19
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 19
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 20
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 20
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 21
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 21
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 22
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 22
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 23
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 23
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 24
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 24
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 25
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 25
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 26
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 26
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 27
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 27
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 28
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 28
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 29
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 29
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 30
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 30
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 31
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 31
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 32
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 32
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 33
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 33
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 34
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 34
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 35
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 35
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 36
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 36
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 37
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 37
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 38
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 38
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 39
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 39
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 40
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 40
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 41
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 41
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 42
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 42
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 43
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 43
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 44
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 44
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 45
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 45
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 46
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 46
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 47
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 47
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 48
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
  a| 
 48
  a| 
-10/25-GbE-Node
+10/25 GbE-Knoten
 
 
 
  a| 
 49
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 49
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 50
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 50
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 51
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 51
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 52
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 52
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 53
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 53
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 54
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 54
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 55
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 55
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 56
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 56
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 57
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 57
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 58
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 58
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 59
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 59
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 60
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 60
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 61
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 61
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 62
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 62
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 63
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 63
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 64
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
  a| 
 64
  a| 
-40/100-GbE-Node
+40/100-GbE-Knoten
 
 
 
  a| 
 65
  a| 
-100-GbE-ISL für Switch B-Port 65
+100-GbE-ISL-zu-Switch-B-Port 65
  a| 
 65
  a| 
-100-GbE-ISL für Switch A-Port 65
+100-GbE-ISL-zu-Switch-A-Port 65
 
 
 
  a| 
 66
  a| 
-100-GbE-ISL für Switch B-Port 66
+100-GbE-ISL-zu-Switch-B-Port 66
  a| 
 66
  a| 
-100-GbE-ISL für Switch A-Port 65
+100-GbE-ISL-zu-Switch-A-Port 65
 
 |===
 
 
 == Leeres Verkabelungsarbeitsblatt
 
-Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
-| Switch-Port | Node-/Port-Verwendung | Switch-Port | Node-/Port-Verwendung 
+| Switch-Port | Knoten-/Portnutzung | Switch-Port | Knoten-/Portnutzung 
 
 
  a| 
@@ -1347,23 +1347,23 @@ Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu 
  a| 
 65
  a| 
-ISL zu Switch B Port 65
+ISL zum Schalter B Port 65
  a| 
 65
  a| 
-ISL für Switch A Port 65
+ISL zum Umschalten von Port 65
 
 
 
  a| 
 66
  a| 
-ISL zu Switch B Port 66
+ISL zum Schalter B Port 66
  a| 
 66
  a| 
-ISL für Switch A Port 66
+ISL zum Umschalten von Port 66
 
 |===
 .Was kommt als nächstes
-link:install-switch-92300yc.html["Den Schalter einbauen"] .
+link:install-switch-92300yc.html["Installieren Sie den Schalter"].

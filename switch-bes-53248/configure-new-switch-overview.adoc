@@ -2,7 +2,7 @@
 permalink: switch-bes-53248/configure-new-switch-overview.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure new bes-53248 switch 
-summary: Lesen Sie vor der Konfiguration von BES-53248-Cluster-Switches die Konfigurationsübersicht. 
+summary: Bevor Sie die Cluster-Switches vom Typ BES-53248 konfigurieren, lesen Sie bitte die Konfigurationsübersicht. 
 ---
 = Installations- und Einrichtungsablauf für BES-53248-Switches
 :allow-uri-read: 
@@ -11,19 +11,19 @@ summary: Lesen Sie vor der Konfiguration von BES-53248-Cluster-Switches die Konf
 
 
 [role="lead"]
-Der BES-53248 ist ein Bare Metal-Switch für den Einsatz in ONTAP Clustern mit zwei bis 24 Nodes.
+Der BES-53248 ist ein Bare-Metal-Switch, der für den Einsatz in ONTAP Clustern mit zwei bis 24 Knoten konzipiert ist.
 
 Befolgen Sie diese Arbeitsschritte, um Ihre BES-53248-Switches zu installieren und einzurichten.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-bes53248.html["Überprüfen der Konfigurationsanforderungen"]
 [role="quick-margin-para"]
-Überprüfen Sie die Konfigurationsanforderungen für den Cluster-Switch BES-53248.
+Prüfen Sie die Konfigurationsanforderungen für den Cluster-Switch BES-53248.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:components-bes53248.html["Überprüfen Sie die Komponenten und Teilenummern"]
 [role="quick-margin-para"]
 Überprüfen Sie die Komponenten und Teilenummern für den Cluster-Switch BES-53248.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-bes53248.html["Überprüfen Sie die erforderlichen Unterlagen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:required-documentation-bes53248.html["Überprüfen Sie die erforderlichen Unterlagen"]
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre BES-53248-Switches und den ONTAP Cluster einzurichten.
 

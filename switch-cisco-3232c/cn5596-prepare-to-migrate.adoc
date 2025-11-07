@@ -2,29 +2,29 @@
 permalink: switch-cisco-3232c/cn5596-prepare-to-migrate.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Cluster einsetzen. 
+summary: Sie können Cisco Nexus 3232C Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Vorbereitung der Migration von Nexus 5596 Switches auf Nexus 3232C-Switches
+= Bereiten Sie die Migration von Nexus 5596-Switches auf Nexus 3232C-Switches vor.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um Ihre Cisco Nexus 5596 Switches für die Migration zu Cisco Nexus 3232C Switches vorzubereiten.
+Befolgen Sie diese Schritte, um Ihre Cisco Nexus 5596 Switches für die Migration auf Cisco Nexus 3232C Switches vorzubereiten.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
 . Informationen zu den Geräten in Ihrer Konfiguration anzeigen:
@@ -35,7 +35,7 @@ Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe bena
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster-Interconnect-Switch konfiguriert wurden:
+Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:
 
 [listing, subs="+quotes"]
 ----
@@ -56,9 +56,9 @@ n2         /cdp
 8 entries were displayed.
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus der einzelnen Cluster-Schnittstellen fest.
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle.
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show -role cluster`
 
@@ -66,7 +66,7 @@ n2         /cdp
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Netzwerkanschlussattribute an den Knoten n1 und n2 angezeigt:
+Das folgende Beispiel zeigt die Netzwerkportattribute der Knoten n1 und n2:
 
 [listing, subs="+quotes"]
 ----
@@ -102,7 +102,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die allgemeinen Informationen zu allen LIFs auf dem Cluster, einschließlich ihrer aktuellen Ports, angezeigt:
+Das folgende Beispiel zeigt die allgemeinen Informationen zu allen LIFs im Cluster, einschließlich ihrer aktuellen Ports:
 
 [listing, subs="+quotes"]
 ----
@@ -123,7 +123,7 @@ Cluster
 8 entries were displayed.
 ----
 ====
-.. Informationen über die erkannten Cluster-Switches anzeigen:
+.. Informationen zu den gefundenen Cluster-Switches anzeigen:
 +
 `system cluster-switch show`
 
@@ -131,7 +131,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die aktiven Cluster-Switches angezeigt:
+Das folgende Beispiel zeigt die aktiven Cluster-Switches:
 
 [listing, subs="+quotes"]
 ----
@@ -159,34 +159,34 @@ CL2                           cluster-network    10.10.1.102     NX5596
 ====
 
 
-. Vergewissern Sie sich, dass die entsprechenden RCF und das entsprechende Image auf den neuen 3232C-Switches installiert sind, wenn dies für Ihre Anforderungen erforderlich ist, und nehmen Sie die wesentlichen Änderungen an der Website vor, z. B. Benutzer und Passwörter, Netzwerkadressen und andere Anpassungen.
+. Vergewissern Sie sich, dass die entsprechenden RCF-Dateien und Images gemäß Ihren Anforderungen auf den neuen 3232C-Switches installiert sind, und nehmen Sie die notwendigen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen und andere Anpassungen.
 +
 [NOTE]
 ====
-Sie müssen beide Switches derzeit vorbereiten.
+Sie müssen jetzt beide Schalter vorbereiten.
 
 ====
 +
-Wenn Sie ein RCF- und Image-Upgrade durchführen müssen, müssen Sie die folgenden Schritte ausführen:
+Falls Sie die RCF-Datei und das Image aktualisieren müssen, müssen Sie die folgenden Schritte ausführen:
 
 +
-.. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
+.. Gehen Sie auf die Seite _Cisco Ethernet Switches_ auf der NetApp Support-Website.
 +
 link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende Version des RCF herunter.
-.. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Bildsoftware herunter.
+.. Laden Sie die passende Version der RCF herunter.
+.. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter.
 +
-Siehe die Seite __ONTAP 8.x oder höher Referenzkonfigurationsdateien für Cluster- und Verwaltungsnetzwerk-Switches__ Download, und wählen Sie dann die entsprechende Version aus.
+Die Downloadseite „ONTAP 8.x oder später Cluster- und Management-Netzwerk-Switch-Referenzkonfigurationsdateien“ finden Sie hier. Wählen Sie dort die passende Version aus.
 
 +
-Informationen zur richtigen Version finden Sie auf der Download-Seite „_ONTAP 8.x“ oder höher für Cluster-Netzwerk-Switch_.
+Die richtige Version finden Sie auf der Downloadseite für _ONTAP 8.x oder spätere Cluster-Netzwerk-Switches_.
 
 
 
-. Migrieren Sie die LIFs, die mit dem zweiten Nexus 5596 Switch verbunden sind, der ersetzt werden soll:
+. Migrieren Sie die LIFs, die mit dem zweiten zu ersetzenden Nexus 5596-Switch verbunden sind:
 +
 `network interface migrate -vserver _vserver-name_ -lif _lif-name_ -source-node _source-node-name_ - destination-node _node-name_ -destination-port _destination-port-name_`
 
@@ -194,7 +194,7 @@ Informationen zur richtigen Version finden Sie auf der Download-Seite „_ONTAP 
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die LIFs, die für die Knoten n1 und n2 migriert werden; die LIF-Migration muss auf allen Knoten durchgeführt werden:
+Das folgende Beispiel zeigt die Migration der LIFs für die Knoten n1 und n2; die LIF-Migration muss auf allen Knoten durchgeführt werden:
 
 [listing, subs="+quotes"]
 ----
@@ -208,7 +208,7 @@ cluster::*> *network interface migrate -vserver Cluster -lif n2_clus3 -source-no
 destination-node n2 -destination-port e0d*
 ----
 ====
-. Überprüfen Sie den Systemzustand des Clusters:
+. Überprüfen Sie den Zustand des Clusters:
 +
 `network interface show -role cluster`
 
@@ -216,7 +216,7 @@ destination-node n2 -destination-port e0d*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird der aktuelle Status jedes Clusters angezeigt:
+Das folgende Beispiel zeigt den aktuellen Status der einzelnen Cluster:
 
 [listing, subs="+quotes"]
 ----
@@ -239,5 +239,5 @@ Cluster
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 link:cn5596-configure-ports.html["Konfigurieren Sie Ihre Ports"].

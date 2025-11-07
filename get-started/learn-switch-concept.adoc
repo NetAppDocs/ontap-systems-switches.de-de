@@ -2,7 +2,7 @@
 permalink: get-started/learn-switch-concept.html 
 sidebar: sidebar 
 keywords:  
-summary: Informieren Sie sich über Cluster-, Storage- und Shared-Switches. 
+summary: Erfahren Sie mehr über Cluster, Speicher und gemeinsam genutzte Switches. 
 ---
 = Erfahren Sie mehr über AFX-Systeme, Cluster, Speicher und gemeinsam genutzte Switches
 :allow-uri-read: 
@@ -13,16 +13,16 @@ summary: Informieren Sie sich über Cluster-, Storage- und Shared-Switches.
 [role="lead"]
 NetApp bietet AFX-Systeme, Cluster, Speicher und gemeinsam genutzte Switches, die eine interne Kommunikation ermöglichen und die unterbrechungsfreie Verschiebung von Daten und Netzwerkschnittstellen über den Cluster ermöglichen.
 
-Die „Front-End“-Switches sorgen für Konnektivität mit Host Storage, während die „Back-End“-Cluster-Switches Verbindungen zwischen zwei oder mehr NetApp Controllern ermöglichen.
+Die „Front-End“-Switches stellen die Verbindung zum Host-Speicher her, während die „Back-End“-Cluster-Switches Verbindungen zwischen zwei oder mehr NetApp Controllern herstellen.
 
 
-NOTE: Es werden nur von NetApp validierte Back-End Switches (im Auftrag von NetApp) unterstützt.
+NOTE: Es werden ausschließlich von NetApp validierte Back-End-Switches (bestellt bei NetApp) unterstützt.
 
 
 
 == AFX-Systemschalter
 
-Mit den Switches von AFX Systems können Sie schnelle, energieeffiziente und platzsparende Netzwerk-Switches erstellen.  Aufgrund ihrer geringen Größe und hohen Portdichte sind sie ideal für die Handhabung großer Netzwerke.  Die Ports unterstützen unterschiedliche Geschwindigkeiten und können in mehrere Verbindungen aufgeteilt werden.  Zu den von NetApp unterstützten AFX-System-Switches gehören:
+Mit den Switches von AFX Systems können Sie schnelle, energieeffiziente und platzsparende Netzwerk-Switches erstellen. Aufgrund ihrer geringen Größe und hohen Portdichte sind sie ideal für die Handhabung großer Netzwerke. Die Ports unterstützen unterschiedliche Geschwindigkeiten und können in mehrere Verbindungen aufgeteilt werden. Zu den von NetApp unterstützten AFX-System-Switches gehören:
 
 * Cisco Nexus 9332D-GX2B
 * Cisco Nexus 9364D-GX2A
@@ -32,7 +32,7 @@ Mit den Switches von AFX Systems können Sie schnelle, energieeffiziente und pla
 
 == Cluster-Switches
 
-Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen. Von NetApp unterstützte Cluster-Switches:
+Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen. Zu den von NetApp unterstützten Cluster-Switches gehören:
 
 * Broadcom BES-53248
 * Cisco Nexus 9336C-FX2
@@ -41,9 +41,9 @@ Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstelle
 
 
 
-== Storage Switches
+== Speicherschalter
 
-Storage-Switches ermöglichen das Routen von Daten zwischen Servern und Storage Arrays in einem Storage Area Network (SAN). Von NetApp unterstützte Storage-Switches:
+Storage-Switches ermöglichen das Routing von Daten zwischen Servern und Storage-Arrays in einem Storage Area Network (SAN).  Zu den von NetApp unterstützten Speicher-Switches gehören:
 
 * Cisco Nexus 9336C-FX2
 * NVIDIA SN2100
@@ -51,18 +51,18 @@ Storage-Switches ermöglichen das Routen von Daten zwischen Servern und Storage 
 
 
 
-== Shared-Switches
+== Gemeinsam genutzte Switches
 
-Mit Shared Switches können Sie Cluster- und Storage-Funktionen zu einer Shared-Switch-Konfiguration kombinieren, indem Sie gemeinsam genutzte Cluster- und Storage-RCFs unterstützen. Der von NetApp unterstützte Shared-Switch ist:
+Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren, indem sie die Verwendung gemeinsam genutzter Cluster- und Speicher-RCFs unterstützen.  Der von NetApp unterstützte Shared Switch ist:
 
 * Cisco Nexus 9336C-FX2
 
 
 
 
-== End-of-Verfügbarkeit
+== Ende der Verfügbarkeit
 
-Folgende Storage Switches sind nicht mehr erhältlich. Sie werden jedoch weiterhin unterstützt:
+Die folgenden Speichersysteme sind nicht mehr käuflich erhältlich, werden aber weiterhin unterstützt:
 
 * Cisco Nexus 3232C
 * Cisco Nexus 3132Q-V

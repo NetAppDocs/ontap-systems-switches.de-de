@@ -5,10 +5,10 @@ indexpage:
     ONTAP -Clusterbereitstellungen zu installieren, zu konfigurieren und zu warten.
   keywords: cluster switches, cisco nexus switches, ontap clusters
   lead: Cluster-Switches ermöglichen Ihnen den Aufbau von ONTAP Clustern mit mehr
-    als zwei Knoten.  Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage
+    als zwei Knoten. Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage
     für skalierbare Cluster-Interconnect-Lösungen in NetApp ONTAP Umgebungen.
   tiles:
-  - title: Los geht's
+  - title: Erste Schritte
     links:
     - title: Broadcom BES-53248
       url: "../switch-bes-53248/configure-new-switch-overview.html"

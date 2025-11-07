@@ -2,26 +2,26 @@
 permalink: switch-nvidia-sn2100/install-cable-shelves-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: sn2100 cabling setup, msn2100 sn2100 switches configuration, cumulus linux 
-summary: 'Wenn Sie über ein System verfügen, bei dem die NS224 Laufwerk-Shelfs als Switch-Attached Storage verkabelt werden müssen (kein Direct-Attached Storage), verwenden Sie die hier bereitgestellten Informationen.' 
+summary: 'Falls Sie ein System haben, in dem die NS224-Laufwerksschächte als Switch-Attached Storage (nicht als Direct-Attached Storage) verkabelt werden müssen, verwenden Sie die hier bereitgestellten Informationen.' 
 ---
-= Verbinden Sie die NS224-Shelfs als Switch-Attached Storage
+= Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrungslösung.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie über ein System verfügen, bei dem die NS224 Laufwerk-Shelfs als Switch-Attached Storage verkabelt werden müssen (kein Direct-Attached Storage), verwenden Sie die hier bereitgestellten Informationen.
+Falls Sie ein System haben, in dem die NS224-Laufwerksschächte als Switch-Attached Storage (nicht als Direct-Attached Storage) verkabelt werden müssen, verwenden Sie die hier bereitgestellten Informationen.
 
-* Kabel-NS224-Laufwerk-Shelfs über Storage-Switches:
+* Kabel NS224 treibt Regale über Speicherschalter an:
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2876580["Verkabelung, Switch-Attached NS224 Laufwerk-Shelfs"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2876580["Kabelumschalter-angeschlossene NS224-Laufwerksschächte"^]
 
-* Bestätigen Sie die unterstützte Hardware, z. B. die Storage-Switches und Kabel, für Ihr Plattformmodell:
+* Prüfen Sie, ob Ihre Plattformmodelle mit unterstützter Hardware wie Speicherschaltern und Kabeln kompatibel sind:
 +
 https://hwu.netapp.com/["NetApp Hardware Universe"^]
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie Ihre Regale verkabelt haben, können Sielink:configure-sn2100-cluster.html["Konfigurieren Sie den Switch"] Die

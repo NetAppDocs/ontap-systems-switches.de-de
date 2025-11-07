@@ -20,18 +20,18 @@ summary: Ab ONTAP 9.9.1 können Sie Cisco Nexus 9364d-gx2a-Switches verwenden, u
 
 == Netzwerkanforderungen
 
-Für alle Switch-Konfigurationen benötigen Sie die folgenden Netzwerkinformationen.
+Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen.
 
-* IP-Subnetz für den Management-Netzwerkdatenverkehr
-* Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
+* IP-Subnetz für den Verwaltungsnetzwerkverkehr
+* Hostnamen und IP-Adressen für jeden Speichersystem-Controller und alle entsprechenden Switches
 * Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird.
-* Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+* Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen.
 
 
 
 
 == Verkabelungsanforderungen
 
-* Sie verfügen über die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelstecker für Ihre Switches. Siehe https://hwu.netapp.com["Hardware Universe"^].
-* Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen.
+* Sie verfügen über die passende Anzahl und Art an Kabeln und Kabelsteckern für Ihre Switches. Siehe die https://hwu.netapp.com["Hardware Universe"^] Die
+* Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolenport herstellen.
 

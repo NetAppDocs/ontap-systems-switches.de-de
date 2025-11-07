@@ -2,19 +2,19 @@
 permalink: switch-bes-53248/configure-ssh.html 
 sidebar: sidebar 
 keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, bes, enable ssh on bes-53248 cluster switches - bes-53248 switches 
-summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Zum Aktivieren von SSH an BES-53248-Cluster-Switches generieren Sie zuerst die SSH-Schlüssel und aktivieren dann SSH.' 
+summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Health Monitor (CSHM) und der Protokollerfassungsfunktionen. Um SSH auf BES-53248 Cluster-Switches zu aktivieren, müssen Sie zuerst die SSH-Schlüssel generieren und anschließend SSH aktivieren.' 
 ---
-= Aktivieren Sie SSH bei BES-53248 Cluster-Switches
+= Aktivieren Sie SSH auf BES-53248 Cluster-Switches.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie die Funktionen des Ethernet Switch Health Monitor (CSHM) und der Protokollsammlung verwenden, müssen Sie die SSH-Schlüssel generieren und dann SSH auf den Cluster-Switches aktivieren.
+Wenn Sie die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollerfassung verwenden, müssen Sie die SSH-Schlüssel generieren und anschließend SSH auf den Cluster-Switches aktivieren.
 
 .Schritte
-. Vergewissern Sie sich, dass SSH deaktiviert ist:
+. Überprüfen Sie, ob SSH deaktiviert ist:
 +
 `show ip ssh`
 
@@ -41,7 +41,7 @@ SCP server Administrative Mode: ............... Disabled
 ----
 ====
 +
-** Wenn SSH nicht deaktiviert ist, deaktivieren Sie es wie folgt:
+** Falls SSH nicht deaktiviert ist, deaktivieren Sie es wie folgt:
 +
 `no ip ssh server enable`
 
@@ -58,7 +58,7 @@ SCP server Administrative Mode: ............... Disabled
 ====
 +
 
-WARNING: Stellen Sie sicher, dass Sie SSH deaktivieren, bevor Sie die Schlüssel ändern. Andernfalls wird auf dem Switch eine Warnung ausgegeben.
+WARNING: Stellen Sie sicher, dass Sie SSH deaktivieren, bevor Sie die Schlüssel ändern, andernfalls wird eine Warnung auf dem Switch angezeigt.
 
 
 
@@ -136,10 +136,10 @@ Config file 'startup-config' created successfully.
 Configuration Saved!
 ----
 ====
-. Verschlüsseln Sie die SSH-Schlüssel (nur für *FIPS-Modus*):
+. Verschlüsseln Sie die SSH-Schlüssel (nur für den *FIPS-Modus*):
 +
 
-CAUTION: Im FIPS-Modus müssen die Schlüssel aus Sicherheitsgründen mit einer Passphrase verschlüsselt werden. Wenn kein verschlüsselter Schlüssel vorhanden ist, kann die Anwendung nicht gestartet werden. Die Schlüssel werden mithilfe der folgenden Befehle erstellt und verschlüsselt:
+CAUTION: Im FIPS-Modus müssen die Schlüssel aus Sicherheitsgründen mit einer Passphrase verschlüsselt werden.  Fehlt ein verschlüsselter Schlüssel, kann die Anwendung nicht gestartet werden.  Die Schlüssel werden mithilfe der folgenden Befehle erstellt und verschlüsselt:
 
 +
 .Beispiel anzeigen
@@ -188,7 +188,7 @@ Configuration Saved!
 +
 `reload`
 
-. Vergewissern Sie sich, dass SSH aktiviert ist:
+. Überprüfen Sie, ob SSH aktiviert ist:
 +
 `show ip ssh`
 
@@ -216,5 +216,5 @@ SCP server Administrative Mode: ............... Enabled
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie SSH aktiviert haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

@@ -2,123 +2,123 @@
 permalink: switch-bes-53248/migrate-to-2n-switched.html 
 sidebar: sidebar 
 keywords: two-node switchless clusters, migrating to a two-node switched BES-53248 cluster environment,BES-53248 switches, migrating two-node switched clusters,2-node 
-summary: Wenn Sie über ein 2-Node-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei auf ein 2-Node-Cluster mit Switches migrieren, das von Broadcom unterstützte BES-53248 Cluster-Switches enthält 
+summary: Wenn Sie über einen Zwei-Knoten-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei zu einem Zwei-Knoten-Cluster mit Switches migrieren, der von Broadcom unterstützte BES-53248-Cluster-Switches enthält. 
 ---
-= Migration zu einer NetApp Cluster-Umgebung mit Switch
+= Migration zu einer umgeschalteten NetApp Clusterumgebung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie über eine vorhandene Cluster-Umgebung mit zwei Nodes (ohne Switch) verfügen, können Sie mit den von Broadcom unterstützten BES-53248 Cluster-Switches zu einer 2-Node-_Switched_-Cluster-Umgebung migrieren. Dadurch können Sie eine Skalierung über zwei Nodes im Cluster hinaus vornehmen.
+Wenn Sie bereits eine _switchlose_ Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von Broadcom-unterstützten BES-53248 Cluster-Switches zu einer _switched_ Clusterumgebung mit zwei Knoten migrieren. Dadurch können Sie die Anzahl der Knoten im Cluster auf über zwei Knoten erhöhen.
 
-Der Migrationsprozess funktioniert bei allen Cluster Node-Ports mit optischen oder Twinax-Ports, wird bei diesem Switch jedoch nicht unterstützt, wenn Knoten integrierte 10GBASE-T RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.
+Der Migrationsprozess funktioniert für alle Clusterknotenports, die optische oder Twinax-Ports verwenden. Er wird jedoch von diesem Switch nicht unterstützt, wenn die Knoten Onboard-10GBASE-T-RJ45-Ports für die Clusternetzwerkports verwenden.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-Prüfen Sie die folgenden Anforderungen für die Cluster-Umgebung.
+Bitte beachten Sie die folgenden Anforderungen an die Clusterumgebung.
 
-* Beachten Sie, dass die meisten Systeme auf jedem Controller zwei dedizierte Cluster-Netzwerk-Ports benötigen.
-* Vergewissern Sie sich, dass der BES-53248-Cluster-Switch wie unter beschrieben eingerichtet ist link:replace-switch-reqs.html["Anforderungen ersetzen"] Bevor Sie mit diesem Migrationsprozess beginnen.
-* Bei der Konfiguration mit zwei Nodes ohne Switches stellen Sie Folgendes sicher:
+* Beachten Sie, dass die meisten Systeme zwei dedizierte Cluster-Netzwerkanschlüsse an jedem Controller benötigen.
+* Stellen Sie sicher, dass der Cluster-Switch BES-53248 wie beschrieben eingerichtet ist.link:replace-switch-reqs.html["Ersetzen Sie die Anforderungen"] vor Beginn dieses Migrationsprozesses.
+* Für die schalterlose Zwei-Knoten-Konfiguration ist Folgendes sicherzustellen:
 +
-** Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.
-** Auf den Knoten wird ONTAP 9.5P8 und höher ausgeführt. Die Unterstützung für 40/100-GbE-Cluster-Ports beginnt mit der EFOS-Firmware-Version 3.4.4.6 und höher.
-** Alle Cluster-Ports haben den Status *up*.
-** Alle logischen Cluster-Schnittstellen (LIFs) befinden sich im *up*-Zustand und auf ihren Home-Ports.
+** Die Zwei-Knoten-Konfiguration ohne Schalter ist ordnungsgemäß eingerichtet und funktioniert.
+** Auf den Knoten läuft ONTAP 9.5P8 und höher.  Die Unterstützung für 40/100 GbE Cluster-Ports beginnt mit der EFOS Firmware-Version 3.4.4.6 und höher.
+** Alle Cluster-Ports befinden sich im Status *up*.
+** Alle logischen Schnittstellen (LIFs) des Clusters befinden sich im Status *up* und sind an ihren jeweiligen Ports angeschlossen.
 
 
-* Stellen Sie für die von Broadcom unterstützte Konfiguration von BES-53248 Cluster-Switches Folgendes sicher:
+* Stellen Sie für die Konfiguration des von Broadcom unterstützten BES-53248 Cluster-Switches Folgendes sicher:
 +
-** Der BES-53248 Cluster-Switch funktioniert bei beiden Switches vollständig.
-** Beide Switches verfügen über Management-Netzwerk-Konnektivität.
-** Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
-** BES-53248 Node-to-Node-Switch und Switch-to-Switch-Verbindungen verwenden Twinax- oder Glasfaserkabel.
+** Der Cluster-Switch BES-53248 ist auf beiden Switches voll funktionsfähig.
+** Beide Switches verfügen über eine Management-Netzwerkanbindung.
+** Es besteht Konsolenzugriff auf die Cluster-Switches.
+** Die Knoten-zu-Knoten- und Schalter-zu-Schalter-Verbindungen des BES-53248 verwenden Twinax- oder Glasfaserkabel.
 +
-Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.
 
 
 
-* Inter-Switch Link (ISL)-Kabel sind an beiden BES-53248-Switches mit den Ports 0/55 und 0/56 verbunden.
-* Die Erstinstallation der BES-53248 Switches ist damit abgeschlossen. Dadurch erreichen Sie Folgendes:
+* Inter-Switch Link (ISL)-Kabel sind an die Ports 0/55 und 0/56 beider BES-53248-Switches angeschlossen.
+* Die Erstkonfiguration beider BES-53248-Switches ist abgeschlossen, sodass:
 +
-** Bei BES-53248-Switches wird die neueste Softwareversion ausgeführt.
-** Beim Kauf von BES-53248 Switches sind optionale Portlizenzen installiert.
-** Auf die Switches werden Referenzkonfigurationsdateien (RCFs) angewendet.
+** Die BES-53248-Switches laufen mit der neuesten Softwareversion.
+** Die Switches BES-53248 verfügen über optional installierte Portlizenzen, sofern diese erworben wurden.
+** Referenzkonfigurationsdateien (RCFs) werden auf die Switches angewendet.
 
 
-* Auf den neuen Switches werden alle Site-Anpassungen (SMTP, SNMP und SSH) konfiguriert.
+* Sämtliche Standortanpassungen (SMTP, SNMP und SSH) werden auf den neuen Switches konfiguriert.
 
 
 .Geschwindigkeitsbeschränkungen der Portgruppe
-* Die 48 10/25-GbE-Ports (SFP28/SFP+) werden wie folgt in 12 x 4-Port-Gruppen kombiniert: Ports 1–4, 5–8, 9–12, 13–16, 17–20, 21-24, 25-28, 29-32, 33-36, 37-40, 41-44 und 45-48.
-* Die Port-Geschwindigkeit von SFP28/SFP+ muss für alle Ports der 4-Port-Gruppe gleich (10 GbE oder 25 GbE) sein.
+* Die 48 10/25GbE (SFP28/SFP+)-Ports sind in 12 x 4-Port-Gruppen wie folgt zusammengefasst: Ports 1-4, 5-8, 9-12, 13-16, 17-20, 21-24, 25-28, 29-32, 33-36, 37-40, 41-44 und 45-48.
+* Die SFP28/SFP+-Portgeschwindigkeit muss bei allen Ports der 4-Port-Gruppe gleich sein (10GbE oder 25GbE).
 * Wenn die Geschwindigkeiten in einer 4-Port-Gruppe unterschiedlich sind, funktionieren die Switch-Ports nicht ordnungsgemäß.
 
 
 
 
-== In Cluster-Umgebung migrieren
+== Migration zur Clusterumgebung
 
 .Zu den Beispielen
-In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
+Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Knotennomenklatur:
 
-* Die Namen der BES-53248-Switches lauten `cs1` Und `cs2`.
-* Die Namen der Cluster-SVMs lauten `node1` Und `node2`.
-* Die Namen der LIFs sind `node1_clus1` Und `node1_clus2` Auf Node 1, und `node2_clus1` Und `node2_clus2` Auf Knoten 2.
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
-* Die in diesem Verfahren verwendeten Cluster-Ports sind `e0a` Und `e0b`.
+* Die Namen der BES-53248-Switches lauten: `cs1` Und `cs2` Die
+* Die Namen der Cluster-SVMs sind `node1` Und `node2` Die
+* Die Namen der LIFs sind `node1_clus1` Und `node1_clus2` auf Knoten 1 und `node2_clus1` Und `node2_clus2` jeweils an Knoten 2.
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
+* Die in diesem Verfahren verwendeten Cluster-Ports sind `e0a` Und `e0b` Die
 +
-Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält die aktuellsten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei x die Dauer des Wartungsfensters in Stunden ist.
+wobei x die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 +
-Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+Der folgende Befehl unterdrückt die automatische Fallerstellung für zwei Stunden:
 
 +
 [listing]
 ----
 cluster1::*> system node autosupport invoke -node * -type all -message MAINT=2h
 ----
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
 +
-Die erweiterte Eingabeaufforderung (`*>`Erscheint.
+Die erweiterte Aufforderung(`*>` ) erscheint.
 
 
 
 
 
-=== Schritt: Ports und Verkabelung konfigurieren
+=== Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
-. Deaktivieren Sie alle aktivierten Node-Ports (keine ISL-Ports) auf beiden neuen Cluster-Switches cs1 *und* cs2.
+. Deaktivieren Sie alle aktivierten, zum Knoten führenden Ports (nicht ISL-Ports) an beiden neuen Cluster-Switches cs1 *und* cs2.
 +
 
-NOTE: Sie dürfen die ISL-Ports nicht deaktivieren.
+NOTE: Die ISL-Ports dürfen nicht deaktiviert werden.
 
 +
-Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 16 auf Switch cs1 deaktiviert sind:
+Das folgende Beispiel zeigt, dass die dem Knoten zugewandten Ports 1 bis 16 am Switch cs1 deaktiviert sind:
 
 +
 [listing, subs="+quotes"]
@@ -129,7 +129,7 @@ Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 16 auf Switch cs1 deaktiv
 (cs1)(Interface 0/1-0/16)# *exit*
 (cs1)(Config)# *exit*
 ----
-. Überprüfen Sie, ob die ISL- und die physischen Ports auf der ISL zwischen den beiden BES-53248-Switches cs1 und cs2 aktiviert sind:
+. Überprüfen Sie, ob die ISL und die physischen Ports der ISL zwischen den beiden BES-53248-Switches cs1 und cs2 aktiv sind:
 +
 `show port-channel`
 
@@ -137,7 +137,7 @@ Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 16 auf Switch cs1 deaktiv
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs1 aktiv sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs1 aktiv sind:
 
 [listing, subs="+quotes"]
 ----
@@ -160,7 +160,7 @@ Ports  Timeout       Speed      Active
        partner/long
 (cs1) #
 ----
-Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs2 aktiv sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs2 aktiv sind:
 
 [listing, subs="+quotes"]
 ----
@@ -188,13 +188,13 @@ Ports  Timeout       Speed      Active
 `show isdp neighbors`
 
 +
-Dieser Befehl enthält Informationen zu den Geräten, die mit dem System verbunden sind.
+Dieser Befehl liefert Informationen über die mit dem System verbundenen Geräte.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs1 aufgeführt:
+Das folgende Beispiel listet die benachbarten Geräte am Switch cs1 auf:
 
 [listing, subs="+quotes"]
 ----
@@ -207,7 +207,7 @@ Device ID      Intf     Holdtime  Capability   Platform    Port ID
 cs2            0/55     176       R            BES-53248   0/55
 cs2            0/56     176       R            BES-53248   0/56
 ----
-Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs2 aufgeführt:
+Das folgende Beispiel listet die benachbarten Geräte am Switch cs2 auf:
 
 [listing, subs="+quotes"]
 ----
@@ -221,7 +221,7 @@ cs2            0/55     176       R            BES-53248   0/55
 cs2            0/56     176       R            BES-53248   0/56
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-Ports aktiv sind:
+. Überprüfen Sie, ob alle Cluster-Ports aktiv sind:
 +
 `network port show -ipspace Cluster`
 
@@ -250,7 +250,7 @@ e0a       Cluster      Cluster          up   9000  auto/10000 healthy
 e0b       Cluster      Cluster          up   9000  auto/10000 healthy
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-LIFs betriebsbereit sind und betriebsbereit sind:
+. Überprüfen Sie, ob alle Cluster-LIFs aktiv und betriebsbereit sind:
 +
 `network interface show -vserver Cluster`
 
@@ -272,20 +272,20 @@ Cluster
             node2_clus2  up/up      169.254.19.183/16  node2         e0b     true
 ----
 ====
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
 ----
-. Trennen Sie das Kabel vom Cluster-Port e0a auf node1, und verbinden sie e0a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
+. Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 1 und verbinden Sie dann e0a mit Port 1 des Cluster-Switches cs1 unter Verwendung der von den BES-53248-Switches unterstützten geeigneten Verkabelung.
 +
-Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält weitere Informationen zur Verkabelung.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] enthält weitere Informationen zur Verkabelung.
 
-. Trennen Sie das Kabel vom Cluster-Port e0a auf node2 und verbinden sie e0a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dabei die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
-. Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.
+. Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 2 und verbinden Sie dann e0a mit Port 2 des Cluster-Switches cs1 unter Verwendung der von den BES-53248-Switches unterstützten geeigneten Verkabelung.
+. Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.
 +
-Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs1 aktiviert sind:
+Das folgende Beispiel zeigt, dass die Ports 1 bis 16 am Switch cs1 aktiviert sind:
 
 +
 [listing, subs="+quotes"]
@@ -296,7 +296,7 @@ Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs1 aktiviert si
 (cs1)(Interface 0/1-0/16)# *exit*
 (cs1)(Config)# *exit*
 ----
-. Vergewissern Sie sich, dass alle Cluster-Ports aktiv sind:
+. Überprüfen Sie, ob alle Cluster-Ports aktiv sind:
 +
 `network port show -ipspace Cluster`
 
@@ -325,7 +325,7 @@ e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-LIFs betriebsbereit sind und betriebsbereit sind:
+. Überprüfen Sie, ob alle Cluster-LIFs aktiv und betriebsbereit sind:
 +
 `network interface show -vserver Cluster`
 
@@ -347,7 +347,7 @@ Cluster
          node2_clus2  up/up      169.254.19.183/16  node2       e0b     true
 ----
 ====
-. Informationen zum Status der Nodes im Cluster anzeigen:
+. Informationen über den Status der Knoten im Cluster anzeigen:
 +
 `cluster show`
 
@@ -355,7 +355,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster angezeigt:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster an:
 
 [listing, subs="+quotes"]
 ----
@@ -367,11 +367,11 @@ node1                true    true          false
 node2                true    true          false
 ----
 ====
-. Trennen Sie das Kabel von Cluster-Port e0b auf node1, und verbinden Sie dann e0b mit Port 1 am Cluster-Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
-. Trennen Sie das Kabel von Cluster-Port e0b auf node2, und verbinden Sie dann e0b mit Port 2 am Cluster Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von den BES-53248-Switches unterstützt wird.
-. Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs2.
+. Trennen Sie das Kabel vom Cluster-Port e0b auf Knoten 1 und verbinden Sie dann e0b mit Port 1 auf Cluster-Switch cs2. Verwenden Sie dazu die von den BES-53248-Switches unterstützten geeigneten Kabel.
+. Trennen Sie das Kabel vom Cluster-Port e0b auf Knoten 2 und verbinden Sie dann e0b mit Port 2 des Cluster-Switches cs2 unter Verwendung der von den BES-53248-Switches unterstützten geeigneten Verkabelung.
+. Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs2.
 +
-Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs2 aktiviert sind:
+Das folgende Beispiel zeigt, dass die Ports 1 bis 16 am Switch cs2 aktiviert sind:
 
 +
 [listing, subs="+quotes"]
@@ -382,7 +382,7 @@ Das folgende Beispiel zeigt, dass die Ports 1 bis 16 auf Switch cs2 aktiviert si
 (cs2)(Interface 0/1-0/16)# *exit*
 (cs2)(Config)# *exit*
 ----
-. Vergewissern Sie sich, dass alle Cluster-Ports aktiv sind:
+. Überprüfen Sie, ob alle Cluster-Ports aktiv sind:
 +
 `network port show -ipspace Cluster`
 
@@ -415,31 +415,31 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 
 
 
-=== Schritt 3: Überprüfen Sie die Konfiguration
+=== Schritt 3: Konfiguration überprüfen
 
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*
 ----
-. Überprüfen Sie, ob die Cluster-LIFs auf ihre Home-Ports zurückgesetzt wurden (dies kann eine Minute dauern):
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
 +
 `network interface show -vserver Cluster`
 
 +
-Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Sie sie manuell zurück:
+Falls die Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurden, setzen Sie sie manuell zurück:
 
 +
 `network interface revert -vserver Cluster -lif *`
 
-. Vergewissern Sie sich, dass alle Schnittstellen angezeigt werden `true` Für `Is Home`:
+. Überprüfen Sie, ob alle Schnittstellen angezeigt werden. `true` für `Is Home` :
 +
 `network interface show -vserver Cluster`
 
 +
 
-NOTE: Dies kann einige Minuten dauern.
+NOTE: Dieser Vorgang kann mehrere Minuten dauern.
 
 +
 .Beispiel anzeigen
@@ -459,7 +459,7 @@ Cluster
           node2_clus2  up/up      169.254.19.183/16  node2      e0b     true
 ----
 ====
-. Vergewissern Sie sich, dass beide Knoten jeweils eine Verbindung zu jedem Switch haben:
+. Überprüfen Sie, ob beide Knoten jeweils eine Verbindung zu jedem Switch haben:
 +
 `show isdp neighbors`
 
@@ -467,7 +467,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Schalter:
 
 [listing, subs="+quotes"]
 ----
@@ -495,7 +495,7 @@ cs1            0/55         175       R            BES-53248   0/55
 cs1            0/56         175       R            BES-53248   0/56
 ----
 ====
-. Zeigen Sie Informationen zu den erkannten Netzwerkgeräten im Cluster an:
+. Informationen zu den in Ihrem Cluster gefundenen Netzwerkgeräten anzeigen:
 +
 `network device-discovery show -protocol cdp`
 
@@ -517,13 +517,13 @@ node1      /cdp
             e0b    cs2                       0/1               BES-53248
 ----
 ====
-. Vergewissern Sie sich, dass die Einstellungen deaktiviert sind:
+. Überprüfen Sie, ob die Einstellungen deaktiviert sind:
 +
 `network options switchless-cluster show`
 
 +
 
-NOTE: Es kann einige Minuten dauern, bis der Befehl abgeschlossen ist. Warten Sie, bis die Ankündigung „3 Minuten Lebensdauer abläuft“ abläuft.
+NOTE: Die Ausführung des Befehls kann mehrere Minuten dauern.  Warten Sie auf die Ansage „Noch 3 Minuten bis zum Ablauf der Gültigkeitsdauer“.
 
 +
 Der `false` Die Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseinstellungen deaktiviert sind:
@@ -534,7 +534,7 @@ Der `false` Die Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseins
 cluster1::*> *network options switchless-cluster show*
 Enable Switchless Cluster: false
 ----
-. Überprüfen Sie den Status der Node-Mitglieder im Cluster:
+. Überprüfen Sie den Status der Knoten im Cluster:
 +
 `cluster show`
 
@@ -542,7 +542,7 @@ Enable Switchless Cluster: false
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster:
 
 [listing, subs="+quotes"]
 ----
@@ -561,15 +561,15 @@ node2                true    true          false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -588,7 +588,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -620,11 +620,11 @@ RPC status:
 ----
 --
 ====
-. [[step9]]Ändern Sie die Berechtigungsebene zurück zu admin:
+. [[Schritt 9]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
@@ -638,9 +638,9 @@ cluster1::*> system node autosupport invoke -node * -type all -message MAINT=END
 ----
 ====
 +
-Weitere Informationen finden Sie unter: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB-Artikel: Wie kann die automatische Case-Erstellung während geplanter Wartungszeitfenster unterdrückt werden"^]
+Weitere Informationen finden Sie unter: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp Knowledge Base-Artikel: So unterdrücken Sie die automatische Fallerstellung während geplanter Wartungsfenster"^]
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

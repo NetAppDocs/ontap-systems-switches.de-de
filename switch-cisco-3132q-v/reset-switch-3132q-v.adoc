@@ -9,11 +9,11 @@ summary: Lesen Sie die folgenden Informationen, bevor Sie Ihren Cisco Nexus 3132
 
 
 [role="lead"]
-Um den Cluster-Switch 3132Q-V auf die Werkseinstellungen zurückzusetzen, müssen Sie die Einstellungen des Switches 3132Q-V löschen.
+Um den Cluster-Switch 3132Q-V auf die Werkseinstellungen zurückzusetzen, müssen Sie die Switch-Einstellungen 3132Q-V löschen.
 
-.Über diese Aufgabe
+.Informationen zu diesem Vorgang
 * Sie müssen über die serielle Konsole mit dem Switch verbunden sein.
-* Mit dieser Aufgabe wird die Konfiguration des Managementnetzwerks zurückgesetzt.
+* Diese Aufgabe setzt die Konfiguration des Managementnetzwerks zurück.
 
 
 .Schritte
@@ -41,6 +41,6 @@ Do you wish to proceed anyway? (y/n) [n] *y*
 This command will reboot the system. (y/n)? [n] *y*
 ----
 +
-Das System wird neu gestartet und der Konfigurationsassistent wird aufgerufen.  Wenn Sie während des Startvorgangs die Aufforderung „Auto Provisioning abbrechen und mit der normalen Einrichtung fortfahren?“ erhalten,  (ja/nein)[n]“, sollten Sie mit *ja* antworten, um fortzufahren.
+Das System wird neu gestartet und der Konfigurationsassistent wird aufgerufen. Wenn Sie während des Startvorgangs die Aufforderung „Auto Provisioning abbrechen und mit der normalen Einrichtung fortfahren?“ erhalten, (ja/nein)[n]“, sollten Sie mit *ja* antworten, um fortzufahren.
 
 

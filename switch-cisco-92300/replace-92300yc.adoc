@@ -2,7 +2,7 @@
 permalink: switch-cisco-92300/replace-92300yc.html 
 sidebar: sidebar 
 keywords: replace,upgrade cisco nexus 92300yc cluster switch 
-summary: 'Der Austausch eines defekten Nexus 92300YC Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren \(NDU\).' 
+summary: 'Der Austausch eines defekten Nexus 92300YC-Switches in einem Clusternetzwerk ist ein nicht-unterbrechendes Verfahren (NDU).' 
 ---
 = Ersetzen Sie einen Cisco Nexus 92300YC-Switch
 :allow-uri-read: 
@@ -11,33 +11,33 @@ summary: 'Der Austausch eines defekten Nexus 92300YC Switches in einem Cluster-N
 
 
 [role="lead"]
-Der Austausch eines defekten Nexus 92300YC Switches in einem Cluster-Netzwerk ist eine unterbrechungsfreie Prozedur (NDU).
+Der Austausch eines defekten Nexus 92300YC-Switches in einem Clusternetzwerk ist ein nicht-unterbrechendes Verfahren (NDU).
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-Stellen Sie vor dem Austausch des Switches Folgendes sicher:
+Vor dem Austausch des Schalters stellen Sie bitte Folgendes sicher:
 
-* In dem vorhandenen Cluster und der Netzwerkinfrastruktur:
+* In der bestehenden Cluster- und Netzwerkinfrastruktur:
 +
-** Das vorhandene Cluster wird mit mindestens einem vollständig verbundenen Cluster-Switch als voll funktionsfähig geprüft.
+** Der bestehende Cluster wurde als voll funktionsfähig verifiziert, wobei mindestens ein Cluster-Switch vollständig angeschlossen ist.
 ** Alle Cluster-Ports sind aktiv.
-** Alle logischen Cluster-Schnittstellen (LIFs) laufen und auf ihren Home-Ports.
-** Der ONTAP-Cluster ping-Cluster -Node node1 Befehl muss angeben, dass die grundlegende Konnektivität und die PMTU-Kommunikation auf allen Pfaden erfolgreich sind.
+** Alle logischen Schnittstellen (LIFs) des Clusters sind aktiv und an ihren jeweiligen Ports angeschlossen.
+** Der Befehl ONTAP cluster ping-cluster -node node1 muss anzeigen, dass die grundlegende Konnektivität und die Kommunikation größer als PMTU auf allen Pfaden erfolgreich sind.
 
 
-* Für den Nexus 92300YC-Ersatzschalter:
+* Für den Ersatzschalter Nexus 92300YC:
 +
-** Die Konnektivität des Managementnetzwerks am Ersatz-Switch funktioniert.
-** Der Konsolenzugriff auf den Ersatz-Switch erfolgt.
-** Die Node-Verbindungen sind Ports 1/1 bis 1/64.
+** Die Management-Netzwerkanbindung des Ersatz-Switches ist funktionsfähig.
+** Der Konsolenzugriff auf den Ersatzschalter ist eingerichtet.
+** Die Knotenverbindungen sind die Ports 1/1 bis 1/64.
 ** Alle Inter-Switch Link (ISL)-Ports sind an den Ports 1/65 und 1/66 deaktiviert.
-** Die gewünschte Referenzkonfigurationsdatei (RCF) und der NX-OS-Bildschalter werden auf den Switch geladen.
-** Die anfängliche Anpassung des Switches ist abgeschlossen, wie in beschrieben: link:configure-install-initial.html["Konfigurieren Sie den Cisco Nexus 92300YC-Switch"].
+** Die gewünschte Referenzkonfigurationsdatei (RCF) und das NX-OS-Betriebssystem-Image werden auf den Switch geladen.
+** Die erste Anpassung des Schalters ist abgeschlossen, wie in der folgenden Beschreibung detailliert aufgeführt:link:configure-install-initial.html["Konfigurieren Sie den Cisco Nexus 92300YC-Switch"] Die
 +
-Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH werden auf den neuen Switch kopiert.
+Alle zuvor vorgenommenen Anpassungen am Standort, wie z. B. STP, SNMP und SSH, werden auf den neuen Switch kopiert.
 
 
 
@@ -45,34 +45,34 @@ Alle zuvor erstellten Site-Anpassungen wie STP, SNMP und SSH werden auf den neue
 
 
 
-== Aktivieren Sie die Konsolenprotokollierung
+== Konsolenprotokollierung aktivieren
 
-NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch des Switches die folgenden Maßnahmen zu ergreifen:
+NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
 
-* Lassen Sie AutoSupport während der Wartung aktiviert.
-* Lösen Sie vor und nach der Wartung einen Wartungs-AutoSupport aus, um die Case-Erstellung für die Dauer der Wartung zu deaktivieren. Lesen Sie diesen Knowledge Base-Artikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Unterdrücken der automatischen Case-Erstellung während geplanter Wartungsfenster"^] Entnehmen.
-* Aktivieren Sie die Sitzungsprotokollierung für beliebige CLI-Sitzungen. Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["So konfigurieren Sie PuTTY für optimale Konnektivität zu ONTAP-Systemen"^].
-
-
+* Lassen Sie AutoSupport während der Wartungsarbeiten aktiviert.
+* Lösen Sie vor und nach der Wartung einen Wartungs AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Siehe diesen Wissensdatenbankartikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^] für weitere Einzelheiten.
+* Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Wissensdatenbankartikel. https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP -Systemen?"^] Die
 
 
-== Tauschen Sie den Schalter aus
+
+
+== Tauschen Sie den Schalter aus.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Namen der vorhandenen Nexus 92300YC Switches sind cs1 und cs2.
-* Der Name des neuen Nexus 92300YC Switches lautet newc2.
-* Die Node-Namen sind node1 und node2.
-* Die Cluster-Ports auf jedem Node lauten e0a und e0b.
-* Die Cluster-LIF-Namen sind node1_clug1 und node1_clus2 für node1, und node2_clus1 und node2_clus2 für node2.
-* Die Eingabeaufforderung für Änderungen an allen Cluster-Nodes lautet cluster1:*>
+* Die Namen der vorhandenen Nexus 92300YC Switches lauten cs1 und cs2.
+* Der neue Switch Nexus 92300YC trägt den Namen newcs2.
+* Die Knotennamen lauten Knoten1 und Knoten2.
+* Die Cluster-Ports auf jedem Knoten tragen die Namen e0a und e0b.
+* Die Cluster-LIF-Namen lauten node1_clus1 und node1_clus2 für Knoten 1 sowie node2_clus1 und node2_clus2 für Knoten 2.
+* Die Aufforderung zum Ändern aller Clusterknoten lautet cluster1::*>
 
 
-.Über diese Aufgabe
-Sie müssen den Befehl zum Migrieren einer Cluster-LIF von dem Node ausführen, auf dem die Cluster-LIF gehostet wird.
+.Informationen zu diesem Vorgang
+Sie müssen den Befehl zur Migration eines Cluster-LIF von dem Knoten ausführen, auf dem der Cluster-LIF gehostet wird.
 
-Die folgende Vorgehensweise basiert auf der folgenden Cluster-Netzwerktopologie:
+Das folgende Verfahren basiert auf der folgenden Cluster-Netzwerktopologie:
 
 .Topologie anzeigen
 [%collapsible]
@@ -164,20 +164,20 @@ Total entries displayed: 4
 
 === Schritt 1: Vorbereitung auf den Austausch
 
-. Installieren Sie das entsprechende RCF und Image auf dem Switch, newcs2, und nehmen Sie die erforderlichen Standortvorbereitungen vor.
+. Installieren Sie die entsprechende RCF-Datei und das Image auf dem Switch newcs2 und treffen Sie alle notwendigen Vorbereitungen vor Ort.
 +
-Überprüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und NX-OS-Software für den neuen Switch. Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen für die RCF- und NX-OS-Software benötigen, fahren Sie mit Schritt 2 fort.
+Prüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen der RCF- und NX-OS-Software für den neuen Switch.  Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und NX-OS-Software erforderlich sind, fahren Sie mit Schritt 2 fort.
 
 +
-.. Wechseln Sie auf der NetApp Support Site zur Referenzkonfigurationsdatei _Seite_ der Referenzkonfiguration für NetApp Cluster und Management-Netzwerk-Switches.
-.. Klicken Sie auf den Link für die Kompatibilitätsmatrix _Cluster Network and Management Network_, und notieren Sie anschließend die erforderliche Switch-Softwareversion.
-.. Klicken Sie auf den Zurück-Pfeil Ihres Browsers, um zur Seite *Beschreibung* zurückzukehren, klicken Sie auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und gehen Sie dann zur Seite *Download*.
-.. Befolgen Sie die Schritte auf der Download-Seite, um die korrekten RCF- und NX-OS-Dateien für die Version der installierten ONTAP-Software herunterzuladen.
+.. Gehen Sie auf der NetApp Support-Website zur Seite „NetApp Cluster and Management Network Switches Reference Configuration File Description Page“.
+.. Klicken Sie auf den Link zur _Kompatibilitätsmatrix für Cluster- und Managementnetzwerke_ und notieren Sie sich anschließend die erforderliche Switch-Softwareversion.
+.. Klicken Sie auf den Zurück-Pfeil Ihres Browsers, um zur *Beschreibungsseite* zurückzukehren, klicken Sie auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und gehen Sie dann zur *Download*-Seite.
+.. Folgen Sie den Anweisungen auf der Downloadseite, um die korrekten RCF- und NX-OS-Dateien für die Version der ONTAP -Software herunterzuladen, die Sie installieren.
 
 
-. Bei dem neuen Switch melden Sie sich als Administrator an und fahren Sie alle Ports ab, die mit den Node-Cluster-Schnittstellen verbunden werden (Ports 1/1 zu 1/64).
+. Melden Sie sich auf dem neuen Switch als Administrator an und fahren Sie alle Ports herunter, die mit den Knotenclusterschnittstellen verbunden werden (Ports 1/1 bis 1/64).
 +
-Wenn der Schalter, den Sie ersetzen, nicht funktionsfähig ist und ausgeschaltet ist, fahren Sie mit Schritt 4 fort. Die LIFs auf den Cluster-Nodes sollten für jeden Node bereits ein Failover auf den anderen Cluster-Port durchgeführt haben.
+Wenn der zu ersetzende Schalter nicht funktionsfähig und ausgeschaltet ist, fahren Sie mit Schritt 4 fort.  Die LIFs auf den Clusterknoten sollten bereits für jeden Knoten auf den anderen Clusterport umgeschaltet haben.
 
 +
 .Beispiel anzeigen
@@ -191,7 +191,7 @@ newcs2(config)# *interface e1/1-64*
 newcs2(config-if-range)# *shutdown*
 ----
 ====
-. Vergewissern Sie sich, dass für alle Cluster-LIFs die automatische Zurücksetzung aktiviert ist:
+. Überprüfen Sie, ob für alle Cluster-LIFs die automatische Rücksetzung aktiviert ist:
 +
 `network interface show -vserver Cluster -fields auto-revert`
 
@@ -221,15 +221,15 @@ Cluster      node2_clus2   true
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -247,7 +247,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -282,9 +282,9 @@ RPC status:
 ====
 
 
-=== Schritt: Kabel und Ports konfigurieren
+=== Schritt 2: Kabel und Anschlüsse konfigurieren
 
-. Fahren Sie die ISL-Ports 1/65 und 1/66 auf dem Nexus 92300YC-Switch cs1 herunter:
+. Schalten Sie die ISL-Ports 1/65 und 1/66 am Switch Nexus 92300YC cs1 ab:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -298,16 +298,16 @@ cs1(config-if-range)# *shutdown*
 cs1(config-if-range)#
 ----
 ====
-. Entfernen Sie alle Kabel vom Nexus 92300YC cs2 Switch, und verbinden Sie sie dann mit den gleichen Ports auf dem Nexus 92300YC newc2 Switch.
-. Bringen Sie die ISLs-Ports 1/65 und 1/66 zwischen den switches cs1 und newcs2 auf, und überprüfen Sie dann den Betriebsstatus des Port-Kanals.
+. Entfernen Sie alle Kabel vom Nexus 92300YC cs2-Switch und schließen Sie sie dann an dieselben Ports am Nexus 92300YC newcs2-Switch an.
+. Aktivieren Sie die ISL-Ports 1/65 und 1/66 zwischen den Switches cs1 und newcs2 und überprüfen Sie dann den Betriebsstatus des Portkanals.
 +
-Port-Channel sollte PO1(SU) angeben und Mitgliedsports sollten eth1/65(P) und eth1/66(P) angeben.
+Port-Channel sollte Po1(SU) und Member Ports sollten Eth1/65(P) und Eth1/66(P) anzeigen.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel aktiviert die ISL-Ports 1/65 und 1/66 und zeigt die Zusammenfassung des Port-Kanals am Switch cs1 an:
+Dieses Beispiel aktiviert die ISL-Ports 1/65 und 1/66 und zeigt die Port-Kanal-Zusammenfassung auf Switch cs1 an:
 
 [listing, subs="+quotes"]
 ----
@@ -334,7 +334,7 @@ Group Port-       Type     Protocol  Member Ports
 cs1(config-if-range)#
 ----
 ====
-. Vergewissern Sie sich, dass Port e0b auf allen Nodes aktiviert ist:
+. Überprüfen Sie, ob Port e0b auf allen Knoten aktiv ist:
 +
 `network port show ipspace Cluster`
 
@@ -342,7 +342,7 @@ cs1(config-if-range)#
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die Ausgabe sollte wie folgt aussehen:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 [listing, subs="+quotes"]
 ----
@@ -367,14 +367,14 @@ e0b       Cluster      Cluster          up   9000  auto/auto   -        false
 4 entries were displayed.
 ----
 ====
-. Setzen Sie auf demselben Node, den Sie im vorherigen Schritt verwendet haben, die Cluster-LIF, die dem Port im vorherigen Schritt zugeordnet ist, mithilfe des Befehls „Netzwerkschnittstelle revert“ zurück.
+. Auf demselben Knoten, den Sie im vorherigen Schritt verwendet haben, stellen Sie die Cluster-LIF, die dem Port im vorherigen Schritt zugeordnet ist, mit dem Befehl network interface revert wieder her.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird LIF node1_clus2 auf node1 erfolgreich zurückgesetzt, wenn der Wert für „Home“ wahr ist und der Port e0b ist.
+In diesem Beispiel wird LIF node1_clus2 auf node1 erfolgreich zurückgesetzt, wenn der Wert Home true ist und der Port e0b lautet.
 
-Die folgenden Befehle geben LIF zurück `node1_clus2` Ein `node1` Zu Home Port `e0a` Und zeigt Informationen zu den LIFs auf beiden Nodes an. Das Einrichten des ersten Node ist erfolgreich, wenn die Spalte IS Home für beide Clusterschnittstellen wahr ist und in diesem Beispiel die korrekten Port-Zuweisungen angezeigt werden `e0a` Und `e0b` Auf Knoten 1.
+Die folgenden Befehle geben LIF zurück. `node1_clus2` An `node1` zum Heimathafen `e0a` und zeigt Informationen über die LIFs auf beiden Knoten an.  Das Hochfahren des ersten Knotens ist erfolgreich, wenn die Spalte „Is Home“ für beide Cluster-Schnittstellen den Wert „true“ aufweist und die korrekten Portzuweisungen angezeigt werden. `e0a` Und `e0b` auf Knoten1.
 
 [listing, subs="+quotes"]
 ----
@@ -392,7 +392,7 @@ Cluster
 4 entries were displayed.
 ----
 ====
-. Zeigen Sie Informationen über die Nodes in einem Cluster an:
+. Informationen über die Knoten in einem Cluster anzeigen:
 +
 `cluster show`
 
@@ -400,7 +400,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel zeigt, dass der Zustand des Node für Node 1 und node2 in diesem Cluster „true“ lautet:
+Dieses Beispiel zeigt, dass der Knotenstatus für Knoten 1 und Knoten 2 in diesem Cluster „true“ ist:
 
 [listing, subs="+quotes"]
 ----
@@ -412,7 +412,7 @@ node1         false   true
 node2         true    true
 ----
 ====
-. Vergewissern Sie sich, dass alle physischen Cluster-Ports aktiv sind:
+. Überprüfen Sie, ob alle physischen Cluster-Ports aktiv sind:
 +
 `network port show ipspace Cluster`
 
@@ -447,7 +447,7 @@ e0b       Cluster      Cluster          up    9000  auto/10000  healthy  false
 
 
 
-=== Schritt 3: Führen Sie den Vorgang durch
+=== Schritt 3: Schließen Sie den Vorgang ab.
 
 . Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
@@ -456,15 +456,15 @@ e0b       Cluster      Cluster          up    9000  auto/10000  healthy  false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -482,7 +482,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -515,7 +515,7 @@ RPC status:
 ----
 --
 ====
-. [[step2]] Bestätigen Sie die folgende Clusternetzwerkkonfiguration:
+. [[step2]] Bestätigen Sie die folgende Cluster-Netzwerkkonfiguration:
 +
 `network port show`
 
@@ -608,5 +608,5 @@ Total entries displayed: 4
 ====
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].

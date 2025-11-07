@@ -16,22 +16,22 @@ Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Nexus 31
 .Bevor Sie beginnen
 Überprüfen Sie die folgenden Installationen und Verbindungen:
 
-* Ein aktuelles Backup der Switch-Konfiguration.
-* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
-* Der aktuelle RZB.
-* Eine Konsolenverbindung mit dem Switch, die bei der Installation des RCF erforderlich ist.
+* Eine aktuelle Sicherungskopie der Switch-Konfiguration.
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
+* Der aktuelle RCF.
+* Für die Installation des RCF ist eine Konsolenverbindung zum Switch erforderlich.
 
 
-.Über diese Aufgabe
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+.Informationen zu diesem Vorgang
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
-Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erforderlich.  Dies ist beabsichtigt, da RCF-Versionsänderungen die ISL-Konnektivität vorübergehend beeinträchtigen können.  Um einen unterbrechungsfreien Clusterbetrieb zu ermöglichen, migriert das folgende Verfahren alle Cluster-LIFs auf den operativen Partner-Switch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erforderlich. Dies ist beabsichtigt, da RCF-Versionsänderungen die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu ermöglichen, migriert das folgende Verfahren alle Cluster-LIFs auf den operativen Partner-Switch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
 
 
 == Schritt 1: Installieren Sie die RCF auf den Schaltern
 
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
@@ -60,9 +60,9 @@ cluster1-04/cdp
 cluster1::*>
 ----
 ====
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -ipspace Cluster`
 
@@ -105,7 +105,7 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 cluster1::*>
 ----
 ====
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -vserver Cluster`
 
@@ -131,7 +131,7 @@ Cluster
 cluster1::*>
 ----
 ====
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
@@ -165,18 +165,18 @@ cs2                         cluster-network    10.0.0.2         NX3132QV
 
 +
 
-NOTE: Verwenden Sie für ONTAP 9.8 und höher den Befehl `system switch ethernet show -is-monitoring-enabled-operational true`.
+NOTE: Für ONTAP 9.8 und höher verwenden Sie den Befehl `system switch ethernet show -is-monitoring-enabled-operational true` Die
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
 ----
 +
-Stellen Sie sicher, dass die automatische Umrüstung deaktiviert ist, nachdem Sie diesen Befehl ausgeführt haben.
+Stellen Sie sicher, dass die automatische Wiederherstellung nach Ausführung dieses Befehls deaktiviert ist.
 
-. Fahren Sie beim Cluster-Switch cs2 die mit den Cluster-Ports der Nodes verbundenen Ports herunter.
+. Schalten Sie auf dem Cluster-Switch cs2 die Ports ab, die mit den Cluster-Ports der Knoten verbunden sind.
 +
 [listing, subs="+quotes"]
 ----
@@ -217,7 +217,7 @@ Cluster
 cluster1::*>
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -237,7 +237,7 @@ cluster1-04          true    true          false
 cluster1::*>
 ----
 ====
-. Wenn Sie dies noch nicht getan haben, speichern Sie eine Kopie der aktuellen Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Textdatei kopieren:
+. Falls Sie dies noch nicht getan haben, speichern Sie eine Kopie der aktuellen Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Textdatei kopieren:
 +
 `show running-config`
 
@@ -248,10 +248,10 @@ cluster1::*>
 Stellen Sie sicher, dass Sie Folgendes konfigurieren: * Benutzername und Passwort * Verwaltungs-IP-Adresse * Standard-Gateway * Switch-Name
 
 ====
-. Speichern Sie grundlegende Konfigurationsdetails im `write_erase.cfg` Datei auf dem Bootflash.
+. Speichern Sie die grundlegenden Konfigurationsdetails in der `write_erase.cfg` Datei auf dem Bootflash.
 +
 
-NOTE: Beim Upgrade oder Anwenden eines neuen RCF müssen Sie die Switch-Einstellungen löschen und eine Grundkonfiguration durchführen.  Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten.
+NOTE: Beim Upgrade oder Anwenden eines neuen RCF müssen Sie die Switch-Einstellungen löschen und eine Grundkonfiguration durchführen. Sie müssen mit dem seriellen Konsolenport des Switches verbunden sein, um den Switch erneut einzurichten.
 
 +
 `cs2# show run | section "switchname" > bootflash:write_erase.cfg`
@@ -282,13 +282,13 @@ NOTE: Beim Upgrade oder Anwenden eines neuen RCF müssen Sie die Switch-Einstell
 `cs2# echo "hardware access-list tcam region qos 256" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] für weitere Details.
+Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] für weitere Einzelheiten.
 
-. Überprüfen Sie, ob die `write_erase.cfg` Die Datei wird wie erwartet ausgefüllt:
+. Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
 +
 `*show file bootflash:write_erase.cfg*`
 
-. Geben Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
+. Stellen Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
 +
 `cs2# *write erase*`
 
@@ -298,7 +298,7 @@ Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/Switches/Cisco-KB
 +
 `Do you wish to proceed anyway? (y/n)  [n] *y*`
 
-. Kopieren Sie die zuvor gespeicherte Grundkonfiguration in die Startkonfiguration.
+. Kopieren Sie die zuvor gespeicherte Basiskonfiguration in die Startkonfiguration.
 +
 `cs2# *copy bootflash:write_erase.cfg startup-config*`
 
@@ -309,15 +309,15 @@ Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/Switches/Cisco-KB
 +
 `This command will reboot the system. (y/n)?  [n] *y*`
 
-. Wiederholen Sie die Schritte 7 bis 14 am Schalter cs1.
-. Verbinden Sie die Cluster-Ports aller Knoten im ONTAP-Cluster mit den Switches cs1 und cs2.
+. Wiederholen Sie die Schritte 7 bis 14 auf Switch cs1.
+. Verbinden Sie die Cluster-Ports aller Knoten im ONTAP Cluster mit den Switches cs1 und cs2.
 
 
 
 
 == Schritt 2: Überprüfen Sie die Switch-Verbindungen
 
-. Stellen Sie sicher, dass die mit den Cluster-Ports verbundenen Switch-Ports *up* sind.
+. Überprüfen Sie, ob die mit den Cluster-Ports verbundenen Switch-Ports *aktiv* sind.
 +
 `show interface brief | grep up`
 
@@ -338,7 +338,7 @@ Eth1/8        1       eth  trunk  up      none                   100G(D) --
 .
 ----
 ====
-. Stellen Sie sicher, dass die ISL zwischen cs1 und cs2 funktionsfähig ist:
+. Überprüfen Sie, ob die ISL-Verbindung zwischen cs1 und cs2 funktionsfähig ist:
 +
 `show port-channel summary`
 
@@ -365,7 +365,7 @@ Group Port-       Type     Protocol  Member Ports
 cs1#
 ----
 ====
-. Vergewissern Sie sich, dass die Cluster-LIFs auf ihren Home-Port zurückgesetzt wurden:
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihren Heimatport zurückgekehrt sind:
 +
 `network interface show -vserver Cluster`
 
@@ -391,7 +391,7 @@ Cluster
 cluster1::*>
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -417,11 +417,11 @@ cluster1::*>
 
 == Schritt 3: Einrichten Ihres ONTAP Clusters
 
-NetApp empfiehlt, zum Einrichten neuer Cluster System Manager zu verwenden.
+NetApp empfiehlt, neue Cluster mit dem System Manager einzurichten.
 
 System Manager bietet einen einfachen und unkomplizierten Arbeitsablauf für die Einrichtung und Konfiguration des Clusters, einschließlich der Zuweisung einer IP-Adresse für die Knotenverwaltung, der Initialisierung des Clusters, der Erstellung einer lokalen Ebene, der Konfiguration von Protokollen und der Bereitstellung des anfänglichen Speichers.
 
-Siehelink:https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] für Einrichtungsanweisungen.
+Siehelink:https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP auf einem neuen Cluster mit System Manager"] für Einrichtungsanweisungen.
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation des RCF können Sie link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"]Die

@@ -4,15 +4,15 @@ sidebar: sidebar
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
 summary: Sie können die folgenden Befehle verwenden ...... 
 ---
-= Übersicht über den Systemcheck
+= Überblick über den Gesundheitscheck
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Zustandsüberwachung überwachen proaktiv bestimmte kritische Bedingungen in Ihrem Cluster und Warnmeldungen, wenn ein Fehler oder Risiko erkannt wird, aus.
+Die Gesundheitsmonitore überwachen proaktiv bestimmte kritische Zustände in Ihrem Cluster und geben Warnmeldungen aus, wenn sie einen Fehler oder ein Risiko erkennen.
 
-Führen Sie den folgenden Befehl aus, um die derzeit hochgezogene Statusüberwachungsanmeldungen des Ethernet-Switches anzuzeigen: `system health alert show -monitor ethernet-switch`
+Um die aktuell ausgelösten Warnmeldungen des Ethernet-Switch-Integritätsmonitors anzuzeigen, führen Sie folgenden Befehl aus: `system health alert show -monitor ethernet-switch`
 
-Führen Sie den folgenden Befehl aus, um die verfügbaren Warnmeldungen zur Systemzustandsüberwachung des Ethernet-Switches anzuzeigen: `system health alert definition show -monitor ethernet-switch`
+Um die verfügbaren Warnmeldungen des Ethernet-Switch-Integritätsmonitors anzuzeigen, führen Sie folgenden Befehl aus: `system health alert definition show -monitor ethernet-switch`

@@ -2,56 +2,56 @@
 permalink: switch-cisco-3132q-v/prepare-install-cisco-nexus-3132q.html 
 sidebar: sidebar 
 keywords: install, nx-os software, rcfs, cisco nexus 3132q-v, cluster switches 
-summary: 'Die Cisco NX-OS-Software und die Referenzkonfigurationsdateien (RCFs) müssen auf den Cisco Nexus 3132Q-V Cluster Switches installiert sein.' 
+summary: 'Die Cisco NX-OS Software und die Referenzkonfigurationsdateien (RCFs) müssen auf den Cisco Nexus 3132Q-V Cluster-Switches installiert sein.' 
 ---
-= Bereiten Sie die Installation der NX-OS-Software und der Referenzkonfigurationsdatei vor
+= Bereiten Sie die Installation der NX-OS-Software und der Referenzkonfigurationsdatei vor.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie die NX-OS-Software und die RCF-Datei (Reference Configuration File) installieren, gehen Sie wie folgt vor:
+Bevor Sie die NX-OS-Software und die Referenzkonfigurationsdatei (RCF) installieren, befolgen Sie bitte diese Schritte.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster-Interconnect-Ports `e0a` Und `e0b`.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports. `e0a` Und `e0b` Die
 
-Siehe link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
-
-
-NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
-
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
-
-* Die Namen der beiden Cisco Switches lauten `cs1` Und `cs2`.
-* Die Node-Namen sind `cluster1-01` Und `cluster1-02`.
-* Die LIF-Namen des Clusters sind `cluster1-01_clus1` Und `cluster1-01_clus2` Für Clustered 1-01 und `cluster1-02_clus1` Und `cluster1-02_clus2` Für Clustered 1-02.
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+Siehe dielink:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
 
 
-.Über diese Aufgabe
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+NOTE: Die Befehlsausgaben können je nach ONTAP Version variieren.
+
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
+
+* Die Namen der beiden Cisco Switches lauten: `cs1` Und `cs2` Die
+* Die Knotennamen lauten `cluster1-01` Und `cluster1-02` Die
+* Die Cluster-LIF-Namen sind `cluster1-01_clus1` Und `cluster1-01_clus2` für Cluster1-01 und `cluster1-02_clus1` Und `cluster1-02_clus2` für Cluster1-02.
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
+
+
+.Informationen zu diesem Vorgang
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
 +
-Die erweiterte Eingabeaufforderung (`*>`Erscheint.
+Die erweiterte Aufforderung(`*>` ) erscheint.
 
-. Zeigen Sie an, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster Interconnect-Switch konfiguriert sind:
+. Zeigen Sie an, wie viele Cluster-Verbindungsschnittstellen in jedem Knoten für jeden Cluster-Verbindungs-Switch konfiguriert sind:
 +
 `network device-discovery show -protocol cdp`
 
@@ -74,9 +74,9 @@ cluster1-01/cdp
             e0b    cs2                       Eth1/1            N3K-C3132Q-V
 ----
 ====
-. Überprüfen Sie den Administrations- oder Betriebsstatus der einzelnen Cluster-Schnittstellen.
+. Prüfen Sie den administrativen oder operativen Status jeder Cluster-Schnittstelle.
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show –ipspace Cluster`
 
@@ -103,7 +103,7 @@ e0a       Cluster      Cluster          up   9000  auto/10000 healthy
 e0b       Cluster      Cluster          up   9000  auto/10000 healthy
 ----
 ====
-.. Zeigt Informationen zu den LIFs an:
+.. Informationen zu den LIFs anzeigen:
 +
 `network interface show -vserver Cluster`
 
@@ -134,15 +134,15 @@ Cluster
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl „show“ ausführen, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
@@ -161,7 +161,7 @@ cluster1-02
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -193,7 +193,7 @@ RPC status:
 ----
 --
 ====
-. [[step6]]Überprüfen Sie, ob der `auto-revert` Befehl auf allen Cluster-LIFs aktiviert ist:
+. [[Schritt 6]]Überprüfen Sie, ob die `auto-revert` Der Befehl ist auf allen Cluster-LIFs aktiviert:
 +
 `network interface show -vserver Cluster -fields auto-revert`
 
@@ -217,5 +217,5 @@ Cluster
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie die Installation der NX-OS-Software und von RCF vorbereitet haben, link:install-nx-os-software-3132q-v.html["Installieren Sie die NX-OS-Software"]Die

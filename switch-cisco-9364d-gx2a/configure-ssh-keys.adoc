@@ -2,7 +2,7 @@
 permalink: switch-cisco-9364d-gx2a/configure-ssh-keys.html 
 sidebar: sidebar 
 keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9332d-gx2b 
-summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Health Monitor (CSHM) und der Protokollerfassungsfunktionen.  Um SSH auf Cisco 9364d-gx2a-Cluster-Switches zu aktivieren, generieren Sie zuerst die SSH-Schlüssel und aktivieren dann SSH.' 
+summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Health Monitor (CSHM) und der Protokollerfassungsfunktionen. Um SSH auf Cisco 9364d-gx2a-Cluster-Switches zu aktivieren, generieren Sie zuerst die SSH-Schlüssel und aktivieren dann SSH.' 
 ---
 = Überprüfen Sie Ihre SSH-Konfiguration
 :allow-uri-read: 
@@ -14,7 +14,7 @@ summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Heal
 Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, überprüfen Sie, ob SSH und SSH-Schlüssel auf den Switches aktiviert sind.
 
 .Schritte
-. Vergewissern Sie sich, dass SSH aktiviert ist:
+. Überprüfen Sie, ob SSH aktiviert ist:
 +
 [listing, subs="+quotes"]
 ----
@@ -66,5 +66,5 @@ sshServer              1          enabled
 ====
 
 
-.Was kommt als Nächstes?
-Nachdem Sie Ihre SSH-Konfiguration überprüft haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .
+.Wie geht es weiter?
+Nachdem Sie Ihre SSH-Konfiguration überprüft haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] Die

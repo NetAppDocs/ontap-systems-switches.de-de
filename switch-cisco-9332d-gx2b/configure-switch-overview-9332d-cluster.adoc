@@ -9,7 +9,7 @@ summary: Übersicht über die Installation und Konfiguration von Cisco 9332D-GX2
 
 
 [role="lead"]
-Der Cisco 9332D-GX2B-Switch ist Teil der Cisco Nexus 9000-Plattform.  Mit den AFX-System-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
+Der Cisco 9332D-GX2B-Switch ist Teil der Cisco Nexus 9000-Plattform. Mit den AFX-System-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9332D-GX2B-Switches zu installieren und einzurichten.
 
@@ -21,7 +21,7 @@ Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9332D-GX2B-Switches zu install
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9332D-GX2B-Switches und den ONTAP Cluster einzurichten.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:smart-call-9332d-cluster.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:smart-call-9332d-cluster.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
 [role="quick-margin-para"]
 Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
 

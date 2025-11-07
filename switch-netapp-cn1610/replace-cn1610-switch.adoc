@@ -2,58 +2,58 @@
 permalink: switch-netapp-cn1610/replace-cn1610-switch.html 
 sidebar: sidebar 
 keywords: replace, netapp cn1610, cluster switch 
-summary: Sie können einen defekten NetApp CN1610 Cluster Switch unterbrechungsfrei ersetzen, indem Sie eine bestimmte Abfolge von Aufgaben durchführen. 
+summary: Ein defekter NetApp CN1610 Cluster-Switch kann unterbrechungsfrei durch Ausführen einer bestimmten Abfolge von Aufgaben ausgetauscht werden. 
 ---
-= Ersetzen Sie einen NetApp CN1610 Cluster Switch
+= Ersetzen Sie einen NetApp CN1610 Cluster-Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um einen defekten NetApp CN1610-Switch in einem Cluster-Netzwerk auszutauschen. Dies ist ein unterbrechungsfreies Verfahren (Nondisruptive Procedure, NDU).
+Befolgen Sie diese Schritte, um einen defekten NetApp CN1610 Switch in einem Clusternetzwerk auszutauschen.  Dies ist ein nicht-unterbrechendes Verfahren (NDU).
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-Bevor Sie den Switch austauschen, müssen die folgenden Bedingungen erfüllt sein, bevor Sie den Switch in der aktuellen Umgebung und am Ersatz-Switch für das vorhandene Cluster und die Netzwerkinfrastruktur austauschen:
+Bevor Sie den Switch austauschen, müssen die folgenden Bedingungen in der aktuellen Umgebung und am Ersatz-Switch für die bestehende Cluster- und Netzwerkinfrastruktur erfüllt sein:
 
-* Das vorhandene Cluster muss mit mindestens einem vollständig verbundenen Cluster-Switch als voll funktionsfähig verifiziert werden.
-* Alle Cluster-Ports müssen *up* sein.
-* Alle logischen Cluster-Schnittstellen (LIFs) müssen aktiviert sein und dürfen nicht migriert worden sein.
-* Dem ONTAP Cluster `ping-cluster -node node1` Befehl muss angeben, dass die grundlegende Konnektivität und die Kommunikation größer als PMTU auf allen Pfaden erfolgreich ist.
-
-
-
-
-== Aktivieren Sie die Konsolenprotokollierung
-
-NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch des Switches die folgenden Maßnahmen zu ergreifen:
-
-* Lassen Sie AutoSupport während der Wartung aktiviert.
-* Lösen Sie vor und nach der Wartung einen Wartungs-AutoSupport aus, um die Case-Erstellung für die Dauer der Wartung zu deaktivieren. Lesen Sie diesen Knowledge Base-Artikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Unterdrücken der automatischen Case-Erstellung während geplanter Wartungsfenster"^] Entnehmen.
-* Aktivieren Sie die Sitzungsprotokollierung für beliebige CLI-Sitzungen. Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["So konfigurieren Sie PuTTY für optimale Konnektivität zu ONTAP-Systemen"^].
+* Der bestehende Cluster muss auf seine volle Funktionsfähigkeit überprüft werden, wobei mindestens ein Cluster-Switch vollständig angeschlossen sein muss.
+* Alle Cluster-Ports müssen *aktiv* sein.
+* Alle logischen Schnittstellen (LIFs) des Clusters müssen aktiv sein und dürfen nicht migriert worden sein.
+* Der ONTAP Cluster `ping-cluster -node node1` Der Befehl muss anzeigen, dass die grundlegende Konnektivität und die Kommunikation über PMTU hinaus auf allen Pfaden erfolgreich sind.
 
 
 
 
-== Tauschen Sie den Schalter aus
+== Konsolenprotokollierung aktivieren
 
-.Über diese Aufgabe
-Sie müssen den Befehl zum Migrieren einer Cluster-LIF von dem Node ausführen, auf dem die Cluster-LIF gehostet wird.
+NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
 
-In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
+* Lassen Sie AutoSupport während der Wartungsarbeiten aktiviert.
+* Lösen Sie vor und nach der Wartung einen Wartungs AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Siehe diesen Wissensdatenbankartikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^] für weitere Einzelheiten.
+* Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Wissensdatenbankartikel. https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP -Systemen?"^] Die
 
-* Die Namen der beiden CN1610 Cluster-Switches lauten `cs1` Und `cs2`.
-* Der Name des zu ersetzenden CN1610-Schalters (der defekte Schalter) lautet `old_cs1`.
-* Der Name des neuen CN1610-Schalters (der Ersatzschalter) lautet `new_cs1`.
-* Der Name des Partner-Switches, der nicht ersetzt wird, lautet `cs2`.
+
+
+
+== Tauschen Sie den Schalter aus.
+
+.Informationen zu diesem Vorgang
+Sie müssen den Befehl zur Migration eines Cluster-LIF von dem Knoten ausführen, auf dem der Cluster-LIF gehostet wird.
+
+Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Knotennomenklatur:
+
+* Die Namen der beiden CN1610 Cluster-Switches lauten: `cs1` Und `cs2` Die
+* Die Bezeichnung des zu ersetzenden CN1610-Schalters (des defekten Schalters) lautet: `old_cs1` Die
+* Die Bezeichnung des neuen CN1610-Schalters (des Ersatzschalters) lautet: `new_cs1` Die
+* Der Name des Partnerschalters, der nicht ausgetauscht wird, lautet: `cs2` Die
 
 
 .Schritte
-. Vergewissern Sie sich, dass die Startkonfigurationsdatei mit der ausgeführten Konfigurationsdatei übereinstimmt. Sie müssen diese Dateien lokal speichern, um sie während des Austauschs verwenden zu können.
+. Vergewissern Sie sich, dass die Startkonfigurationsdatei mit der laufenden Konfigurationsdatei übereinstimmt.  Sie müssen diese Dateien lokal speichern, um sie während des Austauschs verwenden zu können.
 +
 Die Konfigurationsbefehle im folgenden Beispiel gelten für FASTPATH 1.2.0.7:
 
@@ -68,9 +68,9 @@ Die Konfigurationsbefehle im folgenden Beispiel gelten für FASTPATH 1.2.0.7:
 (old_cs1)# *show startup-config*
 ----
 ====
-. Erstellen Sie eine Kopie der ausgeführten Konfigurationsdatei.
+. Erstellen Sie eine Kopie der laufenden Konfigurationsdatei.
 +
-Der Befehl im folgenden Beispiel ist für FASTPATH 1.2.0.7:
+Der Befehl im folgenden Beispiel gilt für FASTPATH 1.2.0.7:
 
 +
 .Beispiel anzeigen
@@ -85,7 +85,7 @@ Config script created successfully.
 
 
 
-NOTE: Sie können jeden Dateinamen außer verwenden `CN1610_CS_RCF_v1.2.scr`. Der Dateiname muss die Erweiterung *.SCR* haben.
+NOTE: Sie können jeden beliebigen Dateinamen verwenden, außer `CN1610_CS_RCF_v1.2.scr` Die  Der Dateiname muss die Dateiendung *.scr* haben.
 
 . [[step3]]Speichern Sie die laufende Konfigurationsdatei des Switches auf einem externen Host, um den Austausch vorzubereiten.
 +
@@ -97,26 +97,26 @@ NOTE: Sie können jeden Dateinamen außer verwenden `CN1610_CS_RCF_v1.2.scr`. De
 (old_cs1)# *copy nvram:script filename.scr scp://<Username>@<remote_IP_address>/path_to_file/filename.scr*
 ----
 ====
-. Überprüfen Sie, ob die Switch- und ONTAP-Versionen in der Kompatibilitätsmatrix übereinstimmen. Siehe https://mysupport.netapp.com/site/info/netapp-cluster-switch["NetApp CN1601 und CN1610 Switches"^] Für Details.
-. Von https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/downloads-tab["Seite „Software-Downloads“"^] Wählen Sie auf der NetApp Support Website NetApp Cluster Switches aus, um die entsprechenden RCF- und FASTPATH-Versionen herunterzuladen.
-. Richten Sie einen TFTP-Server (Trivial File Transfer Protocol) mit DER FASTPATH-, RCF- und gespeicherten Konfiguration ein `.scr` Datei zur Verwendung mit dem neuen Switch.
-. Verbinden Sie den seriellen Port (der RJ-45-Anschluss mit der Bezeichnung „IOIOIOI“ auf der rechten Seite des Switches) mit einem verfügbaren Host mit Terminalemulation.
-. Stellen Sie auf dem Host die Einstellungen für die serielle Terminalverbindung ein:
+. Prüfen Sie, ob die Versionen von Switch und ONTAP in der Kompatibilitätsmatrix übereinstimmen.  Siehe die https://mysupport.netapp.com/site/info/netapp-cluster-switch["NetApp CN1601 und CN1610 Switches"^] Weitere Details finden Sie auf der entsprechenden Seite.
+. vom https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/downloads-tab["Seite für Software-Downloads"^] Auf der NetApp Support-Website können Sie unter „NetApp Cluster Switches“ die entsprechenden RCF- und FASTPATH-Versionen herunterladen.
+. Richten Sie einen Trivial File Transfer Protocol (TFTP)-Server mit FASTPATH, RCF und gespeicherter Konfiguration ein. `.scr` Datei zur Verwendung mit dem neuen Schalter.
+. Verbinden Sie den seriellen Port (den RJ-45-Anschluss mit der Bezeichnung „IOIOI“ auf der rechten Seite des Switches) mit einem verfügbaren Host mit Terminalemulation.
+. Auf dem Host die Einstellungen für die serielle Terminalverbindung vornehmen:
 +
 .. 9600 Baud
 .. 8 Datenbits
 .. 1 Stoppbit
-.. Parität: Keine
-.. Flusskontrolle: Keine
+.. Parität: keine
+.. Flusssteuerung: keine
 
 
-. Verbinden Sie den Verwaltungsport (den RJ-45-Schraubenschlüssel-Port auf der linken Seite des Switches) mit dem gleichen Netzwerk, in dem sich Ihr TFTP-Server befindet.
-. Bereiten Sie sich auf die Netzwerkverbindung mit dem TFTP-Server vor.
+. Verbinden Sie den Management-Port (den RJ-45-Schraubenschlüssel-Anschluss auf der linken Seite des Switches) mit demselben Netzwerk, in dem sich Ihr TFTP-Server befindet.
+. Bereiten Sie die Verbindung zum Netzwerk mit dem TFTP-Server vor.
 +
-Wenn Sie DHCP (Dynamic Host Configuration Protocol) verwenden, müssen Sie derzeit keine IP-Adresse für den Switch konfigurieren. Der Service-Port ist standardmäßig auf DHCP eingestellt. Der Netzwerkverwaltungsport ist für die IPv4- und IPv6-Protokolleinstellungen auf none festgelegt. Wenn der Schlüsselport mit einem Netzwerk verbunden ist, das über einen DHCP-Server verfügt, werden die Servereinstellungen automatisch konfiguriert.
+Wenn Sie das Dynamic Host Configuration Protocol (DHCP) verwenden, müssen Sie dem Switch zu diesem Zeitpunkt keine IP-Adresse konfigurieren.  Der Service-Port ist standardmäßig auf DHCP eingestellt.  Der Netzwerkmanagement-Port ist für die IPv4- und IPv6-Protokolleinstellungen auf „Keine“ gesetzt.  Wenn Ihr Schraubenschlüsselanschluss mit einem Netzwerk verbunden ist, das über einen DHCP-Server verfügt, werden die Servereinstellungen automatisch konfiguriert.
 
 +
-Um eine statische IP-Adresse festzulegen, sollten Sie die befehle serviceport-Protokoll, Netzwerkprotokoll und serviceport ip verwenden.
+Um eine statische IP-Adresse festzulegen, sollten Sie die Befehle serviceport protocol, network protocol und serviceport ip verwenden.
 
 +
 .Beispiel anzeigen
@@ -127,11 +127,11 @@ Um eine statische IP-Adresse festzulegen, sollten Sie die befehle serviceport-Pr
 (new_cs1)# *serviceport ip <ipaddr> <netmask> <gateway>*
 ----
 ====
-. Wenn sich der TFTP-Server auf einem Laptop befindet, schließen Sie den CN1610-Switch optional über ein Standard-Ethernet-Kabel an den Laptop an, und konfigurieren Sie dann den Netzwerkanschluss im gleichen Netzwerk mit einer alternativen IP-Adresse.
+. Optionalerweise kann, falls sich der TFTP-Server auf einem Laptop befindet, der CN1610-Switch mit einem Standard-Ethernet-Kabel an den Laptop angeschlossen und anschließend sein Netzwerkport im selben Netzwerk mit einer alternativen IP-Adresse konfiguriert werden.
 +
-Sie können das verwenden `ping` Befehl zum Verifizieren der Adresse. Wenn Sie die Verbindung nicht herstellen können, sollten Sie ein nicht geroutetes Netzwerk verwenden und den Service-Port mit IP 192.168.x oder 172.16.x konfigurieren Sie können den Service-Port zu einem späteren Zeitpunkt auf die Produktions-Management-IP-Adresse neu konfigurieren.
+Sie können die `ping` Befehl zur Überprüfung der Adresse.  Falls Sie keine Verbindung herstellen können, sollten Sie ein nicht geroutetes Netzwerk verwenden und den Service-Port mit der IP-Adresse 192.168.x oder 172.16.x konfigurieren.  Sie können den Service-Port zu einem späteren Zeitpunkt auf die Produktionsmanagement-IP-Adresse umkonfigurieren.
 
-. Überprüfen und installieren Sie optional die entsprechenden Versionen der RCF- und FASTPATH-Software für den neuen Switch. Wenn Sie überprüft haben, ob der neue Switch korrekt eingerichtet ist und keine Updates für die RCF- und FASTPATH-Software erforderlich sind, fahren Sie mit Schritt 13 fort.
+. Optional können Sie die entsprechenden Versionen der RCF- und FASTPATH-Software für den neuen Switch überprüfen und installieren.  Wenn Sie überprüft haben, dass der neue Switch korrekt eingerichtet ist und keine Aktualisierungen der RCF- und FASTPATH-Software erforderlich sind, sollten Sie mit Schritt 13 fortfahren.
 +
 .. Überprüfen Sie die neuen Schaltereinstellungen.
 +
@@ -144,7 +144,7 @@ Sie können das verwenden `ping` Befehl zum Verifizieren der Adresse. Wenn Sie d
 (new_cs1)# *show version*
 ----
 ====
-.. Laden Sie den RCF auf den neuen Switch herunter.
+.. Laden Sie die RCF-Datei auf den neuen Switch herunter.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -173,7 +173,7 @@ Configuration script validated.
 File transfer operation completed successfully.
 ----
 ====
-.. Stellen Sie sicher, dass der RCF auf den Switch heruntergeladen wurde.
+.. Überprüfen Sie, ob die RCF-Datei auf den Switch heruntergeladen wurde.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -193,7 +193,7 @@ latest_config.scr                 2356
 ====
 
 
-. Den RCF auf den CN1610-Schalter auftragen.
+. Bringen Sie den RCF am Schalter CN1610 an.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -230,7 +230,7 @@ Config file 'startup-config' created successfully.
 Configuration Saved!
 ----
 ====
-.. Laden Sie das Bild auf den Switch CN1610 herunter.
+.. Laden Sie das Image auf den CN1610-Switch herunter.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -254,9 +254,9 @@ TFTP Code transfer starting...
 File transfer operation completed successfully.
 ----
 ====
-.. Führen Sie das neue aktive Startabbild durch, indem Sie den Switch neu starten.
+.. Starten Sie den Switch neu, um das neue aktive Boot-Image zu laden.
 +
-Der Switch muss neu gestartet werden, damit der Befehl in Schritt 6 das neue Image widerspiegelt. Es gibt zwei mögliche Ansichten für eine Antwort, die Sie nach Eingabe des Befehls reload möglicherweise sehen werden.
+Der Switch muss neu gestartet werden, damit der Befehl in Schritt 6 das neue Image widerspiegelt.  Es gibt zwei mögliche Ansichten für eine Antwort, die Ihnen nach Eingabe des Befehls „reload“ angezeigt werden könnte.
 
 +
 .Beispiel anzeigen
@@ -319,18 +319,18 @@ Configuration Saved!
 ====
 
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
-. Melden Sie sich beim neuen Switch New_cs1 als Admin-Benutzer an, und fahren Sie alle Ports herunter, die mit den Node-Cluster-Schnittstellen (Ports 1 bis 12) verbunden sind.
+. Melden Sie sich auf dem neuen Switch new_cs1 als Administrator an und schalten Sie alle Ports ab, die mit den Schnittstellen des Knotenclusters verbunden sind (Ports 1 bis 12).
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -350,7 +350,7 @@ Password:
 ====
 . Migrieren Sie die Cluster-LIFs von den Ports, die mit dem Switch old_cs1 verbunden sind.
 +
-Sie müssen jede LIF des Clusters von der Managementoberfläche des aktuellen Node migrieren.
+Sie müssen jeden Cluster-LIF von der Verwaltungsschnittstelle seines aktuellen Knotens migrieren.
 
 +
 .Beispiel anzeigen
@@ -362,7 +362,7 @@ cluster::> *set -privilege advanced*
 cluster::> *network interface migrate -vserver <vserver_name> -lif <Cluster_LIF_to_be_moved> - sourcenode <current_node> -dest-node <current_node> -dest-port <cluster_port_that_is_UP>*
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-LIFs auf den entsprechenden Cluster-Port auf jedem Node verschoben wurden.
+. Überprüfen Sie, ob alle Cluster-LIFs auf den entsprechenden Cluster-Port auf jedem Knoten verschoben wurden.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -372,7 +372,7 @@ cluster::> *network interface migrate -vserver <vserver_name> -lif <Cluster_LIF_
 cluster::> *network interface show -role cluster*
 ----
 ====
-. Fahren Sie die Cluster-Ports herunter, die an den Switch angeschlossen sind, den Sie ausgetauscht haben.
+. Schalten Sie die Cluster-Ports ab, die an den ausgetauschten Switch angeschlossen sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -382,7 +382,7 @@ cluster::> *network interface show -role cluster*
 cluster::*> *network port modify -node <node_name> -port <port_to_admin_down> -up-admin false*
 ----
 ====
-. Überprüfen Sie den Systemzustand des Clusters.
+. Überprüfen Sie den Zustand des Clusters.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -392,7 +392,7 @@ cluster::*> *network port modify -node <node_name> -port <port_to_admin_down> -u
 cluster::*> *cluster show*
 ----
 ====
-. Vergewissern Sie sich, dass die Ports ausgefallen sind.
+. Überprüfen Sie, ob die Ports deaktiviert sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -402,7 +402,7 @@ cluster::*> *cluster show*
 cluster::*> *cluster ping-cluster -node <node_name>*
 ----
 ====
-. Fahren Sie auf dem Switch cs2 die ISL-Ports 13 bis 16 herunter.
+. Schalten Sie am Switch cs2 die ISL-Ports 13 bis 16 ab.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -415,9 +415,9 @@ cluster::*> *cluster ping-cluster -node <node_name>*
 (cs2)# *show port-channel 3/1*
 ----
 ====
-. Überprüfen Sie, ob der Speicheradministrator für den Austausch des Switches bereit ist.
-. Entfernen Sie alle Kabel vom Switch old_cs1, und schließen Sie dann die Kabel an dieselben Ports am Switch New_cs1 an.
-. Aktivieren Sie auf dem cs2-Switch die ISL-Ports 13 bis 16.
+. Prüfen Sie, ob der Speicheradministrator für den Austausch des Switches bereit ist.
+. Entfernen Sie alle Kabel vom alten Switch cs1 und schließen Sie die Kabel dann an die gleichen Ports am neuen Switch cs1 an.
+. Aktivieren Sie am Switch cs2 die ISL-Ports 13 bis 16.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -429,7 +429,7 @@ cluster::*> *cluster ping-cluster -node <node_name>*
 (cs2)(interface 0/13-0/16)# *no shutdown*
 ----
 ====
-. Aktivieren Sie die Ports auf dem neuen Switch, der den Clusterknoten zugeordnet ist.
+. Schalten Sie die Ports des neuen Switches ein, die mit den Clusterknoten verbunden sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -441,7 +441,7 @@ cluster::*> *cluster ping-cluster -node <node_name>*
 (new_cs1)(interface 0/13-0/16)# *no shutdown*
 ----
 ====
-. Rufen Sie auf einem einzelnen Node den Clusterknoten-Port auf, der mit dem ausgetauschten Switch verbunden ist, und bestätigen Sie anschließend, dass die Verbindung hergestellt ist.
+. Auf einem einzelnen Knoten wird der Clusterknotenport aktiviert, der mit dem ausgetauschten Switch verbunden ist. Anschließend wird überprüft, ob die Verbindung hergestellt wurde.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -452,9 +452,9 @@ cluster::*> *network port modify -node node1 -port <port_to_be_onlined> -up-admi
 cluster::*> *network port show -role cluster*
 ----
 ====
-. Setzen Sie die Cluster-LIFs zurück, die dem Port in Schritt 25 auf demselben Node zugeordnet sind.
+. Setzen Sie die Cluster-LIFs, die dem Port in Schritt 25 auf demselben Knoten zugeordnet sind, zurück.
 +
-In diesem Beispiel werden die LIFs auf node1 erfolgreich zurückgesetzt, wenn die Spalte „is Home“ den Wert „true“ lautet.
+In diesem Beispiel werden die LIFs auf Knoten 1 erfolgreich zurückgesetzt, wenn die Spalte „Is Home“ den Wert „true“ hat.
 
 +
 .Beispiel anzeigen
@@ -466,8 +466,8 @@ cluster::*> *network interface revert -vserver node1 -lif <cluster_lif_to_be_rev
 cluster::*> *network interface show -role cluster*
 ----
 ====
-. Wenn die Cluster-LIF des ersten Node hochgefahren ist und auf den Home Port zurückgesetzt wird, wiederholen Sie die Schritte 25 und 26, um die Cluster-Ports hochzuschalten und die Cluster-LIFs auf den anderen Nodes im Cluster zurückzusetzen.
-. Zeigt Informationen zu den Nodes im Cluster an.
+. Wenn der Cluster-LIF des ersten Knotens aktiv ist und auf seinen Heimatport zurückgesetzt wird, wiederholen Sie die Schritte 25 und 26, um die Cluster-Ports zu aktivieren und die Cluster-LIFs auf den anderen Knoten im Cluster zurückzusetzen.
+. Zeigt Informationen über die Knoten im Cluster an.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -477,7 +477,7 @@ cluster::*> *network interface show -role cluster*
 cluster::*> *cluster show*
 ----
 ====
-. Vergewissern Sie sich, dass die Startkonfigurationsdatei und die laufende Konfigurationsdatei auf dem ersetzten Switch korrekt sind. Diese Konfigurationsdatei sollte mit der Ausgabe in Schritt 1 übereinstimmen.
+. Prüfen Sie, ob die Startkonfigurationsdatei und die laufende Konfigurationsdatei auf dem ausgetauschten Switch korrekt sind.  Diese Konfigurationsdatei sollte mit der Ausgabe in Schritt 1 übereinstimmen.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -489,7 +489,7 @@ cluster::*> *cluster show*
 (new_cs1)# *show startup-config*
 ----
 ====
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 

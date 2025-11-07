@@ -14,13 +14,13 @@ sidebar:
   entries:
   - title: Switch-Dokumente für ONTAP Hardwaresysteme
     url: "/index.html"
-  - title: Los geht's
+  - title: Erste Schritte
     entries:
     - title: Was ist neu
       url: "/whats-new.html"
-    - title: Weitere Informationen zu ONTAP System Switches
+    - title: Erfahren Sie mehr über ONTAP Systemschalter
       url: "/get-started/learn-switch-concept.html"
-    - title: Starten Sie jetzt
+    - title: Los geht's!
       url: "/get-started/get-up-and-running.html"
   - title: AFX-Systemschalter
     url: "/afx/index.html"
@@ -33,18 +33,18 @@ sidebar:
     - section: switch-bes-53248
     - section: switch-cisco-9336c-fx2
     - section: switch-nvidia-sn2100
-  - title: Storage Switches
+  - title: Speicherschalter
     url: "/storage/index.html"
     entries:
     - section: switch-cisco-9336c-fx2-storage
     - section: switch-nvidia-sn2100-storage
-  - title: Shared-Switches
+  - title: Gemeinsam genutzte Switches
     url: "/shared/index.html"
     entries:
     - section: switch-cisco-9336c-fx2-shared
-      pdf-filename: Switch-cisco-9336c-fx2-Speicher
+      pdf-filename: switch-cisco-9336c-fx2-storage
   - section: switch-cshm
-  - title: Switches für das Ende der Verfügbarkeit
+  - title: Verfügbarkeitsende-Schalter
     entries:
     - title: Überblick
       url: "/overview-eod.html"

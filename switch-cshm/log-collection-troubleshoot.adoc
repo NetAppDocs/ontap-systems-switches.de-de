@@ -2,7 +2,7 @@
 permalink: switch-cshm/log-collection-troubleshoot.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Mit den hier angegebenen Befehlen können Sie ...... verwenden 
+summary: Sie können die hier bereitgestellten Befehle verwenden, um … 
 ---
 = Fehlerbehebung bei der Protokollerfassung
 :allow-uri-read: 
@@ -11,47 +11,47 @@ summary: Mit den hier angegebenen Befehlen können Sie ...... verwenden
 
 
 [role="lead"]
-Wenn Sie einen der folgenden Fehlerzustände sehen, die von der Protokollerfassungsfunktion gemeldet werden (sichtbar in der Ausgabe des `system switch ethernet log show` Befehls), versuchen Sie die entsprechenden Debugschritte:
+Wenn Sie auf einen der folgenden Fehlerstatus stoßen, die von der Protokollerfassungsfunktion gemeldet werden (sichtbar in der Ausgabe von `system switch ethernet log show` Befehl), versuchen Sie die entsprechenden Debugging-Schritte:
 
 |===
 
 
-| *Fehlerstatus der Protokollsammlung* | * Auflösung* 
+| *Fehlerstatus bei der Protokollerfassung* | *Auflösung* 
 
 
  a| 
 *RSA-Schlüssel nicht vorhanden*
  a| 
-ONTAP-SSH-Schlüssel neu generieren.
+ONTAP SSH-Schlüssel neu generieren.
 
 
 
  a| 
-*Fehler beim Wechseln des Kennworts*
+*Fehler beim Switch-Passwort*
  a| 
-Überprüfen Sie die Anmeldeinformationen, testen Sie die SSH-Konnektivität und regenerieren Sie ONTAP-SSH-Schlüssel. Lesen Sie die Switch-Dokumentation oder wenden Sie sich an den NetApp Support, um weitere Informationen zu erhalten.
-
-
-
- a| 
-*ECDSA-Schlüssel für FIPS* nicht vorhanden
- a| 
-Wenn der FIPS-Modus aktiviert ist, müssen ECDSA-Schlüssel auf dem Switch generiert werden, bevor Sie es erneut versuchen.
+Überprüfen Sie die Anmeldeinformationen, testen Sie die SSH-Verbindung und generieren Sie die ONTAP SSH-Schlüssel neu.  Lesen Sie die Dokumentation des Switches oder wenden Sie sich an den NetApp Support, um weitere Anweisungen zu erhalten.
 
 
 
  a| 
-*Bereits vorhandenes Log gefunden*
+*ECDSA-Schlüssel für FIPS nicht vorhanden*
  a| 
-Entfernen Sie die vorherige Protokollerfassungsdatei auf dem Switch.
+Wenn der FIPS-Modus aktiviert ist, müssen auf dem Switch ECDSA-Schlüssel generiert werden, bevor ein erneuter Versuch unternommen werden kann.
 
 
 
  a| 
-*Switch Dump Log Fehler*
+*Vorhandenes Protokoll gefunden*
  a| 
-Stellen Sie sicher, dass der Switch-Benutzer über Protokollerfassungsberechtigungen verfügt. Beachten Sie die oben genannten Voraussetzungen.
+Entfernen Sie die vorherige Protokolldatei auf dem Switch.
+
+
+
+ a| 
+*Fehler im Switch-Dump-Protokoll*
+ a| 
+Stellen Sie sicher, dass der Switch-Benutzer über die Berechtigung zur Protokollerfassung verfügt.  Beachten Sie die oben genannten Voraussetzungen.
 
 |===
 
-NOTE: Wenn die Lösungsdetails nicht funktionieren, wenden Sie sich an den NetApp Support.
+NOTE: Falls die beschriebenen Lösungsdetails nicht funktionieren, wenden Sie sich bitte an den NetApp Support.

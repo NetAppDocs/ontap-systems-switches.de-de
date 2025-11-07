@@ -2,126 +2,126 @@
 permalink: switch-cisco-3132q-v/install-cisco-nexus-3132qv.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3132q-v cluster switch, pass-through panel, netapp cabinet 
-summary: Sie können den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren. 
+summary: Sie können den Cisco Nexus 3132Q-V Switch und das Pass-Through-Panel mit den im Lieferumfang des Switches enthaltenen Standardhalterungen in einem NetApp -Schrank installieren. 
 ---
-= Installieren Sie einen Cisco Nexus 3132Q-V Cluster Switch in einem NetApp Rack
+= Installieren Sie einen Cisco Nexus 3132Q-V Cluster-Switch in einem NetApp Schrank
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 3132Q-V Switch und die Pass-Through-Panel in einem NetApp Rack mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren.
+Je nach Konfiguration müssen Sie möglicherweise den Cisco Nexus 3132Q-V Switch und das Pass-Through-Panel in einem NetApp -Schrank mit den standardmäßigen Halterungen installieren, die im Lieferumfang des Switches enthalten sind.
 
 .Bevor Sie beginnen
-* Die anfänglichen Vorbereitungsanforderungen, Inhalt des Kits und Sicherheitsvorkehrungen im http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/hw/installation/guide/b_n3000_hardware_install_guide.html["Hardware-Installationsleitfaden Der Cisco Nexus 3000-Serie"^]. Lesen Sie diese Dokumente, bevor Sie mit dem Verfahren beginnen.
-* Das Pass-Through-Panel-Kit, erhältlich von NetApp (Teilenummer X8784-R6). Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
+* Die anfänglichen Vorbereitungsanforderungen, der Inhalt des Kits und die Sicherheitsvorkehrungen im http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/hw/installation/guide/b_n3000_hardware_install_guide.html["Hardware-Installationshandbuch für die Cisco Nexus 3000-Serie"^] Die  Lesen Sie diese Dokumente sorgfältig durch, bevor Sie mit dem Verfahren beginnen.
+* Das Durchgangspanel-Kit ist bei NetApp erhältlich (Teilenummer X8784-R6). Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
 +
-** Ein Durchlauf-Blindblech
+** Eine Durchgangs-Blindplatte
 ** Vier 10-32 x 0,75 Schrauben
-** Vier 10-32-Clip-Muttern
+** Vier 10-32 Clipmuttern
 
 
-* Acht 10-32 oder 12-24 Schrauben und Befestigungsmuttern für die Befestigung der Halterungen und Gleitschienen an den vorderen und hinteren Schrankleisten.
-* Cisco Standard-Schienensatz zur Installation des Switches in einem NetApp Rack
+* Acht 10-32 oder 12-24 Schrauben und Clipmuttern zur Befestigung der Halterungen und Gleitschienen an den vorderen und hinteren Schrankpfosten.
+* Cisco Standard-Schienenkit zur Installation des Switches in einem NetApp -Schrank.
 
 
 [NOTE]
 ====
-Die Jumper-Kabel sind nicht im Lieferumfang des Pass-Through-Kits enthalten und sollten in Ihrem Switch enthalten sein. Wenn die Switches nicht im Lieferumfang enthalten sind, können Sie sie bei NetApp bestellen (Teilenummer X1558A-R6).
+Die Überbrückungskabel sind nicht im Durchgangskit enthalten und sollten Ihren Schaltern beiliegen.  Falls sie nicht mit den Switches geliefert wurden, können Sie sie bei NetApp bestellen (Teilenummer X1558A-R6).
 
 ====
 .Schritte
-. Die Pass-Through-Blindplatte in den NetApp-Schrank einbauen.
+. Installieren Sie die Durchgangsabdeckung im NetApp -Schrank.
 +
-.. Stellen Sie die vertikale Position der Schalter und der Blindplatte im Schrank fest.
+.. Ermitteln Sie die vertikale Position der Schalter und der Abdeckplatte im Gehäuse.
 +
-Bei diesem Verfahren wird die Blindplatte in U40 installiert.
+Bei diesem Verfahren wird die Abdeckplatte in U40 installiert.
 
-.. Bringen Sie an jeder Seite zwei Klemmmuttern an den entsprechenden quadratischen Löchern für die vorderen Schrankschienen an.
-.. Zentrieren Sie die Abdeckung senkrecht, um ein Eindringen in den benachbarten Rack zu verhindern, und ziehen Sie die Schrauben fest.
-.. Stecken Sie die Buchsen der beiden 48-Zoll-Jumper-Kabel von der Rückseite der Abdeckung und durch die Bürstenbaugruppe.
+.. Montieren Sie auf jeder Seite zwei Clipmuttern in den entsprechenden quadratischen Löchern für die vorderen Schrankschienen.
+.. Zentrieren Sie das Panel vertikal, um ein Eindringen in den angrenzenden Rack-Bereich zu verhindern, und ziehen Sie dann die Schrauben fest.
+.. Führen Sie die weiblichen Stecker beider 48-Zoll-Überbrückungskabel von der Rückseite des Bedienfelds durch die Bürstenbaugruppe.
 +
 image::../media/cisco_9148_jumper_cords.gif[]
 
 +
-_(1) Buchsenleiste des Überbrückungskabels._
+_(1) Weiblicher Stecker des Überbrückungskabels._
 
 
 
-. Installieren Sie die Halterungen für die Rack-Montage am Switch-Chassis des Nexus 3132Q-V.
+. Montieren Sie die Rack-Montagehalterungen am Nexus 3132Q-V Switch-Gehäuse.
 +
-.. Positionieren Sie eine vordere Rack-Mount-Halterung auf einer Seite des Switch-Gehäuses so, dass das Montagewinkel an der Gehäusefaceplate (auf der Netzteilseite oder Lüfterseite) ausgerichtet ist. Verwenden Sie dann vier M4-Schrauben, um die Halterung am Gehäuse zu befestigen.
+.. Positionieren Sie eine vordere Rackmontagehalterung auf einer Seite des Switch-Gehäuses, sodass die Montageöse mit der Gehäusefrontplatte (auf der Netzteil- oder Lüfterseite) ausgerichtet ist, und befestigen Sie die Halterung dann mit vier M4-Schrauben am Gehäuse.
 +
-image::../media/3132q_front_bracket.gif[Vordere Halterung]
+image::../media/3132q_front_bracket.gif[vordere Halterung]
 
-.. Wiederholen Sie Schritt 2a mit der anderen vorderen Halterung für die Rackmontage auf der anderen Seite des Schalters.
-.. Setzen Sie die hintere Rack-Halterung am Switch-Gehäuse ein.
-.. Wiederholen Sie Schritt 2c mit der anderen hinteren Halterung für die Rackmontage auf der anderen Seite des Schalters.
+.. Wiederholen Sie Schritt 2a mit der anderen vorderen Rackmontagehalterung auf der anderen Seite des Switches.
+.. Installieren Sie die hintere Rackmontagehalterung am Switch-Gehäuse.
+.. Wiederholen Sie Schritt 2c mit der anderen hinteren Rackmontagehalterung auf der anderen Seite des Switches.
 
 
-. Die Klemmmuttern für alle vier IEA-Stützen an den Stellen der quadratischen Bohrung anbringen.
+. Installieren Sie die Clipmuttern in den quadratischen Lochpositionen für alle vier IEA-Pfosten.
 +
 image::../media/ru_locations_for_3132q_v.gif[]
 
 +
-Die beiden 3132Q-V Schalter werden immer in den oberen 2 HE des Schrankes RU41 und 42 montiert.
+Die beiden 3132Q-V-Switches werden immer in den oberen 2 HE des Schranks RU41 und 42 montiert.
 
-. Installieren Sie die Gleitschienen im Schrank.
+. Montieren Sie die Gleitschienen im Schrank.
 +
-.. Positionieren Sie die erste Gleitschiene an der RU42-Markierung auf der Rückseite des hinteren linken Pfosten, legen Sie die Schrauben mit dem entsprechenden Gewindetyp ein und ziehen Sie die Schrauben mit den Fingern fest.
+.. Positionieren Sie die erste Gleitschiene an der Markierung RU42 auf der Rückseite des linken hinteren Pfostens, setzen Sie Schrauben mit dem passenden Gewinde ein und ziehen Sie die Schrauben dann mit den Fingern fest.
 +
 image::../media/3132q_v_slider_rails.gif[]
 
 +
-_(1) beim sanften Schieben der Gleitschiene richten Sie sie an den Schraubenbohrungen im Rack aus._
+(1) Verschieben Sie die Gleitschiene vorsichtig und richten Sie sie an den Schraubenlöchern im Gestell aus.
 
 +
-_(2) Schrauben der Gleitschienen an den Schrankleisten festziehen._
+(2) Ziehen Sie die Schrauben der Gleitschienen an den Schrankpfosten fest.
 
-.. Wiederholen Sie Schritt 4a für den hinteren Pfosten auf der rechten Seite.
-.. Wiederholen Sie die Schritte 4a und 4b an den RU41-Stellen im Schrank.
+.. Wiederholen Sie Schritt 4a für den rechten hinteren Pfosten.
+.. Wiederholen Sie die Schritte 4a und 4b an den RU41-Positionen am Schrank.
 
 
-. Den Schalter in den Schrank einbauen.
+. Bauen Sie den Schalter in den Schrank ein.
 +
 
-NOTE: Für diesen Schritt sind zwei Personen erforderlich: Eine Person muss den Schalter von vorne und von der anderen in die hinteren Gleitschienen führen.
+NOTE: Für diesen Schritt sind zwei Personen erforderlich: eine Person, die den Schalter von vorne stützt, und eine andere, die den Schalter in die hinteren Gleitschienen führt.
 
 +
-.. Positionieren Sie die Rückseite des Schalters an RU41.
+.. Positionieren Sie die Rückseite des Schalters an der RU41-Schiene.
 +
-image::../media/3132q_v_positioning.gif[Positionierung 3132Q-V bei U39-40]
+image::../media/3132q_v_positioning.gif[3132Q-V Positionierung bei U39-40]
 
 +
-_(1) Da das Gehäuse in Richtung der hinteren Pfosten geschoben wird, richten Sie die beiden hinteren Rackmontageführungen an den Gleitschienen aus._
+(1) Beim Hineinschieben des Chassis in Richtung der hinteren Pfosten müssen die beiden hinteren Rack-Montageführungen mit den Gleitschienen ausgerichtet werden.
 
 +
-_(2) Schieben Sie den Schalter vorsichtig, bis die vorderen Halterungen der Rackmontage bündig mit den vorderen Pfosten sind._
+(2) Schieben Sie den Schalter vorsichtig, bis die vorderen Rack-Montagehalterungen bündig mit den vorderen Pfosten abschließen.
 
 .. Befestigen Sie den Schalter am Gehäuse.
 +
 image::../media/3132q_attaching.gif[]
 
 +
-_(1) mit einer Person, die die Vorderseite des Chassis hält, sollte die andere Person die vier hinteren Schrauben vollständig an den Schrankpfosten festziehen._
+(1) Während eine Person die Vorderseite des Chassis waagerecht hält, sollte die andere Person die vier hinteren Schrauben an den Gehäusepfosten vollständig festziehen.
 
-.. Wenn das Gehäuse nun ohne Unterstützung unterstützt wird, ziehen Sie die vorderen Schrauben fest an den Stützen.
-.. Wiederholen Sie die Schritte 5a bis 5c für den zweiten Schalter an der Position RU42.
+.. Wenn das Chassis nun ohne Hilfe gestützt wird, ziehen Sie die vorderen Schrauben an den Pfosten vollständig fest.
+.. Wiederholen Sie die Schritte 5a bis 5c für den zweiten Schalter am Standort RU42.
 +
 
-NOTE: Wenn Sie den vollständig installierten Switch als Support verwenden, müssen Sie während der Installation nicht die Vorderseite des zweiten Schalters halten.
+NOTE: Da der bereits installierte Schalter als Stütze dient, müssen Sie die Vorderseite des zweiten Schalters während des Installationsvorgangs nicht festhalten.
 
 
 
-. Wenn die Switches installiert sind, verbinden Sie die Jumper-Kabel mit den Switch-Netzeinkabeln.
-. Verbinden Sie die Stecker beider Überbrückungskabel mit den am nächsten verfügbaren PDU-Steckdosen.
+. Wenn die Schalter installiert sind, schließen Sie die Überbrückungskabel an die Stromeingänge der Schalter an.
+. Schließen Sie die Stecker beider Überbrückungskabel an die nächstgelegenen verfügbaren PDU-Steckdosen an.
 +
 
-NOTE: Um Redundanz zu erhalten, müssen die beiden Kabel mit verschiedenen PDUs verbunden werden.
+NOTE: Um die Redundanz aufrechtzuerhalten, müssen die beiden Kabel an verschiedene PDUs angeschlossen werden.
 
-. Schließen Sie den Management Port an jedem 3132Q-V Switch an einen der Management Switches an (sofern bestellt), oder verbinden Sie sie direkt mit Ihrem Management-Netzwerk.
+. Verbinden Sie den Management-Port jedes 3132Q-V-Switches mit einem der Management-Switches (falls bestellt) oder verbinden Sie diese direkt mit Ihrem Management-Netzwerk.
 +
-Der Management-Port ist der oben rechts gelegene Port auf der PSU-Seite des Switch. Das CAT6-Kabel für jeden Switch muss über die Passthrough-Leiste geführt werden, nachdem die Switches zur Verbindung mit den Management-Switches oder dem Management-Netzwerk installiert wurden.
+Der Verwaltungsport ist der obere rechte Port auf der Netzteilseite des Switches. Das CAT6-Kabel für jeden Switch muss nach der Installation der Switches durch das Durchgangspanel geführt werden, um eine Verbindung zu den Verwaltungs-Switches oder dem Verwaltungsnetzwerk herzustellen.
 
 

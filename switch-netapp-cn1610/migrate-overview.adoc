@@ -2,23 +2,23 @@
 permalink: switch-netapp-cn1610/migrate-overview.html 
 sidebar: sidebar 
 keywords: migrate, two-node switched cluster, netapp cn1610 
-summary: Wenn Sie über einen 2-Node-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei auf ein 2-Node-Cluster mit Switch migrieren, das die NetApp CN1610 Cluster-Netzwerk-Switches umfasst. 
+summary: Wenn Sie einen Zwei-Knoten-Cluster ohne Switches haben, können Sie ohne Unterbrechung zu einem Zwei-Knoten-Cluster mit Switches migrieren, der NetApp CN1610 Cluster-Netzwerk-Switches enthält. 
 ---
-= Migrationsoptionen für 2-Node-Cluster mit Switch und NetApp CN1610 Cluster-Switches
+= Migrationsoptionen für einen Zwei-Knoten-Switch-Cluster mit NetApp CN1610 Cluster-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie über einen 2-Node-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei auf ein 2-Node-Cluster mit Switch migrieren, das die NetApp CN1610 Cluster-Netzwerk-Switches umfasst. Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben.
+Wenn Sie einen Zwei-Knoten-Cluster ohne Switches haben, können Sie ohne Unterbrechung zu einem Zwei-Knoten-Cluster mit Switches migrieren, der NetApp CN1610 Cluster-Netzwerk-Switches enthält.  Die Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerkanschlüsse oder an jedem Controller einen einzelnen Clusteranschluss haben.
 
-Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports.
+Die meisten Systeme benötigen zwei dedizierte Cluster-Netzwerkanschlüsse an jedem Controller.
 
-FAS22xx Nodes ermöglichen einen einzelnen Cluster-Port an jedem Controller.
+FAS22xx-Knoten ermöglichen einen einzelnen Cluster-Port an jedem Controller.
 
-Es sind zwei Migrationsoptionen verfügbar:
+Es stehen zwei Migrationsoptionen zur Verfügung:
 
-* link:migrate-switched-netapp-cn1610.html["Migration von einem Cluster ohne Switches zu einer Switch-basierten NetApp CN1610 Cluster-Umgebung"]
-* link:migrate-fas22xx-systems.html["Migration von einem Cluster ohne Switches (FAS22xx Systeme mit einer einzigen Cluster-Netzwerkverbindung)"]
+* link:migrate-switched-netapp-cn1610.html["Migration von einem switchlosen Cluster zu einer switchierten NetApp CN1610 Clusterumgebung"]
+* link:migrate-fas22xx-systems.html["Migration von einem schalterlosen Cluster (FAS22xx-Systeme mit einer einzigen Cluster-Netzwerkverbindung)"]
 

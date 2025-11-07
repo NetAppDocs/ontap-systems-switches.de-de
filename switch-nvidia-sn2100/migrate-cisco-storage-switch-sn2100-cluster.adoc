@@ -2,67 +2,67 @@
 permalink: switch-nvidia-sn2100/migrate-cisco-storage-switch-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: migrating to a storage switch with NVIDIA SN2100 storage switches, how to migrate 
-summary: Sie können ältere Cisco Switches für ein ONTAP Cluster unterbrechungsfrei auf NVIDIA SN2100 Storage Switches migrieren. 
+summary: Ältere Cisco Switches eines ONTAP Clusters können ohne Unterbrechung auf NVIDIA SN2100-Speicher-Switches migriert werden. 
 ---
-= Migrieren Sie von einem Cisco Storage Switch auf einen NVIDIA SN2100 Storage-Switch
+= Migration von einem Cisco -Speicher-Switch zu einem NVIDIA SN2100-Speicher-Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können von älteren Cisco Switches für ein ONTAP Cluster zu NVIDIA SN2100 Storage Switches migrieren. Hierbei handelt es sich um ein unterbrechungsfreies Verfahren.
+Sie können von älteren Cisco -Switches für einen ONTAP Cluster auf NVIDIA SN2100-Speicher-Switches migrieren. Dies ist ein unterbrechungsfreies Verfahren.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-Sie müssen bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen kennen, wenn Sie einige ältere Cisco Switches durch NVIDIA SN2100 Storage Switches ersetzen. Siehe link:configure-overview-sn2100-cluster.html["Überblick über Installation und Konfiguration von NVIDIA SN2100-Switches"].
+Beim Austausch älterer Cisco Switches durch NVIDIA SN2100-Speicher-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Sehenlink:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"] .
 
-.Unterstützte Switches
-Folgende Storage-Switches werden unterstützt:
+.Unterstützte Schalter
+Folgende Speichersysteme werden unterstützt:
 
 * Cisco Nexus 9336C-FX2
 * Cisco Nexus 3232C
 
 
-Weitere Informationen zu unterstützten Ports und deren Konfigurationen finden Sie im https://hwu.netapp.com/["Hardware Universe"^].
+Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie unter https://hwu.netapp.com/["Hardware Universe"^] Die
 
-.Was Sie benötigen
+.Was du brauchst
 Stellen Sie sicher, dass:
 
-* Das vorhandene Cluster ist ordnungsgemäß eingerichtet und funktioniert.
-* Alle Storage-Ports befinden sich im Status up, um einen unterbrechungsfreien Betrieb zu gewährleisten.
-* Die NVIDIA SN2100-Speicherschalter sind konfiguriert und funktionieren unter der richtigen Version von Cumulus Linux, die mit der verwendeten Referenzkonfigurationsdatei (RCF) installiert wird.
-* Die vorhandene Speichernetzwerkkonfiguration verfügt über folgende Merkmale:
+* Der bestehende Cluster ist ordnungsgemäß eingerichtet und funktioniert.
+* Alle Speicheranschlüsse sind aktiviert, um einen unterbrechungsfreien Betrieb zu gewährleisten.
+* Die NVIDIA SN2100 Speicherswitches sind konfiguriert und arbeiten unter der richtigen Version von Cumulus Linux, auf der die Referenzkonfigurationsdatei (RCF) installiert ist.
+* Die bestehende Speichernetzwerkkonfiguration weist folgende Merkmale auf:
 +
-** Ein redundantes und voll funktionsfähiges NetApp Cluster unter Verwendung beider älteren Cisco Switches.
-** Management-Konnektivität und Konsolenzugriff auf die älteren Cisco Switches und die neuen Switches.
-** Alle Cluster-LIFs im Status *up* mit den Cluster-LIFs befinden sich auf ihren Home-Ports.
-** ISL-Ports aktiviert und zwischen den älteren Cisco Switches und zwischen den neuen Switches verkabelt.
+** Ein redundanter und voll funktionsfähiger NetApp Cluster, der beide ältere Cisco Switches nutzt.
+** Management-Konnektivität und Konsolenzugriff sowohl auf die älteren Cisco Switches als auch auf die neuen Switches.
+** Alle Cluster-LIFs befinden sich im Status *up* und sind an ihren jeweiligen Heimatports angeschlossen.
+** ISL-Ports wurden aktiviert und zwischen den älteren Cisco Switches sowie zwischen den neuen Switches verkabelt.
 
 
-* Einige der Ports auf NVIDIA SN2100-Switches sind für 100 GbE konfiguriert.
-* Sie haben 100-GbE-Konnektivität von Nodes zu NVIDIA SN2100 Storage-Switches geplant, migriert und dokumentiert.
+* Einige der Ports an NVIDIA SN2100 Switches sind für den Betrieb mit 100 GbE konfiguriert.
+* Sie haben die 100-GbE-Konnektivität von den Knoten zu den NVIDIA SN2100-Speicher-Switches geplant, migriert und dokumentiert.
 
 
 
 
-== Migrieren Sie die Switches
+== Migrieren Sie die Schalter
 
 .Zu den Beispielen
-In diesem Verfahren werden Cisco Nexus 9336C-FX2 Storage-Switches zum Beispiel Befehle und Ausgänge verwendet.
+In diesem Verfahren werden Cisco Nexus 9336C-FX2 Storage-Switches als Beispiel für Befehle und Ausgaben verwendet.
 
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die vorhandenen Cisco Nexus 9336C-FX2 Storage Switches sind _S1_ und _S2_.
-* Die neuen NVIDIA SN2100 Storage-Switches sind _sw1_ und _sw2_.
-* Die Knoten sind _node1_ und _node2_.
-* Die Cluster-LIFs sind auf Node 1_clus1_ und _node1_clus2_ und _node2_clus1_ bzw. _node2_clus2_ auf Knoten 2.
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
-* Die in diesem Verfahren verwendeten Netzwerk-Ports sind _e5a_ und _e5b_.
-* Breakout-Ports haben das Format swp1s0-3. Zum Beispiel sind vier Breakout-Ports auf swp1 _swp1s0_, _swp1s1_, _swp1s2_ und _swp1s3_.
-* Schalter S2 wird zuerst durch Schalter sw2 ersetzt und dann Schalter S1 durch Schalter sw1 ersetzt.
+* Die vorhandenen Cisco Nexus 9336C-FX2 Storage-Switches sind _S1_ und _S2_.
+* Die neuen NVIDIA SN2100 Speicherschalter sind _sw1_ und _sw2_.
+* Die Knoten heißen _node1_ und _node2_.
+* Die Cluster-LIFs sind _node1_clus1_ und _node1_clus2_ auf Knoten 1 bzw. _node2_clus1_ und _node2_clus2_ auf Knoten 2.
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
+* Die in diesem Verfahren verwendeten Netzwerkanschlüsse sind _e5a_ und _e5b_.
+* Die Breakout-Ports haben folgendes Format: swp1s0-3.  Beispielsweise gibt es vier Breakout-Ports auf swp1: _swp1s0_, _swp1s1_, _swp1s2_ und _swp1s3_.
+* Zuerst wird Schalter S2 durch Schalter sw2 ersetzt, dann wird Schalter S1 durch Schalter sw1 ersetzt.
 +
 ** Die Verkabelung zwischen den Knoten und S2 wird dann von S2 getrennt und wieder mit sw2 verbunden.
 ** Die Verkabelung zwischen den Knoten und S1 wird dann von S1 getrennt und wieder mit sw1 verbunden.
@@ -72,16 +72,16 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren: `set -privilege advanced`
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden: `set -privilege advanced`
 +
 Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
@@ -89,14 +89,14 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 
 
-=== Schritt: Ports und Verkabelung konfigurieren
+=== Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
-. Legen Sie den Administrations- oder Betriebsstatus der einzelnen Storage-Schnittstellen fest.
+. Ermitteln Sie den administrativen oder operativen Status jeder Speicherschnittstelle.
 +
-Jeder Port sollte für aktiviert angezeigt werden  `Status`.
+Jeder Port sollte als aktiviert angezeigt werden `Status` Die
 
 +
-Zeigen Sie die Attribute des Netzwerkports an:
+Netzwerkportattribute anzeigen:
 
 +
 `storage port show`
@@ -124,7 +124,7 @@ node2
 cluster1::*>
 ----
 ====
-. Die Storage-Ports auf jedem Node sind über den Befehl wie folgt mit vorhandenen Storage-Switches verbunden (aus Sicht der Nodes):
+. Die Speicherports an jedem Knoten sind (aus Sicht der Knoten) folgendermaßen mit vorhandenen Speicherschaltern verbunden:
 +
 `network device-discovery show -protocol lldp`
 
@@ -146,7 +146,7 @@ node2      /lldp
             e5b    S2 (7c:ad:4f:98:8e:3c)    Eth1/2           -
 ----
 ====
-. Am Schalter S1 und S2 sind die Speicheranschlüsse und Schalter (aus der Perspektive der Schalter) folgendermaßen verbunden:
+. Auf den Switches S1 und S2 sind die Speicherports und Switches (aus Sicht der Switches) mit folgendem Befehl verbunden:
 +
 `show lldp neighbors`
 
@@ -183,7 +183,7 @@ SHFGB2017000269       Eth1/12        120         S                
 SHFGB2017000269       Eth1/13        120         S                   e0b
 ----
 ====
-. Fahren Sie beim Switch sw2 die mit den Storage-Ports und den Nodes der Festplatten-Shelfs verbundenen Ports herunter.
+. Schalten Sie am Switch sw2 die Ports ab, die mit den Speicherports und Knoten der Disk-Shelches verbunden sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -195,8 +195,8 @@ cumulus@sw2:~$ *net pending*
 cumulus@sw2:~$ *net commit*
 ----
 ====
-. Verschieben Sie die Node Storage Ports des Controllers und der Festplatten-Shelfs vom alten Switch S2 auf den neuen Switch sw2. Verwenden Sie dazu die geeignete Verkabelung, die von NVIDIA SN2100 unterstützt wird.
-. Stellen Sie beim Switch sw2 die Ports bereit, die mit den Speicherports der Knoten und der Festplatten-Shelfs verbunden sind.
+. Verlegen Sie die Speicherknotenanschlüsse des Controllers und der Festplattengehäuse vom alten Switch S2 auf den neuen Switch sw2. Verwenden Sie dazu geeignete Kabel, die von NVIDIA SN2100 unterstützt werden.
+. Schalten Sie am Switch sw2 die Ports ein, die mit den Speicherports der Knoten und den Festplattengehäusen verbunden sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -208,7 +208,7 @@ cumulus@sw2:~$ *net pending*
 cumulus@sw2:~$ *net commit*
 ----
 ====
-. Die Storage-Ports auf jedem Node sind nun aus Sicht der Nodes auf folgende Weise mit den Switches verbunden:
+. Die Speicheranschlüsse an jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Switches verbunden:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -229,7 +229,7 @@ node2      /lldp
             e5b    sw2 (b8:ce:f6:19:1a:7e)   swp2           -
 ----
 ====
-. Überprüfen Sie die Netzwerkanschlussattribute:
+. Überprüfen Sie die Netzwerkportattribute:
 +
 `storage port show`
 
@@ -256,7 +256,7 @@ node2
 cluster1::*>
 ----
 ====
-. Vergewissern Sie sich bei Switch sw2, dass alle Knoten Speicher-Ports aktiv sind:
+. Überprüfen Sie am Switch sw2, ob alle Speicherports der Knoten aktiv sind:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -279,7 +279,7 @@ UP     swp6    100G  9216   Trunk/L2   SHFFG1826000102 (e0b)   Master: bridge(UP
 ...
 ----
 ====
-. Fahren Sie beim Switch sw1 die Ports herunter, die mit den Speicherports der Knoten und der Platten-Shelves verbunden sind.
+. Schalten Sie am Schalter sw1 die Ports ab, die mit den Speicherports der Knoten und den Festplattengehäusen verbunden sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -291,8 +291,8 @@ cumulus@sw1:~$ *net pending*
 cumulus@sw1:~$ *net commit*
 ----
 ====
-. Verschieben Sie die Node Storage Ports des Controllers und der Festplatten-Shelfs vom alten Switch S1 zum neuen Switch sw1. Verwenden Sie dazu die geeignete Verkabelung, die von NVIDIA SN2100 unterstützt wird.
-. Bringen Sie am Switch sw1 die Ports auf, die mit den Speicherports der Knoten und den Platten-Shelves verbunden sind.
+. Verlegen Sie die Speicherknotenanschlüsse des Controllers und die Festplattengehäuse vom alten Switch S1 zum neuen Switch sw1. Verwenden Sie dazu geeignete Kabel, die von NVIDIA SN2100 unterstützt werden.
+. Schalten Sie am Switch sw1 die Ports ein, die mit den Speicherports der Knoten und den Festplattengehäusen verbunden sind.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -304,7 +304,7 @@ cumulus@sw1:~$ *net pending*
 cumulus@sw1:~$ *net commit*
 ----
 ====
-. Die Storage-Ports auf jedem Node sind nun aus Sicht der Nodes auf folgende Weise mit den Switches verbunden:
+. Die Speicheranschlüsse an jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Switches verbunden:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -325,12 +325,12 @@ node2      /lldp
             e5b    sw2  (b8:ce:f6:19:1a:7e)  swp2            -
 ----
 ====
-. Überprüfen der endgültigen Konfiguration:
+. Überprüfen Sie die endgültige Konfiguration:
 +
 `storage port show`
 
 +
-Jeder Port sollte für aktiviert angezeigt werden `State` Und aktiviert für `Status`.
+Jeder Port sollte als aktiviert angezeigt werden `State` und aktiviert für `Status` Die
 
 +
 .Beispiel anzeigen
@@ -355,7 +355,7 @@ node2
 cluster1::*>
 ----
 ====
-. Vergewissern Sie sich bei Switch sw2, dass alle Knoten Speicher-Ports aktiv sind:
+. Überprüfen Sie am Switch sw2, ob alle Speicherports der Knoten aktiv sind:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -378,7 +378,7 @@ UP     swp6    100G  9216   Trunk/L2   SHFFG1826000102 (e0b)   Master: bridge(UP
 ...
 ----
 ====
-. Vergewissern Sie sich, dass beide Knoten jeweils eine Verbindung zu jedem Switch haben:
+. Überprüfen Sie, ob beide Knoten jeweils eine Verbindung zu jedem Switch haben:
 +
 `net show lldp`
 
@@ -386,7 +386,7 @@ UP     swp6    100G  9216   Trunk/L2   SHFFG1826000102 (e0b)   Master: bridge(UP
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Schalter:
 
 [listing, subs="+quotes"]
 ----
@@ -417,9 +417,9 @@ swp6       100G   Trunk/L2  SHFFG1826000102        e0b
 
 
 
-=== Schritt 3: Führen Sie den Vorgang durch
+=== Schritt 3: Schließen Sie den Vorgang ab.
 
-. Erstellen Sie ein Passwort für die Protokollerfassungsfunktion der Ethernet-Switch-Statusüberwachung:
+. Erstellen Sie ein Kennwort für die Protokollerfassungsfunktion des Ethernet-Switch-Integritätsmonitors:
 +
 `system switch ethernet log setup-password`
 
@@ -453,7 +453,7 @@ Enter the password: *<enter switch password>*
 Enter the password again: *<enter switch password>*
 ----
 ====
-. Aktivieren Sie die Protokollerfassungsfunktion für die Ethernet-Switch-Statusüberwachung:
+. Aktivieren Sie die Protokollerfassungsfunktion für den Ethernet-Switch-Integritätsmonitor:
 +
 `system switch ethernet log modify -device _<switch-name>_ -log-request true`
 
@@ -477,7 +477,7 @@ Enabling cluster switch log collection.
 ----
 ====
 +
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
+Warten Sie 10 Minuten und überprüfen Sie dann, ob die Protokollerfassung abgeschlossen ist:
 
 +
 `system switch ethernet log show`
@@ -499,13 +499,13 @@ Index  Switch                       Log Timestamp        Status
 ====
 +
 
-CAUTION: Wenn einer dieser Befehle einen Fehler zurückgibt oder die Protokollsammlung nicht abgeschlossen ist, wenden Sie sich an den NetApp Support.
+CAUTION: Falls einer dieser Befehle einen Fehler zurückgibt oder die Protokollerfassung nicht abgeschlossen wird, wenden Sie sich an den NetApp -Support.
 
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 

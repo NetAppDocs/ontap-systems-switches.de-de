@@ -2,22 +2,22 @@
 permalink: switch-cisco-3232c/cabling-considerations-3232c.html 
 sidebar: sidebar 
 keywords: 3232c cabling setup, 3232c switches configuration, nx-os 
-summary: Lesen Sie vor der Konfiguration Ihres Cisco 3232C-Switches die folgenden Informationen durch. 
+summary: Bevor Sie Ihren Cisco 3232C Switch konfigurieren, lesen Sie bitte die folgenden Informationen. 
 ---
-= Prüfen Sie die Verkabelung und Konfigurationsüberlegungen
+= Überprüfung der Verkabelung und Konfigurationsüberlegungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie Ihren Cisco 3232C-Switch konfigurieren, lesen Sie die folgenden Überlegungen.
+Bevor Sie Ihren Cisco 3232C Switch konfigurieren, beachten Sie bitte die folgenden Hinweise.
 
 
 
-== Unterstützung für NVIDIA CX6-, CX6-DX- und CX7-Ethernet-Ports
+== Unterstützung für NVIDIA CX6-, CX6-DX- und CX7-Ethernet-Anschlüsse
 
-Wenn Sie einen Switch-Port mit einem ONTAP-Controller über NVIDIA ConnectX-6 (CX6), ConnectX-6 DX (CX6-DX) oder ConnectX-7 (CX7) NIC-Ports verbinden, müssen Sie die Switch-Port-Geschwindigkeit fest kodieren.
+Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (CX6), ConnectX-6 Dx (CX6-DX) oder ConnectX-7 (CX7) NIC-Ports verbinden, müssen Sie die Geschwindigkeit des Switch-Ports fest codieren.
 
 [listing, subs="+quotes"]
 ----
@@ -32,4 +32,4 @@ Wenn Sie einen Switch-Port mit einem ONTAP-Controller über NVIDIA ConnectX-6 (C
 *Save the changes:*
 (cs1)# *copy running-config startup-config*
 ----
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports.
+Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.

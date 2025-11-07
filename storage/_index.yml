@@ -1,14 +1,14 @@
 ---
 indexpage:
-  title: Storage Switches
+  title: Speicherschalter
   summary: Verwenden Sie die Dokumente auf dieser Site, um Ihre Speicher-Switches
     für ONTAP Clusterbereitstellungen zu installieren, zu konfigurieren und zu warten.
   keywords: storage switches, cisco nexus switches, cluster switches, ontap clusters
-  lead: Mit Speicher-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.  Diese
-    Cisco Nexus 9000-Plattform-Switches bilden die Grundlage für skalierbare Cluster-Interconnect-Lösungen
-    in NetApp ONTAP Umgebungen.
+  lead: Mit Speicher-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
+    Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage für skalierbare
+    Cluster-Interconnect-Lösungen in NetApp ONTAP Umgebungen.
   tiles:
-  - title: Los geht's
+  - title: Erste Schritte
     links:
     - title: Cisco Nexus 9336C-FX2 und 9336C-FX2-T
       url: "../switch-cisco-9336c-fx2-storage/configure-switch-overview-9336c-storage.html"

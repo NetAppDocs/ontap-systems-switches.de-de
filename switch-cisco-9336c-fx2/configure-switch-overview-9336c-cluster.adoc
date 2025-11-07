@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2/configure-switch-overview-9336c-cluster.html 
 sidebar: sidebar 
 keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Überblick über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Cluster-Switches 
+summary: Übersicht über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Cluster-Switches 
 ---
 = Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Cluster-Switches
 :allow-uri-read: 
@@ -25,7 +25,7 @@ Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2- und 9336C-FX2-T-Swi
 [role="quick-margin-para"]
 Überprüfen Sie die Komponenten und Teilenummern für die Cluster-Switches 9336C-FX2 und 9336C-FX2-T.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-9336c-cluster.html["Überprüfen Sie die erforderlichen Unterlagen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:required-documentation-9336c-cluster.html["Überprüfen Sie die erforderlichen Unterlagen"]
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2- und 9336C-FX2-T-Switches und den ONTAP Cluster einzurichten.
 

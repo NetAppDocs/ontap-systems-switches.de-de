@@ -2,33 +2,33 @@
 permalink: switch-cisco-3232c/cn1610-migrate-workflow.html 
 sidebar: sidebar 
 keywords: 3232c cabling setup, 3232c switches configuration, nx-os 
-summary: Lesen Sie vor der Konfiguration Ihres Cisco 3232C-Switches die folgenden Informationen durch. 
+summary: Bevor Sie Ihren Cisco 3232C Switch konfigurieren, lesen Sie bitte die folgenden Informationen. 
 ---
-= Migrieren Sie von CN1610 Switches zum Workflow der Nexus 3232C Switches
+= Workflow zur Migration von CN1610-Switches zu Nexus 3232C-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie die folgenden Workflow-Schritte aus, um Ihre CN1610-Switches auf Cisco Nexus 3232C-Switches zu migrieren.
+Befolgen Sie diese Workflow-Schritte, um Ihre CN1610-Switches auf Cisco Nexus 3232C-Switches zu migrieren.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:cn1610-migrate-to-3232c-overview.html["Migrationsanforderungen"]
 [role="quick-margin-para"]
-Überprüfen Sie die Beispiel-Switch-Informationen für den Migrationsprozess.
+Prüfen Sie die Beispielinformationen zum Migrationsprozess.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:cn1610-prepare-to-migrate.html["Vorbereitung der Migration"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:cn1610-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"]
 [role="quick-margin-para"]
-Bereiten Sie Ihre CN1610-Switches für die Migration zu Nexus 3232C-Switches vor.
+Bereiten Sie Ihre CN1610-Switches für die Migration auf Nexus 3232C-Switches vor.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:cn1610-replace-CL2.html["Cluster-Switch CL2 austauschen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:cn1610-replace-CL2.html["Tauschen Sie den Schalter CL2 im Kombiinstrument aus."]
 [role="quick-margin-para"]
-Ersetzen Sie den Cluster-Switch CL2 durch den neuen Nexus 3232C-Switch C2.
+Ersetzen Sie den Cluster-Schalter CL2 durch den neuen Nexus 3232C-Schalter C2.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cn1610-replace-CL1.html["Cluster-Switch CL1 austauschen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cn1610-replace-CL1.html["Tauschen Sie den Schalter CL1 in der Instrumententafel aus."]
 [role="quick-margin-para"]
-Ersetzen Sie den Cluster-Switch CL1 durch den neuen Nexus 3232C-Switch C1.
+Ersetzen Sie den Cluster-Schalter CL1 durch den neuen Nexus 3232C-Schalter C1.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:cn1610-complete-migration.html["Schließen Sie die Migration ab"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:cn1610-complete-migration.html["Schließen Sie Ihre Migration ab."]
 [role="quick-margin-para"]
-Die Migration zu den neuen Nexus 3232C-Switches ist abgeschlossen.
+Schließen Sie Ihre Migration auf die neuen Nexus 3232C Switches ab.

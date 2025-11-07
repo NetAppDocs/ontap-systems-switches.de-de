@@ -2,42 +2,42 @@
 permalink: switch-cisco-3132q-v/replace-cisco-nexus-3132q-v.html 
 sidebar: sidebar 
 keywords: replace, cisco nexus 3132q-v cluster switches 
-summary: 'Der Austausch eines defekten Cisco Nexus 3132Q-V Switches in einem Cluster-Netzwerk erfolgt durch die unterbrechungsfreie Durchführung (NDO), und Sie müssen eine bestimmte Sequenz von Aufgaben durchführen.' 
+summary: 'Der Austausch eines defekten Cisco Nexus 3132Q-V Switches in einem Clusternetzwerk ist ein nicht-unterbrechendes Verfahren (NDO), und Sie müssen eine bestimmte Abfolge von Aufgaben durchführen.' 
 ---
-= Ersetzen Sie die Cisco Nexus 3132Q-V Cluster Switches
+= Ersetzen Sie die Cisco Nexus 3132Q-V Cluster-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Befolgen Sie diese Vorgehensweise, um einen fehlerhaften Cisco Nexus 3132Q-V Switch in einem Cluster-Netzwerk zu ersetzen. Beim Austausch handelt es sich um einen unterbrechungsfreien Vorgang (Non-Disruptive Procedure, NDO).
+Gehen Sie wie folgt vor, um einen defekten Cisco Nexus 3132Q-V Switch in einem Clusternetzwerk auszutauschen.  Der Austauschvorgang ist ein nicht-invasiver Vorgang (NDO).
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-.Switch-Anforderungen
-Überprüfen Sie die link:switch-requirements.html["Anforderungen für den Austausch von Cisco Nexus 3132Q-V Cluster Switches"].
+.Anforderungen an die Schalter
+Überprüfen Sie dielink:switch-requirements.html["Anforderungen für den Austausch von Cisco Nexus 3132Q-V Cluster-Switches"] Die
 
 .Bevor Sie beginnen
-* Die vorhandene Cluster- und Netzwerkkonfiguration verfügt über:
+* Die bestehende Cluster- und Netzwerkkonfiguration umfasst Folgendes:
 +
-** Die Nexus 3132Q-V Cluster-Infrastruktur ist redundant und funktioniert vollständig auf beiden Switches.
+** Die Nexus 3132Q-V Cluster-Infrastruktur ist redundant und auf beiden Switches voll funktionsfähig.
 +
-link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Ethernet Switch"^]verfügt über die neuesten RCF- und NX-OS-Versionen für Ihre Switches.
+link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Ethernet-Switch"^]verfügt über die neuesten RCF- und NX-OS-Versionen für Ihre Switches.
 
-** Alle Cluster-Ports befinden sich im `up` Bundesland.
-** Management-Konnektivität ist auf beiden Switches vorhanden.
-** Alle logischen Cluster-Schnittstellen (LIFs) befinden sich im `up` Zustand und wurden migriert.
+** Alle Cluster-Ports befinden sich im `up` Zustand.
+** Die Management-Konnektivität ist auf beiden Switches vorhanden.
+** Alle logischen Schnittstellen (LIFs) des Clusters befinden sich in der `up` Bundesstaat und sind migriert worden.
 
 
-* Stellen Sie beim Nexus 3132Q-V-Ersatzschalter Folgendes sicher:
+* Für den Austausch des Schalters Nexus 3132Q-V ist Folgendes zu beachten:
 +
-** Das Management-Netzwerk-Konnektivität auf dem Ersatz-Switch ist funktionsfähig.
-** Der Konsolenzugriff auf den Ersatz-Switch erfolgt.
-** Der gewünschte RZF- und NX-OS-Betriebssystem-Bildschalter wird auf den Switch geladen.
-** Die anfängliche Anpassung des Schalters ist abgeschlossen.
+** Die Management-Netzwerkanbindung des Ersatz-Switches ist funktionsfähig.
+** Der Konsolenzugriff auf den Ersatzschalter ist eingerichtet.
+** Das gewünschte RCF- und NX-OS-Betriebssystem-Image wird auf den Switch geladen.
+** Die erste Konfiguration des Schalters ist abgeschlossen.
 
 
 * link:http://hwu.netapp.com["Hardware Universe"^]
@@ -45,41 +45,41 @@ link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storag
 
 
 
-== Aktivieren Sie die Konsolenprotokollierung
+== Konsolenprotokollierung aktivieren
 
-NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch des Switches die folgenden Maßnahmen zu ergreifen:
+NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
 
-* Lassen Sie AutoSupport während der Wartung aktiviert.
-* Lösen Sie vor und nach der Wartung einen AutoSupport Wartungsvorgang aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Lesen Sie diesen Knowledge Base-Artikellink:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Unterdrücken der automatischen Case-Erstellung während geplanter Wartungsfenster"^] für weitere Details.
-* Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollieren der Sitzungsausgabe“ in diesem Knowledge Base-Artikel.link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["So konfigurieren Sie PuTTY für optimale Konnektivität zu ONTAP-Systemen"^] .
-
-
+* Lassen Sie AutoSupport während der Wartungsarbeiten aktiviert.
+* Lösen Sie vor und nach der Wartung einen Wartungs AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Siehe diesen Wissensdatenbankartikellink:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^] für weitere Einzelheiten.
+* Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Wissensdatenbankartikel.link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP -Systemen?"^] Die
 
 
-== Tauschen Sie den Schalter aus
 
-Bei diesem Verfahren wird der zweite Nexus 3132Q-V Cluster Switch CL2 durch den neuen 3132Q-V Switch C2 ersetzt.
+
+== Tauschen Sie den Schalter aus.
+
+Bei diesem Verfahren wird der zweite Nexus 3132Q-V Cluster-Schalter CL2 durch einen neuen 3132Q-V Schalter C2 ersetzt.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* n1_clus1 ist die erste logische Clusterschnittstelle (LIF), die für Knoten n1 mit Cluster-Switch C1 verbunden ist.
-* n1_clus2 ist die erste Cluster-LIF, die mit Cluster-Switch CL2 oder C2 für Node n1 verbunden ist.
-* n1_clus3 ist die zweite logische Schnittstelle, die mit Cluster-Switch C2 für Node n1 verbunden ist.
-* n1_clus4 ist die zweite logische Schnittstelle, die mit Cluster-Switch CL1 für Node n1 verbunden ist.
-* Die Anzahl der 10 GbE und 40 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
-* Die Knoten sind n1, n2, n3 und n4. - Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10 GB Cluster Interconnect Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40 GB Cluster Interconnect Ports: e4a und e4e. Siehe link:https://hwu.netapp.com/["Hardware Universe"^] Für die tatsächlichen Cluster-Ports auf Ihren Plattformen.
+* n1_clus1 ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch C1 für Knoten n1 verbunden ist.
+* n1_clus2 ist der erste Cluster-LIF, der mit dem Cluster-Switch CL2 oder C2 für Knoten n1 verbunden ist.
+* n1_clus3 ist die zweite LIF, die mit dem Cluster-Switch C2 für Knoten n1 verbunden ist.
+* n1_clus4 ist die zweite LIF, die mit dem Cluster-Switch CL1 für Knoten n1 verbunden ist.
+* Die Anzahl der 10-GbE- und 40-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter [URL] verfügbar sind.link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
+* Die Knoten sind n1, n2, n3 und n4.  - Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10 GB Cluster-Verbindungsports: e0a, e0b, e0c und e0d.  Die anderen beiden Knoten verwenden zwei 40-GB-Cluster-Interconnect-Ports: e4a und e4e.  Siehe dielink:https://hwu.netapp.com/["Hardware Universe"^] für die tatsächlichen Cluster-Ports auf Ihren Plattformen.
 
 
-.Über diese Aufgabe
-Dieses Verfahren umfasst das folgende Szenario:
+.Informationen zu diesem Vorgang
+Dieses Verfahren umfasst folgendes Szenario:
 
-* Das Cluster beginnt mit vier Nodes, die mit zwei Nexus 3132Q-V Cluster Switches, CL1 und CL2 verbunden sind.
-* Cluster-Switch CL2 ist durch C2 zu ersetzen
+* Der Cluster beginnt mit vier Knoten, die mit zwei Nexus 3132Q-V Cluster-Switches, CL1 und CL2, verbunden sind.
+* Der Cluster-Schalter CL2 soll durch C2 ersetzt werden.
 +
-** Bei jedem Node werden mit CL2 verbundene Cluster-LIFs auf Cluster-Ports migriert, die mit CL1 verbunden sind.
-** Trennen Sie die Verkabelung von allen Anschlüssen am CL2, und schließen Sie die Verkabelung wieder an die gleichen Ports am Switch C2 an.
-** Auf jedem Node werden die migrierten Cluster-LIFs zurückgesetzt.
+** Auf jedem Knoten werden die mit CL2 verbundenen Cluster-LIFs auf die mit CL1 verbundenen Cluster-Ports migriert.
+** Trennen Sie die Verkabelung von allen Ports an CL2 und schließen Sie die Verkabelung an die gleichen Ports am Ersatz-Switch C2 an.
+** Auf jedem Knoten werden die migrierten Cluster-LIFs zurückgesetzt.
 
 
 
@@ -88,17 +88,17 @@ Dieses Verfahren umfasst das folgende Szenario:
 
 === Schritt 1: Vorbereitung auf den Austausch
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
 . Informationen zu den Geräten in Ihrer Konfiguration anzeigen:
@@ -135,9 +135,9 @@ n4         /cdp
 12 entries were displayed
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus für jede Cluster-Schnittstelle fest:
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show`
 
@@ -221,7 +221,7 @@ Cluster
 12 entries were displayed.
 ----
 ====
-.. Zeigen Sie die Informationen auf den erkannten Cluster-Switches an:
+.. Zeigen Sie die Informationen zu den gefundenen Cluster-Switches an:
 +
 `system cluster-switch show`
 
@@ -256,19 +256,19 @@ CL2                          cluster-network   10.10.1.102      NX3132V
 ====
 
 
-. Vergewissern Sie sich, dass die entsprechenden RCF und das entsprechende Image auf dem neuen Nexus 3132Q-V Switch installiert sind, je nach Ihren Anforderungen, und nehmen Sie alle wesentlichen Standortanpassungen vor.
+. Vergewissern Sie sich, dass die entsprechende RCF-Datei und das entsprechende Image gemäß Ihren Anforderungen auf dem neuen Nexus 3132Q-V Switch installiert sind, und nehmen Sie alle notwendigen Standortanpassungen vor.
 +
-Sie müssen den Ersatzschalter zu diesem Zeitpunkt vorbereiten. Wenn Sie die RCF und das Image aktualisieren müssen, müssen Sie folgende Schritte ausführen:
+Sie müssen jetzt den Ersatzschalter vorbereiten.  Falls Sie die RCF-Datei und das Image aktualisieren müssen, befolgen Sie bitte diese Schritte:
 
 +
-.. Auf der NetApp Support Site finden Sielink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch/["Cisco Ethernet-Switches"^] .
+.. Auf der NetApp Supportseite finden Sie weitere Informationen.link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch/["Cisco Ethernet-Switches"^] Die
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende Version des RCF herunter.
-.. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um die RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Bildsoftware herunter.
+.. Laden Sie die passende Version der RCF herunter.
+.. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter.
 
 
-. Migrieren Sie die LIFs für die mit Switch C2 verbundenen Cluster-Ports:
+. Migrieren Sie die LIFs, die den mit Switch C2 verbundenen Cluster-Ports zugeordnet sind:
 +
 `network interface migrate`
 
@@ -276,7 +276,7 @@ Sie müssen den Ersatzschalter zu diesem Zeitpunkt vorbereiten. Wenn Sie die RCF
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel zeigt, dass die LIF-Migration auf allen Nodes durchgeführt wird:
+Dieses Beispiel zeigt, dass die LIF-Migration auf allen Knoten durchgeführt wird:
 
 [listing]
 ----
@@ -289,7 +289,7 @@ cluster::*> network interface migrate -vserver Cluster -lif n3_clus2 -source-nod
 cluster::*> network interface migrate -vserver Cluster -lif n4_clus2 -source-node n4 –destination-node n4 -destination-port e4a
 ----
 ====
-. Überprüfen Sie den Systemzustand des Clusters:
+. Überprüfen Sie den Zustand des Clusters:
 +
 `network interface show`
 
@@ -321,7 +321,7 @@ Cluster
 12 entries were displayed.
 ----
 ====
-. Fahren Sie die Cluster-Interconnect-Ports herunter, die physisch mit dem Switch CL2 verbunden sind:
+. Schalten Sie die Cluster-Verbindungsports ab, die physisch mit Switch CL2 verbunden sind:
 +
 `network port modify`
 
@@ -329,7 +329,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel werden die angegebenen Ports angezeigt, die auf allen Nodes heruntergefahren werden:
+Dieses Beispiel zeigt, wie die angegebenen Ports auf allen Knoten abgeschaltet werden:
 
 [listing]
 ----
@@ -348,15 +348,15 @@ cluster::*> network port modify -node n4 -port e4e -up-admin false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl „show“ ausführen, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
@@ -381,7 +381,7 @@ n4
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -452,7 +452,7 @@ RPC status:
 ----
 --
 ====
-. [[step9]]Herunterfahren der Ports 1/31 und 1/32 auf CL1 und des aktiven Nexus 3132Q-V-Switches:
+. [[step9]]Schalten Sie die Ports 1/31 und 1/32 an CL1 sowie den aktiven Nexus 3132Q-V Switch ab:
 +
 `shutdown`
 
@@ -460,7 +460,7 @@ RPC status:
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel werden die ISL-Ports 1/31 und 1/32 am Switch CL1 heruntergefahren:
+Dieses Beispiel zeigt, wie die ISL-Ports 1/31 und 1/32 am Switch CL1 abgeschaltet werden:
 
 [listing]
 ----
@@ -478,9 +478,9 @@ In diesem Beispiel werden die ISL-Ports 1/31 und 1/32 am Switch CL1 heruntergefa
 
 === Schritt 2: Ports konfigurieren
 
-. Entfernen Sie alle Kabel, die am Nexus 3132Q-V Switch CL2 angeschlossen sind, und schließen Sie sie an allen Knoten an den Ersatzschalter C2 an.
-. Entfernen Sie die ISL-Kabel von den Ports e1/31 und e1/32 am CL2, und schließen Sie sie an die gleichen Ports am Ersatzschalter C2 an.
-. ISLs-Ports 1/31 und 1/32 auf dem Nexus 3132Q-V Switch CL1:
+. Entfernen Sie alle Kabel, die am Switch CL2 des Nexus 3132Q-V angeschlossen sind, und verbinden Sie sie an allen Knoten mit dem Ersatz-Switch C2.
+. Entfernen Sie die ISL-Kabel von den Ports e1/31 und e1/32 an CL2 und schließen Sie sie an die gleichen Ports am Ersatz-Switch C2 an.
+. Aktivieren Sie die ISL-Ports 1/31 und 1/32 am Nexus 3132Q-V Switch CL1:
 +
 [listing]
 ----
@@ -491,12 +491,12 @@ In diesem Beispiel werden die ISL-Ports 1/31 und 1/32 am Switch CL1 heruntergefa
 (CL1)(Config)# exit
 (CL1)#
 ----
-. Überprüfen Sie, ob die ISLs auf CL1 verfügbar sind:
+. Überprüfen Sie, ob die ISLs auf CL1 aktiv sind:
 +
 `show port-channel`
 
 +
-Die Ports eth1/31 und eth1/32 sollten angegeben werden `(P)`, Was bedeutet, dass die ISL-Ports im Port-Channel aktiv sind.
+Die Ports Eth1/31 und Eth1/32 sollten anzeigen `(P)` Das bedeutet, dass die ISL-Ports im Portkanal aktiv sind.
 
 +
 .Beispiel anzeigen
@@ -518,12 +518,12 @@ Group Port-        Type   Protocol  Member 						Ports
 1     Po1(SU)      Eth    LACP      Eth1/31(P)   Eth1/32(P)
 ----
 ====
-. Überprüfen Sie, ob die ISLs auf C2:
+. Überprüfen Sie, ob die ISLs auf C2 aktiv sind:
 +
 `show port-channel summary`
 
 +
-Die Ports eth1/31 und eth1/32 sollten angegeben werden `(P)`, Was bedeutet, dass beide ISL-Ports im Port-Channel aktiv sind.
+Die Ports Eth1/31 und Eth1/32 sollten anzeigen `(P)` Das bedeutet, dass beide ISL-Ports im Portkanal aktiv sind.
 
 +
 .Beispiel anzeigen
@@ -545,7 +545,7 @@ Group Port-        Type   Protocol  Member Ports
 1     Po1(SU)      Eth    LACP      Eth1/31(P)   Eth1/32(P)
 ----
 ====
-. Fahren Sie auf allen Knoten alle mit dem Nexus 3132Q-V Switch verbundenen Cluster-Interconnect-Ports C2:
+. Aktivieren Sie auf allen Knoten alle Cluster-Interconnect-Ports, die mit dem Nexus 3132Q-V Switch C2 verbunden sind:
 +
 `network port modify`
 
@@ -563,7 +563,7 @@ cluster::*> network port modify -node n3 -port e4e -up-admin true
 cluster::*> network port modify -node n4 -port e4e -up-admin true
 ----
 ====
-. Setzen Sie für alle Nodes alle migrierten Cluster Interconnect LIFs zurück:
+. Für alle Knoten müssen alle migrierten Cluster-Interconnect-LIFs zurückgesetzt werden:
 +
 `network interface revert`
 
@@ -581,7 +581,7 @@ cluster::*> network interface revert -vserver Cluster -lif n3_clus2
 cluster::*> network interface revert -vserver Cluster -lif n4_clus2
 ----
 ====
-. Vergewissern Sie sich, dass die Cluster-Interconnect-Ports jetzt nach Hause zurückgesetzt werden:
+. Überprüfen Sie, ob die Cluster-Verbindungsports nun wieder auf ihre Ausgangsposition zurückgesetzt sind:
 +
 `network interface show`
 
@@ -589,7 +589,7 @@ cluster::*> network interface revert -vserver Cluster -lif n4_clus2
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird angezeigt, dass alle LIFs erfolgreich zurückgesetzt werden, da die Ports unter aufgeführt sind `Current Port` Spalte hat den Status von `true` Im `Is Home` Spalte. Wenn der `Is Home` Spaltenwert ist `false`, Das LIF wurde nicht zurückgesetzt.
+Dieses Beispiel zeigt, dass alle LIFs erfolgreich zurückgesetzt wurden, da die unter dem Eintrag aufgeführten Ports `Current Port` Spalte haben den Status `true` im `Is Home` Spalte.  Wenn die `Is Home` Spaltenwert ist `false` Der LIF wurde nicht rückgängig gemacht.
 
 [listing]
 ----
@@ -614,7 +614,7 @@ Cluster
 12 entries were displayed.
 ----
 ====
-. Vergewissern Sie sich, dass die Cluster-Ports verbunden sind:
+. Überprüfen Sie, ob die Cluster-Ports verbunden sind:
 +
 `network port show`
 
@@ -671,15 +671,15 @@ e4e       Cluster      Cluster          up   9000 auto/40000  -        -
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl „show“ ausführen, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
@@ -704,7 +704,7 @@ n4
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -775,7 +775,7 @@ RPC status:
 ====
 
 
-=== Schritt 3: Überprüfen Sie die Konfiguration
+=== Schritt 3: Konfiguration überprüfen
 
 . Zeigen Sie die Informationen zu den Geräten in Ihrer Konfiguration an:
 +
@@ -908,7 +908,7 @@ C2                          cluster-network    10.10.1.103      NX3132V
 3 entries were displayed.
 ----
 ====
-. Entfernen Sie den ausgetauschten Nexus 3132Q-V-Schalter, wenn er nicht bereits automatisch entfernt wird:
+. Entfernen Sie den ausgetauschten Nexus 3132Q-V-Schalter, falls er nicht bereits automatisch entfernt wurde:
 +
 `system cluster-switch delete`
 
@@ -917,7 +917,7 @@ C2                          cluster-network    10.10.1.103      NX3132V
 ----
 cluster::*> system cluster-switch delete –device CL2
 ----
-. Überprüfen Sie, ob die richtigen Cluster-Switches überwacht werden:
+. Stellen Sie sicher, dass die richtigen Cluster-Switches überwacht werden:
 +
 `system cluster-switch show`
 
@@ -950,11 +950,11 @@ C2                          cluster-network     10.10.1.103      NX3132V
 2 entries were displayed.
 ----
 ====
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"]

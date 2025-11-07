@@ -2,37 +2,37 @@
 permalink: switch-cisco-92300/configure-reqs-92300.html 
 sidebar: sidebar 
 keywords: cisco nexus 92300YC 
-summary: Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden. 
+summary: Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind. 
 ---
-= Konfigurationsanforderungen für Cisco Nexus 92300YC Switches
+= Konfigurationsanforderungen für Cisco Nexus 92300YC-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung von Cisco Nexus 92300YC-Switches müssen alle Konfigurations- und Netzwerkanforderungen geprüft werden.
+Bei der Installation und Wartung des Cisco Nexus 92300YC Switches sollten Sie unbedingt alle Konfigurations- und Netzwerkanforderungen überprüfen.
 
-Wenn Sie ONTAP Cluster mit mehr als zwei Nodes erstellen möchten, sind zwei unterstützte Cluster-Netzwerk-Switches erforderlich. Sie können zusätzliche, optionale Management Switches verwenden.
+Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind.
 
 
 
 == Konfigurationsanforderungen
 
-Zum Konfigurieren des Clusters benötigen Sie die entsprechende Anzahl und den entsprechenden Kabeltyp und Kabelanschlüsse für Ihre Switches. Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolen-Port herstellen. Außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
+Zur Konfiguration Ihres Clusters benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelverbindern für Ihre Switches.  Je nach Art des Switches, den Sie initial konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Konsolenport des Switches herstellen; außerdem müssen Sie spezifische Netzwerkinformationen angeben.
 
 
 
 == Netzwerkanforderungen
 
-Sie benötigen die folgenden Netzwerkinformationen für alle Switch-Konfigurationen:
+Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen:
 
-* IP-Subnetz für den Management-Netzwerkdatenverkehr
-* Host-Namen und IP-Adressen für jeden Storage-System-Controller und alle entsprechenden Switches
-* Die meisten Storage-System-Controller werden über die Schnittstelle E0M verwaltet durch eine Verbindung zum Ethernet-Service-Port (Symbol Schraubenschlüssel). Auf AFF A800 und AFF A700 Systemen verwendet die E0M Schnittstelle einen dedizierten Ethernet-Port.
+* IP-Subnetz für den Verwaltungsnetzwerkverkehr
+* Hostnamen und IP-Adressen für jeden Speichersystem-Controller und alle entsprechenden Switches
+* Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird. Bei den Systemen AFF A800 und AFF A700 verwendet die e0M-Schnittstelle einen dedizierten Ethernet-Anschluss.
 
 
-Siehe https://hwu.netapp.com["Hardware Universe"^] Aktuelle Informationen.
+Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen.
 
 .Was kommt als nächstes
-link:components-92300.html["Komponenten und Teilenummern"] .
+link:components-92300.html["Komponenten und Teilenummern"].

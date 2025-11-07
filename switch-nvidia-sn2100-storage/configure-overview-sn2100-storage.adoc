@@ -2,7 +2,7 @@
 permalink: switch-nvidia-sn2100-storage/configure-overview-sn2100-storage.html 
 sidebar: sidebar 
 keywords: sn2100 SN2100 switches setup, sn2100 SN2100 switches install, cumulus linux 
-summary: Überprüfen Sie vor der Konfiguration von NVIDIA SN2100-Switches die Verfahrensübersicht. 
+summary: Bevor Sie NVIDIA SN2100-Switches konfigurieren, lesen Sie bitte die Verfahrensübersicht. 
 ---
 = Installations- und Einrichtungsworkflow für NVIDIA SN2100-Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Überprüfen Sie vor der Konfiguration von NVIDIA SN2100-Switches die V
 
 
 [role="lead"]
-Der NVIDIA SN2100 ist ein Ethernet Switch, mit dem Sie Daten zwischen Controllern und Platten-Shelves wechseln können.
+Der NVIDIA SN2100 ist ein Ethernet-Switch, mit dem Daten zwischen Controllern und Festplattengehäusen umgeschaltet werden können.
 
 Befolgen Sie diese Arbeitsschritte, um Ihre SN2100-Switches zu installieren und einzurichten.
 
@@ -23,7 +23,7 @@ Befolgen Sie diese Arbeitsschritte, um Ihre SN2100-Switches zu installieren und 
 [role="quick-margin-para"]
 Überprüfen Sie die Komponenten und Teilenummern für den SN2100-Speicherschalter.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-sn2100-storage.html["Überprüfen Sie die erforderlichen Unterlagen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:required-documentation-sn2100-storage.html["Überprüfen Sie die erforderlichen Unterlagen"]
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre SN2100-Switches und den ONTAP Cluster einzurichten.
 

@@ -2,7 +2,7 @@
 permalink: switch-netapp-cn1610/required-documentation-cn1610.html 
 sidebar: sidebar 
 keywords: cn1610, switch, netapp 
-summary: Überprüfen Sie bei der Installation und Wartung von NetApp CN1610 Switches alle empfohlenen Dokumente. 
+summary: Für die Installation und Wartung des NetApp CN1610 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen. 
 ---
 = Dokumentationsanforderungen für NetApp CN1610-Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Überprüfen Sie bei der Installation und Wartung von NetApp CN1610 Swi
 
 
 [role="lead"]
-Überprüfen Sie bei der Installation und Wartung von NetApp CN1610 Switches alle empfohlenen Dokumente.
+Für die Installation und Wartung des NetApp CN1610 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
 
 [cols="1,2"]
 |===
@@ -19,46 +19,46 @@ summary: Überprüfen Sie bei der Installation und Wartung von NetApp CN1610 Swi
 
 
  a| 
-https://library.netapp.com/ecm/ecm_download_file/ECMP1117853["1G Installationshandbuch"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1117853["1G-Installationsanleitung"^]
  a| 
-Ein Überblick über die Hardware- und Softwarefunktionen und den Installationsprozess des CN1601 Switch.
-
-
-
- a| 
-https://library.netapp.com/ecm/ecm_download_file/ECMP1117824["10G-Installationsanleitung"^]
- a| 
-Ein Überblick über die Hardware- und Softwarefunktionen für CN1610 Switches und beschreibt die Funktionen für die Installation des Switches und den Zugriff auf die CLI.
+Ein Überblick über die Hardware- und Softwarefunktionen des CN1601-Switches sowie den Installationsprozess.
 
 
 
  a| 
-https://library.netapp.com/ecm/ecm_download_file/ECMP1118645["Installations- und Konfigurationshandbuch für CN1601 und CN1610-Switch"^]
+https://library.netapp.com/ecm/ecm_download_file/ECMP1117824["10G Installationsanleitung"^]
  a| 
-Hier erfahren Sie, wie Sie die Switch-Hardware und -Software für Ihre Cluster-Umgebung konfigurieren.
+Ein Überblick über die Hardware- und Softwarefunktionen des CN1610-Switches sowie eine Beschreibung der Funktionen zur Installation des Switches und zum Zugriff auf die CLI.
 
 
 
  a| 
-Administratorhandbuch für den CN1601-Switch
+https://library.netapp.com/ecm/ecm_download_file/ECMP1118645["Einrichtungs- und Konfigurationsleitfaden für die Switches CN1601 und CN1610"^]
  a| 
-Enthält Beispiele für die Verwendung des CN1601-Switches in einem typischen Netzwerk.
+Detaillierte Informationen zur Konfiguration der Switch-Hardware und -Software für Ihre Clusterumgebung.
+
+
+
+ a| 
+CN1601 Switch-Administratorhandbuch
+ a| 
+Liefert Beispiele für die Verwendung des CN1601-Switches in einem typischen Netzwerk.
 
 * https://library.netapp.com/ecm/ecm_download_file/ECMP1117844["Administratorhandbuch"^]
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2811865["Administratorhandbuch, Version 1.1.x.x"^]
-* https://library.netapp.com/ecm/ecm_download_file/ECMP1117874["Administratorhandbuch, Version 1.2.x.x"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2811865["Administratorhandbuch, Version 1.1.xx"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMP1117874["Administratorhandbuch, Version 1.2.xx"^]
 
 
 
 
  a| 
-CN1610 Network Switch CLI Command Reference
+CN1610 Netzwerk-Switch CLI-Befehlsreferenz
  a| 
-Enthält detaillierte Informationen zu den CLI-Befehlen (Command-Line Interface), mit denen Sie die CN1601-Software konfigurieren.
+Bietet detaillierte Informationen zu den Befehlszeilenschnittstellenbefehlen (CLI), die Sie zur Konfiguration der CN1601-Software verwenden.
 
 * https://library.netapp.com/ecm/ecm_download_file/ECMP1117834["Befehlsreferenz"^]
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2811863["Befehlsreferenz, Version 1.1.x.x"^]
-* https://library.netapp.com/ecm/ecm_download_file/ECMP1117863["Befehlsreferenz, Version 1.2.x.x"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2811863["Befehlsreferenz, Version 1.1.xx"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMP1117863["Befehlsreferenz, Version 1.2.xx"^]
 
 
 |===

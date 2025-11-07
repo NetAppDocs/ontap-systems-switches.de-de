@@ -1,10 +1,10 @@
-= Unterstützung für neue Switches
+= Neue Switch-Unterstützung
 :allow-uri-read: 
 
 
 
 
-== Unterstützung für neue Switches
+== Neue Switch-Unterstützung
 
 [cols="25h,~,~"]
 |===
@@ -30,7 +30,7 @@ ONTAP 9.17.1
 
 
  a| 
-12-Port 10/25/40/100GbE Cisco Nexus 9336C-FX2-T Cluster- und Speicher-Switch (X190212-CS-PE und X190212-CS-PI)
+Cisco Nexus 9336C-FX2-T Cluster- und Speicherswitch mit 12 Ports für 10/25/40/100GbE-Anschlüsse (X190212-CS-PE und X190212-CS-PI)
  a| 
 Unterstützt 10/25/40/100GbE-Clusterkonfigurationen und 100GbE-Speicherkonfigurationen (Switch-Attached Storage).
  a| 
@@ -39,7 +39,7 @@ ONTAP 9.10.1
 
 
  a| 
-12-Port 10/25/40/100GbE Cisco Nexus 9336C-FX2-T Cluster- und Speicher-Switch (X190212-CS-PE und X190212-CS-PI)
+Cisco Nexus 9336C-FX2-T Cluster- und Speicherswitch mit 12 Ports für 10/25/40/100GbE-Anschlüsse (X190212-CS-PE und X190212-CS-PI)
  a| 
 Unterstützt 10/25/40/100GbE-Clusterkonfigurationen und 100GbE-Speicherkonfigurationen (Switch-Attached Storage).
  a| 
@@ -48,52 +48,52 @@ ONTAP 9.10.1
 
 
  a| 
-16-Port 100-GbE-NVIDIA-Switch (X190006-PE und X190006-PI)
+NVIDIA Switch mit 16 Ports und 100-GbE-Anbindung (X190006-PE und X190006-PI)
  a| 
-NVIDIA SN2100 Cluster Interconnect Switch und Storage Switch Unterstützung, einschließlich Unterstützung für MetroCluster IP-Konfigurationen.
+Unterstützung für NVIDIA SN2100 Cluster-Interconnect-Switches und Storage-Switches, einschließlich Unterstützung für MetroCluster IP-Konfigurationen.
  a| 
 ONTAP 9.10.1
 
 
 
  a| 
-36-Port 100 GbE Cisco Switch (X190200-CS-PE und X190200-CS-PI)
+Cisco Switch mit 36 ​​Ports und 100-GbE-Geschwindigkeit (X190200-CS-PE und X190200-CS-PI)
  a| 
-Unterstützung einer Shared IT-Infrastruktur (Cluster, HA und Switch-Attached Storage) auf demselben Paar Cisco Nexus 9336C-FX2 Switches, einschließlich Unterstützung für MetroCluster IP-Konfigurationen.
+Unterstützt eine gemeinsam genutzte Infrastruktur (Cluster, HA und Switch-gebundener Speicher) auf demselben Paar Cisco Nexus 9336C-FX2 Switches, einschließlich der Unterstützung für MetroCluster IP-Konfigurationen.
  a| 
 ONTAP 9.9.1
 
 
 
  a| 
-36-Port 100 GbE Cisco Switch (X190200-CS-PE und X190200-CS-PI), (X190210-FE-PE und X190210-FE-PI)
+Cisco Switch mit 36 ​​Ports und 100-GbE-Anschlüssen (X190200-CS-PE und X190200-CS-PI), (X190210-FE-PE und X190210-FE-PI)
  a| 
-Cisco Nexus 9336C-FX2 Cluster-Interconnect-Switch und Storage-Switch-Unterstützung für AFF- und ASA-Storage-Systeme sowie für Front-End-Datenkonnektivität.
+Cisco Nexus 9336C-FX2 Cluster-Interconnect-Switch und Storage-Switch-Unterstützung für AFF und ASA -Speichersysteme sowie für Front-End-Datenkonnektivität.
  a| 
-ONTAP 9.8
+ONTAP 9,8
 
 
 
  a| 
 Broadcom BES-53248 Switch (X190005 und X190005R)
  a| 
-Unterstützung der Broadcom BES-53248 Cluster Interconnect Switches für AFF/FAS Controller mit 10/25-GbE- und 40/100-GbE-Ports.
+Broadcom BES-53248 Cluster-Interconnect-Switch-Unterstützung für AFF/ FAS -Controller mit 10/25GbE- und 40/100GbE-Ports.
  a| 
-ONTAP 9.8
+ONTAP 9,8
 
 
 
  a| 
-36-Port 100-GbE-Cisco-Switch (X190200) und 32-Port 100-GbE-Cisco-Switch (X190100 und X190100R)
+Cisco Switch mit 36 ​​Ports und 100-GbE-Ethernet (X190200) sowie Cisco Switch mit 32 Ports und 100-GbE-Ethernet (X190100 und X190100R)
  a| 
-Unterstützung für Storage-Switches der Cisco Nexus 3232C-Serie zur Verbindung der NS224 NVMe Laufwerk-Shelfs AFF und ASA Storage-Systeme:
+Cisco Nexus 3232C Storage-Switch-Unterstützung zum Anschluss von NS224 NVMe-Laufwerksgehäusen an AFF und ASA Speichersysteme:
 
-* AFF A800/AFF ASA A800
-* AFF A700/AFF ASA A700
-* AFF A400/AFF ASA A400
+* AFF A800/ AFF ASA A800
+* AFF A700/ AFF ASA A700
+* AFF A400/ AFF ASA A400
 * AFF A320
 
  a| 
-ONTAP 9.8
+ONTAP 9,8
 
 |===

@@ -2,32 +2,32 @@
 permalink: switch-bes-53248/replace-verify.html 
 sidebar: sidebar 
 keywords: command, verify, operational, bes, cluster, switch, upgrade, verify the configuration after a cluster switch upgrade - bes-53428 switches 
-summary: Mithilfe der hier angegebenen Befehle können Sie überprüfen, ob nach einem Upgrade des BES-53248 Cluster-Switch alle Funktionen betriebsbereit sind. 
+summary: Mit den hier bereitgestellten Befehlen können Sie überprüfen, ob nach einem Upgrade des BES-53248 Cluster-Switches alles betriebsbereit ist. 
 ---
-= Überprüfen Sie das ONTAP-Cluster-Netzwerk nach einem EFOS-Software- oder RCF-Upgrade der BES-53248-Cluster-Switches
+= Überprüfen Sie das ONTAP Clusternetzwerk nach einem EFOS-Software- oder RCF-Upgrade der BES-53248-Cluster-Switches.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können die folgenden Befehle verwenden, um den Zustand des ONTAP-Cluster-Netzwerks nach einem Upgrade der EFOS-Software oder RCF für BES-53248-Cluster-Switches zu überprüfen.
+Mit den folgenden Befehlen können Sie den Zustand des ONTAP -Clusternetzwerks nach einem Upgrade der EFOS-Software oder des RCF für BES-53248-Cluster-Switches überprüfen.
 
 .Schritte
-. Zeigen Sie mit dem Befehl Informationen zu den Netzwerk-Ports auf dem Cluster an:
+. Informationen zu den Netzwerkports des Clusters können mit folgendem Befehl angezeigt werden:
 +
 [source, cli]
 ----
 network port show -ipspace Cluster
 ----
 +
-`Link` Muss den Wert haben `up` Und `Health Status` Muss sein `healthy`.
+`Link`muss den Wert haben `up` Und `Health Status` muss sein `healthy` Die
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird die Ausgabe des Befehls angezeigt:
+Das folgende Beispiel zeigt die Ausgabe des Befehls:
 
 [listing, subs="+quotes"]
 ----
@@ -50,7 +50,7 @@ e0a    Cluster      Cluster          up   9000  auto/10000 healthy  false
 e0b    Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
-. Überprüfen Sie dies für jede LIF `Is Home` Ist `true` Und `Status Admin/Oper` Ist `up` Auf beiden Nodes, mit dem Befehl:
+. Überprüfen Sie für jeden LIF, ob `Is Home` Ist `true` Und `Status Admin/Oper` Ist `up` auf beiden Knoten mit folgendem Befehl:
 +
 [source, cli]
 ----
@@ -74,7 +74,7 @@ Cluster
             node2_clus2  up/up    169.254.110.131/16 node2         e0b     true
 ----
 ====
-. Überprüfen Sie das `Health Status` Von jedem Node ist `true` Verwenden des Befehls:
+. Überprüfen Sie, ob die `Health Status` jedes Knotens ist `true` mit dem Befehl:
 +
 `cluster show`
 
@@ -94,5 +94,5 @@ node2                true    true          false
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie das Upgrade Ihrer EFOS-Software oder Ihres RCF bestätigt haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

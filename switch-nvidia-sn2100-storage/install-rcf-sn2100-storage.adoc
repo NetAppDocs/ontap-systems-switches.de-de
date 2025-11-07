@@ -2,39 +2,39 @@
 permalink: switch-nvidia-sn2100-storage/install-rcf-sn2100-storage.html 
 sidebar: sidebar 
 keywords: install rcf script, python script, sn2100 SN2100 switches, cumulus 
-summary: Gehen Sie folgendermaßen vor, um das RCF-Skript zu installieren. 
+summary: Gehen Sie wie folgt vor, um das RCF-Skript zu installieren. 
 ---
-= Installieren oder aktualisieren Sie das RCF-Skript
+= Installieren oder aktualisieren Sie das RCF-Skript.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um das RCF-Skript zu installieren oder zu aktualisieren.
+Folgen Sie dieser Vorgehensweise, um das RCF-Skript zu installieren oder zu aktualisieren.
 
 .Bevor Sie beginnen
-Stellen Sie vor der Installation oder Aktualisierung des RCF-Skripts sicher, dass auf dem Switch Folgendes verfügbar ist:
+Vor der Installation oder Aktualisierung des RCF-Skripts stellen Sie sicher, dass Folgendes auf dem Switch verfügbar ist:
 
 * Cumulus Linux 4.4.3 ist installiert.
-* IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.
+* IP-Adresse, Subnetzmaske und Standardgateway werden per DHCP definiert oder manuell konfiguriert.
 
 
 .Aktuelle RCF-Skriptversionen
-Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. Das Verfahren für jedes ist gleich.
+Für Clustering- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.  Die Vorgehensweise ist für alle Fälle gleich.
 
 * Clustering: *MSN2100-RCF-v1._x_-Cluster*
 * Speicher: *MSN2100-RCF-v1._x_-Speicher*
 
 
 
-NOTE: Das folgende Beispiel zeigt, wie das RCF-Skript für Cluster-Switches heruntergeladen und angewendet wird.
+NOTE: Das folgende Beispielverfahren zeigt, wie das RCF-Skript für Cluster-Switches heruntergeladen und angewendet wird.
 
 
-NOTE: Die Befehlsausgabe des Switch-Management verwendet die Switch-Management-IP-Adresse 10.233.204.71, die Netmask 255.255.254.0 und das Standard-Gateway 10.233.204.1.
+NOTE: Beispielausgabe des Befehls verwendet die Switch-Management-IP-Adresse 10.233.204.71, die Netzmaske 255.255.254.0 und das Standardgateway 10.233.204.1.
 
 .Schritte
-. Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
+. Die verfügbaren Schnittstellen des SN2100-Switches anzeigen:
 +
 `net show interface all`
 
@@ -79,7 +79,7 @@ cumulus@cumulus:mgmt:/tmp$ *scp _<user>@<host:/<path>_/MSN2100-RCF-v1.8-Cluster*
 ssologin@10.233.204.71's password:
 MSN2100-RCF-v1.8-Cluster                 100% 8607   111.2KB/s         00:00
 ----
-. Anwenden des RCF-Python-Skripts *MSN2100-RCF-v1.8-Cluster*:
+. Wenden Sie das RCF-Python-Skript *MSN2100-RCF-v1.8-Cluster* an:
 +
 [listing, subs="+quotes"]
 ----
@@ -101,13 +101,13 @@ Step 12: Configure SNMP
 Step 13: Reboot the switch
 ----
 +
-Das RCF-Skript führt die oben aufgeführten Schritte durch.
+Das RCF-Skript führt die oben aufgeführten Schritte aus.
 
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-storage.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
+. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-storage.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 `net show interface all`
@@ -198,7 +198,7 @@ swp15      0x11 (QSFP28)  Amphenol     112-00573        APF21109348001
 swp16      0x11 (QSFP28)  Amphenol     112-00573        APF21109347895  B0
 ----
 ====
-. Stellen Sie sicher, dass die Nodes jeweils über eine Verbindung zu jedem Switch verfügen:
+. Überprüfen Sie, ob jeder Knoten eine Verbindung zu jedem Switch hat:
 +
 `net show lldp`
 
@@ -218,9 +218,9 @@ swp15      100G   BondMember  sw13                    swp15
 swp16      100G   BondMember  sw14                    swp16
 ----
 ====
-. Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
+. Überprüfen Sie den Zustand der Cluster-Ports im Cluster.
 +
-.. Vergewissern Sie sich, dass e0d-Ports über alle Nodes im Cluster hinweg ordnungsgemäß und ordnungsgemäß sind:
+.. Überprüfen Sie, ob die e0d-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
@@ -249,7 +249,7 @@ e3a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e3b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
-.. Überprüfen Sie den Switch-Systemzustand des Clusters (dies zeigt möglicherweise nicht den Switch sw2 an, da LIFs nicht auf e0d homed sind).
+.. Überprüfen Sie den Zustand des Switches vom Cluster aus (dabei wird möglicherweise Switch sw2 nicht angezeigt, da LIFs nicht auf e0d liegen).
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -293,5 +293,5 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation oder Aktualisierung des RCF können Sielink:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"] Die

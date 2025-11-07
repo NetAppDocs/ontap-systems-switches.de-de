@@ -2,50 +2,50 @@
 permalink: switch-netapp-cn1610/prepare-install-fastpath-rcfs.html 
 sidebar: sidebar 
 keywords: install, fastpath, software, rcfs, netapp cluster switch 
-summary: 'Sie müssen DIE FASTPATH Software und die Referenzkonfigurationsdateien (RCs) auf einem NetApp CN1610 Cluster Switch installieren.' 
+summary: 'Sie müssen die FASTPATH-Software und die Referenzkonfigurationsdateien (RCFs) auf einem NetApp CN1610 Cluster-Switch installieren.' 
 ---
-= Bereiten Sie die Installation VON FASTPATH Software und RCFs auf einem NetApp Cluster Switch vor
+= Bereiten Sie die Installation der FASTPATH-Software und der RCFs auf einem NetApp Cluster-Switch vor.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen DIE FASTPATH Software und die Referenzkonfigurationsdateien (RCs) auf einem NetApp CN1610 Cluster Switch installieren.
+Sie müssen die FASTPATH-Software und die Referenzkonfigurationsdateien (RCFs) auf einem NetApp CN1610 Cluster-Switch installieren.
 
 .Bevor Sie beginnen
-* Das Cluster muss ein voll funktionsfähiges Cluster sein.
-* Es dürfen keine defekten Netzwerkkarten des Clusters (NICs) vorhanden sein, und alle verbundenen Ports am Cluster-Switch müssen funktionsfähig sein.
+* Der Cluster muss ein voll funktionsfähiger Cluster sein.
+* Es dürfen keine defekten Netzwerkschnittstellenkarten (NICs) im Cluster vorhanden sein, und alle angeschlossenen Ports am Cluster-Switch müssen funktionsfähig sein.
 * Alle Cluster-Ports müssen aktiv sein.
-* Alle logischen Cluster-Schnittstellen (LIFs) müssen den Betrieb aufweisen und dürfen nicht migriert werden.
-* Die ONTAP (Berechtigung: Erweitert) `cluster ping-cluster -node node1` Der Befehl muss das angeben `larger than PMTU communication` Ist auf allen Pfaden erfolgreich.
-* Sie müssen die Switch-Kompatibilitätstabelle auf dem lesen http://mysupport.netapp.com/NOW/download/software/cm_switches_ntap/["NetApp CN1601 und CN1610 Switches"^] Seite für die unterstützten FASTPATH-, RCF- und ONTAP-Versionen.
+* Alle logischen Schnittstellen (LIFs) des Clusters müssen aktiv sein und dürfen nicht migriert worden sein.
+* ONTAP (Privileg: fortgeschritten) `cluster ping-cluster -node node1` Der Befehl muss angeben, dass `larger than PMTU communication` ist auf allen Wegen erfolgreich.
+* Sie müssen die Tabelle zur Schalterkompatibilität auf der Website konsultieren. http://mysupport.netapp.com/NOW/download/software/cm_switches_ntap/["NetApp CN1601 und CN1610 Switches"^] Seite für die unterstützten FASTPATH-, RCF- und ONTAP Versionen.
 +
-Zwischen der Befehlssyntax für „RCF“ und „FASTPATH“-Versionen kann eine Befehlssyntax bestehen.
+Zwischen der Befehlssyntax in den RCF- und FASTPATH-Versionen können Befehlsabhängigkeiten bestehen.
 
 
 
 
-NOTE: In RCF Version 1.2 wurde die Unterstützung für Telnet explizit aufgrund von Sicherheitsbedenken deaktiviert. Um Verbindungsprobleme bei der Installation von RCF 1.2 zu vermeiden, müssen Sie sicherstellen, dass Secure Shell (SSH) aktiviert ist. Der https://library.netapp.com/ecm/ecm_get_file/ECMP1117874["Administratorleitfaden für den NetApp CN1610 Switch"^] Hat weitere Informationen über SSH.
+NOTE: In RCF Version 1.2 wurde die Unterstützung für Telnet aus Sicherheitsgründen explizit deaktiviert.  Um Verbindungsprobleme während der Installation von RCF 1.2 zu vermeiden, müssen Sie sicherstellen, dass Secure Shell (SSH) aktiviert ist.  Der https://library.netapp.com/ecm/ecm_get_file/ECMP1117874["NetApp CN1610 Switch – Administratorhandbuch"^] enthält weitere Informationen zu SSH.
 
-.Über diese Aufgabe
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+.Informationen zu diesem Vorgang
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Für die in diesem Dokument beschriebenen Verfahren wird die Syntax „Clustered Data ONTAP 8.2“ verwendet. Aus diesem Grund unterscheiden sich der Cluster-Vserver, LIF-Namen und die CLI-Ausgabe von denen in Data ONTAP 8.3.
-* Die beiden NetApp-Switches sind cs1 und cs2.
-* Die beiden Cluster LIFs sind „Schlussfolgerungen 1“ und „schluss2“.
+* Die in diesem Dokument beschriebenen Verfahren verwenden die Clustered Data ONTAP 8.2 Syntax.  Daher unterscheiden sich der Cluster-Vserver, die LIF-Namen und die CLI-Ausgabe von denen in Data ONTAP 8.3.
+* Die beiden NetApp Switches sind cs1 und cs2.
+* Die beiden Cluster-LIFs sind clus1 und clus2.
 * Die Vserver sind vs1 und vs2.
-* Der `cluster::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
-* Die Cluster-Ports auf jedem Node lauten e1a und e2a.
+* Der `cluster::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
+* Die Cluster-Ports auf jedem Knoten tragen die Namen e1a und e2a.
 +
-Der https://hwu.netapp.com/["Hardware Universe"^] Bietet weitere Informationen zu den tatsächlichen, auf Ihrer Plattform unterstützten Cluster-Ports.
+Der https://hwu.netapp.com/["Hardware Universe"^] enthält weitere Informationen zu den tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.
 
-* Die Inter-Switch Links (ISLs), die für den NetApp Cluster Switch unterstützt werden, lauten die Ports 0/13 bis 0/16.
-* Die für den NetApp Cluster-Switch unterstützten Node-Verbindungen sind die Ports 0/1 bis 0/12.
+* Die für den NetApp Cluster-Switch unterstützten Inter-Switch-Links (ISLs) sind die Ports 0/13 bis 0/16.
+* Die für den NetApp Cluster-Switch unterstützten Knotenverbindungen sind die Ports 0/1 bis 0/12.
 
 
 Dieses Verfahren besteht aus zwei Teilen:
 
-* link:install-fastpath-software.html["INSTALLIEREN Sie DIE FASTPATH Software"]beschreibt, wie die FASTPATH-Software installiert wird.
-* link:install-rcf-file.html["Installieren Sie ein RCF auf einem CN1610-Switch"]beschreibt, wie RCFs installiert werden.
+* link:install-fastpath-software.html["Installieren Sie die FASTPATH-Software"]beschreibt, wie die FASTPATH-Software installiert wird.
+* link:install-rcf-file.html["Installieren Sie einen RCF auf einem CN1610-Schalter"]beschreibt die Installation von RCFs.
 

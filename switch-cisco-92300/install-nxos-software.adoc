@@ -2,7 +2,7 @@
 permalink: switch-cisco-92300/install-nxos-software.html 
 sidebar: sidebar 
 keywords: install nx-os,nx-os configure 
-summary: Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 92300YC-Switch installieren. 
+summary: Mit diesem Verfahren können Sie die NX-OS-Software auf dem Switch Nexus 92300YC installieren. 
 ---
 = Installieren Sie die NX-OS-Software
 :allow-uri-read: 
@@ -11,55 +11,55 @@ summary: Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 92300
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um die NX-OS-Software auf dem Nexus 92300YC-Switch zu installieren.
+Gehen Sie wie folgt vor, um die NX-OS-Software auf dem Switch Nexus 92300YC zu installieren.
 
-Bei NX-OS handelt es sich um ein Netzwerkbetriebssystem für die Ethernet Switches der Nexus Serie und die MDS Serie mit Fibre Channel (FC) Storage Area Network Switches von Cisco Systems.
+NX-OS ist ein Netzwerkbetriebssystem für die Nexus-Serie von Ethernet-Switches und die MDS-Serie von Fibre Channel (FC) Storage Area Network Switches von Cisco Systems.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-.Unterstützte Ports und Node-Verbindungen
-* Die Inter-Switch Links (ISLs) werden für Nexus 92300YC Switches unterstützt; die Ports 1/65 und 1/66.
-* Die für Nexus 92300YC-Switches unterstützten Node-Verbindungen sind die Ports 1/1 bis 1/66.
+.Unterstützte Ports und Knotenverbindungen
+* Die für die Nexus 92300YC Switches unterstützten Inter-Switch Links (ISLs) sind die Ports 1/65 und 1/66.
+* Die für die Nexus 92300YC Switches unterstützten Knotenverbindungen sind die Ports 1/1 bis 1/66.
 
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Anwendbare NetApp Cisco NX-OS Software für Ihre Switches über die NetApp Support Site, erhältlich über http://mysupport.netapp.com/["mysupport.netapp.com"]
-* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
-* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch Seite"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und NX-OS-Versionen.
+* Die passende NetApp Cisco NX-OS-Software für Ihre Switches finden Sie auf der NetApp Support-Website. http://mysupport.netapp.com/["mysupport.netapp.com"]
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switch-Seite"^]. In der Switch-Kompatibilitätstabelle finden Sie die unterstützten ONTAP und NX-OS-Versionen.
 
 
 
 
 == Installieren Sie die Software
 
-Die Beispiele in diesem Verfahren verwenden zwei Nodes, Sie können jedoch bis zu 24 Nodes in einem Cluster haben.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten, aber ein Cluster kann bis zu 24 Knoten umfassen.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Switch-Namen des Nexus 92300YC sind `cs1` Und `cs2`.
-* Das in diesem Verfahren verwendete Beispiel startet das Upgrade auf dem zweiten Schalter _*cs2*._
-* Die LIF-Namen des Clusters sind `node1_clus1` Und `node1_clus2` Für Node1, und `node2_clus1` Und `node2_clus2` Für Knoten 2.
-* Der IPspace-Name lautet `Cluster`.
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
-* Die Cluster-Ports an jedem Node werden mit benannt `e0a` Und `e0b`.
+* Die Bezeichnungen der Nexus 92300YC-Switches lauten: `cs1` Und `cs2` Die
+* Das in diesem Verfahren verwendete Beispiel startet das Upgrade auf dem zweiten Switch, _*cs2*._
+* Die Cluster-LIF-Namen sind `node1_clus1` Und `node1_clus2` für Knoten1 und `node2_clus1` Und `node2_clus2` für Knoten 2.
+* Der IPspace-Name lautet: `Cluster` Die
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
+* Die Cluster-Ports auf jedem Knoten sind benannt `e0a` Und `e0b` Die
 +
-Siehe link:https://hwu.netapp.com/Home/Index["_Hardware Universe^_"] Für die tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.
+Siehe dielink:https://hwu.netapp.com/Home/Index["Hardware-Universum^_"] für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports.
 
 
 
 .Schritte
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der die NX-OS-Software und die RCF hostet.
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
+. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung zum Server, auf dem die NX-OS-Software und die RCF gehostet werden.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird überprüft, ob der Switch den Server unter der IP-Adresse 172.19.2 erreichen kann:
+Dieses Beispiel bestätigt, dass der Switch den Server unter der IP-Adresse 172.19.2.1 erreichen kann:
 
 [listing, subs="+quotes"]
 ----
@@ -69,7 +69,7 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Kopieren Sie die NX-OS-Software und EPLD-Bilder auf den Nexus 92300YC-Switch.
+. Kopieren Sie die NX-OS-Software und die EPLD-Images auf den Nexus 92300YC-Switch.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -171,9 +171,9 @@ Active Package(s):
 cs2#
 ----
 ====
-. Installieren Sie das NX-OS Image.
+. Installieren Sie das NX-OS-Image.
 +
-Durch die Installation der Image-Datei wird sie bei jedem Neustart des Switches geladen.
+Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switches geladen.
 
 +
 .Beispiel anzeigen
@@ -304,7 +304,7 @@ plugin
 Active Package(s):
 ----
 ====
-. Aktualisieren Sie das EPLD-Bild, und starten Sie den Switch neu.
+. Aktualisieren Sie das EPLD-Image und starten Sie den Switch neu.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -356,7 +356,7 @@ EPLDs upgraded.
 Module 1 EPLD upgrade is successful.
 ----
 ====
-. Melden Sie sich nach dem Neustart des Switches erneut an, und überprüfen Sie, ob die neue EPLD-Version erfolgreich geladen wurde.
+. Nach dem Neustart des Switches melden Sie sich erneut an und überprüfen Sie, ob die neue Version von EPLD erfolgreich geladen wurde.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -378,5 +378,5 @@ GEM FPGA                         0x2
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 link:install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei"]

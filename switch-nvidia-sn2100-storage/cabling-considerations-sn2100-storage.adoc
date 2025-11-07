@@ -2,61 +2,61 @@
 permalink: switch-nvidia-sn2100-storage/cabling-considerations-sn2100-storage.html 
 sidebar: sidebar 
 keywords: sn2100 SN2100 cabling setup, sn2100 switches configuration, cumulus linux os 
-summary: Überprüfen Sie vor der Konfiguration des NVIDIA SN2100-Switches die folgenden Informationen. 
+summary: Bevor Sie Ihren NVIDIA SN2100 Switch konfigurieren, lesen Sie bitte die folgenden Informationen. 
 ---
-= Prüfen Sie die Verkabelung und Konfigurationsüberlegungen
+= Überprüfung der Verkabelung und Konfigurationsüberlegungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Lesen Sie vor der Konfiguration des NVIDIA SN2100-Switches die folgenden Punkte.
+Bevor Sie Ihren NVIDIA SN2100 Switch konfigurieren, beachten Sie bitte die folgenden Hinweise.
 
 
 
-== Details zum NVIDIA-Port
-
-|===
-
-
-| *Switch-Ports* | *Verwendung von Ports* 
-
-
- a| 
-Swp1s0-3
- a| 
-4 x 10 GbE Breakout-Cluster-Port-Nodes
-
-
-
- a| 
-Swp2s0-3
- a| 
-4 x 25-GbE-Breakout-Cluster-Port-Nodes
-
-
-
- a| 
-Swp3-14
- a| 
-40/100-GbE-Cluster-Port-Nodes
-
-
-
- a| 
-Swp15-16
- a| 
-100-GbE-Inter-Switch Link-Ports (ISL
+== NVIDIA -Portdetails
 
 |===
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports.
+
+
+| *Switch-Ports* | *Portnutzung* 
+
+
+ a| 
+swp1s0-3
+ a| 
+4x10GbE Breakout-Cluster-Portknoten
 
 
 
-== Verbindungsverzögerungen mit optischen Verbindungen
+ a| 
+swp2s0-3
+ a| 
+4x25GbE Breakout-Cluster-Portknoten
 
-Wenn Sie Verbindungsverzögerungen von mehr als fünf Sekunden haben, bietet Cumulus Linux 5.4 und höher Unterstützung für eine schnelle Verbindungsaufnahme. Sie können die Verknüpfungen mit konfigurieren `nv set` Befehl wie folgt:
+
+
+ a| 
+swp3-14
+ a| 
+40/100GbE-Cluster-Portknoten
+
+
+
+ a| 
+swp15-16
+ a| 
+100GbE Inter-Switch Link (ISL)-Ports
+
+|===
+Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.
+
+
+
+== Verbindungsverzögerungen bei optischen Verbindungen
+
+Falls Sie Verbindungsverzögerungen von mehr als fünf Sekunden feststellen, bietet Cumulus Linux 5.4 und spätere Versionen Unterstützung für schnelles Verbindungsaufbauen.  Sie können die Links mithilfe der folgenden Funktion konfigurieren: `nv set` Befehl wie folgt:
 
 [listing, subs="+quotes"]
 ----
@@ -83,13 +83,13 @@ Only switchd reload required
 
 == Unterstützung für Kupferverbindungen
 
-Die folgenden Konfigurationsänderungen sind erforderlich, um dieses Problem zu beheben.
+Um dieses Problem zu beheben, sind folgende Konfigurationsänderungen erforderlich.
 
 [role="tabbed-block"]
 ====
 .Cumulus Linux 4.4.3
 --
-. Benennen Sie die einzelnen Schnittstellen, die 40-GbE-/100-GbE-Kupferkabel verwenden, wie folgt:
+. Ermitteln Sie die Bezeichnung für jede Schnittstelle, die 40GbE/100GbE-Kupferkabel verwendet:
 +
 [listing, subs="+quotes"]
 ----
@@ -100,7 +100,7 @@ Interface  Identifier     Vendor Name     Vendor PN    Vendor SN      Vendor Rev
 swp3       0x11 (QSFP28)  Molex           112-00576    93A2229911111  B0
 swp4       0x11 (QSFP28)  Molex           112-00576    93A2229922222  B0
 ----
-. Fügen Sie die folgenden beiden Zeilen zum hinzu `/etc/cumulus/switchd.conf` Datei für jeden Port (swpp <n>), der 40 GbE/100 GbE Kupferkabel verwendet:
+. Fügen Sie die folgenden zwei Zeilen hinzu: `/etc/cumulus/switchd.conf` Datei für jeden Port (swp<n>), der 40GbE/100GbE-Kupferkabel verwendet:
 +
 ** `interface.swp<n>.enable_media_depended_linkup_flow=TRUE`
 ** `interface.swp<n>.enable_short_tuning=TRUE`
@@ -120,13 +120,13 @@ interface.swp4.enable_short_tuning=TRUE
 ----
 
 
-. Starten Sie den neu `switchd` Dienst:
+. Starten Sie das Gerät neu. `switchd` Service:
 +
 [listing, subs="+quotes"]
 ----
 cumulus@cumulus:mgmt:~$ *sudo systemctl restart switchd.service*
 ----
-. Vergewissern Sie sich, dass die Ports hochgefahren sind:
+. Vergewissern Sie sich, dass die Ports aktiv sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -142,7 +142,7 @@ UP     swp4      100G  9216   Trunk/L2                     Master: bridge(UP)
 --
 .Cumulus Linux 5.x
 --
-. Benennen Sie die einzelnen Schnittstellen, die 40-GbE-/100-GbE-Kupferkabel verwenden, wie folgt:
+. Ermitteln Sie die Bezeichnung für jede Schnittstelle, die 40GbE/100GbE-Kupferkabel verwendet:
 +
 [listing, subs="+quotes"]
 ----
@@ -153,11 +153,11 @@ Interface  Identifier     Vendor Name     Vendor PN    Vendor SN      Vendor Rev
 swp3       0x11 (QSFP28)  Molex           112-00576    93A2229911111  B0
 swp4       0x11 (QSFP28)  Molex           112-00576    93A2229922222  B0
 ----
-. Konfigurieren Sie die Verknüpfungen mit `nv set` Befehl wie folgt:
+. Konfigurieren Sie die Links mithilfe der `nv set` Befehl wie folgt:
 +
 ** `nv set interface <interface-id> link fast-linkup on`
 ** `nv config apply`
-** Laden Sie den neu `switchd` Service
+** Laden Sie die `switchd` Service
 +
 Beispiel:
 
@@ -175,7 +175,7 @@ Only switchd reload required
 ----
 
 
-. Vergewissern Sie sich, dass die Ports hochgefahren sind:
+. Vergewissern Sie sich, dass die Ports aktiv sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -190,11 +190,11 @@ UP     swp4      100G  9216   Trunk/L2                     Master: bridge(UP)
 
 --
 ====
- https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["SN2100-Switch stellt keine Verbindung über 40/100-GbE-Kupferkabel her"^]Weitere Informationen finden Sie im Knowledge Base-Artikel.
+Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["Der SN2100-Switch kann keine Verbindung über 40/100GbE-Kupferkabel herstellen."^] für weitere Einzelheiten.
 
-Auf Cumulus Linux 4.4.2 werden Kupferverbindungen nicht auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100-GbE-Ports unterstützt. Beispiel:
+Unter Cumulus Linux 4.4.2 werden Kupferverbindungen auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100GbE-Ports nicht unterstützt. Beispiel:
 
-* AFF A800 auf den Ports e0a und e0b
+* AFF A800 an den Ports e0a und e0b
 * AFF A320 an den Ports e0g und e0h
 
 
@@ -202,22 +202,22 @@ Auf Cumulus Linux 4.4.2 werden Kupferverbindungen nicht auf SN2100-Switches mit 
 
 == QSA-Adapter
 
-Wenn ein QSA-Adapter für die Verbindung mit den 10 GbE/25 GbE-Cluster-Ports auf einer Plattform verwendet wird, wird die Verbindung möglicherweise nicht hergestellt.
+Wenn ein QSA-Adapter verwendet wird, um eine Verbindung zu den 10GbE/25GbE-Cluster-Ports einer Plattform herzustellen, kann es vorkommen, dass die Verbindung nicht zustande kommt.
 
-Gehen Sie wie folgt vor, um dieses Problem zu beheben:
+Um dieses Problem zu beheben, gehen Sie wie folgt vor:
 
-* Stellen Sie bei 10GbE die Verbindungsgeschwindigkeit swp1s0-3 manuell auf 10000 und stellen Sie die automatische Aushandlung auf aus.
-* Stellen Sie für 25 GbE die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein, und stellen Sie die automatische Aushandlung auf aus.
-
-
-
-NOTE: Wenn Sie 10-GbE-QSA-Adapter verwenden, fügen Sie sie in Breakout-GbE-/100-GbE-Ports (swp3-swp14) ein. Setzen Sie den QSA-Adapter nicht in einen Port ein, der für einen Breakout konfiguriert ist.
+* Für 10GbE stellen Sie die Verbindungsgeschwindigkeit von swp1s0-3 manuell auf 10000 ein und deaktivieren Sie die automatische Aushandlung.
+* Für 25GbE stellen Sie die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein und deaktivieren Sie die automatische Aushandlung.
 
 
 
-== Stellen Sie die Schnittstellengeschwindigkeit an Breakout-Ports ein
+NOTE: Bei Verwendung von 10GbE/25GbE QSA-Adaptern stecken Sie diese in nicht-breakout 40GbE/100GbE-Ports (swp3-swp14).  Stecken Sie den QSA-Adapter nicht in einen Port, der für Breakout konfiguriert ist.
 
-Je nach Transceiver im Switch-Port müssen Sie die Geschwindigkeit an der Switch-Schnittstelle möglicherweise auf eine feste Geschwindigkeit einstellen. Bei Verwendung von 10-GbE- und 25-GbE-Breakout-Ports überprüfen Sie, ob die automatische Aushandlung deaktiviert ist, und legen Sie die Schnittstellengeschwindigkeit auf dem Switch fest.
+
+
+== Schnittstellengeschwindigkeit an Breakout-Ports einstellen
+
+Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen.  Bei Verwendung von 10GbE- und 25GbE-Breakout-Ports überprüfen Sie, ob die automatische Aushandlung deaktiviert ist, und stellen Sie die Schnittstellengeschwindigkeit am Switch ein.
 
 [role="tabbed-block"]
 ====
@@ -254,7 +254,7 @@ iface swp2s0
      link-autoneg off
      link-speed 25000 *<---- port speed set*
 ----
-Überprüfen Sie die Schnittstelle und den Port-Status, um zu überprüfen, ob die Einstellungen angewendet werden:
+Überprüfen Sie den Schnittstellen- und Portstatus, um sicherzustellen, dass die Einstellungen angewendet wurden:
 
 [listing, subs="+quotes"]
 ----
@@ -302,7 +302,7 @@ link                                                   
 [breakout]                                                                                    
   state                 up                      up                      up
 ----
-Überprüfen Sie die Schnittstelle und den Port-Status, um zu überprüfen, ob die Einstellungen angewendet werden:
+Überprüfen Sie den Schnittstellen- und Portstatus, um sicherzustellen, dass die Einstellungen angewendet wurden:
 
 [listing, subs="+quotes"]
 ----
@@ -332,5 +332,5 @@ UP     swp16      100G  9216   BondMember  cs01 (swp16)     Master: cl
 ----
 --
 ====
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie Ihre Verkabelungs- und Konfigurationsanforderungen überprüft haben, können Sielink:install-cable-shelves-sn2100-storage.html["Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrung."] Die

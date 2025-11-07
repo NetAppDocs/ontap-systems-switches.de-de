@@ -9,7 +9,7 @@ summary: Portdetails für Cisco Nexus 9364D-GX2A-Switches.
 
 
 [role="lead"]
-Der Cisco Nexus 9364D-GX2A Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp Systemschrank installiert werden.  Mit 9364D-GX2A-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
+Der Cisco Nexus 9364D-GX2A Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp Systemschrank installiert werden. Mit 9364D-GX2A-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 
 
@@ -33,4 +33,4 @@ Ethernet1/63, Ethernet1/64
 400GbE ISL
 
 |===
-Siehe die https://hwu.netapp.com["Hardware Universe"^] für Details zu den von der Plattform verwendeten Ports.
+Siehe die https://hwu.netapp.com["Hardware Universe"^] Einzelheiten zu den von der Plattform verwendeten Ports finden Sie hier.

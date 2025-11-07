@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/cn1610-migrate-to-3232c-overview.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3232c switch, 
-summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Übersicht über den Prozess und die Terminologie. 
+summary: Bevor Sie Cisco Nexus 3232c Switches konfigurieren, sollten Sie sich einen Überblick über den Prozess und die Nomenklatur verschaffen. 
 ---
 = Migrationsanforderungen
 :allow-uri-read: 
@@ -10,12 +10,12 @@ summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Üb
 
 
 [role="lead"]
-Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 
-NOTE: Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+NOTE: Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
-Weitere Informationen finden Sie bei Bedarf im folgenden Dokument:
+Falls erforderlich, finden Sie weitere Informationen in den folgenden Quellen:
 
 * link:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610"^]
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
@@ -24,85 +24,85 @@ Weitere Informationen finden Sie bei Bedarf im folgenden Dokument:
 
 
 
-== Migrationsanforderungen für CN1610
+== CN1610 Migrationsanforderungen
 
-Die Cluster-Switches unterstützen die folgenden Node-Verbindungen:
+Die Cluster-Switches unterstützen folgende Knotenverbindungen:
 
-* NetApp CN1610: 0/1 bis 0/12 (10 GbE)
-* Cisco Nexus 3232C – Ports e1/1-30 (40 oder 100 oder 4x10 GbE)
+* NetApp CN1610: Ports 0/1 bis 0/12 (10 GbE)
+* Cisco Nexus 3232C: Ports e1/1-30 (40 oder 100 oder 4x10GbE)
 
 
-Bei den Cluster-Switches werden die folgenden Inter-Switch-Link-Ports (ISL) verwendet.
+Die Cluster-Switches verwenden die folgenden Inter-Switch-Link-Ports (ISL).
 
-* NetApp CN1610: 0/13 bis 0/16 (10 GbE)
-* Cisco Nexus 3232C – 31-32 Ports (100 GbE)
+* NetApp CN1610: Ports 0/13 bis 0/16 (10 GbE)
+* Cisco Nexus 3232C: Ports 1/31-32 (100GbE)
 
 
 [NOTE]
 ====
-Auf dem Cisco Nexus 3232C Cluster Switch müssen 4X10G-Breakout-Kabel verwendet werden.
+Sie müssen 4x10G Breakout-Kabel am Cisco Nexus 3232C Cluster-Switch verwenden.
 
 ====
-Die folgende Tabelle zeigt die in der jeweiligen Phase erforderlichen Verkabelungsverbindungen beim Umstieg von NetApp CN1610-Switches auf Cisco Nexus 3232C-Cluster-Switches:
+Die folgende Tabelle zeigt die Kabelverbindungen, die in jeder Phase des Übergangs von NetApp CN1610-Switches zu Cisco Nexus 3232C-Cluster-Switches erforderlich sind:
 
 |===
-| Stufe | Beschreibung | Erforderliche Kabel 
+| Bühne | Beschreibung | Erforderliche Kabel 
 
 
  a| 
-Initial
+Anfänglich
  a| 
-CN1610 bis CN1610 (SFP+ auf SFP+)
+CN1610 zu CN1610 (SFP+ zu SFP+)
  a| 
-4 SFP+-Glasfaserkabel oder Kupfer-Direct-Attached-Kabel
+4 SFP+ Glasfaser- oder Kupfer-Direktanschlusskabel
 
 
 
  a| 
 Übergang
  a| 
-CN1610 bis 3232C (QSFP zu SFP+)
+CN1610 zu 3232C (QSFP zu SFP+)
  a| 
-1 QSFP- und 4 SFP+-Glasfaserkabel oder Kupferkabel
+1 QSFP- und 4 SFP+-Glasfaser- oder Kupfer-Breakout-Kabel
 
 
 
  a| 
-Endgültig
+Finale
  a| 
-3232C auf 3232C (QSFP zu QSFP)
+3232C zu 3232C (QSFP zu QSFP)
  a| 
-2 QSFP-Glasfaserkabel oder Kupfer-Direct-Attach-Kabel
+2 QSFP-Glasfaser- oder Kupfer-Direktanschlusskabel
 
 |===
-Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben.  Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den RCFs definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
+Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben.  Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den verfügbaren RCFs definiert unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
 
-Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind aufgeführt unterlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] .
+Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind aufgelistet unterlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Die
 
-Die in diesem Verfahren unterstützten ONTAP und FASTPATH-Versionen sind aufgeführt unterlink:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610 Switches"^] .
+Die in diesem Verfahren unterstützten ONTAP und FASTPATH-Versionen sind aufgelistet unterlink:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610 Switches"^] Die
 
-.Über die verwendeten Beispiele
+.Zu den verwendeten Beispielen
 Die Beispiele im Migrationsverfahren verwenden vier Knoten:
 
-* Zwei Knoten nutzen vier 10-GbE-Cluster-Interconnect-Ports: *e0a*, *e0b*, *e0c* und *e0d*.
-* Die anderen beiden Knoten verwenden zwei 40 GbE Cluster Interconnect Glasfaserkabel: *e4a* und *e4e*.
+* Zwei Knoten nutzen vier 10-GbE-Cluster-Verbindungsports: *e0a*, *e0b*, *e0c* und *e0d*.
+* Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: *e4a* und *e4e*.
 +
-Der link:https://hwu.netapp.com/["_Hardware Universe_"^] enthält Informationen zu den Clusterfaserkabeln für Ihre Plattformen.
+Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] verfügt über Informationen zu den Cluster-Glasfaserkabeln für Ihre Plattformen.
 
 
 
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
 * Die Knoten sind *n1*, *n2*, *n3* und *n4*.
-* Die Ausgaben für die Befehle können je nach Versionen der ONTAP Software variieren.
+* Die Befehlsausgaben können je nach Version der ONTAP -Software variieren.
 * Die zu ersetzenden CN1610-Schalter sind *CL1* und *CL2*.
-* Die Switches des Nexus 3232C sind *C1* und *C2*.
-* *N1_clus1* ist die erste logische Cluster-Schnittstelle (LIF), die mit Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* verbunden ist.
-* *N1_clus2* ist die erste Cluster-LIF, die mit Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* verbunden ist.
-* *N1_clus3* ist die zweite LIF, die an Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* angeschlossen ist.
-* *N1_clus4* ist die zweite LIF, die mit Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* verbunden ist.
-* Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
+* Die Nexus 3232C-Switches, die die CN1610-Switches ersetzen, sind *C1* und *C2*.
+* *n1_clus1* ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.
+* *n1_clus2* ist der erste Cluster-LIF, der mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.
+* *n1_clus3* ist die zweite LIF, die mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.
+* *n1_clus4* ist die zweite LIF, die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter [URL] verfügbar sind.link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
 
 
-.Was kommt als Nächstes?
-link:cn1610-prepare-to-migrate.html["Vorbereitung der Migration"].
+.Wie geht es weiter?
+link:cn1610-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"].

@@ -2,77 +2,77 @@
 permalink: switch-nvidia-sn2100/upgrade-cl-version.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
-summary: Führen Sie die folgenden Schritte durch, um Ihre Cumulus Linux-Version zu aktualisieren. 
+summary: Führen Sie die folgenden Schritte aus, um Ihre Cumulus Linux-Version zu aktualisieren. 
 ---
-= Aktualisieren Sie Cumulus Linux-Versionen
+= Cumulus Linux-Versionen aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um Ihre Cumulus Linux-Version bei Bedarf zu aktualisieren.
+Führen Sie die folgenden Schritte aus, um Ihre Cumulus Linux-Version bei Bedarf zu aktualisieren.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Linux-Wissen auf mittlerer Ebene.
-* Vertrautheit mit grundlegender Textbearbeitung, UNIX-Dateiberechtigungen und Prozessüberwachung. Eine Vielzahl von Texteditoren sind vorinstalliert, einschließlich `vi` Und `nano`.
-* Zugriff auf eine Linux oder UNIX Shell. Wenn Sie Windows verwenden, verwenden Sie eine Linux-Umgebung als Kommandozeilen-Tool für die Interaktion mit Cumulus Linux.
-* Die Baud-Rate-Anforderung ist auf 115200 am seriellen Konsolen-Switch für den Zugriff auf die NVIDIA SN2100-Switch-Konsole eingestellt, wie folgt:
+* Linux-Kenntnisse auf mittlerem Niveau.
+* Kenntnisse in grundlegender Textbearbeitung, UNIX-Dateiberechtigungen und Prozessüberwachung.  Eine Vielzahl von Texteditoren ist vorinstalliert, darunter `vi` Und `nano` Die
+* Zugriff auf eine Linux- oder UNIX-Shell.  Wenn Sie Windows verwenden, nutzen Sie eine Linux-Umgebung als Befehlszeilentool für die Interaktion mit Cumulus Linux.
+* Die Baudratenanforderung für den seriellen Konsolen-Switch für den Konsolenzugriff des NVIDIA SN2100-Switches ist wie folgt auf 115200 eingestellt:
 +
 ** 115200 Baud
 ** 8 Datenbits
 ** 1 Stoppbit
-** Parität: Keine
-** Flusskontrolle: Keine
+** Parität: keine
+** Flusssteuerung: keine
 
 
 
 
-.Über diese Aufgabe
+.Informationen zu diesem Vorgang
 Beachten Sie Folgendes:
 
 
-NOTE: Jedes Mal, wenn Cumulus Linux aktualisiert wird, wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut. Ihre bestehende Konfiguration wird gelöscht. Sie müssen Ihre Switch-Konfiguration speichern und aufzeichnen, bevor Sie Cumulus Linux aktualisieren.
+NOTE: Bei jedem Upgrade von Cumulus Linux wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut.  Ihre bestehende Konfiguration wird gelöscht.  Sie müssen Ihre Switch-Konfiguration speichern und protokollieren, bevor Sie Cumulus Linux aktualisieren.
 
 
-CAUTION: Das Standardpasswort für das Cumulus-Benutzerkonto lautet *Cumulus*. Wenn Sie sich das erste Mal bei Cumulus Linux anmelden, müssen Sie dieses Standardpasswort ändern. Sie müssen Automatisierungsskripts aktualisieren, bevor Sie ein neues Image installieren. Cumulus Linux bietet Befehlszeilenoptionen zum automatischen Ändern des Standardpassworts während des Installationsvorgangs.
+CAUTION: Das Standardpasswort für das Cumulus-Benutzerkonto lautet *cumulus*.  Beim ersten Anmelden bei Cumulus Linux müssen Sie dieses Standardpasswort ändern.  Vor der Installation eines neuen Images müssen Sie alle Automatisierungsskripte aktualisieren.  Cumulus Linux bietet Befehlszeilenoptionen, um das Standardpasswort während des Installationsprozesses automatisch zu ändern.
 
-Weitere Informationen finden Sie unter https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-510/Installation-Management/Installing-a-New-Cumulus-Linux-Image/["Installieren eines neuen Cumulus Linux-Images"^].
+Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-510/Installation-Management/Installing-a-New-Cumulus-Linux-Image/["Installation eines neuen Cumulus Linux-Images"^] für weitere Informationen.
 
 .Schritte
 [role="tabbed-block"]
 ====
-.Cumulus Linux 4.4.x bis Cumulus Linux 5.4.0
+.Cumulus Linux 4.4.x zu Cumulus Linux 5.4.0
 --
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
 . Verwenden Sie den Ping-Befehl, um die Verbindung zum Server zu überprüfen, auf dem Cumulus Linux und RCF gehostet werden.
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-. Überprüfen Sie die aktuelle Version von Cumulus Linux und die angeschlossenen Ports:
+. Überprüfen Sie die aktuelle Cumulus Linux-Version und die angeschlossenen Ports:
 +
 [listing, subs="+quotes"]
 ----
@@ -158,7 +158,7 @@ Welcome to NVIDIA Cumulus (R) Linux (R)
 
 ZTP in progress. To disable, do 'ztp -d'
 ----
-. Prüfen Sie die Cumulus Linux-Version: `nv show system`
+. Überprüfen Sie die Cumulus Linux-Version: `nv show system`
 +
 [listing, subs="+quotes"]
 ----
@@ -182,7 +182,7 @@ Warning: The following files have been changed since the last save, and they WIL
 .
 .
 ----
-. Melden Sie sich ab, und melden Sie sich erneut beim Switch an, um den aktualisierten Switch-Namen an der Eingabeaufforderung anzuzeigen:
+. Melden Sie sich vom Switch ab und wieder an, um den aktualisierten Switch-Namen in der Eingabeaufforderung zu sehen:
 +
 [listing, subs="+quotes"]
 ----
@@ -203,7 +203,7 @@ ZTP in progress. To disable, do 'ztp -d'
 
 cumulus@sw1:mgmt:~$
 ----
-. Legen Sie die IP-Adresse fest:
+. IP-Adresse festlegen:
 +
 [listing, subs="+quotes"]
 ----
@@ -217,7 +217,7 @@ unreachable default metric 4278198272
 10.231.80.0/22 dev eth0 proto kernel scope link src 10.231.80.206
 127.0.0.0/8 dev mgmt proto kernel scope link src 127.0.0.1
 ----
-. Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu `sudo` Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.
+. Erstellen Sie einen neuen Benutzer und fügen Sie diesen Benutzer der folgenden Gruppe hinzu: `sudo` Gruppe.  Dieser Benutzer wird erst nach einem Neustart der Konsolen-/SSH-Sitzung wirksam.
 +
 `sudo adduser --ingroup netedit admin`
 
@@ -262,7 +262,7 @@ http://www.cumulusnetworks.com/support
 The registered trademark Linux (R) is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 admin@sw1:mgmt:~$
 ----
-. Fügen Sie zusätzliche Benutzergruppen hinzu, auf die der Admin-Benutzer zugreifen kann `nv` Befehl:
+. Fügen Sie dem Administrator weitere Benutzergruppen hinzu, auf die er zugreifen kann. `nv` Befehle:
 +
 [listing, subs="+quotes"]
 ----
@@ -273,40 +273,40 @@ cumulus@sw1:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Siehe https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] Finden Sie weitere Informationen.
+Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] für weitere Informationen.
 
 
 
 --
-.Cumulus Linux 5.x bis Cumulus Linux 5.4.0
+.Cumulus Linux 5.x zu Cumulus Linux 5.4.0
 --
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
 . Verwenden Sie den Ping-Befehl, um die Verbindung zum Server zu überprüfen, auf dem Cumulus Linux und RCF gehostet werden.
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-. Überprüfen Sie die aktuelle Version von Cumulus Linux und die angeschlossenen Ports:
+. Überprüfen Sie die aktuelle Cumulus Linux-Version und die angeschlossenen Ports:
 +
 [listing, subs="+quotes"]
 ----
@@ -382,7 +382,7 @@ Welcome to NVIDIA Cumulus (R) Linux (R)
 
 ZTP in progress. To disable, do 'ztp -d'
 ----
-. Prüfen Sie die Cumulus Linux-Version: `nv show system`
+. Überprüfen Sie die Cumulus Linux-Version: `nv show system`
 +
 [listing, subs="+quotes"]
 ----
@@ -406,7 +406,7 @@ Warning: The following files have been changed since the last save, and they WIL
 .
 .
 ----
-. Melden Sie sich ab, und melden Sie sich erneut beim Switch an, um den aktualisierten Switch-Namen an der Eingabeaufforderung anzuzeigen:
+. Melden Sie sich vom Switch ab und wieder an, um den aktualisierten Switch-Namen in der Eingabeaufforderung zu sehen:
 +
 [listing, subs="+quotes"]
 ----
@@ -427,7 +427,7 @@ ZTP in progress. To disable, do 'ztp -d'
 
 cumulus@sw1:mgmt:~$
 ----
-. Legen Sie die IP-Adresse fest:
+. IP-Adresse festlegen:
 +
 [listing, subs="+quotes"]
 ----
@@ -442,7 +442,7 @@ unreachable default metric 4278198272
 10.231.80.0/22 dev eth0 proto kernel scope link src 10.231.80.206
 127.0.0.0/8 dev mgmt proto kernel scope link src 127.0.0.1
 ----
-. Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu `sudo` Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.
+. Erstellen Sie einen neuen Benutzer und fügen Sie diesen Benutzer der folgenden Gruppe hinzu: `sudo` Gruppe.  Dieser Benutzer wird erst nach einem Neustart der Konsolen-/SSH-Sitzung wirksam.
 +
 `sudo adduser --ingroup netedit admin`
 
@@ -487,7 +487,7 @@ http://www.cumulusnetworks.com/support
 The registered trademark Linux (R) is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 admin@sw1:mgmt:~$
 ----
-. Fügen Sie zusätzliche Benutzergruppen hinzu, auf die der Admin-Benutzer zugreifen kann `nv` Befehl:
+. Fügen Sie dem Administrator weitere Benutzergruppen hinzu, auf die er zugreifen kann. `nv` Befehle:
 +
 [listing, subs="+quotes"]
 ----
@@ -498,40 +498,40 @@ cumulus@sw1:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Siehe https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] Finden Sie weitere Informationen.
+Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] für weitere Informationen.
 
 
 
 --
 .Cumulus Linux 5.4.0 bis Cumulus Linux 5.11.0
 --
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
 . Verwenden Sie den Ping-Befehl, um die Verbindung zum Server zu überprüfen, auf dem Cumulus Linux und RCF gehostet werden.
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-. Überprüfen Sie die aktuelle Version von Cumulus Linux und die angeschlossenen Ports:
+. Überprüfen Sie die aktuelle Cumulus Linux-Version und die angeschlossenen Ports:
 +
 [listing, subs="+quotes"]
 ----
@@ -607,7 +607,7 @@ Welcome to NVIDIA Cumulus (R) Linux (R)
 
 ZTP in progress. To disable, do 'ztp -d'
 ----
-. Prüfen Sie die Cumulus Linux-Version: `nv show system`
+. Überprüfen Sie die Cumulus Linux-Version: `nv show system`
 +
 [listing, subs="+quotes"]
 ----
@@ -631,7 +631,7 @@ Warning: The following files have been changed since the last save, and they WIL
 .
 .
 ----
-. Melden Sie sich ab und erneut beim Switch an, um den aktualisierten Switch-Namen in der Eingabeaufforderung anzuzeigen:
+. Melden Sie sich vom Switch ab und wieder an, um den aktualisierten Switch-Namen in der Eingabeaufforderung zu sehen:
 +
 [listing, subs="+quotes"]
 ----
@@ -652,7 +652,7 @@ ZTP in progress. To disable, do 'ztp -d'
 
 cumulus@sw1:mgmt:~$
 ----
-. Legen Sie die IP-Adresse fest:
+. IP-Adresse festlegen:
 +
 [listing, subs="+quotes"]
 ----
@@ -671,5 +671,5 @@ unreachable default metric 4278198272
 
 --
 ====
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach dem Upgrade Ihrer Cumulus Linux-Version können Sielink:install-rcf-sn2100-cluster.html["Installieren oder aktualisieren Sie das RCF-Skript"] Die

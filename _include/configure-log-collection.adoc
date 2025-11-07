@@ -2,15 +2,15 @@
 :allow-uri-read: 
 
 
-Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung des Betriebszustands von Cluster- und Speichernetzwerk-Switches und das Sammeln von Switch-Protokollen für Debugging-Zwecke verantwortlich. Dieses Verfahren führt Sie durch den Prozess der Einrichtung der Erfassung, der Anforderung detaillierter *Support* Protokolle und der Aktivierung einer stündlichen Erfassung von *periodischen* Daten, die von AutoSupport gesammelt werden.
+Der Ethernet Switch Health Monitor (CSHM) ist dafür zuständig, den Betriebszustand der Cluster- und Speichernetzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln.  Dieses Verfahren führt Sie durch den Prozess der Einrichtung der Datenerfassung, der Anforderung detaillierter *Support*-Protokolle und der Aktivierung einer stündlichen Erfassung von *periodischen* Daten, die von AutoSupport erfasst werden.
 
-*HINWEIS:* Wenn Sie den FIPS-Modus aktivieren, müssen Sie Folgendes ausführen:
+*HINWEIS:* Wenn Sie den FIPS-Modus aktivieren, müssen Sie Folgendes durchführen:
 
 [NOTE]
 ====
-. Generieren Sie SSH-Schlüssel auf dem Switch mithilfe der Herstelleranweisungen neu.
-. Regenerieren Sie SSH-Schlüssel in ONTAP mit `debug system regenerate-systemshell-key-pair`
-. Führen Sie die Setup-Routine für die Protokollsammlung mit dem `system switch ethernet log setup-password` Befehl erneut aus
+. Generieren Sie die SSH-Schlüssel auf dem Switch gemäß den Anweisungen des Herstellers neu.
+. SSH-Schlüssel in ONTAP neu generieren mit `debug system regenerate-systemshell-key-pair`
+. Führen Sie die Routine zur Einrichtung der Protokollsammlung erneut aus. `system switch ethernet log setup-password` Befehl
 
 
 ====
@@ -18,15 +18,15 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 
 == Bevor Sie beginnen
 
-* Der Benutzer muss Zugriff auf die Switch-Befehle haben `show` . Wenn diese nicht verfügbar sind, erstellen Sie einen neuen Benutzer und erteilen Sie dem Benutzer die erforderlichen Berechtigungen.
-* Die Switch-Statusüberwachung muss für den Switch aktiviert sein. Überprüfen Sie dies, indem Sie sicherstellen, dass die `Is Monitored:` Feld wird in der Ausgabe des auf *true* gesetzt `system switch ethernet show` Befehl.
-* Für die Protokollerfassung mit Broadcom- und Cisco-Switches:
+* Der Benutzer muss Zugriff auf den Schalter haben. `show` Befehle.  Falls diese nicht verfügbar sind, erstellen Sie einen neuen Benutzer und erteilen Sie diesem die erforderlichen Berechtigungen.
+* Die Zustandsüberwachung des Switches muss aktiviert sein.  Überprüfen Sie dies, indem Sie sicherstellen, dass `Is Monitored:` Das Feld wird in der Ausgabe auf *true* gesetzt. `system switch ethernet show` Befehl.
+* Für die Protokollerfassung mit Broadcom- und Cisco -Switches:
 +
 ** Der lokale Benutzer muss über Netzwerkadministratorrechte verfügen.
-** Für jedes Cluster-Setup sollte auf dem Switch ein neuer Benutzer erstellt werden, bei dem die Protokollerfassung aktiviert ist. Diese Switches unterstützen nicht mehrere SSH-Schlüssel für denselben Benutzer. Bei jeder weiteren Einrichtung der Protokollerfassung werden alle bereits vorhandenen SSH-Schlüssel für den Benutzer überschrieben.
+** Für jede Clusterkonfiguration, bei der die Protokollerfassung aktiviert ist, sollte ein neuer Benutzer auf dem Switch angelegt werden.  Diese Switches unterstützen keine mehreren SSH-Schlüssel für denselben Benutzer.  Jede zusätzliche Konfiguration der Protokollerfassung überschreibt alle bereits vorhandenen SSH-Schlüssel des Benutzers.
 
 
-* Für die Unterstützung der Log-Erfassung mit NVIDIA-Switches muss der _user_ für die Log-Sammlung berechtigt sein `cl-support`, den Befehl auszuführen, ohne ein Passwort angeben zu müssen. Führen Sie den folgenden Befehl aus, um diese Verwendung zuzulassen:
+* Für die Protokollerfassung mit NVIDIA -Switches muss dem Benutzer, der für die Protokollerfassung zuständig ist, die Berechtigung zum Ausführen des Programms erteilt werden. `cl-support` Befehle ausführen, ohne ein Passwort angeben zu müssen.  Um diese Verwendung zu ermöglichen, führen Sie folgenden Befehl aus:
 +
 `echo '_<user>_ ALL = NOPASSWD: /usr/cumulus/bin/cl-support' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
 
@@ -40,9 +40,9 @@ Die Ethernet-Switch-Integritätsüberwachung (CSHM) ist für die Sicherstellung 
 ====
 .ONTAP 9.15.1 und höher
 --
-. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
+. Um die Protokollerfassung einzurichten, führen Sie für jeden Switch den folgenden Befehl aus.  Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Passwort für die Protokollerfassung einzugeben.
 +
-*HINWEIS:* Wenn Sie bei der Benutzerspezifikationsabfrage mit *y* antworten, stellen Sie sicher, dass der Benutzer über die erforderlichen Berechtigungen verfügt, wie in <<Bevor Sie beginnen>> .
+*HINWEIS:* Wenn Sie die Benutzerspezifikationsabfrage mit *j* beantworten, stellen Sie sicher, dass der Benutzer über die erforderlichen Berechtigungen verfügt, wie in der Dokumentation beschrieben.<<Bevor Sie beginnen>> Die
 
 +
 [source, cli]
@@ -79,9 +79,9 @@ Enter the password again: *<enter switch password>*
 
 
 
-NOTE: Erstellen Sie für CL 5.11.1 den Benutzer *cumulus* und antworten Sie mit *y* auf die folgende Eingabeaufforderung: Möchten Sie für die Protokollerfassung einen anderen Benutzer als den Administrator angeben? {y|n}: *y*
+NOTE: Für CL 5.11.1 erstellen Sie den Benutzer *cumulus* und antworten Sie mit *y* auf die folgende Eingabeaufforderung: Möchten Sie einen anderen Benutzer als admin für die Protokollerfassung angeben?  {y|n}: *y*
 
-. [[Schritt 2]]Aktivieren Sie die regelmäßige Protokollerfassung:
+. [[step2]]Aktivieren Sie die regelmäßige Protokollerfassung:
 +
 [source, cli]
 ----
@@ -110,7 +110,7 @@ cs1                                       true        scheduled   never-run
 cs2                                       true        scheduled   never-run
 2 entries were displayed.
 ----
-. Support-Protokoll anfordern:
+. Anforderung von Support-Protokollsammlung:
 +
 [source, cli]
 ----
@@ -135,7 +135,7 @@ cs1                                       false       halted      initiated
 cs2                                       true        scheduled   initiated
 2 entries were displayed.
 ----
-. Um alle Details der Protokollsammlung anzuzeigen, einschließlich der Aktivierung, Statusmeldung, des vorherigen Zeitstempels und des Dateinamens der periodischen Erfassung, des Anforderungsstatus, der Statusmeldung und des vorherigen Zeitstempels und des Dateinamens der Support-Sammlung, verwenden Sie Folgendes:
+. Um alle Details der Protokollerfassung anzuzeigen, einschließlich Aktivierung, Statusmeldung, vorherigem Zeitstempel und Dateinamen der periodischen Erfassung, Anforderungsstatus, Statusmeldung, vorherigem Zeitstempel und Dateinamen der Support-Erfassung, verwenden Sie Folgendes:
 +
 [source, cli]
 ----
@@ -170,11 +170,11 @@ cluster1::*> *system switch ethernet log show -instance*
 
 
 --
-.ONTAP 9.14.1 und frühere Versionen
+.ONTAP 9.14.1 und früher
 --
-. Führen Sie zum Einrichten der Protokollsammlung den folgenden Befehl für jeden Switch aus. Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Kennwort für die Protokollerfassung einzugeben.
+. Um die Protokollerfassung einzurichten, führen Sie für jeden Switch den folgenden Befehl aus.  Sie werden aufgefordert, den Switch-Namen, den Benutzernamen und das Passwort für die Protokollerfassung einzugeben.
 +
-*HINWEIS:* Wenn Sie auf die Eingabeaufforderung der Benutzerspezifikation antworten `y`, stellen Sie sicher, dass der Benutzer die erforderlichen Berechtigungen hat<<Bevor Sie beginnen>>, wie in beschrieben.
+*HINWEIS:* Wenn Sie antworten `y` Stellen Sie bei der Eingabeaufforderung für die Benutzerspezifikation sicher, dass der Benutzer über die erforderlichen Berechtigungen verfügt, wie in der folgenden Beschreibung aufgeführt:<<Bevor Sie beginnen>> Die
 
 +
 [source, cli]
@@ -211,9 +211,9 @@ Enter the password again: *<enter switch password>*
 
 
 
-NOTE: Erstellen Sie für CL 5.11.1 den Benutzer *cumulus* und antworten Sie mit *y* auf die folgende Eingabeaufforderung: Möchten Sie für die Protokollerfassung einen anderen Benutzer als den Administrator angeben? {y|n}: *y*
+NOTE: Für CL 5.11.1 erstellen Sie den Benutzer *cumulus* und antworten Sie mit *y* auf die folgende Eingabeaufforderung: Möchten Sie einen anderen Benutzer als admin für die Protokollerfassung angeben?  {y|n}: *y*
 
-. [[Schritt 2]] Um die Erfassung des Support-Protokolls anzufordern und die regelmäßige Erfassung zu aktivieren, führen Sie den folgenden Befehl aus. Damit werden beide Arten der Protokollerfassung gestartet: Die detaillierten `Support` Protokolle und eine stündliche Datenerfassung `Periodic` .
+. [[step2]] Um die Erfassung von Support-Protokollen anzufordern und die regelmäßige Erfassung zu aktivieren, führen Sie den folgenden Befehl aus.  Damit werden beide Arten der Protokollerfassung gestartet: die detaillierte `Support` Protokolle und eine stündliche Erfassung von `Periodic` Daten.
 +
 [source, cli]
 ----
@@ -235,7 +235,7 @@ Do you want to modify the cluster switch log collection configuration? {y|n}: [n
 Enabling cluster switch log collection.
 ----
 +
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung abgeschlossen ist:
+Warten Sie 10 Minuten und überprüfen Sie dann, ob die Protokollerfassung abgeschlossen ist:
 
 +
 [source, cli]

@@ -2,34 +2,34 @@
 permalink: switch-cisco-3232c/migrate-from-switchless-prepare-to-migrate.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Cluster einsetzen. 
+summary: Sie können Cisco Nexus 3232C Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Vorbereitung der Migration von 2-Node-Clustern ohne Switches auf 2-Node-Cluster mit Switches
+= Vorbereitung der Migration von Zwei-Knoten-Clustern ohne Switches zu Zwei-Knoten-Clustern mit Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-So bereiten Sie Ihr Cluster mit zwei Nodes ohne Switches auf die Migration zu einem Cluster mit zwei Nodes vor, das über Cisco Nexus 3232C-Cluster-Netzwerk-Switches verfügt.
+Befolgen Sie diese Schritte, um Ihren Zwei-Knoten-Switchless-Cluster für die Migration zu einem Zwei-Knoten-Switched-Cluster mit Cisco Nexus 3232C Cluster-Netzwerk-Switches vorzubereiten.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
-. Legen Sie den Administrations- oder Betriebsstatus für jede Cluster-Schnittstelle fest:
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show -role cluster`
 
@@ -58,7 +58,7 @@ e4e       Cluster      Cluster          up   9000 auto/40000  -
 4 entries were displayed.
 ----
 ====
-.. Informationen zu den logischen Schnittstellen und den zugehörigen Home-Nodes anzeigen:
+.. Informationen über die logischen Schnittstellen und ihre jeweiligen Heimatknoten anzeigen:
 +
 `network interface show -role cluster`
 
@@ -82,7 +82,7 @@ Cluster
 4 entries were displayed.
 ----
 ====
-.. Überprüfen Sie mithilfe des erweiterten Berechtigungsbefehls, ob die Cluster-Erkennung ohne Switch aktiviert ist:
+.. Überprüfen Sie mithilfe des Befehls mit erweiterten Berechtigungen, ob die Erkennung von Switchless-Clustern aktiviert ist:
 +
 `network options detect-switchless-cluster show``
 
@@ -90,7 +90,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die Ausgabe im folgenden Beispiel zeigt, dass die Cluster-Erkennung ohne Switches aktiviert ist:
+Die Ausgabe im folgenden Beispiel zeigt, dass die Erkennung von Clustern ohne Schalter aktiviert ist:
 
 [listing, subs="+quotes"]
 ----
@@ -100,34 +100,34 @@ Enable Switchless Cluster Detection: true
 ====
 
 
-. Vergewissern Sie sich, dass die entsprechenden RCs und das entsprechende Image auf den neuen 3232C-Switches installiert sind und nehmen Sie alle erforderlichen Standortanpassungen vor, z. B. das Hinzufügen von Benutzern, Passwörtern und Netzwerkadressen.
+. Überprüfen Sie, ob die entsprechenden RCFs und das Image auf den neuen 3232C-Switches installiert sind, und nehmen Sie alle notwendigen Standortanpassungen vor, z. B. das Hinzufügen von Benutzern, Passwörtern und Netzwerkadressen.
 +
-Sie müssen beide Switches derzeit vorbereiten. Wenn Sie die RCF- und Bildsoftware aktualisieren müssen, müssen Sie folgende Schritte ausführen:
+Sie müssen jetzt beide Schalter vorbereiten.  Falls Sie die RCF- und Bildverarbeitungssoftware aktualisieren müssen, befolgen Sie bitte diese Schritte:
 
 +
-.. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
+.. Gehen Sie auf die Seite _Cisco Ethernet Switches_ auf der NetApp Support-Website.
 +
 link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch/["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende RCF-Version herunter.
-.. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Bildsoftware herunter.
+.. Laden Sie die passende Version von RCF herunter.
+.. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter.
 +
-link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Download der Referenzkonfigurationsdatei für Cisco Cluster- und Management-Netzwerk-Switches"^]
+link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster- und Management-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^]
 
 
 
-. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
-. Bei den Nexus 3232C-Switches C1 und C2 deaktivieren Sie alle Ports C1 und C2 für Knoten, deaktivieren Sie aber nicht die ISL-Ports e1/31-32.
+. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+. Deaktivieren Sie auf den Nexus 3232C Switches C1 und C2 alle zum Knoten hin ausgerichteten Ports C1 und C2, deaktivieren Sie jedoch nicht die ISL-Ports e1/31-32.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in der folgenden Liste in der https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie in der folgenden Liste: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die Ports 1 bis 30, die bei Nexus 3232C-Cluster-Switches C1 und C2 unter Verwendung einer in RCF unterstützten Konfiguration deaktiviert sind `NX3232_RCF_v1.0_24p10g_24p100g.txt`:
+Das folgende Beispiel zeigt, wie die Ports 1 bis 30 auf den Nexus 3232C Cluster-Switches C1 und C2 mithilfe einer in RCF unterstützten Konfiguration deaktiviert werden. `NX3232_RCF_v1.0_24p10g_24p100g.txt` :
 
 [listing, subs="+quotes"]
 ----
@@ -147,19 +147,19 @@ C2(config-if-range)# exit
 C2(config)# exit
 ----
 ====
-. Verbinden Sie die Ports 1/31 und 1/32 auf C1 mit den gleichen Ports auf C2, indem Sie die unterstützten Kabel verwenden.
-. Überprüfen Sie, ob die ISL-Ports auf C1 und C2 funktionsfähig sind:
+. Verbinden Sie die Ports 1/31 und 1/32 auf C1 mit den entsprechenden Ports auf C2 mithilfe von unterstützten Kabeln.
+. Überprüfen Sie, ob die ISL-Ports auf C1 und C2 betriebsbereit sind:
 +
 `show port-channel summary`
 
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in der folgenden Liste in der https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie in der folgenden Liste: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt Cisco `show port-channel summary` Mit diesem Befehl wird sichergestellt, dass die ISL-Ports auf C1 und C2 funktionsfähig sind:
+Das folgende Beispiel zeigt das Cisco `show port-channel summary` Befehl, der verwendet wird, um zu überprüfen, ob die ISL-Ports auf C1 und C2 funktionsfähig sind:
 
 [listing, subs="+quotes"]
 ----
@@ -189,15 +189,15 @@ Group Port-        Type   Protocol  Member Ports
 1     Po1(SU)      Eth    LACP      Eth1/31(P)   Eth1/32(P)
 ----
 ====
-. Zeigen Sie die Liste der benachbarten Geräte auf dem Switch an.
+. Zeigen Sie die Liste der benachbarten Geräte am Switch an.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie in der folgenden Liste in der https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie in der folgenden Liste: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird der Befehl Cisco angezeigt `show cdp neighbors` Wird zur Anzeige der benachbarten Geräte auf dem Switch verwendet:
+Das folgende Beispiel zeigt den Cisco -Befehl `show cdp neighbors` wird verwendet, um die benachbarten Geräte am Switch anzuzeigen:
 
 [listing, subs="+quotes"]
 ----
@@ -219,7 +219,7 @@ C1                 Eth1/32        178    R S I s     N3K-C3232C  Eth1/32
 Total entries displayed: 2
 ----
 ====
-. Zeigen Sie die Cluster-Port-Konnektivität auf jedem Node an:
+. Zeigen Sie die Cluster-Port-Konnektivität auf jedem Knoten an:
 +
 `network device-discovery show`
 
@@ -227,7 +227,7 @@ Total entries displayed: 2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird die Cluster-Port-Konnektivität für eine Konfiguration mit zwei Nodes ohne Switches angezeigt:
+Das folgende Beispiel zeigt die Cluster-Port-Konnektivität für eine Zwei-Knoten-Switchless-Cluster-Konfiguration:
 
 [listing, subs="+quotes"]
 ----
@@ -245,5 +245,5 @@ n2         /cdp
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 link:migrate-from-switchless-configure-ports.html["Konfigurieren Sie Ihre Ports"].

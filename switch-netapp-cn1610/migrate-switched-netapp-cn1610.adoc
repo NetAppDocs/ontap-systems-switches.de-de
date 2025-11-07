@@ -2,99 +2,99 @@
 permalink: switch-netapp-cn1610/migrate-switched-netapp-cn1610.html 
 sidebar: sidebar 
 keywords: migrate, switchless cluster environment, switched netapp cn1610 
-summary: Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit CN1610 Cluster-Netzwerk-Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie eine Skalierung über zwei Nodes hinaus vornehmen. 
+summary: Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von CN1610 Cluster-Netzwerk-Switches zu einer switchierten Clusterumgebung mit zwei Knoten migrieren, die Ihnen eine Skalierung über zwei Knoten hinaus ermöglicht. 
 ---
-= Migration von einer Cluster-Umgebung ohne Switches zu einer Switch-basierten NetApp CN1610 Cluster-Umgebung
+= Migration von einer switchlosen Clusterumgebung zu einer switchierten NetApp CN1610 Clusterumgebung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie eine vorhandene Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit CN1610 Cluster-Netzwerk-Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie eine Skalierung über zwei Nodes hinaus vornehmen.
+Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von CN1610 Cluster-Netzwerk-Switches zu einer switchierten Clusterumgebung mit zwei Knoten migrieren, die Ihnen eine Skalierung über zwei Knoten hinaus ermöglicht.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-Stellen Sie bei einer Konfiguration mit zwei Nodes ohne Switches Folgendes sicher:
+Bei einer schalterlosen Konfiguration mit zwei Knoten ist Folgendes sicherzustellen:
 
-* Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.
-* Auf den Knoten wird ONTAP 8.2 oder höher ausgeführt.
-* Alle Cluster-Ports befinden sich im `up` Bundesland.
-* Alle logischen Cluster-Schnittstellen (LIFs) befinden sich im `up` Geben Sie den Staat und die Anschlüsse zu Hause an.
+* Die Zwei-Knoten-Konfiguration ohne Schalter ist ordnungsgemäß eingerichtet und funktioniert.
+* Auf den Knoten läuft ONTAP 8.2 oder höher.
+* Alle Cluster-Ports befinden sich im `up` Zustand.
+* Alle logischen Schnittstellen (LIFs) des Clusters befinden sich in der `up` in den jeweiligen Bundesstaaten und in ihren Heimathäfen.
 
 
-Bei der Switch-Konfiguration des CN1610-Cluster:
+Für die Konfiguration des CN1610-Cluster-Switches:
 
-* Die CN1610 Cluster-Switch-Infrastruktur funktioniert bei beiden Switches voll und ganz.
-* Beide Switches verfügen über Management-Netzwerk-Konnektivität.
-* Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
-* Bei Node-to-Node-Switch und Switch-to-Switch-Verbindungen bei CN1610 werden Twinax- oder Glasfaserkabel verwendet.
+* Die CN1610 Cluster-Switch-Infrastruktur ist auf beiden Switches voll funktionsfähig.
+* Beide Switches verfügen über eine Management-Netzwerkanbindung.
+* Es besteht Konsolenzugriff auf die Cluster-Switches.
+* CN1610-Knoten-zu-Knoten- und Schalter-zu-Schalter-Verbindungen verwenden Twinax- oder Glasfaserkabel.
 +
 Derlink:https://hwu.netapp.com/["Hardware Universe"^] enthält weitere Informationen zur Verkabelung.
 
-* Inter-Switch Link (ISL)-Kabel sind an beiden CN1610 Switches mit den Ports 13 bis 16 verbunden.
-* Die Erstanpassung der beiden CN1610 Switches ist abgeschlossen.
+* Inter-Switch Link (ISL)-Kabel sind an die Ports 13 bis 16 beider CN1610-Switches angeschlossen.
+* Die erste Anpassung beider CN1610-Schalter ist abgeschlossen.
 +
-Alle Anpassungen der vorherigen Site, wie SMTP, SNMP und SSH, sollten auf die neuen Switches kopiert werden.
+Alle zuvor vorgenommenen Anpassungen am Standort, wie z. B. SMTP, SNMP und SSH, sollten auf die neuen Switches kopiert werden.
 
 
 
-.Verwandte Informationen
+.Ähnliche Informationen
 * link:http://hwu.netapp.com["Hardware Universe"^]
 * link:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610"]
 * link:https://library.netapp.com/ecm/ecm_download_file/ECMP1118645["Einrichtung und Konfiguration der Switches CN1601 und CN1610"^]
-* link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB Artikel 1010449: Wie kann die automatische Case-Erstellung während geplanter Wartungszeiten unterdrückt werden"^]
+* link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows["NetApp KB-Artikel 1010449: So unterdrücken Sie die automatische Fallerstellung während geplanter Wartungsfenster"^]
 
 
 
 
-== Migrieren Sie die Switches
+== Migrieren Sie die Schalter
 
 .Zu den Beispielen
-In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
+Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Knotennomenklatur:
 
-* Die Namen der CN1610-Switches lauten cs1 und cs2.
-* Die Namen der LIFs sind Faclu1 und clut2.
-* Die Namen der Nodes sind node1 und node2.
-* Der `cluster::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Die Namen der CN1610-Schalter lauten cs1 und cs2.
+* Die Namen der LIFs lauten clus1 und clus2.
+* Die Namen der Knoten lauten Knoten1 und Knoten2.
+* Der `cluster::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e1a und e2a.
 +
-Derlink:https://hwu.netapp.com/["Hardware Universe"^] enthält die neuesten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
+Derlink:https://hwu.netapp.com/["Hardware Universe"^] Enthält die aktuellsten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Ändern Sie die Berechtigungsebene in erweitert, indem Sie eingeben `y` Wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie Folgendes eingeben `y` wenn Sie aufgefordert werden, fortzufahren:
 +
 `set -privilege advanced`
 
 +
 Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+Der folgende Befehl unterdrückt die automatische Fallerstellung für zwei Stunden:
 
 [listing]
 ----
@@ -107,15 +107,15 @@ cluster::*> system node autosupport invoke -node * -type all -message MAINT=2h
 
 === Schritt 2: Ports konfigurieren
 
-. Deaktivieren Sie alle Node-Ports (keine ISL-Ports) auf den neuen Cluster-Switches cs1 und cs2.
+. Deaktivieren Sie alle zum Knoten hin ausgerichteten Ports (nicht die ISL-Ports) an den beiden neuen Cluster-Switches cs1 und cs2.
 +
-Sie dürfen die ISL-Ports nicht deaktivieren.
+Die ISL-Ports dürfen nicht deaktiviert werden.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 12 auf Switch cs1 deaktiviert sind:
+Das folgende Beispiel zeigt, dass die dem Knoten zugewandten Ports 1 bis 12 am Switch cs1 deaktiviert sind:
 
 [listing]
 ----
@@ -127,7 +127,7 @@ Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 12 auf Switch cs1 deaktiv
 (cs1)(Interface 0/1-0/12)# exit
 (cs1)(Config)# exit
 ----
-Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 12 auf Switch cs2 deaktiviert sind:
+Das folgende Beispiel zeigt, dass die dem Knoten zugewandten Ports 1 bis 12 am Switch cs2 deaktiviert sind:
 
 [listing]
 ----
@@ -140,7 +140,7 @@ Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 12 auf Switch cs2 deaktiv
 (cs2)(Config)# exit
 ----
 ====
-. Stellen Sie sicher, dass ISL und die physischen Ports auf der ISL zwischen den beiden CN1610 Cluster-Switches cs1 und cs2 liegen `up`:
+. Überprüfen Sie, ob die ISL und die physischen Ports der ISL zwischen den beiden CN1610 Cluster-Switches cs1 und cs2 verbunden sind. `up` :
 +
 `show port-channel`
 
@@ -148,7 +148,7 @@ Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 12 auf Switch cs2 deaktiv
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass es sich um die ISL-Ports handelt `up` Schalter cs1 ein:
+Das folgende Beispiel zeigt, dass die ISL-Ports `up` auf Switch CS1:
 
 [listing]
 ----
@@ -174,7 +174,7 @@ Ports  Timeout       Speed     Active
 0/16   actor/long    10G Full  True
        partner/long
 ----
-Das folgende Beispiel zeigt, dass es sich um die ISL-Ports handelt `up` Schalter cs2 ein:
+Das folgende Beispiel zeigt, dass die ISL-Ports `up` auf der Switch CS2:
 
 [listing]
 ----
@@ -206,13 +206,13 @@ Ports  Timeout       Speed     Active
 `show isdp neighbors`
 
 +
-Dieser Befehl enthält Informationen zu den Geräten, die mit dem System verbunden sind.
+Dieser Befehl liefert Informationen über die mit dem System verbundenen Geräte.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs1 aufgeführt:
+Das folgende Beispiel listet die benachbarten Geräte am Switch cs1 auf:
 
 [listing]
 ----
@@ -227,7 +227,7 @@ cs2                    0/14         11        S            CN1610    0/14
 cs2                    0/15         11        S            CN1610    0/15
 cs2                    0/16         11        S            CN1610    0/16
 ----
-Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs2 aufgeführt:
+Das folgende Beispiel listet die benachbarten Geräte am Switch cs2 auf:
 
 [listing]
 ----
@@ -243,7 +243,7 @@ cs1                    0/15         11        S            CN1610    0/15
 cs1                    0/16         11        S            CN1610    0/16
 ----
 ====
-. Zeigt die Liste der Cluster-Ports an:
+. Liste der Cluster-Ports anzeigen:
 +
 `network port show`
 
@@ -251,7 +251,7 @@ cs1                    0/16         11        S            CN1610    0/16
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die verfügbaren Cluster-Ports angezeigt:
+Das folgende Beispiel zeigt die verfügbaren Cluster-Ports:
 
 [listing]
 ----
@@ -283,7 +283,7 @@ e4b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 12 entries were displayed.
 ----
 ====
-. Vergewissern Sie sich, dass jeder Cluster-Port mit dem entsprechenden Port auf seinem Partner-Cluster-Node verbunden ist:
+. Überprüfen Sie, ob jeder Cluster-Port mit dem entsprechenden Port des zugehörigen Partner-Cluster-Knotens verbunden ist:
 +
 `run * cdpd show-neighbors`
 
@@ -291,7 +291,7 @@ e4b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass Cluster-Ports e1a und e2a mit demselben Port auf ihrem Cluster-Partner-Node verbunden sind:
+Das folgende Beispiel zeigt, dass die Cluster-Ports e1a und e2a mit demselben Port auf ihrem Cluster-Partnerknoten verbunden sind:
 
 [listing]
 ----
@@ -316,12 +316,12 @@ e1a    node1           e1a                    FAS3270           161   H
 e2a    node1           e2a                    FAS3270           161   H
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-LIFs sind `up` Und in Betrieb:
+. Überprüfen Sie, ob alle Cluster-LIFs vorhanden sind. `up` und betriebsbereit:
 +
 `network interface show -vserver Cluster`
 
 +
-Jede Cluster-LIF sollte angezeigt werden `true` In der Spalte „`is Home`“.
+Jeder Cluster-LIF sollte Folgendes anzeigen `true` in der Spalte "Ist zu Hause".
 
 +
 .Beispiel anzeigen
@@ -346,9 +346,9 @@ node2
 ====
 +
 
-NOTE: Die folgenden Änderungs- und Migrationsbefehle in den Schritten 10 bis 13 müssen vom lokalen Node aus ausgeführt werden.
+NOTE: Die folgenden Änderungs- und Migrationsbefehle in den Schritten 10 bis 13 müssen vom lokalen Knoten aus ausgeführt werden.
 
-. Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind `up`:
+. Überprüfen Sie, ob alle Cluster-Ports `up` :
 +
 `network port show -ipspace Cluster`
 
@@ -373,7 +373,7 @@ node2
 4 entries were displayed.
 ----
 ====
-. Stellen Sie die ein `-auto-revert` Parameter an `false` Auf Cluster LIFs clue1 und clu2 zu beiden Knoten:
+. Stellen Sie die `-auto-revert` Parameter zu `false` auf den Cluster-LIFs clus1 und clus2 auf beiden Knoten:
 +
 `network interface modify`
 
@@ -392,7 +392,7 @@ cluster::*> network interface modify -vserver node2 -lif clus2 -auto-revert fals
 ====
 +
 
-NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network interface modify -vserver Cluster -lif * -auto-revert false`
+NOTE: Für Version 8.3 und höher verwenden Sie folgenden Befehl: `network interface modify -vserver Cluster -lif * -auto-revert false`
 
 . Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 
@@ -401,15 +401,15 @@ NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network i
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -427,7 +427,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -460,7 +460,7 @@ RPC status:
 ----
 --
 ====
-. [[step10]] Migration von clus1 zu Port e2a auf der Konsole jedes Knotens:
+. [[step10]] Migrieren Sie clus1 auf Port e2a auf der Konsole jedes Knotens:
 +
 `network interface migrate`
 
@@ -468,7 +468,7 @@ RPC status:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt den Prozess der Migration von Faclu1 zu Anschluss e2a auf node1 und node2:
+Das folgende Beispiel zeigt den Prozess zur Migration von clus1 auf Port e2a auf Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -479,9 +479,9 @@ cluster::*> network interface migrate -vserver node2 -lif clus1 -source-node nod
 ====
 +
 
-NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network interface migrate -vserver Cluster -lif clus1 -destination-node node1 -destination-port e2a`
+NOTE: Für Version 8.3 und höher verwenden Sie folgenden Befehl: `network interface migrate -vserver Cluster -lif clus1 -destination-node node1 -destination-port e2a`
 
-. Vergewissern Sie sich, dass die Migration stattgefunden hat:
+. Überprüfen Sie, ob die Migration stattgefunden hat:
 +
 `network interface show -vserver Cluster`
 
@@ -489,7 +489,7 @@ NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network i
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird überprüft, ob Faclu1 zu Port e2a auf node1 und node2 migriert wird:
+Das folgende Beispiel verifiziert, dass clus1 auf Knoten 1 und Knoten 2 auf Port e2a migriert wurde:
 
 [listing]
 ----
@@ -508,7 +508,7 @@ node2
 4 entries were displayed.
 ----
 ====
-. Fahren Sie Cluster-Port e1a auf beiden Knoten herunter:
+. Schalten Sie den Cluster-Port e1a auf beiden Knoten ab:
 +
 `network port modify`
 
@@ -516,7 +516,7 @@ node2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie der Port e1a auf node1 und node2 heruntergefahren wird:
+Das folgende Beispiel zeigt, wie der Port e1a auf Knoten 1 und Knoten 2 deaktiviert wird:
 
 [listing]
 ----
@@ -533,7 +533,7 @@ cluster::*> network port modify -node node2 -port e1a -up-admin false
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass der Anschluss e1a lautet `down` Auf Knoten 1 und Knoten 2:
+Das folgende Beispiel zeigt, dass Port e1a ist `down` auf Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -552,17 +552,17 @@ node2
 4 entries were displayed.
 ----
 ====
-. Trennen Sie das Kabel vom Cluster-Port e1a in Node1, und verbinden sie dann e1a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die geeignete Verkabelung, die von den CN1610-Switches unterstützt wird.
+. Trennen Sie das Kabel vom Cluster-Port e1a auf Knoten 1 und verbinden Sie dann e1a mit Port 1 des Cluster-Switches cs1. Verwenden Sie dazu die von den CN1610-Switches unterstützten Kabel.
 +
-Der link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Enthält weitere Informationen zur Verkabelung.
+Derlink:https://hwu.netapp.com/Switch/Index["Hardware Universe"^] enthält weitere Informationen zur Verkabelung.
 
-. Trennen Sie das Kabel vom Cluster-Port e1a auf node2, und verbinden sie dann e1a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dabei die geeignete Verkabelung, die von den CN1610-Switches unterstützt wird.
-. Aktivieren Sie alle Node-Ports auf Cluster-Switch cs1.
+. Trennen Sie das Kabel vom Cluster-Port e1a auf Knoten 2 und verbinden Sie dann e1a mit Port 2 auf dem Cluster-Switch cs1. Verwenden Sie dazu die von den CN1610-Switches unterstützten geeigneten Kabel.
+. Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die Ports 1 bis 12 auf Switch cs1 aktiviert sind:
+Das folgende Beispiel zeigt, dass die Ports 1 bis 12 am Switch cs1 aktiviert sind:
 
 [listing]
 ----
@@ -582,7 +582,7 @@ Das folgende Beispiel zeigt, dass die Ports 1 bis 12 auf Switch cs1 aktiviert si
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie der Port e1a auf node1 und node2 aktiviert wird:
+Das folgende Beispiel zeigt, wie der Port e1a auf Knoten 1 und Knoten 2 aktiviert wird:
 
 [listing]
 ----
@@ -591,7 +591,7 @@ cluster::*> network port modify -node node1 -port e1a -up-admin true
 cluster::*> network port modify -node node2 -port e1a -up-admin true
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind `up`:
+. Überprüfen Sie, ob alle Cluster-Ports aktiv sind. `up` :
 +
 `network port show -ipspace Cluster`
 
@@ -599,7 +599,7 @@ cluster::*> network port modify -node node2 -port e1a -up-admin true
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden alle Cluster-Ports angezeigt `up` Auf Knoten 1 und Knoten 2:
+Das folgende Beispiel zeigt, dass alle Cluster-Ports `up` auf Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -618,7 +618,7 @@ node2
 4 entries were displayed.
 ----
 ====
-. Fazit 1 (der zuvor migriert wurde) auf beiden Knoten zu e1a zurücksetzen:
+. clus1 (das zuvor migriert wurde) auf beiden Knoten wieder auf e1a zurücksetzen:
 +
 `network interface revert`
 
@@ -626,7 +626,7 @@ node2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie der Anschluss Nr. 1 und Nr. 2 auf den Port e1a zurückgesetzt wird:
+Das folgende Beispiel zeigt, wie man clus1 auf Knoten 1 und Knoten 2 wieder auf Port e1a umstellt:
 
 [listing]
 ----
@@ -637,9 +637,9 @@ cluster::*> network interface revert -vserver node2 -lif clus1
 ====
 +
 
-NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network interface revert -vserver Cluster -lif <nodename_clus<N>>`
+NOTE: Für Version 8.3 und höher verwenden Sie folgenden Befehl: `network interface revert -vserver Cluster -lif <nodename_clus<N>>`
 
-. Vergewissern Sie sich, dass alle Cluster-LIFs sind `up`, Betrieb, und Anzeige als `true` In der Spalte „is Home“:
+. Überprüfen Sie, ob alle Cluster-LIFs vorhanden sind. `up` , betriebsbereit und Anzeige als `true` in der Spalte „Ist zu Hause“:
 +
 `network interface show -vserver Cluster`
 
@@ -647,7 +647,7 @@ NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network i
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass alle LIFs sind `up` Auf node1 und node2 und dass die "is Home" Spalte Ergebnisse sind `true`:
+Das folgende Beispiel zeigt, dass alle LIFs `up` auf Knoten 1 und Knoten 2 und dass die Ergebnisse der Spalte "Ist zu Hause" `true` :
 
 [listing]
 ----
@@ -666,7 +666,7 @@ node2
 4 entries were displayed.
 ----
 ====
-. Informationen zum Status der Nodes im Cluster anzeigen:
+. Informationen über den Status der Knoten im Cluster anzeigen:
 +
 `cluster show`
 
@@ -674,7 +674,7 @@ node2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster angezeigt:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster an:
 
 [listing]
 ----
@@ -686,7 +686,7 @@ node1                true    true          false
 node2                true    true          false
 ----
 ====
-. Fazit 2 auf Port e1a auf der Konsole jedes Knotens migrieren:
+. Migrieren Sie clus2 auf Port e1a der Konsole jedes Knotens:
 +
 `network interface migrate`
 
@@ -694,7 +694,7 @@ node2                true    true          false
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt den Prozess für die Migration von Fak2 auf Port e1a in Node1 und node2:
+Das folgende Beispiel zeigt den Prozess zur Migration von clus2 auf Port e1a auf Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -705,9 +705,9 @@ cluster::*> network interface migrate -vserver node2 -lif clus2 -source-node nod
 ====
 +
 
-NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network interface migrate -vserver Cluster -lif node1_clus2 -dest-node node1 -dest-port e1a`
+NOTE: Für Version 8.3 und höher verwenden Sie folgenden Befehl: `network interface migrate -vserver Cluster -lif node1_clus2 -dest-node node1 -dest-port e1a`
 
-. Vergewissern Sie sich, dass die Migration stattgefunden hat:
+. Überprüfen Sie, ob die Migration stattgefunden hat:
 +
 `network interface show -vserver Cluster`
 
@@ -715,7 +715,7 @@ NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network i
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird überprüft, ob Faclu2 in den Anschluss e1a in den Knoten 1 und node2 migriert wird:
+Das folgende Beispiel verifiziert, dass clus2 auf Knoten 1 und Knoten 2 auf Port e1a migriert wurde:
 
 [listing]
 ----
@@ -734,7 +734,7 @@ node2
 4 entries were displayed.
 ----
 ====
-. Fahren Sie Cluster-Port e2a auf beiden Nodes herunter:
+. Schalten Sie den Cluster-Port e2a auf beiden Knoten ab:
 +
 `network port modify`
 
@@ -742,7 +742,7 @@ node2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie der Port e2a auf node1 und node2 heruntergefahren wird:
+Das folgende Beispiel zeigt, wie der Port e2a auf Knoten 1 und Knoten 2 deaktiviert wird:
 
 [listing]
 ----
@@ -759,7 +759,7 @@ cluster::*> network port modify -node node2 -port e2a -up-admin false
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass Port e2a ist `down` Auf Knoten 1 und Knoten 2:
+Das folgende Beispiel zeigt, dass Port e2a ist `down` auf Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -778,14 +778,14 @@ node2
 4 entries were displayed.
 ----
 ====
-. Trennen Sie das Kabel vom Cluster-Port e2a auf node1, und verbinden sie dann e2a mit Port 1 am Cluster-Switch cs2. Verwenden Sie dabei die geeignete Verkabelung, die von den CN1610-Switches unterstützt wird.
-. Trennen Sie das Kabel vom Cluster-Port e2a auf node2, und verbinden sie dann e2a mit Port 2 am Cluster-Switch cs2. Verwenden Sie dabei die geeignete Verkabelung, die von den CN1610-Switches unterstützt wird.
-. Aktivieren Sie alle Node-Ports auf Cluster-Switch cs2.
+. Trennen Sie das Kabel vom Cluster-Port e2a auf Knoten 1 und verbinden Sie dann e2a mit Port 1 auf dem Cluster-Switch cs2. Verwenden Sie dazu die von den CN1610-Switches unterstützten Kabel.
+. Trennen Sie das Kabel vom Cluster-Port e2a auf Knoten 2 und verbinden Sie dann e2a mit Port 2 des Cluster-Switches cs2 unter Verwendung der von den CN1610-Switches unterstützten geeigneten Verkabelung.
+. Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs2.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die Ports 1 bis 12 auf Switch cs2 aktiviert sind:
+Das folgende Beispiel zeigt, dass die Ports 1 bis 12 am Switch cs2 aktiviert sind:
 
 [listing]
 ----
@@ -802,7 +802,7 @@ Das folgende Beispiel zeigt, dass die Ports 1 bis 12 auf Switch cs2 aktiviert si
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie der Port e2a auf node1 und node2 aktiviert wird:
+Das folgende Beispiel zeigt, wie der Port e2a auf Knoten 1 und Knoten 2 aktiviert wird:
 
 [listing]
 ----
@@ -811,7 +811,7 @@ cluster::*> network port modify -node node1 -port e2a -up-admin true
 cluster::*> network port modify -node node2 -port e2a -up-admin true
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind `up`:
+. Überprüfen Sie, ob alle Cluster-Ports aktiv sind. `up` :
 +
 `network port show -ipspace Cluster`
 
@@ -819,7 +819,7 @@ cluster::*> network port modify -node node2 -port e2a -up-admin true
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden alle Cluster-Ports angezeigt `up` Auf Knoten 1 und Knoten 2:
+Das folgende Beispiel zeigt, dass alle Cluster-Ports `up` auf Knoten 1 und Knoten 2:
 
 [listing]
 ----
@@ -838,7 +838,7 @@ node2
 4 entries were displayed.
 ----
 ====
-. Schluss2 (der zuvor migriert wurde) auf beiden Knoten zu e2a zurücksetzen:
+. clus2 (das zuvor migriert wurde) auf beiden Knoten wieder auf e2a zurücksetzen:
 +
 `network interface revert`
 
@@ -846,7 +846,7 @@ node2
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie man clu2 auf den Port e2a auf node1 und node2 zurücksetzt:
+Das folgende Beispiel zeigt, wie man clus2 auf Knoten 1 und Knoten 2 wieder auf den Port e2a umstellt:
 
 [listing]
 ----
@@ -857,7 +857,7 @@ cluster::*> network interface revert -vserver node2 -lif clus2
 ====
 +
 
-NOTE: Für Release 8.3 und höher lauten die Befehle:
+NOTE: Für Version 8.3 und höher lauten die Befehle:
 `cluster::*> network interface revert -vserver Cluster -lif node1_clus2` Und
 `cluster::*> network interface revert -vserver Cluster -lif node2_clus2`
 
@@ -865,9 +865,9 @@ NOTE: Für Release 8.3 und höher lauten die Befehle:
 
 
 
-=== Schritt 3: Schließen Sie die Konfiguration ab
+=== Schritt 3: Konfiguration abschließen
 
-. Vergewissern Sie sich, dass alle Schnittstellen angezeigt werden `true` In der Spalte „is Home“:
+. Überprüfen Sie, ob alle Schnittstellen angezeigt werden. `true` in der Spalte „Ist zu Hause“:
 +
 `network interface show -vserver Cluster`
 
@@ -875,7 +875,7 @@ NOTE: Für Release 8.3 und höher lauten die Befehle:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass alle LIFs sind `up` Auf node1 und node2 und dass die "is Home" Spalte Ergebnisse sind `true`:
+Das folgende Beispiel zeigt, dass alle LIFs `up` auf Knoten 1 und Knoten 2 und dass die Ergebnisse der Spalte "Ist zu Hause" `true` :
 
 [listing]
 ----
@@ -900,15 +900,15 @@ node2
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -926,7 +926,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -959,7 +959,7 @@ RPC status:
 ----
 --
 ====
-. [[step3]] Stellen Sie sicher, dass beide Knoten zwei Verbindungen zu jedem Switch haben:
+. [[Schritt 3]] Überprüfen Sie, ob beide Knoten über zwei Verbindungen zu jedem Switch verfügen:
 +
 `show isdp neighbors`
 
@@ -967,7 +967,7 @@ RPC status:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Schalter:
 
 [listing]
 ----
@@ -1001,7 +1001,7 @@ cs1                    0/16         11        S            CN1610    0/16
 +
 `network device discovery show`
 
-. Deaktivieren Sie die Konfigurationseinstellungen mit zwei Nodes ohne Switches auf beiden Nodes mithilfe des erweiterten Befehls „Privilege“:
+. Deaktivieren Sie die Einstellungen für die Zwei-Knoten-Switchless-Konfiguration auf beiden Knoten mithilfe des erweiterten Berechtigungsbefehls:
 +
 `network options detect-switchless modify`
 
@@ -1009,7 +1009,7 @@ cs1                    0/16         11        S            CN1610    0/16
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie die Konfigurationseinstellungen ohne Switches deaktiviert werden:
+Das folgende Beispiel zeigt, wie die Einstellungen für die schalterlose Konfiguration deaktiviert werden:
 
 [listing]
 ----
@@ -1019,9 +1019,9 @@ cluster::*> network options detect-switchless modify -enabled false
 ====
 +
 
-NOTE: überspringen Sie diesen Schritt für Version 9.2 und höher, da die Konfiguration automatisch konvertiert wird.
+NOTE: Bei Version 9.2 und höher kann dieser Schritt übersprungen werden, da die Konfiguration automatisch konvertiert wird.
 
-. Vergewissern Sie sich, dass die Einstellungen deaktiviert sind:
+. Überprüfen Sie, ob die Einstellungen deaktiviert sind:
 +
 `network options detect-switchless-cluster show`
 
@@ -1040,9 +1040,9 @@ Enable Switchless Cluster Detection: false
 ====
 +
 
-NOTE: Für Version 9.2 und höher, warten Sie bis `Enable Switchless Cluster` Ist auf FALSE gesetzt. Dies kann bis zu drei Minuten dauern.
+NOTE: Für Version 9.2 und höher warten Sie bitte bis `Enable Switchless Cluster` ist auf „false“ gesetzt.  Dies kann bis zu drei Minuten dauern.
 
-. Konfigurieren Sie Cluster clue1 und clu2, um jeden Knoten automatisch zurückzusetzen und zu bestätigen.
+. Konfigurieren Sie die Cluster clus1 und clus2 so, dass sie auf jedem Knoten automatisch zurückgesetzt werden, und bestätigen Sie dies.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -1058,9 +1058,9 @@ cluster::*> network interface modify -vserver node2 -lif clus2 -auto-revert true
 ====
 +
 
-NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network interface modify -vserver Cluster -lif * -auto-revert true` Um die automatische Umrüstung auf allen Nodes im Cluster zu aktivieren.
+NOTE: Für Version 8.3 und höher verwenden Sie folgenden Befehl: `network interface modify -vserver Cluster -lif * -auto-revert true` um die automatische Wiederherstellung auf allen Knoten im Cluster zu aktivieren.
 
-. Überprüfen Sie den Status der Node-Mitglieder im Cluster:
+. Überprüfen Sie den Status der Knoten im Cluster:
 +
 `cluster show`
 
@@ -1068,7 +1068,7 @@ NOTE: Verwenden Sie für Version 8.3 und höher den folgenden Befehl: `network i
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster:
 
 [listing]
 ----
@@ -1080,7 +1080,7 @@ node1                true    true          false
 node2                true    true          false
 ----
 ====
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
@@ -1093,7 +1093,7 @@ node2                true    true          false
 cluster::*> system node autosupport invoke -node * -type all -message MAINT=END
 ----
 ====
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 

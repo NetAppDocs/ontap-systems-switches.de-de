@@ -2,7 +2,7 @@
 permalink: switch-cisco-3132q-v/cn1610-migrate-requirements.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3132q-v switch, 
-summary: Vor der Konfiguration von Cisco Nexus 3132q-V Switches sollten Sie einen Überblick über den Prozess und die Nomenklatur lesen. 
+summary: Bevor Sie Cisco Nexus 3132q-v Switches konfigurieren, sollten Sie sich einen Überblick über den Prozess und die Nomenklatur verschaffen. 
 ---
 = Migrationsanforderungen
 :allow-uri-read: 
@@ -10,23 +10,23 @@ summary: Vor der Konfiguration von Cisco Nexus 3132q-V Switches sollten Sie eine
 
 
 [role="lead"]
-Die Cisco Nexus 3132Q-V Switches können als Cluster Switches in Ihrem AFF oder FAS Cluster verwendet werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+Cisco Nexus 3132Q-V Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 [NOTE]
 ====
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 ====
 Weitere Informationen finden Sie unter:
 
-* https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["Beschreibungsseite zu NetApp CN1601 und CN1610"^]
-* https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Beschreibungsseite für den Cisco Ethernet Switch"^]
+* https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["Beschreibungsseite für NetApp CN1601 und CN1610"^]
+* https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Beschreibungsseite des Cisco Ethernet-Switches"^]
 * http://hwu.netapp.com["Hardware Universe"^]
 
 
 
 
-== CN1610 Anforderungen
+== CN1610-Anforderungen
 
 Folgende Cluster-Switches werden unterstützt:
 
@@ -34,58 +34,58 @@ Folgende Cluster-Switches werden unterstützt:
 * Cisco Nexus 3132Q-V
 
 
-Die Cluster-Switches unterstützen die folgenden Node-Verbindungen:
+Die Cluster-Switches unterstützen folgende Knotenverbindungen:
 
-* NetApp CN1610: 0/1 bis 0/12 (10 GbE)
+* NetApp CN1610: Ports 0/1 bis 0/12 (10 GbE)
 * Cisco Nexus 3132Q-V: Ports e1/1-30 (40/100 GbE)
 
 
-Bei den Cluster-Switches werden die folgenden Inter-Switch-Link-Ports (ISL) verwendet:
+Die Cluster-Switches verwenden die folgenden Inter-Switch-Link-Ports (ISL):
 
-* NetApp CN1610: 0/13 bis 0/16 (10 GbE)
+* NetApp CN1610: Ports 0/13 bis 0/16 (10 GbE)
 * Cisco Nexus 3132Q-V: Ports e1/31-32 (40/100 GbE)
 +
-Der link:https://hwu.netapp.com/["Hardware Universe"^] Enthält Informationen über die unterstützten Kabel zu Nexus 3132Q-V Switches:
+Derlink:https://hwu.netapp.com/["Hardware Universe"^] enthält Informationen zur unterstützten Verkabelung von Nexus 3132Q-V Switches:
 
-* Nodes mit 10 GbE-Cluster-Verbindungen erfordern QSFP zu SFP+-Breakout-Kabel oder QSFP zu SFP+-Kupfer-Breakout-Kabel
-* Nodes mit 40/100 GbE-Cluster-Verbindungen erfordern unterstützte QSFP/QSFP28 optische Module mit optischen Faserkabeln oder QSFP/QSFP28-Kupfer-Direct-Attach-Kabeln
-
-
-Die entsprechende ISL-Verkabelung lautet wie folgt:
-
-* Anfang: Bei CN1610 bis CN1610 (SFP+ zu SFP+), vier SFP+-Glasfaserkabeln oder Direct-Attached-Kabeln für Kupfer
-* Interim: Für CN1610 auf Nexus 3132Q-V (QSFP zu vier SFP+ Breakout), ein QSFP zu SFP+ Glasfaserkabel oder Kupferkabel
-* Finale: Für Nexus 3132Q-V auf Nexus 3132Q-V (QSFP28 zu QSFP28), zwei QSFP28-Glasfaserkabel oder Kupfer-Direct-Attach-Kabel
+* Knoten mit 10-GbE-Clusterverbindungen benötigen QSFP-zu-SFP+-Glasfaser-Breakout-Kabel oder QSFP-zu-SFP+-Kupfer-Breakout-Kabel.
+* Knoten mit 40/100-GbE-Clusterverbindungen benötigen unterstützte QSFP/QSFP28-Optikmodule mit Glasfaserkabeln oder QSFP/QSFP28-Kupfer-Direktanschlusskabel.
 
 
-NetApp Twinax-Kabel sind nicht kompatibel mit Cisco Nexus 3132Q-V Switches.
+Die entsprechende ISL-Verkabelung sieht wie folgt aus:
 
-Wenn bei Ihrer aktuellen CN1610-Konfiguration NetApp Twinax-Kabel für Cluster-Node-to-Switch-Verbindungen oder ISL-Verbindungen verwendet werden und Sie Twinax-Lösungen in Ihrer Umgebung verwenden möchten, müssen Sie Cisco Twinax-Kabel beschaffen. Alternativ können Sie für die ISL-Verbindungen und die Cluster-Node-to-Switch-Verbindungen Glasfaserkabel verwenden.
+* Beginn: Für CN1610 zu CN1610 (SFP+ zu SFP+), vier SFP+ Glasfaser- oder Kupfer-Direktanschlusskabel
+* Interim: Für CN1610 zu Nexus 3132Q-V (QSFP auf vier SFP+ Breakout), ein QSFP auf SFP+ Glasfaser- oder Kupfer-Breakout-Kabel
+* Abschließend: Für Nexus 3132Q-V zu Nexus 3132Q-V (QSFP28 zu QSFP28) zwei QSFP28 Glasfaser- oder Kupfer-Direktanschlusskabel
 
-.Über die verwendeten Beispiele
-In den Beispielen in diesem Verfahren wird der Austausch von CN1610-Switches durch Cisco Nexus 3132Q-V-Switches beschrieben. Sie können diese Schritte (mit Änderungen) für andere ältere Cisco-Switches verwenden.
 
-Weiterhin verwendet das Verfahren die folgende Nomenklatur für Switches und Nodes:
+NetApp Twinax-Kabel sind nicht mit Cisco Nexus 3132Q-V Switches kompatibel.
 
-* Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
+Wenn Ihre aktuelle CN1610-Konfiguration NetApp Twinax-Kabel für Cluster-Node-zu-Switch-Verbindungen oder ISL-Verbindungen verwendet und Sie Twinax weiterhin in Ihrer Umgebung nutzen möchten, müssen Sie Cisco Twinax-Kabel beschaffen.  Alternativ können Sie Glasfaserkabel sowohl für die ISL-Verbindungen als auch für die Verbindungen zwischen Clusterknoten und Switch verwenden.
+
+.Zu den verwendeten Beispielen
+Die Beispiele in diesem Verfahren beschreiben den Austausch von CN1610-Switches durch Cisco Nexus 3132Q-V-Switches.  Diese Schritte können Sie (mit Anpassungen) auch für andere ältere Cisco -Switches verwenden.
+
+Das Verfahren verwendet außerdem die folgende Schalter- und Knotennomenklatur:
+
+* Die Befehlsausgaben können je nach ONTAP Version variieren.
 * Die zu ersetzenden CN1610-Schalter sind *CL1* und *CL2*.
-* Die Nexus 3132Q-V Switches zum Austausch der CN1610 Switches sind *C1* und *C2*.
-* *N1_clus1* ist die erste logische Cluster-Schnittstelle (LIF), die an Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* angeschlossen ist.
-* *N1_clus2* ist die erste Cluster-LIF, die mit Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* verbunden ist.
-* *N1_clus3* ist die zweite LIF, die an Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* angeschlossen ist.
-* *N1_clus4* ist die zweite LIF, die mit Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* verbunden ist.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] Seite.
+* Die Nexus 3132Q-V-Schalter, die die CN1610-Schalter ersetzen, sind *C1* und *C2*.
+* *n1_clus1* ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.
+* *n1_clus2* ist der erste Cluster-LIF, der mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.
+* *n1_clus3* ist die zweite LIF, die mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.
+* *n1_clus4* ist die zweite LIF, die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf dem Server verfügbar sind. https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Seite.
 * Die Knoten sind *n1*, *n2*, *n3* und *n4*.
 
 
 Die Beispiele in diesem Verfahren verwenden vier Knoten:
 
-* Zwei Knoten nutzen vier 10-GbE-Cluster-Interconnect-Ports: *e0a*, *e0b*, *e0c* und *e0d*.
-* Die beiden anderen Knoten verwenden zwei 40-GbE-Cluster-Interconnect-Ports: *e4a* und *e4e*.
+* Zwei Knoten nutzen vier 10-GbE-Cluster-Verbindungsports: *e0a*, *e0b*, *e0c* und *e0d*.
+* Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsports: *e4a* und *e4e*.
 +
-Im link:https://hwu.netapp.com/["Hardware Universe"^] werden die tatsächlichen Cluster-Ports auf Ihren Plattformen aufgeführt.
+Derlink:https://hwu.netapp.com/["Hardware Universe"^] listet die tatsächlichen Cluster-Ports auf Ihren Plattformen auf.
 
 
 
-.Was kommt als Nächstes?
-link:cn5596-prepare-to-migrate.html["Vorbereitung der Migration"].
+.Wie geht es weiter?
+link:cn5596-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"].

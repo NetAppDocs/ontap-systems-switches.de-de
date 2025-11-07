@@ -2,26 +2,26 @@
 permalink: switch-nvidia-sn2100/install-rcf-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: install rcf script, python script, sn2100 SN2100 switches, cumulus 
-summary: Stellen Sie vor der Installation des RCF-Skripts sicher, dass folgende Funktionen auf dem Switch verfügbar sind 
+summary: Stellen Sie sicher, dass die folgenden Komponenten auf dem Switch verfügbar sind, bevor Sie das RCF-Skript installieren. 
 ---
-= Installieren oder aktualisieren Sie das RCF-Skript (Reference Configuration File)
+= Installieren oder aktualisieren Sie das Skript der Referenzkonfigurationsdatei (RCF).
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um das RCF-Skript zu installieren oder zu aktualisieren.
+Folgen Sie dieser Vorgehensweise, um das RCF-Skript zu installieren oder zu aktualisieren.
 
 .Bevor Sie beginnen
-Stellen Sie vor der Installation oder Aktualisierung des RCF-Skripts sicher, dass auf dem Switch Folgendes verfügbar ist:
+Vor der Installation oder Aktualisierung des RCF-Skripts stellen Sie sicher, dass Folgendes auf dem Switch verfügbar ist:
 
-* Cumulus Linux ist installiert. Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Für unterstützte Versionen.
-* IP-Adresse, Subnetzmaske und Standard-Gateway über DHCP oder manuell konfiguriert definiert.
+* Cumulus Linux ist installiert.  Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] für unterstützte Versionen.
+* IP-Adresse, Subnetzmaske und Standardgateway werden per DHCP definiert oder manuell konfiguriert.
 
 
 
-NOTE: Sie müssen im RCF (zusätzlich zum Admin-Benutzer) einen Benutzer angeben, der speziell für die Protokollerfassung verwendet werden soll.
+NOTE: Sie müssen im RCF (zusätzlich zum Administratorbenutzer) einen Benutzer angeben, der speziell für die Protokollerfassung verwendet werden soll.
 
 .Kundenkonfigurationen
 Folgende Referenzkonfigurationskategorien stehen zur Verfügung:
@@ -30,7 +30,7 @@ Folgende Referenzkonfigurationskategorien stehen zur Verfügung:
 |===
 
 
-| Cluster | Bei Ports, die für 4x10GbE-Breakout konfiguriert sind, ist ein Port für 4x25GbE-Breakout und die anderen Ports für 40/100GbE konfiguriert.  Unterstützt gemeinsam genutzten Cluster-/HA-Verkehr auf Ports für Knoten, die gemeinsam genutzte Cluster-/HA-Ports verwenden.  Die Plattformtabelle finden Sie im Knowledge Base-Artikel. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_AFF_ASA_and_FAS_platforms_use_shared_Cluster_and_HA_Ethernet_ports["Welche AFF, ASA und FAS -Plattformen verwenden gemeinsam genutzte Cluster- und HA-Ethernet-Ports?"^] .  Alle Ports können auch als dedizierte Cluster-Ports verwendet werden. 
+| Cluster | Bei Ports, die für 4x10GbE-Breakout konfiguriert sind, ist ein Port für 4x25GbE-Breakout und die anderen Ports für 40/100GbE konfiguriert. Unterstützt gemeinsam genutzten Cluster-/HA-Verkehr auf Ports für Knoten, die gemeinsam genutzte Cluster-/HA-Ports verwenden. Die Plattformtabelle finden Sie im Knowledge-Base-Artikel. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_AFF_ASA_and_FAS_platforms_use_shared_Cluster_and_HA_Ethernet_ports["Welche AFF, ASA und FAS -Plattformen verwenden gemeinsam genutzte Cluster- und HA-Ethernet-Ports?"^] Die Alle Ports können auch als dedizierte Cluster-Ports verwendet werden. 
 
 
  a| 
@@ -40,45 +40,45 @@ Alle Ports sind für 100GbE NVMe-Speicherverbindungen konfiguriert.
 
 |===
 .Aktuelle RCF-Skriptversionen
-Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung. RCFs von Seite herunterladen https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA SN2100 Software-Download"^]. Das Verfahren für jedes ist gleich.
+Für Cluster- und Speicheranwendungen stehen zwei RCF-Skripte zur Verfügung.  RCFs herunterladen von https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA SN2100 Software-Download"^] Seite.  Die Vorgehensweise ist für alle Fälle gleich.
 
 * Cluster: *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*
 * Speicher: *MSN2100-RCF-v1._x_-Speicher*
 
 
 .Zu den Beispielen
-Das folgende Beispiel zeigt, wie das RCF-Skript für Cluster-Switches heruntergeladen und angewendet wird.
+Das folgende Beispielverfahren zeigt, wie das RCF-Skript für Cluster-Switches heruntergeladen und angewendet wird.
 
-Die Befehlsausgabe des Switch-Management verwendet die Switch-Management-IP-Adresse 10.233.204.71, die Netmask 255.255.254.0 und das Standard-Gateway 10.233.204.1.
+Beispielausgabe des Befehls verwendet die Switch-Management-IP-Adresse 10.233.204.71, die Netzmaske 255.255.254.0 und das Standardgateway 10.233.204.1.
 
 .Schritte
 [role="tabbed-block"]
 ====
 .Cumulus Linux 4.4.3
 --
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die  `ping` Befehl zum Überprüfen der Konnektivität mit dem Server, auf dem Cumulus Linux und RCF gehostet werden.
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
+. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung zum Server, auf dem Cumulus Linux und RCF gehostet werden.
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
@@ -86,12 +86,12 @@ Die Befehlsausgabe des Switch-Management verwendet die Switch-Management-IP-Adre
 [NOTE]
 .Beachten Sie Folgendes:
 ====
-** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Rücksetzung deaktivieren.
-** Wenn Sie Ihre Cumulus Linux-Version gerade aktualisiert haben, müssen Sie die automatische Wiederherstellung für diesen Schritt nicht deaktivieren, da sie bereits deaktiviert ist.
+** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Wiederherstellung deaktivieren.
+** Wenn Sie Ihre Cumulus Linux-Version gerade erst aktualisiert haben, brauchen Sie die automatische Wiederherstellung für diesen Schritt nicht zu deaktivieren, da sie bereits deaktiviert ist.
 
 
 ====
-. Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
+. Die verfügbaren Schnittstellen des SN2100-Switches anzeigen:
 +
 [listing, subs="+quotes"]
 ----
@@ -118,7 +118,7 @@ ADMDN  swp14  N/A  9216   NotConfigured
 ADMDN  swp15  N/A  9216   NotConfigured
 ADMDN  swp16  N/A  9216   NotConfigured
 ----
-. Kopieren Sie das RCF-Python-Skript auf den Switch.
+. Kopiere das RCF-Python-Skript auf den Switch.
 +
 [listing, subs="+quotes"]
 ----
@@ -129,9 +129,9 @@ MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP         100% 8607   111.2KB/s       
 ----
 +
 
-NOTE: Während `scp` Im Beispiel wird „http://www.sftp.org/docs/file ...
+NOTE: Während `scp` Wird im Beispiel verwendet, können Sie Ihre bevorzugte Methode der Dateiübertragung nutzen, zum Beispiel SFTP, HTTPS oder FTP.
 
-. Wenden Sie das Skript RCF Python an *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*.
+. Wenden Sie das RCF-Python-Skript *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP* an.
 +
 [listing, subs="+quotes"]
 ----
@@ -153,17 +153,17 @@ Step 12: Configure SNMP
 Step 13: Reboot the switch
 ----
 +
-Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte durch.
+Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte aus.
 
 +
 
-NOTE: In Schritt 3 *Aktualisierung der MOTD-Datei* oben, der Befehl `cat /etc/motd` Wird ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.
+NOTE: Im obigen Schritt 3 *Aktualisieren der MOTD-Datei* wird der Befehl verwendet. `cat /etc/motd` wird ausgeführt.  Dies ermöglicht es Ihnen, den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner zu überprüfen.
 
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
+. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -240,7 +240,7 @@ swp4       0x11 (QSFP28)  AVAGO        332-00440        AF1815GU05Z 
 swp15      0x11 (QSFP28)  Amphenol     112-00573        APF21109348001  B0
 swp16      0x11 (QSFP28)  Amphenol     112-00573        APF21109347895  B0
 ----
-. Stellen Sie sicher, dass die Nodes jeweils über eine Verbindung zu jedem Switch verfügen:
+. Überprüfen Sie, ob jeder Knoten eine Verbindung zu jedem Switch hat:
 +
 [listing, subs="+quotes"]
 ----
@@ -253,9 +253,9 @@ swp4       100G   Trunk/L2    sw2                     e3b
 swp15      100G   BondMember  sw13                    swp15
 swp16      100G   BondMember  sw14                    swp16
 ----
-. Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
+. Überprüfen Sie den Zustand der Cluster-Ports im Cluster.
 +
-.. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
+.. Überprüfen Sie, ob die Cluster-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -277,7 +277,7 @@ Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
 e3a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e3b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
-.. Überprüfen Sie den Switch-Systemzustand des Clusters (dies zeigt möglicherweise nicht den Switch sw2 an, da LIFs nicht auf e0d homed sind).
+.. Überprüfen Sie den Zustand des Switches vom Cluster aus (dabei wird möglicherweise Switch sw2 nicht angezeigt, da LIFs nicht auf e0d liegen).
 +
 [listing, subs="+quotes"]
 ----
@@ -315,12 +315,12 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 ----
 
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
 . Wiederholen Sie die Schritte 1 bis 14 am zweiten Schalter.
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
@@ -329,29 +329,29 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 --
 .Cumulus Linux 5.4.0
 --
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die  `ping` Befehl zum Überprüfen der Konnektivität mit dem Server, auf dem Cumulus Linux und RCF gehostet werden.
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
+. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung zum Server, auf dem Cumulus Linux und RCF gehostet werden.
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
@@ -359,12 +359,12 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 [NOTE]
 .Beachten Sie Folgendes:
 ====
-** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Rücksetzung deaktivieren.
-** Wenn Sie Ihre Cumulus Linux-Version gerade aktualisiert haben, müssen Sie die automatische Wiederherstellung für diesen Schritt nicht deaktivieren, da sie bereits deaktiviert ist.
+** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Wiederherstellung deaktivieren.
+** Wenn Sie Ihre Cumulus Linux-Version gerade erst aktualisiert haben, brauchen Sie die automatische Wiederherstellung für diesen Schritt nicht zu deaktivieren, da sie bereits deaktiviert ist.
 
 
 ====
-. Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
+. Die verfügbaren Schnittstellen des SN2100-Switches anzeigen:
 +
 [listing, subs="+quotes"]
 ----
@@ -383,7 +383,7 @@ Interface     MTU   Speed State Remote Host         Remote Port- Type      Summa
 + swp15      9216 100G    up sw2                      swp15       swp
 + swp16      9216 100G    up sw2                      swp16       swp
 ----
-. Kopieren Sie das RCF-Python-Skript auf den Switch.
+. Kopiere das RCF-Python-Skript auf den Switch.
 +
 [listing, subs="+quotes"]
 ----
@@ -394,9 +394,9 @@ MSN2100-RCF-v1.x-Cluster-HA-Breakout-LLDP          100% 8607   111.2KB/s        
 ----
 +
 
-NOTE: Während `scp` Im Beispiel wird „http://www.sftp.org/docs/file ...
+NOTE: Während `scp` Wird im Beispiel verwendet, können Sie Ihre bevorzugte Methode der Dateiübertragung nutzen, zum Beispiel SFTP, HTTPS oder FTP.
 
-. Wenden Sie das Skript RCF Python an *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*.
+. Wenden Sie das RCF-Python-Skript *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP* an.
 +
 [listing, subs="+quotes"]
 ----
@@ -419,11 +419,11 @@ Step 12: Configure SNMP
 Step 13: Reboot the switch
 ----
 +
-Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte durch.
+Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte aus.
 
 +
 
-NOTE: In Schritt 3 *Aktualisieren der MOTD-Datei* oben, der Befehl  `cat /etc/issue.net` ausgeführt wird. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.
+NOTE: Im obigen Schritt 3 *Aktualisieren der MOTD-Datei* wird der Befehl verwendet. `cat /etc/issue.net` wird ausgeführt.  Dies ermöglicht es Ihnen, den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner zu überprüfen.
 
 +
 Beispiel:
@@ -462,9 +462,9 @@ admin@sw1:mgmt:~$ cat /etc/issue.net
 ----
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
+. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -579,7 +579,7 @@ Incomplete Command: set interface swp3-16 link fast-linkupp3-16 link fast-linkup
 ----
 +
 
-NOTE: Die aufgeführten Ausnahmen haben keine Auswirkungen auf die Leistung und können sicher ignoriert werden.
+NOTE: Die aufgeführten Ausnahmen haben keinen Einfluss auf die Leistung und können getrost ignoriert werden.
 
 . Überprüfen Sie die Informationen für den Transceiver in der Schnittstelle:
 +
@@ -606,7 +606,7 @@ swp6       0x00 None
 swp15      0x11 (QSFP28)  Amphenol     112-00595        APF20279210117  B0
 swp16      0x11 (QSFP28)  Amphenol     112-00595        APF20279210166  B0
 ----
-. Stellen Sie sicher, dass die Nodes jeweils über eine Verbindung zu jedem Switch verfügen:
+. Überprüfen Sie, ob jeder Knoten eine Verbindung zu jedem Switch hat:
 +
 [listing, subs="+quotes"]
 ----
@@ -619,9 +619,9 @@ swp2s1     25G    Trunk/L2    node1                 �
 swp15      100G   BondMember  sw2                      swp15
 swp16      100G   BondMember  sw2                      swp16
 ----
-. Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
+. Überprüfen Sie den Zustand der Cluster-Ports im Cluster.
 +
-.. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
+.. Überprüfen Sie, ob die Cluster-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -643,7 +643,7 @@ Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
 e3a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e3b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
-.. Überprüfen Sie den Switch-Systemzustand des Clusters (dies zeigt möglicherweise nicht den Switch sw2 an, da LIFs nicht auf e0d homed sind).
+.. Überprüfen Sie den Zustand des Switches vom Cluster aus (dabei wird möglicherweise Switch sw2 nicht angezeigt, da LIFs nicht auf e0d liegen).
 +
 [listing, subs="+quotes"]
 ----
@@ -681,12 +681,12 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 ----
 
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
 . Wiederholen Sie die Schritte 1 bis 14 am zweiten Schalter.
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
@@ -695,29 +695,29 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 --
 .Cumulus Linux 5.11.0
 --
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die  `ping` Befehl zum Überprüfen der Konnektivität mit dem Server, auf dem Cumulus Linux und RCF gehostet werden.
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
+. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung zum Server, auf dem Cumulus Linux und RCF gehostet werden.
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
@@ -725,12 +725,12 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 [NOTE]
 .Beachten Sie Folgendes:
 ====
-** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Rücksetzung deaktivieren.
-** Wenn Sie Ihre Cumulus Linux-Version gerade aktualisiert haben, müssen Sie die automatische Wiederherstellung für diesen Schritt nicht deaktivieren, da sie bereits deaktiviert ist.
+** Wenn Sie Ihr RCF aktualisieren, müssen Sie für diesen Schritt die automatische Wiederherstellung deaktivieren.
+** Wenn Sie Ihre Cumulus Linux-Version gerade erst aktualisiert haben, brauchen Sie die automatische Wiederherstellung für diesen Schritt nicht zu deaktivieren, da sie bereits deaktiviert ist.
 
 
 ====
-. Zeigen Sie die verfügbaren Schnittstellen am SN2100-Schalter an:
+. Die verfügbaren Schnittstellen des SN2100-Switches anzeigen:
 +
 [listing, subs="+quotes"]
 ----
@@ -749,7 +749,7 @@ Interface     MTU   Speed State Remote Host         Remote Port- Type      Summa
 + swp15      9216 100G    up sw2                      swp15       swp
 + swp16      9216 100G    up sw2                      swp16       swp
 ----
-. Kopieren Sie das RCF-Python-Skript auf den Switch.
+. Kopiere das RCF-Python-Skript auf den Switch.
 +
 [listing, subs="+quotes"]
 ----
@@ -760,9 +760,9 @@ MSN2100-RCF-v1.x-Cluster-HA-Breakout-LLDP          100% 8607   111.2KB/s        
 ----
 +
 
-NOTE: Obwohl `scp` Im Beispiel wird „http://www.sftp.org/docs/file ...
+NOTE: Obwohl `scp` Wird im Beispiel verwendet, können Sie Ihre bevorzugte Methode der Dateiübertragung nutzen, zum Beispiel SFTP, HTTPS oder FTP.
 
-. Wenden Sie das Skript RCF Python an *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP*.
+. Wenden Sie das RCF-Python-Skript *MSN2100-RCF-v1._x_-Cluster-HA-Breakout-LLDP* an.
 +
 [listing, subs="+quotes"]
 ----
@@ -785,11 +785,11 @@ Step 12: Configure SNMP
 Step 13: Reboot the switch
 ----
 +
-Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte durch.
+Das RCF-Skript führt die im obigen Beispiel aufgeführten Schritte aus.
 
 +
 
-NOTE: In Schritt 3 *Aktualisieren der MOTD-Datei* oben wird der Befehl „cat /etc/issue.net“ ausgeführt. Dadurch können Sie den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner überprüfen.
+NOTE: Im oben genannten Schritt 3 *Aktualisieren der MOTD-Datei* wird der Befehl `cat /etc/issue.net` ausgeführt.  Dies ermöglicht es Ihnen, den RCF-Dateinamen, die RCF-Version, die zu verwendenden Ports und andere wichtige Informationen im RCF-Banner zu überprüfen.
 
 +
 Beispiel:
@@ -828,9 +828,9 @@ admin@sw1:mgmt:~$ cat /etc/issue.net
 ----
 +
 
-NOTE: Für Probleme mit RCF-Python-Skripts, die nicht behoben werden können, wenden Sie sich an https://mysupport.netapp.com/["NetApp Support"^] Für weitere Unterstützung.
+NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an. link:cabling-considerations-sn2100-cluster.html["Prüfen Sie die Verkabelung und Konfigurationsüberlegungen"]Weitere Informationen zu erforderlichen Änderungen finden Sie unter.
+. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -945,7 +945,7 @@ Incomplete Command: set interface swp3-16 link fast-linkupp3-16 link fast-linkup
 ----
 +
 
-NOTE: Die aufgeführten Ausnahmen haben keine Auswirkungen auf die Leistung und können sicher ignoriert werden.
+NOTE: Die aufgeführten Ausnahmen haben keinen Einfluss auf die Leistung und können getrost ignoriert werden.
 
 . Überprüfen Sie die Informationen für den Transceiver in der Schnittstelle:
 +
@@ -972,7 +972,7 @@ swp6       0x00 None
 swp15      0x11 (QSFP28)  Amphenol     112-00595        APF20279210117  B0
 swp16      0x11 (QSFP28)  Amphenol     112-00595        APF20279210166  B0
 ----
-. Stellen Sie sicher, dass die Nodes jeweils über eine Verbindung zu jedem Switch verfügen:
+. Überprüfen Sie, ob jeder Knoten eine Verbindung zu jedem Switch hat:
 +
 [listing, subs="+quotes"]
 ----
@@ -985,9 +985,9 @@ swp2s1     25G    Trunk/L2    node1                 �
 swp15      100G   BondMember  sw2                      swp15
 swp16      100G   BondMember  sw2                      swp16
 ----
-. Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
+. Überprüfen Sie den Zustand der Cluster-Ports im Cluster.
 +
-.. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
+.. Überprüfen Sie, ob die Cluster-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -1009,7 +1009,7 @@ Port      IPspace      Broadcast Domain Link MTU  Admin/Oper  Status   Status
 e3a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e3b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
-.. Überprüfen Sie den Switch-Systemzustand des Clusters (dies zeigt möglicherweise nicht den Switch sw2 an, da LIFs nicht auf e0d homed sind).
+.. Überprüfen Sie den Zustand des Switches vom Cluster aus (dabei wird möglicherweise Switch sw2 nicht angezeigt, da LIFs nicht auf e0d liegen).
 +
 [listing, subs="+quotes"]
 ----
@@ -1047,12 +1047,12 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 ----
 
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
 . Wiederholen Sie die Schritte 1 bis 14 am zweiten Schalter.
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
@@ -1060,5 +1060,5 @@ sw2                         cluster-network    10.233.205.91    MSN2100-CB2RC
 
 --
 ====
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation des RCF können Sie link:setup-install-cshm-file.html["Installieren Sie die CSHM-Datei"]Die

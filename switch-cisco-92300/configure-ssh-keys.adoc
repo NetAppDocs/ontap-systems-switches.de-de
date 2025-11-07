@@ -2,7 +2,7 @@
 permalink: switch-cisco-92300/configure-ssh-keys.html 
 sidebar: sidebar 
 keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9336c-fx2 
-summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) und die Funktionen zur Protokollerfassung verwendet werden. Um SSH auf Cisco 92300YC Cluster Switches zu aktivieren, generieren Sie zunächst die SSH-Schlüssel und aktivieren dann SSH.' 
+summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Health Monitor (CSHM) und der Protokollerfassungsfunktionen. Um SSH auf Cisco 92300YC-Cluster-Switches zu aktivieren, generieren Sie zuerst die SSH-Schlüssel und aktivieren dann SSH.' 
 ---
 = Überprüfen Sie Ihre SSH-Konfiguration
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: 'SSH ist erforderlich, wenn der Cluster Switch Health Monitor \(CSHM\) 
 
 
 [role="lead"]
-Wenn Sie die Funktionen des Ethernet Switch Health Monitor (CSHM) und der Protokollsammlung verwenden, überprüfen Sie, ob SSH- und SSH-Schlüssel auf den Cluster-Switches aktiviert sind.
+Wenn Sie die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollerfassung verwenden, überprüfen Sie, ob SSH und SSH-Schlüssel auf den Cluster-Switches aktiviert sind.
 
 .Schritte
-. Vergewissern Sie sich, dass SSH aktiviert ist:
+. Überprüfen Sie, ob SSH aktiviert ist:
 +
 [listing, subs="+quotes"]
 ----
@@ -61,7 +61,7 @@ sshServer              1          enabled
 
 
 
-IMPORTANT: Wenn Sie FIPS aktivieren, müssen Sie den Bitcount mit dem Befehl auf dem Switch auf 256 ändern `ssh key ecdsa 256 force`.  https://docs.netapp.com/us-en/ontap/networking/configure_network_security_using_federal_information_processing_standards_@fips@.html#enable-fips["Konfiguration der Netzwerksicherheit mit FIPS"^]Weitere Informationen finden Sie unter.
+IMPORTANT: Wenn Sie FIPS aktivieren, müssen Sie die Bitanzahl am Switch mithilfe des Befehls auf 256 ändern. `ssh key ecdsa 256 force` Die  Sehen https://docs.netapp.com/us-en/ontap/networking/configure_network_security_using_federal_information_processing_standards_@fips@.html#enable-fips["Konfigurieren Sie die Netzwerksicherheit mithilfe von FIPS."^] Weitere Einzelheiten.
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].

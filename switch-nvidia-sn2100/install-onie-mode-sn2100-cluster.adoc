@@ -2,7 +2,7 @@
 permalink: switch-nvidia-sn2100/install-onie-mode-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: install cumulus onie mode, sn2100 SN2100 switches setup, cumulus linux, onie mode 
-summary: 'Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt.' 
+summary: 'Das Betriebssystem Cumulus Linux (CL) kann entweder installiert werden, wenn auf dem Switch Cumulus Linux oder ONIE läuft.' 
 ---
 = Installieren Sie Cumulus Linux im ONIE-Modus
 :allow-uri-read: 
@@ -11,44 +11,44 @@ summary: 'Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch C
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um Cumulus Linux (CL) OS zu installieren, wenn der Switch im ONIE-Modus ausgeführt wird.
+Gehen Sie wie folgt vor, um Cumulus Linux (CL) OS zu installieren, wenn der Switch im ONIE-Modus läuft.
 
 
-NOTE: Cumulus Linux (CL) kann entweder installiert werden, wenn der Switch ONIE oder Cumulus Linux ausführt (siehe link:install-cumulus-mode-sn2100-cluster.html["Im Cumulus-Modus installieren"]).
+NOTE: Cumulus Linux (CL) OS kann entweder installiert werden, wenn auf dem Switch ONIE oder Cumulus Linux läuft (siehelink:install-cumulus-mode-sn2100-cluster.html["Installation im Cumulus-Modus"] ).
 
-.Über diese Aufgabe
-Sie können Cumulus Linux unter Verwendung der Open Network Install Environment (ONIE) installieren, die die automatische Erkennung eines Network Installer-Images ermöglicht. Dies erleichtert das Systemmodell der Sicherung von Schaltern mit einem Betriebssystem, wie Cumulus Linux. Die einfachste Möglichkeit, Cumulus Linux mit ONIE zu installieren, ist mit lokaler HTTP-Erkennung.
+.Informationen zu diesem Vorgang
+Sie können Cumulus Linux mithilfe der Open Network Install Environment (ONIE) installieren, die die automatische Erkennung eines Netzwerkinstallationsabbilds ermöglicht.  Dies erleichtert das Systemmodell der Absicherung von Switches durch die Wahl eines Betriebssystems, wie beispielsweise Cumulus Linux.  Cumulus Linux lässt sich am einfachsten mit ONIE über die lokale HTTP-Erkennung installieren.
 
 
-NOTE: Wenn Ihr Host IPv6 aktiviert ist, stellen Sie sicher, dass er einen Webserver ausführt. Wenn der Host IPv4 aktiviert ist, stellen Sie sicher, dass er zusätzlich zu einem Webserver DHCP ausführt.
+NOTE: Wenn Ihr Host IPv6-fähig ist, stellen Sie sicher, dass darauf ein Webserver läuft.  Wenn Ihr Host IPv4-fähig ist, stellen Sie sicher, dass er zusätzlich zu einem Webserver auch DHCP ausführt.
 
-Dieses Verfahren zeigt, wie Cumulus Linux nach dem Start des Administrators in ONIE aktualisiert werden kann.
+Dieses Verfahren zeigt, wie man Cumulus Linux aktualisiert, nachdem der Administrator in ONIE gestartet hat.
 
 .Schritte
 [role="tabbed-block"]
 ====
 .Cumulus Linux 4.4.3
 --
-. Laden Sie die Cumulus Linux-Installationsdatei in das Stammverzeichnis des Webservers herunter. Diese Datei umbenennen in: `onie-installer`.
-. Verbinden Sie den Host über ein Ethernet-Kabel mit dem Management-Ethernet-Port des Switches.
-. Schalten Sie den Schalter ein.
+. Laden Sie die Cumulus Linux-Installationsdatei in das Stammverzeichnis des Webservers herunter.  Benennen Sie diese Datei um in: `onie-installer` Die
+. Verbinden Sie Ihren Host mithilfe eines Ethernet-Kabels mit dem Management-Ethernet-Port des Switches.
+. Den Schalter einschalten.
 +
-Der Switch lädt das ONIE-Image-Installationsprogramm herunter und startet. Nach Abschluss der Installation wird die Cumulus Linux-Anmeldeaufforderung im Terminalfenster angezeigt.
+Der Switch lädt das ONIE-Image-Installationsprogramm herunter und startet.  Nach Abschluss der Installation erscheint die Cumulus Linux-Anmeldeaufforderung im Terminalfenster.
 
 +
 
-NOTE: Jedes Mal, wenn Cumulus Linux installiert wird, wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut.
+NOTE: Bei jeder Neuinstallation von Cumulus Linux wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut.
 
-. Starten Sie den SN2100-Schalter neu:
+. Starten Sie den SN2100-Switch neu:
 +
 [listing, subs="+quotes"]
 ----
 cumulus@cumulus:mgmt:~$ *sudo reboot*
 ----
-. Drücken Sie die Taste *Esc* auf dem GNU GRUB-Bildschirm, um den normalen Bootvorgang zu unterbrechen, wählen Sie *ONIE* und drücken Sie *Enter*.
-. Wählen Sie auf dem nächsten Bildschirm *ONIE: Install OS* aus.
-. Der Vorgang zur Erkennung des ONIE-Installers führt die Suche nach der automatischen Installation durch. Drücken Sie *Enter*, um den Vorgang vorübergehend zu beenden.
-. Wenn der Erkennungsvorgang angehalten wurde:
+. Drücken Sie auf dem GNU GRUB-Bildschirm die *Esc*-Taste, um den normalen Bootvorgang zu unterbrechen, wählen Sie *ONIE* aus und drücken Sie *Enter*.
+. Im nächsten Bildschirm wählen Sie *ONIE: Betriebssystem installieren*.
+. Der ONIE-Installer-Erkennungsprozess wird ausgeführt und sucht nach der automatischen Installation.  Drücken Sie die *Eingabetaste*, um den Vorgang vorübergehend zu unterbrechen.
+. Wenn der Ermittlungsprozess abgeschlossen ist:
 +
 [listing, subs="+quotes"]
 ----
@@ -57,7 +57,7 @@ discover: installer mode detected.
 Stopping: discover...start-stop-daemon: warning: killing process 427:
 No such process done.
 ----
-. Wenn der DHCP-Dienst in Ihrem Netzwerk ausgeführt wird, überprüfen Sie, ob die IP-Adresse, die Subnetzmaske und das Standard-Gateway korrekt zugewiesen sind:
+. Wenn der DHCP-Dienst in Ihrem Netzwerk ausgeführt wird, überprüfen Sie, ob die IP-Adresse, die Subnetzmaske und das Standardgateway korrekt zugewiesen sind:
 +
 `ifconfig eth0`
 
@@ -82,7 +82,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 default         10.233.204.1    0.0.0.0         UG    0      0      0   eth0
 10.233.204.0    *               255.255.254.0   U     0      0      0   eth0
 ----
-. Wenn das IP-Adressschema manuell definiert ist, gehen Sie wie folgt vor:
+. Wenn das IP-Adressierungsschema manuell definiert wurde, gehen Sie wie folgt vor:
 +
 [listing, subs="+quotes"]
 ----
@@ -90,7 +90,7 @@ ONIE:/ # *ifconfig eth0 10.233.204.71 netmask 255.255.254.0*
 ONIE:/ # *route add default gw 10.233.204.1*
 ----
 . Wiederholen Sie Schritt 9, um zu überprüfen, ob die statischen Informationen korrekt eingegeben wurden.
-. Cumulus Linux Installieren:
+. Installieren Sie Cumulus Linux:
 +
 [listing]
 ----
@@ -112,7 +112,7 @@ ONIE:/ # *route*
   ...
   ...
 ----
-. Melden Sie sich nach Abschluss der Installation beim Switch an.
+. Nach Abschluss der Installation melden Sie sich am Switch an.
 +
 [listing, subs="+quotes"]
 ----
@@ -139,17 +139,17 @@ DISTRIB_DESCRIPTION=*"Cumulus Linux 4.4.3”*
 --
 .Cumulus Linux 5.x
 --
-. Laden Sie die Cumulus Linux-Installationsdatei in das Stammverzeichnis des Webservers herunter. Diese Datei umbenennen in: `onie-installer`.
-. Verbinden Sie den Host über ein Ethernet-Kabel mit dem Management-Ethernet-Port des Switches.
-. Schalten Sie den Schalter ein.
+. Laden Sie die Cumulus Linux-Installationsdatei in das Stammverzeichnis des Webservers herunter.  Benennen Sie diese Datei um in: `onie-installer` Die
+. Verbinden Sie Ihren Host mithilfe eines Ethernet-Kabels mit dem Management-Ethernet-Port des Switches.
+. Den Schalter einschalten.
 +
-Der Switch lädt das ONIE-Image-Installationsprogramm herunter und startet. Nach Abschluss der Installation wird die Cumulus Linux-Anmeldeaufforderung im Terminalfenster angezeigt.
+Der Switch lädt das ONIE-Image-Installationsprogramm herunter und startet.  Nach Abschluss der Installation erscheint die Cumulus Linux-Anmeldeaufforderung im Terminalfenster.
 
 +
 
-NOTE: Jedes Mal, wenn Cumulus Linux installiert wird, wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut.
+NOTE: Bei jeder Neuinstallation von Cumulus Linux wird die gesamte Dateisystemstruktur gelöscht und neu aufgebaut.
 
-. Starten Sie den SN2100-Schalter neu:
+. Starten Sie den SN2100-Switch neu:
 +
 [listing]
 ----
@@ -171,7 +171,7 @@ GNU GRUB version 2.06-3
 |                                                                         |
 +-------------------------------------------------------------------------+
 ----
-. Drücken Sie die Esc-Taste auf dem GNU GRUB-Bildschirm, um den normalen Bootvorgang zu unterbrechen, wählen Sie ONIE aus, und drücken Sie die Eingabetaste.
+. Drücken Sie auf dem GNU GRUB-Bildschirm die Esc-Taste, um den normalen Bootvorgang zu unterbrechen, wählen Sie ONIE aus und drücken Sie Enter.
 +
 [listing]
 ----
@@ -194,10 +194,10 @@ GNU GRUB version 2.02
 +-------------------------------------------------------------------------+
 ----
 +
-Wählen Sie ONIE: *OS installieren.*
+ONIE auswählen: *Betriebssystem installieren.*
 
-. Der Vorgang zur Erkennung des ONIE-Installers führt die Suche nach der automatischen Installation durch. Drücken Sie *Enter*, um den Vorgang vorübergehend zu beenden.
-. Wenn der Erkennungsvorgang angehalten wurde:
+. Der ONIE-Installer-Erkennungsprozess wird ausgeführt und sucht nach der automatischen Installation.  Drücken Sie die *Eingabetaste*, um den Vorgang vorübergehend zu unterbrechen.
+. Wenn der Ermittlungsprozess abgeschlossen ist:
 +
 [listing, subs="+quotes"]
 ----
@@ -206,7 +206,7 @@ discover: installer mode detected.
 Stopping: discover...start-stop-daemon: warning: killing process 427:
 No such process done.
 ----
-. Konfigurieren Sie die IP-Adresse, die Subnetzmaske und das Standard-Gateway:
+. Konfigurieren Sie die IP-Adresse, die Subnetzmaske und das Standardgateway:
 +
 `ifconfig eth0`
 
@@ -264,7 +264,7 @@ ONIE:/ # *route*
   ...
   ...
 ----
-. Melden Sie sich nach Abschluss der Installation beim Switch an.
+. Nach Abschluss der Installation melden Sie sich am Switch an.
 +
 [listing, subs="+quotes"]
 ----
@@ -288,7 +288,7 @@ build               Cumulus Linux 5.4.0  system build version
 uptime              6 days, 13:37:36     system uptime
 timezone            Etc/UTC              system time zone
 ----
-. Erstellen Sie einen neuen Benutzer, und fügen Sie diesen Benutzer dem hinzu `sudo` Gruppieren. Dieser Benutzer wird erst wirksam, nachdem die Konsole/SSH-Sitzung neu gestartet wurde.
+. Erstellen Sie einen neuen Benutzer und fügen Sie diesen Benutzer der folgenden Gruppe hinzu: `sudo` Gruppe.  Dieser Benutzer wird erst nach einem Neustart der Konsolen-/SSH-Sitzung wirksam.
 +
 `sudo adduser --ingroup netedit admin`
 
@@ -333,7 +333,7 @@ http://www.cumulusnetworks.com/support
 The registered trademark Linux (R) is used pursuant to a sublicense from LMI, the exclusive licensee of Linus Torvalds, owner of the mark on a world-wide basis.
 admin@sw1:mgmt:~$
 ----
-. Fügen Sie zusätzliche Benutzergruppen hinzu, auf die der Admin-Benutzer zugreifen kann `nv` Befehl:
+. Fügen Sie dem Administrator weitere Benutzergruppen hinzu, auf die er zugreifen kann. `nv` Befehle:
 +
 [listing, subs="+quotes"]
 ----
@@ -344,11 +344,11 @@ cumulus@cumulus:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Siehe https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] Finden Sie weitere Informationen.
+Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] für weitere Informationen.
 
 
 
 --
 ====
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation von Cumulus Linux im ONIE-Modus können Sielink:install-rcf-sn2100-cluster.html["Installieren Sie das Skript der Referenzkonfigurationsdatei (RCF)."] Die

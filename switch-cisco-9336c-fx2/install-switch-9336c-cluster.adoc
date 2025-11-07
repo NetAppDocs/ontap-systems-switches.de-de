@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2/install-switch-9336c-cluster.html 
 sidebar: sidebar 
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
-summary: Gehen Sie folgendermaßen vor, um den Cisco Nexus 9336C-FX2 Switch zu installieren. 
+summary: Gehen Sie wie folgt vor, um den Cisco Nexus 9336C-FX2 Switch zu installieren. 
 ---
 = Installieren Sie die Cluster-Switches 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
@@ -14,40 +14,40 @@ summary: Gehen Sie folgendermaßen vor, um den Cisco Nexus 9336C-FX2 Switch zu i
 Befolgen Sie dieses Verfahren, um die Cisco Nexus-Switches 9336C-FX2 und 9336C-FX2-T einzurichten und zu konfigurieren.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Zugriff auf einen HTTP-, FTP- oder TFTP-Server auf der Installationswebsite zum Herunterladen der entsprechenden NX-OS- und RCF-Versionen (Reference Configuration File).
-* Entsprechende NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco Software-Download"^] Seite.
-* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen und Kabel
-* Abgeschlossen link:setup-worksheet-9336c-cluster.html["Verkabelungsarbeitsblätter"].
-* Entsprechende RCFs für das NetApp Cluster-Netzwerk und das Management-Netzwerk, die von der NetApp Support Site unter heruntergeladen werden http://mysupport.netapp.com/["mysupport.netapp.com"^]. Alle Netzwerk- und Management-Netzwerk-Switches von Cisco sind mit der Standardkonfiguration von Cisco geliefert. Diese Switches verfügen auch über die aktuelle Version der NX-OS-Software, aber nicht über die RCFs geladen.
-* link:required-documentation-9336c-cluster.html["Erforderliche Switch- und ONTAP-Dokumentation"].
+* Zugriff auf einen HTTP-, FTP- oder TFTP-Server am Installationsort, um die entsprechenden NX-OS- und Referenzkonfigurationsdatei-(RCF)-Versionen herunterzuladen.
+* Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
+* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
+* Vollendetlink:setup-worksheet-9336c-cluster.html["Verkabelungs-Arbeitsblätter"] Die
+* Anwendbare NetApp -Clusternetzwerk- und Managementnetzwerk-RCFs, die von der NetApp -Support-Website heruntergeladen wurden unter http://mysupport.netapp.com/["mysupport.netapp.com"^] Die  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert. Diese Switches verfügen ebenfalls über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
+* link:required-documentation-9336c-cluster.html["Erforderliche Switch- und ONTAP Dokumentation"].
 
 
 .Schritte
-. Rack-Aufbau des Cluster-Netzwerks und der Management-Netzwerk-Switches und -Controller
+. Installieren Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller.
 +
 [cols="1,2"]
 |===
-| Wenn Sie den installieren... | Dann... 
+| Wenn Sie die... installieren | Dann... 
 
 
  a| 
-Cisco Nexus 9336C-FX2 in einem NetApp Systemschrank
+Cisco Nexus 9336C-FX2 in einem NetApp -Systemschrank
  a| 
-Anweisungen zur Installation des Switches in einem NetApp Rack sind im Dokument _Installation eines Cisco Nexus 9336C-FX2 Cluster-Switch und Pass-Through-Panel in einem NetApp Rack enthalten.
+Anweisungen zum Einbau des Switches in einen NetApp -Schrank finden Sie im Leitfaden _Installing a Cisco Nexus 9336C-FX2 cluster switch and pass-through panel in a NetApp cabinet_.
 
 
 
  a| 
-Geräte in einem Telco-Rack
+Ausrüstung in einem Telekommunikationsrack
  a| 
-Siehe die Verfahren in den Installationsleitfäden für die Switch-Hardware sowie in den Installations- und Setup-Anleitungen für NetApp.
+Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
 
 |===
-. Verkabeln Sie die Switches für das Cluster-Netzwerk und das Management-Netzwerk mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
-. Schalten Sie das Cluster-Netzwerk sowie die Switches und Controller des Managementnetzwerks ein.
+. Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
+. Schalten Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller ein.
 
 
-.Was kommt als Nächstes?
-Optional können Sielink:install-switch-and-passthrough-panel-9336c-cluster.html["Installation eines Cisco Nexus 9336C-FX2 Switch in einem NetApp Rack"] . Andernfalls gehen Sie zulink:cabling-considerations-9336c-fx2.html["Verkabelung und Konfiguration überprüfen"] .
+.Wie geht es weiter?
+Optional können Sie link:install-switch-and-passthrough-panel-9336c-cluster.html["Installieren Sie einen Cisco Nexus 9336C-FX2 Switch in einem NetApp Schrank"]Die Ansonsten gehen Sie zu link:cabling-considerations-9336c-fx2.html["Verkabelung und Konfiguration überprüfen"]Die

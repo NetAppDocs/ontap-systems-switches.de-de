@@ -2,7 +2,7 @@
 permalink: switch-bes-53248/configure-efos-software.html 
 sidebar: sidebar 
 keywords: BES-53248 cluster switches,installing EFOS software 
-summary: 'Führen Sie diese Schritte aus, um die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch zu installieren.' 
+summary: 'Führen Sie diese Schritte aus, um die Ethernet Fabric OS (EFOS)-Software auf dem Cluster-Switch BES-53248 zu installieren.' 
 ---
 = Installieren Sie die EFOS-Software
 :allow-uri-read: 
@@ -11,18 +11,18 @@ summary: 'Führen Sie diese Schritte aus, um die Ethernet Fabric OS (EFOS)-Softw
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch zu installieren.
+Führen Sie diese Schritte aus, um die Ethernet Fabric OS (EFOS)-Software auf dem Cluster-Switch BES-53248 zu installieren.
 
-EFOS Software umfasst eine Reihe erweiterter Netzwerkfunktionen und Protokolle für die Entwicklung von Ethernet- und IP-Infrastruktursystemen. Diese Softwarearchitektur ist für jedes Netzwerkorganisationsgerät geeignet, das Anwendungen verwendet, die eine gründliche Paketinspektion oder -Trennung erfordern.
+Die EFOS-Software umfasst eine Reihe fortschrittlicher Netzwerkfunktionen und -protokolle zur Entwicklung von Ethernet- und IP-Infrastruktursystemen.  Diese Softwarearchitektur eignet sich für jedes Netzwerkgerät, das Anwendungen nutzt, die eine gründliche Paketprüfung oder -trennung erfordern.
 
 
 
-== Installation vorbereiten
+== Vorbereiten der Installation
 
 .Bevor Sie beginnen
-* Dieses Verfahren ist nur für Neuinstallationen geeignet.
-* Laden Sie die entsprechende Broadcom EFOS-Software für Ihre Cluster-Switches von herunter https://www.broadcom.com/support/bes-switch["Unterstützung Für Broadcom Ethernet-Switches"^] Standort.
-* Stellen Sie sicher, dass die link:configure-install-initial.html["Der BES-53248 Cluster-Switch ist konfiguriert"].
+* Dieses Verfahren eignet sich nur für Neuinstallationen.
+* Laden Sie die passende Broadcom EFOS-Software für Ihre Cluster-Switches von der Website herunter. https://www.broadcom.com/support/bes-switch["Broadcom Ethernet-Switch-Unterstützung"^] Website.
+* Stellen Sie sicher, dasslink:configure-install-initial.html["Der BES-53248 Cluster-Switch ist konfiguriert."] Die
 
 
 
@@ -31,24 +31,24 @@ EFOS Software umfasst eine Reihe erweiterter Netzwerkfunktionen und Protokolle f
 
 Verwenden Sie eine der folgenden Methoden, um die EFOS-Software zu installieren:
 
-* <<Methode 1: EFOS installieren>>. In den meisten Fällen eingesetzt.
-* <<Methode 2: Installieren Sie EFOS im ONIE-Modus>>. Verwenden Sie diese Option, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist.
+* <<Methode 1: EFOS installieren>>. Für die meisten Anwendungsfälle geeignet.
+* <<Methode 2: EFOS im ONIE-Modus installieren>>. Verwenden Sie diese Option, wenn eine EFOS-Version FIPS-konform und die andere EFOS-Version nicht FIPS-konform ist.
 
 
 
 
 === Methode 1: EFOS installieren
 
-Führen Sie die folgenden Schritte durch, um die EFOS-Software zu installieren.
+Führen Sie die folgenden Schritte aus, um die EFOS-Software zu installieren.
 
 .Schritte
-. Loggen Sie sich beim seriellen Konsolenport des Switches ein oder stellen Sie eine Verbindung mit SSH her.
-. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der EFOS, Lizenzen und der RCF-Datei hostet.
+. Melden Sie sich am seriellen Konsolenport des Switches an oder stellen Sie eine SSH-Verbindung her.
+. Verwenden Sie die `ping` Befehl zur Überprüfung der Verbindung zum Server, auf dem EFOS, Lizenzen und die RCF-Datei gehostet werden.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird überprüft, ob der Switch mit der IP-Adresse 172.19.2 verbunden ist:
+Dieses Beispiel überprüft, ob der Switch mit dem Server unter der IP-Adresse 172.19.2.1 verbunden ist:
 
 [listing, subs="+quotes"]
 ----
@@ -58,9 +58,9 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Laden Sie die Bilddatei auf den Switch herunter.
+. Laden Sie die Image-Datei auf den Switch herunter.
 +
-In der folgenden Tabelle finden Sie Informationen zu unterstützten Kopierprotokollen:
+In der folgenden Tabelle finden Sie Informationen zu den unterstützten Kopierprotokollen:
 
 +
 |===
@@ -77,9 +77,9 @@ Keine
 
 
  a| 
-SSH File Transfer Protocol (SFTP)
+SSH-Dateiübertragungsprotokoll (SFTP)
  a| 
-Ihr Softwarepaket muss die sichere Verwaltung unterstützen
+Ihre Software muss eine sichere Verwaltung unterstützen.
 
 
 
@@ -114,25 +114,25 @@ Keine
  a| 
 Secure Copy Protocol (SCP)
  a| 
-Ihr Softwarepaket muss die sichere Verwaltung unterstützen
+Ihre Software muss eine sichere Verwaltung unterstützen.
 
 
 
  a| 
 HTTP
  a| 
-CLI-basierte Dateiübertragungen werden auf ausgewählten Plattformen unterstützt, wenn ein natives WGET-Dienstprogramm verfügbar ist
+Dateiübertragungen über die Befehlszeile werden auf ausgewählten Plattformen unterstützt, sofern ein natives WGET-Dienstprogramm verfügbar ist.
 
 
 
  a| 
 HTTPS
  a| 
-CLI-basierte Dateiübertragungen werden auf ausgewählten Plattformen unterstützt, wenn ein natives WGET-Dienstprogramm verfügbar ist
+Dateiübertragungen über die Befehlszeile werden auf ausgewählten Plattformen unterstützt, sofern ein natives WGET-Dienstprogramm verfügbar ist.
 
 |===
 +
-Durch Kopieren der Bilddatei auf das aktive Image wird bei einem Neustart die aktuell ausgeführte EFOS-Version erstellt. Das vorherige Bild bleibt als Backup verfügbar.
+Durch das Kopieren der Image-Datei in das aktive Image wird beim Neustart die laufende EFOS-Version anhand dieses Images festgelegt.  Das vorherige Image bleibt als Backup verfügbar.
 
 +
 .Beispiel anzeigen
@@ -158,7 +158,7 @@ SFTP Code transfer starting...
 File transfer operation completed successfully.
 ----
 ====
-. Anzeigen der Boot-Images für die aktive und die Backup-Konfiguration:
+. Anzeige der Startabbilder für die aktive und die Sicherungskonfiguration:
 +
 `show bootvar`
 
@@ -202,7 +202,7 @@ Configuration Saved!
 System will now restart!
 ----
 ====
-. Melden Sie sich erneut an, und überprüfen Sie die neue Version der EFOS-Software:
+. Melden Sie sich erneut an und überprüfen Sie die neue Version der EFOS-Software:
 +
 `show version`
 
@@ -238,30 +238,29 @@ Additional Packages............................ BGP-4
 ............................................... Prototype Open API
 ----
 ====
-. Schließen Sie die Installation ab.
-Führen Sie die folgenden fünf Schritte aus, um den Switch neu zu konfigurieren:
+. Schließen Sie die Installation ab.  Befolgen Sie diese fünf Schritte, um den Switch neu zu konfigurieren:
 +
-.. link:configure-licenses.html["Installieren von Lizenzen"]
+.. link:configure-licenses.html["Lizenzen installieren"]
 .. link:configure-install-rcf.html["Installieren Sie die RCF-Datei"]
-.. link:configure-ssh.html["Aktivieren Sie SSH"]
-.. link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"]
-.. link:CSHM_snmpv3.html["Konfigurieren Sie SNMPv3 für die Überwachung"]
+.. link:configure-ssh.html["Aktivieren von SSH"]
+.. link:CSHM_log_collection.html["Protokollerfassung aktivieren"]
+.. link:CSHM_snmpv3.html["SNMPv3 für die Überwachung konfigurieren"]
 
 
-. Wiederholen Sie die Schritte 1 bis 7 auf dem Partner-Switch.
+. Wiederholen Sie die Schritte 1 bis 7 am Partnerschalter.
 
 
 
 
-=== Methode 2: Installieren Sie EFOS im ONIE-Modus
+=== Methode 2: EFOS im ONIE-Modus installieren
 
-Sie können die folgenden Schritte durchführen, wenn eine EFOS-Version FIPS-konform ist und die andere EFOS-Version nicht FIPS-konform ist. Mit diesen Schritten kann das nicht-FIPS- oder FIPS-konforme EFOS 3.7.x.x-Image von ONIE installiert werden, wenn der Switch nicht startet.
+Die folgenden Schritte können Sie durchführen, wenn eine EFOS-Version FIPS-konform und die andere EFOS-Version nicht FIPS-konform ist.  Diese Schritte können verwendet werden, um das Nicht-FIPS- oder FIPS-konforme EFOS 3.7.xx-Image von ONIE zu installieren, falls der Switch nicht bootet.
 
 .Schritte
 . Stellen Sie eine Verbindung zu einer Konsole her, die an den seriellen Port des Switches angeschlossen ist.
-. Starten Sie den Schalter in den ONIE-Installationsmodus.
+. Starten Sie den Switch im ONIE-Installationsmodus.
 +
-Wählen Sie während des Startvorgangs ONIE aus, wenn die Eingabeaufforderung angezeigt wird.
+Wählen Sie während des Bootvorgangs ONIE aus, wenn Sie dazu aufgefordert werden.
 
 +
 .Beispiel anzeigen
@@ -286,7 +285,7 @@ Wählen Sie während des Startvorgangs ONIE aus, wenn die Eingabeaufforderung an
 ----
 ====
 +
-Nachdem Sie *ONIE* ausgewählt haben, lädt der Schalter und bietet Ihnen mehrere Auswahlmöglichkeiten. Wählen Sie *Betriebssystem installieren*.
+Nachdem Sie *ONIE* ausgewählt haben, lädt die Schaltfläche und zeigt Ihnen mehrere Optionen an.  Wählen Sie *Betriebssystem installieren*.
 
 +
 .Beispiel anzeigen
@@ -311,11 +310,11 @@ Nachdem Sie *ONIE* ausgewählt haben, lädt der Schalter und bietet Ihnen mehrer
 ----
 ====
 +
-Der Schalter startet in den ONIE-Installationsmodus.
+Der Switch startet im ONIE-Installationsmodus.
 
-. Beenden Sie die ONIE-Erkennung, und konfigurieren Sie die Ethernet-Schnittstelle.
+. Beenden Sie die ONIE-Erkennung und konfigurieren Sie die Ethernet-Schnittstelle.
 +
-Wenn die folgende Meldung angezeigt wird, drücken Sie *Enter*, um die ONIE-Konsole aufzurufen:
+Wenn die folgende Meldung erscheint, drücken Sie *Enter*, um die ONIE-Konsole aufzurufen:
 
 +
 [listing]
@@ -325,7 +324,7 @@ Please press Enter to activate this console. Info: eth0:  Checking link... up.
 ----
 +
 
-NOTE: Die ONIE-Erkennung wird fortgesetzt, und Meldungen werden an der Konsole gedruckt.
+NOTE: Die ONIE-Erkennung wird fortgesetzt und Meldungen werden auf der Konsole ausgegeben.
 
 +
 [listing]
@@ -336,14 +335,14 @@ discover: installer mode detected.
 Stopping: discover... done.
 ONIE:/ #
 ----
-. Konfigurieren Sie die Ethernet-Schnittstelle des Switch-Management-Ports, und fügen Sie die Route mithilfe hinzu `ifconfig eth0 <ipAddress> netmask <netmask> up` Und `route add default gw <gatewayAddress>`
+. Konfigurieren Sie die Ethernet-Schnittstelle des Management-Ports des Switches und fügen Sie die Route hinzu mit `ifconfig eth0 <ipAddress> netmask <netmask> up` Und `route add default gw <gatewayAddress>`
 +
 [listing]
 ----
 ONIE:/ # ifconfig eth0 10.10.10.10 netmask 255.255.255.0 up
 ONIE:/ # route add default gw 10.10.10.1
 ----
-. Stellen Sie sicher, dass der Server, der die ONIE-Installationsdatei hostet, erreichbar ist:
+. Überprüfen Sie, ob der Server, auf dem die ONIE-Installationsdatei gehostet wird, erreichbar ist:
 +
 `ping`
 
@@ -387,9 +386,9 @@ Preparing image archive ... OK.
 ----
 ====
 +
-Die Software wird installiert und startet den Switch anschließend neu. Lassen Sie den Switch normal in die neue EFOS-Version neu starten.
+Die Software installiert sich und startet den Switch anschließend neu.  Lassen Sie den Switch normal in die neue EFOS-Version neu starten.
 
-. Melden Sie sich an, und überprüfen Sie, ob die neue Switch-Software installiert ist:
+. Melden Sie sich an und überprüfen Sie, ob die neue Switch-Software installiert ist:
 +
 `show bootvar`
 
@@ -411,18 +410,17 @@ unit 	active 	    backup   current-active  next-active
 (cs2) #
 ----
 ====
-. Schließen Sie die Installation ab.
-Der Switch wird ohne angewendete Konfiguration neu gestartet und auf die Werkseinstellungen zurückgesetzt. Führen Sie die folgenden sechs Schritte aus, um den Switch neu zu konfigurieren:
+. Schließen Sie die Installation ab.  Der Switch startet ohne angewendete Konfiguration neu und wird auf die Werkseinstellungen zurückgesetzt.  Befolgen Sie diese sechs Schritte, um den Switch neu zu konfigurieren:
 +
-.. link:configure-install-initial.html["Konfigurieren Sie den Switch"]
-.. link:configure-licenses.html["Installieren von Lizenzen"]
+.. link:configure-install-initial.html["Schalter konfigurieren"]
+.. link:configure-licenses.html["Lizenzen installieren"]
 .. link:configure-install-rcf.html["Installieren Sie die RCF-Datei"]
-.. link:configure-ssh.html["Aktivieren Sie SSH"]
-.. link:CSHM_log_collection.html["Aktivieren Sie die Protokollerfassung"]
-.. link:CSHM_snmpv3.html["Konfigurieren Sie SNMPv3 für die Überwachung"]
+.. link:configure-ssh.html["Aktivieren von SSH"]
+.. link:CSHM_log_collection.html["Protokollerfassung aktivieren"]
+.. link:CSHM_snmpv3.html["SNMPv3 für die Überwachung konfigurieren"]
 
 
-. Wiederholen Sie die Schritte 1 bis 8 auf dem Partner-Switch.
+. Wiederholen Sie die Schritte 1 bis 8 am Partnerschalter.
 
 
 .Was kommt als nächstes

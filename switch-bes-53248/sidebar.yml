@@ -1,9 +1,9 @@
 ---
 section: switch-bes-53248
-title: Von Broadcom unterstützte BES-53248
+title: Broadcom-unterstützter BES-53248
 entries:
-- title: Los geht's
-  pdf-filename: Übersicht_bes53248
+- title: Erste Schritte
+  pdf-filename: Overview_bes53248
   entries:
   - title: Schnellstart
     url: "/switch-bes-53248/configure-new-switch-overview.html"
@@ -14,57 +14,57 @@ entries:
   - title: Erforderliche Dokumentation
     url: "/switch-bes-53248/required-documentation-bes53248.html"
 - title: Installieren Sie die Hardware
-  pdf-filename: Install_Hardware_bes53248
+  pdf-filename: Install_hardware_bes53248
   entries:
   - title: Arbeitsablauf bei der Hardwareinstallation
     url: "/switch-bes-53248/install-hardware-workflow.html"
-  - title: Den Schalter einbauen
+  - title: Installieren Sie den Schalter
     url: "/switch-bes-53248/install-hardware-bes53248.html"
-  - title: Überprüfung der Verkabelung und Konfiguration
+  - title: Kabel und Konfiguration prüfen
     url: "/switch-bes-53248/cabling-considerations-bes53248.html"
 - title: Konfigurieren der Software
-  pdf-filename: Configure_Software_bes53248
+  pdf-filename: Configure_software_bes53248
   entries:
-  - title: Workflow für die Softwareinstallation
+  - title: Softwareinstallations-Workflow
     url: "/switch-bes-53248/configure-software-overview-bes53248.html"
-  - title: Konfigurieren Sie den Switch
+  - title: Konfigurieren Sie den Schalter
     url: "/switch-bes-53248/configure-install-initial.html"
   - title: Installieren Sie die EFOS-Software
     url: "/switch-bes-53248/configure-efos-software.html"
-  - title: Installieren Sie RCF und Lizenzdatei für EFOS 3.12 und höher
+  - title: Installieren Sie RCF und die Lizenzdatei für EFOS 3.12 und höher.
     url: "/switch-bes-53248/efos-install-rcf-license-file.html"
-  - title: Installieren von Lizenzen
+  - title: Lizenzen installieren
     url: "/switch-bes-53248/configure-licenses.html"
-  - title: Installieren Sie die RCF-Konfigurationsdatei
+  - title: RCF-Konfigurationsdatei installieren
     url: "/switch-bes-53248/configure-install-rcf.html"
-  - title: Aktivieren Sie SSH für die Protokollerfassung
+  - title: SSH für die Protokollerfassung aktivieren
     url: "/switch-bes-53248/configure-ssh.html"
-  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+  - title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
     url: "/switch-bes-53248/reset-switch-bes-53248.html"
 - title: Aktualisieren Sie den Switch
-  pdf-filename: Upgrade_Switches_bes53248
+  pdf-filename: Upgrade_switches_bes53248
   entries:
   - title: Upgrade-Workflow
     url: "/switch-bes-53248/upgrade-switch-overview.html"
-  - title: Aktualisieren Sie die EFOS-Version
+  - title: EFOS-Version aktualisieren
     url: "/switch-bes-53248/upgrade-efos-software.html"
-  - title: Aktualisieren Sie die RCF-Version
+  - title: RCF-Version aktualisieren
     url: "/switch-bes-53248/upgrade-rcf.html"
-  - title: Überprüfen Sie das Cluster nach dem Upgrade
+  - title: Überprüfen Sie den Cluster nach dem Upgrade.
     url: "/switch-bes-53248/replace-verify.html"
-- title: Migrieren Sie die Switches
-  pdf-filename: Migrate_Switches_bes53248
+- title: Migrieren Sie die Schalter
+  pdf-filename: Migrate_switches_bes53248
   entries:
-  - title: Migration von CN1610 Switches
+  - title: Migration von CN1610-Switches
     url: "/switch-bes-53248/migrate-cn1610.html"
-  - title: Migrieren Sie zu Switch mit zwei Nodes
+  - title: Migration zu Zwei-Knoten-Switching
     url: "/switch-bes-53248/migrate-to-2n-switched.html"
 - title: Ersetzen Sie die Schalter
-  pdf-filename: Replace_Switches_bes53248
+  pdf-filename: Replace_switches_bes53248
   entries:
-  - title: Ersatzanforderungen
+  - title: Ersatzbedarf
     url: "/switch-bes-53248/replace-switch-reqs.html"
-  - title: Ersetzen Sie den BES-53248-Switch
+  - title: Ersetzen Sie den Schalter BES-53248
     url: "/switch-bes-53248/replace-switch.html"
-  - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
+  - title: Ersetzen Sie die Clusterschalter durch schalterlose Verbindungen.
     url: "/switch-bes-53248/migrate-to-switchless-interconnect-bes-53248.html"

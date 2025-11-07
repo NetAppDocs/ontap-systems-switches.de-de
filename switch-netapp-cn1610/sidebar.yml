@@ -2,35 +2,35 @@
 section: switch-netapp-cn1610
 title: NetApp CN1610
 entries:
-- title: Los geht's
-  pdf-filename: Übersicht_cn1610
+- title: Erste Schritte
+  pdf-filename: Overview_cn1610
   url: "/switch-netapp-cn1610/switch-overview-cn1610.html"
-- title: Installations- und Konfigurations-Workflow
+- title: Installations- und Konfigurationsworkflow
   url: "/switch-netapp-cn1610/install-overview-cn1610.html"
 - title: Erforderliche Dokumentation
   url: "/switch-netapp-cn1610/required-documentation-cn1610.html"
 - title: Installieren und konfigurieren
   pdf-filename: Install_configure_cn1610
   entries:
-  - title: Hardware installieren
+  - title: Installieren der Hardware
     url: "/switch-netapp-cn1610/install-hardware-cn1610.html"
-  - title: INSTALLIEREN Sie DIE FASTPATH Software
+  - title: Installieren Sie die FASTPATH-Software
     url: "/switch-netapp-cn1610/install-fastpath-software.html"
-  - title: Installieren Sie ein RCF
+  - title: Installieren Sie einen RCF
     url: "/switch-netapp-cn1610/install-rcf-file.html"
-  - title: Installieren SIE FASTPATH und RCF für ONTAP 8.3.1 und höher
+  - title: Installieren Sie FASTPATH ​​und RCF für ONTAP 8.3.1 und höher.
     url: "/switch-netapp-cn1610/install-fastpath-rcf-831.html"
-  - title: Konfigurieren Sie den Switch
+  - title: Schalter konfigurieren
     url: "/switch-netapp-cn1610/configure-hardware-cn1610.html"
-- title: Switches migrieren
-  pdf-filename: Migrate_Switches_cn1610
+- title: Schalter migrieren
+  pdf-filename: Migrate_switches_cn1610
   entries:
-  - title: Migrieren Sie Cluster mit Switches von ohne Switch zu Clustern
+  - title: Migration von einem schalterlosen zu einem geschalteten Cluster
     url: "/switch-netapp-cn1610/migrate-switched-netapp-cn1610.html"
-- title: Tauschen Sie die Schalter aus
-  pdf-filename: Replace_Switches_cn1610
+- title: Schalter austauschen
+  pdf-filename: Replace_switches_cn1610
   entries:
-  - title: Ersetzen Sie einen NetApp CN1610 Cluster Switch
+  - title: Ersetzen Sie einen NetApp CN1610 Cluster-Switch
     url: "/switch-netapp-cn1610/replace-cn1610-switch.html"
-  - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
+  - title: Ersetzen Sie die Clusterschalter durch schalterlose Verbindungen.
     url: "/switch-netapp-cn1610/migrate-to-switchless-cluster-interconnect.html"

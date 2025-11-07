@@ -2,7 +2,7 @@
 permalink: switch-nvidia-sn2100-storage/configure-sn2100-storage.html 
 sidebar: sidebar 
 keywords: switches hardware installation 
-summary: Informationen zur Installation der BES-53248-Hardware finden Sie in der NVIDIA-Dokumentation. 
+summary: Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokumentation von NVIDIA. 
 ---
 = Konfigurieren Sie den NVIDIA SN2100-Switch
 :allow-uri-read: 
@@ -11,12 +11,12 @@ summary: Informationen zur Installation der BES-53248-Hardware finden Sie in der
 
 
 [role="lead"]
-Informationen zur Konfiguration des SN2100-Switch finden Sie in der NVIDIA-Dokumentation.
+Informationen zur Konfiguration des SN2100-Switches finden Sie in der Dokumentation von NVIDIA.
 
 .Schritte
-. Überprüfen Sie die link:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"].
-. Befolgen Sie die Anweisungen unter https://docs.nvidia.com/networking/display/sn2000pub/System+Bring-Up["NVIDIA System Bring-up:"^].
+. Überprüfen Sie dielink:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"] Die
+. Befolgen Sie die Anweisungen in https://docs.nvidia.com/networking/display/sn2000pub/System+Bring-Up["NVIDIA -Systemstart."^] Die
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie Ihre Schalter konfiguriert haben, können Sielink:install-cumulus-mode-sn2100-storage.html["Cumulus Linux im Cumulus-Modus installieren"] oderlink:install-onie-mode-sn2100-storage.html["Cumulus Linux im ONIE-Modus installieren"] Die

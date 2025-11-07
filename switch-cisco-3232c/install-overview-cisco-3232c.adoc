@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/install-overview-cisco-3232c.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3232c switch, 
-summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Übersicht über den Prozess und die Terminologie. 
+summary: Bevor Sie Cisco Nexus 3232c Switches konfigurieren, sollten Sie sich einen Überblick über den Prozess und die Nomenklatur verschaffen. 
 ---
 = Installations- und Einrichtungsworkflow für Cisco Nexus 3232C-Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Üb
 
 
 [role="lead"]
-Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 Befolgen Sie diese Arbeitsschritte, um Ihren Cisco Nexus 3232C-Switch zu installieren und einzurichten.
 
@@ -23,7 +23,7 @@ Befolgen Sie diese Arbeitsschritte, um Ihren Cisco Nexus 3232C-Switch zu install
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 3232C-Switches und den ONTAP Cluster einzurichten.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:smart-call-home-3232c.html["Anforderungen für Smart Call Home"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:smart-call-home-3232c.html["Anforderungen für Smart Call Home"]
 [role="quick-margin-para"]
 Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
 

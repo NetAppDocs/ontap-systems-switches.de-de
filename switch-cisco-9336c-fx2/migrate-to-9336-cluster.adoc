@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2/migrate-to-9336-cluster.html 
 sidebar: sidebar 
 keywords: migrating to a cluster with Cisco Nexus 9336C-FX2 cluster switches, how to migrate 
-summary: Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei auf Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migrieren. 
+summary: Ältere Cisco Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migriert werden. 
 ---
 = Migrieren Sie von älteren Cisco -Switches zu Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches
 :allow-uri-read: 
@@ -15,95 +15,95 @@ Sie können eine unterbrechungsfreie Migration von älteren Cisco -Cluster-Switc
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 Stellen Sie sicher, dass:
 
 * Sie haben die Seriennummer des Switches überprüft, um sicherzustellen, dass der richtige Switch migriert wird.
-* Einige der Ports auf Nexus 9336C-FX2-Switches sind für 10-GbE- oder 40-GbE-Betrieb konfiguriert.
-* Die 10GbE- und 40-GbE-Konnektivität von den Nodes zu Nexus 9336C-FX2 Cluster-Switches wurde geplant, migriert und dokumentiert.
-* Das Cluster funktioniert voll (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
-* Die anfängliche Anpassung der Cisco Nexus 9336C-FX2 Switches lautet folgendermaßen:
+* Einige der Ports der Nexus 9336C-FX2 Switches sind für den Betrieb mit 10GbE oder 40GbE konfiguriert.
+* Die 10GbE- und 40GbE-Konnektivität von den Knoten zu den Nexus 9336C-FX2 Cluster-Switches wurde geplant, migriert und dokumentiert.
+* Der Cluster ist voll funktionsfähig (es sollten keine Fehler in den Protokollen oder ähnliche Probleme auftreten).
+* Die Erstkonfiguration der Cisco Nexus 9336C-FX2 Switches ist abgeschlossen, sodass:
 +
-** 9336C-FX2-Switches führen die neueste empfohlene Version der Software aus.
-** Vergewissern Sie sich, dass die Referenzkonfigurationsdateien (RCFs, Reference Configuration Files) vollständig auf neue Switches angewendet wurden, bevor Sie die LIFs auf die neuen Switches migrieren.
-** Überprüfen Sie die laufenden und Startkonfigurationen auf beiden Switches, bevor Sie den Netzwerkverkehr verschieben.
-** Anpassung von Websites, z. B. DNS, NTP, SMTP, SNMP, Und SSH werden auf den neuen Switches konfiguriert.
+** Auf den Switches vom Typ 9336C-FX2 läuft die neueste empfohlene Softwareversion.
+** Bevor Sie die LIFs auf die neuen Switches migrieren, vergewissern Sie sich, dass die Referenzkonfigurationsdateien (RCFs) vollständig auf alle neuen Switches angewendet wurden.
+** Prüfen Sie vor der Umleitung des Netzwerkverkehrs die laufenden und Startkonfigurationen beider Switches.
+** Sämtliche Standortanpassungen, wie z. B. DNS, NTP, SMTP, SNMP und SSH, werden auf den neuen Switches konfiguriert.
 
 
-* Sie haben Zugriff auf die Switch-Kompatibilitätstabelle auf der https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite für die unterstützten ONTAP-, NX-OS- und RCF-Versionen.
-* Sie haben die entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website für die Upgrade- und Downgrade-Verfahren von Cisco Switches unter geprüft https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"^] Seite.
-
-
-
-NOTE: Wenn Sie die Portgeschwindigkeit der e0a- und e1a-Cluster-Ports auf AFF A800- oder AFF C800-Systemen ändern, können Sie beobachten, wie fehlerhafte Pakete nach der Geschwindigkeitskonvertierung empfangen werden. Siehe  https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["Bug 1570339"^] Und den Knowledge Base Artikel https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["CRC-Fehler auf T6-Ports nach der Konvertierung von 40GbE zu 100GbE"^] Für eine Anleitung.
+* Sie haben Zugriff auf die Switch-Kompatibilitätstabelle auf dem https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite für die unterstützten ONTAP, NX-OS- und RCF-Versionen.
+* Sie haben die entsprechenden Software- und Upgrade-Anleitungen auf der Cisco -Website für die Upgrade- und Downgrade-Verfahren von Cisco Switches geprüft. https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Series Switches Unterstützung"^] Seite.
 
 
 
-== Migrieren Sie die Switches
+NOTE: Wenn Sie die Portgeschwindigkeit der Cluster-Ports e0a und e1a auf AFF A800 oder AFF C800 Systemen ändern, kann es nach der Geschwindigkeitsumwandlung zu fehlerhaften Paketen kommen.  Sehen https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["Bug 1570339"^] und der Artikel in der Wissensdatenbank https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["CRC-Fehler an T6-Ports nach der Umstellung von 40GbE auf 100GbE"^] zur Orientierung.
+
+
+
+== Migrieren Sie die Schalter
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Nodes verwenden zwei 10-GbE-Cluster Interconnect-Ports e0a und e0b. Siehe https://hwu.netapp.com/["Hardware Universe"^] Um sicherzustellen, dass die korrekten Cluster-Ports auf Ihren Plattformen vorhanden sind.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports e0a und e0b.  Siehe die https://hwu.netapp.com/["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
 
 
-NOTE: Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
+NOTE: Die Befehlsausgaben können je nach ONTAP Version variieren.
 
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Namen der beiden vorhandenen Cisco Switches sind *cs1* und *cs2*
-* Die neuen Nexus 9336C-FX2 Cluster Switches sind *cs1-neu* und *cs2-neu*.
-* Die Knotennamen sind *node1* und *node2*.
-* Die Cluster-LIF-Namen sind *node1_clus1* und *node1_clus2* für Knoten 1, und *node2_clus1* und *node2_clus2* für Knoten 2.
-* Die Eingabeaufforderung *cluster1::*>* gibt den Namen des Clusters an.
+* Die Namen der beiden vorhandenen Cisco Switches lauten *cs1* und *cs2*.
+* Die neuen Cluster-Switches Nexus 9336C-FX2 sind *cs1-new* und *cs2-new*.
+* Die Knotennamen lauten *node1* und *node2*.
+* Die Cluster-LIF-Namen lauten *node1_clus1* und *node1_clus2* für Knoten 1 sowie *node2_clus1* und *node2_clus2* für Knoten 2.
+* Die Eingabeaufforderung *cluster1::*>* zeigt den Namen des Clusters an.
 
 
-Beachten Sie während dieses Verfahrens das folgende Beispiel:
+Beachten Sie bei diesem Vorgang das folgende Beispiel:
 
-image::../media/Initial_setup.png[Ersteinrichtung des Switches]
+image::../media/Initial_setup.png[Erste Schalterkonfiguration]
 
-.Über diese Aufgabe
-Das Verfahren erfordert die Verwendung von ONTAP-Befehlen und https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Nexus 9000 Serie"^] Befehle; ONTAP-Befehle werden verwendet, sofern nicht anders angegeben.
+.Informationen zu diesem Vorgang
+Das Verfahren erfordert die Verwendung sowohl von ONTAP -Befehlen als auch von https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches der Nexus 9000-Serie"^] Befehle; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
-Dieses Verfahren umfasst das folgende Szenario:
+Dieses Verfahren umfasst folgendes Szenario:
 
-* Schalter cs2 wird zuerst durch Schalter cs2-New ersetzt.
+* Der Schalter cs2 wird zuerst durch den Schalter cs2-new ersetzt.
 +
-** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
+** Schalten Sie die Ports zu den Clusterknoten ab.  Um eine Instabilität des Clusters zu vermeiden, müssen alle Ports gleichzeitig abgeschaltet werden.
 +
-*** Alle Cluster-LIFs führen ein Failover auf den neuen Switch cs2-New durch.
+*** Alle Cluster-LIFs werden auf den neuen Switch cs2-new umgeschaltet.
 
 
-** Die Verkabelung zwischen den Knoten und cs2 wird dann von cs2 getrennt und wieder mit cs2-New verbunden.
+** Die Verkabelung zwischen den Knoten und cs2 wird dann von cs2 getrennt und wieder mit cs2-new verbunden.
 
 
-* Switch cs1 wird durch Switch cs1-New ersetzt.
+* Der Schalter cs1 wird durch den Schalter cs1-new ersetzt.
 +
-** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
+** Schalten Sie die Ports zu den Clusterknoten ab.  Um eine Instabilität des Clusters zu vermeiden, müssen alle Ports gleichzeitig abgeschaltet werden.
 +
-*** Alle Cluster-LIFs führen ein Failover auf den neuen Switch cs1-New durch.
+*** Alle Cluster-LIFs schalten auf den neuen Switch cs1-new um.
 
 
-** Die Verkabelung zwischen den Knoten und cs1 wird dann von cs1 getrennt und wieder mit cs1-New verbunden.
-
-
-
-
-
-NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Cluster-Betrieb zu gewährleisten, führt das folgende Verfahren ein Failover aller Cluster-LIFs auf den Partner-Switch des Betriebs durch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+** Die Verkabelung zwischen den Knoten und cs1 wird dann von cs1 getrennt und wieder mit cs1-new verbunden.
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=xh`
+
+NOTE: Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erforderlich. Dies ist beabsichtigt, da RCF-Versionsänderungen die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, wird während der Ausführung der Schritte auf dem Ziel-Switch ein Failover aller Cluster-LIFs auf den operativen Partner-Switch durchgeführt.
+
+
+
+=== Schritt 1: Vorbereitung auf die Migration
+
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh`
 +
-Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
@@ -114,9 +114,9 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 
 
-=== Schritt: Ports und Verkabelung konfigurieren
+=== Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
-. Vergewissern Sie sich bei den neuen Switches, dass die ISL zwischen den Switches cs1-New und cs2-New verkabelt und ordnungsgemäß funktioniert:
+. Prüfen Sie an den neuen Switches, ob die ISL-Verbindung zwischen den Switches cs1-new und cs2-new hergestellt und funktionsfähig ist:
 +
 `show port-channel summary`
 
@@ -157,7 +157,7 @@ Group Port-       Type     Protocol  Member Ports
 1     Po1(SU)     Eth      LACP      Eth1/35(P)   Eth1/36(P)
 ----
 ====
-. Anzeigen der Cluster-Ports an jedem Node, der mit den vorhandenen Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den vorhandenen Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
@@ -179,9 +179,9 @@ node2      /cdp
             e0b    cs2                       Ethernet1/2        N5K-C5596UP
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus für jeden Cluster-Port fest.
+. Ermitteln Sie den administrativen oder operativen Status für jeden Cluster-Port.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show -ipspace Cluster`
 
@@ -210,7 +210,7 @@ e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) auf ihren Home-Ports befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) an ihren jeweiligen Heimatports angeschlossen sind:
 +
 `network interface show -vserver Cluster`
 
@@ -232,7 +232,7 @@ Cluster
             node2_clus2  up/up      169.254.19.183/16  node2       e0b     true
 ----
 ====
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
@@ -264,18 +264,18 @@ cs2                         cluster-network     10.233.205.93   N5K-C5596UP
 ====
 
 
-. [[step_4]]Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs.
+. [[step_4]]Automatische Rücksetzung der Cluster-LIFs deaktivieren.
 +
-Wenn Sie die automatische Zurücksetzung für dieses Verfahren deaktivieren, werden die Cluster-LIFs nicht automatisch zurück zu ihrem Home Port verschoben. Sie verbleiben im aktuellen Port, während er weiterhin betriebsbereit ist.
+Durch Deaktivierung der automatischen Rückstellung für diesen Vorgang werden die Cluster-LIFs nicht automatisch zu ihrem Heimatport zurückbewegt.  Sie bleiben im derzeitigen Hafen, solange dieser in Betrieb ist.
 
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
 +
 
-NOTE: Durch die Deaktivierung der automatischen Zurücksetzung wird sichergestellt, dass ONTAP nur ein Failover der Cluster-LIFs übernimmt, wenn die Switch-Ports später heruntergefahren werden.
+NOTE: Durch Deaktivieren der automatischen Rücksetzung wird sichergestellt, dass ONTAP nur dann auf die Cluster-LIFs zurückgreift, wenn die Switch-Ports später heruntergefahren werden.
 
-. Fahren Sie auf Cluster-Switch cs2 die Ports herunter, die mit den Cluster-Ports von *all* Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
+. Schalten Sie auf dem Cluster-Switch cs2 die Ports ab, die mit den Cluster-Ports *aller* Knoten verbunden sind, um ein Failover der Cluster-LIFs zu erzwingen:
 +
 [listing, subs="+quotes"]
 ----
@@ -286,7 +286,7 @@ cs2(config-if-range)# *exit*
 cs2(config)# *exit*
 cs2#
 ----
-. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
+. Überprüfen Sie, ob die Cluster-LIFs auf die Ports des Cluster-Switches cs1 umgeschaltet haben. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster`
 
@@ -307,7 +307,7 @@ Cluster
             node2_clus2   up/up      169.254.3.9/16     node2      e0a     false
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -324,9 +324,9 @@ node1      true    true          false
 node2      true    true          false
 ----
 ====
-. Wenn die Cluster-LIFs ein Failover für den Switch cs1 durchgeführt haben und der Cluster sich in <<step_10,Schritt. 10>>einem ordnungsgemäßen Zustand befindet, fahren Sie mit fort. Wenn einige Cluster-LIFs nicht ordnungsgemäß arbeiten oder das Cluster nicht funktionsfähig ist, können Sie wie folgt ein Rollback der Konnektivität zum Switch cs2 durchführen:
+. Wenn die Cluster-LIFs auf Switch cs1 umgeschaltet haben und der Cluster fehlerfrei ist, fahren Sie mit folgendem fort:<<step_10,Schritt. 10>> Die  Falls einige Cluster-LIFs nicht fehlerfrei sind oder der Cluster insgesamt fehlerhaft ist, können Sie die Konnektivität zum Switch cs2 wie folgt wiederherstellen:
 +
-.. Die mit den Cluster-Ports von *all* verbundenen Ports aufrufen die Knoten:
+.. Aktivieren Sie die Ports, die mit den Cluster-Ports *aller* Knoten verbunden sind:
 +
 [listing, subs="+quotes"]
 ----
@@ -337,7 +337,7 @@ cs2(config-if-range)# *exit*
 cs2(config)# *exit*
 cs2#
 ----
-.. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
+.. Überprüfen Sie, ob die Cluster-LIFs auf die Ports des Cluster-Switches cs1 umgeschaltet haben. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster`
 
@@ -358,7 +358,7 @@ Cluster
             node2_clus2   up/up      169.254.3.9/16     node2      e0a     false
 ----
 ====
-.. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+.. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -377,15 +377,15 @@ node2      true    true          false
 ====
 
 
-. Sobald Sie die LIF und den Clusterzustand wiederhergestellt haben, starten Sie den Prozess von neu<<step_4,Schritt. 4>>.
-. [[Step_10]]Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten cs2-Switch auf den neuen cs2-New-Switch.
+. Sobald Sie LIF und die Clusterintegrität wiederhergestellt haben, starten Sie den Prozess neu.<<step_4,Schritt. 4>> Die
+. [[step_10]]Verlegen Sie alle Cluster-Knotenverbindungskabel vom alten cs2-Switch zum neuen cs2-new-Switch.
 +
-*Clusterknoten-Verbindungskabel wurden auf den cs2-New Switch* verlegt
+*Die Verbindungskabel der Clusterknoten wurden an den Switch cs2-new angeschlossen.*
 
 +
-image::../media/new_switch_cs1.png[Verbindungskabel für Clusterknoten wurden auf den cs2-New-Switch verlegt]
+image::../media/new_switch_cs1.png[Die Verbindungskabel der Clusterknoten wurden an den Switch cs2-new angeschlossen.]
 
-. Überprüfen Sie den Zustand der zu cs2-New übergewechselt Netzwerkverbindungen:
+. Bestätigen Sie den Zustand der nach cs2-new verschobenen Netzwerkverbindungen:
 +
 `network port show -ipspace Cluster`
 
@@ -415,9 +415,9 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
 +
-Alle verschiebten Cluster-Ports sollten nach oben erfolgen.
+Alle verschobenen Cluster-Ports sollten nun aktiv sein.
 
-. Überprüfen Sie die „Neighbor“-Informationen auf den Cluster-Ports:
+. Überprüfen Sie die Nachbarinformationen an den Cluster-Ports:
 +
 `network device-discovery show -protocol cdp`
 
@@ -442,16 +442,16 @@ node2      /cdp
 ----
 ====
 +
-Vergewissern Sie sich, dass der cs2-neue Switch von den verschobenen Cluster-Ports als „Nachbarn“ angezeigt wird.
+Überprüfen Sie, ob die verschobenen Cluster-Ports den Switch cs2-new als Nachbarn erkennen.
 
-. Bestätigen Sie die Switch-Port-Verbindungen aus der Perspektive von Switch cs2-New:
+. Prüfen Sie die Switch-Port-Verbindungen aus der Perspektive des Switches cs2-new:
 +
 [listing, subs="+quotes"]
 ----
 cs2-new# *show interface brief*
 cs2-new# *show cdp neighbors*
 ----
-. Fahren Sie auf Cluster-Switch cs1 die Ports herunter, die mit den Cluster-Ports von *all* Nodes verbunden sind, um ein Failover der Cluster-LIFs durchzuführen.
+. Um ein Failover der Cluster-LIFs durchzuführen, müssen auf dem Cluster-Switch cs1 die mit den Cluster-Ports *aller* Knoten verbundenen Ports abgeschaltet werden.
 +
 [listing, subs="+quotes"]
 ----
@@ -463,9 +463,9 @@ cs1(config)# *exit*
 cs1#
 ----
 +
-Alle Cluster-LIFs führen einen Failover zum cs2-neuen Switch durch.
+Alle Cluster-LIFs schalten auf den Switch cs2-new um.
 
-. Überprüfen Sie, ob für die Cluster-LIFs ein Failover zu den auf Switch cs2-New gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern:
+. Überprüfen Sie, ob die Cluster-LIFs auf die Ports des Switches cs2-new umgeschaltet haben.  Dies kann einige Sekunden dauern:
 +
 `network interface show -vserver Cluster`
 
@@ -486,7 +486,7 @@ Cluster
             node2_clus2  up/up      169.254.3.9/16     node2       e0b     true
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -503,14 +503,14 @@ node1      true    true          false
 node2      true    true          false
 ----
 ====
-. Verschieben Sie die Verbindungskabel des Clusterknoten von cs1 zum neuen cs1-New-Switch.
+. Verlegen Sie die Cluster-Knoten-Verbindungskabel von cs1 zum neuen Switch cs1-new.
 +
-*Clusterknoten-Verbindungskabel wurden auf den cs1-New Switch* verlegt
+*Die Verbindungskabel der Clusterknoten wurden an den Switch cs1-new angeschlossen.*
 
 +
-image::../media/new_switch_cs2.png[Verbindungskabel für Clusterknoten wurden auf den cs1-New-Switch verlegt]
+image::../media/new_switch_cs2.png[Die Verbindungskabel der Clusterknoten wurden an den Switch cs1-new verlegt.]
 
-. Überprüfen Sie den Zustand der zu cs1-New übergewechselt Netzwerkverbindungen:
+. Prüfen Sie den Zustand der Netzwerkverbindungen, die nach cs1-new verschoben wurden:
 +
 `network port show -ipspace Cluster`
 
@@ -540,9 +540,9 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
 +
-Alle verschiebten Cluster-Ports sollten nach oben erfolgen.
+Alle verschobenen Cluster-Ports sollten nun aktiv sein.
 
-. Überprüfen Sie die „Neighbor“-Informationen auf den Cluster-Ports:
+. Überprüfen Sie die Nachbarinformationen an den Cluster-Ports:
 +
 `network device-discovery show`
 
@@ -566,16 +566,16 @@ node2      /cdp
 ----
 ====
 +
-Vergewissern Sie sich, dass die verschiebten Cluster-Ports den cs1-neuen Switch als Nachbarn sehen.
+Überprüfen Sie, ob die verschobenen Cluster-Ports den Switch cs1-new als Nachbarn erkennen.
 
-. Bestätigen Sie die Switch-Port-Verbindungen aus der Perspektive von Switch cs1-New:
+. Prüfen Sie die Switch-Port-Verbindungen aus der Perspektive des Switches cs1-new:
 +
 [listing, subs="+quotes"]
 ----
 cs1-new# *show interface brief*
 cs1-new# *show cdp neighbors*
 ----
-. Vergewissern Sie sich, dass die ISL zwischen cs1-New und cs2-New weiterhin betriebsbereit ist:
+. Überprüfen Sie, ob die ISL-Verbindung zwischen cs1-new und cs2-new noch funktioniert:
 +
 `show port-channel summary`
 
@@ -620,23 +620,23 @@ Group Port-       Type     Protocol  Member Ports
 
 
 
-=== Schritt 3: Überprüfen Sie die Konfiguration
+=== Schritt 3: Konfiguration überprüfen
 
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Überprüfen Sie, ob die Cluster-LIFs auf ihre Home-Ports zurückgesetzt wurden (dies kann eine Minute dauern):
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
 +
 `network interface show -vserver Cluster`
 
 +
-Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Sie sie manuell zurück:
+Falls die Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurden, setzen Sie sie manuell zurück:
 
 +
 `network interface revert -vserver Cluster -lif *`
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -647,16 +647,16 @@ Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Si
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
 
-NOTE: Warten Sie einige Sekunden, bevor Sie den `show` Befehl, um die Details anzuzeigen.
+NOTE: Warten Sie einige Sekunden, bevor Sie den Befehl ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -675,7 +675,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -708,8 +708,8 @@ RPC status:
 ----
 --
 ====
-. [[schritt5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen: `system node autosupport invoke -node * -type all -message MAINT=END`
+. [[step5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen: `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Migration der Switches können Sielink:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] Die

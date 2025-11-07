@@ -2,43 +2,43 @@
 :allow-uri-read: 
 
 
-Um die Integritätsüberwachung von Ethernet-Switches auf NVIDIA-Ethernet-Switches zu konfigurieren, befolgen Sie dieses Verfahren.
+Um die Zustandsüberwachung von Ethernet-Switches auf NVIDIA Ethernet-Switches zu konfigurieren, gehen Sie wie folgt vor.
 
-Diese Anweisungen gelten, wenn NVIDIA X190006-PE und X190006-PI Switches nicht richtig erkannt werden. Dies kann durch Ausführen von  `system switch ethernet show` und prüfen Sie, ob *OTHER* für Ihr Modell angezeigt wird. Um Ihr NVIDIA-Switch-Modell zu identifizieren, suchen Sie die Teilenummer mit dem Befehl  `nv show platform hardware` für NVIDIA CL 5.8 und früher oder  `nv show platform` für spätere Versionen.
+Diese Anweisungen gelten, wenn die NVIDIA -Switches X190006-PE und X190006-PI nicht ordnungsgemäß erkannt werden. Dies kann durch Ausführen des Befehls überprüft werden. `system switch ethernet show` und prüfen, ob für Ihr Modell *ANDERE* angezeigt wird.  Um Ihr NVIDIA Switch-Modell zu identifizieren, ermitteln Sie die Teilenummer mit dem Befehl `nv show platform hardware` für NVIDIA CL 5.8 und früher oder `nv show platform` für spätere Versionen.
 
 [NOTE]
 ====
-Diese Schritte werden auch empfohlen, wenn Sie möchten, dass die Integritätsüberwachung und Protokollerfassung bei Verwendung von NVIDIA CL 5.11.x mit den folgenden ONTAP-Versionen wie vorgesehen funktioniert. Auch ohne diese Schritte funktionieren Integritätsüberwachung und Protokollerfassung möglicherweise weiterhin, aber durch deren Befolgung wird sichergestellt, dass alles ordnungsgemäß funktioniert.
+Diese Schritte werden auch empfohlen, wenn Sie möchten, dass die Zustandsüberwachung und die Protokollerfassung bei Verwendung von NVIDIA CL 5.11.x mit den folgenden ONTAP Versionen wie vorgesehen funktionieren.  Auch wenn die Gesundheitsüberwachung und die Protokollerfassung möglicherweise auch ohne diese Schritte funktionieren, stellt deren Befolgung sicher, dass alles ordnungsgemäß funktioniert.
 
-* 9.10.1P20, 9.11.1P18, 9.12.1P16, 9.13.1P8, 9.14.1, 9.15.1 und spätere Patch-Versionen
+* Patch-Versionen 9.10.1P20, 9.11.1P18, 9.12.1P16, 9.13.1P8, 9.14.1, 9.15.1 und spätere Versionen
 
 
 ====
 .Bevor Sie beginnen
-* Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
-* Aktivieren Sie SSH auf dem Switch, um alle in CSHM verfügbaren Funktionen zu nutzen.
-* Löschen Sie das `/mroot/etc/cshm_nod/nod_sign/` Verzeichnis auf allen Knoten:
+* Stellen Sie sicher, dass der ONTAP -Cluster betriebsbereit ist.
+* Aktivieren Sie SSH auf dem Switch, um alle in CSHM verfügbaren Funktionen nutzen zu können.
+* Räumen Sie die `/mroot/etc/cshm_nod/nod_sign/` Verzeichnis auf allen Knoten:
 +
-.. Betreten Sie die Nodeshell:
+.. Geben Sie die NodeShell ein:
 +
 `system node run -node <name>`
 
-.. Zu erweiterten Berechtigungen wechseln:
+.. Änderung zu erweiterten Berechtigungen:
 +
 `priv set advanced`
 
-.. Listen Sie die Konfigurationsdateien im `/etc/cshm_nod/nod_sign` Verzeichnis auf. Wenn das Verzeichnis existiert und Konfigurationsdateien enthält, werden die Dateinamen aufgelistet.
+.. Listen Sie die Konfigurationsdateien im folgenden Verzeichnis auf: `/etc/cshm_nod/nod_sign` Verzeichnis.  Wenn das Verzeichnis existiert und Konfigurationsdateien enthält, werden die Dateinamen aufgelistet.
 +
 `ls /etc/cshm_nod/nod_sign`
 
-.. Löschen Sie alle Konfigurationsdateien, die Ihren angeschlossenen Switch-Modellen entsprechen.
+.. Löschen Sie alle Konfigurationsdateien, die zu Ihren angeschlossenen Switch-Modellen gehören.
 +
-Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für die oben aufgeführten unterstützten Modelle, laden Sie die neuesten Konfigurationsdateien für dieselben Modelle herunter, und installieren Sie sie.
+Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für die oben aufgeführten unterstützten Modelle und laden Sie anschließend die neuesten Konfigurationsdateien für dieselben Modelle herunter und installieren Sie diese.
 
 +
 `rm /etc/cshm_nod/nod_sign/<filename>`
 
-.. Vergewissern Sie sich, dass die gelöschten Konfigurationsdateien nicht mehr im Verzeichnis sind:
+.. Vergewissern Sie sich, dass die gelöschten Konfigurationsdateien nicht mehr im Verzeichnis vorhanden sind:
 +
 `ls /etc/cshm_nod/nod_sign`
 
@@ -47,12 +47,12 @@ Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für d
 
 
 .Schritte
-. Laden Sie die ZIP-Datei für die Konfiguration der Ethernet-Switch-Systemzustandsüberwachung basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der Seite verfügbar https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] .
+. Laden Sie die Konfigurations-ZIP-Datei für den Ethernet-Switch-Integritätsmonitor entsprechend der zugehörigen ONTAP Version herunter.  Diese Datei ist verfügbar unter https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] Seite.
 +
-.. Wählen Sie auf der Download-Seite der NVIDIA SN2100-Software *Nvidia CSHM-Datei* aus.
-.. Aktivieren Sie auf der Seite Achtung/muss gelesen werden das Kontrollkästchen, um zuzustimmen.
-.. Aktivieren Sie auf der Seite Endbenutzer-Lizenzvereinbarung das Kontrollkästchen, um zuzustimmen, und klicken Sie auf *Akzeptieren und Fortfahren*.
-.. Wählen Sie auf der Seite Nvidia CSHM File - Download die entsprechende Konfigurationsdatei aus. Folgende Dateien sind verfügbar:
+.. Auf der Downloadseite der NVIDIA SN2100 Software wählen Sie *Nvidia CSHM-Datei* aus.
+.. Auf der Seite „Vorsicht/Unbedingt lesen“ das Kontrollkästchen aktivieren, um zuzustimmen.
+.. Auf der Seite „Endbenutzer-Lizenzvereinbarung“ das Kontrollkästchen aktivieren, um zuzustimmen, und auf *Akzeptieren & Fortfahren* klicken.
+.. Auf der Seite „Nvidia CSHM File - Download“ wählen Sie die entsprechende Konfigurationsdatei aus.  Folgende Dateien sind verfügbar:
 
 
 
@@ -79,24 +79,24 @@ Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für d
 --
 ====
 . [[step2]]Laden Sie die entsprechende ZIP-Datei auf Ihren internen Webserver hoch.
-. Greifen Sie von einem der ONTAP-Systeme im Cluster aus auf den erweiterten Modus zu.
+. Die Einstellungen für den erweiterten Modus können Sie von einem der ONTAP -Systeme im Cluster aus aufrufen.
 +
 `set -privilege advanced`
 
-. Führen Sie den Befehl Switch Health Monitor configure aus.
+. Führen Sie den Befehl „switch health monitor configure“ aus.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::> *system switch ethernet configure-health-monitor*
 ----
-. Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:
+. Vergewissern Sie sich, dass die Befehlsausgabe für Ihre ONTAP Version mit folgendem Text endet:
 
 
 [role="tabbed-block"]
 ====
 .ONTAP 9.15.1 und höher
 --
-Die Konfigurationsdatei wurde von der Statusüberwachung des Ethernet-Switches installiert.
+Die Zustandsüberwachung des Ethernet-Switches hat die Konfigurationsdatei installiert.
 
 --
 .ONTAP 9.11.1 bis 9.14.1
@@ -110,9 +110,9 @@ Das heruntergeladene CSHM-Paket wurde erfolgreich verarbeitet.
 
 --
 ====
-Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
+Im Fehlerfall wenden Sie sich bitte an den NetApp Support.
 
-. [[step6]]Warten Sie bis zu zweimal das Abfrageintervall der Ethernet-Switch-Integritätsüberwachung, das durch Ausführen gefunden `system switch ethernet polling-interval show`wird, bevor Sie den nächsten Schritt abschließen.
+. [[step6]]Warten Sie bis zum Doppelten des Abfrageintervalls des Ethernet-Switch-Integritätsmonitors, das durch Ausführen von `system switch ethernet polling-interval show` , bevor der nächste Schritt ausgeführt wird.
 . Führen Sie den Befehl aus `system switch ethernet configure-health-monitor show` Stellen Sie im ONTAP -System sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *True* gesetzt ist und das Feld für die Seriennummer nicht *Unknown* anzeigt.
 +
 [listing, subs="+quotes"]
@@ -122,6 +122,6 @@ cluster1::> *system switch ethernet configure-health-monitor show*
 
 
 
-NOTE: Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
+NOTE: Falls Ihr Modell nach Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich bitte an den NetApp -Support.
 
 Siehe die https://docs.netapp.com/us-en/ontap-cli/system-switch-ethernet-configure-health-monitor.html["System-Switch-Ethernet-Konfigurations-Health-Monitor"^] Befehl für weitere Details.

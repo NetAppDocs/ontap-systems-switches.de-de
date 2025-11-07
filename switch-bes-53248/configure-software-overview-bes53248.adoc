@@ -2,7 +2,7 @@
 permalink: switch-bes-53248/configure-software-overview-bes53248.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure new bes-53248 switch 
-summary: Lesen Sie die Software-Übersicht. 
+summary: Lesen Sie die Softwareübersicht. 
 ---
 = Workflow für die Softwareinstallation für BES-53248-Switches
 :allow-uri-read: 
@@ -11,28 +11,28 @@ summary: Lesen Sie die Software-Übersicht.
 
 
 [role="lead"]
-Um die Software für einen BES-53248-Cluster-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:
+Um die Software für einen BES-53248 Cluster-Switch zu installieren und zu konfigurieren, befolgen Sie diese Schritte:
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-install-initial.html["Konfigurieren Sie den Switch"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-install-initial.html["Konfigurieren Sie den Schalter"]
 [role="quick-margin-para"]
 Konfigurieren Sie den Cluster-Switch BES-53248.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:configure-efos-software.html["Installieren Sie die EFOS-Software"]
 [role="quick-margin-para"]
-Laden Sie die Ethernet Fabric OS (EFOS)-Software auf dem BES-53248-Cluster-Switch herunter und installieren Sie sie.
+Laden Sie die Ethernet Fabric OS (EFOS)-Software herunter und installieren Sie sie auf dem Cluster-Switch BES-53248.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:configure-licenses.html["Installation von Lizenzen für BES-53248 Cluster-Switches"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:configure-licenses.html["Lizenzen für BES-53248 Cluster-Switches installieren"]
 [role="quick-margin-para"]
-Optional können Sie neue Ports durch den Kauf und die Installation weiterer Lizenzen hinzufügen. Das Switch-Basismodell ist für 16 10-GbE- oder 25-GbE-Ports und zwei 100-GbE-Ports lizenziert.
+Optional können Sie neue Ports hinzufügen, indem Sie weitere Lizenzen erwerben und installieren.  Das Switch-Basismodell ist für 16 10GbE- oder 25GbE-Ports und zwei 100GbE-Ports lizenziert.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:configure-install-rcf.html["Installieren Sie die Referenzkonfigurationsdatei (RCF)."]
 [role="quick-margin-para"]
-Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie nach der Anwendung des RCF die Ports für eine zusätzliche Lizenz.
+Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und überprüfen Sie anschließend die Ports auf eine zusätzliche Lizenz, nachdem die RCF angewendet wurde.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh.html["Aktivieren Sie SSH bei BES-53248 Cluster-Switches"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh.html["Aktivieren Sie SSH auf BES-53248 Cluster-Switches."]
 [role="quick-margin-para"]
-Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, aktivieren Sie SSH auf den Switches.
+Wenn Sie die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollerfassung nutzen, aktivieren Sie SSH auf den Switches.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-bes-53248.html["Setzen Sie den Switch auf die Werkseinstellungen zurück"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-bes-53248.html["Setzen Sie den Schalter auf die Werkseinstellungen zurück."]
 [role="quick-margin-para"]
-Löschen Sie die Cluster-Switch-Einstellungen des BES-53248.
+Löschen Sie die Einstellungen des Cluster-Schalters BES-53248.

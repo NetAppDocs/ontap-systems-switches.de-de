@@ -2,7 +2,7 @@
 section: switch-nvidia-sn2100
 title: NVIDIA SN2100
 entries:
-- title: Los geht's
+- title: Erste Schritte
   entries:
   - title: Schnellstart
     url: "/switch-nvidia-sn2100/configure-overview-sn2100-cluster.html"
@@ -13,22 +13,22 @@ entries:
   - title: Erforderliche Dokumentation
     url: "/switch-nvidia-sn2100/required-documentation-sn2100-cluster.html"
 - title: Installieren Sie die Hardware
-  pdf-filename: Install_Hardware_sn2100
+  pdf-filename: Install_hardware_sn2100
   entries:
   - title: Arbeitsablauf bei der Hardwareinstallation
     url: "/switch-nvidia-sn2100/install-hardware-workflow.html"
-  - title: Den Schalter einbauen
+  - title: Installieren Sie den Schalter
     url: "/switch-nvidia-sn2100/install-hardware-sn2100-cluster.html"
-  - title: Überprüfung der Verkabelung und Konfiguration
+  - title: Kabel und Konfiguration prüfen
     url: "/switch-nvidia-sn2100/cabling-considerations-sn2100-cluster.html"
-  - title: Die NS224-Regale verkabeln
+  - title: Verkabeln Sie die NS224-Regale
     url: "/switch-nvidia-sn2100/install-cable-shelves-sn2100-cluster.html"
 - title: Konfigurieren der Software
-  pdf-filename: Configure_Software_sn2100
+  pdf-filename: Configure_software_sn2100
   entries:
-  - title: Workflow für die Softwareinstallation
+  - title: Softwareinstallations-Workflow
     url: "/switch-nvidia-sn2100/configure-software-overview-sn2100-cluster.html"
-  - title: Konfigurieren Sie den Switch
+  - title: Konfigurieren Sie den Schalter
     url: "/switch-nvidia-sn2100/configure-sn2100-cluster.html"
   - title: Installieren Sie Cumulus Linux im Cumulus-Modus
     url: "/switch-nvidia-sn2100/install-cumulus-mode-sn2100-cluster.html"
@@ -36,25 +36,25 @@ entries:
     url: "/switch-nvidia-sn2100/install-onie-mode-sn2100-cluster.html"
   - title: Aktualisieren Sie die Cumulus Linux-Version
     url: "/switch-nvidia-sn2100/upgrade-cl-version.html"
-  - title: Installieren oder aktualisieren Sie das RCF-Skript
+  - title: Installieren oder aktualisieren Sie das RCF-Skript.
     url: "/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html"
   - title: Installieren Sie die CSHM-Datei
     url: "/switch-nvidia-sn2100/setup-install-cshm-file.html"
-  - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
+  - title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
     url: "/switch-nvidia-sn2100/reset-switch-sn2100.html"
-- title: Migrieren Sie die Switches
-  pdf-filename: Migrate_Switches_sn2100
+- title: Migrieren Sie die Schalter
+  pdf-filename: Migrate_switches_sn2100
   entries:
-  - title: Migration von CN1610 Cluster Switches
+  - title: Migration von CN1610 Cluster-Switches
     url: "/switch-nvidia-sn2100/migrate-cn1610-sn2100-cluster-switch.html"
-  - title: Migration von Cisco Cluster Switches
+  - title: Migration von Cisco Cluster-Switches
     url: "/switch-nvidia-sn2100/migrate-cisco-sn2100-cluster-switch.html"
-  - title: Migration auf Cluster mit zwei Nodes
+  - title: Migration zu einem Zwei-Knoten-Switched-Cluster
     url: "/switch-nvidia-sn2100/migrate-2n-switched-sn2100-cluster.html"
 - title: Ersetzen Sie die Schalter
-  pdf-filename: Replace_Switches_sn2100
+  pdf-filename: Replace_switches_sn2100
   entries:
-  - title: Cluster-Switch austauschen
+  - title: Schalter im Kombiinstrument ersetzen
     url: "/switch-nvidia-sn2100/replace-sn2100-switch-cluster.html"
-  - title: Cluster-Switches durch Verbindungen ohne Switches ersetzen
+  - title: Ersetzen Sie die Clusterschalter durch schalterlose Verbindungen.
     url: "/switch-nvidia-sn2100/migrate-to-switchless-interconnect-sn2100-cluster.html"

@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Überblick über Installation und Konfiguration für gemeinsame Cisco Nexus 9336C-FX2-Switches 
+summary: Übersicht über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Shared Switches 
 ---
 = Installations- und Einrichtungsworkflow für gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Überblick über Installation und Konfiguration für gemeinsame Cisco N
 
 
 [role="lead"]
-Der gemeinsame Switch der Cisco Nexus 9336C-FX2 ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp Systemschrank installiert werden. Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Storage-Funktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren, indem Sie gemeinsam genutzte Cluster- und Speicherreferenzkonfigurationsdateien unterstützen.
+Der Cisco Nexus 9336C-FX2 Shared Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp Systemschrank installiert werden.  Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren, indem sie die Verwendung gemeinsam genutzter Cluster- und Speicherreferenzkonfigurationsdateien unterstützen.
 
 Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2-Switches zu installieren und einzurichten.
 
@@ -23,6 +23,6 @@ Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2-Switches zu installi
 [role="quick-margin-para"]
 Überprüfen Sie die Komponenten und Teilenummern für den gemeinsam genutzten Switch 9336C-FX2.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:required-documentation-9336c-shared.html["Überprüfen Sie die erforderlichen Unterlagen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:required-documentation-9336c-shared.html["Überprüfen Sie die erforderlichen Unterlagen"]
 [role="quick-margin-para"]
 Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 9336C-FX2-Switches und den ONTAP Cluster einzurichten.

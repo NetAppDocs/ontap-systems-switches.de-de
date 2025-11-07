@@ -1,24 +1,24 @@
-= Erstellen Sie einen Switch-Eintrag, damit ONTAP ihn überwachen kann
+= Erstellen Sie einen Switch-Eintrag, damit ONTAP ihn überwachen kann.
 :allow-uri-read: 
 
 
 
 
-== Erstellen Sie einen Switch-Eintrag, damit ONTAP ihn überwachen kann
+== Erstellen Sie einen Switch-Eintrag, damit ONTAP ihn überwachen kann.
 
-Verwenden Sie den `system switch ethernet create` Befehl, um die Überwachung für einen bestimmten Ethernet-Switch manuell zu konfigurieren und zu aktivieren. Dies ist hilfreich, wenn ONTAP den Switch nicht automatisch hinzufügt, oder wenn Sie den Switch zuvor entfernt haben und ihn erneut hinzufügen möchten.
+Verwenden Sie die `system switch ethernet create` Befehl zum manuellen Konfigurieren und Aktivieren der Überwachung für einen bestimmten Ethernet-Switch.  Dies ist hilfreich, wenn ONTAP den Schalter nicht automatisch hinzufügt oder wenn Sie den Schalter zuvor entfernt haben und ihn wieder hinzufügen möchten.
 
 [source, cli]
 ----
 system switch ethernet create -device DeviceName -address 1.2.3.4 -snmp-version SNMPv2c -community-or-username cshm1! -model NX3132V -type cluster-network
 ----
-Ein typisches Beispiel ist das Hinzufügen eines Switches namens [DeviceName] mit der IP-Adresse 1.2.3.4 und SNMPv2c-Anmeldeinformationen auf *cshm1!*. Verwenden Sie `-type storage-network` statt `-type cluster-network`, wenn Sie einen Speicherschalter konfigurieren.
+Ein typisches Beispiel ist das Hinzufügen eines Switches mit dem Namen [DeviceName], der IP-Adresse 1.2.3.4 und den auf *cshm1!* gesetzten SNMPv2c-Anmeldeinformationen.  Verwenden `-type storage-network` anstatt `-type cluster-network` wenn Sie einen Speicherswitch konfigurieren.
 
 
 
-== Deaktivieren Sie die Überwachung, ohne den Switch zu löschen
+== Überwachung deaktivieren, ohne den Schalter zu löschen
 
-Wenn Sie die Überwachung für einen bestimmten Switch anhalten oder beenden möchten, ihn aber für eine zukünftige Überwachung beibehalten möchten, ändern Sie dessen Parameter, `is-monitoring-enabled-admim` anstatt ihn zu löschen.
+Wenn Sie die Überwachung eines bestimmten Schalters pausieren oder beenden, ihn aber für die zukünftige Überwachung beibehalten möchten, ändern Sie dessen Einstellungen. `is-monitoring-enabled-admim` den Parameter, anstatt ihn zu löschen.
 
 Beispiel:
 
@@ -26,22 +26,22 @@ Beispiel:
 ----
 system switch ethernet modify -device DeviceName -is-monitoring-enabled-admin false
 ----
-Auf diese Weise können Sie die Switch-Details und -Konfiguration beibehalten, ohne neue Warnmeldungen oder erneute Ermittlungen zu erzeugen.
+Dadurch bleiben Schalterdetails und Konfigurationen erhalten, ohne dass neue Warnmeldungen oder erneute Erkennungen ausgelöst werden.
 
 
 
-== Entfernen Sie einen Schalter, den Sie nicht mehr benötigen
+== Entfernen Sie einen Schalter, den Sie nicht mehr benötigen.
 
-Verwenden Sie diese Option `system switch ethernet delete`, um einen Switch zu löschen, der getrennt wurde oder nicht mehr benötigt wird:
+Verwenden `system switch ethernet delete` Einen Schalter löschen, der nicht mehr angeschlossen ist oder nicht mehr benötigt wird:
 
 [source, cli]
 ----
 system switch ethernet delete -device DeviceName
 ----
-Standardmäßig ist dieser Befehl nur erfolgreich, wenn ONTAP den Switch derzeit nicht über CDP oder LLDP erkennt. Um einen erkannten Switch zu entfernen, verwenden Sie den `-force` Parameter:
+Standardmäßig ist dieser Befehl nur dann erfolgreich, wenn ONTAP den Switch aktuell nicht über CDP oder LLDP erkennt.  Um einen gefundenen Schalter zu entfernen, verwenden Sie die `-force` Parameter:
 
 [source, cli]
 ----
 system switch ethernet delete -device DeviceName -force
 ----
-Wenn `-force` verwendet wird, wird der Switch möglicherweise automatisch wieder hinzugefügt, wenn ONTAP ihn erneut erkennt.
+Wann `-force` Wird der Schalter verwendet, kann er automatisch wieder hinzugefügt werden, wenn ONTAP ihn erneut erkennt.

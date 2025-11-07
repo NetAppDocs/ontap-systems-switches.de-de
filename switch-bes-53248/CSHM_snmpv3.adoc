@@ -2,36 +2,36 @@
 permalink: switch-bes-53248/CSHM_snmpv3.html 
 sidebar: sidebar 
 keywords: SNMP,SNMPv3,SNMPv3 setup,BES-53248 Broadcom setup,BES-3248 switches configuration,EFOS 
-summary: 'SNMPv3 kann mit dem Ethernet-Switch Health Monitor (CSHM) verwendet werden.' 
+summary: 'SNMPv3 kann mit dem Ethernet Switch Health Monitor (CSHM) verwendet werden.' 
 ---
-= Konfigurieren Sie SNMPv3
+= SNMPv3 konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um SNMPv3 zu konfigurieren, das die Statusüberwachung des Ethernet-Switches (CSHM) unterstützt.
+Befolgen Sie dieses Verfahren, um SNMPv3 zu konfigurieren, das die Zustandsüberwachung von Ethernet-Switches (CSHM) unterstützt.
 
-.Über diese Aufgabe
-Mit den folgenden Befehlen wird ein SNMPv3-Benutzername auf Broadcom BES-53248-Switches konfiguriert:
+.Informationen zu diesem Vorgang
+Die folgenden Befehle konfigurieren einen SNMPv3-Benutzernamen auf Broadcom BES-53248-Switches:
 
 * Für *keine Authentifizierung*:
 `snmp-server user SNMPv3UserNoAuth NETWORK-OPERATOR noauth`
-* Für * MD5/SHA-Authentifizierung*:
+* Für die *MD5/SHA-Authentifizierung*:
 `snmp-server user SNMPv3UserAuth NETWORK-OPERATOR [auth-md5|auth-sha]`
 * Für *MD5/SHA-Authentifizierung mit AES/DES-Verschlüsselung*:
 `snmp-server user SNMPv3UserAuthEncrypt NETWORK-OPERATOR [auth-md5|auth-sha] [priv-aes128|priv-des]`
 
 
-Mit dem folgenden Befehl wird ein SNMPv3-Benutzername auf der ONTAP-Seite konfiguriert:
+Der folgende Befehl konfiguriert einen SNMPv3-Benutzernamen auf der ONTAP Seite:
 `cluster1::*> security login create -user-or-group-name _SNMPv3_USER_ -application snmp -authentication-method usm -remote-switch-ipaddress _ADDRESS_`
 
-Mit dem folgenden Befehl wird der SNMPv3-Benutzername mit CSHM eingerichtet:
+Der folgende Befehl richtet den SNMPv3-Benutzernamen bei CSHM ein:
 `cluster1::*> system switch ethernet modify -device _DEVICE_ -snmp-version SNMPv3 -community-or-username _SNMPv3_USER_`
 
 .Schritte
-. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass Authentifizierung und Verschlüsselung verwendet werden:
+. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass er Authentifizierung und Verschlüsselung verwendet:
 +
 `show snmp status`
 
@@ -51,7 +51,7 @@ Mit dem folgenden Befehl wird der SNMPv3-Benutzername mit CSHM eingerichtet:
 <username>        network-admin      MD5  AES128 8000113d03d8c497710bee
 ----
 ====
-. Richten Sie den SNMPv3-Benutzer auf der ONTAP-Seite ein:
+. Richten Sie den SNMPv3-Benutzer auf der ONTAP Seite ein:
 +
 `security login create -user-or-group-name <username> -application snmp -authentication-method usm -remote-switch-ipaddress 10.231.80.212`
 
@@ -109,7 +109,7 @@ cluster1::*>
 cluster1::*> *system switch ethernet modify -device "sw1" -snmp-version SNMPv3 -community-or-username <username>*
 ----
 ====
-. Stellen Sie sicher, dass die Seriennummer, die mit dem neu erstellten SNMPv3-Benutzer abgefragt werden soll, mit der im vorherigen Schritt nach Abschluss des CSHM-Abfragezeitraums enthaltenen identisch ist.
+. Überprüfen Sie nach Abschluss des CSHM-Abfragezeitraums, ob die abzufragende Seriennummer des neu erstellten SNMPv3-Benutzers mit der im vorherigen Schritt angegebenen übereinstimmt.
 +
 `system switch ethernet polling-interval show`
 

@@ -2,68 +2,68 @@
 permalink: switch-nvidia-sn2100-storage/replace-sn2100-switch-storage.html 
 sidebar: sidebar 
 keywords: replacing, replace, defective, nvidia, switch, cluster, network, nondisruptive, procedure, ndu, replace a nvidia sn2100 cluster switch - nvidia SN2100 
-summary: 'Ersetzen eines fehlerhaften NVIDIA SN2100 Storage Switch in einem unterbrechungsfreien Verfahren \(NDU\).' 
+summary: 'Austausch eines defekten NVIDIA SN2100 Speicherschalters im Rahmen eines nicht-unterbrechungsfreien Verfahrens (NDU).' 
 ---
-= Ersetzen Sie einen NVIDIA SN2100 Storage-Switch
+= Ersetzen Sie einen NVIDIA SN2100 Speicherschalter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können einen defekten NVIDIA SN2100 Storage Switch ersetzen. Hierbei handelt es sich um ein unterbrechungsfreies Verfahren.
+Sie können einen defekten NVIDIA SN2100 Speicherschalter austauschen. Dies ist ein unterbrechungsfreies Verfahren.
 
 .Bevor Sie beginnen
-Stellen Sie vor der Installation der Cumulus-Software und der RCFs auf einem NVIDIA SN2100-Speicherschalter Folgendes sicher:
+Bevor Sie die Cumulus-Software und die RCFs auf einem NVIDIA SN2100-Speicher-Switch installieren, stellen Sie Folgendes sicher:
 
-* Ihr System kann NVIDIA SN2100 Storage Switches unterstützen.
+* Ihr System unterstützt NVIDIA SN2100 Speicherswitches.
 * Sie haben die entsprechenden RCFs heruntergeladen.
 
 
-Der http://hwu.netapp.com["Hardware Universe"^] Ausführliche Informationen zu unterstützten Ports und deren Konfigurationen erhalten Sie im Detail.
+Der http://hwu.netapp.com["Hardware Universe"^] Enthält detaillierte Informationen zu den unterstützten Ports und deren Konfigurationen.
 
-Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
+Die bestehende Netzwerkkonfiguration muss folgende Eigenschaften aufweisen:
 
-* Führen Sie alle Schritte zur Fehlerbehebung durch, um zu bestätigen, dass Sie Ihren Switch ersetzen müssen.
-* Stellen Sie sicher, dass auf beiden Switches eine Verwaltungskonnektivität besteht.
+* Führen Sie alle Schritte zur Fehlerbehebung durch, um zu bestätigen, dass Sie Ihren Schalter austauschen müssen.
+* Stellen Sie sicher, dass auf beiden Switches eine Management-Verbindung besteht.
 +
 
-NOTE: Stellen Sie sicher, dass alle Fehlerbehebungsschritte durchgeführt wurden, um zu bestätigen, dass Ihr Switch ausgetauscht werden muss.
+NOTE: Stellen Sie sicher, dass alle Schritte zur Fehlerbehebung abgeschlossen sind, um zu bestätigen, dass Ihr Schalter ausgetauscht werden muss.
 
 
 
-Der Ersatz-NVIDIA SN2100-Switch muss die folgenden Eigenschaften aufweisen:
+Der Ersatz-Switch NVIDIA SN2100 muss folgende Eigenschaften aufweisen:
 
-* Die Management-Netzwerk-Konnektivität ist funktionsfähig.
+* Die Managementnetzwerkanbindung ist funktionsfähig.
 * Sie können über die Konsole auf den Ersatzschalter zugreifen.
 * Das entsprechende RCF- und Cumulus-Betriebssystemabbild wird auf den Switch geladen.
-* Die anfängliche Anpassung des Schalters ist abgeschlossen.
+* Die erste Konfiguration des Schalters ist abgeschlossen.
 
 
-.Zusammenfassung der Vorgehensweise
-Dieses Verfahren ersetzt den zweiten NVIDIA SN2100 Storage Switch sw2 durch den neuen NVIDIA SN2100 Switch nsw2. Die beiden Knoten sind node1 und node2.
+.Verfahrensübersicht
+Bei diesem Verfahren wird der zweite NVIDIA SN2100 Speicherschalter sw2 durch den neuen NVIDIA SN2100 Schalter nsw2 ersetzt.  Die beiden Knoten sind Knoten1 und Knoten2.
 
-Schritte zur Fertigstellung:
+Zu erledigende Schritte:
 
-* Vergewissern Sie sich, dass der zu ersetzende Schalter sw2 ist.
+* Bestätigen Sie, dass es sich bei dem auszutauschenden Schalter um SW2 handelt.
 * Trennen Sie die Kabel vom Schalter sw2.
-* Schließen Sie die Kabel wieder an den Schalter nsw2 an.
-* Überprüfen Sie alle Gerätekonfigurationen am Switch nsw2.
+* Schließen Sie die Kabel wieder an den Schalter NSW2 an.
+* Überprüfen Sie alle Gerätekonfigurationen auf Switch nsw2.
 
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
-. Überprüfen Sie den Integritätsstatus der Speicherknotenports, um die Verbindung zum Speicherswitch S1 zu bestätigen:
+. Überprüfen Sie den Gesundheitszustand der Speicherknotenports, um die Verbindung zum Speicherswitch S1 zu bestätigen:
 +
 `storage port show -port-type ENET`
 
@@ -90,7 +90,7 @@ node2
 cluster1::*>
 ----
 ====
-. Stellen Sie sicher, dass der Speicherschalter sw1 verfügbar ist:
+. Prüfen Sie, ob der Speicherschalter sw1 verfügbar ist:
 +
 `network device-discovery show -protocol lldp`
 
@@ -121,7 +121,7 @@ Press <space> to page down, <return> for next line, or 'q' to quit...
 10 entries were displayed.
 ----
 ====
-. Führen Sie die aus `net show interface` Mit dem Befehl auf dem Arbeitsschalter bestätigen Sie, dass Sie beide Nodes und alle Shelfs sehen können:
+. Führe die `net show interface` Führen Sie einen Befehl auf dem funktionierenden Switch aus, um zu bestätigen, dass Sie beide Knoten und alle Regale sehen können:
 +
 `net show interface`
 
@@ -148,7 +148,7 @@ UP     swp6    100G  9216   Trunk/L2   SHFFG1826000102 (e0b)   Master: bridge(UP
 ...
 ----
 ====
-. Überprüfen Sie die Shelf-Ports im Storage-System:
+. Überprüfen Sie die Regalanschlüsse im Lagersystem:
 +
 `storage shelf port show -fields remote-device, remote-port`
 
@@ -173,8 +173,8 @@ cluster1::*>
 ----
 ====
 . Entfernen Sie alle Kabel, die am Speicherschalter sw2 angeschlossen sind.
-. Schließen Sie alle Kabel wieder an den Ersatzschalter nsw2 an.
-. Überprüfen Sie den Integritätsstatus der Speicher-Node-Ports erneut:
+. Schließen Sie alle Kabel wieder an den Ersatzschalter NSW2 an.
+. Überprüfen Sie erneut den Gesundheitszustand der Speicherknotenports:
 +
 `storage port show -port-type ENET`
 
@@ -201,7 +201,7 @@ node2
 cluster1::*>
 ----
 ====
-. Vergewissern Sie sich, dass beide Switches verfügbar sind:
+. Vergewissern Sie sich, dass beide Schalter verfügbar sind:
 +
 `net device-discovery show -protocol lldp`
 
@@ -233,7 +233,7 @@ Press <space> to page down, <return> for next line, or 'q' to quit...
 10 entries were displayed.
 ----
 ====
-. Überprüfen Sie die Shelf-Ports im Storage-System:
+. Überprüfen Sie die Regalanschlüsse im Lagersystem:
 +
 `storage shelf port show -fields remote-device, remote-port`
 
@@ -257,15 +257,15 @@ shelf   id    remote-port     remote-device
 cluster1::*>
 ----
 ====
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie Ihre Schalter ausgetauscht haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

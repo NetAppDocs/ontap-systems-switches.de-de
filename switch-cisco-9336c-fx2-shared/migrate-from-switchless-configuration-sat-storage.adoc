@@ -4,7 +4,7 @@ permalink: switch-cisco-9336c-fx2-shared/migrate-from-switchless-configuration-s
 keywords:  
 summary:  
 ---
-= Migrieren Sie mit der erneuten Nutzung der Storage-Switches von einer Konfiguration ohne Switches mit Switch-Attached Storage
+= Migrieren Sie von einer schalterlosen Konfiguration mit an Schalter angeschlossenem Speicher, indem Sie die Speicherschalter wiederverwenden.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary:
 
 
 [role="lead"]
-Sie können die Storage-Switches von einer Konfiguration ohne Switches mit dem Switch-Attached Storage migrieren.
+Sie können von einer switchlosen Konfiguration mit switchgebundenem Speicher migrieren, indem Sie die Speicherschalter wiederverwenden.
 
-Durch die Wiederverwendung der Storage-Switches werden die Storage Switches von HA-Paar 1 zu den Shared Switches, wie in der folgenden Abbildung dargestellt.
+Durch die Wiederverwendung der Speicherschalter werden die Speicherschalter des HA-Paares 1 zu gemeinsam genutzten Schaltern, wie in der folgenden Abbildung dargestellt.
 
-image:9336c_image1.jpg["Switch-Anschluss"]
+image:9336c_image1.jpg["Schalteranschluss"]
 
 .Schritte
-. Überprüfen Sie, ob die Storage-Konfiguration von HA-Paar 1 (und HA-Paar 2) richtig und fehlerfrei ist:
+. Überprüfen Sie, ob die Speicherkonfiguration von HA-Paar 1 (und HA-Paar 2) korrekt und fehlerfrei ist:
 +
 `system switch ethernet show`
 
@@ -57,7 +57,7 @@ storage::*>
 ====
 
 
-. [[Schritt2]]Überprüfung, ob die Node-Ports ordnungsgemäß und betriebsbereit sind:
+. [[step2]]Überprüfen Sie, ob die Knotenports intakt und betriebsbereit sind:
 +
 `storage port show -port-type ENET`
 
@@ -86,10 +86,10 @@ node2
 ====
 
 
-. [[Schritt3]]Verschieben Sie das HA-Paar 1, den Pfad A von NSM2224 vom Storage Switch A zu den gemeinsamen NS224 Storage-Ports für HA-Paar 1, Pfad A auf Storage Switch A
-. Verschieben Sie das Kabel von HA-Paar 1, Node A, Pfad A zu dem gemeinsamen Storage Port für HA-Paar 1, Node A auf Storage Switch A
-. Bewegen Sie das Kabel von HA-Paar 1, Node B, Pfad A zum gemeinsamen Storage Port für HA-Paar 1, Node B auf Storage Switch A
-. Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage Switch A in einem ordnungsgemäßen Zustand ist:
+. [[step3]]Verlegen Sie die HA-Paar-1-NSM224-Pfad-A-Kabel vom Speicherschalter A zu den gemeinsam genutzten NS224-Speicheranschlüssen für HA-Paar 1, Pfad A auf dem Speicherschalter A.
+. Verlegen Sie das Kabel von HA-Paar 1, Knoten A, Pfad A zum gemeinsamen Speicheranschluss für HA-Paar 1, Knoten A auf Speicherschalter A.
+. Verlegen Sie das Kabel von HA-Paar 1, Knoten B, Pfad A zum gemeinsamen Speicheranschluss für HA-Paar 1, Knoten B auf Speicherschalter A.
+. Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter A, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
 
@@ -105,8 +105,8 @@ There are no entries matching your query.
 ====
 
 
-. [[step7]]Ersetzen Sie die Speicher-RCF auf Shared Switch A durch die gemeinsam genutzte RCF-Datei. Siehe link:install-nxos-rcf-9336c-shared.html["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
-. Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:
+. [[step7]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch A durch die gemeinsam genutzte RCF-Datei.  Sehenlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter B, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
 
@@ -122,10 +122,10 @@ There are no entries matching your query.
 ====
 
 
-. [[Schritt9]]] Verschieben Sie die Kabel HA-Paar 1 und NSM224 Pfad B vom Storage Switch B zu den gemeinsamen NS224 Storage-Ports für HA-Paar 1, Pfad B zum Storage Switch B
-. Bewegen Sie das Kabel von HA-Paar 1, Node A, Pfad B zum gemeinsamen Storage Port für HA-Paar 1, Node A, Pfad B auf Storage Switch B.
-. Bewegen Sie das Kabel von HA-Paar 1, Node B, Pfad B zu dem gemeinsamen Storage Port für HA-Paar 1, Node B, Pfad B auf Storage Switch B
-. Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:
+. [[step9]]Verlegen Sie die HA-Paar-1-NSM224-Pfad-B-Kabel vom Speicherschalter B zu den gemeinsam genutzten NS224-Speicheranschlüssen für HA-Paar 1, Pfad B zum Speicherschalter B.
+. Verlegen Sie das Kabel von HA-Paar 1, Knoten A, Pfad B zum gemeinsamen Speicheranschluss für HA-Paar 1, Knoten A, Pfad B auf Speicherschalter B.
+. Verlegen Sie das Kabel von HA-Paar 1, Knoten B, Pfad B zum gemeinsamen Speicheranschluss für HA-Paar 1, Knoten B, Pfad B auf dem Speicherschalter B.
+. Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter B, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
 
@@ -141,8 +141,8 @@ There are no entries matching your query.
 ====
 
 
-. [[step 13]]Ersetzen Sie die Speicher-RCF-Datei auf Shared Switch B durch die gemeinsam genutzte RCF-Datei. Siehe link:install-nxos-rcf-9336c-shared.html["Installieren Sie das RCF auf einem gemeinsamen Cisco Nexus 9336C-FX2 Switch"] Entnehmen.
-. Überprüfen Sie, ob der mit HA-Paar 1 verbundene Storage-Switch B in einem ordnungsgemäßen Zustand ist:
+. [[step13]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch B durch die gemeinsam genutzte RCF-Datei.  Sehenlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter B, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
 
@@ -158,7 +158,7 @@ There are no entries matching your query.
 ====
 
 
-. [[step 15]]ISLs zwischen Shared Switch A und Shared Switch B installieren:
+. [[step15]]Installieren Sie die ISLs zwischen dem gemeinsamen Switch A und dem gemeinsamen Switch B:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -183,12 +183,12 @@ sh1 (config)# *exit*
 ====
 
 
-. [[steep16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches zu einem Cluster mit Switches. Verwenden Sie die vom gemeinsamen RCF definierten Cluster-Port-Zuweisungen. Siehe link:prepare-nxos-rcf-9336c-shared.html["Installieren der NX-OS-Software und der Referenzkonfigurationsdateien (RCFs)"]Entnehmen.
-. Vergewissern Sie sich, dass die Switch-Netzwerkkonfiguration gültig ist:
+. [[step16]]Konvertierung des HA-Paares 1 von einem schalterlosen Cluster in einen geschalteten Cluster.  Verwenden Sie die im gemeinsamen RCF definierten Cluster-Portzuweisungen.  Sehenlink:prepare-nxos-rcf-9336c-shared.html["Installieren Sie die NX-OS-Software und die Referenzkonfigurationsdateien (RCFs)."] Für weitere Einzelheiten.
+. Überprüfen Sie, ob die Netzwerkkonfiguration gültig ist:
 +
 `network port show`
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

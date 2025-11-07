@@ -4,7 +4,7 @@ permalink: switch-cisco-9336c-fx2-shared/migrate-from-switchless-cluster-dat-sto
 keywords:  
 summary:  
 ---
-= Migrieren Sie von einem Cluster ohne Switches mit Direct-Attached Storage
+= Migration von einem schalterlosen Cluster mit direkt angeschlossenem Speicher
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,86 +14,86 @@ summary:
 
 
 [role="lead"]
-Sie können von einem Cluster ohne Switches mit Direct-Attached Storage durch Hinzufügen von zwei neuen Shared-Switches migrieren.
+Sie können von einem switchlosen Cluster mit direkt angeschlossenem Speicher migrieren, indem Sie zwei neue gemeinsam genutzte Switches hinzufügen.
 
-Die von Ihnen verwendete Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port haben. Der dokumentierte Prozess funktioniert für alle Nodes mit optischen oder Twinax-Ports, wird auf diesem Switch jedoch nicht unterstützt, wenn die Nodes für die Cluster-Netzwerk-Ports integrierte 10-Gbit-BASE-T RJ45-Ports verwenden.
+Die Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerkanschlüsse oder an jedem Controller einen einzelnen Clusteranschluss haben.  Der dokumentierte Prozess funktioniert für alle Knoten, die optische oder Twinax-Anschlüsse verwenden, wird jedoch auf diesem Switch nicht unterstützt, wenn die Knoten Onboard-10Gb BASE-T RJ45-Anschlüsse für die Cluster-Netzwerkanschlüsse verwenden.
 
-Die meisten Systeme benötigen an jedem Controller zwei dedizierte Cluster-Netzwerk-Ports. Siehe https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] Finden Sie weitere Informationen.
+Die meisten Systeme benötigen zwei dedizierte Cluster-Netzwerkanschlüsse an jedem Controller. Sehen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] für weitere Informationen.
 
-Falls Sie eine bestehende Cluster-Umgebung mit zwei Nodes ohne Switches nutzen, können Sie mit Cisco Nexus 9336C-FX2 Switches zu einer Switch-basierten Cluster-Umgebung mit zwei Nodes migrieren. So können Sie auf mehr als zwei Nodes im Cluster skalieren.
+Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches zu einer switchierten Clusterumgebung mit zwei Knoten migrieren, um die Anzahl der Knoten im Cluster auf über zwei zu erhöhen.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 Stellen Sie sicher, dass:
 
-* Bei der Konfiguration mit zwei Nodes ohne Switches:
+* Für die schalterlose Zwei-Knoten-Konfiguration:
 +
-** Die Konfiguration mit zwei Nodes ohne Switches ist ordnungsgemäß eingerichtet und funktionsfähig.
-** Auf den Knoten wird ONTAP 9.8 und höher ausgeführt.
-** Alle Cluster-Ports haben den Status *up*.
-** Alle logischen Cluster-Schnittstellen (LIFs) befinden sich im *up*-Zustand und auf ihren *Home*-Ports.
+** Die Zwei-Knoten-Konfiguration ohne Schalter ist ordnungsgemäß eingerichtet und funktioniert.
+** Auf den Knoten läuft ONTAP 9.8 oder höher.
+** Alle Cluster-Ports befinden sich im Status *up*.
+** Alle logischen Schnittstellen (LIFs) des Clusters befinden sich im Zustand *up* und sind an ihren *home*-Ports angeschlossen.
 
 
-* Für die Switch-Konfiguration des Cisco Nexus 9336C-FX2:
+* Für die Konfiguration des Cisco Nexus 9336C-FX2 Switches:
 +
-** Beide Switches verfügen über Management-Netzwerk-Konnektivität.
-** Auf die Cluster-Switches kann über eine Konsole zugegriffen werden.
-** Bei den Nexus 9336C-FX2 Nodes-zu-Node-Switches und Switch-zu-Switch-Verbindungen werden Twinax- oder Glasfaserkabel verwendet.
-** Das NetApp https://hwu.netapp.com["Hardware Universe"] Enthält weitere Informationen zur Verkabelung.
-** Inter-Switch Link (ISL)-Kabel werden an den Anschlüssen 1/35 und 1/36 an beiden 9336C-FX2-Switches angeschlossen.
+** Beide Switches verfügen über eine Management-Netzwerkanbindung.
+** Es besteht Konsolenzugriff auf die Cluster-Switches.
+** Knoten-zu-Knoten-Switch- und Switch-zu-Switch-Verbindungen des Nexus 9336C-FX2 verwenden Twinax- oder Glasfaserkabel.
+** NetApp https://hwu.netapp.com["Hardware Universe"] enthält weitere Informationen zur Verkabelung.
+** Inter-Switch Link (ISL)-Kabel sind an die Ports 1/35 und 1/36 beider 9336C-FX2-Switches angeschlossen.
 
 
-* Die Erstanpassung der Switches 9336C-FX2 ist abgeschlossen. So werden die:
+* Die erste Anpassung der 9336C-FX2-Schalter ist abgeschlossen.  Damit die:
 +
-** 9336C-FX2-Switches führen die neueste Version der Software aus
-** Auf die Switches wurden Referenzkonfigurationsdateien (RCFs) angewendet
-** Auf den neuen Switches werden alle Site-Anpassungen wie SMTP, SNMP und SSH konfiguriert.
+** Die Switches vom Typ 9336C-FX2 verwenden die neueste Softwareversion.
+** Referenzkonfigurationsdateien (RCFs) wurden auf die Schalter angewendet.
+** Sämtliche Standortanpassungen, wie z. B. SMTP, SNMP und SSH, werden auf den neuen Switches konfiguriert.
 
 
 
 
 
 
-== Migrieren Sie die Switches
+== Migrieren Sie die Schalter
 
 .Zu den Beispielen
-In den Beispielen dieses Verfahrens wird die folgende Terminologie für Cluster-Switch und Node verwendet:
+Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Knotennomenklatur:
 
-* Die Namen der Schalter 9336C-FX2 lauten _cs1_ und _cs2_.
-* Die Namen der Cluster SVMs sind _node1_ und _node2_.
-* Die Namen der LIFs sind_node1_clus1_ und _node1_clus2_ auf Knoten 1, und _node2_clus1_ und _node2_clus2_ auf Knoten 2.
-* Die Eingabeaufforderung des Cluster1::*> gibt den Namen des Clusters an.
-* Die in diesem Verfahren verwendeten Cluster-Ports lauten _e3a_ und _e3b_ gemäß AFF A400-Controller. Der https://hwu.netapp.com["Hardware Universe"] Enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
-
-
+* Die Namen der 9336C-FX2-Schalter lauten _cs1_ und _cs2_.
+* Die Namen der Cluster-SVMs lauten _node1_ und _node2_.
+* Die Namen der LIFs lauten _node1_clus1_ und _node1_clus2_ auf Knoten 1 bzw. _node2_clus1_ und _node2_clus2_ auf Knoten 2.
+* Die Eingabeaufforderung cluster1::*> zeigt den Namen des Clusters an.
+* Die in diesem Verfahren verwendeten Cluster-Ports sind _e3a_ und _e3b_, gemäß dem AFF A400 -Controller.  Der https://hwu.netapp.com["Hardware Universe"] Enthält die aktuellsten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
-=== Schritt 1: Migration von einem Cluster ohne Switches mit Direct-Attached Storage
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:  `system node autosupport invoke -node * -type all -message MAINT=xh`.
+
+=== Schritt 1: Migration von einem schalterlosen Cluster mit direkt angeschlossenen
+
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh` Die
 +
-Wobei x die Dauer des Wartungsfensters in Stunden ist.
+wobei x die Dauer des Wartungsfensters in Stunden ist.
 
 
 
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
-. [[Schritt2]]Ändern Sie die Berechtigungsebene in Erweitert, geben Sie y ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. [[step2]]Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie bei Aufforderung „y“ eingeben:
 +
 `set -privilege advanced`
 
 +
 Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
-. Deaktivieren Sie alle Node-Ports (keine ISL-Ports) auf den neuen Cluster-Switches cs1 und cs2. Sie dürfen die ISL-Ports nicht deaktivieren.
+. Deaktivieren Sie alle zum Knoten führenden Ports (nicht die ISL-Ports) an den beiden neuen Cluster-Switches cs1 und cs2.  Die ISL-Ports dürfen nicht deaktiviert werden.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die Node-Ports 1 bis 34 auf Switch cs1 deaktiviert sind:
+Das folgende Beispiel zeigt, dass die dem Knoten zugewandten Ports 1 bis 34 am Switch cs1 deaktiviert sind:
 
 [listing, subs="+quotes"]
 ----
@@ -105,7 +105,7 @@ cs1(config-if-range)# *shutdown*
 ====
 
 
-. [[Schritt4]]Überprüfen Sie, ob die ISL und die physischen Ports auf der ISL zwischen den beiden 9336C-FX2-Switches cs1 und cs2 auf den Ports 1/35 und 1/36 stehen:
+. [[step4]]Überprüfen Sie, ob die ISL und die physischen Ports der ISL zwischen den beiden 9336C-FX2 Switches cs1 und cs2 an den Ports 1/35 und 1/36 aktiv sind:
 +
 `show port-channel summary`
 
@@ -113,7 +113,7 @@ cs1(config-if-range)# *shutdown*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs1 aktiv sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs1 aktiv sind:
 
 [listing, subs="+quotes"]
 ----
@@ -132,7 +132,7 @@ Group Port-       Type     Protocol  Member Ports
 --------------------------------------------------------------------------------
 1     Po1(SU)     Eth      LACP      Eth1/35(P)   Eth1/36(P)
 ----
-Das folgende Beispiel zeigt, dass die ISL-Ports auf Switch cs2 aktiv sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs2 aktiv sind:
 
 [listing, subs="+quotes"]
 ----
@@ -154,18 +154,18 @@ Group Port-       Type     Protocol  Member Ports
 ====
 
 
-. [[schritt5]]Liste der benachbarten Geräte anzeigen:
+. [[step5]]Zeige die Liste der benachbarten Geräte an:
 +
 `show cdp neighbors`
 
 +
-Dieser Befehl enthält Informationen zu den Geräten, die mit dem System verbunden sind.
+Dieser Befehl liefert Informationen über die mit dem System verbundenen Geräte.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs1 aufgeführt:
+Das folgende Beispiel listet die benachbarten Geräte am Switch cs1 auf:
 
 [listing, subs="+quotes"]
 ----
@@ -179,7 +179,7 @@ cs2                Eth1/35        175    R S I s     N9K-C9336C    Eth1/35
 cs2                Eth1/36        175    R S I s     N9K-C9336C    Eth1/36
 Total entries displayed: 2
 ----
-Im folgenden Beispiel sind die benachbarten Geräte auf Switch cs2 aufgeführt:
+Das folgende Beispiel listet die benachbarten Geräte am Switch cs2 auf:
 
 [listing, subs="+quotes"]
 ----
@@ -197,12 +197,12 @@ Total entries displayed: 2
 ====
 
 
-. [[ste6]]] Überprüfen Sie, ob alle Cluster-Ports aktiv sind:
+. [[Schritt 6]]Überprüfen Sie, ob alle Cluster-Ports aktiv sind:
 +
 `network port show - ipspace Cluster`
 
 +
-Jeder Port sollte für „Link“ und „OK“ für den Integritätsstatus angezeigt werden.
+Jeder Port sollte bei „Verbindung“ als aktiv und bei „Gesundheitsstatus“ als fehlerfrei angezeigt werden.
 
 +
 .Beispiel anzeigen
@@ -230,12 +230,12 @@ e3b       Cluster      Cluster          up   9000  auto/100000 healthy
 ====
 
 
-. [[step7]]Überprüfung, ob alle Cluster-LIFs betriebsbereit sind:
+. [[Schritt 7]]Überprüfen Sie, ob alle Cluster-LIFs aktiv und betriebsbereit sind:
 +
 `network interface show - vserver Cluster`
 
 +
-Jede LIF im Cluster sollte für „true“ anzeigen `Is Home` Und haben einen Status Admin/Oper von up/up.
+Jeder Cluster-LIF sollte „true“ anzeigen für `Is Home` und den Status Admin/Oper von up/up haben.
 
 +
 .Beispiel anzeigen
@@ -257,7 +257,7 @@ Cluster
 ====
 
 
-. [[Schritt8]]Überprüfung, ob die automatische Umrüstung auf allen Cluster-LIFs aktiviert ist:
+. [[Schritt 8]]Überprüfen Sie, ob die automatische Rücksetzung auf allen Cluster-LIFs aktiviert ist:
 +
 `network interface show - vserver Cluster -fields auto-revert`
 
@@ -281,17 +281,17 @@ Cluster
 ====
 
 
-. [[Schritt9]]Trennen Sie das Kabel vom Cluster-Port e3a auf node1, und verbinden sie dann e3a mit Port 1 am Cluster-Switch cs1. Verwenden Sie dabei die geeignete Verkabelung, die von den Switches 9336C-FX2 unterstützt wird.
+. [[step9]]Trennen Sie das Kabel vom Cluster-Port e3a auf Knoten 1 und verbinden Sie dann e3a mit Port 1 auf dem Cluster-Switch cs1. Verwenden Sie dazu die von den 9336C-FX2-Switches unterstützten geeigneten Kabel.
 +
-Das NetApp https://hwu.netapp.com["Hardware Universe"] Enthält weitere Informationen zur Verkabelung.
+NetApp https://hwu.netapp.com["Hardware Universe"] enthält weitere Informationen zur Verkabelung.
 
-. Trennen Sie das Kabel vom Cluster-Port e3a auf node2, und verbinden sie dann e3a mit Port 2 am Cluster-Switch cs1. Verwenden Sie dazu die geeignete Verkabelung, die von den Switches 9336C-FX2 unterstützt wird.
-. Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs1.
+. Trennen Sie das Kabel vom Cluster-Port e3a auf Knoten 2 und verbinden Sie dann e3a mit Port 2 des Cluster-Switches cs1 unter Verwendung der von den 9336C-FX2-Switches unterstützten geeigneten Verkabelung.
+. Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die Ports 1/1 bis 1/34 auf Switch cs1 aktiviert sind:
+Das folgende Beispiel zeigt, dass die Ports 1/1 bis 1/34 am Switch cs1 aktiviert sind:
 
 [listing, subs="+quotes"]
 ----
@@ -303,7 +303,7 @@ cs1(config-if-range)# *no shutdown*
 ====
 
 
-. [[step 12]]Überprüfen Sie, ob alle Cluster-LIFs *up*, betriebsbereit und als wahr angezeigt werden `Is Home`:
+. [[step12]]Überprüfen Sie, ob alle Cluster-LIFs *aktiv* und betriebsbereit sind und als „true“ angezeigt werden für `Is Home` :
 +
 `network interface show - vserver Cluster`
 
@@ -311,7 +311,7 @@ cs1(config-if-range)# *no shutdown*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass alle LIFs *up* auf node1 und node2 sind und dass `Is Home` Die Ergebnisse sind *wahr*:
+Das folgende Beispiel zeigt, dass alle LIFs auf Knoten 1 und Knoten 2 *aktiv* sind und dass `Is Home` Die Ergebnisse sind *wahr*:
 
 [listing, subs="+quotes"]
 ----
@@ -329,7 +329,7 @@ Cluster
 ====
 
 
-. [[steep13]]Informationen zum Status der Knoten im Cluster anzeigen:
+. [[step13]]Informationen über den Status der Knoten im Cluster anzeigen:
 +
 `cluster show`
 
@@ -337,7 +337,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster angezeigt:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster an:
 
 [listing, subs="+quotes"]
 ----
@@ -351,14 +351,14 @@ node2                true    true          false
 ====
 
 
-. [[STep14]]Trennen Sie das Kabel vom Cluster-Port e3b auf node1, und verbinden sie dann e3b mit Port 1 am Cluster-Switch cs2. Verwenden Sie dazu die entsprechende Verkabelung, die von den Switches 9336C-FX2 unterstützt wird.
-. Trennen Sie das Kabel vom Cluster-Port e3b auf node2, und verbinden sie dann e3b mit Port 2 am Cluster-Switch cs2. Verwenden Sie dazu die geeignete Verkabelung, die von den Switches 9336C-FX2 unterstützt wird.
-. Aktivieren Sie alle Ports für Knoten auf Cluster-Switch cs2.
+. [[step14]]Trennen Sie das Kabel vom Cluster-Port e3b auf Knoten 1 und verbinden Sie dann e3b mit Port 1 auf Cluster-Switch cs2. Verwenden Sie dazu die von den 9336C-FX2-Switches unterstützten Kabel.
+. Trennen Sie das Kabel vom Cluster-Port e3b auf Knoten 2 und verbinden Sie dann e3b mit Port 2 des Cluster-Switches cs2 unter Verwendung der von den 9336C-FX2-Switches unterstützten geeigneten Verkabelung.
+. Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs2.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die Ports 1/1 bis 1/34 auf Switch cs2 aktiviert sind:
+Das folgende Beispiel zeigt, dass die Ports 1/1 bis 1/34 am Switch cs2 aktiviert sind:
 
 [listing, subs="+quotes"]
 ----
@@ -378,7 +378,7 @@ cs2(config-if-range)# *no shutdown*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden alle Cluster-Ports auf node1 und node2 angezeigt:
+Das folgende Beispiel zeigt, dass alle Cluster-Ports auf Knoten 1 und Knoten 2 aktiv sind:
 
 [listing, subs="+quotes"]
 ----
@@ -404,19 +404,19 @@ e3b       Cluster      Cluster          up   9000  auto/100000 healthy  false
 ====
 
 
-. [[Schritt18]]Überprüfen Sie, ob alle Schnittstellen für wahr angezeigt werden `Is Home`:
+. [[step18]]Überprüfen Sie, ob alle Schnittstellen „true“ anzeigen für `Is Home` :
 +
 `network interface show - vserver Cluster`
 
 +
 
-NOTE: Dies kann einige Minuten dauern.
+NOTE: Dieser Vorgang kann mehrere Minuten dauern.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass alle LIFs *up* auf node1 und node2 sind und dass `Is Home` Die Ergebnisse sind wahr:
+Das folgende Beispiel zeigt, dass alle LIFs auf Knoten 1 und Knoten 2 *aktiv* sind und dass `Is Home` Die Ergebnisse sind korrekt:
 
 [listing, subs="+quotes"]
 ----
@@ -434,7 +434,7 @@ Cluster
 ====
 
 
-. [[Schritt19]]Überprüfen Sie, ob beide Knoten jeweils eine Verbindung zu jedem Switch haben:
+. [[step19]]Überprüfen Sie, ob beide Knoten jeweils eine Verbindung zu jedem Switch haben:
 +
 `show cdp neighbors`
 
@@ -442,7 +442,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Schalter:
 
 [listing, subs="+quotes"]
 ----
@@ -472,7 +472,7 @@ Total entries displayed: 4
 ====
 
 
-. [[steep20]]Informationen über die erkannten Netzwerkgeräte in Ihrem Cluster anzeigen:
+. [[step20]]Informationen zu den in Ihrem Cluster gefundenen Netzwerkgeräten anzeigen:
 +
 `network device-discovery show -protocol cdp`
 
@@ -534,13 +534,13 @@ storage::*>
 ====
 
 
-. [[steep22]]Überprüfen Sie, ob die Einstellungen deaktiviert sind:
+. [[step22]]Überprüfen Sie, ob die Einstellungen deaktiviert sind:
 +
 `network options switchless-cluster show`
 
 +
 
-NOTE: Es kann einige Minuten dauern, bis der Befehl abgeschlossen ist. Warten Sie, bis die Ankündigung „3-Minuten-Lebensdauer abläuft“ abläuft.
+NOTE: Die Ausführung des Befehls kann mehrere Minuten dauern.  Warten Sie auf die Ansage „3 Minuten bis zum Ablauf der Gültigkeitsdauer“.
 
 +
 Der `false` Die Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseinstellungen deaktiviert sind:
@@ -557,7 +557,7 @@ Enable Switchless Cluster: false
 ====
 
 
-. [[steep23]]Überprüfen Sie den Status der Knotenmitglieder im Cluster:
+. [[step23]]Überprüfen Sie den Status der Knoten im Cluster:
 +
 `cluster show`
 
@@ -565,7 +565,7 @@ Enable Switchless Cluster: false
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt Informationen über den Systemzustand und die Berechtigung der Nodes im Cluster:
+Das folgende Beispiel zeigt Informationen über den Zustand und die Eignung der Knoten im Cluster:
 
 [listing, subs="+quotes"]
 ----
@@ -583,15 +583,15 @@ node2                true    true          false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -609,7 +609,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -641,7 +641,7 @@ RPC status:
 ----
 --
 ====
-. [[step25]] Ändern Sie die Berechtigungsebene zurück zu admin:
+. [[step25]] Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 
@@ -649,18 +649,18 @@ RPC status:
 
 
 
-=== Schritt 2: Richten Sie den gemeinsamen Schalter ein
+=== Schritt 2: Gemeinsamen Schalter einrichten
 
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Namen der beiden gemeinsamen Schalter sind _sh1_ und _sh2_.
-* Die Knoten sind _node1_ und _node2_.
+* Die Namen der beiden gemeinsam genutzten Switches lauten _sh1_ und _sh2_.
+* Die Knoten heißen _node1_ und _node2_.
 
 
 
-NOTE: Das Verfahren erfordert die Verwendung von ONTAP Befehlen und Switches der Cisco Nexus 9000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+NOTE: Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 9000 Series Switches-Befehle benötigt. Es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
-. Überprüfen Sie, ob die Storage-Konfiguration von HA-Paar 1 (und HA-Paar 2) richtig und fehlerfrei ist:
+. Überprüfen Sie, ob die Speicherkonfiguration von HA-Paar 1 (und HA-Paar 2) korrekt und fehlerfrei ist:
 +
 `system switch ethernet show`
 
@@ -694,7 +694,7 @@ sh2
 storage::*>
 ----
 ====
-. Vergewissern Sie sich, dass die Storage-Node-Ports ordnungsgemäß und betriebsbereit sind:
+. Überprüfen Sie, ob die Ports des Speicherknotens intakt und betriebsbereit sind:
 +
 `storage port show -port-type ENET`
 
@@ -723,10 +723,10 @@ node2
 ====
 
 
-. [[Schritt3]]Bewegen Sie das HA-Paar 1, den Pfad A des NSM224-Pfads in den Bereich der sh1-Ports 11-22.
-. Installieren Sie ein Kabel von HA-Paar 1, node1, Pfad A zu sh1-Port-Bereich 11-22. Beispiel: Der Pfad Ein Speicherport an einer AFF A400 ist e0c.
-. Installieren Sie ein Kabel von HA-Paar 1, node2, Pfad A zu sh1-Port-Bereich 11-22.
-. Vergewissern Sie sich, dass die Node-Ports ordnungsgemäß und betriebsbereit sind:
+. [[step3]]Verschieben Sie die HA-Paar-1-, NSM224-Pfad-A-Ports in den sh1-Portbereich 11-22.
+. Installieren Sie ein Kabel von HA-Paar 1, Knoten 1, Pfad A zum sh1-Portbereich 11-22.  Beispielsweise ist der Pfad A Speicherport auf einem AFF A400 e0c.
+. Installieren Sie ein Kabel von HA-Paar 1, Knoten 2, Pfad A zum sh1-Portbereich 11-22.
+. Überprüfen Sie, ob die Knotenports intakt und betriebsbereit sind:
 +
 `storage port show -port-type ENET`
 
@@ -753,7 +753,7 @@ node2
         e5b     ENET  storage           100      enabled  online        30
 ----
 ====
-. Vergewissern Sie sich, dass es keine Probleme mit dem Storage Switch oder der Verkabelung beim Cluster gibt:
+. Prüfen Sie, ob es Probleme mit dem Speicherschalter oder der Verkabelung des Clusters gibt:
 +
 `system health alert show -instance`
 
@@ -767,10 +767,10 @@ storage::*> *system health alert show -instance*
 There are no entries matching your query.
 ----
 ====
-. Verschieben Sie die Anschlüsse für HA-Paar 1 und NSM224 Pfad B in den bereich der sh2-Ports 11-22.
-. Installieren Sie ein Kabel von HA-Paar 1, node1, Pfad B bis sh2-Port-Bereich 11-22. Beispiel: Der Speicherport Pfad B auf einer AFF A400 ist e5b.
-. Installieren Sie ein Kabel zwischen HA-Paar 1, node2, Pfad B und sh2-Port-Bereich 11-22.
-. Vergewissern Sie sich, dass die Node-Ports ordnungsgemäß und betriebsbereit sind:
+. Verschieben Sie die HA-Paar-1-, NSM224-Pfad-B-Ports in den sh2-Portbereich 11-22.
+. Installieren Sie ein Kabel von HA-Paar 1, Knoten 1, Pfad B zum sh2-Portbereich 11-22.  Beispielsweise ist der Speicherport Pfad B auf einem AFF A400 e5b.
+. Installieren Sie ein Kabel von HA-Paar 1, Knoten 2, Pfad B zum sh2-Portbereich 11-22.
+. Überprüfen Sie, ob die Knotenports intakt und betriebsbereit sind:
 +
 `storage port show -port-type ENET`
 
@@ -797,7 +797,7 @@ node2
         e5b     ENET  storage           100      enabled  online        30
 ----
 ====
-. Überprüfen Sie, ob die Storage-Konfiguration von HA-Paar 1 korrekt ist und fehlerfrei ist:
+. Überprüfen Sie, ob die Speicherkonfiguration des HA-Paares 1 korrekt und fehlerfrei ist:
 +
 `system switch ethernet show`
 
@@ -831,7 +831,7 @@ sh2
 storage::*>
 ----
 ====
-. Konfigurieren Sie die ungenutzten sekundären (Controller) Storage-Ports auf HA-Paar 1 vom Storage bis zum Netzwerk neu. Wenn mehr als eine NS224 direkt angeschlossen war, gibt es Ports, die neu konfiguriert werden sollten.
+. Konfigurieren Sie die ungenutzten (Controller-)Sekundärspeicheranschlüsse des HA-Paares 1 von Speicher auf Netzwerk um.  Wenn mehr als ein NS224 direkt angeschlossen wurde, müssen einige Ports neu konfiguriert werden.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -842,18 +842,18 @@ storage port modify –node [node name] –port [port name] –mode network
 ----
 ====
 +
-So platzieren Sie Storage-Ports in einer Broadcast-Domäne:
+So platzieren Sie Speicherports in einer Broadcast-Domäne:
 
 +
-** `network port broadcast-domain create` (Um bei Bedarf eine neue Domäne zu erstellen)
-** `network port broadcast-domain add-ports` (Zum Hinzufügen von Ports zu einer vorhandenen Domäne)
+** `network port broadcast-domain create`(um bei Bedarf eine neue Domain zu erstellen)
+** `network port broadcast-domain add-ports`(um einer bestehenden Domäne Ports hinzuzufügen)
 
 
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

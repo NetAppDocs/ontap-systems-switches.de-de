@@ -15,16 +15,16 @@ So installieren und konfigurieren Sie die Hardware für einen 3232C-Cluster-Swit
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup_worksheet_3232c.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
 [role="quick-margin-para"]
-Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-switch-3232c.html["Den Schalter einbauen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-switch-3232c.html["Installieren Sie den Schalter"]
 [role="quick-margin-para"]
 Installieren Sie den 3232C-Switch.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]link:install-cisco-nexus-3232c.html["Den Switch in einen NetApp-Schrank einbauen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-cisco-nexus-3232c.html["Installieren Sie den Switch in einem NetApp -Schrank."]
 [role="quick-margin-para"]
 Installieren Sie den 3232C-Switch und das Durchgangspanel nach Bedarf in einem NetApp Schrank.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cabling-considerations-3232c.html["Überprüfung der Verkabelung und Konfiguration"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cabling-considerations-3232c.html["Kabel und Konfiguration prüfen"]
 [role="quick-margin-para"]
 Überprüfen Sie die Unterstützung für NVIDIA -Ethernet-Ports.

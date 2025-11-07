@@ -2,63 +2,63 @@
 permalink: switch-cisco-3232c/replace-storage-switch.html 
 sidebar: sidebar 
 keywords: replace, cisco nexus, 3232c storage switch 
-summary: Es besteht die Möglichkeit, einen defekten Cisco Nexus 3232C-Storage-Switch durch Ausführen einer bestimmten Aufgabenfolge unterbrechungsfrei zu ersetzen. 
+summary: Ein defekter Cisco Nexus 3232C Storage-Switch kann unterbrechungsfrei ausgetauscht werden, indem eine bestimmte Abfolge von Aufgaben ausgeführt wird. 
 ---
-= Einen Cisco Nexus 3232C Storage-Switch austauschen
+= Ersetzen Sie einen Cisco Nexus 3232C Speicherswitch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Befolgen Sie diese Schritte, um einen fehlerhaften Cisco Nexus 3232C Storage Switch zu ersetzen. Hierbei handelt es sich um ein unterbrechungsfreies Verfahren.
+Befolgen Sie diese Schritte, um einen defekten Cisco Nexus 3232C Storage-Switch auszutauschen. Dies ist ein unterbrechungsfreies Verfahren.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-Die vorhandene Netzwerkkonfiguration muss die folgenden Merkmale aufweisen:
+Die bestehende Netzwerkkonfiguration muss folgende Eigenschaften aufweisen:
 
-* Auf der Seite Cisco Ethernet Switches befinden sich die neuesten RCF- und NX-OS-Versionen auf Ihren Switches.
-* Management-Konnektivität muss auf beiden Switches vorhanden sein.
+* Auf der Cisco Ethernet Switches-Seite finden Sie die neuesten RCF- und NX-OS-Versionen für Ihre Switches.
+* Die Management-Konnektivität muss auf beiden Switches vorhanden sein.
 +
 [NOTE]
 ====
-Stellen Sie sicher, dass alle Fehlerbehebungsschritte durchgeführt wurden, um zu bestätigen, dass Ihr Switch ausgetauscht werden muss.
+Stellen Sie sicher, dass alle Schritte zur Fehlerbehebung abgeschlossen sind, um zu bestätigen, dass Ihr Schalter ausgetauscht werden muss.
 
 ====
 
 
-Der Cisco Nexus 3232C Switch muss folgende Merkmale aufweisen:
+Der Ersatz-Switch Cisco Nexus 3232C muss folgende Eigenschaften aufweisen:
 
-* Die Konnektivität des Managementnetzwerks muss funktionsfähig sein.
-* Der Konsolenzugriff auf den Ersatzschalter muss vorhanden sein.
+* Die Managementnetzwerkanbindung muss funktionsfähig sein.
+* Der Zugang zum Ersatzschalter über die Konsole muss gewährleistet sein.
 * Das entsprechende RCF- und NX-OS-Betriebssystemabbild muss auf den Switch geladen werden.
-* Die anfängliche Anpassung des Schalters muss abgeschlossen sein.
+* Die Erstkonfiguration des Schalters muss abgeschlossen sein.
 
 
 
 
-== Tauschen Sie den Schalter aus
+== Tauschen Sie den Schalter aus.
 
-Dieses Verfahren ersetzt den zweiten Nexus 3232C Storage Switch S2 durch den neuen 3232C Switch NS2. Die beiden Knoten sind node1 und node2.
+Bei diesem Verfahren wird der zweite Nexus 3232C Speicherschalter S2 durch den neuen 3232C Schalter NS2 ersetzt.  Die beiden Knoten sind Knoten1 und Knoten2.
 
 
 
-=== Schritt 1: Bestätigen Sie, dass der zu ersetzende Schalter S2 ist
+=== Schritt 1: Prüfen Sie, ob es sich bei dem auszutauschenden Schalter um S2 handelt.
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
-. Überprüfen Sie den Integritätsstatus der Storage-Node-Ports, um sicherzustellen, dass eine Verbindung zum Storage-Switch S1 besteht:
+. Überprüfen Sie den Gesundheitszustand der Speicherknotenports, um sicherzustellen, dass eine Verbindung zum Speicherswitch S1 besteht:
 +
 `storage port show -port-type ENET`
 
@@ -84,7 +84,7 @@ node2
                    e7b  ENET  storage      0 enabled  offline     30
 ----
 ====
-. Stellen Sie sicher, dass der Speicherschalter S1 verfügbar ist:
+. Prüfen Sie, ob der Speicherschalter S1 verfügbar ist:
 +
 `network device-discovery show`
 
@@ -116,7 +116,7 @@ node2/lldp
             e4e    node1                     e4e               -
 ----
 ====
-. Führen Sie die aus `show lldp neighbors` Mit dem Befehl auf dem Arbeitsschalter bestätigen Sie, dass Sie beide Nodes und alle Shelfs sehen können:
+. Führe die `show lldp neighbors` Führen Sie einen Befehl auf dem funktionierenden Switch aus, um zu bestätigen, dass Sie beide Knoten und alle Regale sehen können:
 +
 `show lldp neighbors`
 
@@ -143,9 +143,9 @@ SHFGD2008000022         Eth1/8          120        S           e0a
 
 
 
-=== Schritt: Verkabelung konfigurieren
+=== Schritt 2: Verkabelung konfigurieren
 
-. [[fünf]]]Überprüfen Sie die Shelf-Ports im Storage-System:
+. [[fünf]]Überprüfen Sie die Regalanschlüsse im Speichersystem:
 +
 `storage shelf port show -fields remote-device,remote-port`
 
@@ -169,15 +169,15 @@ shelf  id  remote-port  remote-device
 3.20   3   -            -
 ----
 ====
-. Entfernen Sie alle Kabel, die am Lagerschalter S2 angeschlossen sind.
+. Entfernen Sie alle Kabel, die am Speicherschalter S2 angeschlossen sind.
 . Schließen Sie alle Kabel wieder an den Ersatzschalter NS2 an.
 
 
 
 
-=== Schritt 3: Überprüfen Sie alle Gerätekonfigurationen am Switch NS2
+=== Schritt 3: Überprüfen Sie alle Gerätekonfigurationen auf dem Switch NS2.
 
-. Überprüfen Sie den Funktionsstatus der Storage-Node-Ports:
+. Überprüfen Sie den Gesundheitszustand der Speicherknotenports:
 +
 `storage port show -port-type ENET`
 
@@ -203,7 +203,7 @@ node2
                    e7b  ENET  storage    100 enabled  online        30
 ----
 ====
-. Vergewissern Sie sich, dass beide Switches verfügbar sind:
+. Vergewissern Sie sich, dass beide Schalter verfügbar sind:
 +
 `network device-discovery show`
 
@@ -239,7 +239,7 @@ node2/lldp
             e7b    NS2                       Ethernet1/2       -
 ----
 ====
-. Überprüfen Sie die Shelf-Ports im Storage-System:
+. Überprüfen Sie die Regalanschlüsse im Lagersystem:
 +
 `storage shelf port show -fields remote-device,remote-port`
 
@@ -262,11 +262,11 @@ shelf id remote-port remote-device
 3.20  3  Ethernet1/8 NS2
 ----
 ====
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"]

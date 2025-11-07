@@ -2,25 +2,25 @@
 permalink: switch-cisco-3132q-v/cn5596-prepare-to-migrate.html 
 sidebar: sidebar 
 keywords: cisco 3132q-v, cluster switches 
-summary: Sie können Cisco Nexus 3132q-V Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
+summary: Sie können Cisco Nexus 3132q-v Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Vorbereiten der Migration von Nexus 5596 Switches auf Nexus 3132Q-V Switches
+= Bereiten Sie die Migration von Nexus 5596-Switches auf Nexus 3132Q-V-Switches vor.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um Ihre Cisco Nexus 5596 Switches für die Migration zu Cisco Nexus 3132Q-V Switches vorzubereiten.
+Befolgen Sie diese Schritte, um Ihre Cisco Nexus 5596 Switches für die Migration auf Cisco Nexus 3132Q-V Switches vorzubereiten.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=xh`
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh`
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 
-NOTE: Die Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit während des Wartungsfensters die automatische Case-Erstellung unterdrückt wird.
+NOTE: Die Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, damit die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 . Informationen zu den Geräten in Ihrer Konfiguration anzeigen:
 +
@@ -30,7 +30,7 @@ NOTE: Die Meldung wird vom technischen Support dieser Wartungsaufgabe benachrich
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster-Interconnect-Switch konfiguriert wurden:
+Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:
 
 [listing]
 ----
@@ -51,9 +51,9 @@ n2         /cdp
 8 entries were displayed.
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus für jede Cluster-Schnittstelle fest:
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show`
 
@@ -61,7 +61,7 @@ n2         /cdp
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Netzwerkanschlussattribute auf einem System angezeigt:
+Das folgende Beispiel zeigt die Netzwerkportattribute eines Systems:
 
 [listing]
 ----
@@ -95,7 +95,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die allgemeinen Informationen zu allen LIFs auf Ihrem System angezeigt:
+Das folgende Beispiel zeigt die allgemeinen Informationen zu allen LIFs in Ihrem System an:
 
 [listing]
 ----
@@ -116,13 +116,13 @@ Cluster
 8 entries were displayed.
 ----
 ====
-.. Informationen über die erkannten Cluster-Switches anzeigen: +
+.. Informationen zu den erkannten Cluster-Switches anzeigen: +
 `system cluster-switch show`
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Cluster-Switches, die dem Cluster bekannt sind, mit ihren Management-IP-Adressen angezeigt:
+Das folgende Beispiel zeigt die dem Cluster bekannten Cluster-Switches zusammen mit ihren Management-IP-Adressen:
 
 [listing]
 ----
@@ -150,7 +150,7 @@ CL2                           cluster-network    10.10.1.102     NX5596
 ====
 
 
-. Stellen Sie die ein `-auto-revert` Parameter an `false` Auf Cluster LIFs clue1 und clu2 zu beiden Knoten:
+. Stellen Sie die `-auto-revert` Parameter zu `false` auf den Cluster-LIFs clus1 und clus2 auf beiden Knoten:
 +
 `network interface modify`
 
@@ -166,25 +166,25 @@ cluster::*> network interface modify -vserver node2 -lif clus1 -auto-revert fals
 cluster::*> network interface modify -vserver node2 -lif clus2 -auto-revert false
 ----
 ====
-. Überprüfen Sie, ob die entsprechenden RCF und das entsprechende Image auf den neuen 3132Q-V-Switches installiert sind, wenn dies für Ihre Anforderungen erforderlich ist, und nehmen Sie die wesentlichen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen usw.
+. Prüfen Sie, ob die entsprechende RCF und das entsprechende Image gemäß Ihren Anforderungen auf den neuen 3132Q-V Switches installiert sind, und nehmen Sie die notwendigen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen usw.
 +
-Sie müssen beide Switches derzeit vorbereiten. Gehen Sie wie folgt vor, wenn Sie ein Upgrade für RCF und Image durchführen müssen:
+Sie müssen jetzt beide Schalter vorbereiten.  Falls Sie die RCF-Datei und das Image aktualisieren müssen, befolgen Sie diese Schritte:
 
 +
-.. Gehe zulink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Support-Site.
+.. Gehe zulink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Supportseite.
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende Version des RCF herunter.
-.. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Bildsoftware herunter.
+.. Laden Sie die passende Version der RCF herunter.
+.. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter.
 +
-Siehe die Seite __ONTAP 8.x oder höher Referenzkonfigurationsdateien für Cluster- und Verwaltungsnetzwerk-Switches__Download, und wählen Sie dann die entsprechende Version aus.
+Siehe die Downloadseite „Referenzkonfigurationsdateien für ONTAP 8.x oder spätere Cluster und Management-Netzwerk-Switches“ und wähle dann die entsprechende Version aus.
 
 +
-Informationen zur richtigen Version finden Sie auf der Download-Seite „_ONTAP 8.x“ oder höher für Cluster-Netzwerk-Switch_.
+Die richtige Version finden Sie auf der Downloadseite für _ONTAP 8.x oder spätere Cluster-Netzwerk-Switches_.
 
 
 
-. Migrieren Sie die LIFs, die mit dem zweiten Nexus 5596 Switch verbunden sind, der ersetzt werden soll:
+. Migrieren Sie die LIFs, die mit dem zweiten zu ersetzenden Nexus 5596-Switch verbunden sind:
 +
 `network interface migrate`
 
@@ -206,7 +206,7 @@ cluster::*> network interface migrate -vserver Cluster -lif n2_clus3 -source-nod
 destination-node n2 -destination-port e0d
 ----
 ====
-. Überprüfen Sie den Systemzustand des Clusters:
+. Überprüfen Sie den Zustand des Clusters:
 +
 `network interface show`
 
@@ -214,7 +214,7 @@ destination-node n2 -destination-port e0d
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt das Ergebnis des vorherigen `network interface migrate` Befehl:
+Das folgende Beispiel zeigt das Ergebnis des vorherigen Schritts. `network interface migrate` Befehl:
 
 [listing]
 ----
@@ -235,7 +235,7 @@ Cluster
 8 entries were displayed.
 ----
 ====
-. Fahren Sie die Cluster-Interconnect-Ports herunter, die physisch mit dem Switch CL2 verbunden sind:
+. Schalten Sie die Cluster-Verbindungsports ab, die physisch mit Switch CL2 verbunden sind:
 +
 `network port modify`
 
@@ -243,7 +243,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die folgenden Befehle fahren die angegebenen Ports auf n1 und n2 herunter, die Ports müssen jedoch auf allen Knoten heruntergefahren werden:
+Die folgenden Befehle schalten die angegebenen Ports auf n1 und n2 ab, die Ports müssen jedoch auf allen Knoten abgeschaltet werden:
 
 [listing]
 ----
@@ -260,15 +260,15 @@ cluster::*> network port modify -node n2 -port e0c -up-admin false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl „show“ ausführen, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
@@ -287,7 +287,7 @@ n2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -336,12 +336,12 @@ RPC status:
 ----
 --
 ====
-. [[step10]]Herunterfahren der ISL-Ports 41 bis 48 auf dem aktiven Nexus 5596-Switch CL1:
+. [[step10]]Schalten Sie die ISL-Ports 41 bis 48 am aktiven Nexus 5596 Switch CL1 ab:
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie die ISL-Ports 41 bis 48 auf dem Nexus 5596-Switch CL1 heruntergefahren werden:
+Das folgende Beispiel zeigt, wie die ISL-Ports 41 bis 48 auf dem Nexus 5596 Switch CL1 deaktiviert werden:
 
 [listing]
 ----
@@ -356,12 +356,12 @@ Das folgende Beispiel zeigt, wie die ISL-Ports 41 bis 48 auf dem Nexus 5596-Swit
 +
 Wenn Sie einen Nexus 5010 oder 5020 ersetzen, geben Sie die entsprechenden Portnummern für ISL an.
 
-. Stellen Sie eine temporäre ISL zwischen CL1 und C2 her.
+. Errichte eine temporäre ISL zwischen CL1 und C2.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass ein temporärer ISL zwischen CL1 und C2 eingerichtet wird:
+Das folgende Beispiel zeigt, wie eine temporäre ISL zwischen CL1 und C2 eingerichtet wird:
 
 [listing]
 ----
@@ -381,5 +381,5 @@ C2(config-if)# exit
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 link:cn5596-configure-ports.html["Konfigurieren Sie Ihre Ports"].

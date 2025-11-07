@@ -2,19 +2,19 @@
 permalink: switch-cisco-3132q-v/cn5596-complete-migration.html 
 sidebar: sidebar 
 keywords: cisco 3132q-v, cluster switches 
-summary: Sie können Cisco Nexus 3132q-V Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
+summary: Sie können Cisco Nexus 3132q-v Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Vollständige Migration von Nexus 5596 Switches auf Nexus 3132Q-V Switches
+= Schließen Sie die Migration von Nexus 5596-Switches auf Nexus 3132Q-V-Switches ab.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um die Migration der Nexus 5596 Switches auf Nexus 3132Q-V Switches abzuschließen.
+Führen Sie die folgenden Schritte durch, um die Migration der Nexus 5596-Switches auf die Nexus 3132Q-V-Switches abzuschließen.
 
 .Schritte
-. Stellen Sie sicher, dass die ISL-Verbindungen sind `up` Am 3132Q-V Schalter C2:
+. Überprüfen Sie, ob die ISL-Verbindungen `up` am Schalter C2 des Modells 3132Q-V:
 +
 `show port-channel summary`
 
@@ -22,7 +22,7 @@ Gehen Sie wie folgt vor, um die Migration der Nexus 5596 Switches auf Nexus 3132
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die Ports eth1/31 und eth1/32 sollten angegeben werden `(P)`, Was bedeutet, dass beide ISL-Ports sind `up` Im Port-Kanal:
+Die Ports Eth1/31 und Eth1/32 sollten anzeigen `(P)` , was bedeutet, dass beide ISL-Häfen `up` im Portkanal:
 
 [listing]
 ----
@@ -40,7 +40,7 @@ Group Port-        Type   Protocol  Member Ports
 1     Po1(SU)      Eth    LACP      Eth1/31(P)   Eth1/32(P)
 ----
 ====
-. Bringen Sie auf allen Knoten alle Cluster Interconnect Ports an, die mit dem neuen 3132Q-V Switch C1 verbunden sind:
+. Aktivieren Sie auf allen Knoten alle Cluster-Verbindungsports, die mit dem neuen Switch 3132Q-V C1 verbunden sind:
 +
 `network port modify`
 
@@ -48,7 +48,7 @@ Group Port-        Type   Protocol  Member Ports
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt alle Cluster-Interconnect-Ports, die für n1 und n2 auf dem 3132Q-V-Switch C1 aufgerufen werden:
+Das folgende Beispiel zeigt, wie alle Cluster-Verbindungsports für n1 und n2 auf dem 3132Q-V-Switch C1 aktiviert werden:
 
 [listing]
 ----
@@ -58,7 +58,7 @@ cluster::*> network port modify -node n2 -port e0a -up-admin true
 cluster::*> network port modify -node n2 -port e0d -up-admin true
 ----
 ====
-. Überprüfen Sie den Status des Cluster-Node-Ports:
+. Überprüfen Sie den Status des Clusterknotenports:
 +
 `network port show`
 
@@ -66,7 +66,7 @@ cluster::*> network port modify -node n2 -port e0d -up-admin true
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden alle Cluster-Interconnect-Ports auf allen Knoten des neuen Switch C1 3132Q-V überprüft `up`:
+Das folgende Beispiel verifiziert, dass alle Cluster-Verbindungsports auf allen Knoten des neuen 3132Q-V-Switches C1 vorhanden sind. `up` :
 
 [listing]
 ----
@@ -94,7 +94,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 8 entries were displayed.
 ----
 ====
-. Setzen Sie auf allen Nodes die spezifischen Cluster-LIFs auf ihre Home-Ports zurück:
+. Auf allen Knoten müssen die spezifischen Cluster-LIFs auf ihre jeweiligen Heimatports zurückgesetzt werden:
 +
 `network interface revert`
 
@@ -102,7 +102,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die spezifischen Cluster-LIFs angezeigt, die auf ihre Home-Ports auf den Nodes n1 und n2 zurückgesetzt werden:
+Das folgende Beispiel zeigt, wie die spezifischen Cluster-LIFs auf den Knoten n1 und n2 auf ihre ursprünglichen Ports zurückgesetzt werden:
 
 [listing]
 ----
@@ -112,7 +112,7 @@ cluster::*> network interface revert -vserver Cluster -lif n2_clus1
 cluster::*> network interface revert -vserver Cluster -lif n2_clus4
 ----
 ====
-. Vergewissern Sie sich, dass die Schnittstelle Home ist:
+. Überprüfen Sie, ob die Schnittstelle auf „Startseite“ eingestellt ist:
 +
 `network interface show`
 
@@ -120,7 +120,7 @@ cluster::*> network interface revert -vserver Cluster -lif n2_clus4
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird der Status von Cluster-Interconnect-Schnittstellen angezeigt `up` Und `Is home` Für n1 und n2:
+Das folgende Beispiel zeigt den Status der Cluster-Verbindungsschnittstellen. `up` Und `Is home` für n1 und n2:
 
 [listing]
 ----
@@ -148,15 +148,15 @@ Cluster
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl „show“ ausführen, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
@@ -175,7 +175,7 @@ n2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -224,7 +224,7 @@ RPC status:
 ----
 --
 ====
-. [[step7]]erweitern Sie den Cluster durch Hinzufügen von Knoten zu den Nexus 3132Q-V-Cluster-Switches.
+. [[step7]]Erweitern Sie den Cluster, indem Sie Knoten zu den Nexus 3132Q-V Cluster-Switches hinzufügen.
 . Zeigen Sie die Informationen zu den Geräten in Ihrer Konfiguration an:
 +
 ** `network device-discovery show`
@@ -235,7 +235,7 @@ RPC status:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die folgenden Beispiele zeigen die Nodes n3 und n4 mit 40-GbE-Cluster-Ports, die mit den Ports e1/7 und e1/8 verbunden sind, bzw. auf den Nexus 3132Q-V Cluster-Switches, und beide Nodes haben sich dem Cluster angeschlossen. Die 40 GbE Cluster Interconnect Ports sind e4a und e4e.
+Die folgenden Beispiele zeigen die Knoten n3 und n4 mit 40-GbE-Cluster-Ports, die mit den Ports e1/7 bzw. e1/8 der beiden Nexus 3132Q-V Cluster-Switches verbunden sind, und beide Knoten sind dem Cluster beigetreten.  Die verwendeten 40-GbE-Cluster-Verbindungsports sind e4a und e4e.
 
 [listing]
 ----
@@ -367,7 +367,7 @@ CL2                           cluster-network    10.10.1.102     NX5596
 ====
 
 
-. Entfernen Sie den ausgetauschten Nexus 5596, wenn sie nicht automatisch entfernt werden:
+. Entfernen Sie die ausgetauschten Nexus 5596-Geräte, falls diese nicht automatisch entfernt wurden:
 +
 `system cluster-switch delete`
 
@@ -375,7 +375,7 @@ CL2                           cluster-network    10.10.1.102     NX5596
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie der Nexus 5596 entfernt wird:
+Das folgende Beispiel zeigt, wie man das Nexus 5596 entfernt:
 
 [listing]
 ----
@@ -383,7 +383,7 @@ cluster::> system cluster-switch delete -device CL1
 cluster::> system cluster-switch delete -device CL2
 ----
 ====
-. Konfigurieren Sie Cluster clue1 und clu2, um jeden Knoten automatisch zurückzusetzen und zu bestätigen.
+. Konfigurieren Sie die Cluster clus1 und clus2 so, dass sie auf jedem Knoten automatisch zurückgesetzt werden, und bestätigen Sie dies.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -396,7 +396,7 @@ cluster::*> network interface modify -vserver node2 -lif clus1 -auto-revert true
 cluster::*> network interface modify -vserver node2 -lif clus2 -auto-revert true
 ----
 ====
-. Überprüfen Sie, ob die richtigen Cluster-Switches überwacht werden:
+. Stellen Sie sicher, dass die richtigen Cluster-Switches überwacht werden:
 +
 `system cluster-switch show`
 
@@ -429,11 +429,11 @@ C2                          cluster-network     10.10.1.104      NX3132V
 2 entries were displayed.
 ----
 ====
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].

@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2-storage/install-rcf-software-9336c-storage.html 
 sidebar: sidebar 
 keywords: install rcf, cisco switches, storage 
-summary: Sie können den RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Speicherschalters installieren. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
+summary: Sie können die RCF-Datei installieren, nachdem Sie den Speicherswitch Nexus 9336C-FX2 zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
 ---
 = Installieren Sie die Referenzkonfigurationsdatei
 :allow-uri-read: 
@@ -13,31 +13,31 @@ summary: Sie können den RCF nach dem ersten Einrichten des Nexus 9336C-FX2-Spei
 [role="lead"]
 Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Speicher-Switches Nexus 9336C-FX2 und 9336C-FX2-T zum ersten Mal eingerichtet haben.
 
-Weitere Informationen zur Installation des RCF finden Sie im Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^].
+Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation Ihres RCF erhalten Sie bei Bedarf.
 
 .Bevor Sie beginnen
 Überprüfen Sie die folgenden Installationen und Verbindungen:
 
-* Eine Konsolenverbindung zum Switch. Die Konsolenverbindung ist optional, wenn Sie Remote-Zugriff auf den Switch haben.
-* Switch cs1 und Switch cs2 werden eingeschaltet und die Ersteinrichtung des Switches ist abgeschlossen (die Management-IP-Adresse und SSH sind eingerichtet).
+* Eine Konsolenverbindung zum Switch.  Die Konsolenverbindung ist optional, wenn Sie Fernzugriff auf den Switch haben.
+* Die Switches cs1 und cs2 sind eingeschaltet und die Ersteinrichtung der Switches ist abgeschlossen (die Management-IP-Adresse und SSH sind eingerichtet).
 * Die gewünschte NX-OS-Version wurde installiert.
-* Die ONTAP Node-Cluster-Ports sind nicht verbunden.
+* Die Ports des ONTAP Knotenclusters sind nicht verbunden.
 
 
 
 
 == Schritt 1: Installieren Sie die RCF auf den Schaltern
 
-. Melden Sie sich an, um cs1 über SSH oder über eine serielle Konsole zu wechseln.
-. Kopieren Sie den RCF mit einem der folgenden Übertragungsprotokolle auf den Bootflash von Switch cs1: FTP, TFTP, SFTP oder SCP.
+. Melden Sie sich über SSH oder über eine serielle Konsole am Switch cs1 an.
+. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel zeigt TFTP, mit dem eine RCF in den Bootflash auf Switch cs1 kopiert wird:
+Dieses Beispiel zeigt, wie TFTP verwendet wird, um eine RCF-Datei in den Bootflash des Switches cs1 zu kopieren:
 
 [listing, subs="+quotes"]
 ----
@@ -49,22 +49,22 @@ TFTP get operation was successful
 Copy complete, now saving to disk (please wait)...
 ----
 ====
-. Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde.
+. Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel zeigt die RCF `Nexus_9336C_RCF_v1.6-Storage.txt`, die auf Switch cs1 installiert wird:
+Dieses Beispiel zeigt die RCF `Nexus_9336C_RCF_v1.6-Storage.txt` wird auf Switch CS1 installiert:
 
 [listing]
 ----
 cs1# copy Nexus_9336C_RCF_v1.6-Storage.txt running-config echo-commands
 ----
 ====
-. Überprüfen Sie die Bannerausgabe des `show banner motd` Befehls. Sie müssen diese Anweisungen lesen und befolgen, um die richtige Konfiguration und den korrekten Betrieb des Switches sicherzustellen.
+. Untersuchen Sie die Bannerausgabe von `show banner motd` Befehl.  Sie müssen diese Anweisungen lesen und befolgen, um die korrekte Konfiguration und den ordnungsgemäßen Betrieb des Schalters sicherzustellen.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -86,30 +86,30 @@ cs1# show banner motd
 ******************************************************************************
 ----
 ====
-. Stellen Sie sicher, dass der RCF die richtige neuere Version ist:
+. Überprüfen Sie, ob es sich bei der RCF um die korrekte, neuere Version handelt:
 +
 `show running-config`
 
 +
-Wenn Sie die Ausgabe überprüfen, um zu überprüfen, ob Sie die richtige RCF haben, stellen Sie sicher, dass die folgenden Informationen richtig sind:
+Wenn Sie die Ausgabe überprüfen, um sicherzustellen, dass Sie die richtige RCF-Datei haben, achten Sie darauf, dass die folgenden Informationen korrekt sind:
 
 +
 ** Das RCF-Banner
-** Die Node- und Port-Einstellungen
+** Die Knoten- und Porteinstellungen
 ** Anpassungen
 +
-Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Porteinstellungen, und lesen Sie in den Versionshinweisen alle Änderungen, die für die RCF gelten, die Sie installiert haben.
+Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port-Einstellungen und beachten Sie die Versionshinweise, um sich über etwaige Änderungen zu informieren, die speziell für die von Ihnen installierte RCF-Version gelten.
 
 
 
-. Notieren Sie alle benutzerdefinierten Ergänzungen zwischen dem aktuellen `running-config` Datei und die verwendete RCF-Datei.
-. Nachdem Sie überprüft haben, dass die RCF-Versionen und Schaltereinstellungen korrekt sind, kopieren Sie die `running-config` Datei in die `startup-config` Datei.
+. Alle benutzerdefinierten Ergänzungen zwischen dem aktuellen `running-config` Datei und die verwendete RCF-Datei.
+. Nachdem Sie überprüft haben, ob die RCF-Versionen und die Schaltereinstellungen korrekt sind, kopieren Sie die `running-config` Datei an die `startup-config` Datei.
 +
 [listing]
 ----
 cs1# copy running-config startup-config [########################################] 100% Copy complete
 ----
-. Speichern Sie grundlegende Konfigurationsdetails im `write_erase.cfg` Datei auf dem Bootflash.
+. Speichern Sie die grundlegenden Konfigurationsdetails in der `write_erase.cfg` Datei auf dem Bootflash.
 +
 `cs1# show run | i "username admin password" > bootflash:write_erase.cfg`
 
@@ -133,13 +133,13 @@ cs1# copy running-config startup-config [#######################################
 `cs1# echo "hardware access-list tcam region ing-l2-qos 1280" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] für weitere Details.
+Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] für weitere Einzelheiten.
 
-. Überprüfen Sie, ob die `write_erase.cfg` Die Datei wird wie erwartet ausgefüllt:
+. Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
 +
 `*show file bootflash:write_erase.cfg*`
 
-. Geben Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
+. Stellen Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
 +
 `cs1# *write erase*`
 
@@ -149,11 +149,11 @@ Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisc
 +
 `Do you wish to proceed anyway? (y/n)  [n] *y*`
 
-. Kopieren Sie die zuvor gespeicherte Grundkonfiguration in die Startkonfiguration.
+. Kopieren Sie die zuvor gespeicherte Basiskonfiguration in die Startkonfiguration.
 +
 `cs1# *copy bootflash:write_erase.cfg startup-config*`
 
-. Starten Sie den Switch cs1 neu.
+. Neustart des Switches cs1.
 +
 `cs1# *reload*`
 
@@ -161,14 +161,14 @@ Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisc
 `This command will reboot the system. (y/n)?  [n] *y*`
 
 . Wiederholen Sie die Schritte 1 bis 13 auf Switch cs2.
-. Verbinden Sie die Cluster-Ports aller Knoten im ONTAP-Cluster mit den Switches cs1 und cs2.
+. Verbinden Sie die Cluster-Ports aller Knoten im ONTAP Cluster mit den Switches cs1 und cs2.
 
 
 
 
 == Schritt 2: Überprüfen Sie die Switch-Verbindungen
 
-. Stellen Sie sicher, dass die mit den Cluster-Ports verbundenen Switch-Ports *up* sind.
+. Überprüfen Sie, ob die mit den Cluster-Ports verbundenen Switch-Ports *aktiv* sind.
 +
 `show interface brief`
 
@@ -198,7 +198,7 @@ Eth1/29         1       eth  trunk  up      none                     100G(D) --
 Eth1/30         1       eth  trunk  up      none                     100G(D) --
 ----
 ====
-. Überprüfen Sie mit den folgenden Befehlen, ob sich die Cluster-Nodes in den richtigen Cluster-VLANs befinden:
+. Überprüfen Sie mithilfe der folgenden Befehle, ob sich die Clusterknoten in den richtigen Cluster-VLANs befinden:
 +
 `show vlan brief`
 
@@ -471,19 +471,19 @@ none
 ====
 +
 
-NOTE: Einzelheiten zur Port- und VLAN-Nutzung finden Sie im Abschnitt Banner und wichtige Hinweise in Ihrem RCF.
+NOTE: Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF.
 
 
 
 
 
-== Schritt 3: Richten Sie Ihren ONTAP-Cluster ein
+== Schritt 3: Richten Sie Ihren ONTAP Cluster ein.
 
-NetApp empfiehlt, zum Einrichten neuer Cluster System Manager zu verwenden.
+NetApp empfiehlt, neue Cluster mit dem System Manager einzurichten.
 
-System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Einrichtung und -Konfiguration, einschließlich der Zuweisung einer Node-Management-IP-Adresse, Initialisierung des Clusters, Erstellung eines lokalen Tiers, Konfiguration von Protokollen und Bereitstellung des anfänglichen Storage.
+System Manager bietet einen einfachen und unkomplizierten Workflow für die Einrichtung und Konfiguration von Clustern, einschließlich der Zuweisung einer Knotenverwaltungs-IP-Adresse, der Initialisierung des Clusters, der Erstellung einer lokalen Ebene, der Konfiguration von Protokollen und der Bereitstellung des anfänglichen Speichers.
 
-Gehen Sie zu https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] Für Setup-Anweisungen.
+Gehe zu https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP auf einem neuen Cluster mit System Manager"] für Installationsanweisungen.
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation Ihres RCF können Sielink:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"]

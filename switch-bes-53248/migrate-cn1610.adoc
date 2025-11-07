@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/migrate-cn1610.html 
 sidebar: sidebar 
 keywords: CN1610, CN1610 replacing, migrate from CN1610 
-summary: Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch von Broadcom unterstützte BES-53248-Cluster-Switches zu ersetzen, müssen Sie eine bestimmte Sequenz von Aufgaben durchführen. 
+summary: Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch Broadcom-unterstützte BES-53248-Cluster-Switches zu ersetzen, müssen Sie eine bestimmte Abfolge von Aufgaben durchführen. 
 ---
-= Migrieren Sie CN1610 Cluster-Switches zu BES-53248 Cluster-Switches
+= CN1610-Cluster-Switches auf BES-53248-Cluster-Switches migrieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die CN1610-Cluster-Switches in einem Cluster zu von Broadcom unterstützten BES-53248-Cluster-Switches zu migrieren, die Migrationsanforderungen zu prüfen und anschließend den Migrationsvorgang zu befolgen.
+Um die CN1610-Cluster-Switches in einem Cluster auf Broadcom-unterstützte BES-53248-Cluster-Switches zu migrieren, überprüfen Sie die Migrationsanforderungen und folgen Sie dann dem Migrationsverfahren.
 
 Folgende Cluster-Switches werden unterstützt:
 
@@ -21,30 +21,30 @@ Folgende Cluster-Switches werden unterstützt:
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-Stellen Sie sicher, dass Ihre Konfiguration die folgenden Anforderungen erfüllt:
+Vergewissern Sie sich, dass Ihre Konfiguration die folgenden Anforderungen erfüllt:
 
-* Einige der Ports auf BES-53248-Switches sind für den Betrieb mit 10 GbE konfiguriert.
-* Die 10-GbE-Konnektivität von den Nodes zu BES-53248 Cluster-Switches wurde geplant, migriert und dokumentiert.
-* Das Cluster funktioniert voll (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
-* Die erste Anpassung der BES-53248-Switches ist abgeschlossen, so dass:
+* Einige der Ports der BES-53248-Switches sind für den Betrieb mit 10GbE konfiguriert.
+* Die 10GbE-Konnektivität von den Knoten zu den BES-53248 Cluster-Switches wurde geplant, migriert und dokumentiert.
+* Der Cluster ist voll funktionsfähig (es sollten keine Fehler in den Protokollen oder ähnliche Probleme auftreten).
+* Die Erstkonfiguration der BES-53248-Switches ist abgeschlossen, sodass:
 +
-** BES-53248-Switches verwenden die neueste empfohlene Version der EFOS-Software.
-** Auf die Switches wurden Referenzkonfigurationsdateien (RCFs) angewendet.
-** Anpassung von Websites, z. B. DNS, NTP, SMTP, SNMP, Und SSH werden auf den neuen Switches konfiguriert.
+** Die BES-53248-Switches verwenden die neueste empfohlene Version der EFOS-Software.
+** Referenzkonfigurationsdateien (RCFs) wurden auf die Switches angewendet.
+** Sämtliche Standortanpassungen, wie z. B. DNS, NTP, SMTP, SNMP und SSH, werden auf den neuen Switches konfiguriert.
 
 
 
 
 
 
-=== Node-Verbindungen
+=== Knotenverbindungen
 
-Die Cluster-Switches unterstützen die folgenden Node-Verbindungen:
+Die Cluster-Switches unterstützen folgende Knotenverbindungen:
 
-* NetApp CN1610: Ports 0/1 bis 0/12 (10 GbE)
-* BES 53248: 0/16 Ports (10 GbE)
+* NetApp CN1610: Ports 0/1 bis 0/12 (10GbE)
+* BES-53248: Ports 0/1-0/16 (10GbE/25GbE)
 +
 
 NOTE: Zusätzliche Ports können durch den Kauf von Portlizenzen aktiviert werden.
@@ -55,88 +55,88 @@ NOTE: Zusätzliche Ports können durch den Kauf von Portlizenzen aktiviert werde
 
 === ISL-Ports
 
-Bei den Cluster-Switches werden die folgenden Inter-Switch-Link-Ports (ISL) verwendet:
+Die Cluster-Switches verwenden die folgenden Inter-Switch-Link-Ports (ISL):
 
-* NetApp CN1610: Ports 0/13 bis 0/16 (10 GbE)
-* BES-53248: Ports 0/55-0/56 (100 GbE)
+* NetApp CN1610: Ports 0/13 bis 0/16 (10GbE)
+* BES-53248: Ports 0/55-0/56 (100GbE)
 
 
-Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP-Kompatibilität, zu unterstützter EFOS-Firmware und zur Verkabelung mit BES-53248-Cluster-Switches.
+Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung von BES-53248 Cluster-Switches.
 
 
 
 === ISL-Verkabelung
 
-Die entsprechende ISL-Verkabelung lautet wie folgt:
+Die entsprechende ISL-Verkabelung sieht wie folgt aus:
 
-* *Beginn:* für CN1610 bis CN1610 (SFP+ auf SFP+), vier SFP+-Glasfaserkabel oder Kupfer-Direct-Attach-Kabel.
-* *Endfassung:* für BES-53248 bis BES-53248 (QSFP28 zu QSFP28), zwei optische QSFP28-Transceiver/Glasfaser oder Kupfer-Direct-Attach-Kabel.
-
-
+* *Anfang:* Für CN1610 zu CN1610 (SFP+ zu SFP+) vier SFP+ Glasfaser- oder Kupfer-Direktanschlusskabel.
+* *Final:* Für BES-53248 zu BES-53248 (QSFP28 zu QSFP28), zwei QSFP28 optische Transceiver/Glasfaser- oder Kupfer-Direktanschlusskabel.
 
 
-== Migrieren Sie die Switches
 
-Gehen Sie folgendermaßen vor, um CN1610 Cluster-Switches auf BES-53248 Cluster-Switches zu migrieren.
+
+== Migrieren Sie die Schalter
+
+Gehen Sie wie folgt vor, um CN1610-Cluster-Switches auf BES-53248-Cluster-Switches zu migrieren.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
-* Die Beispiele verwenden zwei Nodes, die jeweils zwei 10-GbE-Cluster-Interconnect-Ports implementieren: `e0a` Und `e0b`.
-* Die Ausgaben für die Befehle können je nach Versionen der ONTAP Software variieren.
-* Die zu ersetzenden CN1610-Schalter sind `CL1` Und `CL2`.
-* Die BES-53248-Switches als Ersatz für die CN1610-Switches sind `cs1` Und `cs2`.
-* Die Nodes sind `node1` Und `node2`.
-* Der Schalter CL2 wird zuerst durch cs2 ersetzt, gefolgt von CL1 durch cs1.
-* Die BES-53248-Switches sind mit den unterstützten Versionen von Reference Configuration File (RCF) und Ethernet Fabric OS (EFOS) vorinstalliert, wobei ISL-Kabel an den Ports 55 und 56 angeschlossen sind.
-* Die LIF-Namen des Clusters sind `node1_clus1` Und `node1_clus2` Für Node1, und `node2_clus1` Und `node2_clus2` Für Knoten 2.
+* Die Beispiele verwenden zwei Knoten, von denen jeder zwei 10-GbE-Cluster-Verbindungsports bereitstellt: `e0a` Und `e0b` Die
+* Die Befehlsausgaben können je nach Version der ONTAP -Software variieren.
+* Die auszutauschenden CN1610-Schalter sind `CL1` Und `CL2` Die
+* Die BES-53248-Schalter als Ersatz für die CN1610-Schalter sind `cs1` Und `cs2` Die
+* Die Knoten sind `node1` Und `node2` Die
+* Zuerst wird der Schalter CL2 durch cs2 ersetzt, dann CL1 durch cs1.
+* Die BES-53248 Switches sind mit den unterstützten Versionen der Reference Configuration File (RCF) und des Ethernet Fabric OS (EFOS) vorinstalliert, wobei ISL-Kabel an den Ports 55 und 56 angeschlossen sind.
+* Die Cluster-LIF-Namen sind `node1_clus1` Und `node1_clus2` für Knoten1 und `node2_clus1` Und `node2_clus2` für Knoten 2.
 
 
-.Über diese Aufgabe
-Dieses Verfahren umfasst das folgende Szenario:
+.Informationen zu diesem Vorgang
+Dieses Verfahren umfasst folgendes Szenario:
 
-* Zu Beginn des Clusters sind zwei mit zwei CN1610 Cluster-Switches verbundene Nodes verbunden.
-* CN1610-Switch CL2 wird durch BES-53248-Schalter cs2 ersetzt:
+* Der Cluster beginnt mit zwei Knoten, die mit zwei CN1610 Cluster-Switches verbunden sind.
+* Der CN1610-Schalter CL2 wird durch den BES-53248-Schalter cs2 ersetzt:
 +
-** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
-** Trennen Sie die Kabel von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und schließen Sie die Ports mit den unterstützten Kabeln wieder an den neuen Cluster-Switch cs2 an.
+** Schalten Sie die Ports zu den Clusterknoten ab.  Um eine Instabilität des Clusters zu vermeiden, müssen alle Ports gleichzeitig abgeschaltet werden.
+** Trennen Sie die Kabel von allen Cluster-Ports auf allen mit CL2 verbundenen Knoten und verwenden Sie dann unterstützte Kabel, um die Ports wieder mit dem neuen Cluster-Switch cs2 zu verbinden.
 
 
-* CN1610-Schalter CL1 wird durch BES-53248-Schalter cs1 ersetzt:
+* Der CN1610-Schalter CL1 wird durch den BES-53248-Schalter cs1 ersetzt:
 +
-** Fahren Sie die Ports zu den Cluster-Nodes herunter. Alle Ports müssen gleichzeitig heruntergefahren werden, um eine Instabilität von Clustern zu vermeiden.
-** Trennen Sie die Kabel von allen Cluster-Ports auf allen mit CL1 verbundenen Nodes, und schließen Sie die Ports mit den unterstützten Kabeln wieder an den neuen Cluster-Switch cs1 an.
+** Schalten Sie die Ports zu den Clusterknoten ab.  Um eine Instabilität des Clusters zu vermeiden, müssen alle Ports gleichzeitig abgeschaltet werden.
+** Trennen Sie die Kabel von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten und verwenden Sie dann unterstützte Kabel, um die Ports wieder mit dem neuen Cluster-Switch cs1 zu verbinden.
 
 
 
 
 
-NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+NOTE: Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erforderlich. Dies ist beabsichtigt, da RCF-Versionsänderungen die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, migriert das folgende Verfahren alle Cluster-LIFs zum operativen Partner-Switch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei x die Dauer des Wartungsfensters in Stunden ist.
+wobei x die Dauer des Wartungsfensters in Stunden ist.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 +
-Mit dem folgenden Befehl wird die automatische Case-Erstellung für zwei Stunden unterdrückt:
+Der folgende Befehl unterdrückt die automatische Fallerstellung für zwei Stunden:
 
 +
 [listing]
 ----
 cluster1::*> system node autosupport invoke -node * -type all -message MAINT=2h
 ----
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
@@ -147,9 +147,9 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 
 
-=== Schritt: Ports und Verkabelung konfigurieren
+=== Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
-. Vergewissern Sie sich bei den neuen Switches, dass die ISL zwischen den Switches cs1 und cs2 verkabelt und ordnungsgemäß funktioniert:
+. Prüfen Sie an den neuen Switches, ob die ISL-Verbindung zwischen den Switches cs1 und cs2 hergestellt und funktionsfähig ist:
 +
 `show port-channel`
 
@@ -157,7 +157,7 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die ISL-Ports *up* auf Switch cs1 sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs1 *aktiv* sind:
 
 [listing, subs="+quotes"]
 ----
@@ -180,7 +180,7 @@ Ports  Timeout       Speed      Active
        partner/long
 (cs1) #
 ----
-Das folgende Beispiel zeigt, dass die ISL-Ports *up* auf Switch cs2 sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs2 *aktiv* sind:
 
 [listing, subs="+quotes"]
 ----
@@ -203,7 +203,7 @@ Ports  Timeout       Speed      Active
        partner/long
 ----
 ====
-. Zeigen Sie die Cluster-Ports auf jedem Node an, der mit den vorhandenen Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, der mit den vorhandenen Cluster-Switches verbunden ist:
 +
 `network device-discovery show -protocol cdp`
 
@@ -211,7 +211,7 @@ Ports  Timeout       Speed      Active
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird angezeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster-Interconnect-Switch konfiguriert wurden:
+Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:
 
 [listing, subs="+quotes"]
 ----
@@ -227,9 +227,9 @@ node1      /cdp
             e0b    CL2                       0/1               CN1610
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus der einzelnen Cluster-Schnittstellen fest.
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports vorhanden sind `up` Mit einem `healthy` Status:
+.. Überprüfen Sie, ob alle Cluster-Ports aktiv sind. `up` mit einem `healthy` Status:
 +
 `network port show -ipspace Cluster`
 
@@ -258,7 +258,7 @@ e0a       Cluster      Cluster          up   9000  auto/10000 healthy  false
 e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) auf ihren Home-Ports befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) an ihren jeweiligen Heimatports angeschlossen sind:
 +
 `network interface show -vserver Cluster`
 
@@ -282,14 +282,14 @@ Cluster
 ====
 
 
-. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 
 
 [role="tabbed-block"]
 ====
 .ONTAP 9.8 und höher
 --
-Ab ONTAP 9.8 verwenden Sie den Befehl: `system switch ethernet show -is-monitoring-enabled-operational true`
+Ab ONTAP 9.8 verwenden Sie folgenden Befehl: `system switch ethernet show -is-monitoring-enabled-operational true`
 
 [listing, subs="+quotes"]
 ----
@@ -314,7 +314,7 @@ cluster1::*>
 --
 .ONTAP 9.7 und früher
 --
-Verwenden Sie für ONTAP 9.7 und frühere Versionen den folgenden Befehl: `system cluster-switch show -is-monitoring-enabled-operational true`
+Für ONTAP 9.7 und ältere Versionen verwenden Sie folgenden Befehl: `system cluster-switch show -is-monitoring-enabled-operational true`
 
 [listing, subs="+quotes"]
 ----
@@ -338,13 +338,13 @@ cluster1::*>
 ----
 --
 ====
-. [[step5]]Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs.
+. [[step5]]Automatische Rücksetzung der Cluster-LIFs deaktivieren.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert false*
 ----
-. Fahren Sie bei Cluster-Switch CL2 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
+. Schalten Sie auf dem Cluster-Switch CL2 die mit den Cluster-Ports der Knoten verbundenen Ports ab, um ein Failover der Cluster-LIFs zu erzwingen:
 +
 [listing, subs="+quotes"]
 ----
@@ -355,7 +355,7 @@ cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert fals
 (CL2)(Config)# *exit*
 (CL2)#
 ----
-. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf dem Cluster-Switch CL1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
+. Überprüfen Sie, ob die Cluster-LIFs auf die Ports des Cluster-Switches CL1 umgeschaltet haben. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster`
 
@@ -376,7 +376,7 @@ Cluster
             node2_clus2  up/up      169.254.19.183/16  node2         e0a     false
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -393,8 +393,8 @@ node1      true    true          false
 node2      true    true          false
 ----
 ====
-. Verschieben Sie alle Clusterknoten-Verbindungskabel vom alten CL2-Switch auf den neuen cs2-Switch.
-. Bestätigen Sie den Funktionszustand der Netzwerkverbindungen, die zu cs2 verschoben wurden:
+. Verlegen Sie alle Cluster-Knotenverbindungskabel vom alten CL2-Switch zum neuen cs2-Switch.
+. Überprüfen Sie den Zustand der auf CS2 verschobenen Netzwerkverbindungen:
 +
 `network port show -ipspace Cluster`
 
@@ -424,9 +424,9 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
 +
-Es sollten alle verschobenen Cluster-Ports verwendet werden `up`.
+Alle verschobenen Cluster-Ports sollten `up` Die
 
-. Überprüfen Sie die „Neighbor“-Informationen auf den Cluster-Ports:
+. Überprüfen Sie die Nachbarinformationen an den Cluster-Ports:
 +
 `network device-discovery show -protocol cdp`
 
@@ -448,14 +448,14 @@ node1      /cdp
             e0b    cs2                       0/1               BES-53248
 ----
 ====
-. Vergewissern Sie sich, dass die Switch-Port-Verbindungen aus Sicht von Switch cs2 ordnungsgemäß sind:
+. Prüfen Sie aus Sicht des Switches CS2, ob die Portverbindungen des Switches einwandfrei funktionieren:
 +
 [listing, subs="+quotes"]
 ----
 cs2# *show interface all*
 cs2# *show isdp neighbors*
 ----
-. Fahren Sie bei Cluster-Switch CL1 die Ports herunter, die mit den Cluster-Ports der Nodes verbunden sind, um ein Failover der Cluster-LIFs zu ermöglichen:
+. Schalten Sie auf dem Cluster-Switch CL1 die mit den Cluster-Ports der Knoten verbundenen Ports ab, um ein Failover der Cluster-LIFs durchzuführen:
 +
 [listing, subs="+quotes"]
 ----
@@ -467,9 +467,9 @@ cs2# *show isdp neighbors*
 (CL1)#
 ----
 +
-Bei allen Cluster-LIFs wird ein Failover zum cs2-Switch durchgeführt.
+Alle Cluster-LIFs schalten auf den Switch cs2 um.
 
-. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Switch cs2 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern:
+. Überprüfen Sie, ob für die Cluster-LIFs ein Failover auf die auf Switch cs2 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern:
 +
 `network interface show -vserver Cluster`
 
@@ -490,7 +490,7 @@ Cluster
             node2_clus2  up/up      169.254.19.183/16  node2         e0b     true
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -507,8 +507,8 @@ node1      true    true          false
 node2      true    true          false
 ----
 ====
-. Verschieben Sie die Verbindungskabel des Clusterknoten von CL1 zum neuen cs1-Switch.
-. Bestätigen Sie den Funktionszustand der Netzwerkverbindungen, die zu cs1 verschoben wurden:
+. Verlegen Sie die Cluster-Knoten-Verbindungskabel von CL1 zum neuen Switch cs1.
+. Überprüfen Sie den Zustand der Netzwerkverbindungen, die zu CS1 verschoben wurden:
 +
 `network port show -ipspace Cluster`
 
@@ -538,9 +538,9 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 ----
 ====
 +
-Es sollten alle verschobenen Cluster-Ports verwendet werden `up`.
+Alle verschobenen Cluster-Ports sollten `up` Die
 
-. Überprüfen Sie die „Neighbor“-Informationen auf den Cluster-Ports:
+. Überprüfen Sie die Nachbarinformationen an den Cluster-Ports:
 +
 `network device-discovery show`
 
@@ -562,14 +562,14 @@ node2      /cdp
             e0b    cs2                       0/2               BES-53248
 ----
 ====
-. Vergewissern Sie sich, dass die Switch-Port-Verbindungen aus Sicht von Switch cs1 ordnungsgemäß sind:
+. Prüfen Sie aus Sicht des Switches cs1, ob die Portverbindungen des Switches einwandfrei funktionieren:
 +
 [listing, subs="+quotes"]
 ----
 cs1# *show interface all*
 cs1# *show isdp neighbors*
 ----
-. Vergewissern Sie sich, dass die ISL zwischen cs1 und cs2 weiterhin funktionsfähig ist:
+. Überprüfen Sie, ob die ISL zwischen cs1 und cs2 noch funktionsfähig ist:
 +
 `show port-channel`
 
@@ -577,7 +577,7 @@ cs1# *show isdp neighbors*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die ISL-Ports *up* auf Switch cs1 sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs1 *aktiv* sind:
 
 [listing, subs="+quotes"]
 ----
@@ -600,7 +600,7 @@ Ports  Timeout       Speed      Active
        partner/long
 (cs1) #
 ----
-Das folgende Beispiel zeigt, dass die ISL-Ports *up* auf Switch cs2 sind:
+Das folgende Beispiel zeigt, dass die ISL-Ports am Switch cs2 *aktiv* sind:
 
 [listing, subs="+quotes"]
 ----
@@ -623,14 +623,14 @@ Ports  Timeout       Speed      Active
        partner/long
 ----
 ====
-. Löschen Sie die ausgetauschten CN1610-Switches aus der Switch-Tabelle des Clusters, wenn sie nicht automatisch entfernt werden:
+. Löschen Sie die ersetzten CN1610-Switches aus der Switch-Tabelle des Clusters, falls sie nicht automatisch entfernt werden:
 
 
 [role="tabbed-block"]
 ====
 .ONTAP 9.8 und höher
 --
-Ab ONTAP 9.8 verwenden Sie den Befehl: `system switch ethernet delete -device _device-name_`
+Ab ONTAP 9.8 verwenden Sie folgenden Befehl: `system switch ethernet delete -device _device-name_`
 
 [listing]
 ----
@@ -640,7 +640,7 @@ cluster::*> system switch ethernet delete -device CL2
 --
 .ONTAP 9.7 und früher
 --
-Verwenden Sie für ONTAP 9.7 und frühere Versionen den folgenden Befehl: `system cluster-switch delete -device _device-name_`
+Für ONTAP 9.7 und ältere Versionen verwenden Sie folgenden Befehl: `system cluster-switch delete -device _device-name_`
 
 [listing]
 ----
@@ -651,25 +651,25 @@ cluster::*> system cluster-switch delete -device CL2
 ====
 
 
-=== Schritt 3: Überprüfen Sie die Konfiguration
+=== Schritt 3: Konfiguration überprüfen
 
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*
 ----
-. Überprüfen Sie, ob die Cluster-LIFs auf ihre Home-Ports zurückgesetzt wurden (dies kann eine Minute dauern):
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
 +
 `network interface show -vserver Cluster`
 
 +
-Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Sie sie manuell zurück:
+Falls die Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurden, setzen Sie sie manuell zurück:
 
 +
 `network interface revert -vserver Cluster -lif *`
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -680,15 +680,15 @@ Wenn die Cluster-LIFs nicht auf ihren Home-Port zurückgesetzt wurden, setzen Si
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -707,7 +707,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -739,7 +739,7 @@ RPC status:
 ----
 --
 ====
-. [[schritt5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:
+. [[step5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
@@ -750,5 +750,5 @@ cluster::*> system node autosupport invoke -node * -type all -message MAINT=END
 ----
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

@@ -4,45 +4,45 @@ sidebar: sidebar
 keywords: install rcf, cisco switches 
 summary: Mit diesem Verfahren können Sie Ihre RCF-Version aktualisieren. 
 ---
-= Aktualisieren der Referenzkonfigurationsdatei (RCF)
+= Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie aktualisieren Ihre RCF-Version, wenn auf Ihren Betriebsschaltern eine vorhandene Version der RCF-Datei installiert ist.
+Sie aktualisieren Ihre RCF-Version, wenn auf Ihren betriebsbereiten Switches bereits eine Version der RCF-Datei installiert ist.
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Ein aktuelles Backup der Switch-Konfiguration.
-* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
-* Der aktuelle RZB.
-* Wenn Sie Ihre RCF-Version aktualisieren, benötigen Sie eine Startkonfiguration im RCF, die die gewünschten Startabbilder widerspiegelt.
+* Eine aktuelle Sicherungskopie der Switch-Konfiguration.
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
+* Der aktuelle RCF.
+* Wenn Sie Ihre RCF-Version aktualisieren, benötigen Sie eine Boot-Konfiguration in der RCF, die die gewünschten Boot-Images widerspiegelt.
 +
-Wenn Sie die Startkonfiguration ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor dem erneuten Anwenden des RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
+Wenn Sie die Bootkonfiguration ändern müssen, um die aktuellen Boot-Images widerzuspiegeln, müssen Sie dies tun, bevor Sie die RCF erneut anwenden, damit bei zukünftigen Neustarts die richtige Version instanziiert wird.
 
 
 
 
-NOTE: Bei diesem Verfahren ist keine betriebsbereite ISL (Inter Switch Link) erforderlich. Dies ist von Grund auf so, dass Änderungen der RCF-Version die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, werden mit dem folgenden Verfahren alle Cluster-LIFs auf den betriebsbereiten Partner-Switch migriert, während die Schritte auf dem Ziel-Switch ausgeführt werden.
+NOTE: Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erforderlich. Dies ist beabsichtigt, da RCF-Versionsänderungen die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, migriert das folgende Verfahren alle Cluster-LIFs zum operativen Partner-Switch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
 
-CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, müssen Sie die Switch-Einstellungen löschen und die Grundkonfiguration durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein oder grundlegende Konfigurationsinformationen beibehalten haben, bevor Sie die Switch-Einstellungen löschen.
+CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs müssen Sie die Switch-Einstellungen löschen und eine Basiskonfiguration durchführen.  Sie müssen über die serielle Konsole mit dem Switch verbunden sein oder grundlegende Konfigurationsinformationen gesichert haben, bevor Sie die Switch-Einstellungen löschen.
 
 
 
-== Schritt 1: Bereiten Sie sich auf das Upgrade vor
+== Schritt 1: Vorbereitung auf das Upgrade
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
 +
 `set -privilege advanced`
 
@@ -98,7 +98,7 @@ node1-01/lldp
 +
 .. *Cluster-Ports*
 +
-... Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+... Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 [source, cli]
 ----
@@ -147,7 +147,7 @@ e7b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 cluster1::*>
 ----
 ====
-... Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+... Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 [source, cli]
 ----
@@ -398,7 +398,7 @@ shelf id connector-state remote-port    remote-device
 
 
 
-. Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
@@ -434,9 +434,9 @@ cs1(config)# *exit*
 ----
 +
 
-CAUTION: Stellen Sie sicher, dass Sie *alle* verbundenen Ports herunterfahren, um Probleme mit der Netzwerkverbindung zu vermeiden. Siehe den Knowledge Base-Artikel https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Node_out_of_quorum_when_migrating_cluster_lif_during_switch_OS_upgrade["Kein Quorum mehr aus dem Node bei der Migration von LIF auf Cluster während des Upgrades des Switch-Betriebssystems"^] für weitere Details.
+CAUTION: Stellen Sie sicher, dass Sie *alle* verbundenen Ports herunterfahren, um Probleme mit der Netzwerkverbindung zu vermeiden. Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Node_out_of_quorum_when_migrating_cluster_lif_during_switch_OS_upgrade["Knoten außerhalb des Quorums bei Migration des Cluster-LIF während des Switch-OS-Upgrades"^] für weitere Einzelheiten.
 
-. Vergewissern Sie sich, dass für die Cluster-LIFs ein Failover zu den auf Cluster-Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
+. Überprüfen Sie, ob die Cluster-LIFs auf die Ports des Cluster-Switches cs1 umgeschaltet haben. Dies kann einige Sekunden dauern.
 +
 [source, cli]
 ----
@@ -464,7 +464,7 @@ Cluster
 8 entries were displayed.
 ----
 ====
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -484,16 +484,16 @@ node1-04          true    true          false
 4 entries were displayed.
 ----
 ====
-. Wenn Sie dies noch nicht getan haben, speichern Sie eine Kopie der aktuellen Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Textdatei kopieren:
+. Falls Sie dies noch nicht getan haben, speichern Sie eine Kopie der aktuellen Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Textdatei kopieren:
 +
 `show running-config`
 
 +
-.. Notieren Sie alle benutzerdefinierten Ergänzungen zwischen dem aktuellen `running-config` und die verwendete RCF-Datei (z. B. eine SNMP-Konfiguration für Ihre Organisation).
-.. Für NX-OS 10.2 und neuer verwenden Sie die `show diff running-config` Befehl zum Vergleichen mit der gespeicherten RCF-Datei im Bootflash.  Verwenden Sie andernfalls ein Vergleichstool eines Drittanbieters.
+.. Alle benutzerdefinierten Ergänzungen zwischen dem aktuellen `running-config` und die verwendete RCF-Datei (z. B. eine SNMP-Konfiguration für Ihre Organisation).
+.. Für NX-OS 10.2 und neuer verwenden Sie die `show diff running-config` Befehl zum Vergleich mit der gespeicherten RCF-Datei im Bootflash. Verwenden Sie andernfalls ein Vergleichstool eines Drittanbieters.
 
 
-. Speichern Sie grundlegende Konfigurationsdetails im `write_erase.cfg` Datei auf dem Bootflash.
+. Speichern Sie die grundlegenden Konfigurationsdetails in der `write_erase.cfg` Datei auf dem Bootflash.
 +
 [NOTE]
 ====
@@ -528,13 +528,13 @@ Stellen Sie sicher, dass Sie Folgendes konfigurieren:
 `cs1# echo "hardware access-list tcam region ing-l2-qos 1536" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Löschen der Konfiguration auf einem Cisco Interconnect Switch bei Beibehaltung der Remote-Verbindung"^] für weitere Details.
+Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] für weitere Einzelheiten.
 
-. Überprüfen Sie, ob die `write_erase.cfg` Die Datei wird wie erwartet ausgefüllt:
+. Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
 +
 `*show file bootflash:write_erase.cfg*`
 
-. Geben Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
+. Stellen Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
 +
 `cs1# *write erase*`
 
@@ -544,7 +544,7 @@ Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisc
 +
 `Do you wish to proceed anyway? (y/n)  [n] *y*`
 
-. Kopieren Sie die zuvor gespeicherte Grundkonfiguration in die Startkonfiguration.
+. Kopieren Sie die zuvor gespeicherte Basiskonfiguration in die Startkonfiguration.
 +
 `cs1# *copy bootflash:write_erase.cfg startup-config*`
 
@@ -555,19 +555,19 @@ Siehe den Knowledge Base-Artikellink:https://kb.netapp.com/on-prem/Switches/Cisc
 +
 `This command will reboot the system. (y/n)?  [n] *y*`
 
-. Nachdem die Management-IP-Adresse wieder erreichbar ist, melden Sie sich über SSH beim Switch an.
+. Sobald die Management-IP-Adresse wieder erreichbar ist, melden Sie sich über SSH am Switch an.
 +
-Möglicherweise müssen Sie die Einträge der Host-Datei im Zusammenhang mit den SSH-Schlüsseln aktualisieren.
+Möglicherweise müssen Sie die Einträge in der Host-Datei aktualisieren, die mit den SSH-Schlüsseln zusammenhängen.
 
-. Kopieren Sie den RCF mit einem der folgenden Übertragungsprotokolle auf den Bootflash von Switch cs1: FTP, TFTP, SFTP oder SCP.
+. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Führer.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel zeigt TFTP, mit dem eine RCF in den Bootflash auf Switch cs1 kopiert wird:
+Dieses Beispiel zeigt, wie TFTP verwendet wird, um eine RCF-Datei in den Bootflash des Switches cs1 zu kopieren:
 
 [listing, subs="+quotes"]
 ----
@@ -579,12 +579,12 @@ TFTP get operation was successful
 Copy complete, now saving to disk (please wait)...
 ----
 ====
-. Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde.
+. Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Führer.
 
 +
-Dieses Beispiel zeigt die RCF-Datei `NX9364D-GX2A-RCF-v10.0-Shared.txt` wird auf Switch CS1 installiert:
+Dieses Beispiel zeigt die RCF-Datei. `NX9364D-GX2A-RCF-v10.0-Shared.txt` wird auf Switch CS1 installiert:
 
 +
 [listing, subs="+quotes"]
@@ -593,28 +593,28 @@ cs1# *copy NX9364D-GX2A-RCF-v10.0-Shared.txt running-config echo-commands*
 ----
 +
 
-CAUTION: Lesen Sie die Abschnitte *Installationshinweise*, *Wichtige Hinweise* und *Banner* Ihres RCF gründlich durch.  Sie müssen diese Anweisungen lesen und befolgen, um die ordnungsgemäße Konfiguration und den ordnungsgemäßen Betrieb des Switches sicherzustellen.
+CAUTION: Lesen Sie die Abschnitte *Installationshinweise*, *Wichtige Hinweise* und *Banner* Ihres RCF gründlich durch. Sie müssen diese Anweisungen lesen und befolgen, um die ordnungsgemäße Konfiguration und den ordnungsgemäßen Betrieb des Switches sicherzustellen.
 
-. Vergewissern Sie sich, dass die RCF-Datei die richtige neuere Version ist:
+. Überprüfen Sie, ob es sich bei der RCF-Datei um die korrekte, neuere Version handelt:
 +
 `show running-config`
 
 +
-Wenn Sie die Ausgabe überprüfen, um zu überprüfen, ob Sie die richtige RCF haben, stellen Sie sicher, dass die folgenden Informationen richtig sind:
+Wenn Sie die Ausgabe überprüfen, um sicherzustellen, dass Sie die richtige RCF-Datei haben, achten Sie darauf, dass die folgenden Informationen korrekt sind:
 
 +
 ** Das RCF-Banner
-** Die Node- und Port-Einstellungen
+** Die Knoten- und Porteinstellungen
 ** Anpassungen
 +
-Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Porteinstellungen, und lesen Sie in den Versionshinweisen alle Änderungen, die für die RCF gelten, die Sie installiert haben.
+Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port-Einstellungen und beachten Sie die Versionshinweise, um sich über etwaige Änderungen zu informieren, die speziell für die von Ihnen installierte RCF-Version gelten.
 
 
 
-. Wenden Sie alle vorherigen Anpassungen erneut auf die Switch-Konfiguration an.
-. Nachdem Sie überprüft haben, ob die RCF-Versionen, die benutzerdefinierten Ergänzungen und die Switch-Einstellungen korrekt sind, kopieren Sie die Running-config-Datei in die Startup-config-Datei.
+. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.
+. Nachdem Sie überprüft haben, ob die RCF-Versionen, die benutzerdefinierten Erweiterungen und die Schaltereinstellungen korrekt sind, kopieren Sie die Running-Config-Datei in die Startup-Config-Datei.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000-Serie NX-OS Command Reference"^] Leitfäden.
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Führer.
 
 +
 `cs1# copy running-config startup-config`
@@ -622,7 +622,7 @@ Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im
 +
 `[########################################] 100% Copy complete`
 
-. Starten Sie den Switch cs1 neu. Sie können die Warnmeldungen „`Cluster-Switch-Systemzustandsüberwachung`“ und die Ereignisse „`Cluster-Ports ausgefallen`“, die von den Nodes gemeldet werden, ignorieren, während der Switch neu gebootet wird.
+. Neustart des Switches cs1.  Sie können die Warnungen „`cluster switch health monitor`“ und die Ereignisse „`cluster ports down`“, die auf den Knoten während des Neustarts des Switches gemeldet werden, ignorieren.
 +
 `cs1# *reload*`
 
@@ -633,7 +633,7 @@ Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im
 +
 .. *Cluster-Ports*
 +
-... Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
+... Überprüfen Sie, ob die Cluster-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 [source, cli]
 ----
@@ -681,7 +681,7 @@ e7b       Cluster      Cluster          up   9000  auto/100000 healthy false
 8 entries were displayed.
 ----
 ====
-... Überprüfen Sie den Switch-Zustand vom Cluster.
+... Überprüfen Sie den Zustand der Switches im Cluster.
 +
 [source, cli]
 ----
@@ -932,7 +932,7 @@ shelf id connector-state remote-port    remote-device
 
 
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -953,7 +953,7 @@ node1-04          true     true          false
 ----
 ====
 . Wiederholen Sie die Schritte 4 bis 18 auf Switch cs2.
-. Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren:
 +
 `network interface modify -vserver Cluster -lif  * -auto-revert True`
 
@@ -961,9 +961,9 @@ node1-04          true     true          false
 
 
 
-== Schritt 3: Überprüfen Sie die Cluster-Netzwerkkonfiguration und den Zustand des Clusters
+== Schritt 3: Überprüfen Sie die Clusternetzwerkkonfiguration und den Clusterzustand.
 
-. Vergewissern Sie sich, dass die mit den Cluster-Ports verbundenen Switch-Ports aktiv sind.
+. Überprüfen Sie, ob die mit den Cluster-Ports verbundenen Switch-Ports aktiv sind.
 +
 `show interface brief`
 
@@ -995,7 +995,7 @@ Eth1/17/4       1       eth  trunk  up      none                     100G(D) --
 .
 ----
 ====
-. Überprüfen Sie, ob die erwarteten Nodes weiterhin verbunden sind:
+. Überprüfen Sie, ob die erwarteten Knoten noch verbunden sind:
 +
 `show cdp neighbors`
 
@@ -1035,7 +1035,7 @@ node1-04            Eth1/16/4      173    H         AFX-1K            e11a
 Total entries displayed: 18
 ----
 ====
-. Überprüfen Sie mit den folgenden Befehlen, ob sich die Cluster-Nodes in den richtigen Cluster-VLANs befinden:
+. Überprüfen Sie mithilfe der folgenden Befehle, ob sich die Clusterknoten in den richtigen Cluster-VLANs befinden:
 +
 `show vlan brief`
 
@@ -1497,9 +1497,9 @@ Po1           1
 ====
 +
 
-NOTE: Einzelheiten zur Port- und VLAN-Nutzung finden Sie im Abschnitt Banner und wichtige Hinweise in Ihrem RCF.
+NOTE: Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF.
 
-. Stellen Sie sicher, dass die ISL zwischen cs1 und cs2 funktionsfähig ist:
+. Überprüfen Sie, ob die ISL-Verbindung zwischen cs1 und cs2 funktionsfähig ist:
 +
 [source, cli]
 ----
@@ -1528,7 +1528,7 @@ Group Port-       Type     Protocol  Member Ports      Channel
 cs1#
 ----
 ====
-. Vergewissern Sie sich, dass die Cluster-LIFs auf ihren Home-Port zurückgesetzt wurden:
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihren Heimatport zurückgekehrt sind:
 +
 [source, cli]
 ----
@@ -1558,12 +1558,12 @@ Cluster
 ----
 ====
 +
-Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie manuell vom lokalen Node zurück:
+Falls Cluster-LIFs nicht zu ihren Heimatports zurückgekehrt sind, setzen Sie sie manuell vom lokalen Knoten aus zurück:
 
 +
 `network interface revert -vserver vserver_name -lif <lif-name>`
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -1584,7 +1584,7 @@ node1-04          true    true          false
 ====
 . Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
 +
-.. Sie können die `network interface check cluster-connectivity show` Befehl zum Anzeigen der Details einer Zugänglichkeitsprüfung für die Clusterkonnektivität:
+.. Sie können die `network interface check cluster-connectivity show` Befehl zum Anzeigen der Details einer Zugriffsprüfung für die Clusterkonnektivität:
 +
 [source, cli]
 ----
@@ -1614,7 +1614,7 @@ node1-02
 .
 ----
 ====
-.. Alternativ können Sie die `cluster ping-cluster -node <node-name>` Befehl zum Überprüfen der Konnektivität:
+.. Alternativ können Sie die `cluster ping-cluster -node <node-name>` Befehl zum Überprüfen der Verbindung:
 +
 `cluster ping-cluster -node <node-name>`
 
@@ -1666,5 +1666,5 @@ RPC status:
 
 
 
-.Was kommt als Nächstes?
-Nachdem Sie Ihr RCF aktualisiert haben,link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"] .
+.Wie geht es weiter?
+Nachdem Sie Ihr RCF aufgerüstet haben,link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"] Die

@@ -2,300 +2,300 @@
 permalink: switch-cisco-9336c-fx2/setup-worksheet-9336c-cluster.html 
 sidebar: sidebar 
 keywords: document, support, platform, complete, blank, cabling, worksheet, guide, cisco, nexus, cisco nexus 9336c-fx2 cabling worksheet - cisco nexus 9336-fx2-t 
-summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden. 
+summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt anhand des ausgefüllten Beispiel-Verkabelungsarbeitsblatts ausfüllen. 
 ---
-= Füllen Sie das Arbeitsblatt zur Verkabelung des Cisco Nexus 9336C-FX2 oder 9336C-FX2-T aus
+= Füllen Sie das Verkabelungsarbeitsblatt für Cisco Nexus 9336C-FX2 oder 9336C-FX2-T aus.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter, und füllen Sie das Verkabelungsarbeitsblatt aus.
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter und füllen Sie das Verkabelungsarbeitsblatt aus.
 
-Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
 
-* <<9336C-FX2 – Beispieldokument für Verkabelung>>
-* <<9336C-FX2 Arbeitsblatt für leere Verkabelung>>
-* <<Arbeitsblatt zur 9336C-FX2-T-Beispielverkabelung (12 Anschlüsse)>>
-* <<Arbeitsblatt für die Verkabelung 9336C-FX2-T-Leereinschub (12 Anschlüsse)>>
-
-
+* <<9336C-FX2 Beispiel-Verkabelungsarbeitsblatt>>
+* <<9336C-FX2 leeres Verkabelungs-Arbeitsblatt>>
+* <<9336C-FX2-T Muster-Verkabelungsplan (12-Port)>>
+* <<9336C-FX2-T Blindkabel-Arbeitsblatt (12-Port)>>
 
 
-== 9336C-FX2 – Beispieldokument für Verkabelung
 
-Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+
+== 9336C-FX2 Beispiel-Verkabelungsarbeitsblatt
+
+Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
-| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+| Switch-Port | Knoten- und Portnutzung | Switch-Port | Knoten- und Portnutzung 
 
 
  a| 
 1
  a| 
-4 x 10-GbE-Node 1
+4x10GbE-Knoten 1
  a| 
 1
  a| 
-4 x 10-GbE-Node 1
+4x10GbE-Knoten 1
 
 
 
  a| 
 2
  a| 
-4 x 10-GbE-Node 2
+4x10GbE-Knoten 2
  a| 
 2
  a| 
-4 x 10-GbE-Node 2
+4x10GbE-Knoten 2
 
 
 
  a| 
 3
  a| 
-4x10 GbE Node 3
+4x10GbE-Knoten 3
  a| 
 3
  a| 
-4x10 GbE Node 3
+4x10GbE-Knoten 3
 
 
 
  a| 
 4
  a| 
-4 x 25-GbE-Node 4
+4x25GbE-Knoten 4
  a| 
 4
  a| 
-4 x 25-GbE-Node 4
+4x25GbE-Knoten 4
 
 
 
  a| 
 5
  a| 
-4 x 25-GbE-Node 5
+4x25GbE-Knoten 5
  a| 
 5
  a| 
-4 x 25-GbE-Node 5
+4x25GbE-Knoten 5
 
 
 
  a| 
 6
  a| 
-4 x 25-GbE-Node 6
+4x25GbE-Knoten 6
  a| 
 6
  a| 
-4 x 25-GbE-Node 6
+4x25GbE-Knoten 6
 
 
 
  a| 
 7
  a| 
-40/100-GbE-Node 7
+40/100GbE-Knoten 7
  a| 
 7
  a| 
-40/100-GbE-Node 7
+40/100GbE-Knoten 7
 
 
 
  a| 
 8
  a| 
-40/100-GbE-Node 8
+40/100GbE-Knoten 8
  a| 
 8
  a| 
-40/100-GbE-Node 8
+40/100GbE-Knoten 8
 
 
 
  a| 
 9
  a| 
-40/100-GbE-Node 9
+40/100GbE-Knoten 9
  a| 
 9
  a| 
-40/100-GbE-Node 9
+40/100GbE-Knoten 9
 
 
 
  a| 
 10
  a| 
-40/100-GbE-Node 10
+40/100GbE-Knoten 10
  a| 
 10
  a| 
-40/100-GbE-Node 10
+40/100GbE-Knoten 10
 
 
 
  a| 
 11
  a| 
-40/100-GbE-Node 11
+40/100GbE-Knoten 11
  a| 
 11
  a| 
-40/100-GbE-Node 11
+40/100GbE-Knoten 11
 
 
 
  a| 
 12
  a| 
-40/100-GbE-Node 12
+40/100GbE-Knoten 12
  a| 
 12
  a| 
-40/100-GbE-Node 12
+40/100GbE-Knoten 12
 
 
 
  a| 
 13
  a| 
-40/100-GbE-Node 13
+40/100GbE-Knoten 13
  a| 
 13
  a| 
-40/100-GbE-Node 13
+40/100GbE-Knoten 13
 
 
 
  a| 
 14
  a| 
-40/100-GbE-Node 14
+40/100GbE-Knoten 14
  a| 
 14
  a| 
-40/100-GbE-Node 14
+40/100GbE-Knoten 14
 
 
 
  a| 
 15
  a| 
-40/100-GbE-Node 15
+40/100GbE-Knoten 15
  a| 
 15
  a| 
-40/100-GbE-Node 15
+40/100GbE-Knoten 15
 
 
 
  a| 
 16
  a| 
-40/100-GbE-Node 16
+40/100GbE-Knoten 16
  a| 
 16
  a| 
-40/100-GbE-Node 16
+40/100GbE-Knoten 16
 
 
 
  a| 
 17
  a| 
-40/100-GbE-Node 17
+40/100GbE-Knoten 17
  a| 
 17
  a| 
-40/100-GbE-Node 17
+40/100GbE-Knoten 17
 
 
 
  a| 
 18
  a| 
-40/100-GbE-Node 18
+40/100GbE-Knoten 18
  a| 
 18
  a| 
-40/100-GbE-Node 18
+40/100GbE-Knoten 18
 
 
 
  a| 
 19
  a| 
-40/100-GbE-Node 19
+40/100GbE-Knoten 19
  a| 
 19
  a| 
-40/100-GbE-Node 19
+40/100GbE-Knoten 19
 
 
 
  a| 
 20
  a| 
-40/100-GbE-Node 20
+40/100GbE-Knoten 20
  a| 
 20
  a| 
-40/100-GbE-Node 20
+40/100GbE-Knoten 20
 
 
 
  a| 
 21
  a| 
-40/100-GbE-Node 21
+40/100GbE-Knoten 21
  a| 
 21
  a| 
-40/100-GbE-Node 21
+40/100GbE-Knoten 21
 
 
 
  a| 
 22
  a| 
-40/100-GbE-Node 22
+40/100GbE-Knoten 22
  a| 
 22
  a| 
-40/100-GbE-Node 22
+40/100GbE-Knoten 22
 
 
 
  a| 
 23
  a| 
-40/100-GbE-Node 23
+40/100GbE-Knoten 23
  a| 
 23
  a| 
-40/100-GbE-Node 23
+40/100GbE-Knoten 23
 
 
 
  a| 
 24
  a| 
-40/100-GbE-Node 24
+40/100GbE-Knoten 24
  a| 
 24
  a| 
-40/100-GbE-Node 24
+40/100GbE-Knoten 24
 
 
 
@@ -313,33 +313,33 @@ Reserviert
  a| 
 35
  a| 
-100-GbE-ISL zu Switch B-Port 35
+100GbE ISL zu Switch B Port 35
  a| 
 35
  a| 
-100-GbE-ISL für Switch A-Port 35
+100GbE ISL zu Switch A Port 35
 
 
 
  a| 
 36
  a| 
-100-GbE-ISL zu Switch B-Port 36
+100GbE ISL zu Switch B Port 36
  a| 
 36
  a| 
-100-GbE-ISL für Switch A-Port 36
+100GbE ISL zu Switch A Port 36
 
 |===
 
 
-== 9336C-FX2 Arbeitsblatt für leere Verkabelung
+== 9336C-FX2 leeres Verkabelungs-Arbeitsblatt
 
-Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
  a| 
@@ -572,189 +572,189 @@ Reserviert
  a| 
 35
  a| 
-100-GbE-ISL zu Switch B-Port 35
+100GbE ISL zu Switch B Port 35
  a| 
 35
  a| 
-100-GbE-ISL für Switch A-Port 35
+100GbE ISL zu Switch A Port 35
 
 
 
  a| 
 36
  a| 
-100-GbE-ISL zu Switch B-Port 36
+100GbE ISL zu Switch B Port 36
  a| 
 36
  a| 
-100-GbE-ISL für Switch A-Port 36
+100GbE ISL zu Switch A Port 36
 
 |===
 
 
-== Arbeitsblatt zur 9336C-FX2-T-Beispielverkabelung (12 Anschlüsse)
+== 9336C-FX2-T Muster-Verkabelungsplan (12-Port)
 
-Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
-| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+| Switch-Port | Knoten- und Portnutzung | Switch-Port | Knoten- und Portnutzung 
 
 
  a| 
 1
  a| 
-4 x 10-GbE-Node 1
+4x10GbE-Knoten 1
  a| 
 1
  a| 
-4 x 10-GbE-Node 1
+4x10GbE-Knoten 1
 
 
 
  a| 
 2
  a| 
-4 x 10-GbE-Node 2
+4x10GbE-Knoten 2
  a| 
 2
  a| 
-4 x 10-GbE-Node 2
+4x10GbE-Knoten 2
 
 
 
  a| 
 3
  a| 
-4x10 GbE Node 3
+4x10GbE-Knoten 3
  a| 
 3
  a| 
-4x10 GbE Node 3
+4x10GbE-Knoten 3
 
 
 
  a| 
 4
  a| 
-4 x 25-GbE-Node 4
+4x25GbE-Knoten 4
  a| 
 4
  a| 
-4 x 25-GbE-Node 4
+4x25GbE-Knoten 4
 
 
 
  a| 
 5
  a| 
-4 x 25-GbE-Node 5
+4x25GbE-Knoten 5
  a| 
 5
  a| 
-4 x 25-GbE-Node 5
+4x25GbE-Knoten 5
 
 
 
  a| 
 6
  a| 
-4 x 25-GbE-Node 6
+4x25GbE-Knoten 6
  a| 
 6
  a| 
-4 x 25-GbE-Node 6
+4x25GbE-Knoten 6
 
 
 
  a| 
 7
  a| 
-40/100-GbE-Node 7
+40/100GbE-Knoten 7
  a| 
 7
  a| 
-40/100-GbE-Node 7
+40/100GbE-Knoten 7
 
 
 
  a| 
 8
  a| 
-40/100-GbE-Node 8
+40/100GbE-Knoten 8
  a| 
 8
  a| 
-40/100-GbE-Node 8
+40/100GbE-Knoten 8
 
 
 
  a| 
 9
  a| 
-40/100-GbE-Node 9
+40/100GbE-Knoten 9
  a| 
 9
  a| 
-40/100-GbE-Node 9
+40/100GbE-Knoten 9
 
 
 
  a| 
 10
  a| 
-40/100-GbE-Node 10
+40/100GbE-Knoten 10
  a| 
 10
  a| 
-40/100-GbE-Node 10
+40/100GbE-Knoten 10
 
 
 
  a| 
 11 bis 34
  a| 
-Erfordert Lizenz
+Lizenz erforderlich
  a| 
 11 bis 34
  a| 
-Erfordert Lizenz
+Lizenz erforderlich
 
 
 
  a| 
 35
  a| 
-100-GbE-ISL zu Switch B-Port 35
+100GbE ISL zu Switch B Port 35
  a| 
 35
  a| 
-100-GbE-ISL für Switch A-Port 35
+100GbE ISL zu Switch A Port 35
 
 
 
  a| 
 36
  a| 
-100-GbE-ISL zu Switch B-Port 36
+100GbE ISL zu Switch B Port 36
  a| 
 36
  a| 
-100-GbE-ISL für Switch A-Port 36
+100GbE ISL zu Switch A Port 36
 
 |===
 
 
-== Arbeitsblatt für die Verkabelung 9336C-FX2-T-Leereinschub (12 Anschlüsse)
+== 9336C-FX2-T Blindkabel-Arbeitsblatt (12-Port)
 
-Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
  a| 
@@ -850,36 +850,36 @@ Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu 
  a| 
 11 bis 34
  a| 
-Erfordert Lizenz
+Lizenz erforderlich
  a| 
 11 bis 34
  a| 
-Erfordert Lizenz
+Lizenz erforderlich
 
 
 
  a| 
 35
  a| 
-100-GbE-ISL zu Switch B-Port 35
+100GbE ISL zu Switch B Port 35
  a| 
 35
  a| 
-100-GbE-ISL für Switch A-Port 35
+100GbE ISL zu Switch A Port 35
 
 
 
  a| 
 36
  a| 
-100-GbE-ISL zu Switch B-Port 36
+100GbE ISL zu Switch B Port 36
  a| 
 36
  a| 
-100-GbE-ISL für Switch A-Port 36
+100GbE ISL zu Switch A Port 36
 
 |===
-Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
+Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports finden Sie hier.
 
 .Was kommt als nächstes
 Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie link:install-switch-9336c-cluster.html["Installieren Sie den Schalter"]Die

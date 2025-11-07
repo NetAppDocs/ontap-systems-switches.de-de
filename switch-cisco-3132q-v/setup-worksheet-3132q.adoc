@@ -2,296 +2,296 @@
 permalink: switch-cisco-3132q-v/setup-worksheet-3132q.html 
 sidebar: sidebar 
 keywords: cable worksheet, Cisco NX 3132Q-V 
-summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt ausfüllen, indem Sie das ausgefüllte Beispiel-Verkabelungsarbeitsblatt als Anleitung verwenden. Jeder Switch kann als einzelner 40-GbE-Port oder als 4-x-GbE-Ports konfiguriert werden. 
+summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt anhand des ausgefüllten Beispiel-Verkabelungsarbeitsblatts ausfüllen.  Jeder Switch kann als einzelner 40GbE-Port oder als 4 x 10GbE-Ports konfiguriert werden. 
 ---
-= Füllen Sie das Cisco Nexus 3132Q-V-Verkabelungsarbeitsblatt aus
+= Vollständiges Verkabelungs-Arbeitsblatt für Cisco Nexus 3132Q-V
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter, und füllen Sie das Verkabelungsarbeitsblatt aus.
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter und füllen Sie das Verkabelungsarbeitsblatt aus.
 
-Das Verkabelungsarbeitsblatt enthält Beispiele für empfohlene Port-Zuweisungen von den Switches zu den Controllern. Das leere Arbeitsblatt bietet eine Vorlage, die Sie beim Einrichten des Clusters verwenden können.
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
 
-Jeder Switch kann als einzelner 40-GbE-Port oder als 4-x-GbE-Ports konfiguriert werden.
+Jeder Switch kann als einzelner 40GbE-Port oder als 4 x 10GbE-Ports konfiguriert werden.
 
 
 
-== Beispiel für eine Verkabelung
+== Beispiel-Verkabelungsarbeitsblatt
 
-Die Beispielanschlussdefinition für jedes Switch-Paar lautet wie folgt:
+Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
-| Switch-Port | Verwendung von Nodes und Ports | Switch-Port | Verwendung von Nodes und Ports 
+| Switch-Port | Knoten- und Portnutzung | Switch-Port | Knoten- und Portnutzung 
 
 
  a| 
 1
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 1
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 2
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 2
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 3
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 3
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 4
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 4
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 5
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 5
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 6
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 6
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 7
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 7
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 8
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 8
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 9
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 9
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 10
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 10
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 11
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 11
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 12
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 12
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 13
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 13
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 14
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 14
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 15
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 15
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 16
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 16
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 17
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 17
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 18
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
  a| 
 18
  a| 
-4 x 10 GB/40 GB Node
+4x10G/40G-Knoten
 
 
 
  a| 
 19
  a| 
-40 G-Node 19
+40G-Knoten 19
  a| 
 19
  a| 
-40 G-Node 19
+40G-Knoten 19
 
 
 
  a| 
 20
  a| 
-40 G-Node 20
+40G-Knoten 20
  a| 
 20
  a| 
-40 G-Node 20
+40G-Knoten 20
 
 
 
  a| 
 21
  a| 
-40 G-Node 21
+40G-Knoten 21
  a| 
 21
  a| 
-40 G-Node 21
+40G-Knoten 21
 
 
 
  a| 
 22
  a| 
-40 G-Node 22
+40G-Knoten 22
  a| 
 22
  a| 
-40 G-Node 22
+40G-Knoten 22
 
 
 
  a| 
 23
  a| 
-40 G-Node 23
+40G-Knoten 23
  a| 
 23
  a| 
-40 G-Node 23
+40G-Knoten 23
 
 
 
  a| 
 24
  a| 
-40 G-Node 24
+40G-Knoten 24
  a| 
 24
  a| 
-40 G-Node 24
+40G-Knoten 24
 
 
 
@@ -309,36 +309,36 @@ Reserviert
  a| 
 31
  a| 
-40 Gbit ISL für Switch B Port 31
+40G ISL an Switch B Port 31
  a| 
 31
  a| 
-40 Gbit ISL für Switch A Port 31
+40G ISL an Switch A Port 31
 
 
 
  a| 
 32
  a| 
-40 Gbit ISL für Switch B Port 32
+40G ISL zu Switch B Port 32
  a| 
 32
  a| 
-40 Gbit ISL für Switch A Port 32
+40G ISL zu Switch A Port 32
 
 |===
 
 
 == Leeres Verkabelungsarbeitsblatt
 
-Sie können das leere Verkabelungsarbeitsblatt verwenden, um die Plattformen zu dokumentieren, die als Nodes in einem Cluster unterstützt werden. Der Abschnitt „_supported Cluster Connections_“ des https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
 
 [cols="1, 1, 1, 1"]
 |===
-2+| Cluster-Switch A 2+| Cluster-Switch B 
+2+| Clusterschalter A 2+| Clusterschalter B 
 
 
-| Switch-Port | Node-/Port-Verwendung | Switch-Port | Node-/Port-Verwendung 
+| Switch-Port | Knoten-/Portnutzung | Switch-Port | Knoten-/Portnutzung 
 
 
  a| 
@@ -571,22 +571,22 @@ Reserviert
  a| 
 31
  a| 
-40 Gbit ISL für Switch B Port 31
+40G ISL an Switch B Port 31
  a| 
 31
  a| 
-40 Gbit ISL für Switch A Port 31
+40G ISL an Switch A Port 31
 
 
 
  a| 
 32
  a| 
-40 Gbit ISL für Switch B Port 32
+40G ISL zu Switch B Port 32
  a| 
 32
  a| 
-40 Gbit ISL für Switch A Port 32
+40G ISL zu Switch A Port 32
 
 |===
 .Was kommt als nächstes

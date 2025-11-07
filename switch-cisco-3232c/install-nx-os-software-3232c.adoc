@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/install-nx-os-software-3232c.html 
 sidebar: sidebar 
 keywords: install, nx-os software 
-summary: Mithilfe dieser Vorgehensweise können Sie die NX-OS-Software auf dem Nexus 3232C-Cluster-Switch installieren. 
+summary: Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 3232C Cluster-Switch installieren. 
 ---
 = Installieren Sie die NX-OS-Software
 :allow-uri-read: 
@@ -11,35 +11,35 @@ summary: Mithilfe dieser Vorgehensweise können Sie die NX-OS-Software auf dem N
 
 
 [role="lead"]
-Mithilfe dieser Vorgehensweise können Sie die NX-OS-Software auf dem Nexus 3232C-Cluster-Switch installieren.
+Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 3232C Cluster-Switch installieren.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-* Ein aktuelles Backup der Switch-Konfiguration.
-* Ein voll funktionsfähiges Cluster (keine Fehler in den Protokollen oder ähnlichen Problemen).
-* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switch Seite"^]. In der Tabelle zur Switch-Kompatibilität finden Sie Informationen zu den unterstützten ONTAP- und NX-OS-Versionen.
-* link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Switches Der Cisco Nexus 3000-Serie"^]. Ausführliche Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco Website.
+* Eine aktuelle Sicherungskopie der Switch-Konfiguration.
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switch-Seite"^]. In der Switch-Kompatibilitätstabelle finden Sie die unterstützten ONTAP und NX-OS-Versionen.
+* link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Series Switches"^]. Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco -Switches finden Sie in den entsprechenden Software- und Upgrade-Anleitungen auf der Cisco -Website.
 
 
 
 
 == Installieren Sie die Software
 
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
-Führen Sie den Vorgang in durch link:prepare-install-cisco-nexus-3232c.html["Bereiten Sie sich auf die Installation von NX-OS und RCF vor"], Und dann folgen Sie den Schritten unten.
+Stellen Sie sicher, dass Sie den Vorgang abschließen inlink:prepare-install-cisco-nexus-3232c.html["Bereiten Sie die Installation von NX-OS und RCF vor."] Befolgen Sie anschließend die folgenden Schritte.
 
 .Schritte
-. Verbinden Sie den Cluster-Switch mit dem Managementnetzwerk.
-. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung mit dem Server, der die NX-OS-Software und die RCF hostet.
+. Verbinden Sie den Cluster-Switch mit dem Management-Netzwerk.
+. Verwenden Sie die `ping` Befehl zum Überprüfen der Verbindung zum Server, auf dem die NX-OS-Software und die RCF gehostet werden.
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-In diesem Beispiel wird überprüft, ob der Switch den Server unter der IP-Adresse 172.19.2 erreichen kann:
+Dieses Beispiel bestätigt, dass der Switch den Server unter der IP-Adresse 172.19.2.1 erreichen kann:
 
 [listing, subs="+quotes"]
 ----
@@ -49,7 +49,7 @@ Pinging 172.19.2.1 with 0 bytes of data:
 Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 ----
 ====
-. Anzeigen der Cluster-Ports an jedem Node, der mit den Cluster-Switches verbunden ist:
+. Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
 
@@ -78,9 +78,9 @@ cluster1-04/cdp
 cluster1::*>
 ----
 ====
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
 +
-.. Vergewissern Sie sich, dass alle Cluster-Ports *up* mit einem gesunden Status sind:
+.. Überprüfen Sie, ob alle Cluster-Ports *aktiv* sind und einen fehlerfreien Status aufweisen:
 +
 `network port show -role cluster`
 
@@ -128,7 +128,7 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 cluster1::*>
 ----
 ====
-.. Vergewissern Sie sich, dass sich alle Cluster-Schnittstellen (LIFs) im Home-Port befinden:
+.. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
 `network interface show -role cluster`
 
@@ -155,7 +155,7 @@ Cluster
 cluster1::*>
 ----
 ====
-.. Vergewissern Sie sich, dass auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+.. Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
@@ -188,11 +188,11 @@ cluster1::*>
 ====
 
 
-. Deaktivieren Sie die automatische Zurücksetzen auf den Cluster-LIFs. Die Cluster-LIFs führen ein Failover zum Partner-Cluster-Switch durch und bleiben dort, während Sie das Upgrade-Verfahren für den Ziel-Switch durchführen:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren.  Die Cluster-LIFs wechseln zum Partner-Cluster-Switch und bleiben dort, während Sie das Upgrade-Verfahren auf dem Ziel-Switch durchführen:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-. Kopieren Sie die NX-OS-Software und EPLD-Bilder auf den Nexus 3232C-Switch.
+. Kopieren Sie die NX-OS-Software und die EPLD-Images auf den Nexus 3232C-Switch.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -293,9 +293,9 @@ Active Package(s):
 cs2#
 ----
 ====
-. Installieren Sie das NX-OS Image.
+. Installieren Sie das NX-OS-Image.
 +
-Durch die Installation der Image-Datei wird sie bei jedem Neustart des Switches geladen.
+Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switches geladen.
 
 +
 .Beispiel anzeigen
@@ -422,7 +422,7 @@ Active Package(s):
 cs2#
 ----
 ====
-. Aktualisieren Sie das EPLD-Bild, und starten Sie den Switch neu.
+. Aktualisieren Sie das EPLD-Image und starten Sie den Switch neu.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -466,9 +466,9 @@ Module 1 EPLD upgrade is successful.
 cs2#
 ----
 ====
-. Wenn Sie ein Upgrade auf NX-OS Version 9.3(11) durchführen, müssen Sie das EPPD-Image aktualisieren `golden` und den Switch erneut starten. fahren Sie andernfalls mit Schritt 12 fort.
+. Wenn Sie auf NX-OS Version 9.3(11) aktualisieren, müssen Sie auch das EPLD aktualisieren. `golden` Image erstellen und den Switch erneut starten.  Andernfalls fahren Sie mit Schritt 12 fort.
 +
-Weitere Informationen finden Sie unter https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/epld-rn/nxos_n9K_epldRN_9311.html["EPLD Upgrade - Versionshinweise, Version 9.3(11)"^].
+Sehen https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/93x/epld-rn/nxos_n9K_epldRN_9311.html["EPLD-Upgrade-Versionshinweise, Version 9.3(11)"^] für weitere Einzelheiten.
 
 +
 .Beispiel anzeigen
@@ -505,7 +505,7 @@ Module 1 EPLD upgrade is successful.
 cs2#
 ----
 ====
-. Melden Sie sich nach dem Neustart des Switches an, um zu überprüfen, ob die neue EPLD-Version erfolgreich geladen wurde.
+. Nach dem Neustart des Switches melden Sie sich an, um zu überprüfen, ob die neue Version von EPLD erfolgreich geladen wurde.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -520,9 +520,9 @@ MI   FPGA                        0x12
 IO   FPGA                        0x12
 ----
 ====
-. Überprüfen Sie den Systemzustand der Cluster-Ports auf dem Cluster.
+. Überprüfen Sie den Zustand der Cluster-Ports im Cluster.
 +
-.. Vergewissern Sie sich, dass Cluster-Ports über alle Nodes im Cluster hinweg ordnungsgemäß hochaktiv sind:
+.. Überprüfen Sie, ob die Cluster-Ports auf allen Knoten im Cluster aktiv und fehlerfrei sind:
 +
 `network port show -role cluster`
 
@@ -568,7 +568,7 @@ e0d       Cluster      Cluster          up   9000  auto/100000 healthy false
 8 entries were displayed.
 ----
 ====
-.. Überprüfen Sie den Switch-Zustand vom Cluster.
+.. Überprüfen Sie den Zustand der Switches im Cluster.
 +
 `network device-discovery show -protocol cdp`
 
@@ -616,7 +616,7 @@ cs2                         cluster-network    10.233.205.91    N3K-C3232C
 
 2 entries were displayed.
 ----
-Je nach der zuvor auf dem Switch geladenen RCF-Version können Sie die folgende Ausgabe auf der cs1-Switch-Konsole beobachten:
+Je nach der zuvor auf dem Switch geladenen RCF-Version kann die folgende Ausgabe auf der cs1-Switch-Konsole angezeigt werden:
 
 [listing]
 ----
@@ -627,7 +627,7 @@ Je nach der zuvor auf dem Switch geladenen RCF-Version können Sie die folgende 
 ====
 
 
-. Vergewissern Sie sich, dass das Cluster sich in einem ordnungsgemäßen Zustand befindet:
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -648,12 +648,12 @@ cluster1-04          true     true          false
 cluster1::*>
 ----
 ====
-. Wiederholen Sie die Schritte 6 bis 14 am Schalter cs1.
-. Aktivieren Sie die Funktion zum automatischen Zurücksetzen auf den Cluster-LIFs.
+. Wiederholen Sie die Schritte 6 bis 14 auf Switch cs1.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Vergewissern Sie sich, dass die Cluster-LIFs auf ihren Home-Port zurückgesetzt wurden:
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihren Heimatport zurückgekehrt sind:
 +
 `network interface show -role cluster`
 
@@ -681,12 +681,12 @@ cluster1::*>
 ----
 ====
 +
-Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie manuell vom lokalen Node zurück:
+Falls Cluster-LIFs nicht zu ihren Heimatports zurückgekehrt sind, setzen Sie sie manuell vom lokalen Knoten aus zurück:
 
 +
 `network interface revert -vserver Cluster -lif <lif_name>`
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation der NX-OS-Software, link:install-upgrade-rcf-overview-3232c.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."]Die

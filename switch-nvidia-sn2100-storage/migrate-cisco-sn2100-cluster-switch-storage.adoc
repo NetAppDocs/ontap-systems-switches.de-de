@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/migrate-cisco-sn2100-cluster-switch-storage.html 
 sidebar: sidebar 
 keywords: migrating to a cluster with NVIDIA SN2100 cluster switches, how to migrate 
-summary: Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei auf NVIDIA SN2100 Cluster-Netzwerk-Switches migrieren. 
+summary: Ältere Cisco -Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf NVIDIA SN2100-Cluster-Netzwerk-Switches migriert werden. 
 ---
-= Migrieren Sie von einem Cisco Cluster-Switch zu einem NVIDIA SN2100 Cluster-Switch
+= Migration von einem Cisco Cluster-Switch zu einem NVIDIA SN2100 Cluster-Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei zu NVIDIA SN2100 Cluster Switches migrieren. Sie müssen bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten, wenn Sie einige ältere Cisco Cluster Switches durch NVIDIA SN2100 Cluster Switches ersetzen.
+Sie können Cisco -Cluster-Switches für einen ONTAP Cluster unterbrechungsfrei auf NVIDIA SN2100-Cluster-Switches migrieren.  Beim Austausch älterer Cisco -Cluster-Switches durch NVIDIA SN2100-Cluster-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten.
 
 Folgende Cisco Cluster-Switches werden unterstützt:
 
@@ -23,39 +23,39 @@ Folgende Cisco Cluster-Switches werden unterstützt:
 
 
 .Bevor Sie beginnen
-Sie können ältere Cisco Cluster Switches für ein ONTAP Cluster unterbrechungsfrei zu NVIDIA SN2100 Cluster Switches migrieren.
+Ältere Cisco -Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf NVIDIA SN2100-Cluster-Switches migriert werden.
 
-* Das vorhandene Cluster muss ordnungsgemäß eingerichtet und funktionsfähig sein.
-* Alle Cluster-Ports müssen den Status „up“ aufweisen, um einen unterbrechungsfreien Betrieb zu gewährleisten.
-* Die NVIDIA SN2100-Cluster-Switches müssen konfiguriert und unter der richtigen Version von Cumulus Linux mit der angewendeten Referenzkonfigurationsdatei (RCF) betrieben werden.
-* Die vorhandene Cluster-Netzwerkkonfiguration muss Folgendes aufweisen:
+* Der bestehende Cluster muss ordnungsgemäß eingerichtet sein und funktionieren.
+* Alle Cluster-Ports müssen aktiv sein, um einen unterbrechungsfreien Betrieb zu gewährleisten.
+* Die NVIDIA SN2100 Cluster-Switches müssen unter der richtigen Version von Cumulus Linux konfiguriert sein und funktionieren, wobei die Referenzkonfigurationsdatei (RCF) angewendet werden muss.
+* Die bestehende Cluster-Netzwerkkonfiguration muss Folgendes aufweisen:
 +
-** Ein redundantes und voll funktionsfähiges NetApp Cluster unter Verwendung beider älteren Cisco Switches.
-** Management-Konnektivität und Konsolenzugriff auf die älteren Cisco Switches und die neuen Switches.
-** Alle Cluster-LIFs im Status „up“ mit den Cluster-LIFs befinden sich auf den Home-Ports.
-** ISL-Ports aktiviert und zwischen den älteren Cisco Switches und zwischen den neuen Switches verkabelt.
+** Ein redundanter und voll funktionsfähiger NetApp Cluster, der beide ältere Cisco Switches nutzt.
+** Management-Konnektivität und Konsolenzugriff sowohl auf die älteren Cisco Switches als auch auf die neuen Switches.
+** Alle Cluster-LIFs befinden sich im aktiven Zustand und sind an ihren Heimatports angeschlossen.
+** ISL-Ports wurden aktiviert und zwischen den älteren Cisco Switches sowie zwischen den neuen Switches verkabelt.
 
 
-* Siehe https://hwu.netapp.com/["Hardware Universe"^] Erhalten Sie ausführliche Informationen zu den unterstützten Ports und deren Konfigurationen.
-* Sie haben einige der Ports auf NVIDIA SN2100-Switches für 40 GbE oder 100 GbE konfiguriert.
-* Sie haben 40-GbE- und 100-GbE-Konnektivität von den Nodes zu NVIDIA SN2100 Cluster Switches geplant, migriert und dokumentiert.
+* Siehe die https://hwu.netapp.com/["Hardware Universe"^] Für detaillierte Informationen zu den unterstützten Ports und deren Konfigurationen.
+* Sie haben einige Ports an NVIDIA SN2100 Switches so konfiguriert, dass sie mit 40 GbE oder 100 GbE laufen.
+* Sie haben die 40-GbE- und 100-GbE-Konnektivität von den Knoten zu den NVIDIA SN2100 Cluster-Switches geplant, migriert und dokumentiert.
 +
 
-NOTE: In diesem Verfahren werden Cisco Nexus 3232C-Cluster-Switches beispielsweise Befehle und Ausgaben verwendet.
+NOTE: In diesem Verfahren werden Cisco Nexus 3232C Cluster-Switches als Beispiel für Befehle und Ausgaben verwendet.
 
 
 
-.Über diese Aufgabe
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+.Informationen zu diesem Vorgang
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
 * Die vorhandenen Cisco Nexus 3232C Cluster-Switches sind _c1_ und _c2_.
-* Die neuen NVIDIA SN2100-Cluster-Switches sind _sw1_ und _sw2_.
-* Die Knoten sind _node1_ und _node2_.
-* Die Cluster-LIFs sind auf Node 1_clus1_ und _node1_clus2_ und _node2_clus1_ bzw. _node2_clus2_ auf Knoten 2.
-* Der `cluster1::*>` Eine Eingabeaufforderung gibt den Namen des Clusters an.
+* Die neuen NVIDIA SN2100 Cluster-Switches sind _sw1_ und _sw2_.
+* Die Knoten heißen _node1_ und _node2_.
+* Die Cluster-LIFs sind _node1_clus1_ und _node1_clus2_ auf Knoten 1 bzw. _node2_clus1_ und _node2_clus2_ auf Knoten 2.
+* Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind _e3a_ und _e3b_.
-* Breakout-Ports haben das Format swp[Port]s[Breakout-Port 0-3]. Beispielsweise sind vier Breakout-Ports auf swp1 _swp1s0_, _swp1s1_, _swp1s2_ und _swp1s3_.
-* Schalter c2 wird zuerst durch Schalter sw2 ersetzt und dann Schalter c1 durch Schalter sw1 ersetzt.
+* Breakout-Ports haben folgendes Format: swp[Port]s[Breakout-Port 0-3].  Beispielsweise gibt es vier Breakout-Ports auf swp1: _swp1s0_, _swp1s1_, _swp1s2_ und _swp1s3_.
+* Zuerst wird Schalter c2 durch Schalter sw2 ersetzt, dann wird Schalter c1 durch Schalter sw1 ersetzt.
 +
 ** Die Verkabelung zwischen den Knoten und c2 wird dann von c2 getrennt und wieder mit sw2 verbunden.
 ** Die Verkabelung zwischen den Knoten und c1 wird dann von c1 getrennt und wieder mit sw1 verbunden.
@@ -64,15 +64,15 @@ Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switch
 
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung: `system node autosupport invoke -node * -type all -message MAINT=xh`
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh`
 +
-Wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
 
-. Ändern Sie die Berechtigungsebene in Erweitert, und geben Sie *y* ein, wenn Sie dazu aufgefordert werden, fortzufahren: `set -privilege advanced`
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden: `set -privilege advanced`
 +
 Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
-. Deaktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs: `network interface modify -vserver Cluster -lif * -auto-revert false`
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren: `network interface modify -vserver Cluster -lif * -auto-revert false`
 +
 [listing, subs="+quotes"]
 ----
@@ -80,12 +80,12 @@ cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert fals
 
 Warning: Disabling the auto-revert feature of the cluster logical interface may effect the availability of your cluster network. Are you sure you want to continue? {y|n}: *y*
 ----
-. Legen Sie den Administrations- oder Betriebsstatus für jede Cluster-Schnittstelle fest:
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:
 +
-Jeder Port sollte für angezeigt werden `Link` Und gesund für `Health Status`.
+Jeder Port sollte angezeigt werden für `Link` und gesund für `Health Status` Die
 
 +
-.. Zeigen Sie die Attribute des Netzwerkports an: `network port show -ipspace Cluster`
+.. Netzwerkportattribute anzeigen: `network port show -ipspace Cluster`
 +
 [listing, subs="+quotes"]
 ----
@@ -107,9 +107,9 @@ Port      IPspace    Broadcast Domain Link MTU   Admin/Oper   Status   Status
 e3a       Cluster    Cluster          up   9000  auto/100000  healthy  false
 e3b       Cluster    Cluster          up   9000  auto/100000  healthy  false
 ----
-.. Informationen zu den logischen Schnittstellen und den zugehörigen Home-Nodes anzeigen: `network interface show -vserver Cluster`
+.. Informationen über die logischen Schnittstellen und ihre jeweiligen Heimatknoten anzeigen: `network interface show -vserver Cluster`
 +
-Jedes LIF sollte für angezeigt werden `Status Admin/Oper` Und zwar für `Is Home`.
+Jeder LIF sollte „up/up“ anzeigen. `Status Admin/Oper` und wahr für `Is Home` Die
 
 +
 [listing, subs="+quotes"]
@@ -128,7 +128,7 @@ Cluster
 ----
 
 
-. Die Cluster-Ports auf jedem Node sind mit vorhandenen Cluster-Switches auf die folgende Weise (aus Sicht der Nodes) verbunden. Verwenden Sie dazu den Befehl: `network device-discovery show -protocol lldp`
+. Die Cluster-Ports auf jedem Knoten werden (aus Sicht der Knoten) folgendermaßen mit vorhandenen Cluster-Switches verbunden: `network device-discovery show -protocol lldp`
 +
 [listing, subs="+quotes"]
 ----
@@ -143,7 +143,7 @@ node2      /lldp
             e3a    c1 (6a:ad:4f:98:3b:3f)    Eth1/2            -
             e3b    c2 (6a:ad:4f:98:4c:a4)    Eth1/2            -
 ----
-. Die Cluster-Ports und -Switches sind (aus Sicht der Switches) folgendermaßen verbunden: `show cdp neighbors`
+. Die Cluster-Ports und Switches werden (aus Sicht der Switches) mit folgendem Befehl verbunden: `show cdp neighbors`
 +
 [listing, subs="+quotes"]
 ----
@@ -181,15 +181,15 @@ c1                    Eth1/32       175    S I s       N3K-C3232C       Eth1/32
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -207,7 +207,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -239,7 +239,7 @@ RPC status:
 ----
 --
 ====
-. [[step8]] fahren Sie bei Switch c2 die Ports herunter, die mit den Clusterports der Knoten verbunden sind.
+. [[step8]] Schalten Sie auf Switch c2 die mit den Cluster-Ports der Knoten verbundenen Ports ab.
 +
 [listing, subs="+quotes"]
 ----
@@ -252,8 +252,8 @@ Enter configuration commands, one per line. End with CNTL/Z.
 (c2)(Config)# *exit*
 (c2)#
 ----
-. Verschieben Sie die Node-Cluster-Ports vom alten Switch c2 auf den neuen Switch sw2, indem Sie die entsprechende Verkabelung verwenden, die von NVIDIA SN2100 unterstützt wird.
-. Zeigen Sie die Attribute des Netzwerkports an: `network port show -ipspace Cluster`
+. Verschieben Sie die Knotencluster-Ports vom alten Switch c2 auf den neuen Switch sw2 unter Verwendung geeigneter, von NVIDIA SN2100 unterstützter Kabel.
+. Netzwerkportattribute anzeigen: `network port show -ipspace Cluster`
 +
 [listing, subs="+quotes"]
 ----
@@ -275,7 +275,7 @@ Port      IPspace    Broadcast Domain Link MTU   Admin/Oper   Status   Status
 e3a       Cluster    Cluster          up   9000  auto/100000  healthy  false
 e3b       Cluster    Cluster          up   9000  auto/100000  healthy  false
 ----
-. Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:
+. Die Cluster-Ports auf jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Cluster-Switches verbunden:
 +
 [listing, subs="+quotes"]
 ----
@@ -291,7 +291,7 @@ node2      /lldp
             e3a    c1  (6a:ad:4f:98:3b:3f)   Eth1/2            -
             e3b    sw2 (b8:ce:f6:19:1b:96)   swp4              -
 ----
-. Vergewissern Sie sich beim Switch sw2, dass alle Knoten-Cluster-Ports aktiv sind: `net show interface`
+. Überprüfen Sie an Switch sw2, ob alle Ports des Knotenclusters aktiv sind: `net show interface`
 +
 [listing, subs="+quotes"]
 ----
@@ -306,7 +306,7 @@ UP     swp4         100G  9216   Trunk/L2    e3b               Master: bridge(UP
 UP     swp15        100G  9216   BondMember  sw1 (swp15)       Master: cluster_isl(UP)
 UP     swp16        100G  9216   BondMember  sw1 (swp16)       Master: cluster_isl(UP)
 ----
-. Fahren Sie am Switch c1 die mit den Cluster-Ports der Knoten verbundenen Ports herunter.
+. Schalten Sie am Switch c1 die mit den Cluster-Ports der Knoten verbundenen Ports ab.
 +
 [listing, subs="+quotes"]
 ----
@@ -319,10 +319,10 @@ Enter configuration commands, one per line. End with CNTL/Z.
 (c1)(Config)# *exit*
 (c1)#
 ----
-. Verschieben Sie die Knoten-Cluster-Ports vom alten Switch c1 auf den neuen Switch sw1, mit der entsprechenden Verkabelung unterstützt von NVIDIA SN2100.
-. Überprüfen der endgültigen Konfiguration des Clusters: `network port show -ipspace Cluster`
+. Verschieben Sie die Knotencluster-Ports vom alten Switch c1 auf den neuen Switch sw1 unter Verwendung geeigneter, von NVIDIA SN2100 unterstützter Kabel.
+. Überprüfen Sie die endgültige Konfiguration des Clusters: `network port show -ipspace Cluster`
 +
-Jeder Port sollte für angezeigt werden `Link` Und gesund für `Health Status`.
+Jeder Port sollte angezeigt werden für `Link` und gesund für `Health Status` Die
 
 +
 [listing, subs="+quotes"]
@@ -345,7 +345,7 @@ Port      IPspace    Broadcast Domain Link MTU   Admin/Oper   Status   Status
 e3a       Cluster    Cluster          up   9000  auto/100000  healthy  false
 e3b       Cluster    Cluster          up   9000  auto/100000  healthy  false
 ----
-. Die Cluster-Ports auf jedem Node sind nun aus Sicht der Nodes mit Cluster-Switches auf die folgende Weise verbunden:
+. Die Cluster-Ports auf jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Cluster-Switches verbunden:
 +
 [listing, subs="+quotes"]
 ----
@@ -361,7 +361,7 @@ node2      /lldp
             e3a    sw1 (b8:ce:f6:19:1a:7e)   swp4            -
             e3b    sw2 (b8:ce:f6:19:1b:96)   swp4            -
 ----
-. Vergewissern Sie sich bei den Switches sw1 und sw2, dass alle Knoten-Cluster-Ports aktiv sind: `net show interface`
+. Überprüfen Sie an den Switches sw1 und sw2, ob alle Ports des Knotenclusters aktiv sind: `net show interface`
 +
 [listing, subs="+quotes"]
 ----
@@ -388,9 +388,9 @@ UP     swp4         100G  9216   Trunk/L2    e3b               Master: bridge(UP
 UP     swp15        100G  9216   BondMember  sw1 (swp15)       Master: cluster_isl(UP)
 UP     swp16        100G  9216   BondMember  sw1 (swp16)       Master: cluster_isl(UP)
 ----
-. Vergewissern Sie sich, dass beide Knoten jeweils eine Verbindung zu jedem Switch haben: `net show lldp`
+. Überprüfen Sie, ob beide Knoten jeweils eine Verbindung zu jedem Switch haben: `net show lldp`
 +
-Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Switches:
+Das folgende Beispiel zeigt die entsprechenden Ergebnisse für beide Schalter:
 
 +
 [listing, subs="+quotes"]
@@ -413,8 +413,8 @@ swp4       100G   Trunk/L2    node2               e3b
 swp15      100G   BondMember  sw1                 swp15
 swp16      100G   BondMember  sw1                 swp16
 ----
-. Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs: `cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
-. Vergewissern Sie sich, dass alle Cluster-Netzwerk-LIFs wieder an ihren Home-Ports sind: `network interface show`
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren: `cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
+. Überprüfen Sie, ob alle Cluster-Netzwerk-LIFs wieder an ihren ursprünglichen Ports angeschlossen sind: `network interface show`
 +
 [listing, subs="+quotes"]
 ----
@@ -429,9 +429,9 @@ Cluster
             node2_clus1  up/up    169.254.47.194/16  node2         e3a     true
             node2_clus2  up/up    169.254.19.183/16  node2         e3b     true
 ----
-. Aktivieren Sie die Protokollerfassung der Ethernet Switch-Systemzustandsüberwachung mit den beiden Befehlen zum Erfassen von Switch-bezogenen Protokolldateien: `system switch ethernet log setup-password` Und `system switch ethernet log enable-collection`
+. Aktivieren Sie die Funktion zur Erfassung von Protokolldateien des Ethernet-Switch-Integritätsmonitors, um switchbezogene Protokolldateien zu sammeln, indem Sie die folgenden beiden Befehle verwenden: `system switch ethernet log setup-password` Und `system switch ethernet log enable-collection`
 +
-Geben Sie Ein: `system switch ethernet log setup-password`
+Eingeben: `system switch ethernet log setup-password`
 
 +
 [listing, subs="+quotes"]
@@ -478,11 +478,11 @@ cluster1::*>
 ----
 +
 
-NOTE: Wenn einer dieser Befehle einen Fehler sendet, wenden Sie sich an den NetApp Support.
+NOTE: Falls einer dieser Befehle einen Fehler zurückgibt, wenden Sie sich bitte an den NetApp -Support.
 
-. Initiieren der Switch-Protokollerfassung: `system switch ethernet log collect -device *`
+. Die Funktion zur Erfassung von Switch-Protokollen aktivieren: `system switch ethernet log collect -device *`
 +
-Warten Sie 10 Minuten, und überprüfen Sie dann, ob die Protokollsammlung erfolgreich war mit dem folgenden Befehl: `system switch ethernet log show`
+Warten Sie 10 Minuten und überprüfen Sie dann mit folgendem Befehl, ob die Protokollerfassung erfolgreich war: `system switch ethernet log show`
 
 +
 [listing, subs="+quotes"]
@@ -495,6 +495,6 @@ Index  Switch                       Log Timestamp        Status
 1      sw1 (b8:ce:f6:19:1b:42)      4/29/2022 03:05:25   complete   
 2      sw2 (b8:ce:f6:19:1b:96)      4/29/2022 03:07:42   complete
 ----
-. Ändern Sie die Berechtigungsebene zurück in den Administrator: `set -privilege admin`
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen: `system node autosupport invoke -node * -type all -message MAINT=END`
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator: `set -privilege admin`
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren: `system node autosupport invoke -node * -type all -message MAINT=END`
 

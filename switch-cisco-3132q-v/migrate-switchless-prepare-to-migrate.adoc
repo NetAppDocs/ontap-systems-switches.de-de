@@ -2,34 +2,34 @@
 permalink: switch-cisco-3132q-v/migrate-switchless-prepare-to-migrate.html 
 sidebar: sidebar 
 keywords: cisco 3132q-v, cluster switches 
-summary: Sie können Cisco Nexus 3132q-V Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
+summary: Sie können Cisco Nexus 3132q-v Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Bereiten Sie die Migration von Clustern ohne Switches auf Cluster mit Switches vor
+= Vorbereitung auf die Migration von schalterlosen Clustern zu geschalteten Clustern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um Ihr Cluster ohne Switches für die Migration zu einem Cluster mit zwei Nodes mit Switches vorzubereiten.
+Befolgen Sie diese Schritte, um Ihren Switchless-Cluster für die Migration zu einem Switched-Cluster mit zwei Knoten vorzubereiten.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
-. Legen Sie den Administrations- oder Betriebsstatus für jede Cluster-Schnittstelle fest:
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show`
 
@@ -84,20 +84,20 @@ Cluster
 ====
 
 
-. Vergewissern Sie sich, dass die entsprechenden RCF- und Image-Einstellungen auf den neuen 3132Q-V-Switches installiert sind, wenn dies für Ihre Anforderungen erforderlich ist, und nehmen Sie alle wesentlichen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen usw.
+. Prüfen Sie, ob die entsprechenden RCFs und das Image gemäß Ihren Anforderungen auf den neuen 3132Q-V Switches installiert sind, und nehmen Sie alle notwendigen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen usw.
 +
-Sie müssen beide Switches derzeit vorbereiten. Wenn Sie die RCF- und Bildsoftware aktualisieren müssen, müssen Sie folgende Schritte ausführen:
+Sie müssen jetzt beide Schalter vorbereiten.  Falls Sie die RCF- und Bildverarbeitungssoftware aktualisieren müssen, befolgen Sie bitte diese Schritte:
 
 +
-.. Gehe zulink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Support-Site.
+.. Gehe zulink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Supportseite.
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende RCF-Version herunter.
-.. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Bildsoftware herunter.
+.. Laden Sie die passende Version von RCF herunter.
+.. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter.
 
 
-. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
+. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 link:migrate-switchless-configure-ports.html["Konfigurieren Sie Ihre Ports"].

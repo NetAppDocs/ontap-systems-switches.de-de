@@ -4,7 +4,7 @@ permalink: switch-cisco-9336c-fx2-shared/migrate-from-switched-configuration-dat
 keywords:  
 summary:  
 ---
-= Migration von einer Switched-Konfiguration mit Direct-Attached Storage
+= Migration von einer Switched-Konfiguration mit direkt angeschlossenem Speicher
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,83 +14,83 @@ summary:
 
 
 [role="lead"]
-Sie können von einer Switched-Konfiguration mit Direct-Attached Storage durch Hinzufügen von zwei neuen Shared-Switches migrieren.
+Sie können von einer Switched-Konfiguration mit direkt angeschlossenem Speicher migrieren, indem Sie zwei neue Shared Switches hinzufügen.
 
-.Unterstützte Switches
-Folgende Switches werden unterstützt:
+.Unterstützte Schalter
+Folgende Schalter werden unterstützt:
 
 * Nexus 9336C-FX2
 * Nexus 3232C
 
 
-Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen finden sich auf der Seite Cisco Ethernet Switches. Siehe https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet Switches"].
+Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen finden Sie auf der Cisco Ethernet Switches-Seite. Sehen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] .
 
-.Verbindungs-Ports
-Die Switches verwenden die folgenden Ports, um eine Verbindung zu den Nodes herzustellen:
+.Anschlussports
+Die Switches verwenden die folgenden Ports, um eine Verbindung zu den Knoten herzustellen:
 
 * Nexus 9336C-FX2:
 +
-** Ports 1 - 3: Breakout-Modus (4X10G) Intra-Cluster-Ports, int e1/1/1-4, e1/2/1-4, e1/3/1-4
-** Ports 4- 6: Breakout-Modus (4X25G) Intra-Cluster/HA-Ports, int e1/4/1-4, e1/5/1-4, e1/6/1-4
-** Ports 7–34: 40 GbE Intra-Cluster/HA-Ports, int e1/7-34
+** Ports 1-3: Breakout-Modus (4x10G) Intra-Cluster-Ports, int e1/1/1-4, e1/2/1-4, e1/3/1-4
+** Ports 4–6: Breakout-Modus (4x25G) Intra-Cluster/HA-Ports, int e1/4/1-4, e1/5/1-4, e1/6/1-4
+** Ports 7-34: 40/100GbE Intra-Cluster/HA-Ports, int e1/7-34
 
 
 * Nexus 3232C:
 +
-** 1–30 Ports: 10/40/100 GbE
+** Ports 1-30: 10/40/100 GbE
 
 
-* Bei den Switches werden die folgenden Inter-Switch Link (ISL)-Ports verwendet:
+* Die Switches verwenden die folgenden Inter-Switch Link (ISL)-Ports:
 +
-** Anschlüsse in e1/35-36: Nexus 9336C-FX2
-** Ports e1/31-32: Nexus 3232C
+** Anschlüsse int e1/35-36: Nexus 9336C-FX2
+** Anschlüsse e1/31-32: Nexus 3232C
 
 
 
 
-Der https://hwu.netapp.com["Hardware Universe"] Die enthält Informationen über die unterstützte Verkabelung aller Cluster Switches.
+Der https://hwu.netapp.com["Hardware Universe"] enthält Informationen zur unterstützten Verkabelung für alle Cluster-Switches.
 
-.Was Sie benötigen
-* Stellen Sie sicher, dass Sie die folgenden Aufgaben ausgeführt haben:
+.Was du brauchst
+* Bitte stellen Sie sicher, dass Sie die folgenden Aufgaben erledigt haben:
 +
-** Konfiguration einiger Ports auf Nexus 9336C-FX2-Switches für 100 GbE.
-** Geplante, migrierte und dokumentierte 100-GbE-Konnektivität von Nodes zu Nexus 9336C-FX2 Switches.
-** Unterbrechungsfreie Migration anderer Cisco Cluster Switches von einem ONTAP Cluster zu Cisco Nexus 9336C-FX2 Netzwerk-Switches
+** Einige Ports an Nexus 9336C-FX2 Switches wurden für den Betrieb mit 100 GbE konfiguriert.
+** Planung, Migration und Dokumentation der 100-GbE-Konnektivität von Knoten zu Nexus 9336C-FX2-Switches.
+** Andere Cisco -Cluster-Switches wurden unterbrechungsfrei von einem ONTAP Cluster auf Cisco Nexus 9336C-FX2-Netzwerk-Switches migriert.
 
 
-* Das vorhandene Switch-Netzwerk ist ordnungsgemäß eingerichtet und funktioniert.
-* Alle Ports befinden sich im Status *up*, um einen unterbrechungsfreien Betrieb zu gewährleisten.
-* Die Nexus 9336C-FX2 Switches sind unter der entsprechenden Version des installierten NX-OS und angewendete Referenzkonfigurationsdatei (RCF) konfiguriert und betrieben.
-* Die vorhandene Netzwerkkonfiguration verfügt über folgende Merkmale:
+* Das bestehende Vermittlungsnetzwerk ist ordnungsgemäß eingerichtet und funktioniert.
+* Alle Ports befinden sich im *aktiven* Zustand, um einen unterbrechungsfreien Betrieb zu gewährleisten.
+* Die Nexus 9336C-FX2 Switches sind konfiguriert und in Betrieb, wobei die richtige Version von NX-OS installiert und die Referenzkonfigurationsdatei (RCF) angewendet wurde.
+* Die bestehende Netzwerkkonfiguration weist folgende Merkmale auf:
 +
-** Ein redundantes und voll funktionsfähiges NetApp Cluster unter Verwendung beider älteren Cisco Switches.
-** Management-Konnektivität und Konsolenzugriff auf die älteren Cisco Switches und die neuen Switches.
-** Alle Cluster-LIFs im Status *up* mit den Cluster-LIFs befinden sich auf ihren Home-Ports.
-** ISL-Ports aktiviert und zwischen den anderen Cisco Switches und zwischen den neuen Switches verkabelt.
+** Ein redundanter und voll funktionsfähiger NetApp Cluster, der beide ältere Cisco Switches nutzt.
+** Management-Konnektivität und Konsolenzugriff sowohl auf die älteren Cisco Switches als auch auf die neuen Switches.
+** Alle Cluster-LIFs befinden sich im Status *up* und sind an ihren jeweiligen Heimatports angeschlossen.
+** ISL-Ports wurden aktiviert und zwischen den anderen Cisco -Switches sowie zwischen den neuen Switches verkabelt.
 
 
 
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
 * Die vorhandenen Cisco Nexus 3232C Cluster-Switches sind _c1_ und _c2_.
-* Die neuen Nexus 9336C-FX2 Switches sind _sh1_ und _sh2_.
-* Die Knoten sind _node1_ und _node2_.
-* Die Cluster-LIFs sind auf Node 1_clus1_ und _node1_clus2_ und _node2_clus1_ bzw. _node2_clus2_ auf Knoten 2.
-* Schalter c2 wird zuerst durch Schalter sh2 ersetzt und dann wird der Schalter c1 durch den Schalter sh1 ersetzt.
+* Die neuen Nexus 9336C-FX2-Switches sind _sh1_ und _sh2_.
+* Die Knoten heißen _node1_ und _node2_.
+* Die Cluster-LIFs sind _node1_clus1_ und _node1_clus2_ auf Knoten 1 bzw. _node2_clus1_ und _node2_clus2_ auf Knoten 2.
+* Zuerst wird der Schalter c2 durch den Schalter sh2 ersetzt, dann wird der Schalter c1 durch den Schalter sh1 ersetzt.
 
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=x h`
 
 +
-Wobei x die Dauer des Wartungsfensters in Stunden ist.
+Wobei x die Dauer des Wartungsfensters in Stunden angibt.
 
-. Überprüfen Sie den Administrations- und Betriebsstatus der einzelnen Cluster-Ports.
-. Vergewissern Sie sich, dass alle Cluster-Ports einen ordnungsgemäßen Status aufweisen:
+. Überprüfen Sie den administrativen und operativen Status jedes Cluster-Ports.
+. Überprüfen Sie, ob alle Cluster-Ports aktiv und fehlerfrei sind:
 +
 `network port show –role cluster`
 
@@ -122,7 +122,7 @@ cluster1::*>
 ====
 
 
-. [[Schritt4]]Stellen Sie sicher, dass sich alle Cluster-Schnittstellen (LIFs) auf dem Home-Port befinden:
+. [[Schritt 4]]Überprüfen Sie, ob sich alle Cluster-Schnittstellen (LIFs) am Home-Port befinden:
 +
 `network interface show -role cluster`
 
@@ -147,7 +147,7 @@ cluster1::*>
 ====
 
 
-. [[schritt5]]Überprüfen Sie, ob auf dem Cluster Informationen für beide Cluster-Switches angezeigt werden:
+. [[step5]]Überprüfen Sie, ob der Cluster Informationen für beide Cluster-Switches anzeigt:
 +
 `system cluster-switch show -is-monitoring-enabled-operational true`
 
@@ -179,7 +179,7 @@ cluster1::*>
 ====
 
 
-. [[Schritt6]]Automatische Wiederherstellung auf den Cluster-LIFs deaktiviert.
+. [[step6]]Automatische Rücksetzung der Cluster-LIFs deaktivieren.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -191,7 +191,7 @@ cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert fals
 ====
 
 
-. [[step7]]Schalten Sie den c2-Schalter aus.
+. [[step7]]Schalten Sie den Schalter c2 aus.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -206,7 +206,7 @@ c2(config)# *shutdown*
 ====
 
 
-. [[Schritt8]]Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert haben, die auf dem Cluster-Switch sh1 gehostet werden:
+. [[step8]]Überprüfen Sie, ob die Cluster-LIFs auf die Ports migriert wurden, die auf dem Cluster-Switch sh1 gehostet werden:
 +
 `network interface show -role cluster`
 
@@ -234,9 +234,9 @@ cluster1::*>
 ====
 
 
-. [[Schritt9]]Schalter c2 durch den neuen Schalter sh2 ersetzen und den neuen Schalter neu verkabeln.
-. Vergewissern Sie sich, dass die Anschlüsse auf sh2 gesichert sind. *Hinweis* dass die LIFs noch auf Switch c1 sind.
-. Schalten Sie den c1-Schalter aus.
+. [[step9]]Ersetzen Sie den Schalter c2 durch den neuen Schalter sh2 und verkabeln Sie den neuen Schalter neu.
+. Überprüfen Sie, ob die Ports auf sh2 wieder funktionieren.  *Hinweis*: Die LIFs sind noch an Schalter c1 angeschlossen.
+. Schalten Sie den Schalter c1 aus.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -251,7 +251,7 @@ c1(config)# *shutdown*
 ====
 
 
-. [[steep12]]Überprüfen Sie, ob die Cluster-LIFs zu den Ports migriert wurden, die auf Cluster-Switch sh2 gehostet wurden. Dies kann einige Sekunden dauern.
+. [[step12]]Überprüfen Sie, ob die Cluster-LIFs auf die Ports migriert wurden, die auf dem Cluster-Switch sh2 gehostet werden. Dies kann einige Sekunden dauern.
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -273,9 +273,9 @@ cluster1::*>
 ====
 
 
-. [[STep13]]Schalter c1 durch den neuen Schalter sh1 ersetzen und den neuen Schalter neu verkabeln.
-. Überprüfen Sie, ob die Anschlüsse auf sh1 gesichert sind. *Hinweis* dass sich die LIFs noch auf Schalter c2 befinden.
-. Aktivieren Sie die automatische Zurücksetzung auf den Cluster-LIFs:
+. [[step13]]Ersetzen Sie den Schalter c1 durch den neuen Schalter sh1 und verkabeln Sie den neuen Schalter neu.
+. Überprüfen Sie, ob die Ports auf sh1 wieder funktionieren.  *Hinweis*: Die LIFs sind noch auf Schalter c2.
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -287,7 +287,7 @@ cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert True
 ====
 
 
-. [[steep16]]Stellen Sie sicher, dass sich das Cluster in einem ordnungsgemäßen Zustand befindet:
+. [[step16]]Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster show`
 
@@ -308,5 +308,5 @@ cluster1::*>
 ====
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

@@ -2,26 +2,26 @@
 permalink: switch-cisco-3232c/migrate-from-cisco-nexus-5596.html 
 sidebar: sidebar 
 keywords: migrate, cisco nexus 5596 switch, 3232c 
-summary: Um vorhandene Cisco Nexus 5596-Cluster-Switches in einem Cluster durch Nexus 3232C-Cluster-Switches zu ersetzen, muss eine bestimmte Sequenz von Aufgaben durchgeführt werden. 
+summary: Um die vorhandenen Cisco Nexus 5596 Cluster-Switches in einem Cluster durch Nexus 3232C Cluster-Switches zu ersetzen, müssen Sie eine bestimmte Abfolge von Aufgaben durchführen. 
 ---
-= Migration von einem Cisco Nexus 5596 Cluster-Switch zu einem Cisco Nexus 3232C-Cluster-Switch
+= Migration von einem Cisco Nexus 5596 Cluster-Switch zu einem Cisco Nexus 3232C Cluster-Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-So migrieren Sie vorhandene Cisco Nexus 5596 Cluster-Switches in einem Cluster mit Nexus 3232C-Cluster-Switches.
+Führen Sie dieses Verfahren durch, um einen vorhandenen Cisco Nexus 5596 Cluster-Switch in einen Cluster mit Nexus 3232C Cluster-Switches zu migrieren.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
-Vor der Migration sollten Sie unbedingt prüfen link:migrate-requirements-3232c.html["Migrationsanforderungen"].
+Vor der Migration sollten Sie unbedingt Folgendes überprüfen:link:migrate-requirements-3232c.html["Migrationsanforderungen"] Die
 
 [NOTE]
 ====
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 ====
 Weitere Informationen finden Sie unter:
@@ -32,68 +32,68 @@ Weitere Informationen finden Sie unter:
 
 
 
-== Migrieren Sie den Switch
+== Den Schalter migrieren
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren beschreiben, wie Cisco Nexus 5596 Switches durch Cisco Nexus 3232C-Switches ersetzt werden. Sie können diese Schritte (mit Änderungen) für andere ältere Cisco Switches (z. B. 3132Q-V) verwenden.
+Die Beispiele in diesem Verfahren beschreiben den Austausch von Cisco Nexus 5596-Switches durch Cisco Nexus 3232C-Switches.  Diese Schritte können Sie (mit Anpassungen) auch für andere ältere Cisco Switches (z. B. 3132Q-V) anwenden.
 
-Weiterhin verwendet das Verfahren die folgende Nomenklatur für Switches und Nodes:
+Das Verfahren verwendet außerdem die folgende Schalter- und Knotennomenklatur:
 
-* Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
-* Die zu ersetzenden Nexus 5596 Switches sind CL1 und CL2.
-* Die Switches der Nexus 3232C-Serie als Ersatz für die Nexus 5596-Switches sind C1 und C2.
-* n1_clus1 ist die erste logische Clusterschnittstelle (LIF), die mit Cluster-Switch 1 (CL1 oder C1) für Knoten n1 verbunden ist.
-* n1_clus2 ist die erste Cluster-LIF, die mit Cluster-Switch 2 (CL2 oder C2) für Node n1 verbunden ist.
-* n1_clus3 ist die zweite logische Schnittstelle, die mit Cluster Switch 2 (CL2 oder C2) für Knoten n1 verbunden ist.
-* n1_clus4 ist die zweite logische Schnittstelle, die mit Cluster Switch 1 (CL1 oder C1) für Knoten n1 verbunden ist.-
-* Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
+* Die Befehlsausgaben können je nach ONTAP Version variieren.
+* Die zu ersetzenden Nexus 5596-Switches sind CL1 und CL2.
+* Die Nexus 3232C-Switches, die die Nexus 5596-Switches ersetzen, sind C1 und C2.
+* n1_clus1 ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch 1 (CL1 oder C1) für Knoten n1 verbunden ist.
+* n1_clus2 ist der erste Cluster-LIF, der mit dem Cluster-Switch 2 (CL2 oder C2) für Knoten n1 verbunden ist.
+* n1_clus3 ist die zweite LIF, die mit dem Cluster-Switch 2 (CL2 oder C2) für Knoten n1 verbunden ist.
+* n1_clus4 ist die zweite LIF, die mit dem Cluster-Switch 1 (CL1 oder C1) für Knoten n1 verbunden ist.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter [URL] verfügbar sind.link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
 * Die Knoten sind n1, n2, n3 und n4.
 
 
 Die Beispiele in diesem Verfahren verwenden vier Knoten:
 
-* Zwei Nodes verwenden vier 10-GbE-Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d.
-* Die anderen beiden Knoten verwenden zwei 40 GbE Cluster Interconnect Ports: e4a, e4e. Der link:https://hwu.netapp.com/["_Hardware Universe_"^] Listet die tatsächlichen Cluster-Ports auf Ihren Plattformen auf.
+* Zwei Knoten nutzen vier 10-GbE-Cluster-Verbindungsports: e0a, e0b, e0c und e0d.
+* Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Interconnect-Ports: e4a, e4e.  Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] listet die tatsächlichen Cluster-Ports auf Ihren Plattformen auf.
 
 
 .Szenarien
-Dieses Verfahren umfasst folgende Szenarien:
+Dieses Verfahren umfasst die folgenden Szenarien:
 
-* Das Cluster beginnt mit zwei verbundenen Nodes und funktioniert in zwei Nexus 5596-Cluster-Switches.
-* Der zu ersetzende Cluster-Switch CL2 (Schritt 1 bis 19):
+* Der Cluster startet mit zwei Knoten, die über zwei Nexus 5596 Cluster-Switches verbunden sind und funktionieren.
+* Der Cluster-Schalter CL2 wird durch C2 ersetzt (Schritte 1 bis 19):
 +
-** Der Traffic auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Nodes wird zu den ersten Cluster-Ports migriert und mit CL1 verbundene LIFs.
-** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und verwenden Sie dann die unterstützte Breakout-Verkabelung, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.
-** Trennen Sie die Verkabelung zwischen ISL-Ports zwischen CL1 und CL2, und verwenden Sie dann die unterstützte Breakout-Verkabelung, um die Ports von CL1 an C2 wiederherzustellen.
-** Der Datenverkehr auf allen Cluster-Ports und LIFs, die mit C2 verbunden sind, wird auf allen Nodes zurückgesetzt.
+** Der Datenverkehr auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Knoten wird auf die ersten Cluster-Ports und LIFs migriert, die mit CL1 verbunden sind.
+** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Knoten und verwenden Sie dann unterstützte Breakout-Kabel, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.
+** Trennen Sie die Verkabelung zwischen den ISL-Ports zwischen CL1 und CL2 und verwenden Sie dann ein unterstütztes Breakout-Kabel, um die Ports von CL1 nach C2 wieder zu verbinden.
+** Der Datenverkehr auf allen Cluster-Ports und LIFs, die mit C2 auf allen Knoten verbunden sind, wird umgekehrt.
 
 
-* Der Cluster-Switch CL2, der durch C2 ersetzt werden soll.
+* Der Cluster-Schalter CL2 wird durch C2 ersetzt.
 +
-** Der Datenverkehr aller Cluster-Ports oder LIFs auf allen mit CL1 verbundenen Nodes wird zu den zweiten Cluster-Ports oder zu LIFs migriert, die mit C2 verbunden sind.
-** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten, und verbinden Sie sie über unterstützte Breakout-Kabel mit dem neuen Cluster-Switch C1.
-** Trennen Sie die Verkabelung zwischen ISL-Ports zwischen CL1 und C2, und schließen Sie sie über unterstützte Kabel von C1 bis C2 wieder an.
-** Der Verkehr auf allen Cluster-Ports oder LIFs, die mit C1 auf allen Nodes verbunden sind, wird zurückgesetzt.
+** Der gesamte Datenverkehr auf allen Cluster-Ports oder LIFs auf allen mit CL1 verbundenen Knoten wird auf die zweiten Cluster-Ports oder LIFs, die mit C2 verbunden sind, migriert.
+** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten und stellen Sie die Verbindung mit dem neuen Cluster-Switch C1 über ein unterstütztes Breakout-Kabel wieder her.
+** Trennen Sie die Verkabelung zwischen den ISL-Ports zwischen CL1 und C2 und stellen Sie die Verbindung mit einer unterstützten Verkabelung von C1 nach C2 wieder her.
+** Der Datenverkehr auf allen Cluster-Ports oder LIFs, die mit C1 auf allen Knoten verbunden sind, wird umgekehrt.
 
 
-* Zwei FAS9000 Nodes wurden dem Cluster hinzugefügt, wobei Beispiele für Cluster-Details zeigen.
+* Dem Cluster wurden zwei FAS9000 Knoten hinzugefügt; Beispiele zeigen Details zum Cluster.
 
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
 . Informationen zu den Geräten in Ihrer Konfiguration anzeigen:
@@ -104,7 +104,7 @@ Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe bena
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster-Interconnect-Switch konfiguriert wurden:
+Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:
 
 [listing, subs="+quotes"]
 ----
@@ -125,9 +125,9 @@ n2         /cdp
 8 entries were displayed.
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus der einzelnen Cluster-Schnittstellen fest.
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle.
 +
-.. Zeigen Sie die Attribute des Netzwerkports an:
+.. Netzwerkportattribute anzeigen:
 +
 `network port show -role cluster`
 
@@ -135,7 +135,7 @@ n2         /cdp
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Netzwerkanschlussattribute an den Knoten n1 und n2 angezeigt:
+Das folgende Beispiel zeigt die Netzwerkportattribute der Knoten n1 und n2:
 
 [listing, subs="+quotes"]
 ----
@@ -171,7 +171,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die allgemeinen Informationen zu allen LIFs auf dem Cluster, einschließlich ihrer aktuellen Ports, angezeigt:
+Das folgende Beispiel zeigt die allgemeinen Informationen zu allen LIFs im Cluster, einschließlich ihrer aktuellen Ports:
 
 [listing, subs="+quotes"]
 ----
@@ -192,7 +192,7 @@ Cluster
 8 entries were displayed.
 ----
 ====
-.. Informationen über die erkannten Cluster-Switches anzeigen:
+.. Informationen zu den gefundenen Cluster-Switches anzeigen:
 +
 `system cluster-switch show`
 
@@ -200,7 +200,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die aktiven Cluster-Switches angezeigt:
+Das folgende Beispiel zeigt die aktiven Cluster-Switches:
 
 [listing, subs="+quotes"]
 ----
@@ -228,34 +228,34 @@ CL2                           cluster-network    10.10.1.102     NX5596
 ====
 
 
-. Vergewissern Sie sich, dass die entsprechenden RCF und das entsprechende Image auf den neuen 3232C-Switches installiert sind, wenn dies für Ihre Anforderungen erforderlich ist, und nehmen Sie die wesentlichen Änderungen an der Website vor, z. B. Benutzer und Passwörter, Netzwerkadressen und andere Anpassungen.
+. Vergewissern Sie sich, dass die entsprechenden RCF-Dateien und Images gemäß Ihren Anforderungen auf den neuen 3232C-Switches installiert sind, und nehmen Sie die notwendigen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen und andere Anpassungen.
 +
 [NOTE]
 ====
-Sie müssen beide Switches derzeit vorbereiten.
+Sie müssen jetzt beide Schalter vorbereiten.
 
 ====
 +
-Wenn Sie ein RCF- und Image-Upgrade durchführen müssen, müssen Sie die folgenden Schritte ausführen:
+Falls Sie die RCF-Datei und das Image aktualisieren müssen, müssen Sie die folgenden Schritte ausführen:
 
 +
-.. Wechseln Sie auf der NetApp Support Site zur Seite _Cisco Ethernet Switches_.
+.. Gehen Sie auf die Seite _Cisco Ethernet Switches_ auf der NetApp Support-Website.
 +
 link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
 
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende Version des RCF herunter.
-.. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um die RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Bildsoftware herunter.
+.. Laden Sie die passende Version der RCF herunter.
+.. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter.
 +
-Besuchen Sie die Seite __ONTAP 8.x oder höher Referenzkonfigurationsdateien für Cluster und Netzwerk-Management-Switches__ herunterladen, und klicken Sie dann auf die entsprechende Version.
+Die Downloadseite „ONTAP 8.x oder später Cluster- und Management-Netzwerk-Switch-Referenzkonfigurationsdateien“ finden Sie hier. Klicken Sie anschließend auf die entsprechende Version.
 
 +
-Informationen zur richtigen Version finden Sie auf der Download-Seite „_ONTAP 8.x“ oder höher für Cluster-Netzwerk-Switch_.
+Die richtige Version finden Sie auf der Downloadseite für _ONTAP 8.x oder spätere Cluster-Netzwerk-Switches_.
 
 
 
-. Migrieren Sie die LIFs, die mit dem zweiten Nexus 5596 Switch verbunden sind, der ersetzt werden soll:
+. Migrieren Sie die LIFs, die mit dem zweiten zu ersetzenden Nexus 5596-Switch verbunden sind:
 +
 `network interface migrate -vserver _vserver-name_ -lif _lif-name_ -source-node _source-node-name_ - destination-node _node-name_ -destination-port _destination-port-name_`
 
@@ -263,7 +263,7 @@ Informationen zur richtigen Version finden Sie auf der Download-Seite „_ONTAP 
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die LIFs, die für die Knoten n1 und n2 migriert werden; die LIF-Migration muss auf allen Knoten durchgeführt werden:
+Das folgende Beispiel zeigt die Migration der LIFs für die Knoten n1 und n2; die LIF-Migration muss auf allen Knoten durchgeführt werden:
 
 [listing, subs="+quotes"]
 ----
@@ -277,7 +277,7 @@ cluster::*> *network interface migrate -vserver Cluster -lif n2_clus3 -source-no
 destination-node n2 -destination-port e0d*
 ----
 ====
-. Überprüfen Sie den Systemzustand des Clusters:
+. Überprüfen Sie den Zustand des Clusters:
 +
 `network interface show -role cluster`
 
@@ -285,7 +285,7 @@ destination-node n2 -destination-port e0d*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird der aktuelle Status jedes Clusters angezeigt:
+Das folgende Beispiel zeigt den aktuellen Status der einzelnen Cluster:
 
 [listing, subs="+quotes"]
 ----
@@ -312,7 +312,7 @@ Cluster
 
 === Schritt 2: Ports konfigurieren
 
-. Fahren Sie die Cluster-Interconnect-Ports herunter, die physisch mit dem Switch CL2 verbunden sind:
+. Schalten Sie die Cluster-Verbindungsports ab, die physisch mit Switch CL2 verbunden sind:
 +
 `network port modify -node _node-name_ -port _port-name_ -up-admin false`
 
@@ -320,7 +320,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die folgenden Befehle fahren die angegebenen Ports auf n1 und n2 herunter, die Ports müssen jedoch auf allen Knoten heruntergefahren werden:
+Die folgenden Befehle schalten die angegebenen Ports auf n1 und n2 ab, die Ports müssen jedoch auf allen Knoten abgeschaltet werden:
 
 [listing, subs="+quotes"]
 ----
@@ -337,15 +337,15 @@ cluster::*> *network port modify -node n2 -port e0c -up-admin false*
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl show ausführen, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl „show“ ausführen, um die Details anzuzeigen.
 
 [listing, subs="+quotes"]
 ----
@@ -364,7 +364,7 @@ n2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -413,15 +413,15 @@ RPC status:
 ----
 --
 ====
-. [[step3]] Herunterfahren der ISLs 41 bis 48 auf CL1, dem aktiven Nexus 5596-Switch, mit dem Cisco- `shutdown`Befehl.
+. [[Schritt 3]] Schalten Sie die ISLs 41 bis 48 auf CL1, dem aktiven Nexus 5596 Switch, mithilfe des Cisco ab. `shutdown` Befehl.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass ISLs 41 bis 48 am Nexus 5596-Switch CL1 heruntergefahren werden:
+Das folgende Beispiel zeigt, wie die ISLs 41 bis 48 auf dem Nexus 5596 Switch CL1 abgeschaltet werden:
 
 [listing, subs="+quotes"]
 ----
@@ -433,15 +433,15 @@ Das folgende Beispiel zeigt, dass ISLs 41 bis 48 am Nexus 5596-Switch CL1 herunt
 (CL1)#
 ----
 ====
-. Mithilfe der entsprechenden Cisco Befehle können Sie eine temporäre ISL zwischen CL1 und C2 erstellen.
+. Erstellen Sie eine temporäre ISL zwischen CL1 und C2 mithilfe der entsprechenden Cisco Befehle.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass ein temporärer ISL zwischen CL1 und C2 eingerichtet wird:
+Das folgende Beispiel zeigt, wie eine temporäre ISL zwischen CL1 und C2 eingerichtet wird:
 
 [listing, subs="+quotes"]
 ----
@@ -459,23 +459,23 @@ C2(config-if-range)# *exit*
 C2(config-if)# *exit*
 ----
 ====
-. Entfernen Sie auf allen Knoten alle Kabel, die am Nexus 5596 Switch CL2 angeschlossen sind.
+. Entfernen Sie an allen Knoten sämtliche Kabel, die an den Switch Nexus 5596 CL2 angeschlossen sind.
 +
-Verbinden Sie bei der unterstützten Verkabelung die getrennten Ports aller Nodes mit dem Nexus 3232C Switch C2.
+Mit der entsprechenden Verkabelung können die getrennten Ports aller Knoten wieder mit dem Nexus 3232C Switch C2 verbunden werden.
 
 . Entfernen Sie alle Kabel vom Nexus 5596 Switch CL2.
 +
-Verbinden Sie die entsprechenden Cisco QSFP mit SFP+ Breakout-Kabel, die Port 1/24 am neuen Cisco 3232C Switch C2 an die Anschlüsse 45 bis 48 des vorhandenen Nexus 5596, CL1 anschließen.
+Schließen Sie die entsprechenden Cisco QSFP-zu-SFP+-Breakout-Kabel an, die Port 1/24 des neuen Cisco 3232C-Switches, C2, mit den Ports 45 bis 48 des vorhandenen Nexus 5596, CL1, verbinden.
 
-. ISLs-Ports 45 bis 48 auf dem aktiven Nexus 5596 Switch CL1 wechseln
+. Aktivieren Sie die ISL-Ports 45 bis 48 am aktiven Nexus 5596 Switch CL1.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die ISLs-Ports 45 bis 48 aufgerufen werden:
+Das folgende Beispiel zeigt, wie die ISL-Ports 45 bis 48 aktiviert werden:
 
 [listing, subs="+quotes"]
 ----
@@ -487,15 +487,15 @@ Das folgende Beispiel zeigt, dass die ISLs-Ports 45 bis 48 aufgerufen werden:
 (CL1)#
 ----
 ====
-. Überprüfen Sie, ob es sich bei den ISLs um handelt `up` Beim Nexus 5596 Switch CL1.
+. Überprüfen Sie, ob die ISLs `up` auf dem Nexus 5596 Switch CL1.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die Ports eth1/45 bis eth1/48 an, was bedeutet, dass die ISL-Ports lauten `up` Im Port-Kanal.
+Das folgende Beispiel zeigt die Ports eth1/45 bis eth1/48 mit der Kennzeichnung (P), was bedeutet, dass es sich um ISL-Ports handelt. `up` im Portkanal.
 
 [listing, subs="+quotes"]
 ----
@@ -515,8 +515,8 @@ Group Port-        Type   Protocol  Member Ports
                                     Eth1/47(P)   Eth1/48(P)
 ----
 ====
-. Vergewissern Sie sich, dass die Schnittstellen eth1/45-48 bereits `Channel-Group 1 Mode Active`in ihrer laufenden Konfiguration aufweisen.
-. Auf allen Knoten alle Cluster-Interconnect-Ports anzeigen, die mit dem 3232C-Switch C2 verbunden sind:
+. Überprüfen Sie, ob die Schnittstellen eth1/45-48 bereits den Modus `channel-group 1 active` in ihrer laufenden Konfiguration haben.
+. Aktivieren Sie auf allen Knoten alle Cluster-Verbindungsports, die mit dem Switch C2 3232C verbunden sind:
 +
 `network port modify -node _node-name_ -port _port-name_ -up-admin true`
 
@@ -524,7 +524,7 @@ Group Port-        Type   Protocol  Member Ports
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die angegebenen Ports angezeigt, die auf den Knoten n1 und n2 aufgerufen werden:
+Das folgende Beispiel zeigt, wie die angegebenen Ports auf den Knoten n1 und n2 aktiviert werden:
 
 [listing, subs="+quotes"]
 ----
@@ -534,7 +534,7 @@ cluster::*> *network port modify -node n2 -port e0b -up-admin true*
 cluster::*> *network port modify -node n2 -port e0c -up-admin true*
 ----
 ====
-. Stellen Sie auf allen Nodes alle migrierten Cluster-Interconnect-LIFs zurück, die mit C2 verbunden sind:
+. Auf allen Knoten müssen alle migrierten Cluster-Interconnect-LIFs, die mit C2 verbunden sind, zurückgesetzt werden:
 +
 `network interface revert -vserver Cluster -lif _lif-name_`
 
@@ -542,7 +542,7 @@ cluster::*> *network port modify -node n2 -port e0c -up-admin true*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die migrierten Cluster-LIFs, die auf die Home-Ports zurückgesetzt werden:
+Das folgende Beispiel zeigt, wie die migrierten Cluster-LIFs auf ihre ursprünglichen Ports zurückgesetzt werden:
 
 [listing, subs="+quotes"]
 ----
@@ -552,7 +552,7 @@ cluster::*> *network interface revert -vserver Cluster -lif n2_clus2*
 cluster::*> *network interface revert -vserver Cluster -lif n2_clus3*
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-Interconnect-Ports nun auf ihr Home zurückgesetzt werden:
+. Überprüfen Sie, ob alle Cluster-Verbindungsports nun wieder auf ihre ursprüngliche Adresse zurückgesetzt wurden:
 +
 `network interface show -role cluster`
 
@@ -560,7 +560,7 @@ cluster::*> *network interface revert -vserver Cluster -lif n2_clus3*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass die LIFs auf Fa.2 auf ihre Home-Ports zurückgesetzt werden und zeigt, dass die LIFs erfolgreich zurückgesetzt werden, wenn die Ports in der Spalte „Current Port“ den Status aufweisen `true` Im `Is Home` Spalte. Wenn der `Is Home` Wert ist `false`, Das LIF wurde nicht zurückgesetzt.
+Das folgende Beispiel zeigt, dass die LIFs auf clus2 auf ihre ursprünglichen Ports zurückgesetzt wurden und dass die Rücksetzung der LIFs erfolgreich war, wenn die Ports in der Spalte „Aktueller Port“ den Status „“ aufweisen. `true` im `Is Home` Spalte.  Wenn die `Is Home` Wert ist `false` Der LIF wurde nicht rückgängig gemacht.
 
 [listing]
 ----
@@ -581,7 +581,7 @@ Cluster
 8 entries were displayed.
 ----
 ====
-. Vergewissern Sie sich, dass die Cluster-Ports verbunden sind:
+. Überprüfen Sie, ob die Cluster-Ports verbunden sind:
 +
 `network port show -role cluster`
 
@@ -589,7 +589,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt das Ergebnis des vorherigen `network port modify` Befehl, Überprüfung der Cluster Interconnects `up`:
+Das folgende Beispiel zeigt das Ergebnis des vorherigen Schritts. `network port modify` Befehl, der überprüft, ob alle Clusterverbindungen vorhanden sind `up` :
 
 [listing, subs="+quotes"]
 ----
@@ -624,15 +624,15 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -651,7 +651,7 @@ n2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -700,7 +700,7 @@ RPC status:
 ----
 --
 ====
-. [[step15]] Migrieren Sie auf jedem Knoten im Cluster die Schnittstellen, die dem ersten Nexus 5596-Switch, CL1, zugeordnet sind, die ersetzt werden sollen:
+. [[step15]] Auf jedem Knoten im Cluster werden die Schnittstellen migriert, die dem ersten zu ersetzenden Nexus 5596-Switch, CL1, zugeordnet sind:
 +
 `network interface migrate -vserver _vserver-name_ -lif _lif-name_ -source-node _source-node-name_
 -destination-node _destination-node-name_ -destination-port _destination-port-name_`
@@ -709,7 +709,7 @@ RPC status:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Ports oder LIFs angezeigt, die auf den Nodes n1 und n2 migriert werden:
+Das folgende Beispiel zeigt die Ports oder LIFs, die auf den Knoten n1 und n2 migriert werden:
 
 [listing, subs="+quotes"]
 ----
@@ -731,7 +731,7 @@ destination-node n2 -destination-port e0c*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird gezeigt, dass die erforderlichen Cluster-LIFs zu geeigneten Cluster-Ports migriert wurden, die auf dem Cluster-Switch gehostet werden.C2:
+Das folgende Beispiel zeigt, dass die erforderlichen Cluster-LIFs auf die entsprechenden Cluster-Ports migriert wurden, die auf dem Cluster-Switch C2 gehostet werden:
 
 [listing, subs="+quotes"]
 ----
@@ -754,7 +754,7 @@ Cluster
 ----- ------- ----
 ----
 ====
-. Fahren Sie auf allen Nodes die Node-Ports herunter, die mit CL1 verbunden sind:
+. Schalten Sie auf allen Knoten die Knotenports ab, die mit CL1 verbunden sind:
 +
 `network port modify -node _node-name_ -port _port-name_ -up-admin false`
 
@@ -762,7 +762,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die angegebenen Anschlüsse, die auf den Knoten n1 und n2 heruntergefahren werden:
+Das folgende Beispiel zeigt, wie die angegebenen Ports auf den Knoten n1 und n2 abgeschaltet werden:
 
 [listing, subs="+quotes"]
 ----
@@ -772,15 +772,15 @@ cluster::*> *network port modify -node n2 -port e0a -up-admin false*
 cluster::*> *network port modify -node n2 -port e0d -up-admin false*
 ----
 ====
-. Fahren Sie ISL 24, 31 und 32 am aktiven 3232C-Switch C2 herunter.
+. Schalten Sie ISL 24, 31 und 32 am aktiven 3232C-Switch C2 ab.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die ISLs beim Herunterfahren angezeigt:
+Das folgende Beispiel zeigt, wie ISLs abgeschaltet werden:
 
 [listing, subs="+quotes"]
 ----
@@ -795,23 +795,23 @@ C2(config-if)# *exit*
 C2#
 ----
 ====
-. Entfernen Sie auf allen Knoten alle Kabel, die am Nexus 5596 Switch CL1 angeschlossen sind.
+. Entfernen Sie an allen Knoten sämtliche Kabel, die an den Nexus 5596 Switch CL1 angeschlossen sind.
 +
-Schließen Sie bei der unterstützten Verkabelung die getrennten Ports auf allen Knoten wieder an den Nexus 3232C Switch C1 an.
+Verbinden Sie mithilfe der unterstützten Verkabelung die getrennten Ports aller Knoten wieder mit dem Nexus 3232C Switch C1.
 
 . Entfernen Sie das QSFP-Breakout-Kabel von den Nexus 3232C C2-Ports e1/24.
 +
-Verbinden Sie die Ports e1/31 und e1/32 auf C1 mit den Ports e1/31 und e1/32 auf C2 unter Verwendung der unterstützten Cisco QSFP-Glasfaserkabel oder Direct-Attached-Kabel.
+Verbinden Sie die Ports e1/31 und e1/32 auf C1 mit den Ports e1/31 und e1/32 auf C2 mithilfe von unterstützten Cisco QSFP Glasfaser- oder Direktanschlusskabeln.
 
-. Stellen Sie die Konfiguration an Port 24 wieder her, und entfernen Sie den temporären Port Channel 2 auf C2.
+. Stellen Sie die Konfiguration auf Port 24 wieder her und entfernen Sie den temporären Portkanal 2 auf C2.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die Konfiguration an Port m24, die mit den entsprechenden Cisco Befehlen wiederhergestellt wird:
+Das folgende Beispiel zeigt, wie die Konfiguration auf Port m24 mithilfe der entsprechenden Cisco -Befehle wiederhergestellt wird:
 
 [listing, subs="+quotes"]
 ----
@@ -830,15 +830,15 @@ C2# copy running-config startup-config
 Copy Complete.
 ----
 ====
-. Holen Sie die ISL-Ports 31 und 32 auf C2, dem aktiven 3232C-Switch, indem Sie den folgenden Cisco-Befehl eingeben: `no shutdown`
+. Aktivieren Sie die ISL-Ports 31 und 32 auf C2, dem aktiven 3232C-Switch, indem Sie den folgenden Cisco -Befehl eingeben: `no shutdown`
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Befehle von Cisco angezeigt `switchname configure` Einschalten des 3232C-Switch C2:
+Das folgende Beispiel zeigt die Cisco -Befehle. `switchname configure` Auf dem 3232C-Switch C2 aktiviert:
 
 [listing, subs="+quotes"]
 ----
@@ -847,12 +847,12 @@ C2(config)# interface ethernet 1/31-32
 C2(config-if-range)# no shutdown
 ----
 ====
-. Stellen Sie sicher, dass die ISL-Verbindungen sind `up` Am 3232C-Switch C2.
+. Überprüfen Sie, ob die ISL-Verbindungen `up` am Schalter C2 des 3232C.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
-Die Ports eth1/31 und eth1/32 sollten (P) angeben, was bedeutet, dass beide ISL-Ports im Port-Channel oben sind
+Die Ports eth1/31 und eth1/32 sollten (P) anzeigen, was bedeutet, dass beide ISL-Ports im Portkanal aktiv sind.
 
 +
 .Beispiel anzeigen
@@ -875,7 +875,7 @@ Group Port-        Type   Protocol  Member Ports
 1     Po1(SU)      Eth    LACP      Eth1/31(P)   Eth1/32(P)
 ----
 ====
-. Auf allen Knoten alle Cluster-Interconnect-Ports anzeigen, die mit dem neuen 3232C-Switch C1 verbunden sind:
+. Aktivieren Sie auf allen Knoten alle Cluster-Verbindungsports, die mit dem neuen 3232C-Switch C1 verbunden sind:
 +
 `network port modify`
 
@@ -883,7 +883,7 @@ Group Port-        Type   Protocol  Member Ports
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt alle Cluster-Interconnect-Ports, die für n1 und n2 auf dem 3232C-Switch C1 aufgerufen werden:
+Das folgende Beispiel zeigt, wie alle Cluster-Verbindungsports für n1 und n2 auf dem 3232C-Switch C1 aktiviert werden:
 
 [listing]
 ----
@@ -894,7 +894,7 @@ cluster::*> network port modify -node n2 -port e0a -up-admin true
 cluster::*> network port modify -node n2 -port e0d -up-admin true
 ----
 ====
-. Überprüfen Sie den Status des Cluster-Node-Ports:
+. Überprüfen Sie den Status des Clusterknotenports:
 +
 `network port show`
 
@@ -902,7 +902,7 @@ cluster::*> network port modify -node n2 -port e0d -up-admin true
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird überprüft, ob alle Cluster-Interconnect-Ports auf allen Nodes des neuen 3232C-Switch C1 aktiviert sind:
+Das folgende Beispiel zeigt, wie überprüft wird, ob alle Cluster-Verbindungsports auf allen Knoten des neuen 3232C-Switches C1 aktiv sind:
 
 [listing]
 ----
@@ -930,7 +930,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 8 entries were displayed.
 ----
 ====
-. Setzen Sie auf allen Nodes die spezifischen Cluster-LIFs auf ihre Home-Ports zurück:
+. Auf allen Knoten müssen die spezifischen Cluster-LIFs auf ihre jeweiligen Heimatports zurückgesetzt werden:
 +
 `network interface revert -server Cluster -lif _lif-name_`
 
@@ -938,7 +938,7 @@ e0d       Cluster      Cluster          up   9000  auto/10000 -        -
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die spezifischen Cluster-LIFs angezeigt, die auf ihre Home-Ports auf den Nodes n1 und n2 zurückgesetzt werden:
+Das folgende Beispiel zeigt, wie die spezifischen Cluster-LIFs auf den Knoten n1 und n2 auf ihre ursprünglichen Ports zurückgesetzt werden:
 
 [listing]
 ----
@@ -948,7 +948,7 @@ cluster::*> network interface revert -vserver Cluster -lif n2_clus1
 cluster::*> network interface revert -vserver Cluster -lif n2_clus4
 ----
 ====
-. Vergewissern Sie sich, dass die Schnittstelle Home ist:
+. Überprüfen Sie, ob die Schnittstelle auf „Startseite“ eingestellt ist:
 +
 `network interface show -role cluster`
 
@@ -956,7 +956,7 @@ cluster::*> network interface revert -vserver Cluster -lif n2_clus4
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird der Status von Cluster-Interconnect-Schnittstellen angezeigt `up` Und `Is Home` Für n1 und n2:
+Das folgende Beispiel zeigt den Status der Cluster-Verbindungsschnittstellen. `up` Und `Is Home` für n1 und n2:
 
 [listing]
 ----
@@ -984,15 +984,15 @@ Cluster
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -1011,7 +1011,7 @@ n2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -1060,9 +1060,9 @@ RPC status:
 ----
 --
 ====
-. [[step29]] erweitern Sie das Cluster durch Hinzufügen von Nodes zu den Nexus 3232C-Cluster-Switches.
+. [[step29]] Erweitern Sie den Cluster, indem Sie Knoten zu den Nexus 3232C Cluster-Switches hinzufügen.
 +
-In den folgenden Beispielen werden die Nodes n3 und n4 mit 40-GbE-Cluster-Ports verbunden, die mit den Ports e1/7 und e1/8 verbunden sind und beide Nodes dem Cluster verbunden sind. Die 40 GbE Cluster Interconnect Ports sind e4a und e4e.
+Die folgenden Beispiele zeigen, dass die Knoten n3 und n4 jeweils 40-GbE-Cluster-Ports an die Ports e1/7 bzw. e1/8 der beiden Nexus 3232C Cluster-Switches angeschlossen haben und beide Knoten dem Cluster beigetreten sind.  Die verwendeten 40-GbE-Cluster-Verbindungsports sind e4a und e4e.
 
 +
 Zeigen Sie die Informationen zu den Geräten in Ihrer Konfiguration an:
@@ -1211,7 +1211,7 @@ CL2                           cluster-network    10.10.1.102     NX5596
 4 entries were displayed.
 ----
 ====
-. Entfernen Sie den ausgetauschten Nexus 5596 mit dem `system cluster-switch delete` Befehl, wenn er nicht automatisch entfernt wird:
+. Entfernen Sie das ausgetauschte Nexus 5596 mithilfe des `system cluster-switch delete` Befehl, falls er nicht automatisch entfernt wird:
 +
 `system cluster-switch delete -device switch-name`
 
@@ -1229,9 +1229,9 @@ cluster::> system cluster-switch delete –device CL2
 
 
 
-=== Schritt 3: Führen Sie den Vorgang durch
+=== Schritt 3: Schließen Sie den Vorgang ab.
 
-. Überprüfen Sie, ob die richtigen Cluster-Switches überwacht werden:
+. Stellen Sie sicher, dass die richtigen Cluster-Switches überwacht werden:
 +
 `system cluster-switch show`
 
@@ -1264,11 +1264,11 @@ C2                          cluster-network     10.10.1.104      NX3232C
 2 entries were displayed.
 ----
 ====
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].

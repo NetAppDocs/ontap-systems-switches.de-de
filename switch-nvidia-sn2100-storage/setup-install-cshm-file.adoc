@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/setup-install-cshm-file.html 
 sidebar: sidebar 
 keywords: 'install, applicable, configuration, file, cluster, switch, health, monitor, ontap, install the cluster switch health monitor (csm) configuration file for sn2100 switches' 
-summary: Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei für die Zustandsüberwachung von Cluster-Switches der NVIDIA SN2100-Speicher-Switches installieren. 
+summary: Mit diesem Verfahren können Sie die entsprechende Konfigurationsdatei für die Zustandsüberwachung von NVIDIA SN2100 Speicherswitches im Cluster installieren. 
 ---
-= Installieren Sie die Konfigurationsdatei des Ethernet Switch Health Monitor
+= Installieren Sie die Konfigurationsdatei für den Ethernet Switch Health Monitor.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statusüberwachung von NVIDIA-Cluster-Switches über Ethernet-Switches zu installieren. Folgende Modelle werden unterstützt:
+Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Zustandsüberwachung von Ethernet-Switches in NVIDIA Cluster-Switches zu installieren.  Unterstützte Modelle sind:
 
 * MSN2100-CB2FC
 * MSN2100-CB2RC
@@ -23,34 +23,34 @@ Gehen Sie wie folgt vor, um die entsprechende Konfigurationsdatei für die Statu
 NOTE: Dieses Installationsverfahren gilt für ONTAP 9.10.1 und höher.
 
 .Bevor Sie beginnen
-* Überprüfen Sie, ob Sie die Konfigurationsdatei herunterladen müssen, indem Sie ausführen `system switch ethernet show` und prüfen, ob *ANDERE* für Ihr Modell angezeigt wird.
+* Überprüfen Sie durch Ausführen des folgenden Befehls, ob Sie die Konfigurationsdatei herunterladen müssen. `system switch ethernet show` und prüfen, ob für Ihr Modell *ANDERE* angezeigt wird.
 +
-Wenn Ihr Modell nach der Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich an den NetApp-Support.
+Falls Ihr Modell nach Anwendung der Konfigurationsdatei immer noch *ANDERE* anzeigt, wenden Sie sich bitte an den NetApp -Support.
 
-* Stellen Sie sicher, dass das ONTAP Cluster betriebsbereit ist und ausgeführt wird.
-* Aktivieren Sie SSH, um alle in CSHM verfügbaren Funktionen zu verwenden.
-* Löschen Sie das `/mroot/etc/cshm_nod/nod_sign/` Verzeichnis auf allen Knoten:
+* Stellen Sie sicher, dass der ONTAP -Cluster betriebsbereit ist.
+* Aktivieren Sie SSH, um alle in CSHM verfügbaren Funktionen nutzen zu können.
+* Räumen Sie die `/mroot/etc/cshm_nod/nod_sign/` Verzeichnis auf allen Knoten:
 +
-.. Betreten Sie die Nodeshell:
+.. Geben Sie die NodeShell ein:
 +
 `system node run -node <name>`
 
-.. Zu erweiterten Berechtigungen wechseln:
+.. Änderung zu erweiterten Berechtigungen:
 +
 `priv set advanced`
 
-.. Listen Sie die Konfigurationsdateien im `/etc/cshm_nod/nod_sign` Verzeichnis auf. Wenn das Verzeichnis existiert und Konfigurationsdateien enthält, werden die Dateinamen aufgelistet.
+.. Listen Sie die Konfigurationsdateien im folgenden Verzeichnis auf: `/etc/cshm_nod/nod_sign` Verzeichnis.  Wenn das Verzeichnis existiert und Konfigurationsdateien enthält, werden die Dateinamen aufgelistet.
 +
 `ls /etc/cshm_nod/nod_sign`
 
-.. Löschen Sie alle Konfigurationsdateien, die Ihren angeschlossenen Switch-Modellen entsprechen.
+.. Löschen Sie alle Konfigurationsdateien, die zu Ihren angeschlossenen Switch-Modellen gehören.
 +
-Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für die oben aufgeführten unterstützten Modelle, laden Sie die neuesten Konfigurationsdateien für dieselben Modelle herunter, und installieren Sie sie.
+Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für die oben aufgeführten unterstützten Modelle und laden Sie anschließend die neuesten Konfigurationsdateien für dieselben Modelle herunter und installieren Sie diese.
 
 +
 `rm /etc/cshm_nod/nod_sign/<filename>`
 
-.. Vergewissern Sie sich, dass die gelöschten Konfigurationsdateien nicht mehr im Verzeichnis sind:
+.. Vergewissern Sie sich, dass die gelöschten Konfigurationsdateien nicht mehr im Verzeichnis vorhanden sind:
 +
 `ls /etc/cshm_nod/nod_sign`
 
@@ -59,12 +59,12 @@ Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für d
 
 
 .Schritte
-. Laden Sie die ZIP-Datei für die Konfiguration der Ethernet-Switch-Systemzustandsüberwachung basierend auf der entsprechenden ONTAP-Version herunter. Diese Datei ist auf der Seite verfügbar https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] .
+. Laden Sie die Konfigurations-ZIP-Datei für den Ethernet-Switch-Integritätsmonitor entsprechend der zugehörigen ONTAP Version herunter.  Diese Datei ist verfügbar unter https://mysupport.netapp.com/site/info/nvidia-cluster-switch["NVIDIA Ethernet-Switches"^] Seite.
 +
-.. Wählen Sie auf der Download-Seite der NVIDIA SN2100-Software *Nvidia CSHM-Datei* aus.
-.. Aktivieren Sie auf der Seite Achtung/muss gelesen werden das Kontrollkästchen, um zuzustimmen.
-.. Aktivieren Sie auf der Seite Endbenutzer-Lizenzvereinbarung das Kontrollkästchen, um zuzustimmen, und klicken Sie auf *Akzeptieren und Fortfahren*.
-.. Wählen Sie auf der Seite Nvidia CSHM File - Download die entsprechende Konfigurationsdatei aus. Folgende Dateien sind verfügbar:
+.. Auf der Downloadseite der NVIDIA SN2100 Software wählen Sie *Nvidia CSHM-Datei* aus.
+.. Auf der Seite „Vorsicht/Unbedingt lesen“ das Kontrollkästchen aktivieren, um zuzustimmen.
+.. Auf der Seite „Endbenutzer-Lizenzvereinbarung“ das Kontrollkästchen aktivieren, um zuzustimmen, und auf *Akzeptieren & Fortfahren* klicken.
+.. Auf der Seite „Nvidia CSHM File - Download“ wählen Sie die entsprechende Konfigurationsdatei aus.  Folgende Dateien sind verfügbar:
 
 
 
@@ -91,24 +91,24 @@ Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für d
 --
 ====
 . [[step2]]Laden Sie die entsprechende ZIP-Datei auf Ihren internen Webserver hoch.
-. Greifen Sie von einem der ONTAP-Systeme im Cluster aus auf den erweiterten Modus zu.
+. Die Einstellungen für den erweiterten Modus können Sie von einem der ONTAP -Systeme im Cluster aus aufrufen.
 +
 `set -privilege advanced`
 
-. Führen Sie den Befehl Switch Health Monitor configure aus.
+. Führen Sie den Befehl „switch health monitor configure“ aus.
 +
 [listing, subs="+quotes"]
 ----
 cluster1::> *system switch ethernet configure-health-monitor*
 ----
-. Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:
+. Vergewissern Sie sich, dass die Befehlsausgabe für Ihre ONTAP Version mit folgendem Text endet:
 
 
 [role="tabbed-block"]
 ====
 .ONTAP 9.15.1 und höher
 --
-Die Konfigurationsdatei wurde von der Statusüberwachung des Ethernet-Switches installiert.
+Die Zustandsüberwachung des Ethernet-Switches hat die Konfigurationsdatei installiert.
 
 --
 .ONTAP 9.11.1 bis 9.14.1
@@ -122,9 +122,9 @@ Das heruntergeladene CSHM-Paket wurde erfolgreich verarbeitet.
 
 --
 ====
-Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
+Im Fehlerfall wenden Sie sich bitte an den NetApp Support.
 
-. [[step6]]Warten Sie bis zu zweimal das Abfrageintervall der Ethernet-Switch-Integritätsüberwachung, das durch Ausführen gefunden `system switch ethernet polling-interval show`wird, bevor Sie den nächsten Schritt abschließen.
+. [[step6]]Warten Sie bis zum Doppelten des Abfrageintervalls des Ethernet-Switch-Integritätsmonitors, das durch Ausführen von `system switch ethernet polling-interval show` , bevor der nächste Schritt ausgeführt wird.
 . Führen Sie den Befehl aus `system switch ethernet configure-health-monitor show` Stellen Sie im ONTAP -System sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *True* gesetzt ist und das Feld für die Seriennummer nicht *Unknown* anzeigt.
 +
 [listing, subs="+quotes"]
@@ -133,5 +133,5 @@ cluster1::> *system switch ethernet configure-health-monitor show*
 ----
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nach der Installation der CSHM-Datei können Sielink:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] Die

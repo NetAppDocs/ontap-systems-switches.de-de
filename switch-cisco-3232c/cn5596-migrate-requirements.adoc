@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/cn5596-migrate-requirements.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3232c switch, 
-summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Übersicht über den Prozess und die Terminologie. 
+summary: Bevor Sie Cisco Nexus 3232c Switches konfigurieren, sollten Sie sich einen Überblick über den Prozess und die Nomenklatur verschaffen. 
 ---
 = Migrationsanforderungen
 :allow-uri-read: 
@@ -10,11 +10,11 @@ summary: Lesen Sie vor der Konfiguration von Cisco Nexus 3232c-Switches eine Üb
 
 
 [role="lead"]
-Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Dank Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Nodes erstellen.
+Cisco Nexus 3232C Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
 
 [NOTE]
 ====
-Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 ====
 Weitere Informationen finden Sie unter:
@@ -25,112 +25,112 @@ Weitere Informationen finden Sie unter:
 
 
 
-== Anforderungen für Cisco Nexus 5596
+== Cisco Nexus 5596 Anforderungen
 
-Die Cluster-Switches verwenden die folgenden Ports für Verbindungen zu den Nodes:
+Die Cluster-Switches verwenden die folgenden Ports für die Verbindungen zu den Knoten:
 
 * Nexus 5596: Ports e1/1-40 (10 GbE)
-* Nexus 3232C: Ports e1/1-30 (10/40/100 GbE)
+* Nexus 3232C: Anschlüsse e1/1-30 (10/40/100 GbE)
 
 
-Bei den Cluster-Switches werden die folgenden Inter-Switch Link (ISL)-Ports verwendet:
+Die Cluster-Switches verwenden die folgenden Inter-Switch Link (ISL)-Ports:
 
-* Nexus 5596: Ports e1/41-48 (10 GbE)
-* Nexus 3232C: Ports e1/31-32 (40/100 GbE)
+* Nexus 5596: Ports e1/41–48 (10 GbE)
+* Nexus 3232C: Anschlüsse e1/31-32 (40/100 GbE)
 
 
-Der link:https://hwu.netapp.com/["_Hardware Universe_"^] Hier finden Sie Informationen zur unterstützten Verkabelung zu Nexus 3232C-Switches:
+Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] enthält Informationen zur unterstützten Verkabelung von Nexus 3232C-Switches:
 
-* Nodes mit 10 GbE-Cluster-Verbindungen erfordern QSFP zu SFP+-Breakout-Kabel oder QSFP zu SFP+-Kupfer-Breakout-Kabel.
-* Nodes mit 40/100 GbE-Cluster-Verbindungen erfordern unterstützte QSFP/QSFP28 optische Module mit Glasfaserkabeln oder QSFP/QSFP28 Kupfer-Direct-Attach-Kabeln.
+* Knoten mit 10-GbE-Clusterverbindungen benötigen QSFP-zu-SFP+-Glasfaser-Breakout-Kabel oder QSFP-zu-SFP+-Kupfer-Breakout-Kabel.
+* Knoten mit 40/100-GbE-Clusterverbindungen benötigen unterstützte QSFP/QSFP28-Optikmodule mit Glasfaserkabeln oder QSFP/QSFP28-Kupfer-Direktanschlusskabel.
 
 
 Die Cluster-Switches verwenden die entsprechende ISL-Verkabelung:
 
-* Anfang Nexus 5596 (SFP+ auf SFP+)
+* Beginn: Nexus 5596 (SFP+ zu SFP+)
 +
-** 8 x SFP+-Glasfaserkabel oder Kupfer-Direct-Attached-Kabel
+** 8x SFP+ Glasfaser- oder Kupfer-Direktanschlusskabel
 
 
-* Interim: Nexus 5596 auf Nexus 3232C (QSFP zu 4xSFP+ Breakout-out)
+* Interim: Nexus 5596 zu Nexus 3232C (QSFP zu 4xSFP+ Breakout)
 +
-** 1x Kabel für QSFP zu SFP+-Ausbruchkabel oder Kupferausbruch
+** 1x QSFP-zu-SFP+-Glasfaser- oder Kupfer-Breakout-Kabel
 
 
-* Final: Nexus 3232C auf Nexus 3232C (QSFP28 zu QSFP28)
+* Endgültig: Nexus 3232C zu Nexus 3232C (QSFP28 zu QSFP28)
 +
-** 2 QSFP28 Glasfaserkabel oder Kupfer-Direct-Attach-Kabel
+** 2x QSFP28 Glasfaser- oder Kupfer-Direktanschlusskabel
 
 
-* Bei Nexus 3232C Switches können QSFP/QSFP28-Ports entweder im 40/100-Gigabit-Ethernet- oder im 4 x 10-Gigabit-Ethernet-Modus betrieben werden.
+* Bei Nexus 3232C Switches können Sie QSFP/QSFP28 Ports entweder im 40/100 Gigabit Ethernet-Modus oder im 4 x10 Gigabit Ethernet-Modus betreiben.
 +
-Standardmäßig sind im 40/100-Gigabit-Ethernet-Modus 32 Ports vorhanden. Diese 40-Gigabit-Ethernet-Ports werden in einer 2-tupel-Namenskonvention nummeriert. So wird beispielsweise der zweite 40-Gigabit-Ethernet-Port mit der Nummer 1/2 nummeriert.
-
-+
-Der Prozess der Änderung der Konfiguration von 40 Gigabit Ethernet zu 10 Gigabit Ethernet wird _Breakout_ genannt und der Prozess der Änderung der Konfiguration von 10 Gigabit Ethernet zu 40 Gigabit Ethernet wird _break_ genannt.
+Standardmäßig stehen im 40/100 Gigabit Ethernet-Modus 32 Ports zur Verfügung.  Diese 40 Gigabit-Ethernet-Ports sind nach dem 2-Tupel-Namensschema nummeriert.  Beispielsweise ist der zweite 40-Gigabit-Ethernet-Anschluss mit 1/2 nummeriert.
 
 +
-Wenn Sie einen 40/100-Gigabit-Ethernet-Port in 10 Gigabit-Ethernet-Ports untergliedern, werden die resultierenden Ports mit einer 3-tupel-Namenskonvention nummeriert. Beispielsweise werden die Ausbruchanschlüsse des zweiten 40/100-Gigabit-Ethernet-Ports mit den Nummern 1/2/1, 1/2/2/2, 1/2/3 und 1/2/4 nummeriert.
+Der Vorgang der Umstellung der Konfiguration von 40-Gigabit-Ethernet auf 10-Gigabit-Ethernet wird als _breakout_ bezeichnet, und der Vorgang der Umstellung der Konfiguration von 10-Gigabit-Ethernet auf 40-Gigabit-Ethernet wird als _breakin_ bezeichnet.
 
-* Auf der linken Seite der Nexus 3232C-Switches sind 2 SFP+-Ports, genannt 1/33 und 1/34.
-* Sie haben einige der Ports auf Nexus 3232C-Switches für 10-GbE- oder 40/100-GbE-Ausführung konfiguriert.
++
+Wenn man einen 40/100-Gigabit-Ethernet-Anschluss in 10 Gigabit-Ethernet-Anschlüsse aufteilt, werden die resultierenden Anschlüsse nach dem 3-Tupel-Namensschema nummeriert.  Beispielsweise sind die Breakout-Ports des zweiten 40/100 Gigabit Ethernet-Ports mit 1/2/1, 1/2/2, 1/2/3 und 1/2/4 nummeriert.
+
+* Auf der linken Seite der Nexus 3232C Switches befinden sich 2 SFP+ Ports, die als 1/33 und 1/34 bezeichnet werden.
+* Sie haben einige Ports an Nexus 3232C Switches so konfiguriert, dass sie mit 10 GbE oder 40/100 GbE laufen.
 +
 [NOTE]
 ====
-Sie können die ersten sechs Ports mit dem in den 4x10 GbE-Modus versetzen `interface breakout module 1 port 1-6 map 10g-4x` Befehl. Auf ähnliche Weise können Sie die ersten sechs QSFP+-Ports aus Breakout-Konfiguration mit dem neu gruppieren `no interface breakout module 1 port 1-6 map 10g-4x` Befehl.
+Sie können die ersten sechs Ports in den 4x10-GbE-Modus aufteilen, indem Sie die `interface breakout module 1 port 1-6 map 10g-4x` Befehl.  Ebenso können Sie die ersten sechs QSFP+-Ports aus der Breakout-Konfiguration mithilfe der folgenden Funktion neu gruppieren: `no interface breakout module 1 port 1-6 map 10g-4x` Befehl.
 
 ====
-* Sie haben die Planung, Migration und die erforderliche Dokumentation auf 10-GbE- und 40/100-GbE-Konnektivität zwischen den Nodes zu Nexus 3232C-Cluster-Switches gelesen.
-* Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sindlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] .
+* Sie haben die Planung und Migration durchgeführt und die erforderliche Dokumentation zur 10-GbE- und 40/100-GbE-Konnektivität von den Knoten zu den Nexus 3232C Cluster-Switches gelesen.
+* Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind:link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Die
 
 
-.Über die verwendeten Beispiele
-Die Beispiele in diesem Verfahren beschreiben, wie Cisco Nexus 5596 Switches durch Cisco Nexus 3232C-Switches ersetzt werden. Sie können diese Schritte (mit Änderungen) für andere ältere Cisco Switches (z. B. 3132Q-V) verwenden.
+.Zu den verwendeten Beispielen
+Die Beispiele in diesem Verfahren beschreiben den Austausch von Cisco Nexus 5596-Switches durch Cisco Nexus 3232C-Switches.  Diese Schritte können Sie (mit Anpassungen) auch für andere ältere Cisco Switches (z. B. 3132Q-V) anwenden.
 
-Weiterhin verwendet das Verfahren die folgende Nomenklatur für Switches und Nodes:
+Das Verfahren verwendet außerdem die folgende Schalter- und Knotennomenklatur:
 
-* Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
-* Die zu ersetzenden Nexus 5596 Switches sind *CL1* und *CL2*.
-* Die Nexus 3232C-Switches, die die Nexus 5596-Switches ersetzen, sind *C1* und *C2*.
-* *N1_clus1* ist die erste logische Cluster-Schnittstelle (LIF), die an Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* angeschlossen ist.
-* *N1_clus2* ist die erste Cluster-LIF, die mit Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* verbunden ist.
-* *N1_clus3* ist die zweite LIF, die an Cluster-Switch 2 (CL2 oder C2) für Knoten *n1* angeschlossen ist.
-* *N1_clus4* ist die zweite LIF, die mit Cluster-Switch 1 (CL1 oder C1) für Knoten *n1* verbunden ist.
-* Die Anzahl der 10 GbE und 40/100 GbE Ports sind in den Referenzkonfigurationsdateien (RCFs) definiert, die auf derlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster Network Switch Referenzkonfigurationsdatei Herunterladen"^] .
+* Die Befehlsausgaben können je nach ONTAP Version variieren.
+* Die zu ersetzenden Nexus 5596-Schalter sind *CL1* und *CL2*.
+* Die Nexus 3232C Switches, die die Nexus 5596 Switches ersetzen, sind *C1* und *C2*.
+* *n1_clus1* ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.
+* *n1_clus2* ist der erste Cluster-LIF, der mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.
+* *n1_clus3* ist die zweite LIF, die mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.
+* *n1_clus4* ist die zweite LIF, die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf dem Server verfügbar sind.link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
 * Die Knoten sind *n1*, *n2*, *n3* und *n4*.
 
 
 Die Beispiele in diesem Verfahren verwenden vier Knoten:
 
-* Zwei Knoten nutzen vier 10-GbE-Cluster-Interconnect-Ports: *e0a*, *e0b*, *e0c* und *e0d*.
-* Die beiden anderen Knoten verwenden zwei 40-GbE-Cluster-Interconnect-Ports: *e4a* und *e4e*.
+* Zwei Knoten nutzen vier 10-GbE-Cluster-Verbindungsports: *e0a*, *e0b*, *e0c* und *e0d*.
+* Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsports: *e4a* und *e4e*.
 +
-Im link:https://hwu.netapp.com/["_Hardware Universe_"^] werden die tatsächlichen Cluster-Ports auf Ihren Plattformen aufgeführt.
+Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] listet die tatsächlichen Cluster-Ports auf Ihren Plattformen auf.
 
 
 
-.Szenarien abgedeckt
-Dieses Verfahren umfasst folgende Szenarien:
+.Abgedeckte Szenarien
+Dieses Verfahren umfasst die folgenden Szenarien:
 
-* Das Cluster beginnt mit zwei verbundenen Nodes und funktioniert in zwei Nexus 5596-Cluster-Switches.
-* Der zu ersetzende Cluster-Switch CL2 (Schritt 1 bis 19):
+* Der Cluster startet mit zwei Knoten, die über zwei Nexus 5596 Cluster-Switches verbunden sind und funktionieren.
+* Der Cluster-Schalter CL2 wird durch C2 ersetzt (Schritte 1 bis 19):
 +
-** Der Traffic auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Nodes wird zu den ersten Cluster-Ports migriert und mit CL1 verbundene LIFs.
-** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Nodes, und verwenden Sie dann die unterstützte Breakout-Verkabelung, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.
-** Trennen Sie die Verkabelung zwischen ISL-Ports zwischen CL1 und CL2, und verwenden Sie dann die unterstützte Breakout-Verkabelung, um die Ports von CL1 an C2 wiederherzustellen.
-** Der Datenverkehr auf allen Cluster-Ports und LIFs, die mit C2 verbunden sind, wird auf allen Nodes zurückgesetzt.
+** Der Datenverkehr auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Knoten wird auf die ersten Cluster-Ports und LIFs migriert, die mit CL1 verbunden sind.
+** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Knoten und verwenden Sie dann unterstützte Breakout-Kabel, um die Ports wieder mit dem neuen Cluster-Switch C2 zu verbinden.
+** Trennen Sie die Verkabelung zwischen den ISL-Ports zwischen CL1 und CL2 und verwenden Sie dann ein unterstütztes Breakout-Kabel, um die Ports von CL1 nach C2 wieder zu verbinden.
+** Der Datenverkehr auf allen Cluster-Ports und LIFs, die mit C2 auf allen Knoten verbunden sind, wird umgekehrt.
 
 
-* Der Cluster-Switch CL2, der durch C2 ersetzt werden soll.
+* Der Cluster-Schalter CL2 wird durch C2 ersetzt.
 +
-** Der Datenverkehr aller Cluster-Ports oder LIFs auf allen mit CL1 verbundenen Nodes wird zu den zweiten Cluster-Ports oder zu LIFs migriert, die mit C2 verbunden sind.
-** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten, und verbinden Sie sie über unterstützte Breakout-Kabel mit dem neuen Cluster-Switch C1.
-** Trennen Sie die Verkabelung zwischen ISL-Ports zwischen CL1 und C2, und schließen Sie sie über unterstützte Kabel von C1 bis C2 wieder an.
-** Der Verkehr auf allen Cluster-Ports oder LIFs, die mit C1 auf allen Nodes verbunden sind, wird zurückgesetzt.
+** Der gesamte Datenverkehr auf allen Cluster-Ports oder LIFs auf allen mit CL1 verbundenen Knoten wird auf die zweiten Cluster-Ports oder LIFs, die mit C2 verbunden sind, migriert.
+** Trennen Sie die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten und stellen Sie die Verbindung mit dem neuen Cluster-Switch C1 über ein unterstütztes Breakout-Kabel wieder her.
+** Trennen Sie die Verkabelung zwischen den ISL-Ports zwischen CL1 und C2 und stellen Sie die Verbindung mit einer unterstützten Verkabelung von C1 nach C2 wieder her.
+** Der Datenverkehr auf allen Cluster-Ports oder LIFs, die mit C1 auf allen Knoten verbunden sind, wird umgekehrt.
 
 
-* Zwei FAS9000 Nodes wurden dem Cluster hinzugefügt, wobei Beispiele für Cluster-Details zeigen.
+* Dem Cluster wurden zwei FAS9000 Knoten hinzugefügt; Beispiele zeigen Details zum Cluster.
 
 
-.Was kommt als Nächstes?
-link:cn5596-prepare-to-migrate.html["Vorbereitung der Migration"].
+.Wie geht es weiter?
+link:cn5596-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"].

@@ -5,10 +5,10 @@ indexpage:
     für ONTAP -Clusterbereitstellungen zu installieren, zu konfigurieren und zu warten.
   keywords: AFX systems switches, cisco nexus switches, cluster switches, ontap clusters
   lead: Mit AFX-System-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten
-    erstellen.  Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage für
+    erstellen. Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage für
     skalierbare Cluster-Interconnect-Lösungen in NetApp ONTAP Umgebungen.
   tiles:
-  - title: Los geht's
+  - title: Erste Schritte
     links:
     - title: Cisco Nexus 9332D-GX2B
       url: "../switch-cisco-9332d-gx2b/configure-switch-overview-9332d-cluster.html"

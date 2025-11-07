@@ -2,7 +2,7 @@
 permalink: switch-cshm/config-snmpv3.html 
 sidebar: sidebar 
 keywords: cshm, configure, snmpv3, switch logs, debugging, collection 
-summary: 'Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch konfigurieren, der die Statusüberwachung des Ethernet-Switches (CSHM) unterstützt.' 
+summary: 'Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch konfigurieren, der die Zustandsüberwachung von Ethernet-Switches (CSHM) unterstützt.' 
 ---
 = Konfigurieren Sie SNMPv3 für Ihren Switch (optional).
 :allow-uri-read: 
@@ -11,30 +11,30 @@ summary: 'Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch
 
 
 [role="lead"]
-SNMP wird verwendet, um die Switches zu überwachen. Die Überwachung durch SNMPv3 wird durch Befolgen dieses Verfahrens konfiguriert.
+SNMP wird zur Überwachung der Switches verwendet.  Die Überwachung mittels SNMPv3 wird durch Befolgen der folgenden Vorgehensweise konfiguriert.
 
-Der Ethernet Switch Health Monitor (CSHM) verwendet SNMP zur Überwachung von Zustand und Performance von Cluster- und Speicher-Switches. SNMPv2c wird standardmäßig automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert. SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität bietet, die vor unbefugtem Zugriff schützen und die Vertraulichkeit und Integrität der Daten während der Übertragung gewährleisten.
+Der Ethernet Switch Health Monitor (CSHM) nutzt SNMP, um den Zustand und die Leistung von Cluster- und Speicherswitches zu überwachen.  Standardmäßig wird SNMPv2c automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert.  SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität einführt, die vor unberechtigtem Zugriff schützen und die Vertraulichkeit und Integrität der Daten während der Übertragung gewährleisten.
 
 [NOTE]
 ====
 * SNMPv3 wird nur auf ONTAP 9.12.1 und höher unterstützt.
 * ONTAP 9.13.1P12, 9.14.1P9, 9.15.1P5, 9.16.1 und spätere Versionen beheben diese beiden Probleme:
 +
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CONTAP-82891["Bei der ONTAP-Integritätsüberwachung von Cisco-Switches kann der SNMPv2-Verkehr nach der Umstellung auf SNMPv3 zur Überwachung weiterhin sichtbar sein."^]
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CONTAP-119131["Falsch-positive Switch-Lüfter- und Stromwarnungen bei SNMP-Fehlern"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CONTAP-82891["Bei der ONTAP Zustandsüberwachung von Cisco -Switches kann es vorkommen, dass SNMPv2-Datenverkehr auch nach der Umstellung auf SNMPv3 für die Überwachung noch sichtbar ist."^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CONTAP-119131["Fehlalarme bezüglich Lüfter und Stromversorgung bei SNMP-Fehlern"^]
 
 
 
 
 ====
-.Über diese Aufgabe
-Die folgenden Befehle werden verwendet, um einen SNMPv3-Benutzernamen auf den Switches *Broadcom*, *Cisco* und *NVIDIA* zu konfigurieren:
+.Informationen zu diesem Vorgang
+Die folgenden Befehle werden verwendet, um einen SNMPv3-Benutzernamen auf *Broadcom*-, * Cisco*- und * NVIDIA*-Switches zu konfigurieren:
 
 [role="tabbed-block"]
 ====
-.Broadcom-Switches
+.Broadcom-Schalter
 --
-Konfigurieren Sie einen NETZWERKBETREIBER für SNMPv3-Benutzernamen auf Broadcom BES-53248-Switches.
+Konfigurieren Sie einen SNMPv3-Benutzernamen NETWORK-OPERATOR auf Broadcom BES-53248 Switches.
 
 * Für *keine Authentifizierung*:
 +
@@ -42,7 +42,7 @@ Konfigurieren Sie einen NETZWERKBETREIBER für SNMPv3-Benutzernamen auf Broadcom
 ----
 snmp-server user SNMPv3UserNoAuth NETWORK-OPERATOR noauth
 ----
-* Für * MD5/SHA-Authentifizierung*:
+* Für die *MD5/SHA-Authentifizierung*:
 +
 [source, cli]
 ----
@@ -56,20 +56,20 @@ snmp-server user SNMPv3UserAuthEncrypt NETWORK-OPERATOR [auth-md5|auth-sha] [pri
 ----
 
 
-Mit dem folgenden Befehl wird ein SNMPv3-Benutzername auf der ONTAP-Seite konfiguriert:
+Der folgende Befehl konfiguriert einen SNMPv3-Benutzernamen auf der ONTAP Seite:
 
 [source, cli]
 ----
 security login create -user-or-group-name SNMPv3_USER -application snmp -authentication-method usm -remote-switch-ipaddress ADDRESS
 ----
-Mit dem folgenden Befehl wird der SNMPv3-Benutzername mit CSHM eingerichtet:
+Der folgende Befehl richtet den SNMPv3-Benutzernamen bei CSHM ein:
 
 [source, cli]
 ----
 cluster1::*> system switch ethernet modify -device DEVICE -snmp-version SNMPv3 -community-or-username SNMPv3_USER
 ----
 .Schritte
-. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass Authentifizierung und Verschlüsselung verwendet werden:
+. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass er Authentifizierung und Verschlüsselung verwendet:
 +
 [source, cli]
 ----
@@ -87,7 +87,7 @@ show snmp status
 ----------------- ------------------ ---- ------ -------------------------
 <username>        network-admin      MD5  AES128 8000113d03d8c497710bee
 ----
-. Richten Sie den SNMPv3-Benutzer auf der ONTAP-Seite ein:
+. Richten Sie den SNMPv3-Benutzer auf der ONTAP Seite ein:
 +
 [source, cli]
 ----
@@ -141,7 +141,7 @@ DEPRECATED-Community String or SNMPv3 Username: -
 cluster1::*>
 cluster1::*> *system switch ethernet modify -device "sw1" -snmp-version SNMPv3 -community-or-username <username>*
 ----
-. Überprüfen Sie nach dem Abwarten der CSHM-Abfrageperiode, ob die Seriennummer für den Ethernet-Switch eingetragen ist.
+. Nach Ablauf der CSHM-Abfrageperiode überprüfen Sie, ob die Seriennummer für den Ethernet-Switch eingetragen ist.
 +
 [source, cli]
 ----
@@ -174,7 +174,7 @@ DEPRECATED-Community String or SNMPv3 Username: -
 --
 .Cisco Switches
 --
-Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf Cisco 9336C-FX2-Switches:
+Konfigurieren eines SNMPv3-Benutzernamens SNMPv3_USER auf Cisco 9336C-FX2-Switches:
 
 * Für *keine Authentifizierung*:
 +
@@ -182,7 +182,7 @@ Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf Cisco 9336C-FX2-Swi
 ----
 snmp-server user SNMPv3_USER NoAuth
 ----
-* Für * MD5/SHA-Authentifizierung*:
+* Für die *MD5/SHA-Authentifizierung*:
 +
 [source, cli]
 ----
@@ -196,20 +196,20 @@ snmp-server user SNMPv3_USER AuthEncrypt  auth [md5|sha] AUTH-PASSWORD priv aes-
 ----
 
 
-Mit dem folgenden Befehl wird ein SNMPv3-Benutzername auf der ONTAP-Seite konfiguriert:
+Der folgende Befehl konfiguriert einen SNMPv3-Benutzernamen auf der ONTAP Seite:
 
 [source, cli]
 ----
 security login create -user-or-group-name SNMPv3_USER -application snmp -authentication-method usm -remote-switch-ipaddress ADDRESS
 ----
-Mit dem folgenden Befehl wird der SNMPv3-Benutzername mit CSHM eingerichtet:
+Der folgende Befehl richtet den SNMPv3-Benutzernamen bei CSHM ein:
 
 [source, cli]
 ----
 system switch ethernet modify -device DEVICE -snmp-version SNMPv3 -community-or-username SNMPv3_USER
 ----
 .Schritte
-. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass Authentifizierung und Verschlüsselung verwendet werden:
+. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass er Authentifizierung und Verschlüsselung verwendet:
 +
 [source, cli]
 ----
@@ -240,7 +240,7 @@ User              Auth               Priv
 
 (sw1)(Config)#
 ----
-. Richten Sie den SNMPv3-Benutzer auf der ONTAP-Seite ein:
+. Richten Sie den SNMPv3-Benutzer auf der ONTAP Seite ein:
 +
 [source, cli]
 ----
@@ -296,7 +296,7 @@ cluster1::*>
 cluster1::*> *system switch ethernet modify -device "sw1" -snmp-version SNMPv3 -community-or-username <username>*
 cluster1::*>
 ----
-. Stellen Sie sicher, dass die Seriennummer, die mit dem neu erstellten SNMPv3-Benutzer abgefragt werden soll, mit der im vorherigen Schritt nach Abschluss des CSHM-Abfragezeitraums enthaltenen identisch ist.
+. Überprüfen Sie nach Abschluss des CSHM-Abfragezeitraums, ob die abzufragende Seriennummer des neu erstellten SNMPv3-Benutzers mit der im vorherigen Schritt angegebenen übereinstimmt.
 +
 [source, cli]
 ----
@@ -329,9 +329,9 @@ cluster1::*>
 
 
 --
-.NVIDIA – CL 5.4.0
+.NVIDIA - CL 5.4.0
 --
-Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.4.0:
+Konfigurieren eines SNMPv3-Benutzernamens SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.4.0:
 
 * Für *keine Authentifizierung*:
 +
@@ -339,7 +339,7 @@ Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switc
 ----
 nv set service snmp-server username SNMPv3_USER auth-none
 ----
-* Für * MD5/SHA-Authentifizierung*:
+* Für die *MD5/SHA-Authentifizierung*:
 +
 [source, cli]
 ----
@@ -353,20 +353,20 @@ nv set service snmp-server username SNMPv3_USER [auth-md5|auth-sha] AUTH-PASSWOR
 ----
 
 
-Mit dem folgenden Befehl wird ein SNMPv3-Benutzername auf der ONTAP-Seite konfiguriert:
+Der folgende Befehl konfiguriert einen SNMPv3-Benutzernamen auf der ONTAP Seite:
 
 [source, cli]
 ----
 security login create -user-or-group-name SNMPv3_USER -application snmp -authentication-method usm -remote-switch-ipaddress ADDRESS
 ----
-Mit dem folgenden Befehl wird der SNMPv3-Benutzername mit CSHM eingerichtet:
+Der folgende Befehl richtet den SNMPv3-Benutzernamen bei CSHM ein:
 
 [source, cli]
 ----
 system switch ethernet modify -device DEVICE -snmp-version SNMPv3 -community-or-username SNMPv3_USER
 ----
 .Schritte
-. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass Authentifizierung und Verschlüsselung verwendet werden:
+. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass er Authentifizierung und Verschlüsselung verwendet:
 +
 [source, cli]
 ----
@@ -441,7 +441,7 @@ Version 3 Usernames                Configured     *<---- Configured here*
 ---------------------------------  ----------------
 cumulus@sw1:~$
 ----
-. Richten Sie den SNMPv3-Benutzer auf der ONTAP-Seite ein:
+. Richten Sie den SNMPv3-Benutzer auf der ONTAP Seite ein:
 +
 [source, cli]
 ----
@@ -494,7 +494,7 @@ DEPRECATED-Community String or SNMPv3 Username: -
 cluster1::*>
 cluster1::*> *system switch ethernet modify -device "sw1 (b8:59:9f:09:7c:22)" -snmp-version SNMPv3 -community-or-username SNMPv3User*
 ----
-. Stellen Sie sicher, dass die Seriennummer, die mit dem neu erstellten SNMPv3-Benutzer abgefragt werden soll, mit der im vorherigen Schritt nach Abschluss des CSHM-Abfragezeitraums enthaltenen identisch ist.
+. Überprüfen Sie nach Abschluss des CSHM-Abfragezeitraums, ob die abzufragende Seriennummer des neu erstellten SNMPv3-Benutzers mit der im vorherigen Schritt angegebenen übereinstimmt.
 +
 [source, cli]
 ----
@@ -525,9 +525,9 @@ DEPRECATED-Community String or SNMPv3 Username: -
 
 
 --
-.NVIDIA – CL 5.11.0
+.NVIDIA - CL 5.11.0
 --
-Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.11.0:
+Konfigurieren eines SNMPv3-Benutzernamens SNMPv3_USER auf NVIDIA SN2100-Switches mit CLI 5.11.0:
 
 * Für *keine Authentifizierung*:
 +
@@ -535,7 +535,7 @@ Konfigurieren Sie einen SNMPv3-Benutzernamen SNMPv3_USER auf NVIDIA SN2100-Switc
 ----
 nv set system snmp-server username SNMPv3_USER auth-none
 ----
-* Für * MD5/SHA-Authentifizierung*:
+* Für die *MD5/SHA-Authentifizierung*:
 +
 [source, cli]
 ----
@@ -549,20 +549,20 @@ nv set system snmp-server username SNMPv3_USER [auth-md5|auth-sha] AUTH-PASSWORD
 ----
 
 
-Mit dem folgenden Befehl wird ein SNMPv3-Benutzername auf der ONTAP-Seite konfiguriert:
+Der folgende Befehl konfiguriert einen SNMPv3-Benutzernamen auf der ONTAP Seite:
 
 [source, cli]
 ----
 security login create -user-or-group-name SNMPv3_USER -application snmp -authentication-method usm -remote-switch-ipaddress ADDRESS
 ----
-Mit dem folgenden Befehl wird der SNMPv3-Benutzername mit CSHM eingerichtet:
+Der folgende Befehl richtet den SNMPv3-Benutzernamen bei CSHM ein:
 
 [source, cli]
 ----
 system switch ethernet modify -device DEVICE -snmp-version SNMPv3 -community-or-username SNMPv3_USER
 ----
 .Schritte
-. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass Authentifizierung und Verschlüsselung verwendet werden:
+. Richten Sie den SNMPv3-Benutzer auf dem Switch so ein, dass er Authentifizierung und Verschlüsselung verwendet:
 +
 [source, cli]
 ----
@@ -588,7 +588,7 @@ trap-link-down
 state                 enabled
 cumulus@sw1:~$
 ----
-. Richten Sie den SNMPv3-Benutzer auf der ONTAP-Seite ein:
+. Richten Sie den SNMPv3-Benutzer auf der ONTAP Seite ein:
 +
 [source, cli]
 ----
@@ -641,7 +641,7 @@ DEPRECATED-Community String or SNMPv3 Username: -
 cluster1::*>
 cluster1::*> *system switch ethernet modify -device "sw1 (b8:59:9f:09:7c:22)" -snmp-version SNMPv3 -community-or-username SNMPv3User*
 ----
-. Stellen Sie sicher, dass die Seriennummer, die mit dem neu erstellten SNMPv3-Benutzer abgefragt werden soll, mit der im vorherigen Schritt nach Abschluss des CSHM-Abfragezeitraums enthaltenen identisch ist.
+. Überprüfen Sie nach Abschluss des CSHM-Abfragezeitraums, ob die abzufragende Seriennummer des neu erstellten SNMPv3-Benutzers mit der im vorherigen Schritt angegebenen übereinstimmt.
 +
 [source, cli]
 ----

@@ -2,61 +2,61 @@
 permalink: switch-cisco-3232c/upgrade-3232c-storage-switches.html 
 sidebar: sidebar 
 keywords: upgrade, cisco nexus, 3232c storage switch 
-summary: 'Ein Upgrade der Cisco NX-OS Software und der Referenzkonfigurationsdateien (RCs) auf Cisco Nexus 3232C-Storage-Switches kann durchgeführt werden.' 
+summary: 'Die Cisco NX-OS Software und Referenzkonfigurationsdateien (RCFs) können auf Cisco Nexus 3232C Speicherswitchen aktualisiert werden.' 
 ---
-= Aktualisieren eines Cisco Nexus 3232C Storage Switch
+= Upgrade eines Cisco Nexus 3232C Speicherswitch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um die Cisco NX-OS Software und die RCF (Referenz-Konfigurationsdateien) auf Cisco Nexus 3232C-Switches zu aktualisieren.
+Führen Sie diese Schritte aus, um die Cisco NX-OS-Software und die Referenzkonfigurationsdateien (RCF) auf Cisco Nexus 3232C-Switches zu aktualisieren.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Bevor Sie beginnen
-Stellen Sie vor dem Upgrade der NX-OS-Software und der RCFs auf dem Storage-Switch sicher, dass die folgenden Bedingungen erfüllt sind:
+Stellen Sie sicher, dass die folgenden Bedingungen erfüllt sind, bevor Sie die NX-OS-Software und die RCFs auf dem Speichersystem aktualisieren:
 
-* Der Switch funktioniert voll (es sollten keine Fehler in den Protokollen oder ähnlichen Problemen geben).
-* Sie haben die gewünschten Boot-Variablen im RCF aktiviert oder gesetzt, um die gewünschten Boot-Images zu reflektieren, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version behalten.
+* Der Schalter funktioniert einwandfrei (es sollten keine Fehler in den Protokollen oder ähnliche Probleme auftreten).
+* Sie haben die gewünschten Boot-Variablen in der RCF-Datei überprüft oder so eingestellt, dass sie die gewünschten Boot-Images widerspiegeln, wenn Sie nur NX-OS installieren und Ihre aktuelle RCF-Version beibehalten.
 +
-Wenn Sie die Boot-Variablen ändern müssen, um die aktuellen Startabbilder zu berücksichtigen, müssen Sie dies vor der erneuten Anwendung der RCF tun, damit die korrekte Version bei zukünftigen Neustarts instanziiert wird.
+Wenn Sie die Bootvariablen ändern müssen, um die aktuellen Boot-Images widerzuspiegeln, müssen Sie dies tun, bevor Sie die RCF erneut anwenden, damit bei zukünftigen Neustarts die richtige Version instanziiert wird.
 
-* Sie haben die entsprechenden Leitfäden zu Software und Upgrades auf der bezogen http://www.cisco.com/en/US/products/ps9670/prod_installation_guides_list.html["Switches Der Cisco Nexus 3000-Serie"^] Seite für vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco Storage.
-* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den auf der verfügbaren Referenzkonfigurationsdateien (RCFs) definiert https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite.
-
-
+* Sie haben die entsprechenden Software- und Upgrade-Anleitungen konsultiert, die auf der Website verfügbar sind. http://www.cisco.com/en/US/products/ps9670/prod_installation_guides_list.html["Cisco Nexus 3000 Series Switches"^] Seite mit vollständiger Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco -Speicher.
+* Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf dem Server verfügbar sind. https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] Seite.
 
 
-== Tauschen Sie den Schalter aus
+
+
+== Tauschen Sie den Schalter aus.
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden die folgende Nomenklatur für Switches und Knoten:
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
 * Die Namen der beiden Speicherschalter lauten S1 und S2.
-* Die Knoten sind node1 und node2.
+* Die Knoten sind Knoten1 und Knoten2.
 
 
-Die Beispiele in diesem Verfahren verwenden zwei Nodes; Knoten1 mit zwei Storage-Ports und Knoten2 mit zwei Storage-Ports. Siehe link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] Um die korrekten Speicherports auf Ihren Plattformen zu überprüfen.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten; Knoten 1 mit zwei Speicheranschlüssen und Knoten 2 mit zwei Speicheranschlüssen.  Siehe dielink:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Speicherports auf Ihren Plattformen zu überprüfen.
 
 
-NOTE: Das Verfahren erfordert die Verwendung von ONTAP Befehlen und den Switches der Cisco Nexus 3000 Serie. ONTAP Befehle werden verwendet, sofern nicht anders angegeben. Die Ausgaben für die Befehle können je nach verschiedenen Versionen von ONTAP variieren.
+NOTE: Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.  Die Befehlsausgaben können je nach ONTAP Version variieren.
 
 
 
-=== Schritt 1: Prüfen Sie den Funktionszustand von Switches und Ports
+=== Schritt 1: Überprüfen Sie den Gesundheitszustand der Switches und Ports.
 
-. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Erstellung eines Cases durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 `system node autosupport invoke -node * -type all - message MAINT=xh`
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 
-NOTE: Die AutoSupport Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt wird.
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 . Prüfen Sie, ob die Speicherschalter verfügbar sind:
 +
@@ -93,7 +93,7 @@ S2
 storage::*>
 ----
 ====
-. Vergewissern Sie sich, dass die Node-Ports ordnungsgemäß und betriebsbereit sind:
+. Überprüfen Sie, ob die Knotenports intakt und betriebsbereit sind:
 +
 `storage port show -port-type ENET`
 
@@ -119,7 +119,7 @@ node2
                    e7b  ENET  storage    100 enabled  online        30
 ----
 ====
-. Prüfen Sie, ob es keine Probleme mit dem Storage Switch oder der Verkabelung gibt:
+. Prüfen Sie, ob es keine Probleme mit dem Speicherschalter oder der Verkabelung gibt:
 +
 `system health alert show -instance`
 
@@ -137,17 +137,17 @@ There are no entries matching your query.
 
 
 
-=== Schritt: Kopieren Sie den RCF auf Cisco Switch S2
+=== Schritt 2: Kopieren Sie die RCF-Datei auf den Cisco -Switch S2
 
-. Kopieren Sie den RCF auf Switch S2 mit einem der folgenden Übertragungsprotokolle auf den Switch Bootflash: FTP, HTTP, TFTP, SFTP oder SCP.
+. Kopieren Sie die RCF-Datei auf Switch S2 mithilfe eines der folgenden Übertragungsprotokolle in den Bootflash-Speicher des Switches: FTP, HTTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird HTTP zum Kopieren eines RCF auf den Bootflash auf Switch S2 verwendet:
+Das folgende Beispiel zeigt, wie HTTP verwendet wird, um eine RCF-Datei in den Bootflash des Switches S2 zu kopieren:
 
 [listing, subs="+quotes"]
 ----
@@ -160,7 +160,7 @@ Copy complete.
 S2#
 ----
 ====
-. Wenden Sie die RCF an, die zuvor auf den Bootflash heruntergeladen wurde:
+. Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an:
 +
 `copy bootflash:`
 
@@ -168,31 +168,31 @@ S2#
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die RCF-Datei `Nexus_3232C_RCF_v1.6-Storage.txt` Installation auf Schalter S2:
+Das folgende Beispiel zeigt die RCF-Datei. `Nexus_3232C_RCF_v1.6-Storage.txt` wird auf Switch S2 installiert:
 
 [listing, subs="+quotes"]
 ----
 S2# *copy Nexus_3232C_RCF_v1.6-Storage.txt running-config echo-commands*
 ----
 ====
-. Vergewissern Sie sich, dass die RCF-Datei die richtige neuere Version ist:
+. Überprüfen Sie, ob es sich bei der RCF-Datei um die korrekte, neuere Version handelt:
 +
 `show running-config`
 
 +
-Wenn Sie die Ausgabe überprüfen, um zu überprüfen, ob Sie die richtige RCF haben, stellen Sie sicher, dass die folgenden Informationen richtig sind:
+Wenn Sie die Ausgabe überprüfen, um sicherzustellen, dass Sie die richtige RCF-Datei haben, achten Sie darauf, dass die folgenden Informationen korrekt sind:
 
 +
 ** Das RCF-Banner
-** Die Node- und Port-Einstellungen
+** Die Knoten- und Porteinstellungen
 ** Anpassungen
 +
-Die Ausgabe variiert je nach Konfiguration Ihres Standorts. Prüfen Sie die Porteinstellungen, und lesen Sie in den Versionshinweisen alle Änderungen, die für die RCF gelten, die Sie installiert haben.
+Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port-Einstellungen und beachten Sie die Versionshinweise, um sich über etwaige Änderungen zu informieren, die speziell für die von Ihnen installierte RCF-Version gelten.
 
 +
 [NOTE]
 ====
-In der Bannerausgabe aus dem `show banner motd` Befehl, Sie müssen lesen und befolgen Sie die Anweisungen im Abschnitt * WICHTIGE HINWEISE*, um die richtige Konfiguration und den Betrieb des Switches zu gewährleisten.
+Im Banner-Output von `show banner motd` Um den korrekten Betrieb des Schalters sicherzustellen, müssen Sie die Anweisungen im Abschnitt *WICHTIGE HINWEISE* lesen und befolgen.
 
 ====
 +
@@ -239,19 +239,19 @@ S2#
 ====
 +
 
-NOTE: Beim ersten Anwenden des RCF wird die Meldung *ERROR: Failed to write VSH befiehlt* erwartet und kann ignoriert werden.
+NOTE: Bei der erstmaligen Anwendung des RCF ist die Fehlermeldung *ERROR: Failed to write VSH commands* zu erwarten und kann ignoriert werden.
 
 
 
-. Nachdem Sie sich vergewissern, dass die Software-Versionen und die Switch-Einstellungen korrekt sind, kopieren Sie den `running-config` Datei in der `startup-config` Datei auf Schalter S2.
+. Nachdem Sie überprüft haben, ob die Softwareversionen und die Schaltereinstellungen korrekt sind, kopieren Sie die `running-config` Datei an die `startup-config` Datei auf Switch S2.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt die `running-config` Datei erfolgreich in kopiert `startup-config` Datei:
+Das folgende Beispiel zeigt die `running-config` Datei erfolgreich kopiert nach `startup-config` Datei:
 
 [listing]
 ----
@@ -263,7 +263,7 @@ S2# copy running-config startup-config
 
 
 
-=== Schritt 3: Kopieren Sie das NX-OS-Image auf Cisco Switch S2 und starten Sie neu
+=== Schritt 3: Kopieren Sie das NX-OS-Image auf den Cisco -Switch S2 und starten Sie ihn neu.
 
 . Kopieren Sie das NX-OS-Image auf Switch S2.
 +
@@ -305,9 +305,9 @@ Copy complete, now saving to disk (please wait)...
 Copy complete.
 ----
 ====
-. Installieren Sie das System-Image so, dass die neue Version beim nächsten Neustart von Switch S2 geladen wird.
+. Installieren Sie das Systemabbild, damit die neue Version beim nächsten Neustart des Switches S2 geladen wird.
 +
-Der Schalter wird in 10 Sekunden neu gestartet, wobei das neue Bild wie in der folgenden Ausgabe dargestellt ist:
+Der Switch wird in 10 Sekunden mit dem neuen Image neu gestartet, wie in der folgenden Ausgabe dargestellt:
 
 +
 .Beispiel anzeigen
@@ -376,12 +376,12 @@ Finishing the upgrade, switch will reboot in 10 seconds.
 S2#
 ----
 ====
-. Speichern Sie die Konfiguration.
+. Konfiguration speichern.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Referenzen für NX-OS-Befehle der Cisco Nexus 3000-Serie"^].
+Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] .
 
 +
-Sie werden aufgefordert, das System neu zu booten.
+Sie werden aufgefordert, das System neu zu starten.
 
 +
 .Beispiel anzeigen
@@ -395,7 +395,7 @@ S2# *reload*
 This command will reboot the system. (y/n)?  [n] *y*
 ----
 ====
-. Vergewissern Sie sich, dass sich die neue NX-OS-Versionsnummer auf dem Switch befindet:
+. Vergewissern Sie sich, dass die neue NX-OS-Versionsnummer auf dem Switch eingestellt ist:
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -457,9 +457,9 @@ S2#
 
 
 
-=== Schritt 4: Überprüfen Sie den Funktionszustand von Switches und Ports
+=== Schritt 4: Überprüfen Sie erneut den Gesundheitszustand der Switches und Ports.
 
-. Überprüfen Sie erneut, ob die Speicherschalter nach dem Neustart verfügbar sind:
+. Überprüfen Sie nach dem Neustart, ob die Speicherschalter verfügbar sind:
 +
 `system switch ethernet show`
 
@@ -494,7 +494,7 @@ S2
 storage::*>
 ----
 ====
-. Vergewissern Sie sich nach dem Neustart, dass die Switch-Ports ordnungsgemäß und betriebsbereit sind:
+. Überprüfen Sie nach dem Neustart, ob die Switch-Ports einwandfrei funktionieren:
 +
 `storage port show -port-type ENET`
 
@@ -520,7 +520,7 @@ node2
                    e7b  ENET  storage    100 enabled  online        30
 ----
 ====
-. Überprüfen Sie erneut, ob es keine Probleme mit dem Storage Switch oder der Verkabelung beim Cluster gibt:
+. Überprüfen Sie erneut, ob es Probleme mit dem Speicherschalter oder der Verkabelung des Clusters gibt:
 +
 `system health alert show -instance`
 
@@ -534,8 +534,8 @@ storage::*> *system health alert show -instance*
 There are no entries matching your query.
 ----
 ====
-. Wiederholen Sie das Verfahren, um die NX-OS-Software und die RCF am Switch S1 zu aktualisieren.
-. Wenn Sie die automatische Case-Erstellung unterdrückt haben, aktivieren Sie es erneut, indem Sie eine AutoSupport Meldung aufrufen:
+. Wiederholen Sie den Vorgang, um die NX-OS-Software und RCF auf Switch S1 zu aktualisieren.
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 

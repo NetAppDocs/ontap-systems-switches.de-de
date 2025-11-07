@@ -2,62 +2,62 @@
 permalink: switch-bes-53248/migrate-to-switchless-interconnect-bes-53248.html 
 sidebar: sidebar 
 keywords: migrate, switchless cluster interconnect, broadcom bes-53248 switch 
-summary: Sie können von einem Cluster mit einem Switch-Cluster-Netzwerk zu einem migrieren, mit dem zwei Nodes direkt für ONTAP 9.3 und höher verbunden sind. 
+summary: Für ONTAP 9.3 und höher können Sie von einem Cluster mit einem Switched-Cluster-Netzwerk zu einem Cluster migrieren, in dem zwei Knoten direkt miteinander verbunden sind. 
 ---
-= Ersetzen Sie Broadcom BES-53248-Cluster-Switches durch Switch-lose Verbindungen
+= Ersetzen Sie Broadcom BES-53248 Cluster-Switches durch switchlose Verbindungen.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können von einem Cluster mit einem Switch-Cluster-Netzwerk zu einem migrieren, mit dem zwei Nodes direkt für ONTAP 9.3 und höher verbunden sind.
+Für ONTAP 9.3 und höher können Sie von einem Cluster mit einem Switched-Cluster-Netzwerk zu einem Cluster migrieren, in dem zwei Knoten direkt miteinander verbunden sind.
 
 
 
-== Prüfen Sie die Anforderungen
+== Überprüfungsanforderungen
 
 .Richtlinien
-Lesen Sie sich die folgenden Richtlinien durch:
+Bitte beachten Sie die folgenden Richtlinien:
 
-* Die Migration auf eine Cluster-Konfiguration mit zwei Nodes ohne Switches ist ein unterbrechungsfreier Betrieb. Die meisten Systeme verfügen auf jedem Node über zwei dedizierte Cluster Interconnect Ports, jedoch können Sie dieses Verfahren auch für Systeme mit einer größeren Anzahl an dedizierten Cluster Interconnect Ports auf jedem Node verwenden, z. B. vier, sechs oder acht.
-* Sie können die Cluster Interconnect-Funktion ohne Switches nicht mit mehr als zwei Nodes verwenden.
-* Wenn Sie bereits über ein zwei-Node-Cluster mit Cluster Interconnect Switches verfügen und ONTAP 9.3 oder höher ausgeführt wird, können Sie die Switches durch direkte Back-to-Back-Verbindungen zwischen den Nodes ersetzen.
+* Die Migration zu einer Zwei-Knoten-Clusterkonfiguration ohne Switches ist ein unterbrechungsfreier Vorgang.  Die meisten Systeme verfügen über zwei dedizierte Cluster-Interconnect-Ports pro Knoten. Dieses Verfahren kann aber auch für Systeme mit einer größeren Anzahl dedizierter Cluster-Interconnect-Ports pro Knoten angewendet werden, beispielsweise vier, sechs oder acht.
+* Die Funktion „Switchless Cluster Interconnect“ kann nicht mit mehr als zwei Knoten verwendet werden.
+* Wenn Sie über einen bestehenden Zwei-Knoten-Cluster verfügen, der Cluster-Interconnect-Switches verwendet und auf dem ONTAP 9.3 oder höher läuft, können Sie die Switches durch direkte Back-to-Back-Verbindungen zwischen den Knoten ersetzen.
 
 
 .Bevor Sie beginnen
-Stellen Sie sicher, dass Sie Folgendes haben:
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Ein gesundes Cluster, das aus zwei durch Cluster-Switches verbundenen Nodes besteht. Auf den Nodes muss dieselbe ONTAP Version ausgeführt werden.
-* Jeder Node mit der erforderlichen Anzahl an dedizierten Cluster-Ports, die redundante Cluster Interconnect-Verbindungen bereitstellen, um die Systemkonfiguration zu unterstützen. Beispielsweise gibt es zwei redundante Ports für ein System mit zwei dedizierten Cluster Interconnect Ports auf jedem Node.
-
-
+* Ein gesunder Cluster, der aus zwei Knoten besteht, die über Cluster-Switches verbunden sind.  Auf den Knoten muss die gleiche ONTAP Version laufen.
+* Jeder Knoten verfügt über die erforderliche Anzahl dedizierter Cluster-Ports, die redundante Cluster-Verbindungen bereitstellen, um Ihre Systemkonfiguration zu unterstützen.  Beispielsweise gibt es zwei redundante Ports für ein System mit zwei dedizierten Cluster-Verbindungsports auf jedem Knoten.
 
 
-== Migrieren Sie die Switches
 
-.Über diese Aufgabe
-Durch das folgende Verfahren werden die Cluster-Switches in einem 2-Node-Cluster entfernt und jede Verbindung zum Switch durch eine direkte Verbindung zum Partner-Node ersetzt.
 
-image::../media/tnsc_clusterswitches_and_direct_connections.PNG[Cluster-Switches wurden durch direkte Verbindungen ersetzt]
+== Migrieren Sie die Schalter
+
+.Informationen zu diesem Vorgang
+Das folgende Verfahren entfernt die Cluster-Switches in einem Zwei-Knoten-Cluster und ersetzt jede Verbindung zum Switch durch eine direkte Verbindung zum Partnerknoten.
+
+image::../media/tnsc_clusterswitches_and_direct_connections.PNG[Cluster-Switches durch Direktverbindungen ersetzt]
 
 .Zu den Beispielen
-Die Beispiele in dem folgenden Verfahren zeigen Nodes, die „e0a“ und „e0b“ als Cluster-Ports verwenden. Ihre Nodes verwenden möglicherweise unterschiedliche Cluster-Ports, je nach System.
+Die Beispiele im folgenden Verfahren zeigen Knoten, die "e0a" und "e0b" als Cluster-Ports verwenden.  Ihre Knoten verwenden möglicherweise unterschiedliche Cluster-Ports, da diese je nach System variieren.
 
 
 
-=== Schritt: Bereiten Sie sich auf die Migration vor
+=== Schritt 1: Vorbereitung auf die Migration
 
-. Ändern Sie die Berechtigungsebene in erweitert, indem Sie eingeben `y` Wenn Sie dazu aufgefordert werden, fortzufahren:
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie Folgendes eingeben `y` wenn Sie aufgefordert werden, fortzufahren:
 +
 `set -privilege advanced`
 
 +
-Die erweiterte Eingabeaufforderung `*>` Angezeigt.
+Die erweiterte Aufforderung `*>` erscheint.
 
-. ONTAP 9.3 und höher unterstützt die automatische Erkennung von Clustern ohne Switches, die standardmäßig aktiviert sind.
+. ONTAP 9.3 und höher unterstützt die automatische Erkennung von switchlosen Clustern, die standardmäßig aktiviert ist.
 +
-Sie können überprüfen, ob die Erkennung von Clustern ohne Switch durch Ausführen des Befehls „Advanced Privilege“ aktiviert ist:
+Sie können überprüfen, ob die Erkennung von Clustern ohne Switch aktiviert ist, indem Sie den Befehl mit erweiterten Berechtigungen ausführen:
 
 +
 `network options detect-switchless-cluster show`
@@ -76,17 +76,17 @@ Enable Switchless Cluster Detection: true
 ----
 ====
 +
-Wenn „Switch less Cluster Detection aktivieren“ lautet `false`, Wen Sie sich an den NetApp Support.
+Wenn "Schalterlose Clustererkennung aktivieren" `false` Wenden Sie sich an den NetApp Support.
 
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=<number_of_hours>h`
 
 +
-Wo `h` Dies ist die Dauer des Wartungsfensters von Stunden. Die Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit die automatische Case-Erstellung während des Wartungsfensters unterdrückt werden kann.
+Wo `h` ist die Dauer des Wartungsfensters in Stunden.  Die Meldung informiert den technischen Support über diese Wartungsaufgabe, damit dieser die automatische Fallerstellung während des Wartungsfensters unterdrücken kann.
 
 +
-Im folgenden Beispiel unterdrückt der Befehl die automatische Case-Erstellung für zwei Stunden:
+Im folgenden Beispiel unterdrückt der Befehl die automatische Fallerstellung für zwei Stunden:
 
 +
 .Beispiel anzeigen
@@ -101,21 +101,21 @@ cluster::*> system node autosupport invoke -node * -type all -message MAINT=2h
 
 
 
-=== Schritt: Ports und Verkabelung konfigurieren
+=== Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
-. Ordnen Sie die Cluster-Ports an jedem Switch in Gruppen, so dass die Cluster-Ports in grop1 zu Cluster-Switch 1 wechseln und die Cluster-Ports in grop2 zu Cluster-Switch 2 wechseln. Diese Gruppen sind später im Verfahren erforderlich.
-. Ermitteln der Cluster-Ports und Überprüfen von Verbindungsstatus und Systemzustand:
+. Ordnen Sie die Cluster-Ports an jedem Switch in Gruppen ein, sodass die Cluster-Ports in Gruppe 1 an Cluster-Switch 1 und die Cluster-Ports in Gruppe 2 an Cluster-Switch 2 angeschlossen werden.  Diese Gruppen werden im weiteren Verlauf des Verfahrens benötigt.
+. Identifizieren Sie die Cluster-Ports und überprüfen Sie den Verbindungsstatus und die Integrität:
 +
 `network port show -ipspace Cluster`
 
 +
-Im folgenden Beispiel für Knoten mit Cluster-Ports „e0a“ und „e0b“ wird eine Gruppe als „node1:e0a“ und „node2:e0a“ und die andere Gruppe als „node1:e0b“ und „node2:e0b“ identifiziert. Ihre Nodes verwenden möglicherweise unterschiedliche Cluster-Ports, da diese je nach System variieren.
+Im folgenden Beispiel für Knoten mit Cluster-Ports „e0a“ und „e0b“ wird eine Gruppe als „node1:e0a“ und „node2:e0a“ und die andere Gruppe als „node1:e0b“ und „node2:e0b“ identifiziert.  Ihre Knoten verwenden möglicherweise unterschiedliche Cluster-Ports, da diese je nach System variieren.
 
 +
-image::../media/tnsc_clusterswitch_connections.PNG[Cluster-Switch-Verbindungen zwischen node1 und node2]
+image::../media/tnsc_clusterswitch_connections.PNG[Cluster-Switch-Verbindungen zwischen Knoten 1 und Knoten 2]
 
 +
-Überprüfen Sie, ob die Ports einen Wert von haben `up` Für die Spalte „Link“ und einen Wert von `healthy` Für die Spalte „Integritätsstatus“.
+Überprüfen Sie, ob die Ports den Wert haben. `up` für die Spalte „Link“ und einen Wert von `healthy` für die Spalte „Gesundheitszustand“.
 
 +
 .Beispiel anzeigen
@@ -142,9 +142,9 @@ e0b   Cluster   Cluster          up    9000  auto/10000  healthy false
 4 entries were displayed.
 ----
 ====
-. Vergewissern Sie sich, dass alle Cluster-LIFs auf ihren Home-Ports sind.
+. Vergewissern Sie sich, dass alle Cluster-LIFs an ihren jeweiligen Heimatports angeschlossen sind.
 +
-Vergewissern Sie sich, dass die Spalte „ist-Home“ angezeigt wird `true` Für jedes der Cluster-LIFs:
+Überprüfen Sie, ob die Spalte „is-home“ `true` für jeden der Cluster-LIFs:
 
 +
 `network interface show -vserver Cluster -fields is-home`
@@ -167,27 +167,27 @@ Cluster  node2_clus2  true
 ----
 ====
 +
-Wenn Cluster-LIFs sich nicht auf ihren Home-Ports befinden, setzen Sie die LIFs auf ihre Home-Ports zurück:
+Falls Cluster-LIFs vorhanden sind, die sich nicht auf ihren Heimatports befinden, werden diese LIFs wieder auf ihre Heimatports zurückgesetzt:
 
 +
 `network interface revert -vserver Cluster -lif *`
 
-. Deaktivieren Sie die automatische Zurücksetzung für die Cluster-LIFs:
+. Automatische Wiederherstellung der Cluster-LIFs deaktivieren:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert false`
 
-. Vergewissern Sie sich, dass alle im vorherigen Schritt aufgeführten Ports mit einem Netzwerk-Switch verbunden sind:
+. Überprüfen Sie, ob alle im vorherigen Schritt aufgeführten Ports mit einem Netzwerk-Switch verbunden sind:
 +
 `network device-discovery show -port _cluster_port_`
 
 +
-Die Spalte „ermittelte Geräte“ sollte der Name des Cluster-Switch sein, mit dem der Port verbunden ist.
+In der Spalte „Erkanntes Gerät“ sollte der Name des Cluster-Switches stehen, mit dem der Port verbunden ist.
 
 +
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass Cluster-Ports „e0a“ und „e0b“ korrekt mit Cluster-Switches „cs1“ und „cs2“ verbunden sind.
+Das folgende Beispiel zeigt, dass die Cluster-Ports "e0a" und "e0b" korrekt mit den Cluster-Switches "cs1" und "cs2" verbunden sind.
 
 [listing]
 ----
@@ -212,15 +212,15 @@ node2/cdp
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -238,7 +238,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -271,41 +271,41 @@ RPC status:
 ----
 --
 ====
-. [[step7]] Überprüfen Sie, ob das Cluster ordnungsgemäß ist:
+. [[Schritt 7]] Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
 `cluster ring show`
 
 +
-Alle Einheiten müssen entweder Master oder sekundär sein.
+Alle Einheiten müssen entweder Master- oder Sekundäreinheiten sein.
 
-. Richten Sie die Konfiguration ohne Switches für die Ports in Gruppe 1 ein.
+. Richten Sie die switchlose Konfiguration für die Ports in Gruppe 1 ein.
 +
 
-IMPORTANT: Um mögliche Netzwerkprobleme zu vermeiden, müssen Sie die Ports von group1 trennen und sie so schnell wie möglich wieder zurückverbinden, z. B. *in weniger als 20 Sekunden*.
+IMPORTANT: Um mögliche Netzwerkprobleme zu vermeiden, müssen Sie die Ports von Gruppe1 trennen und sie so schnell wie möglich wieder direkt miteinander verbinden, zum Beispiel *in weniger als 20 Sekunden*.
 
 +
-.. Ziehen Sie alle Kabel gleichzeitig von den Anschlüssen in Groupp1 ab.
+.. Trennen Sie gleichzeitig alle Kabel von den Anschlüssen in Gruppe 1.
 +
-Im folgenden Beispiel werden die Kabel von Port „e0a“ auf jeden Node getrennt, und der Cluster-Traffic wird auf jedem Node durch den Switch und Port „e0b“ fortgesetzt:
+Im folgenden Beispiel werden die Kabel an Port „e0a“ auf jedem Knoten getrennt, und der Cluster-Datenverkehr wird weiterhin über den Switch und Port „e0b“ auf jedem Knoten abgewickelt:
 
 +
 image::../media/tnsc_clusterswitch1_disconnected.PNG[ClusterSwitch1 getrennt]
 
-.. Schließen Sie die Anschlüsse in der Gruppe p1 zurück an die Rückseite an.
+.. Verbinden Sie die Ports in Gruppe 1 Rücken an Rücken.
 +
-Im folgenden Beispiel ist „e0a“ auf node1 mit „e0a“ auf node2 verbunden:
+Im folgenden Beispiel ist "e0a" auf Knoten 1 mit "e0a" auf Knoten 2 verbunden:
 
 +
-image::../media/tnsc_ports_e0a_direct_connection.PNG[Direkte Verbindung zwischen Ports „e0a“]
+image::../media/tnsc_ports_e0a_direct_connection.PNG[Direkte Verbindung zwischen den Ports "e0a"]
 
 
 
-. Die Cluster-Netzwerkoption ohne Switches wechselt von `false` Bis `true`. Dies kann bis zu 45 Sekunden dauern. Vergewissern Sie sich, dass die Option „ohne Switch“ auf eingestellt ist `true`:
+. Die Option für ein schalterloses Clusternetzwerk wechselt von `false` Zu `true` Die  Dies kann bis zu 45 Sekunden dauern.  Vergewissern Sie sich, dass die Option „Schalterlos“ aktiviert ist. `true` :
 +
 `network options switchless-cluster show`
 
 +
-Das folgende Beispiel zeigt, dass das Cluster ohne Switches aktiviert ist:
+Das folgende Beispiel zeigt, dass der switchlose Cluster aktiviert ist:
 
 +
 [listing]
@@ -320,15 +320,15 @@ Enable Switchless Cluster: true
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -346,7 +346,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -380,27 +380,27 @@ RPC status:
 --
 ====
 
-IMPORTANT: Bevor Sie mit dem nächsten Schritt fortfahren, müssen Sie mindestens zwei Minuten warten, um eine funktionierende Back-to-Back-Verbindung für Gruppe 1 zu bestätigen.
+IMPORTANT: Bevor Sie mit dem nächsten Schritt fortfahren, müssen Sie mindestens zwei Minuten warten, um eine funktionierende Back-to-Back-Verbindung in Gruppe 1 zu bestätigen.
 
-. [[step11]] richten Sie die Konfiguration ohne Switches für die Ports in Gruppe 2 ein.
+. [[step11]] Richten Sie die switchlose Konfiguration für die Ports in Gruppe 2 ein.
 +
 
-IMPORTANT: Um mögliche Netzwerkprobleme zu vermeiden, müssen Sie die Ports von groerp2 trennen und sie so schnell wie möglich wieder zurückverbinden, z. B. *in weniger als 20 Sekunden*.
+IMPORTANT: Um mögliche Netzwerkprobleme zu vermeiden, müssen Sie die Ports von Gruppe 2 trennen und sie so schnell wie möglich wieder direkt miteinander verbinden, zum Beispiel *in weniger als 20 Sekunden*.
 
 +
-.. Ziehen Sie alle Kabel gleichzeitig von den Anschlüssen in Groupp2 ab.
+.. Trennen Sie gleichzeitig alle Kabel von den Anschlüssen in Gruppe 2.
 +
-Im folgenden Beispiel werden die Kabel von Port „e0b“ auf jedem Node getrennt, und der Cluster-Datenverkehr wird durch die direkte Verbindung zwischen den „e0a“-Ports fortgesetzt:
+Im folgenden Beispiel werden die Kabel von Port "e0b" an jedem Knoten getrennt, und der Cluster-Datenverkehr wird über die direkte Verbindung zwischen den Ports "e0a" fortgesetzt:
 
 +
 image::../media/tnsc_clusterswitch2_disconnected.PNG[ClusterSwitch2 getrennt]
 
-.. Verkabeln Sie die Anschlüsse in der Rückführung von Group2.
+.. Verbinden Sie die Ports in Gruppe 2 Rücken an Rücken.
 +
-Im folgenden Beispiel wird „e0a“ auf node1 mit „e0a“ auf node2 verbunden und „e0b“ auf node1 ist mit „e0b“ auf node2 verbunden:
+Im folgenden Beispiel ist "e0a" auf Knoten 1 mit "e0a" auf Knoten 2 verbunden und "e0b" auf Knoten 1 ist mit "e0b" auf Knoten 2 verbunden:
 
 +
-image::../media/tnsc_node1_and_node2_direct_connection.PNG[Direkte Verbindung zwischen den Ports auf node1 und node2]
+image::../media/tnsc_node1_and_node2_direct_connection.PNG[Direkte Verbindung zwischen den Ports an Knoten 1 und Knoten 2]
 
 
 
@@ -408,9 +408,9 @@ image::../media/tnsc_node1_and_node2_direct_connection.PNG[Direkte Verbindung zw
 
 
 
-=== Schritt 3: Überprüfen Sie die Konfiguration
+=== Schritt 3: Konfiguration überprüfen
 
-. Vergewissern Sie sich, dass die Ports auf beiden Nodes ordnungsgemäß verbunden sind:
+. Überprüfen Sie, ob die Ports an beiden Knoten korrekt verbunden sind:
 +
 `network device-discovery show -port _cluster_port_`
 
@@ -418,7 +418,7 @@ image::../media/tnsc_node1_and_node2_direct_connection.PNG[Direkte Verbindung zw
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt, dass Cluster-Ports „e0a“ und „e0b“ korrekt mit dem entsprechenden Port auf dem Cluster-Partner verbunden sind:
+Das folgende Beispiel zeigt, dass die Cluster-Ports „e0a“ und „e0b“ korrekt mit dem entsprechenden Port des Cluster-Partners verbunden sind:
 
 [listing]
 ----
@@ -442,11 +442,11 @@ node2/lldp
 8 entries were displayed.
 ----
 ====
-. Aktivieren Sie die automatische Zurücksetzung für die Cluster-LIFs erneut:
+. Automatische Rücksetzung für die Cluster-LIFs wieder aktivieren:
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Vergewissern Sie sich, dass alle LIFs Zuhause sind. Dies kann einige Sekunden dauern.
+. Überprüfen Sie, ob alle LIFs zu Hause sind. Dies kann einige Sekunden dauern.
 +
 `network interface show -vserver Cluster -lif _lif_name_`
 
@@ -454,7 +454,7 @@ node2/lldp
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die LIFs wurden zurückgesetzt, wenn die Spalte „ist Home“ lautet `true`, Wie gezeigt für `node1_clus2` Und `node2_clus2` Im folgenden Beispiel:
+Die LIFs wurden zurückgesetzt, wenn die Spalte „Ist zu Hause“ den Wert „Ist zu Hause“ aufweist. `true` , wie gezeigt für `node1_clus2` Und `node2_clus2` im folgenden Beispiel:
 
 [listing]
 ----
@@ -469,12 +469,12 @@ Cluster  node2_clus2   e0b       true
 ----
 ====
 +
-Wenn Cluster-LIFS nicht an die Home Ports zurückgegeben haben, setzen Sie sie manuell vom lokalen Node zurück:
+Falls Cluster-LIFS nicht zu ihren Heimatports zurückgekehrt sind, setzen Sie sie manuell vom lokalen Knoten aus zurück:
 
 +
 `network interface revert -vserver Cluster -lif _lif_name_`
 
-. Überprüfen Sie den Cluster-Status der Nodes von der Systemkonsole eines der beiden Nodes:
+. Überprüfen Sie den Clusterstatus der Knoten über die Systemkonsole eines der beiden Knoten:
 +
 `cluster show`
 
@@ -482,7 +482,7 @@ Wenn Cluster-LIFS nicht an die Home Ports zurückgegeben haben, setzen Sie sie m
 .Beispiel anzeigen
 [%collapsible]
 ====
-Das folgende Beispiel zeigt das Epsilon auf beiden Knoten `false`:
+Das folgende Beispiel zeigt, dass epsilon an beiden Knoten gleich ist. `false` :
 
 [listing]
 ----
@@ -500,15 +500,15 @@ node2 true    true        false
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -526,7 +526,7 @@ node2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -559,18 +559,18 @@ RPC status:
 ----
 --
 ====
-. [[Schritt6]] Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie erneut, indem Sie eine AutoSupport-Meldung aufrufen:
+. [[step6]] Falls Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 +
-Weitere Informationen finden Sie unter link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows_-_ONTAP_9["NetApp KB Artikel 1010449: Wie kann die automatische Case-Erstellung während geplanter Wartungszeiten unterdrückt werden"^].
+Weitere Informationen finden Sie unter link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_suppress_automatic_case_creation_during_scheduled_maintenance_windows_-_ONTAP_9["NetApp KB-Artikel 1010449: So unterdrücken Sie die automatische Fallerstellung während geplanter Wartungsfenster"^].
 
-. Ändern Sie die Berechtigungsebene zurück in den Administrator:
+. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 
 
 
-.Was kommt als Nächstes?
+.Wie geht es weiter?
 Nachdem Sie Ihre Schalter ausgetauscht haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

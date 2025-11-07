@@ -2,29 +2,29 @@
 permalink: switch-cisco-3232c/cn1610-prepare-to-migrate.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Cluster einsetzen. 
+summary: Sie können Cisco Nexus 3232C Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Vorbereitung der Migration von CN1610-Switches 3232C-Switches
+= Vorbereitung der Migration von CN1610-Switches auf 3232C-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um die Migration Ihres CN1610 Switches auf einen Cisco Nexus 3232C Switch vorzubereiten.
+Befolgen Sie diese Schritte, um die Migration Ihres CN1610-Switches auf einen Cisco Nexus 3232C-Switch vorzubereiten.
 
 .Schritte
-. Wenn AutoSupport in diesem Cluster aktiviert ist, unterdrücken Sie die automatische Erstellung eines Falls durch Aufrufen einer AutoSupport Meldung:
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
 `system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
-_X_ ist die Dauer des Wartungsfensters in Stunden.
+_x_ ist die Dauer des Wartungsfensters in Stunden.
 
 +
 [NOTE]
 ====
-Die Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, damit während des Wartungsfensters die automatische Case-Erstellung unterdrückt wird.
+Die Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, damit die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
 
 ====
 . Informationen zu den Geräten in Ihrer Konfiguration anzeigen:
@@ -35,7 +35,7 @@ Die Meldung wird vom technischen Support dieser Wartungsaufgabe benachrichtigt, 
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird angezeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Node für jeden Cluster-Interconnect-Switch konfiguriert wurden:
+Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:
 
 [listing, subs="+quotes"]
 ----
@@ -58,9 +58,9 @@ n2     /cdp
 8 entries were displayed.
 ----
 ====
-. Legen Sie den Administrations- oder Betriebsstatus der einzelnen Cluster-Schnittstellen fest.
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle.
 +
-.. Zeigt die Attribute des Cluster-Netzwerk-Ports an:
+.. Cluster-Netzwerkportattribute anzeigen:
 +
 `network port show -role cluster`
 
@@ -121,7 +121,7 @@ Cluster
  8 entries were displayed.
 ----
 ====
-.. Informationen über die erkannten Cluster-Switches anzeigen:
+.. Informationen zu den gefundenen Cluster-Switches anzeigen:
 +
 `system cluster-switch show`
 
@@ -129,7 +129,7 @@ Cluster
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Cluster-Switches, die dem Cluster bekannt sind, sowie ihre Management-IP-Adressen angezeigt:
+Das folgende Beispiel zeigt die dem Cluster bekannten Cluster-Switches zusammen mit ihren Management-IP-Adressen an:
 
 [listing, subs="+quotes"]
 ----
@@ -154,19 +154,19 @@ CL2                           cluster-network  10.10.1.102   CN1610
 ====
 
 
-. Vergewissern Sie sich, dass die entsprechenden RCF und das entsprechende Image auf den neuen 3232C-Switches installiert sind, wenn dies für Ihre Anforderungen erforderlich ist, und nehmen Sie alle wesentlichen Standortanpassungen vor.
+. Prüfen Sie, ob die entsprechenden RCF-Dateien und Images gemäß Ihren Anforderungen auf den neuen 3232C-Switches installiert sind, und nehmen Sie alle notwendigen Anpassungen vor.
 +
-Sie sollten beide Switches derzeit vorbereiten. Wenn Sie ein RCF- und Image-Upgrade durchführen müssen, müssen Sie folgende Schritte ausführen:
+Sie sollten jetzt beide Schalter vorbereiten.  Falls Sie die RCF und das Image aktualisieren müssen, müssen Sie die folgenden Schritte ausführen:
 
 +
-.. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Support-Site.
+.. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Supportseite.
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
-.. Laden Sie die entsprechende Version des RCF herunter.
-.. Wählen Sie *WEITER* auf der Seite *Beschreibung*, akzeptieren Sie die Lizenzvereinbarung und befolgen Sie dann die Anweisungen auf der Seite *Download*, um den RCF herunterzuladen.
-.. Laden Sie die entsprechende Version der Image-Software herunter unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco® Cluster und Management Network Switch Referenzkonfigurationsdatei herunterladen"^] .
+.. Laden Sie die passende Version der RCF herunter.
+.. Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
+.. Laden Sie die passende Version der Bildbearbeitungssoftware herunter unterlink:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster- und Management-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
 
 
-. Migrieren Sie die LIFs, die dem zweiten CN1610 Switch zugeordnet sind, den Sie ersetzen möchten:
+. Migrieren Sie die LIFs, die mit dem zweiten CN1610-Switch verbunden sind, den Sie ersetzen möchten:
 +
 `network interface migrate -vserver _vserver-name_ -lif _lif-name_ -source-node _source-node-name_ destination-node _destination-node-name_ -destination-port _destination-port-name_`
 
@@ -174,7 +174,7 @@ Sie sollten beide Switches derzeit vorbereiten. Wenn Sie ein RCF- und Image-Upgr
 .Beispiel anzeigen
 [%collapsible]
 ====
-Sie müssen jede LIF individuell wie im folgenden Beispiel gezeigt migrieren:
+Sie müssen jede LIF einzeln migrieren, wie im folgenden Beispiel gezeigt:
 
 [listing, subs="+quotes"]
 ----
@@ -188,7 +188,7 @@ cluster::*> *network interface migrate -vserver cluster -lif n2_clus3 -source-no
 -destination-node  n2  -destination-port  e0d*
 ----
 ====
-. Überprüfen Sie den Systemzustand des Clusters:
+. Überprüfen Sie den Zustand des Clusters:
 +
 `network interface show -role cluster`
 
@@ -218,5 +218,5 @@ Cluster
 ====
 
 
-.Was kommt als Nächstes?
-link:cn1610-replace-CL2.html["CN1610-Schalter CL2 durch 3232C-Schalter C2 ersetzen"].
+.Wie geht es weiter?
+link:cn1610-replace-CL2.html["Ersetzen Sie den Schalter CL2 des Modells CN1610 durch den Schalter C2 des Modells 3232C."].

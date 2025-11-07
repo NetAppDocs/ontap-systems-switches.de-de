@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9336c-fx2-shared/required-documentation-9336c-shared.html 
 keywords: shared storage cluster switch 
-summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C-FX2 Switches spezielle Switch- und Controller-Dokumentation, um Ihre Cisco 9336-FX2-Switches und das ONTAP-Cluster einzurichten. 
+summary: Für die Installation und Wartung von Cisco Nexus 9336C-FX2 Switches sollten Sie unbedingt die spezifische Switch- und Controller-Dokumentation lesen, um Ihre Cisco 9336-FX2 Switches und ONTAP Cluster einzurichten. 
 ---
-= Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 Shared-Switches
+= Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 Shared Switches
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,34 +14,34 @@ summary: Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C
 
 
 [role="lead"]
-Überprüfen Sie bei der Installation und Wartung des Cisco Nexus 9336C-FX2 Switches spezielle Switch- und Controller-Dokumentation, um Ihre Cisco 9336-FX2-Switches und das ONTAP-Cluster einzurichten.
+Für die Installation und Wartung von Cisco Nexus 9336C-FX2 Switches sollten Sie unbedingt die spezifische Switch- und Controller-Dokumentation lesen, um Ihre Cisco 9336-FX2 Switches und ONTAP Cluster einzurichten.
 
-Informationen zum Einrichten der gemeinsamen Cisco Nexus 9336C-FX2-Switches finden Sie im https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Switches Der Cisco Nexus 9000-Serie Unterstützen"] Seite.
+Informationen zur Einrichtung der gemeinsam genutzten Cisco Nexus 9336C-FX2 Switches finden Sie unter https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Series Switches Unterstützung"] Seite.
 
 |===
 | Dokumenttitel | Beschreibung 
 
 
-| link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Hardware-Installationsleitfaden Der Nexus 9000-Serie"] | Detaillierte Informationen zu Standortanforderungen, Hardwaredetails zu Switches und Installationsoptionen. 
+| link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Hardware-Installationsanleitung für die Nexus 9000-Serie"] | Bietet detaillierte Informationen zu Standortanforderungen, Hardware-Details der Schalter und Installationsoptionen. 
 
 
-| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-and-configuration-guides-list.html["Cisco Nexus 9000-Serie Switch – Software-Konfigurationsleitfäden"] (Im Leitfaden für die auf den Switches installierte NX-OS Version finden) | Stellt Informationen zur Erstkonfiguration des Switches bereit, die Sie benötigen, bevor Sie den Switch für den ONTAP-Betrieb konfigurieren können. 
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-and-configuration-guides-list.html["Softwarekonfigurationshandbücher für Cisco Nexus 9000 Series Switches"](Wählen Sie die Anleitung für die auf Ihren Switches installierte NX-OS-Version aus) | Liefert die grundlegenden Switch-Konfigurationsinformationen, die Sie benötigen, bevor Sie den Switch für den ONTAP -Betrieb konfigurieren können. 
 
 
-| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Cisco Nexus 9000 Serie NX-OS Software-Upgrade und Downgrade Guide"] (Im Leitfaden für die auf den Switches installierte NX-OS Version finden) | Enthält Informationen zum Downgrade des Switch auf ONTAP unterstützte Switch-Software, falls erforderlich. 
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#InstallandUpgrade["Leitfaden für Software-Upgrades und -Downgrades der Cisco Nexus 9000-Serie mit NX-OS"](Wählen Sie die Anleitung für die auf Ihren Switches installierte NX-OS-Version aus) | Bietet Informationen darüber, wie der Switch gegebenenfalls auf eine von ONTAP unterstützte Switch-Software heruntergestuft werden kann. 
 
 
-| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000-Serie NX-OS Command Reference Master Index"] | Enthält Links zu den verschiedenen von Cisco bereitgestellten Befehlsreferenzen. 
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-command-reference-list.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz – Masterindex"] | Bietet Links zu den verschiedenen Befehlsreferenzen von Cisco. 
 
 
-| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/mib/reference/MIBRef.html["Cisco Nexus 9000 MIBs Referenz"] | Beschreibt die MIB-Dateien (Management Information Base) für die Nexus 9000-Switches. 
+| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/mib/reference/MIBRef.html["Cisco Nexus 9000 MIBs-Referenz"] | Beschreibt die Management Information Base (MIB)-Dateien für die Nexus 9000 Switches. 
 
 
-| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-system-message-guides-list.html["Nachrichtenreferenz für das NX-OS-System der Serie Nexus 9000"] | Beschreibt die Systemmeldungen für Switches der Cisco Nexus 9000 Serie, Informationen und andere, die bei der Diagnose von Problemen mit Links, interner Hardware oder der Systemsoftware helfen können. 
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-system-message-guides-list.html["Nexus 9000-Serie NX-OS Systemmeldungsreferenz"] | Beschreibt die Systemmeldungen für Switches der Cisco Nexus 9000-Serie, sowohl die informativen als auch die, die bei der Diagnose von Problemen mit Verbindungen, interner Hardware oder der Systemsoftware hilfreich sein können. 
 
 
-| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#ReleaseandCompatibility["Versionshinweise für die Cisco Nexus 9000-Serie NX-OS"] (Wählen Sie die Hinweise für die NX-OS Version, die auf Ihren Switches installiert ist.) | Beschreibt die Funktionen, Bugs und Einschränkungen der Cisco Nexus 9000 Serie. 
+| link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html#ReleaseandCompatibility["Cisco Nexus 9000 Serie NX-OS Versionshinweise"](Wählen Sie die Hinweise für die auf Ihren Switches installierte NX-OS-Version aus) | Beschreibt die Funktionen, Fehler und Einschränkungen der Cisco Nexus 9000-Serie. 
 
 
-| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/regulatory/compliance/RCSI.html["Compliance- und Sicherheitsinformationen für die Cisco Nexus 9000-Serie"] | Bietet internationale Compliance-, Sicherheits- und gesetzliche Informationen für Switches der Serie Nexus 9000. 
+| link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/regulatory/compliance/RCSI.html["Informationen zur Einhaltung gesetzlicher Bestimmungen und zur Sicherheit für die Cisco Nexus 9000-Serie"] | Bietet Informationen zur Einhaltung internationaler behördlicher Vorschriften, zur Sicherheit und zu gesetzlichen Bestimmungen für die Switches der Serie Nexus 9000. 
 |===

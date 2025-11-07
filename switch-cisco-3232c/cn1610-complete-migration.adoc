@@ -2,19 +2,19 @@
 permalink: switch-cisco-3232c/cn1610-complete-migration.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Sie können Cisco Nexus 3232C-Switches als Cluster-Switches im AFF- oder FAS-Cluster einsetzen. 
+summary: Sie können Cisco Nexus 3232C Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden. 
 ---
-= Führen Sie die Migration von CN1610-Switches auf 3232C-Switches durch
+= Schließen Sie Ihre Migration von CN1610-Switches auf 3232C-Switches ab.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um die Migration der CN1610-Switches auf Nexus 3232C-Switches abzuschließen.
+Führen Sie die folgenden Schritte durch, um die Migration der CN1610-Switches auf Nexus 3232C-Switches abzuschließen.
 
 .Schritte
-. Zurücksetzen aller migrierten Cluster-Interconnect-LIFs, die ursprünglich auf allen Knoten mit C1 verbunden waren:
+. Alle migrierten Cluster-Interconnect-LIFs, die ursprünglich auf allen Knoten mit C1 verbunden waren, sollen wiederhergestellt werden:
 +
 `network interface revert -server cluster -lif _lif-name_`
 
@@ -22,7 +22,7 @@ Gehen Sie wie folgt vor, um die Migration der CN1610-Switches auf Nexus 3232C-Sw
 .Beispiel anzeigen
 [%collapsible]
 ====
-Sie müssen jede LIF individuell wie im folgenden Beispiel gezeigt migrieren:
+Sie müssen jede LIF einzeln migrieren, wie im folgenden Beispiel gezeigt:
 
 [listing, subs="+quotes"]
 ----
@@ -32,7 +32,7 @@ cluster::*> *network interface revert -vserver cluster -lif n2_clus1*
 cluster::*> *network interface revert -vserver cluster -lif n2_clus4*
 ----
 ====
-. Vergewissern Sie sich, dass die Schnittstelle jetzt die Startseite ist:
+. Überprüfen Sie, ob die Schnittstelle nun die Ausgangsposition erreicht hat:
 +
 `network interface show -role cluster`
 
@@ -40,7 +40,7 @@ cluster::*> *network interface revert -vserver cluster -lif n2_clus4*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel wird der Status von Cluster-Interconnect-Schnittstellen angezeigt `up` Und „IS Home“ für Knoten n1 und n2:
+Das folgende Beispiel zeigt den Status der Cluster-Verbindungsschnittstellen. `up` und „Ist Zuhause“ für die Knoten n1 und n2:
 
 [listing, subs="+quotes"]
 ----
@@ -69,15 +69,15 @@ Cluster
 ====
 .ONTAP 9.9.1 und höher
 --
-Sie können das verwenden `network interface check cluster-connectivity` Befehl, um eine Zugriffsprüfung für die Cluster-Konnektivität zu starten und dann Details anzuzeigen:
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start` Und `network interface check cluster-connectivity show`
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
 
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity start*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Befehl ausführen `show`, um die Details anzuzeigen.
+*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
 
 [listing, subs="+quotes"]
 ----
@@ -96,7 +96,7 @@ n2
 --
 .Alle ONTAP Versionen
 --
-Sie können für alle ONTAP Versionen auch den verwenden `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Konnektivität:
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
 
 `cluster ping-cluster -node <name>`
 
@@ -145,7 +145,7 @@ RPC status:
 ----
 --
 ====
-. [[step4]] erweitern Sie das Cluster durch Hinzufügen von Nodes zu den Nexus 3232C-Cluster-Switches.
+. [[step4]] Erweitern Sie den Cluster, indem Sie Knoten zu den Nexus 3232C Cluster-Switches hinzufügen.
 . Zeigen Sie die Informationen zu den Geräten in Ihrer Konfiguration an:
 +
 ** `network device-discovery show`
@@ -156,7 +156,7 @@ RPC status:
 .Beispiel anzeigen
 [%collapsible]
 ====
-Die folgenden Beispiele zeigen die Nodes n3 und n4 mit 40-GbE-Cluster-Ports, die mit den Ports e1/7 bzw. e1/8 verbunden sind, auf beiden Nexus 3232C-Cluster-Switches. Beide Nodes sind dem Cluster verbunden. Die 40 GbE Cluster Interconnect Ports sind e4a und e4e.
+Die folgenden Beispiele zeigen die Knoten n3 und n4 mit 40-GbE-Cluster-Ports, die mit den Ports e1/7 bzw. e1/8 der beiden Nexus 3232C Cluster-Switches verbunden sind.  Beide Knoten sind dem Cluster beigetreten.  Die verwendeten 40-GbE-Cluster-Verbindungsports sind e4a und e4e.
 
 [listing, subs="+quotes"]
 ----
@@ -282,7 +282,7 @@ CL2                         cluster-network  10.10.1.102    CN1610
 ====
 
 
-. Entfernen Sie die ausgetauschten CN1610-Schalter, wenn sie nicht automatisch entfernt werden:
+. Entfernen Sie die ausgetauschten CN1610-Schalter, falls diese nicht automatisch entfernt wurden:
 +
 `system cluster-switch delete -device _switch-name_`
 
@@ -298,7 +298,7 @@ cluster::> *system cluster-switch delete –device CL1*
 cluster::> *system cluster-switch delete –device CL2*
 ----
 ====
-. Überprüfen Sie, ob die richtigen Cluster-Switches überwacht werden:
+. Stellen Sie sicher, dass die richtigen Cluster-Switches überwacht werden:
 +
 `system cluster-switch show`
 
@@ -306,7 +306,7 @@ cluster::> *system cluster-switch delete –device CL2*
 .Beispiel anzeigen
 [%collapsible]
 ====
-Im folgenden Beispiel werden die Cluster-Switches C1 und C2 überwacht:
+Das folgende Beispiel zeigt, wie die Cluster-Switches C1 und C2 überwacht werden:
 
 [listing, subs="+quotes"]
 ----
@@ -334,11 +334,11 @@ C2                          cluster-network    10.10.1.104      NX3232C
 2 entries were displayed.
 ----
 ====
-. Wenn Sie die automatische Erstellung eines Cases unterdrückten, können Sie sie erneut aktivieren, indem Sie eine AutoSupport Meldung aufrufen:
+. Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
 
 
-.Was kommt als Nächstes?
-link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"].
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].
