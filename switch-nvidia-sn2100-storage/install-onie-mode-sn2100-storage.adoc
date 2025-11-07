@@ -140,4 +140,4 @@ DISTRIB_DESCRIPTION=*"Cumulus Linux 4.4.3”*
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Cumulus Linux im ONIE-Modus installiert haben, link:install-rcf-sn2100-storage.html["Installieren oder aktualisieren Sie das RCF-Skript"]Die
+Nach der Installation von Cumulus Linux im ONIE-Modus können Sielink:install-rcf-sn2100-storage.html["Installieren oder aktualisieren Sie das RCF-Skript"] Die

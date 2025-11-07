@@ -24,4 +24,4 @@ https://hwu.netapp.com/["NetApp Hardware Universe"^]
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Ihre Regale verkabelt haben, link:configure-sn2100-cluster.html["Konfigurieren Sie den Switch"]Die
+Nachdem Sie Ihre Regale verkabelt haben, können Sielink:configure-sn2100-cluster.html["Konfigurieren Sie den Switch"] Die

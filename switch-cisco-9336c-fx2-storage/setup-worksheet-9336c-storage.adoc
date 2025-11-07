@@ -1023,4 +1023,4 @@ Erfordert Lizenz
 Siehe https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports.
 
 .Was kommt als nächstes
-Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben,link:install-9336c-storage.html["Installieren Sie den Schalter"] .
+Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie link:install-9336c-storage.html["Installieren Sie den Schalter"]Die

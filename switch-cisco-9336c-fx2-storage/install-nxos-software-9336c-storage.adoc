@@ -696,4 +696,4 @@ Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie m
 
 
 .Was kommt als Nächstes?
-Nachdem Sie die NX-OS-Software installiert oder aktualisiert haben,link:install-rcf-software-9336c-storage.html["Installieren oder aktualisieren Sie RCF"] .
+Nach der Installation oder Aktualisierung der NX-OS-Software können Sielink:install-rcf-software-9336c-storage.html["Installieren oder aktualisieren Sie RCF"] Die

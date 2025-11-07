@@ -723,4 +723,4 @@ Weitere Informationen finden Sie unter https://docs.nvidia.com/networking-ethern
 --
 ====
 .Was kommt als Nächstes?
-Nachdem Sie Cumulus Linux im Cumulus-Modus installiert haben, link:install-rcf-sn2100-storage.html["Installieren oder aktualisieren Sie das RCF-Skript"]Die
+Nach der Installation von Cumulus Linux im Cumulus-Modus können Sielink:install-rcf-sn2100-storage.html["Installieren oder aktualisieren Sie das RCF-Skript"] Die

@@ -99,7 +99,7 @@ Wenn Sie sich nicht sicher sind, entfernen Sie alle Konfigurationsdateien für d
 +
 [listing, subs="+quotes"]
 ----
-cluster1::> *system cluster-switch configure-health-monitor -node * -package-url http://192.168.2.20/usr/download/_[filename.zip]_*
+cluster1::> *system switch ethernet configure-health-monitor*
 ----
 . Überprüfen Sie, ob die Befehlsausgabe mit dem folgenden Text für Ihre ONTAP-Version endet:
 
@@ -125,13 +125,13 @@ Das heruntergeladene CSHM-Paket wurde erfolgreich verarbeitet.
 Sollte ein Fehler auftreten, wenden Sie sich an den NetApp Support.
 
 . [[step6]]Warten Sie bis zu zweimal das Abfrageintervall der Ethernet-Switch-Integritätsüberwachung, das durch Ausführen gefunden `system switch ethernet polling-interval show`wird, bevor Sie den nächsten Schritt abschließen.
-. Führen Sie den Befehl auf dem ONTAP-System aus `system switch ethernet show` , und stellen Sie sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *true* und das Seriennummernfeld nicht *Unknown* anzeigt.
+. Führen Sie den Befehl aus `system switch ethernet configure-health-monitor show` Stellen Sie im ONTAP -System sicher, dass die Cluster-Switches erkannt werden, wobei das überwachte Feld auf *True* gesetzt ist und das Feld für die Seriennummer nicht *Unknown* anzeigt.
 +
 [listing, subs="+quotes"]
 ----
-cluster1::> *system switch ethernet show*
+cluster1::> *system switch ethernet configure-health-monitor show*
 ----
 
 
 .Was kommt als Nächstes?
-Nachdem Sie die CSHM-Datei installiert haben, link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die
+Nach der Installation der CSHM-Datei können Sielink:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] Die

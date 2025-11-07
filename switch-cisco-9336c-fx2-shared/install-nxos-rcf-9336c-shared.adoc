@@ -406,4 +406,4 @@ System Manager bietet einen einfachen und einfachen Workflow für die Cluster-Ei
 Gehen Sie zu https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP mit System Manager in einem neuen Cluster"] Für Setup-Anweisungen.
 
 .Was kommt als Nächstes?
-Nach der Installation des RCF können Sie link:../switch-cshm/config-overview.html["Konfigurieren Sie die Überwachung des Switch-Systemzustands"]Die
+Nach der Installation des RCF können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

@@ -19,4 +19,4 @@ Informationen zur Konfiguration des SN2100-Switch finden Sie in der NVIDIA-Dokum
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Ihren Switch konfiguriert haben, link:install-cumulus-mode-sn2100-cluster.html["Cumulus Linux im Cumulus-Modus installieren"] oder link:install-onie-mode-sn2100-cluster.html["Cumulus Linux im ONIE-Modus installieren"]Die
+Nachdem Sie Ihren Switch konfiguriert haben, können Sielink:install-cumulus-mode-sn2100-cluster.html["Cumulus Linux im Cumulus-Modus installieren"] oderlink:install-onie-mode-sn2100-cluster.html["Cumulus Linux im ONIE-Modus installieren"] Die

@@ -75,4 +75,4 @@ Rail Kit, NVIDIA Single Switch, kurze Tiefe
 NOTE: Weitere Informationen finden Sie in der NVIDIA-Dokumentation auf https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installieren Sie den SN2100-Switch und den Schienen-Kit"^].
 
 .Was kommt als nächstes
-Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, überprüfen Sie die link:required-documentation-sn2100-storage.html["erforderliche Dokumentation"]Die
+Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die folgenden überprüfen: link:required-documentation-sn2100-storage.html["erforderliche Dokumentation"]Die

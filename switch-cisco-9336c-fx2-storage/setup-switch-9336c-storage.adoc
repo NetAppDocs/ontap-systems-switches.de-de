@@ -192,4 +192,4 @@ NOTE: Wenn Sie die Konfiguration zu diesem Zeitpunkt nicht speichern, werden kei
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Ihre Switches konfiguriert haben,link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation der NX-OS-Software und RCF vor"] .
+Nachdem Sie Ihre Schalter konfiguriert haben, können Sie link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation der NX-OS-Software und RCF vor"]Die

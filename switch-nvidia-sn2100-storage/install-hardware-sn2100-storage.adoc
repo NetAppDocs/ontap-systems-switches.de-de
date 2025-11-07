@@ -19,4 +19,4 @@ Informationen zur Installation der SN2100-Hardware finden Sie in der NVIDIA-Doku
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Ihre Hardware installiert haben, link:cabling-considerations-sn2100-storage.html["Verkabelung und Konfiguration überprüfen"] Anforderungen.
+Nachdem Sie Ihre Hardware installiert haben, können Sielink:cabling-considerations-sn2100-storage.html["Verkabelung und Konfiguration überprüfen"] Anforderungen.

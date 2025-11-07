@@ -76,3 +76,5 @@ Sehen Sie sich die NVIDIA https://docs.nvidia.com/networking-ethernet-software/c
 
 --
 ====
+.Was kommt als nächstes
+Nachdem Sie Ihre Schalter zurückgesetzt haben, können Sielink:configure-overview-sn2100-cluster.html["neu konfigurieren"] sie nach Bedarf.

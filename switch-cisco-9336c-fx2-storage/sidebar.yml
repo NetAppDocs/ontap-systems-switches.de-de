@@ -36,9 +36,15 @@ entries:
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-overview-9336c-storage.html"
   - title: Installation oder Upgrade der NX-OS-Software
     url: "/switch-cisco-9336c-fx2-storage/install-nxos-software-9336c-storage.html"
-  - title: Installieren oder aktualisieren Sie RCF
-    url: "/switch-cisco-9336c-fx2-storage/install-rcf-software-9336c-storage.html"
-  - title: SSH-Konfiguration überprüfen
+  - title: Installieren oder aktualisieren Sie den RCF
+    pdf-filename: Install_Upgrade_rcf
+    entries:
+    - title: RCF-Übersicht installieren oder aktualisieren
+      url: "/switch-cisco-9336c-fx2-storage/install-upgrade-rcf-overview-9336c-storage.html"
+    - title: Installieren Sie das RCF
+      url: "/switch-cisco-9336c-fx2-storage/install-rcf-software-9336c-storage.html"
+    - title: Aktualisieren Sie Ihre RCF-Version
+      url: "/switch-cisco-9336c-fx2-storage/upgrade-rcf-software-9336c-storage.html"
     url: "/switch-cisco-9336c-fx2-storage/configure-ssh-keys.html"
   - title: Setzen Sie den Switch auf die Werkseinstellungen zurück
     url: "/switch-cisco-9336c-fx2-storage/reset-switch-9336c-storage.html"

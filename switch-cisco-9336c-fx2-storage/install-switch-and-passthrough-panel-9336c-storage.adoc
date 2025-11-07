@@ -134,4 +134,4 @@ Der Management-Port ist der oben rechts gelegene Port auf der PSU-Seite des Swit
 
 
 .Was kommt als nächstes
-Nachdem Sie die Switches im NetApp Schrank installiert haben,link:setup-switch-9336c-storage.html["Konfigurieren Sie die Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches"] .
+Nachdem Sie die Switches im NetApp -Schrank installiert haben, können Sielink:setup-switch-9336c-storage.html["Konfigurieren Sie die Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches"] Die

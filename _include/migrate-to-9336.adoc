@@ -701,4 +701,4 @@ RPC status:
 
 
 .Was kommt als Nächstes?
-Nachdem Sie die Switches migriert haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .
+Nach der Migration der Switches können Sielink:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] Die

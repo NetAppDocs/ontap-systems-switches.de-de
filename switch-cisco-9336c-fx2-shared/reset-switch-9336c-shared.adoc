@@ -44,3 +44,6 @@ This command will reboot the system. (y/n)? [n] *y*
 Das System wird neu gestartet und der Konfigurationsassistent wird aufgerufen.  Wenn Sie während des Startvorgangs die Aufforderung „Auto Provisioning abbrechen und mit der normalen Einrichtung fortfahren?“ erhalten,  (ja/nein)[n]“, sollten Sie mit *ja* antworten, um fortzufahren.
 
 
+
+.Was kommt als nächstes
+Nachdem Sie Ihre Schalter zurückgesetzt haben, können Sielink:configure-switch-overview-9336c-shared.html["neu konfigurieren"] sie nach Bedarf.

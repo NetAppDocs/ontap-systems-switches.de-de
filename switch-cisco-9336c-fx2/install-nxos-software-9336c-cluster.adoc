@@ -696,4 +696,4 @@ Wenn Cluster-LIFs nicht an die Home Ports zurückgegeben haben, setzen Sie sie m
 
 
 .Was kommt als Nächstes?
-Nachdem Sie die NX-OS-Software installiert oder aktualisiert haben,link:install-upgrade-rcf-overview-cluster.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."] .
+Nach der Installation oder Aktualisierung der NX-OS-Software können Sielink:install-upgrade-rcf-overview-cluster.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."] Die

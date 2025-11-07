@@ -333,4 +333,4 @@ UP     swp16      100G  9216   BondMember  cs01 (swp16)     Master: cl
 --
 ====
 .Was kommt als Nächstes?
-Nachdem Sie Ihre Verkabelungs- und Konfigurationsanforderungen überprüft haben, link:install-cable-shelves-sn2100-cluster.html["Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrung."]Die
+Nachdem Sie Ihre Verkabelungs- und Konfigurationsanforderungen überprüft haben, können Sielink:install-cable-shelves-sn2100-cluster.html["Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrung."] Die

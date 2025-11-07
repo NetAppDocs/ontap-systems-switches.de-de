@@ -267,4 +267,4 @@ storage::*>
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Ihre Schalter ausgetauscht haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .
+Nachdem Sie Ihre Schalter ausgetauscht haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

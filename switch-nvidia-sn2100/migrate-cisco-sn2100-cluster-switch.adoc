@@ -561,4 +561,4 @@ Cluster
 
 
 .Was kommt als Nächstes?
-Nachdem Sie Ihre Switches migriert haben,link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] .
+Nach der Migration Ihrer Switches können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die
