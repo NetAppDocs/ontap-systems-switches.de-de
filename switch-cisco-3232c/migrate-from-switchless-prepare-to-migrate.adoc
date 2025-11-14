@@ -246,4 +246,4 @@ n2         /cdp
 
 
 .Wie geht es weiter?
-link:migrate-from-switchless-configure-ports.html["Konfigurieren Sie Ihre Ports"].
+Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sielink:migrate-from-switchless-configure-ports.html["Konfigurieren Sie Ihre Ports"] Die

@@ -379,4 +379,4 @@ GEM FPGA                         0x2
 
 
 .Wie geht es weiter?
-link:install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei"]
+Nach der Installation der NX-OS-Software können Sie link:install-the-rcf-file.html["Installieren Sie die Referenzkonfigurationsdatei"]Die

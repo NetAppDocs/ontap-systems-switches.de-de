@@ -268,4 +268,4 @@ System Manager bietet einen einfachen und unkomplizierten Arbeitsablauf für die
 Siehe https://docs.netapp.com/us-en/ontap/task_configure_ontap.html["Konfigurieren Sie ONTAP auf einem neuen Cluster mit System Manager"] für Einrichtungsanweisungen.
 
 .Wie geht es weiter?
-Nach der Installation des RCF, link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"]Die
+Nach der Installation des RCF können Sie link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"]Die

@@ -68,4 +68,4 @@ Details zum Luftstrom des Cisco Nexus 92300YC Switches:
 
 
 .Was kommt als nächstes
-link:required-documentation-92300.html["Erforderliche Dokumentation"].
+Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die folgenden überprüfen: link:required-documentation-92300.html["erforderliche Dokumentation"]Die

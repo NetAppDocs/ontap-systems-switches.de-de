@@ -105,4 +105,4 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 
 
 .Wie geht es weiter?
-link:cn1610-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"].
+Nachdem Sie die Migrationsanforderungen geprüft haben, können Sielink:cn1610-prepare-to-migrate.html["Bereiten Sie sich auf die Migration Ihrer Schalter vor."] Die

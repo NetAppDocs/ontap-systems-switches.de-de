@@ -649,4 +649,4 @@ RPC status:
 --
 ====
 .Wie geht es weiter?
-link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"].
+Nach der Installation des RCF können Sie link:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"]Die

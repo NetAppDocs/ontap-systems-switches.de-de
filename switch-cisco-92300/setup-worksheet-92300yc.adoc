@@ -1366,4 +1366,4 @@ ISL zum Umschalten von Port 66
 
 |===
 .Was kommt als nächstes
-link:install-switch-92300yc.html["Installieren Sie den Schalter"].
+Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie link:install-switch-92300yc.html["Installieren Sie den Schalter"]Die

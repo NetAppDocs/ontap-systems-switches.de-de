@@ -162,4 +162,4 @@ Copy complete.
 
 
 .Wie geht es weiter?
-link:install-nxos-overview.html["Bereiten Sie die Installation der NX-OS-Software und von RCF vor."].
+Nachdem Sie Ihre Schalter konfiguriert haben, können Sie link:install-nxos-overview.html["Bereiten Sie die Installation der NX-OS-Software und RCF vor"]Die

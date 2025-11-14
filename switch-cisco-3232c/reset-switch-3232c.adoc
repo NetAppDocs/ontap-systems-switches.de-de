@@ -44,3 +44,6 @@ This command will reboot the system. (y/n)? [n] *y*
 Das System wird neu gestartet und der Konfigurationsassistent wird aufgerufen. Wenn Sie während des Startvorgangs die Aufforderung „Auto Provisioning abbrechen und mit der normalen Einrichtung fortfahren?“ erhalten, (ja/nein)[n]“, sollten Sie mit *ja* antworten, um fortzufahren.
 
 
+
+.Was kommt als nächstes
+Nach dem Zurücksetzen des Schalters können Sielink:install-overview-cisco-3232c.html["neu konfigurieren"] Es wird Ihren Anforderungen entsprechend angefertigt.

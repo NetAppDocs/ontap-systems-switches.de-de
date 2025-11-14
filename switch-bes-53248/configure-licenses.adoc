@@ -54,6 +54,9 @@ EFOS 3.4.4.6 und höher
 
 |===
 
+NOTE: Um einen Transaktionsschlüssel für eine Portlizenzschlüsseldatei einzulösen, gehen Sie zulink:https://support.broadcom.com/web/csg/license-generation["Lizenzportal für Broadcom-unterstützte Ethernet-Switches"^] Seite. Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_add_Additional_Port_Licensing_for_the_Broadcom_BES_53248_Switch["So fügen Sie zusätzliche Portlizenzen für den Broadcom BES-53248 Switch hinzu"^] für weitere Einzelheiten.
+
+
 
 == Legacy-Lizenzen
 

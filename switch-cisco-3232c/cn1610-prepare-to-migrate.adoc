@@ -219,4 +219,4 @@ Cluster
 
 
 .Wie geht es weiter?
-link:cn1610-replace-CL2.html["Ersetzen Sie den Schalter CL2 des Modells CN1610 durch den Schalter C2 des Modells 3232C."].
+Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sielink:cn1610-replace-CL2.html["Ersetzen Sie den Schalter CL2 des Modells CN1610 durch den Schalter C2 des Modells 3232C."] Die

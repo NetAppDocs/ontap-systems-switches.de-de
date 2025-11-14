@@ -460,4 +460,4 @@ Copy Complete.
 
 
 .Wie geht es weiter?
-link:cn1610-complete-migration.html["Schließen Sie Ihre Migration ab."].
+Nachdem Sie Ihre Switch-Ports konfiguriert haben, können Sielink:cn1610-complete-migration.html["Schließen Sie Ihre Migration ab."] Die

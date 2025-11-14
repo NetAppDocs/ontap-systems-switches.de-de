@@ -609,4 +609,4 @@ Total entries displayed: 4
 
 
 .Wie geht es weiter?
-link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].
+Nachdem Sie Ihre SSH-Konfiguration überprüft haben, können Sie link:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"]Die

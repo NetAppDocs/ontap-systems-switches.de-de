@@ -341,4 +341,4 @@ C2                          cluster-network    10.10.1.104      NX3232C
 
 
 .Wie geht es weiter?
-link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].
+Nachdem Sie Ihre Switch-Migration abgeschlossen haben, können Sielink:../switch-cshm/config-overview.html["Konfigurieren der Switch-Integritätsüberwachung"] Die

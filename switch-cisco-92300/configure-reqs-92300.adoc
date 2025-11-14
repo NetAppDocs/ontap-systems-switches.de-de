@@ -35,4 +35,4 @@ Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen:
 Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen.
 
 .Was kommt als nächstes
-link:components-92300.html["Komponenten und Teilenummern"].
+Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre link:components-92300.html["Komponenten und Teilenummern"]Die

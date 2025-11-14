@@ -556,4 +556,4 @@ e4e       Cluster      Cluster          up   9000 auto/40000  -        -
 
 
 .Wie geht es weiter?
-link:migrate-switchless-complete-migration.html["Schließen Sie Ihre Migration ab."].
+Nachdem Sie Ihre Switch-Ports konfiguriert haben, können Sielink:migrate-switchless-complete-migration.html["Schließen Sie Ihre Migration ab."] Die

@@ -104,4 +104,4 @@ Einzelheiten zu den verfügbaren RCF-Konfigurationen finden Sie unterlink:config
 Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 .Wie geht es weiter?
-Nachdem Sie die Schritte zur Installation oder Aktualisierung von RCF gelesen haben,link:install-rcf-software-3232c.html["Installieren Sie den RCF"] oderlink:upgrade-rcf-software-3232c.html["Aktualisieren Sie Ihren RCF"] nach Bedarf.
+Nachdem Sie die Übersicht über die Installations- oder Aktualisierungsprozedur von RCF durchgelesen haben, können Sielink:install-rcf-software-3232c.html["Installieren Sie den RCF"] oderlink:upgrade-rcf-software-3232c.html["Aktualisieren Sie Ihren RCF"] wie erforderlich.

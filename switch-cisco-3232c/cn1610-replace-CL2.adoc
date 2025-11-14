@@ -495,4 +495,4 @@ cluster::*> *network interface migrate -vserver cluster -lif n2_clus4 -source-no
 
 
 .Wie geht es weiter?
-link:cn1610-replace-CL1.html["Ersetzen Sie den Schalter CL1 des Modells CN1610 durch den Schalter C1 des Modells 3232C."].
+Nachdem Sie den Schalter CN1610 CL2 ausgetauscht haben, können Sielink:cn1610-replace-CL1.html["Ersetzen Sie den Schalter CL1 des Modells CN1610 durch den Schalter C1 des Modells 3232C."] Die

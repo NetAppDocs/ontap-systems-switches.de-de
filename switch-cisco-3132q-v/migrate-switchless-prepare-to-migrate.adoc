@@ -100,4 +100,4 @@ Sie müssen jetzt beide Schalter vorbereiten.  Falls Sie die RCF- und Bildverarb
 
 
 .Wie geht es weiter?
-link:migrate-switchless-configure-ports.html["Konfigurieren Sie Ihre Ports"].
+Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sielink:migrate-switchless-configure-ports.html["Konfigurieren Sie Ihre Ports"] Die

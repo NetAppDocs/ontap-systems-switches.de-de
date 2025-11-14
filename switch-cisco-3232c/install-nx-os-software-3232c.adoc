@@ -689,4 +689,4 @@ Falls Cluster-LIFs nicht zu ihren Heimatports zurückgekehrt sind, setzen Sie si
 
 
 .Wie geht es weiter?
-Nach der Installation der NX-OS-Software, link:install-upgrade-rcf-overview-3232c.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."]Die
+Nach der Installation der NX-OS-Software können Sie link:install-upgrade-rcf-overview-3232c.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."]Die

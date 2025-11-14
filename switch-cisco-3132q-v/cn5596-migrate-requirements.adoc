@@ -133,4 +133,4 @@ Dieses Verfahren umfasst die folgenden Szenarien:
 
 
 .Wie geht es weiter?
-link:cn5596-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"].
+Nachdem Sie die Migrationsanforderungen geprüft haben, können Sielink:cn5596-prepare-to-migrate.html["Bereiten Sie sich auf die Migration Ihrer Schalter vor."] Die

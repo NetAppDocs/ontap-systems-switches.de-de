@@ -68,4 +68,4 @@ Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Ser
 
 ====
 .Wie geht es weiter?
-link:migrate-from-switchless-prepare-to-migrate.html["Bereiten Sie sich auf die Migration vor"].
+Nachdem Sie die Migrationsanforderungen geprüft haben, können Sielink:migrate-from-switchless-prepare-to-migrate.html["Bereiten Sie sich auf die Migration Ihrer Schalter vor."] Die

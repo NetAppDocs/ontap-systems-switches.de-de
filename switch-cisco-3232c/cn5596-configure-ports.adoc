@@ -930,4 +930,4 @@ cluster::> system cluster-switch delete -device CL2
 
 
 .Wie geht es weiter?
-link:cn5596-complete-migration.html["Schließen Sie Ihre Migration ab."].
+Nachdem Sie Ihre Switch-Ports konfiguriert haben, können Sielink:cn5596-complete-migration.html["Schließen Sie Ihre Migration ab."] Die
