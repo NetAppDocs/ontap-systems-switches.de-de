@@ -341,9 +341,9 @@ cluster1::*> *network interface show -vserver Cluster*
 Vserver  Interface    Admin/Oper Address/Mask       Node        Port    Home
 -------- ------------ ---------- ------------------ ----------- ------- ----
 Cluster
-         node1_clus1  up/up      169.254.209.69/16  node1       e0a     false
+         node1_clus1  up/up      169.254.209.69/16  node1       e0a     true
          node1_clus2  up/up      169.254.49.125/16  node1       e0b     true
-         node2_clus1  up/up      169.254.47.194/16  node2       e0a     false
+         node2_clus1  up/up      169.254.47.194/16  node2       e0a     true
          node2_clus2  up/up      169.254.19.183/16  node2       e0b     true
 ----
 ====
@@ -421,14 +421,33 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 +
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*
+cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true
+----
+. Auf Switch cs2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.
++
+[listing, subs="+quotes"]
+----
+cs2> *enable*
+cs2# *configure*
+cs2(config)# *interface 0/1-0/16*
+cs2(config-if-range)# *shutdown*
+
+(Wait for 5-10 seconds before re-enabling the ports)
+
+cs2(config-if-range)# *no shutdown*
+
+(After executing the no shutdown command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
+
+cs2(config-if-range)# *exit*
+cs2(config)# *exit*
+cs2#
 ----
 . Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
 +
 `network interface show -vserver Cluster`
 
 +
-Falls die Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurden, setzen Sie sie manuell zurück:
+Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:
 
 +
 `network interface revert -vserver Cluster -lif *`
@@ -531,8 +550,8 @@ Der `false` Die Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseins
 +
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network options switchless-cluster show*
-Enable Switchless Cluster: false
+cluster1::*> network options switchless-cluster show
+Enable Switchless Cluster: *false*
 ----
 . Überprüfen Sie den Status der Knoten im Cluster:
 +
@@ -620,7 +639,7 @@ RPC status:
 ----
 --
 ====
-. [[Schritt 9]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:
+. [[step10]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 

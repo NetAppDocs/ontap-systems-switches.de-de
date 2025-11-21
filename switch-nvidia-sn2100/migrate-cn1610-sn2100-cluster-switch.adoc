@@ -301,7 +301,7 @@ RPC status:
 ----
 --
 ====
-. [[step5]] Schalten Sie auf Switch c2 die mit den Cluster-Ports der Knoten verbundenen Ports ab, um ein Failover der Cluster-LIFs zu erzwingen.
+. [[step5]]Schalten Sie auf Switch c2 die mit den Cluster-Ports der Knoten verbundenen Ports ab, um ein Failover der Cluster-LIFs zu erzwingen.
 +
 [listing, subs="+quotes"]
 ----
@@ -529,28 +529,56 @@ swp16      100G   BondMember  sw1                 swp16
 +
 `cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Überprüfen Sie, ob alle Cluster-Netzwerk-LIFs wieder an ihren ursprünglichen Ports angeschlossen sind:
-+
-`network interface show`
+. Auf Switch sw2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.
 
-+
-.Beispiel anzeigen
-[%collapsible]
+
+[role="tabbed-block"]
 ====
+.Cumulus 4.4.3
+--
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface show -vserver Cluster*
+cumulus@sw2:mgmt:~$ *net add interface swp1-14 link down*
+cumulus@sw2:mgmt:~$ *net pending*
+cumulus@sw2:mgmt:~$ *net commit*
 
-            Logical    Status     Network            Current       Current Is
-Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
------------ ---------- ---------- ------------------ ------------- ------- ----
-Cluster
-            node1_clus1  up/up    169.254.209.69/16  node1         e3a     true
-            node1_clus2  up/up    169.254.49.125/16  node1         e3b     true
-            node2_clus1  up/up    169.254.47.194/16  node2         e3a     true
-            node2_clus2  up/up    169.254.19.183/16  node2         e3b     true
+(Wait for 5-10 seconds before re-enabling the ports)
+
+cumulus@sw2:mgmt:~$ *net add interface swp1-14 link up*
+cumulus@sw2:mgmt:~$ *net pending*
+cumulus@sw2:mgmt:~$ *net commit*
+
+(After executing the link state up command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
 ----
+--
+.Cumulus 5.x
+--
+[listing, subs="+quotes"]
+----
+cumulus@sw2:mgmt:~$ *nv set interface swp1-14 link state down*
+cumulus@sw2:mgmt:~$ *nv config apply*
+cumulus@sw2:mgmt:~$ *nv show interface*
+
+(Wait for 5-10 seconds before re-enabling the ports)
+
+cumulus@sw2:mgmt:~$ *nv set interface swp1-14 link state up*
+cumulus@sw2:mgmt:~$ *nv config apply*
+cumulus@sw2:mgmt:~$ *nv show interface*
+
+(After executing the link state up command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
+----
+--
 ====
+. [[step3]]Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgekehrt sind (dies kann eine Minute dauern):
++
+`network interface show -vserver Cluster`
+
++
+Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:
+
++
+`network interface revert -vserver Cluster -lif *`
+
 . Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`

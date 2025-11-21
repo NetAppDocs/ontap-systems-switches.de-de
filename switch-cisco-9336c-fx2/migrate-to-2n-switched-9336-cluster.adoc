@@ -415,6 +415,39 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 
 === Schritt 3: Konfiguration überprüfen
 
+. Automatische Wiederherstellung der Cluster-LIFs aktivieren.
++
+`network interface modify -vserver Cluster -lif * -auto-revert true`
+
+. Auf Switch cs2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.
++
+[listing, subs="+quotes"]
+----
+cs2> *enable*
+cs2# *configure*
+cs2(config)# *interface eth1/1-1/2*
+cs2(config-if-range)# *shutdown*
+
+(Wait for 5-10 seconds before re-enabling the ports)
+
+cs2(config-if-range)# *no shutdown*
+
+(After executing the no shutdown command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
+
+cs2(config-if-range)# *exit*
+cs2(config)# *exit*
+cs2#
+----
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
++
+`network interface show -vserver Cluster`
+
++
+Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:
+
++
+`network interface revert -vserver Cluster -lif *`
+
 . Überprüfen Sie, ob alle Schnittstellen den Wert „true“ anzeigen. `Is Home` :
 +
 `network interface show -vserver Cluster`
@@ -521,17 +554,14 @@ node1      /cdp
 NOTE: Die Ausführung des Befehls kann mehrere Minuten dauern.  Warten Sie auf die Ansage „Noch 3 Minuten bis zum Ablauf der Gültigkeitsdauer“.
 
 +
-.Beispiel anzeigen
-[%collapsible]
-====
 Die falsche Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseinstellungen deaktiviert sind:
 
-[listing]
++
+[listing, subs="+quotes"]
 ----
 cluster1::*> network options switchless-cluster show
-Enable Switchless Cluster: false
+Enable Switchless Cluster: *false*
 ----
-====
 . Überprüfen Sie den Status der Knoten im Cluster:
 +
 `cluster show`
@@ -618,7 +648,7 @@ RPC status:
 ----
 --
 ====
-. [[Schritt 7]] Ändern Sie die Berechtigungsstufe wieder auf Administrator:
+. [[step10]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 

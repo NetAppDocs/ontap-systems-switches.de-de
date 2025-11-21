@@ -529,29 +529,108 @@ node2      /cdp
 +
 `cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Überprüfen Sie, ob alle Cluster-Netzwerk-LIFs wieder an ihren ursprünglichen Ports angeschlossen sind:
+. Auf Switch cs2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.
 +
-`network interface show`
-
-+
-.Beispiel anzeigen
-[%collapsible]
-====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface show -vserver Cluster*
+cs2> *enable*
+cs2# *configure*
+cs2(config)# *interface eth1/1-1/2*
+cs2(config-if-range)# *shutdown*
 
-            Logical    Status     Network            Current       Current Is
-Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
------------ ---------- ---------- ------------------ ------------- ------- ----
-Cluster
-            node1_clus1  up/up    169.254.209.69/16  node1         e3a     true
-            node1_clus2  up/up    169.254.49.125/16  node1         e3b     true
-            node2_clus1  up/up    169.254.47.194/16  node2         e3a     true
-            node2_clus2  up/up    169.254.19.183/16  node2         e3b     true
+(Wait for 5-10 seconds before re-enabling the ports)
+
+cs2(config-if-range)# *no shutdown*
+
+(After executing the no shutdown command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
+
+cs2(config-if-range)# *exit*
+cs2(config)# *exit*
+cs2#
 ----
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
++
+`network interface show -vserver Cluster`
+
++
+Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:
+
++
+`network interface revert -vserver Cluster -lif *`
+
+. Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
++
+`cluster show`
+
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
+
+
+[role="tabbed-block"]
 ====
-. Ändern Sie die Berechtigungsstufe wieder auf Administrator:
+.ONTAP 9.9.1 und höher
+--
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
+
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start*
+----
+
+NOTE: Warten Sie einige Sekunden, bevor Sie den Befehl ausführen. `show` Befehl zum Anzeigen der Details.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source          Destination       Packet
+Node   Date                       LIF             LIF               Loss
+------ -------------------------- --------------- ----------------- -----------
+node1
+       3/5/2022 19:21:18 -06:00   node1_clus2      node2_clus1      none
+       3/5/2022 19:21:20 -06:00   node1_clus2      node2_clus2      none
+
+node2
+       3/5/2022 19:21:18 -06:00   node2_clus2      node1_clus1      none
+       3/5/2022 19:21:20 -06:00   node2_clus2      node1_clus2      none
+----
+--
+.Alle ONTAP Versionen
+--
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *cluster ping-cluster -node node2*
+Host is node2
+Getting addresses from network interface table...
+Cluster node1_clus1 169.254.209.69 node1     e0a
+Cluster node1_clus2 169.254.49.125 node1     e0b
+Cluster node2_clus1 169.254.47.194 node2     e0a
+Cluster node2_clus2 169.254.19.183 node2     e0b
+Local = 169.254.47.194 169.254.19.183
+Remote = 169.254.209.69 169.254.49.125
+Cluster Vserver Id = 4294967293
+Ping status:
+
+Basic connectivity succeeds on 4 path(s)
+Basic connectivity fails on 0 path(s)
+................
+Detected 9000 byte MTU on 4 path(s):
+    Local 169.254.19.183 to Remote 169.254.209.69
+    Local 169.254.19.183 to Remote 169.254.49.125
+    Local 169.254.47.194 to Remote 169.254.209.69
+    Local 169.254.47.194 to Remote 169.254.49.125
+Larger than PMTU communication succeeds on 4 path(s)
+RPC status:
+2 paths up, 0 paths down (tcp check)
+2 paths up, 0 paths down (udp check)
+----
+--
+====
+. [[step6]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:
 +
 `set -privilege admin`
 

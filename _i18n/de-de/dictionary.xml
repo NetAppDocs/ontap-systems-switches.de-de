@@ -282,10 +282,8 @@
   <block id="85e04ff5dd770cff5dbbe435ea94a7dd" category="list-text">Prüfen Sie die Switch-Port-Verbindungen aus der Perspektive des Switches cs1-new:</block>
   <block id="800c1c0a764eb859a7e53df87ed00481" category="list-text">Überprüfen Sie, ob die ISL-Verbindung zwischen cs1-new und cs2-new noch funktioniert:</block>
   <block id="f8a26b1330fe6b7b741993630dd932e2" category="list-text">Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):</block>
-  <block id="65201dcfc7c620613613b15eb161d307" category="paragraph">Falls die Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurden, setzen Sie sie manuell zurück:</block>
   <block id="268d66b259b50e25cbef3d39885d450f" category="paragraph"><block ref="d4a4086e7952a80201c11ae52219be46" prefix="" category="inline-code"></block></block>
   <block id="fb17b612fdcb19e9fe42f0afa4b960d0" category="admonition">Warten Sie einige Sekunden, bevor Sie den Befehl ausführen.<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> Befehl zum Anzeigen der Details.</block>
-  <block id="c7ca49e9f550dc9b18f2402f13ad9430" category="list-text">[[step5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">Wie geht es weiter?</block>
   <block id="00a850fef80958a3c902c0d0b0fc20c4" category="inline-link-macro">Konfigurieren der Switch-Integritätsüberwachung</block>
   <block id="930d2612130a6eae69f4f0d6b6f79e03" category="paragraph">Nach der Migration der Switches können Sie<block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block> Die</block>
@@ -1163,7 +1161,6 @@
   <block id="dae02701a0a247e1012b9b2832c32464" category="list-text">Löschen Sie die ersetzten CN1610-Switches aus der Switch-Tabelle des Clusters, falls sie nicht automatisch entfernt werden:</block>
   <block id="b48ac462b57bcb2860eecd434bd2c80f" category="paragraph">Ab ONTAP 9.8 verwenden Sie folgenden Befehl:<block ref="b4720f8aa09f4e4b3a04e78c558b6c90" prefix=" " category="inline-code"></block></block>
   <block id="c8b9229aed88be3704b6c26029b7ae94" category="paragraph">Für ONTAP 9.7 und ältere Versionen verwenden Sie folgenden Befehl:<block ref="f055904a9fc3a4f0bc33aca13ecd2b2d" prefix=" " category="inline-code"></block></block>
-  <block id="4e4f70ba52e8cb595faa069991c5a9f4" category="list-text">[[step5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:</block>
   <block id="30e3b2cfb1c72e5b230d98750db3bf2b" category="paragraph">Nach der Migration Ihrer Switches können Sie <block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block>Die</block>
   <block id="e8ab0c1581dc0dcc64441ffb1b729ce5" category="summary">Wenn Sie über einen Zwei-Knoten-Cluster ohne Switches verfügen, können Sie unterbrechungsfrei zu einem Zwei-Knoten-Cluster mit Switches migrieren, der von Broadcom unterstützte BES-53248-Cluster-Switches enthält.</block>
   <block id="446e9d64184ff722494a9a706bbd9d06" category="doc">Migration zu einer umgeschalteten NetApp Clusterumgebung</block>
@@ -1209,7 +1206,6 @@
   <block id="3d7d92fe9fa50ff07a52fda11ae8d646" category="paragraph">Das folgende Beispiel zeigt, dass die Ports 1 bis 16 am Switch cs2 aktiviert sind:</block>
   <block id="30530896511238b69b0e6acc7e04d6ce" category="list-text">Überprüfen Sie, ob alle Schnittstellen angezeigt werden.<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> für<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> :</block>
   <block id="f1d50a679b7b3d0967aafba21d2b1454" category="paragraph">Der<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> Die Ausgabe im folgenden Beispiel zeigt, dass die Konfigurationseinstellungen deaktiviert sind:</block>
-  <block id="c97fddef37af781b99f2bb564a90861d" category="list-text">[[Schritt 9]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:</block>
   <block id="470e1e7d03d4911b1e5ad8bf036ca8cb" category="inline-link">NetApp Knowledge Base-Artikel: So unterdrücken Sie die automatische Fallerstellung während geplanter Wartungsfenster</block>
   <block id="1e44ccea9f1ae385026deb840bc9b5f4" category="paragraph">Weitere Informationen finden Sie unter:<block ref="780f810d0519883e7efdd6ef45cf51ed" category="inline-link-rx"></block></block>
   <block id="393a5f0f5f1f070aac964741815cca76" category="doc">Ersetzen Sie Broadcom BES-53248 Cluster-Switches durch switchlose Verbindungen.</block>
@@ -3789,7 +3785,6 @@
   <block id="db038ea8b37b62294a9f3eebe698b28a" category="paragraph">Jeder Port sollte Folgendes anzeigen<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> für<block ref="97e7c9a7d06eac006a28bf05467fcc8b" prefix=" " category="inline-code"></block> Und<block ref="741839f346d6e8126ae38ee76a96fd12" prefix=" " category="inline-code"></block> für<block ref="fbcf0d1f787c74663ca9dc925ebf5f0c" prefix=" " category="inline-code"></block> Die</block>
   <block id="ba04a36ca69927056bab3bba36362e9b" category="list-text">Überprüfen Sie an den Switches cs1 und cs2, ob alle Knotencluster-Ports aktiv sind:</block>
   <block id="366abeaa2bac7598f17d029db42f0407" category="paragraph"><block ref="478474aa0db28144d5db02c478cd5215" prefix="" category="inline-code"></block></block>
-  <block id="496fe3dd70b4f5816f2c409909812bb5" category="list-text">Überprüfen Sie, ob alle Cluster-Netzwerk-LIFs wieder an ihren ursprünglichen Ports angeschlossen sind:</block>
   <block id="ccc533253625ec3fd1cd1ad3dd395ae6" category="summary">Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches zu einer switchierten Clusterumgebung mit zwei Knoten migrieren, um die Anzahl der Knoten im Cluster auf über zwei zu erhöhen.</block>
   <block id="44062246be6e5585fa8092a371375894" category="paragraph">Wenn Sie über eine vorhandene Clusterumgebung mit zwei Knoten und ohne Switch verfügen, können Sie mithilfe der Switches Cisco Nexus 9336C-FX2 und 9336C-FX2-T zu einer Clusterumgebung mit zwei Knoten und Switch migrieren.</block>
   <block id="ec9e474afc999353343db9439e541082" category="summary">Ältere Cisco Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migriert werden.</block>
@@ -5224,7 +5219,6 @@
   <block id="ec493d1a781282d3b831640adff57617" category="paragraph"><block ref="1be2284fb441d5fc39c1bb2882bcfe33" prefix="" category="inline-code"></block></block>
   <block id="609878b299dde0e13898cea02c9f40e5" category="paragraph"><block ref="780e8a1ebd2c830e4aeaebb59c666b98" prefix="" category="inline-code"></block></block>
   <block id="7c1863f1ebbe4335b617904d5c56fbc1" category="admonition">Dieser Vorgang kann eine Minute dauern.</block>
-  <block id="0e18e00d28d8ccbabfbea2b32f607774" category="list-text">[[Schritt 6]] Ändern Sie die Berechtigungsstufe wieder auf Administrator:</block>
   <block id="0b9620a0fea8fa88010e59eebf7cbf63" category="summary">Ältere Cisco -Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf NVIDIA SN2100-Cluster-Netzwerk-Switches migriert werden.</block>
   <block id="9cb69df206c9ac9ed5e1f4f5f353f643" category="doc">Migration von einem Cisco Cluster-Switch zu einem NVIDIA SN2100 Cluster-Switch</block>
   <block id="65b0458ae1a5a43752e6cbb805a3b583" category="paragraph">Sie können Cisco -Cluster-Switches für einen ONTAP Cluster auf NVIDIA SN2100-Cluster-Switches migrieren. Dies ist ein unterbrechungsfreies Verfahren.</block>
@@ -5857,4 +5851,15 @@
   <block id="896088c62ad7b687065540892080324f" category="paragraph">Nachdem Sie die Switches im NetApp -Schrank installiert haben, können Sie<block ref="e720d023779d66bfe8b12a8e36518dcc" category="inline-link-macro-rx"></block> Die</block>
   <block id="ce7e45bf2954b88a6750644b0448950a" category="paragraph">Nach der Installation des RCF können Sie <block ref="9c2eadd0cc07686b4a17c38ca62f4a4c" category="inline-link-macro-rx"></block>Die</block>
   <block id="c9c986f56a1b508d37d42c57396f5c6e" category="paragraph">Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie <block ref="524641f31ca2f6882ec8e6343313f85c" category="inline-link-macro-rx"></block>Die</block>
+  <block id="eb87b9d92bab86a5eff1f86bc4b9d609" category="list-text">Auf Switch cs2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.</block>
+  <block id="0722720446d120472012852570da7854" category="paragraph">Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:</block>
+  <block id="ec5ea2f0318e4d906c296f5576b9c026" category="list-text">[[step6]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:<block ref="9ac424c0d7b432975df36a19daf50c9c" prefix=" " category="inline-code"></block></block>
+  <block id="a012eaed89d2ac51303f8c01a7d0aaaa" category="list-text">[[step10]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:</block>
+  <block id="2f3040f570b3d77425ad0bf50fc7985c" category="list-text">[[step6]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:</block>
+  <block id="eee9eca0197e609d5560419338f13cb5" category="list-text">Auf Switch sw2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.</block>
+  <block id="9867d4546ca72c2aef3de3dd388f027a" category="open-title">Cumulus 4.4.3</block>
+  <block id="c9e15b180ce232c5238f71bbe70022b5" category="open-title">Cumulus 5.x</block>
+  <block id="77c4c65090a7a14ac6d2a4180ac07a3c" category="list-text">[[step3]]Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgekehrt sind (dies kann eine Minute dauern):</block>
+  <block id="5a443ae50dfc3d613ac9445266752a19" category="list-text">[[Schritt 8]]Ändern Sie die Berechtigungsstufe wieder auf Administrator:</block>
+  <block id="397fcdbb1cd3a03c8bd47ec26ea0418d" category="list-text">[[step5]]Schalten Sie auf Switch c2 die mit den Cluster-Ports der Knoten verbundenen Ports ab, um ein Failover der Cluster-LIFs zu erzwingen.</block>
 </blocks>

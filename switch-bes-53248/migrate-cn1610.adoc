@@ -657,14 +657,33 @@ cluster::*> system cluster-switch delete -device CL2
 +
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*
+cluster1::*> network interface modify -vserver Cluster -lif * -auto-revert true
+----
+. Auf Switch cs2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.
++
+[listing, subs="+quotes"]
+----
+cs2> *enable*
+cs2# *configure*
+cs2(config)# *interface 0/1-0/16*
+cs2(config-if-range)# *shutdown*
+
+(Wait for 5-10 seconds before re-enabling the ports)
+
+cs2(config-if-range)# *no shutdown*
+
+(After executing the no shutdown command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
+
+cs2(config-if-range)# *exit*
+cs2(config)# *exit*
+cs2#
 ----
 . Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
 +
 `network interface show -vserver Cluster`
 
 +
-Falls die Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurden, setzen Sie sie manuell zurück:
+Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:
 
 +
 `network interface revert -vserver Cluster -lif *`
@@ -739,7 +758,7 @@ RPC status:
 ----
 --
 ====
-. [[step5]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:
+. [[step6]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:
 +
 `system node autosupport invoke -node * -type all -message MAINT=END`
 
