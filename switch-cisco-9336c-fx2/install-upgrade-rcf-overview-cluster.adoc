@@ -16,13 +16,13 @@ Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Nexus-Sw
 Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation oder Aufrüstung Ihres RCF erhalten Sie bei Bedarf.
 
 .Verfügbare RCF-Konfigurationen
-Die folgende Tabelle beschreibt die für verschiedene Konfigurationen verfügbaren RCFs.  Wählen Sie den für Ihre Konfiguration passenden RCF aus.
+Die folgende Tabelle beschreibt die für verschiedene Konfigurationen verfügbaren RCFs. Wählen Sie den für Ihre Konfiguration passenden RCF aus. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
 
 Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF.
 
 [cols="1,2"]
 |===
-| RCF-Name | Beschreibung 
+| RCF-Konfiguration | Beschreibung 
 
 
  a| 
@@ -73,12 +73,39 @@ Storage
 Alle Ports sind für 100GbE NVMe-Speicherverbindungen konfiguriert.
 
 |===
+.Verfügbare RCFs
+Die folgende Tabelle listet die verfügbaren RCFs für die Switches 9336C-FX2 und 9336C-FX2-T auf.  Wählen Sie die für Ihre Konfiguration passende RCF-Version aus. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
+
+[cols="1"]
+|===
+| RCF-Name 
+
+
+ a| 
+Cluster-HA-Breakout RCF 1._xx_
+
+
+
+ a| 
+Cluster-HA-Storage RCF 1._xx_
+
+
+
+ a| 
+Speicher RCF 1._xx_
+
+
+
+ a| 
+MultiCluster-HA RCF 1._xx_
+
+|===
 .Empfohlene Dokumentation
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches (NSS)"^]
 +
 Auf der NetApp Support-Website finden Sie die Tabelle zur Switch-Kompatibilität, in der die unterstützten ONTAP und RCF-Versionen aufgeführt sind.  Beachten Sie, dass zwischen der Befehlssyntax in der RCF und der Syntax in bestimmten Versionen von NX-OS Befehlsabhängigkeiten bestehen können.
 
-* link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Series Switches"^]
+* link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-guides-list.html["Cisco Nexus 9000 Series Switches"^]
 +
 Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco -Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco -Website.
 

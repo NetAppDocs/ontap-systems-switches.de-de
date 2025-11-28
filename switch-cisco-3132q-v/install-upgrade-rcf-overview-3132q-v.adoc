@@ -73,6 +73,28 @@ Storage
 Alle Ports sind für 100GbE NVMe-Speicherverbindungen konfiguriert.
 
 |===
+.Verfügbare RCFs
+Die folgende Tabelle listet die verfügbaren RCFs für 3132Q-V-Schalter auf.  Wählen Sie die für Ihre Konfiguration passende RCF-Version aus. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
+
+[cols="1"]
+|===
+| RCF-Name 
+
+
+ a| 
+Cluster-HA-Breakout RCF v1._xx_
+
+
+
+ a| 
+Cluster-HA RCF v1._xx_
+
+
+
+ a| 
+Cluster RCF 1._xx_
+
+|===
 .Empfohlene Dokumentation
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches (NSS)"^]
 +

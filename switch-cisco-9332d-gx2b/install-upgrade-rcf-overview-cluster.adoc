@@ -16,10 +16,10 @@ Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 93
 Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation oder Aufrüstung Ihres RCF erhalten Sie bei Bedarf.
 
 .Verfügbare RCF-Konfiguration
-* *Cluster-HA-Storage* – Unterstützt gemeinsam genutzten Cluster-/HA-/Storage-Verkehr auf Ports (NX9332D-GX2B-RCF-v10.0-Shared.txt).
+* *Cluster-HA-Storage AFX* - Alle Ports sind im 4x100GbE Breakout-Modus konfiguriert, der universell AFX-Knotencluster, HA, Speicherports und NX224-Speichergehäuseports unterstützt.  400GbE ISL zwischen den Switches.  (_Cluster-HA-Storage AFX RCF_vxx.x_).
 
 
-Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF.
+Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
 
 .Empfohlene Dokumentation
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches (NSS)"^]

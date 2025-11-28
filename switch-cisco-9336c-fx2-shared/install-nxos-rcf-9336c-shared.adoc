@@ -25,6 +25,10 @@ Bevor Sie beginnen, führen Sie bitte die folgende Prozedur durch:link:prepare-n
 * Die Ports des ONTAP Knotenclusters sind nicht verbunden.
 
 
+.Verfügbare RCF-Konfiguration
+* *ClusterStorageRCF* - Unterstützt einen partitionierten Cluster plus zwei Speicherzonen auf den Switches (Cluster-Storage RCF 1._xx_).
+
+
 
 
 == Schritt 1: Installieren Sie die RCF auf den Schaltern
