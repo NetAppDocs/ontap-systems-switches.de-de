@@ -53,34 +53,6 @@ entries:
 - title: Schalter migrieren
   pdf-filename: Migrate_switches_3232C
   entries:
-  - title: CN1610-Switch-Migration
-    pdf-filename: CN1610_switch_migration
-    entries:
-    - title: Migration vom CN1610-Switch-Workflow
-      url: "/switch-cisco-3232c/cn1610-migrate-workflow.html"
-    - title: Migrationsanforderungen
-      url: "/switch-cisco-3232c/cn1610-migrate-to-3232c-overview.html"
-    - title: Bereiten Sie sich auf die Migration vor
-      url: "/switch-cisco-3232c/cn1610-prepare-to-migrate.html"
-    - title: Tauschen Sie den Schalter CL2 im Kombiinstrument aus.
-      url: "/switch-cisco-3232c/cn1610-replace-CL2.html"
-    - title: Tauschen Sie den Schalter CL1 in der Instrumententafel aus.
-      url: "/switch-cisco-3232c/cn1610-replace-CL1.html"
-    - title: Schließen Sie Ihre Migration ab.
-      url: "/switch-cisco-3232c/cn1610-complete-migration.html"
-  - title: Nexus 5596 Switch-Migration
-    pdf-filename: CN5596_switch_migration
-    entries:
-    - title: Workflow für die Migration von Cisco Nexus 5596 Switches
-      url: "/switch-cisco-3232c/cn5596-migrate-workflow.html"
-    - title: Migrationsanforderungen
-      url: "/switch-cisco-3232c/cn5596-migrate-requirements.html"
-    - title: Bereiten Sie sich auf die Migration vor
-      url: "/switch-cisco-3232c/cn5596-prepare-to-migrate.html"
-    - title: Konfigurieren Sie Ihre Ports
-      url: "/switch-cisco-3232c/cn5596-configure-ports.html"
-    - title: Schließen Sie Ihre Migration ab.
-      url: "/switch-cisco-3232c/cn5596-complete-migration.html"
   - title: Migration von Zwei-Knoten-Switchless-Clustern
     pdf-filename: Migration von schalterlosen Clustern
     entries:
