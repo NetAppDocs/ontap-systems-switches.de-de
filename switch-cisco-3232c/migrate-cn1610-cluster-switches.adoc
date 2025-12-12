@@ -27,6 +27,7 @@ Falls erforderlich, finden Sie weitere Informationen in den folgenden Quellen:
 * link:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610"^]
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^]
 * link:http://hwu.netapp.com["Hardware Universe"^]
+* link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^]
 
 
 
@@ -34,7 +35,7 @@ Falls erforderlich, finden Sie weitere Informationen in den folgenden Quellen:
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10-GbE-Cluster-Verbindungsports: e0a, e0b, e0c und e0d.  Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: e4a und e4e.  Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] verfügt über Informationen zu den Cluster-Glasfaserkabeln auf Ihren Plattformen.
+Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10-GbE-Cluster-Verbindungsports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: e4a und e4e. Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] verfügt über Informationen zu den Cluster-Glasfaserkabeln auf Ihren Plattformen. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 

@@ -5,8 +5,8 @@ indexpage:
     für ONTAP Clusterbereitstellungen zu installieren, zu konfigurieren und zu warten.
   keywords: storage switches, cisco nexus switches, cluster switches, ontap clusters
   lead: Mit Speicher-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.
-    Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage für skalierbare
-    Cluster-Interconnect-Lösungen in NetApp ONTAP Umgebungen.
+    Diese Ethernet-Speicher-Switches bilden die Grundlage für skalierbare Cluster-Verbindungslösungen
+    in NetApp ONTAP Umgebungen.
   tiles:
   - title: Erste Schritte
     links:

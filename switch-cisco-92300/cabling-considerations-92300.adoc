@@ -32,4 +32,4 @@ Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (C
 *Save the changes:*
 (cs1)# *copy running-config startup-config*
 ----
-Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.
+Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Für weitere Informationen zu den Installationsanforderungen des Schalters.

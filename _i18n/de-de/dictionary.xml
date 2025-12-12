@@ -121,7 +121,6 @@
   <block id="b3149015de75b42da42a42eacb5ceefd" category="list-text">Es besteht Konsolenzugriff auf die Cluster-Switches.</block>
   <block id="a632b651e4503b7d77ef195465e2f380" category="list-text">Knoten-zu-Knoten-Switch- und Switch-zu-Switch-Verbindungen des Nexus 9336C-FX2 verwenden Twinax- oder Glasfaserkabel.</block>
   <block id="a6f490a59820ed4289028acdc4d2c508" category="inline-link">Hardware Universe – Schalter</block>
-  <block id="8b67b9724755020007e070354b9dfe8e" category="paragraph">Sehen<block ref="fc1c96ca1130118b28ccd7598f63fe21" category="inline-link-rx"></block> Weitere Informationen zur Verkabelung finden Sie hier.</block>
   <block id="af07533269d8677fc160e13c429716e7" category="list-text">Inter-Switch Link (ISL)-Kabel sind an die Ports 1/35 und 1/36 beider 9336C-FX2-Switches angeschlossen.</block>
   <block id="ad7a9068d60c59ac13db65b63fbef350" category="list-text">Die erste Anpassung beider 9336C-FX2-Schalter ist abgeschlossen, sodass:</block>
   <block id="9141f91a06036d85e1a5abfe502946bb" category="list-text">Die Switches vom Typ 9336C-FX2 verwenden die neueste Softwareversion.</block>
@@ -224,7 +223,6 @@
   <block id="3fc74bed2ec666d227e966120d5c4160" category="inline-link">Bug 1570339</block>
   <block id="a9881d2bc89c135aee3c1490acc55259" category="inline-link">CRC-Fehler an T6-Ports nach der Umstellung von 40GbE auf 100GbE</block>
   <block id="835174c5c468acf2b423cff0eb23994f" category="admonition">Wenn Sie die Portgeschwindigkeit der Cluster-Ports e0a und e1a auf AFF A800 oder AFF C800 Systemen ändern, kann es nach der Geschwindigkeitsumwandlung zu fehlerhaften Paketen kommen.  Sehen<block ref="f867b947e44d8d6bccd25f3219f3d6d9" category="inline-link-rx"></block> und der Artikel in der Wissensdatenbank<block ref="2a93cc61bbc3892324bc1b6369d71212" category="inline-link-rx"></block> zur Orientierung.</block>
-  <block id="0db1e0bcdfd24db323c5c37def104aff" category="paragraph">Die Beispiele in diesem Verfahren verwenden zwei Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports e0a und e0b.  Siehe die<block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block> um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.</block>
   <block id="4ad14943532a190c518f634a57c3dbc8" category="admonition">Die Befehlsausgaben können je nach ONTAP Version variieren.</block>
   <block id="ff3339197a97612c0ebbaf2641bdfcfa" category="list-text">Die Namen der beiden vorhandenen Cisco Switches lauten *cs1* und *cs2*.</block>
   <block id="0152c4d08b7616e344d95f6017c7732e" category="list-text">Die neuen Cluster-Switches Nexus 9336C-FX2 sind *cs1-new* und *cs2-new*.</block>
@@ -765,7 +763,6 @@
   <block id="2ab6a6c6e3efa9ded96d007db3c8ddd6" category="paragraph"><block ref="d952dcd329fa507e9e731ce0c7d8dbc1" prefix="" category="inline-code"></block></block>
   <block id="a211b71e1f024e68733a28ffda5d2276" category="list-text">Starten Sie den Switch neu:</block>
   <block id="be48ba6e238c192e1fd4688b655d0b0b" category="list-text">Melden Sie sich erneut an und überprüfen Sie die neue Version der EFOS-Software:</block>
-  <block id="22555900248572659217c1157207aa25" category="list-text">Schließen Sie die Installation ab.  Befolgen Sie diese fünf Schritte, um den Switch neu zu konfigurieren:</block>
   <block id="e12f54ec861369fe9d4230c607023240" category="inline-link-macro">Lizenzen installieren</block>
   <block id="cc83c245da410495a294f033719b1669" category="list-text"><block ref="cc83c245da410495a294f033719b1669" category="inline-link-macro-rx"></block></block>
   <block id="27f5a81d534f36d81d8bfa46ffcc98b6" category="inline-link-macro">Installieren Sie die RCF-Datei</block>
@@ -794,7 +791,6 @@
   <block id="49215cf233256204aa5b6259719da694" category="paragraph"><block ref="6db371c6b710567f9ba5b5a3491f792a" prefix="" category="inline-code"></block></block>
   <block id="fead9f0c9e5b3f33cc2bdfbb331d335c" category="paragraph">Die Software installiert sich und startet den Switch anschließend neu.  Lassen Sie den Switch normal in die neue EFOS-Version neu starten.</block>
   <block id="204b0f515feca07e238d07748be2b4e3" category="list-text">Melden Sie sich an und überprüfen Sie, ob die neue Switch-Software installiert ist:</block>
-  <block id="a207fb9399afa79821bb5dc81994c122" category="list-text">Schließen Sie die Installation ab.  Der Switch startet ohne angewendete Konfiguration neu und wird auf die Werkseinstellungen zurückgesetzt.  Befolgen Sie diese sechs Schritte, um den Switch neu zu konfigurieren:</block>
   <block id="1fc245f373dd47304db35c4ef2df408e" category="inline-link-macro">Schalter konfigurieren</block>
   <block id="163c95e139774086e604f88f7e2f31d3" category="list-text"><block ref="163c95e139774086e604f88f7e2f31d3" category="inline-link-macro-rx"></block></block>
   <block id="04204be9eff305a81c8050c2ee21ed34" category="list-text">Wiederholen Sie die Schritte 1 bis 8 am Partnerschalter.</block>
@@ -1016,7 +1012,6 @@
   <block id="647742b7ed5a74255a1cd295f9fd2fc9" category="paragraph">Bei der Installation und Wartung des BES-53248-Switches sollten Sie unbedingt die Support- und Konfigurationsanforderungen für EFOS und ONTAP beachten.</block>
   <block id="553524d0c0ef22a471e2424d00a09694" category="section-title">EFOS- und ONTAP Unterstützung</block>
   <block id="738451c0daa7cff3a610bea3abfefaf0" category="inline-link">Broadcom-Switch-Kompatibilitätsmatrix</block>
-  <block id="c7c51b6011824439212ed43b1a65c583" category="paragraph">Siehe die<block ref="341c1c8afc925d24c41903215e7d4958" category="inline-link-rx"></block> Und<block ref="019bec57a33f30d395c26e4eab684618" category="inline-link-rx"></block> Informationen zur Kompatibilität von EFOS und ONTAP mit BES-53248-Switches finden Sie hier.  Die Unterstützung von EFOS und ONTAP kann je nach Maschinentyp des BES-53248-Switches variieren.  Einzelheiten zu allen Weichenmaschinentypen des Typs BES-52348 finden Sie unter<block ref="18673e02a37b64215efc2503c4149ac9" category="inline-link-macro-rx"></block> Die</block>
   <block id="794a085de55fb93282159bfe457b5455" category="paragraph">Zur Konfiguration eines Clusters benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelverbindern für die Cluster-Switches.  Je nachdem, welchen Cluster-Switch Sie initial konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Konsolenport des Switches herstellen.</block>
   <block id="2bd5eb99d9f67d841743740c2c9e58fc" category="section-title">Portzuweisungen für Cluster-Switches</block>
   <block id="16c3e502f28be460a987ad28ccd36874" category="paragraph">Die von Broadcom unterstützte Tabelle der Portzuweisungen für den BES-53248 Cluster-Switch kann als Leitfaden für die Konfiguration Ihres Clusters verwendet werden.</block>
@@ -1115,7 +1110,6 @@
   <block id="cf5d4db6cebbe371c7454d022aa56dd3" category="list-text">NetApp CN1610: Ports 0/13 bis 0/16 (10GbE)</block>
   <block id="8f74ad2c7978b9cd5864f853839e8666" category="list-text">BES-53248: Ports 0/55-0/56 (100GbE)</block>
   <block id="148a1525f4c4b2d620941031bf03f670" category="inline-link">_NetApp Hardware Universe_</block>
-  <block id="23e7cf6793dbbe3c59640d6ebb6cf4fc" category="paragraph">Der<block ref="141c10db18cf1753fa5fc05f553c33ff" category="inline-link-rx"></block> Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung von BES-53248 Cluster-Switches.</block>
   <block id="0f92a7d54d19ea727ff8ed91081b5563" category="section-title">ISL-Verkabelung</block>
   <block id="1dd482f318ebf3baf239afefb0c0756b" category="paragraph">Die entsprechende ISL-Verkabelung sieht wie folgt aus:</block>
   <block id="0770c9d05dca95d3cdebb78f361ae6e8" category="list-text">*Anfang:* Für CN1610 zu CN1610 (SFP+ zu SFP+) vier SFP+ Glasfaser- oder Kupfer-Direktanschlusskabel.</block>
@@ -1175,7 +1169,6 @@
   <block id="e2989030c14ee86e7848f72ff468a9ab" category="list-text">Stellen Sie für die Konfiguration des von Broadcom unterstützten BES-53248 Cluster-Switches Folgendes sicher:</block>
   <block id="2d7d11d5ca06e5804b001f6cda0d17a3" category="list-text">Der Cluster-Switch BES-53248 ist auf beiden Switches voll funktionsfähig.</block>
   <block id="826a409f86be0f4492cd1fcfbb70c872" category="list-text">Die Knoten-zu-Knoten- und Schalter-zu-Schalter-Verbindungen des BES-53248 verwenden Twinax- oder Glasfaserkabel.</block>
-  <block id="c0be2d74ddb0ea6b8972b9da2fc2c223" category="paragraph">Der<block ref="141c10db18cf1753fa5fc05f553c33ff" category="inline-link-rx"></block> Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung mit BES-53248-Switches.</block>
   <block id="b882fd3c046d6c04ba3ecdc2047afed2" category="list-text">Inter-Switch Link (ISL)-Kabel sind an die Ports 0/55 und 0/56 beider BES-53248-Switches angeschlossen.</block>
   <block id="6be77b0027e4f23e5d6a0cf5e7ed697b" category="list-text">Die Erstkonfiguration beider BES-53248-Switches ist abgeschlossen, sodass:</block>
   <block id="c95d1e7e5f83accb779725a14e5a945b" category="list-text">Die BES-53248-Switches laufen mit der neuesten Softwareversion.</block>
@@ -1417,8 +1410,6 @@
   <block id="4c53e24e451af6129456f6303c30d40c" category="section-title">Unterstützung für NVIDIA CX6-, CX6-DX- und CX7-Ethernet-Anschlüsse</block>
   <block id="9631cf0fb6580db66010faf0ddf48e5a" category="paragraph">Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (CX6), ConnectX-6 Dx (CX6-DX) oder ConnectX-7 (CX7) NIC-Ports verbinden, müssen Sie die Geschwindigkeit des Switch-Ports fest codieren.</block>
   <block id="4071b2d290eb3b1857c92068de31aa78" category="summary">Sie können Cisco Nexus 3132q-v Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden.</block>
-  <block id="b62fecd2daa19a4b26cb97fb72713787" category="doc">Schließen Sie Ihre Migration von CN1610-Switches auf Nexus 3132Q-V-Switches ab.</block>
-  <block id="bd5e70cef701e4d8487bec53bbb9de80" category="paragraph">Führen Sie die folgenden Schritte durch, um die Migration der CN1610-Switches auf Nexus 3132Q-V-Switches abzuschließen.</block>
   <block id="2b1e8c90a6d76027bb51745a4c74f60b" category="list-text">Überprüfen Sie, ob die ISL-Verbindungen<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> am Schalter C2 des Modells 3132Q-V:</block>
   <block id="d729f8810ac441b9edfcb8be0c3d6946" category="paragraph">Die Ports Eth1/31 und Eth1/32 sollten anzeigen<block ref="664c0d6743f35461a17b57d1b74aca61" prefix=" " category="inline-code"></block> , was bedeutet, dass beide ISL-Häfen<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> im Portkanal.</block>
   <block id="9cb3b79ca9481ccd4278c560494c2d07" category="list-text">Aktivieren Sie alle Cluster-Verbindungsports, die mit dem neuen Switch C1 3132Q-V auf allen Knoten verbunden sind:</block>
@@ -1444,15 +1435,12 @@
   <block id="b79fbcaa83bfb2240ef82f145e0ade9d" category="list-text">[[step43_replacecn1610]]Wenn Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:</block>
   <block id="58a19c530e54f6364edd838f35b1830e" category="inline-link-macro">Switch-Zustandsüberwachung konfigurieren</block>
   <block id="d21243682bbd31fa9c0d32d291135394" category="paragraph"><block ref="5b8b393a675dcaaee97c02828356657c" category="inline-link-macro-rx"></block>.</block>
-  <block id="f2236b10ee05c554b0c3377444eff836" category="doc">Konfigurieren Sie Ihre Ports für die Migration von CN1610-Switches zu 3132Q-V-Switches.</block>
-  <block id="719a1057b8bbb9801d534f6f5dbe6138" category="paragraph">Befolgen Sie diese Schritte, um Ihre Ports für die Migration von den CN1610-Switches auf die neuen Nexus 3132Q-V-Switches zu konfigurieren.</block>
   <block id="3fe7956fd750714f32d9b6e932832821" category="list-text">Entfernen Sie an allen Knoten die Kabel, die an den CN1610-Switch CL2 angeschlossen sind.</block>
   <block id="c287f4f908346f49f828e85b4c6354b2" category="paragraph">Bei Verwendung geeigneter Kabel müssen Sie die getrennten Ports an allen Knoten wieder mit dem Switch Nexus 3132Q-V C2 verbinden.</block>
   <block id="c8b5ecb61e1ca17bbf70c94fc45188c4" category="list-text">Entfernen Sie vier ISL-Kabel von den Ports 13 bis 16 des CN1610-Switches CL1.</block>
   <block id="d622789660e949f6885c0f479a1a5581" category="paragraph">Sie müssen geeignete Cisco QSFP-zu-SFP+-Breakout-Kabel anschließen, die Port 1/24 des neuen Cisco 3132Q-V Switches C2 mit den Ports 13 bis 16 des vorhandenen CN1610 Switches CL1 verbinden.</block>
   <block id="2a1d4c54dfd1530a1b4f7a507989e876" category="admonition">Beim Wiederanschließen von Kabeln an den neuen Cisco 3132Q-V Switch müssen Sie entweder Glasfaser- oder Cisco Twinax-Kabel verwenden.</block>
   <block id="5d343b4af30094867f51850d2cea7721" category="list-text">Um die ISL dynamisch zu gestalten, konfigurieren Sie die ISL-Schnittstelle 3/1 am aktiven CN1610-Switch so, dass der statische Modus deaktiviert wird:<block ref="0eb212361b235188a498737cb6d380ef" prefix=" " category="inline-code"></block></block>
-  <block id="7b68f622594ff21ee6c47962c9e43be1" category="paragraph">Diese Konfiguration entspricht der ISL-Konfiguration auf dem 3132Q-V-Schalter C2, wenn die ISLs in Schritt 11 auf beiden Schaltern aktiviert werden.</block>
   <block id="62a68446ec92394b2aaec7d739cfa83c" category="paragraph">Das folgende Beispiel zeigt die Konfiguration der ISL-Schnittstelle 3/1 unter Verwendung der<block ref="0eb212361b235188a498737cb6d380ef" prefix=" " category="inline-code"></block> Befehl zur dynamischen Gestaltung der ISL:</block>
   <block id="bc184e6696a5706a12239ac0612dda19" category="list-text">Schalten Sie die ISLs 13 bis 16 auf dem aktiven CN1610-Switch CL1 ein.</block>
   <block id="ebc3087eb9f360e12512c4e617d5e77e" category="paragraph">Das folgende Beispiel veranschaulicht den Vorgang, die ISL-Ports 13 bis 16 auf der Portkanal-Schnittstelle 3/1 zu aktivieren:</block>
@@ -1492,55 +1480,24 @@
   <block id="fc9286ab35f04cf48b4c402b64077bfe" category="paragraph">Cisco Nexus 3132Q-V Switches können als Cluster-Switches in Ihrem AFF oder FAS Cluster verwendet werden. Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen.</block>
   <block id="7f66bc04b2dfdeb5c9e1ad66b46c6cc7" category="paragraph">Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.</block>
   <block id="c6adba6217951ed0e1a8ae3a9a50e632" category="paragraph">Weitere Informationen finden Sie unter:</block>
-  <block id="2c6231c37aa5eee842fb3faba0147be9" category="inline-link">Beschreibungsseite für NetApp CN1601 und CN1610</block>
-  <block id="e0be92acbe486240b4bb6d67d353a18e" category="list-text"><block ref="e0be92acbe486240b4bb6d67d353a18e" category="inline-link-rx"></block></block>
-  <block id="f775db4015a6969e3d7826094686747b" category="inline-link">Beschreibungsseite des Cisco Ethernet-Switches</block>
-  <block id="4e6ad2bd98b8c1138520f786b74bba0a" category="list-text"><block ref="4e6ad2bd98b8c1138520f786b74bba0a" category="inline-link-rx"></block></block>
-  <block id="c611db29cc6e6a239383ecd8e657d54c" category="list-text"><block ref="c611db29cc6e6a239383ecd8e657d54c" category="inline-link-rx"></block></block>
-  <block id="812fe850222050801e38b7832058886b" category="section-title">CN1610-Anforderungen</block>
   <block id="59f69cc7526dca532d61c11acf92ab1b" category="list-text">NetApp CN1610: Ports 0/1 bis 0/12 (10 GbE)</block>
-  <block id="246b4f4943a9ef7d81b1ecb7d14db012" category="list-text">Cisco Nexus 3132Q-V: Ports e1/1-30 (40/100 GbE)</block>
   <block id="d85b5de5ebd96ca279df638f293965ec" category="list-text">NetApp CN1610: Ports 0/13 bis 0/16 (10 GbE)</block>
-  <block id="57d3034f2867f54843c59eacb52d62bf" category="list-text">Cisco Nexus 3132Q-V: Ports e1/31-32 (40/100 GbE)</block>
   <block id="dd91c3681cdde4bc7616a4b3ec5f7e72" category="paragraph">Der<block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block> enthält Informationen zur unterstützten Verkabelung von Nexus 3132Q-V Switches:</block>
   <block id="472bbef967b4ae7a0b29aff643bee169" category="list-text">Knoten mit 10-GbE-Clusterverbindungen benötigen QSFP-zu-SFP+-Glasfaser-Breakout-Kabel oder QSFP-zu-SFP+-Kupfer-Breakout-Kabel.</block>
-  <block id="409f985ef1bffdcbe3bc46fc059d909f" category="list-text">Knoten mit 40/100-GbE-Clusterverbindungen benötigen unterstützte QSFP/QSFP28-Optikmodule mit Glasfaserkabeln oder QSFP/QSFP28-Kupfer-Direktanschlusskabel.</block>
   <block id="7b5781881fa8326227e58e694e97198c" category="list-text">Beginn: Für CN1610 zu CN1610 (SFP+ zu SFP+), vier SFP+ Glasfaser- oder Kupfer-Direktanschlusskabel</block>
   <block id="277ee11ec93d0d5d7bb265959cfadb18" category="list-text">Interim: Für CN1610 zu Nexus 3132Q-V (QSFP auf vier SFP+ Breakout), ein QSFP auf SFP+ Glasfaser- oder Kupfer-Breakout-Kabel</block>
   <block id="21e8ded62a39d44e1afa6aaee348bd88" category="list-text">Abschließend: Für Nexus 3132Q-V zu Nexus 3132Q-V (QSFP28 zu QSFP28) zwei QSFP28 Glasfaser- oder Kupfer-Direktanschlusskabel</block>
   <block id="d129b7927c768a17882184f936cb7a36" category="paragraph">NetApp Twinax-Kabel sind nicht mit Cisco Nexus 3132Q-V Switches kompatibel.</block>
   <block id="9781497a027920a312b9c4cd217b3956" category="paragraph">Wenn Ihre aktuelle CN1610-Konfiguration NetApp Twinax-Kabel für Cluster-Node-zu-Switch-Verbindungen oder ISL-Verbindungen verwendet und Sie Twinax weiterhin in Ihrer Umgebung nutzen möchten, müssen Sie Cisco Twinax-Kabel beschaffen.  Alternativ können Sie Glasfaserkabel sowohl für die ISL-Verbindungen als auch für die Verbindungen zwischen Clusterknoten und Switch verwenden.</block>
   <block id="6ba18f6bbaf15727c7ee5c3b67c96d09" category="paragraph-title">Zu den verwendeten Beispielen</block>
-  <block id="7aebbb4cb5adb1f73c7978267be88c10" category="paragraph">Die Beispiele in diesem Verfahren beschreiben den Austausch von CN1610-Switches durch Cisco Nexus 3132Q-V-Switches.  Diese Schritte können Sie (mit Anpassungen) auch für andere ältere Cisco -Switches verwenden.</block>
   <block id="36ead4e4eff2d381301d7bfff0ade3f3" category="paragraph">Das Verfahren verwendet außerdem die folgende Schalter- und Knotennomenklatur:</block>
-  <block id="80e1f6c007030f67f6111ab0c8408c28" category="list-text">Die zu ersetzenden CN1610-Schalter sind *CL1* und *CL2*.</block>
-  <block id="4aae134657701551f1dcef1c3781e263" category="list-text">Die Nexus 3132Q-V-Schalter, die die CN1610-Schalter ersetzen, sind *C1* und *C2*.</block>
-  <block id="798438ca23b2ff82b9170b4d5bfa6280" category="list-text">*n1_clus1* ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.</block>
-  <block id="6a6c766323eee285145b66e14d4ee43e" category="list-text">*n1_clus2* ist der erste Cluster-LIF, der mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.</block>
-  <block id="6dadf030423e26329824b12725fb09ed" category="list-text">*n1_clus3* ist die zweite LIF, die mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.</block>
-  <block id="1006eba9d47424524bb3c7816cd7318e" category="list-text">*n1_clus4* ist die zweite LIF, die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.</block>
   <block id="cfe31ca921d74cd993703a61d1e43033" category="inline-link">Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen</block>
   <block id="48bce5ec820f8f37a68ba6bb2b9d8b81" category="list-text">Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf dem Server verfügbar sind.<block ref="cce23acfce4c9bc9bb74fd35873aedf2" category="inline-link-rx"></block> Seite.</block>
-  <block id="6852ffab1dd842604cd9df0a0c1471d9" category="list-text">Die Knoten sind *n1*, *n2*, *n3* und *n4*.</block>
   <block id="599e429de04ef19f05e05c80158f2130" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten:</block>
-  <block id="54c4ccc4fa820b0a98b3f0c8fc663c4d" category="list-text">Zwei Knoten nutzen vier 10-GbE-Cluster-Verbindungsports: *e0a*, *e0b*, *e0c* und *e0d*.</block>
-  <block id="ab84df33131df5aa5511dff21c37d1ea" category="list-text">Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsports: *e4a* und *e4e*.</block>
-  <block id="1ca31d8f144e1f71bfbab9016379c2a1" category="paragraph">Der<block ref="cbfe825e8e02458e2eef3cd048612d7d" category="inline-link-macro-rx"></block> listet die tatsächlichen Cluster-Ports auf Ihren Plattformen auf.</block>
   <block id="0d370a4f587f437e7fc4ece5f78f2e7d" category="inline-link-macro">Bereiten Sie sich auf die Migration vor</block>
   <block id="e0dff501823a918e2f3033a5949c3621" category="summary">Bevor Sie Ihren Cisco 3132q-v Switch konfigurieren, lesen Sie bitte die folgenden Informationen.</block>
-  <block id="e14e49b4caef6bc8ad9775a137668670" category="doc">Workflow zur Migration von CN1610-Switches zu Nexus 3132Q-V-Switches</block>
-  <block id="7a4ba1a6c0b027572a0416dc6bf401d3" category="paragraph">Befolgen Sie diese Workflow-Schritte, um Ihre CN1610-Switches auf Cisco Nexus 3132Q-V-Switches zu migrieren.</block>
-  <block id="ac8a9f99175fd1d85515f7d3c6356968" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="846ed39deca0bc0696743f56a2fa6e52" category="inline-link-macro-rx"></block></block>
   <block id="8d468f64bcee3973d1e1e9806146df11" category="paragraph">Prüfen Sie die Anforderungen und Beispielinformationen zum Migrationsprozess.</block>
-  <block id="0334936cbcd27a48ad2744fb7577c089" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="09f8647628955f086bee147d39a109c3" category="inline-link-macro-rx"></block></block>
-  <block id="4c01d7183bdd28aca1e3aabe05c578b1" category="paragraph">Bereiten Sie Ihre CN1610-Switches für die Migration auf Nexus 3132Q-V-Switches vor.</block>
   <block id="340c3bb044e471e15ff9876bdc67bf83" category="inline-link-macro">Konfigurieren Sie Ihre Ports</block>
-  <block id="d6871df2b359eba290ac55f996b13edf" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="cf3c8509cc39fe5420b82170551e0955" category="inline-link-macro-rx"></block></block>
-  <block id="5ff4738de3bcf4d3af66e04647c33b3d" category="paragraph">Konfigurieren Sie Ihre Ports für die Migration auf die neuen Nexus 3132Q-V Switches.</block>
-  <block id="67f09b76c948374a9d851b981ff65cfb" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="4f1fe635f2afbf3ed63b1436d0bc6ba5" category="inline-link-macro-rx"></block></block>
-  <block id="dac43038eaedf93c572310a5d870ca1d" category="paragraph">Schließen Sie Ihre Migration auf die neuen Nexus 3132Q-V Switches ab.</block>
-  <block id="11d45d16ea49b4afe88aaf89a666e5ef" category="doc">Bereiten Sie die Migration von CN1610-Switches auf 3132Q-V-Switches vor.</block>
-  <block id="0c78de6b6a8759c718830efb792c573b" category="paragraph">Befolgen Sie diese Schritte, um Ihre CN1610-Switches für die Migration auf Cisco Nexus 3132Q-V-Switches vorzubereiten.</block>
   <block id="e0c459ee022d3d4ac187fbf896f3a3de" category="paragraph"><block ref="80cae18d0d871afff6b1bcabf727d6da" prefix="" category="inline-code"></block></block>
   <block id="8d0e687377afc5c133d276af126b6104" category="paragraph">_x_ ist die Dauer des Wartungsfensters in Stunden.</block>
   <block id="996e8be91ffccb3b29b5d97095bde5d3" category="list-text">Informationen zu den Geräten in Ihrer Konfiguration anzeigen:</block>
@@ -1554,13 +1511,11 @@
   <block id="453a6890d60e4080c71b10898159e292" category="paragraph"><block ref="141f671a5edc94f5cc9316f953bc9ffb" prefix="" category="inline-code"></block></block>
   <block id="e75185bd3368ee464150b091fadaea64" category="list-text">Prüfen Sie, ob die entsprechenden RCF-Dateien und Images gemäß Ihren Anforderungen auf den neuen 3132Q-V-Switches installiert sind, und nehmen Sie alle notwendigen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen usw.</block>
   <block id="62a32a8da5c635f011843056ed2be49c" category="paragraph">Sie müssen jetzt beide Schalter vorbereiten.  Falls Sie die RCF-Datei und das Image aktualisieren müssen, befolgen Sie diese Schritte:</block>
-  <block id="770b3b3dd4b6a860f71aabb021e433d2" category="list-text">Sehen<block ref="3f6421172f80f8047523f4f7c07d2e71" category="inline-link-macro-rx"></block> auf der NetApp Supportseite.</block>
   <block id="690cd80190ecafe95c1bad59ef6e05e9" category="list-text">Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.</block>
   <block id="75a2d93cb4e527c0e286f843787fab5e" category="list-text">Laden Sie die passende Version der RCF herunter.</block>
   <block id="c3e4865cf90af929edc8bd070be90861" category="list-text">Wählen Sie auf der Seite *Beschreibung* *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.</block>
   <block id="64382be6f4f3f33c4cddf77b7e43a871" category="list-text">Laden Sie die passende Version der Bildbearbeitungssoftware herunter.</block>
   <block id="3d8dff955662cfeaf1bbd38f49a7762a" category="inline-link">Cisco Cluster- und Management-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen</block>
-  <block id="503f7cd5b4831af5280f50689787ef2e" category="paragraph"><block ref="503f7cd5b4831af5280f50689787ef2e" category="inline-link-rx"></block></block>
   <block id="7ce02bd6a5e67e04f7cac449dc854124" category="list-text">Migrieren Sie die LIFs, die mit dem zweiten zu ersetzenden CN1610-Switch verbunden sind:</block>
   <block id="e8b36898a14025655c5bbcd25316af3f" category="paragraph">Sie müssen die Cluster-LIFs von einer Verbindung zu dem Knoten migrieren, der die zu migrierende Cluster-LIF besitzt, entweder über den Serviceprozessor oder die Knotenverwaltungsschnittstelle.</block>
   <block id="92c7135f045da2103cc2998aaea78fe4" category="paragraph">Das folgende Beispiel zeigt n1 und n2, die LIF-Migration muss jedoch auf allen Knoten durchgeführt werden:</block>
@@ -1572,61 +1527,31 @@
   <block id="20fca188f9df647063b0798615526c99" category="paragraph">Das folgende Beispiel zeigt, wie die ISL-Ports 13 bis 16 am CN1610-Switch CL1 deaktiviert werden:</block>
   <block id="8d9520a7db10148df2c9a1262cf4055a" category="list-text">Errichte eine temporäre ISL zwischen CL1 und C2:</block>
   <block id="abf1c60f9d26f9c51258947dd5ef15d2" category="paragraph">Das folgende Beispiel erstellt eine temporäre ISL zwischen CL1 (Ports 13-16) und C2 (Ports e1/24/1-4):</block>
-  <block id="4c4cf4e66a2a549efd98b45aa0d53a3d" category="doc">Schließen Sie die Migration von Nexus 5596-Switches auf Nexus 3132Q-V-Switches ab.</block>
-  <block id="90da058bec2aa2bf1b450c4b8c56c4c6" category="paragraph">Führen Sie die folgenden Schritte durch, um die Migration der Nexus 5596-Switches auf die Nexus 3132Q-V-Switches abzuschließen.</block>
-  <block id="cece4dbf87807c9dd5ea9bd3a957178c" category="paragraph">Die Ports Eth1/31 und Eth1/32 sollten anzeigen<block ref="664c0d6743f35461a17b57d1b74aca61" prefix=" " category="inline-code"></block> , was bedeutet, dass beide ISL-Häfen<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> im Portkanal:</block>
-  <block id="31904c5355f17c93a1b24971a19bd1bf" category="list-text">Aktivieren Sie auf allen Knoten alle Cluster-Verbindungsports, die mit dem neuen Switch 3132Q-V C1 verbunden sind:</block>
-  <block id="ad74bf339ee8d5d96a2bd94af6adee60" category="paragraph">Das folgende Beispiel zeigt, wie alle Cluster-Verbindungsports für n1 und n2 auf dem 3132Q-V-Switch C1 aktiviert werden:</block>
-  <block id="f1cf8003cdf52e8ffcd5e3ec861861de" category="paragraph">Das folgende Beispiel verifiziert, dass alle Cluster-Verbindungsports auf allen Knoten des neuen 3132Q-V-Switches C1 vorhanden sind.<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> :</block>
   <block id="6c098a32373500c8400f32fb07dde9e3" category="list-text">Auf allen Knoten müssen die spezifischen Cluster-LIFs auf ihre jeweiligen Heimatports zurückgesetzt werden:</block>
   <block id="6ddfcc3224ee61de55be71f4235743ce" category="paragraph">Das folgende Beispiel zeigt, wie die spezifischen Cluster-LIFs auf den Knoten n1 und n2 auf ihre ursprünglichen Ports zurückgesetzt werden:</block>
   <block id="d4a8913469db1fc0f552292a60d6e828" category="list-text">Überprüfen Sie, ob die Schnittstelle auf „Startseite“ eingestellt ist:</block>
-  <block id="21091c00fdd6019fd30fabd99febe37a" category="list-text">Entfernen Sie die ausgetauschten Nexus 5596-Geräte, falls diese nicht automatisch entfernt wurden:</block>
-  <block id="9330abbaaa76e6624badc34f8f4a32ea" category="paragraph">Das folgende Beispiel zeigt, wie man das Nexus 5596 entfernt:</block>
   <block id="875f7e7648c993f0e954e0bebec605a3" category="list-text">Konfigurieren Sie die Cluster clus1 und clus2 so, dass sie auf jedem Knoten automatisch zurückgesetzt werden, und bestätigen Sie dies.</block>
-  <block id="32f9fed32eca7dddd4b24cc2fa065d9c" category="doc">Konfigurieren Sie Ihre Ports für die Migration von 5596-Switches zu 3132Q-V-Switches.</block>
-  <block id="4195a8a96c799352ae40908b3ae9cfa3" category="paragraph">Befolgen Sie diese Schritte, um Ihre Ports für die Migration von den Nexus 5596 Switches auf die neuen Nexus 3132Q-V Switches zu konfigurieren.</block>
   <block id="9dfa5ca81b6cfbfa68b56dbce5da8530" category="list-text">Entfernen Sie an allen Knoten sämtliche Kabel, die an den Switch Nexus 5596 CL2 angeschlossen sind.</block>
-  <block id="966456a7b0c13d93e99995ce83647e5f" category="paragraph">Mit der entsprechenden Verkabelung können die getrennten Ports aller Knoten wieder mit dem Nexus 3132Q-V Switch C2 verbunden werden.</block>
   <block id="ef734cd74ae1841f6b5f92caa7675791" category="list-text">Entfernen Sie alle Kabel vom Nexus 5596 Switch CL2.</block>
-  <block id="6bc3f2d33e7a041a76d77c45f9132983" category="paragraph">Schließen Sie die entsprechenden Cisco QSFP-zu-SFP+-Breakout-Kabel an, die Port 1/24 des neuen Cisco 3132Q-V Switches, C2, mit den Ports 45 bis 48 des vorhandenen Nexus 5596, CL1, verbinden.</block>
-  <block id="39114fed6f0c082867dc441d7d2e5f43" category="list-text">Überprüfen Sie, ob die Schnittstellen eth1/45-48 bereits über folgende Merkmale verfügen:<block ref="272b3828e33dc4bc4bfe71f68f0dabe0" prefix=" " category="inline-code"></block> in ihrer laufenden Konfiguration.</block>
   <block id="0ba1878488fa8c1dcdcbe279bbb1ebca" category="list-text">Aktivieren Sie die ISL-Ports 45 bis 48 am aktiven Nexus 5596 Switch CL1.</block>
   <block id="fd6ad519327f19b20670ad5335a253a2" category="paragraph">Das folgende Beispiel zeigt, wie die ISL-Ports 45 bis 48 aktiviert werden:</block>
-  <block id="4d4bc08e276af766d54e3467b9949fa8" category="list-text">Überprüfen Sie, ob die ISLs<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> auf dem Nexus 5596 Switch CL1:</block>
-  <block id="af921cfb31e494afff016da33715afa6" category="paragraph">Die Ports eth1/45 bis eth1/48 sollten (P) anzeigen, was bedeutet, dass es sich um ISL-Ports handelt.<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> im Portkanal:</block>
-  <block id="9598511e759613b613671d3b65d3d555" category="paragraph">Die Ports eth1/24/1, eth1/24/2, eth1/24/3 und eth1/24/4 sollten mit (P) gekennzeichnet sein, was bedeutet, dass es sich um ISL-Ports handelt.<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> im Portkanal:</block>
-  <block id="58508b4426f2f445d9955df582a81637" category="list-text">Aktivieren Sie auf allen Knoten alle Cluster-Verbindungsports, die mit dem Switch C2 3132Q-V verbunden sind:</block>
   <block id="68799151fadf324a361d2bc7241a9e99" category="paragraph">Das folgende Beispiel zeigt, wie die angegebenen Ports auf den Knoten n1 und n2 aktiviert werden:</block>
   <block id="79172c8124efb7d716197673757d5578" category="list-text">Auf allen Knoten müssen alle migrierten Cluster-Interconnect-LIFs, die mit C2 verbunden sind, zurückgesetzt werden:</block>
-  <block id="782def794cc49dccc5a354b283becc30" category="paragraph">Das folgende Beispiel zeigt, wie die migrierten Cluster-LIFs auf den Knoten n1 und n2 wieder auf ihre ursprünglichen Ports zurückgesetzt werden:</block>
   <block id="fc58eb548b356f004f25deb55d7debe2" category="list-text">Überprüfen Sie, ob alle Cluster-Verbindungsports nun wieder auf ihre ursprüngliche Adresse zurückgesetzt wurden:</block>
   <block id="9e34505e95067067c4258419479733a1" category="paragraph">Das folgende Beispiel zeigt, dass die LIFs auf clus2 auf ihre ursprünglichen Ports zurückgesetzt wurden und dass die Rücksetzung der LIFs erfolgreich war, wenn die Ports in der Spalte „Aktueller Port“ den Status „“ aufweisen.<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> im<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Spalte.  Wenn die<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Wert ist<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> Der LIF wurde nicht rückgängig gemacht.</block>
   <block id="b0522263b2b188ed6c32b8d81c7f9286" category="list-text">Überprüfen Sie, ob die Cluster-Ports verbunden sind:</block>
   <block id="14860c40af5b70801e3ca603e17cb1ae" category="paragraph">Das folgende Beispiel zeigt das Ergebnis des vorherigen Schritts.<block ref="c41d3983ecd2badd54b3bb9658675080" prefix=" " category="inline-code"></block> Befehl, der überprüft, ob alle Clusterverbindungen vorhanden sind<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> :</block>
-  <block id="86134d7d31c06aa0711aee6c64ddd4f3" category="list-text">[[step12]]Migrieren Sie auf jedem Knoten im Cluster die Schnittstellen, die dem ersten zu ersetzenden Nexus 5596-Switch, CL1, zugeordnet sind:</block>
-  <block id="29d3d66101e62951d378ea2e5a755eef" category="paragraph">Das folgende Beispiel zeigt, dass die erforderlichen Cluster-LIFs auf die entsprechenden Cluster-Ports migriert wurden, die auf dem Cluster-Switch C2 gehostet werden:</block>
   <block id="b7504e51bec148bae865f23a95894f3d" category="list-text">Schalten Sie auf allen Knoten die Knotenports ab, die mit CL1 verbunden sind:</block>
   <block id="f1a61336765f82c643fb26938f79ed9c" category="paragraph">Das folgende Beispiel zeigt, wie die angegebenen Ports auf den Knoten n1 und n2 abgeschaltet werden:</block>
-  <block id="40648c0313929f34489755e1ba08f9dc" category="paragraph">Das folgende Beispiel zeigt, wie die ISLs 24, 31 und 32 abgeschaltet werden:</block>
   <block id="0c01a4b0e93b8a36bb98d2bcd3566432" category="list-text">Entfernen Sie an allen Knoten sämtliche Kabel, die an den Nexus 5596 Switch CL1 angeschlossen sind.</block>
-  <block id="1f46be4069dcf6cf295b5ef450654445" category="paragraph">Verbinden Sie mithilfe der unterstützten Verkabelung die getrennten Ports aller Knoten wieder mit dem Switch Nexus 3132Q-V C1.</block>
-  <block id="fbdd94f42a48647720da88d59c4b201d" category="list-text">Entfernen Sie das QSFP-Breakout-Kabel von den Nexus 3132Q-V C2-Ports e1/24.</block>
   <block id="1bcca78caf802f62188aa9cc8b5984f2" category="paragraph">Verbinden Sie die Ports e1/31 und e1/32 auf C1 mit den Ports e1/31 und e1/32 auf C2 mithilfe von unterstützten Cisco QSFP Glasfaser- oder Direktanschlusskabeln.</block>
-  <block id="57b7a4769fe7ed3b97b5fa3c1e1b265c" category="list-text">Stellen Sie die Konfiguration auf Port 24 wieder her und entfernen Sie den temporären Portkanal 2 auf C2:</block>
-  <block id="a759436e74247502ca654a3594a02206" category="list-text">Aktivieren Sie die ISL-Ports 31 und 32 an C2, dem aktiven Switch 3132Q-V:<block ref="3c9abc42a241e1475a5055b440143fa5" prefix=" " category="inline-code"></block></block>
   <block id="62791e1f76f82dd4c5d54b4700356919" category="inline-link-macro">Cisco Ethernet-Switch</block>
   <block id="316f1eecb7ad81ecbbff1b421526b4b8" category="list-text"><block ref="316f1eecb7ad81ecbbff1b421526b4b8" category="inline-link-macro-rx"></block></block>
   <block id="65de4ce73578ac5d8407f9a06f97685b" category="list-text"><block ref="65de4ce73578ac5d8407f9a06f97685b" category="inline-link-macro-rx"></block></block>
   <block id="ac3ce89c8c9c9f66bbf4ad6b656b2b3d" category="section-title">Cisco Nexus 5596 Anforderungen</block>
   <block id="555e8da414bf5a2d01f0f64a306f311c" category="paragraph">Die Cluster-Switches verwenden die folgenden Ports für die Verbindungen zu den Knoten:</block>
-  <block id="80f164080758aa5bfc804c244125df73" category="list-text">Nexus 5596: Ports e1/1-40 (10 GbE)</block>
-  <block id="65d2c518897dd18b3b7d147b6d6f4104" category="list-text">Nexus 3132Q-V: Anschlüsse e1/1-30 (10/40/100 GbE)</block>
   <block id="2310f479b987de6cbfc70f812fee99fd" category="paragraph">Die Cluster-Switches verwenden die folgenden Inter-Switch Link (ISL)-Ports:</block>
-  <block id="c909e005a718a451d653aced6fa25fef" category="list-text">Nexus 5596: Ports e1/41–48 (10 GbE)</block>
-  <block id="e6f0cb5332884d3ca43e5ad15b409681" category="list-text">Nexus 3132Q-V: Ports e1/31-32 (40/100 GbE)</block>
   <block id="9855955d9b3a740776b3e213e42bcb16" category="inline-link-macro">_Hardware-Universum_</block>
-  <block id="6e04545690c667d3d164a3213eecb026" category="paragraph">Der<block ref="ed925a5605a5afba7260684d8fd47590" category="inline-link-macro-rx"></block> enthält Informationen zur unterstützten Verkabelung von Nexus 3132Q-V Switches:</block>
   <block id="8ad5621547abb5f398de647f01ee8992" category="list-text">Knoten mit 10-GbE-Clusterverbindungen benötigen QSFP-zu-SFP+-Glasfaser-Breakout-Kabel oder QSFP-zu-SFP+-Kupfer-Breakout-Kabel.</block>
   <block id="cd4dd3ef0341a2660ec2e13a0afbda9c" category="list-text">Knoten mit 40/100-GbE-Clusterverbindungen benötigen unterstützte QSFP/QSFP28-Optikmodule mit Glasfaserkabeln oder QSFP/QSFP28-Kupfer-Direktanschlusskabel.</block>
   <block id="f6d943be4fed7a73b2b20c6cca1c0cb1" category="paragraph">Die Cluster-Switches verwenden die entsprechende ISL-Verkabelung:</block>
@@ -1636,21 +1561,7 @@
   <block id="ff844f64ec493dced35fea3af41734fa" category="list-text">1x QSFP-zu-SFP+-Glasfaser- oder Kupfer-Breakout-Kabel</block>
   <block id="50f94cbc4cf0a33ff4f99b9553620925" category="list-text">Endgültig: Nexus 3132Q-V zu Nexus 3132Q-V (QSFP28 zu QSFP28)</block>
   <block id="9dac3929f5f08b4f7ea27d4b985ed09c" category="list-text">2x QSFP28 Glasfaser- oder Kupfer-Direktanschlusskabel</block>
-  <block id="28b054f899ccc3b204f1dc8f87461787" category="list-text">Bei Nexus 3132Q-V Switches können Sie QSFP/QSFP28 Ports entweder im 40/100 Gigabit Ethernet-Modus oder im 4 x10 Gigabit Ethernet-Modus betreiben.</block>
-  <block id="f2bec5f5cdac025c362ee7a63ef33243" category="paragraph">Standardmäßig stehen im 40/100 Gigabit Ethernet-Modus 32 Ports zur Verfügung.  Diese 40 Gigabit-Ethernet-Ports sind nach dem 2-Tupel-Namensschema nummeriert.  Beispielsweise ist der zweite 40-Gigabit-Ethernet-Anschluss mit 1/2 nummeriert.</block>
-  <block id="2b3858746ef6d70b7cc2e4f1b48b1f0b" category="paragraph">Der Vorgang der Umstellung der Konfiguration von 40-Gigabit-Ethernet auf 10-Gigabit-Ethernet wird als _breakout_ bezeichnet, und der Vorgang der Umstellung der Konfiguration von 10-Gigabit-Ethernet auf 40-Gigabit-Ethernet wird als _breakin_ bezeichnet.</block>
-  <block id="722b85529a76604cf58c420f7a9ac06f" category="paragraph">Wenn man einen 40/100-Gigabit-Ethernet-Anschluss in 10 Gigabit-Ethernet-Anschlüsse aufteilt, werden die resultierenden Anschlüsse nach dem 3-Tupel-Namensschema nummeriert.  Beispielsweise sind die Breakout-Ports des zweiten 40/100 Gigabit Ethernet-Ports mit 1/2/1, 1/2/2, 1/2/3 und 1/2/4 nummeriert.</block>
-  <block id="3528d94e0879a6fb80b0c21e2407afcb" category="list-text">Auf der linken Seite der Nexus 3132Q-V Switches befinden sich 2 SFP+ Ports, die als 1/33 und 1/34 bezeichnet werden.</block>
-  <block id="361c24584ea413c01856408e97a40411" category="list-text">Sie haben einige Ports an Nexus 3132Q-V Switches so konfiguriert, dass sie mit 10 GbE oder 40/100 GbE laufen.</block>
   <block id="9043114d5258d60e49a6ff62966f1f4d" category="paragraph">Sie können die ersten sechs Ports in den 4x10-GbE-Modus aufteilen, indem Sie die<block ref="08aac397a11274cd898dfbb3a635cf19" prefix=" " category="inline-code"></block> Befehl.  Ebenso können Sie die ersten sechs QSFP+-Ports aus der Breakout-Konfiguration mithilfe der folgenden Funktion neu gruppieren:<block ref="9437e02f9ec4a8d602d396abd2c360b4" prefix=" " category="inline-code"></block> Befehl.</block>
-  <block id="b56d0aacb2956c32c453bd556e641731" category="list-text">Sie haben die Planung und Migration durchgeführt und die erforderliche Dokumentation zur 10-GbE- und 40/100-GbE-Konnektivität von Knoten zu Nexus 3132Q-V Cluster-Switches gelesen.</block>
-  <block id="629b3c36d556bc100a0c76bafef21d6f" category="list-text">Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind hier aufgeführt:<block ref="3f6421172f80f8047523f4f7c07d2e71" category="inline-link-macro-rx"></block> Die</block>
-  <block id="f5dd7ff0adcb0d1a9b383eb460b3c690" category="paragraph">Die Beispiele in diesem Verfahren beschreiben den Austausch von Cisco Nexus 5596-Switches durch Cisco Nexus 3132Q-V-Switches.  Diese Schritte können Sie (mit Anpassungen) auch für andere ältere Cisco -Switches verwenden.</block>
-  <block id="6deb3dc842a3dde4118935b248279fa8" category="list-text">Die zu ersetzenden Nexus 5596-Schalter sind *CL1* und *CL2*.</block>
-  <block id="d88db22893852034863895c7c2ffb7a3" category="list-text">Die Nexus 3132Q-V Switches, die die Nexus 5596 Switches ersetzen, sind *C1* und *C2*.</block>
-  <block id="d79863feaf7dda590b3bac794b234a6f" category="list-text">Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf [Plattformname] verfügbar sind.<block ref="45b8f1baa941c556d7daa8d8054d886c" category="inline-link-macro-rx"></block> Die</block>
-  <block id="843bbf8c042bb49114b7773e1c0447fe" category="paragraph">Der<block ref="ed925a5605a5afba7260684d8fd47590" category="inline-link-macro-rx"></block> listet die tatsächlichen Cluster-Ports auf Ihren Plattformen auf.</block>
-  <block id="be22a0d322c8f53d170f9d25576359ff" category="paragraph-title">Abgedeckte Szenarien</block>
   <block id="9471c7c21cedfdb98486495bd0b6245b" category="paragraph">Dieses Verfahren umfasst die folgenden Szenarien:</block>
   <block id="64285f35389676785ba1a7c222e3e3db" category="list-text">Der Cluster startet mit zwei Knoten, die über zwei Nexus 5596 Cluster-Switches verbunden sind und funktionieren.</block>
   <block id="bc22e6be80918cfb669bd26425be5d46" category="list-text">Der Cluster-Schalter CL2 wird durch C2 ersetzt (Schritte 1 bis 19):</block>
@@ -1664,31 +1575,13 @@
   <block id="376d9754d8bf6cc760dbf7cec0de5688" category="list-text">Trennen Sie die Verkabelung zwischen den ISL-Ports zwischen CL1 und C2 und stellen Sie die Verbindung mit einer unterstützten Verkabelung von C1 nach C2 wieder her.</block>
   <block id="28013695101030544eb476048f1977d0" category="list-text">Der Datenverkehr auf allen Cluster-Ports oder LIFs, die mit C1 auf allen Knoten verbunden sind, wird umgekehrt.</block>
   <block id="d69d0cb0520d43e9420f393e270b4722" category="list-text">Dem Cluster wurden zwei FAS9000 Knoten hinzugefügt; Beispiele zeigen Details zum Cluster.</block>
-  <block id="e1e4af2b76fc4cf7725e6ad531c83d04" category="doc">Workflow zur Migration von Nexus 5596-Switches zu Nexus 3132Q-V-Switches</block>
-  <block id="f03558b04d65ace52581aa38868c2ef6" category="paragraph">Befolgen Sie diese Workflow-Schritte, um Ihre Cisco Nexus 5596 Switches auf Cisco Nexus 3132Q-V Switches zu migrieren.</block>
-  <block id="5aed4d60c869bad1404f0a8b23f73253" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="2ab73bc8048b4bb1f937f7cc0605a0de" category="inline-link-macro-rx"></block></block>
-  <block id="928ce7c43faad4a754aa0e952d9a0e41" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="995229e1a43747c0714f7eb4992f1c0f" category="inline-link-macro-rx"></block></block>
-  <block id="c34787eca73871704459ab669d6a06b3" category="paragraph">Bereiten Sie Ihre Nexus 5596 Switches auf die Migration zu Nexus 3132Q-V Switches vor.</block>
-  <block id="5f6de25cdf5d8986d417de6abd57aaab" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="b245e0adb8a6dae5a3f9ec732103e83e" category="inline-link-macro-rx"></block></block>
-  <block id="96f2f19a47b7b3056f68853f79edaa55" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="303a8cd4f5d54f240e31d45fee06fb59" category="inline-link-macro-rx"></block></block>
-  <block id="296b6a4b7feb9a2539d964374ab3410a" category="doc">Bereiten Sie die Migration von Nexus 5596-Switches auf Nexus 3132Q-V-Switches vor.</block>
-  <block id="344464c6be75ce8b80d0cc063326004c" category="paragraph">Befolgen Sie diese Schritte, um Ihre Cisco Nexus 5596 Switches für die Migration auf Cisco Nexus 3132Q-V Switches vorzubereiten.</block>
   <block id="9b199be8c3f1982fb3a23940f20b497c" category="admonition">Die Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, damit die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.</block>
   <block id="cea6a6eecf8fd6cc967a6f4ddcffbdac" category="paragraph">Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:</block>
   <block id="ab3c28f964de5085a4ea20a8c2a1c6b0" category="list-text">Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle:</block>
-  <block id="db31940f2b579882308cd543e5a6d236" category="list-text">Informationen zu den logischen Schnittstellen anzeigen: +<block ref="16fdd92def5a71313d6535c74ef67b81" prefix=" " category="inline-code"></block></block>
-  <block id="abe6208e30c618d92ae062645a3813ef" category="list-text">Informationen zu den erkannten Cluster-Switches anzeigen: +<block ref="694b56ad85eb627acc97ea9295f39018" prefix=" " category="inline-code"></block></block>
   <block id="f7bda53628939a52cb359a413eed21ac" category="list-text">Stellen Sie die<block ref="28c988ac956ff7a16325cde07547fef0" prefix=" " category="inline-code"></block> Parameter zu<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> auf den Cluster-LIFs clus1 und clus2 auf beiden Knoten:</block>
-  <block id="f4ea8698e3058f3f13b97ef311024a01" category="list-text">Prüfen Sie, ob die entsprechende RCF und das entsprechende Image gemäß Ihren Anforderungen auf den neuen 3132Q-V Switches installiert sind, und nehmen Sie die notwendigen Standortanpassungen vor, z. B. Benutzer und Passwörter, Netzwerkadressen usw.</block>
   <block id="adde0526353316930b632fdb9e7146b3" category="list-text">Gehe zu<block ref="3f6421172f80f8047523f4f7c07d2e71" category="inline-link-macro-rx"></block> auf der NetApp Supportseite.</block>
-  <block id="327ee980e40b4244d4539d5661d8432d" category="paragraph">Siehe die Downloadseite „Referenzkonfigurationsdateien für ONTAP 8.x oder spätere Cluster und Management-Netzwerk-Switches“ und wähle dann die entsprechende Version aus.</block>
   <block id="3765c5d59205afeccadd8e5bd55e38e9" category="paragraph">Die richtige Version finden Sie auf der Downloadseite für _ONTAP 8.x oder spätere Cluster-Netzwerk-Switches_.</block>
   <block id="dd3fa644952a65f1f6502b594da8056e" category="list-text">Migrieren Sie die LIFs, die mit dem zweiten zu ersetzenden Nexus 5596-Switch verbunden sind:</block>
-  <block id="f5532c44fa87b73888e57560b15f09ab" category="paragraph">Das folgende Beispiel zeigt n1 und n2, die LIF-Migration muss jedoch auf allen Knoten durchgeführt werden:</block>
-  <block id="991d705309210a9623a3f1d994c15150" category="list-text">[[step10]]Schalten Sie die ISL-Ports 41 bis 48 am aktiven Nexus 5596 Switch CL1 ab:</block>
-  <block id="609bda8dbabe0a84f343b546e3d7a65a" category="paragraph">Das folgende Beispiel zeigt, wie die ISL-Ports 41 bis 48 auf dem Nexus 5596 Switch CL1 deaktiviert werden:</block>
-  <block id="cd40e6280d7c588dd322df9d4c9bd367" category="paragraph">Wenn Sie einen Nexus 5010 oder 5020 ersetzen, geben Sie die entsprechenden Portnummern für ISL an.</block>
-  <block id="74bb8188e949e71bcfef0fd8d38fa91b" category="list-text">Errichte eine temporäre ISL zwischen CL1 und C2.</block>
   <block id="621728c29c88ed3282a78eafc103c550" category="paragraph">Das folgende Beispiel zeigt, wie eine temporäre ISL zwischen CL1 und C2 eingerichtet wird:</block>
   <block id="d986ed9d4c8a95f299636380e9b4371b" category="summary">Bei der Installation und Wartung des Cisco Nexus 3132Q-V Switches sollten Sie unbedingt die Netzwerk- und Konfigurationsanforderungen überprüfen.</block>
   <block id="8d41ecb75735e9a1894abf605fc11add" category="doc">Konfigurationsanforderungen für Cisco Nexus 3132Q-V-Switches</block>
@@ -1699,7 +1592,6 @@
   <block id="928578e16a90196fc9a03ee550b28e6a" category="list-text">IP-Subnetz für den Verwaltungsnetzwerkverkehr.</block>
   <block id="becb2a794e73682397182ea70e8c3723" category="list-text">Hostnamen und IP-Adressen für jeden der Speichersystem-Controller und alle entsprechenden Switches.</block>
   <block id="3cce89e076695683c3ae0c299fd7edcd" category="list-text">Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird. Bei den Systemen AFF A800 und AFF A700 verwendet die e0M-Schnittstelle einen dedizierten Ethernet-Anschluss.</block>
-  <block id="2db039ebbdf49e3bdc8288c26bc1ec4b" category="paragraph">Siehe die<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> für die aktuellsten Informationen.</block>
   <block id="afcde3664e37d8f858999ffb7e9d8467" category="paragraph">Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie die <block ref="3bfe41df5ada7a5031db91489b512eed" category="inline-link-macro-rx"></block>Die</block>
   <block id="926ea8223c35e0974ecfabb2c02ad4ff" category="summary">Übersicht über die Softwarekonfiguration für Cisco Nexus 3132Q-V Cluster-Switches</block>
   <block id="fddd0032cd4149fb7bfea4114a217072" category="doc">Workflow zur Softwareinstallation für Cisco Nexus 3132Q-V-Cluster-Switches</block>
@@ -2087,7 +1979,6 @@
   <block id="dd7ac721959b4aaa170786e82881ae7b" category="summary">Die Cisco NX-OS Software und die Referenzkonfigurationsdateien (RCFs) müssen auf den Cisco Nexus 3132Q-V Cluster-Switches installiert sein.</block>
   <block id="ccdb01c4cd8e253f3a70d7d150d9bc95" category="paragraph">Bevor Sie die NX-OS-Software und die Referenzkonfigurationsdatei (RCF) installieren, befolgen Sie bitte diese Schritte.</block>
   <block id="29b5c9f7c3e370b92a6acd04f777cd76" category="paragraph">Die Beispiele in diesem Verfahren verwenden zwei Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports.<block ref="922c556baf6272bffc4fa28b2e9a0bbc" prefix=" " category="inline-code"></block> Und<block ref="22fe67c2e87caff18249cf1804bbeaad" prefix=" " category="inline-code"></block> Die</block>
-  <block id="d472e6c72465c08732a77102922a611d" category="paragraph">Siehe die<block ref="34774b6dc875898cd8aa59f7081c068c" category="inline-link-macro-rx"></block> um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.</block>
   <block id="eaa553a851c0d94118e84937225d82b3" category="list-text">Die Knotennamen lauten<block ref="b33422d3fbf7a4ba3b02e2bfcd37f46f" prefix=" " category="inline-code"></block> Und<block ref="8fc15469c933cd7fd8db166bddedfd77" prefix=" " category="inline-code"></block> Die</block>
   <block id="7c49971ba263cd138f6ac3897478ebe7" category="list-text">Die Cluster-LIF-Namen sind<block ref="563c32279ac27a2f84ed166dc2b9076e" prefix=" " category="inline-code"></block> Und<block ref="180ba796272cc27f8a30ae01b4ccd007" prefix=" " category="inline-code"></block> für Cluster1-01 und<block ref="648d8ae7575d38efb172a5d730d01a5d" prefix=" " category="inline-code"></block> Und<block ref="55c4d1f8af0a31bf748d22556fa667ed" prefix=" " category="inline-code"></block> für Cluster1-02.</block>
   <block id="a06f69669c864cc0902a5e544ee247bc" category="paragraph"><block ref="5a2357a985889803fc9ad4bba1f860e2" prefix="" category="inline-code"></block></block>
@@ -2388,8 +2279,6 @@
   <block id="b6dd8221599de3110a6be11272b8d643" category="summary">Bevor Sie Ihren Cisco 3232C Switch konfigurieren, lesen Sie bitte die folgenden Informationen.</block>
   <block id="855541c4370cb556c283600de9f0d1df" category="paragraph">Bevor Sie Ihren Cisco 3232C Switch konfigurieren, beachten Sie bitte die folgenden Hinweise.</block>
   <block id="3447206e4790bd39c75003aa974a1695" category="summary">Sie können Cisco Nexus 3232C Switches als Cluster-Switches in Ihrem AFF oder FAS Cluster verwenden.</block>
-  <block id="3389061ef5c5bcdadd5ecdfff37602fa" category="doc">Schließen Sie Ihre Migration von CN1610-Switches auf 3232C-Switches ab.</block>
-  <block id="f0bf1a2b31ff80fb86ed5789b7a48d25" category="paragraph">Führen Sie die folgenden Schritte durch, um die Migration der CN1610-Switches auf Nexus 3232C-Switches abzuschließen.</block>
   <block id="53df53d4b9649d9b2a5ab348bc614229" category="paragraph"><block ref="fa6e1d1bde7406e301eb5451453f52d0" prefix="" category="inline-code"></block></block>
   <block id="98eb99fcc0ed94997a2ab2be00fd87f8" category="paragraph">Sie müssen jede LIF einzeln migrieren, wie im folgenden Beispiel gezeigt:</block>
   <block id="7bfca154df7416f9baa3531ebe91c06a" category="paragraph">Das folgende Beispiel zeigt den Status der Cluster-Verbindungsschnittstellen.<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> und „Ist Zuhause“ für die Knoten n1 und n2:</block>
@@ -2419,42 +2308,16 @@
   <block id="beae421a14a34f831c113f61323d1ab3" category="paragraph">Finale</block>
   <block id="d11a624a3634c7a267c0cc0410c4beb4" category="paragraph">3232C zu 3232C (QSFP zu QSFP)</block>
   <block id="06ecece0e268aedb2f7273751c5008b3" category="paragraph">2 QSFP-Glasfaser- oder Kupfer-Direktanschlusskabel</block>
-  <block id="60b8b767809f4474fae0db07a1a7ee8f" category="paragraph">Sie müssen die entsprechenden Referenzkonfigurationsdateien (RCFs) heruntergeladen haben.  Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den verfügbaren RCFs definiert unter<block ref="45b8f1baa941c556d7daa8d8054d886c" category="inline-link-macro-rx"></block> Die</block>
   <block id="5db961153f448f70bb815693232bb42b" category="paragraph">Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind aufgelistet unter<block ref="3f6421172f80f8047523f4f7c07d2e71" category="inline-link-macro-rx"></block> Die</block>
   <block id="207f35cf9c6c7c9f28040945864a989c" category="paragraph">Die in diesem Verfahren unterstützten ONTAP und FASTPATH-Versionen sind aufgelistet unter<block ref="219cc30d0865cce4b7cb2770e4a5080b" category="inline-link-macro-rx"></block> Die</block>
-  <block id="b5c1f48dbbd0f62ce512ecc0aef04e3f" category="paragraph">Die Beispiele im Migrationsverfahren verwenden vier Knoten:</block>
-  <block id="82e1166231278debac89387a0e0422c7" category="list-text">Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: *e4a* und *e4e*.</block>
-  <block id="036faf3be33476665719658c1d113d1f" category="paragraph">Der<block ref="ed925a5605a5afba7260684d8fd47590" category="inline-link-macro-rx"></block> verfügt über Informationen zu den Cluster-Glasfaserkabeln für Ihre Plattformen.</block>
-  <block id="0a96d641bdaeafc4452560c24d15de3e" category="list-text">Die Nexus 3232C-Switches, die die CN1610-Switches ersetzen, sind *C1* und *C2*.</block>
-  <block id="bf47436af31c0b7858338b60e063f394" category="list-text">*n1_clus1* ist die erste logische Clusterschnittstelle (LIF), die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.</block>
-  <block id="d24d0d5ce5b4074c6fd1f46e42bca131" category="list-text">*n1_clus2* ist der erste Cluster-LIF, der mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.</block>
-  <block id="10244571410567e2c51f37b22dac0800" category="list-text">*n1_clus3* ist die zweite LIF, die mit dem Cluster-Switch 2 (CL2 oder C2) für den Knoten *n1* verbunden ist.</block>
-  <block id="15322d64f2fcf3eabe8ff475be1d3e70" category="list-text">*n1_clus4* ist die zweite LIF, die mit dem Cluster-Switch 1 (CL1 oder C1) für den Knoten *n1* verbunden ist.</block>
   <block id="8741c9a7235936d7adbe4b11e84059a0" category="list-text">Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter [URL] verfügbar sind.<block ref="45b8f1baa941c556d7daa8d8054d886c" category="inline-link-macro-rx"></block> Die</block>
-  <block id="1657c42e4a1f98d51d8b8bfad8d7de04" category="doc">Workflow zur Migration von CN1610-Switches zu Nexus 3232C-Switches</block>
-  <block id="5a34c77c4c5efb85ebaa9e3d436b8635" category="paragraph">Befolgen Sie diese Workflow-Schritte, um Ihre CN1610-Switches auf Cisco Nexus 3232C-Switches zu migrieren.</block>
-  <block id="7eef64cb913bcf5aca5f712407ada50a" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="27b0d36035f33f53ab52c04f31d383d8" category="inline-link-macro-rx"></block></block>
   <block id="1205a9993502e35e8471d480da5eb05e" category="paragraph">Prüfen Sie die Beispielinformationen zum Migrationsprozess.</block>
-  <block id="ec781efd02b33874d9df34ef89fa4c42" category="paragraph">Bereiten Sie Ihre CN1610-Switches für die Migration auf Nexus 3232C-Switches vor.</block>
-  <block id="8e3163eaacf1f14da57a6e65447f0880" category="inline-link-macro">Tauschen Sie den Schalter CL2 im Kombiinstrument aus.</block>
-  <block id="29a15dea9912d3024285281c4c2b4f1b" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="13d28c6a2469008d90d4de60976b9e00" category="inline-link-macro-rx"></block></block>
-  <block id="89858c73012930196e3e63defda60a43" category="paragraph">Ersetzen Sie den Cluster-Schalter CL2 durch den neuen Nexus 3232C-Schalter C2.</block>
-  <block id="94fbcc30109b1a9140abe6aec8dd454d" category="inline-link-macro">Tauschen Sie den Schalter CL1 in der Instrumententafel aus.</block>
-  <block id="ac4b885d36addc1c0ccb3145b435e4ab" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="821a3996a82ef30ecf2d64eb50a45188" category="inline-link-macro-rx"></block></block>
-  <block id="4b073c16df367ada02019211678975f5" category="paragraph">Ersetzen Sie den Cluster-Schalter CL1 durch den neuen Nexus 3232C-Schalter C1.</block>
-  <block id="60692805a15c380512f28c03e95bbb5f" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="4f1fe635f2afbf3ed63b1436d0bc6ba5" category="inline-link-macro-rx"></block></block>
-  <block id="07ef527951996da76230984c22ce7928" category="paragraph">Schließen Sie Ihre Migration auf die neuen Nexus 3232C Switches ab.</block>
-  <block id="6d0793b183f688567013a862d377ed22" category="doc">Vorbereitung der Migration von CN1610-Switches auf 3232C-Switches</block>
-  <block id="5e1660ddd8b97e086e5e03e0d15597b4" category="paragraph">Befolgen Sie diese Schritte, um die Migration Ihres CN1610-Switches auf einen Cisco Nexus 3232C-Switch vorzubereiten.</block>
   <block id="51b92e50103faa05aefa082268abbfd6" category="paragraph">Das folgende Beispiel zeigt die dem Cluster bekannten Cluster-Switches zusammen mit ihren Management-IP-Adressen an:</block>
   <block id="6864fdd0f6ad89e3fc724deeacd7576c" category="list-text">Prüfen Sie, ob die entsprechenden RCF-Dateien und Images gemäß Ihren Anforderungen auf den neuen 3232C-Switches installiert sind, und nehmen Sie alle notwendigen Anpassungen vor.</block>
   <block id="bd8bc538541d81e289ef66a8873145af" category="paragraph">Sie sollten jetzt beide Schalter vorbereiten.  Falls Sie die RCF und das Image aktualisieren müssen, müssen Sie die folgenden Schritte ausführen:</block>
   <block id="c0ddaa892e58fbb2392ff94b96d1be20" category="list-text">Laden Sie die passende Version der Bildbearbeitungssoftware herunter unter<block ref="63d583816b323795a688346cd7512345" category="inline-link-macro-rx"></block> Die</block>
   <block id="a2d242366fa878251941b37993d9c788" category="list-text">Migrieren Sie die LIFs, die mit dem zweiten CN1610-Switch verbunden sind, den Sie ersetzen möchten:</block>
   <block id="bac3eff3de1438929f64e35c9c1d753e" category="paragraph"><block ref="44d01163c6b63fd73868a8216bae200c" prefix="" category="inline-code"></block></block>
-  <block id="e2f05caa5f3cc6fd1ba268a6e3c05239" category="inline-link-macro">Ersetzen Sie den Schalter CL2 des Modells CN1610 durch den Schalter C2 des Modells 3232C.</block>
-  <block id="58e1f502ac02bd1601dedcdd1deac1fc" category="doc">Ersetzen Sie den Schalter CL1 des Modells CN1610 durch den Schalter C1 des Modells 3232C.</block>
-  <block id="2b0929b9490d63e5cb4fca44c9d3842d" category="paragraph">Befolgen Sie diese Schritte, um Ihren CN1610 (CL1)-Switch durch einen Nexus 3232C (C1)-Switch zu ersetzen.</block>
   <block id="2f7e0ef82095fa5dae5874a5e402a389" category="list-text">Überprüfen Sie den Status des Clusters:</block>
   <block id="e95612c7ef671203cc282ce38a48bdb4" category="paragraph"><block ref="fdb936507a9dbe73b5c4b16108a324e6" prefix="" category="inline-code"></block></block>
   <block id="e4ac543aa85b6f67cf0e06098a2783f1" category="paragraph">Das folgende Beispiel zeigt, wie bestimmte Ports auf den Knoten n1 und n2 abgeschaltet werden:</block>
@@ -2475,7 +2338,6 @@
   <block id="be56b8565c3ff7246400103b874f9821" category="paragraph"><block ref="e2532c7d37f895a6959b2e10e6ae8b50" prefix="" category="inline-code"></block></block>
   <block id="38eb81980361ccffbcf933498afb8e35" category="paragraph">Das folgende Beispiel zeigt, wie alle Cluster-Verbindungsports, die mit dem neuen 3232C-Switch C1 verbunden sind, in Betrieb genommen werden:</block>
   <block id="647a3a17ca458bfb396ec8a44651ddec" category="paragraph">Das folgende Beispiel zeigt eine Ausgabe, die bestätigt, dass die Cluster-Verbindungsports auf den Knoten n1 und n2 des neuen 3232C-Switches C1 funktionieren.<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> :</block>
-  <block id="3025e9ee6e43f2a019f74df41145874a" category="paragraph">Befolgen Sie diese Schritte, um Ihren CN1610 (CL2)-Switch durch einen Nexus 3232C (C2)-Switch zu ersetzen.</block>
   <block id="58e4c812934a7909bf27428e713ee5c1" category="paragraph">Das folgende Beispiel zeigt, wie die vier Cluster-Verbindungsports für Knoten n1 und Knoten n2 abgeschaltet werden:</block>
   <block id="09c97f0f4f7a646915b2abf749bc1d6f" category="list-text">[[step3]] Schalten Sie die ISL-Ports 13 bis 16 am aktiven CN1610-Switch CL1 mit dem entsprechenden Befehl ab.</block>
   <block id="06b942f634ce75ef69a38ebe9aa1d02c" category="paragraph">Das folgende Beispiel zeigt, wie die ISL-Ports 13 bis 16 am CN1610-Switch CL1 abgeschaltet werden:</block>
@@ -2502,10 +2364,6 @@
   <block id="e2ad2b2cb346f8abd448d557881c7dd5" category="list-text">[[step16]] Migrieren Sie die LIFs, die dem ersten CN1610-Switch CL1 zugeordnet sind:</block>
   <block id="502a7ea7de47db18cb4d391cdc1c745e" category="paragraph"><block ref="e3b59667988659c950426714ec77861c" prefix="" category="inline-code"></block></block>
   <block id="4f654572a7a10c77f8cac19eb51cd80c" category="paragraph">Sie müssen jeden Cluster-LIF einzeln auf die entsprechenden Cluster-Ports migrieren, die auf dem Cluster-Switch C2 gehostet werden, wie im folgenden Beispiel gezeigt:</block>
-  <block id="be546b7aaa48771ac77ceda9e55f432f" category="doc">Schließen Sie Ihre Migration von 5596-Switches auf 3232C-Switches ab.</block>
-  <block id="c448b455a0897874453f8d3930345c32" category="paragraph">Führen Sie die folgenden Schritte aus, um die Migration der Nexus 5596-Switches auf die Nexus 3232C-Switches abzuschließen.</block>
-  <block id="c274d79ace43975b3b128b3b576c461c" category="doc">Konfigurieren Sie Ihre Ports für die Migration von Nexus 5596-Switches zu Nexus 3232C-Switches</block>
-  <block id="7e51f5697492b5d6c9ca506aa4c8ec9a" category="paragraph">Befolgen Sie diese Schritte, um Ihre Ports für die Migration von den Nexus 5596 Switches auf die neuen Nexus 3232C Switches zu konfigurieren.</block>
   <block id="0dee5df137b8161e82554818a557ccc2" category="list-text">[[Schritt 3]] Schalten Sie die ISLs 41 bis 48 auf CL1, dem aktiven Nexus 5596 Switch, mithilfe des Cisco ab.<block ref="5924f03a95ee6f7277e5bdd1e81b8fdc" prefix=" " category="inline-code"></block> Befehl.</block>
   <block id="df3b3a025572a660a134a45b54c2ec44" category="paragraph">Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im<block ref="ea38293a052c78dce084d149b79f50b3" category="inline-link-rx"></block> .</block>
   <block id="c66e3aa8ea0ac093e4c0a3cf3a2362e7" category="paragraph">Das folgende Beispiel zeigt, wie die ISLs 41 bis 48 auf dem Nexus 5596 Switch CL1 abgeschaltet werden:</block>
@@ -2540,8 +2398,6 @@
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
   <block id="14f9043f9320ada945dcdc0fdabd5320" category="list-text">Entfernen Sie das ausgetauschte Nexus 5596 mithilfe des<block ref="d0cf0bb8f9cb1bf16d6567b77eb679ee" prefix=" " category="inline-code"></block> Befehl, falls er nicht automatisch entfernt wird:</block>
   <block id="d26ec5166584f3719f955e387fc62cc0" category="paragraph"><block ref="e253a16317ae42c5957dd99b77483706" prefix="" category="inline-code"></block></block>
-  <block id="fc87ccf4cf505b0fb2473be9dcd9e67e" category="list-text">Nexus 3232C: Anschlüsse e1/1-30 (10/40/100 GbE)</block>
-  <block id="8ed64b0ce137cf35f68a135e6c8ab311" category="list-text">Nexus 3232C: Anschlüsse e1/31-32 (40/100 GbE)</block>
   <block id="49068b0fd2a4ef932997449b1e555d99" category="paragraph">Der<block ref="ed925a5605a5afba7260684d8fd47590" category="inline-link-macro-rx"></block> enthält Informationen zur unterstützten Verkabelung von Nexus 3232C-Switches:</block>
   <block id="9c2649ed8899b9cf8d1dd26b442a7169" category="list-text">Interim: Nexus 5596 zu Nexus 3232C (QSFP zu 4xSFP+ Breakout)</block>
   <block id="668e5f4c115be491833564aba0a5cab8" category="list-text">Endgültig: Nexus 3232C zu Nexus 3232C (QSFP28 zu QSFP28)</block>
@@ -2550,14 +2406,6 @@
   <block id="4b8669b057c65ee1cad19a530029936e" category="list-text">Sie haben einige Ports an Nexus 3232C Switches so konfiguriert, dass sie mit 10 GbE oder 40/100 GbE laufen.</block>
   <block id="602a4b60cc5ad4be9e63d89704b18e8e" category="list-text">Sie haben die Planung und Migration durchgeführt und die erforderliche Dokumentation zur 10-GbE- und 40/100-GbE-Konnektivität von den Knoten zu den Nexus 3232C Cluster-Switches gelesen.</block>
   <block id="a650c8622c1c716463bb44c8504590e4" category="paragraph">Die Beispiele in diesem Verfahren beschreiben den Austausch von Cisco Nexus 5596-Switches durch Cisco Nexus 3232C-Switches.  Diese Schritte können Sie (mit Anpassungen) auch für andere ältere Cisco Switches (z. B. 3132Q-V) anwenden.</block>
-  <block id="a17efd2b9630998b93fa03cefb4d661c" category="list-text">Die Nexus 3232C Switches, die die Nexus 5596 Switches ersetzen, sind *C1* und *C2*.</block>
-  <block id="30197795f50e0c0bd227d8e9fad9f92a" category="list-text">Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf dem Server verfügbar sind.<block ref="45b8f1baa941c556d7daa8d8054d886c" category="inline-link-macro-rx"></block> Die</block>
-  <block id="08ba436321d6830374b30f2a9b1a19c6" category="doc">Workflow zur Migration von Nexus 5596-Switches zu Nexus 3232C-Switches</block>
-  <block id="225f6e4bdd26fba7a243ee1a8c078fbb" category="paragraph">Befolgen Sie diese Workflow-Schritte, um Ihre Cisco Nexus 5596 Switches auf Cisco Nexus 3232C Switches zu migrieren.</block>
-  <block id="6ee13ce970b0cf904b6aff86be47d214" category="paragraph">Bereiten Sie Ihre Nexus 5596 Switches für die Migration auf Nexus 3232C Switches vor.</block>
-  <block id="171d1c7a04893b51dece06634473764c" category="paragraph">Konfigurieren Sie Ihre Ports für die Migration auf die neuen Nexus 3232C Switches.</block>
-  <block id="6ed61d5d0d6ca6ecb936d83500d9031e" category="doc">Bereiten Sie die Migration von Nexus 5596-Switches auf Nexus 3232C-Switches vor.</block>
-  <block id="7dfcc0d1bc5379feba84258cd83499b5" category="paragraph">Befolgen Sie diese Schritte, um Ihre Cisco Nexus 5596 Switches für die Migration auf Cisco Nexus 3232C Switches vorzubereiten.</block>
   <block id="cd99db1c0b1dc3694e24c0e27b145d8b" category="paragraph">Das folgende Beispiel zeigt die Netzwerkportattribute der Knoten n1 und n2:</block>
   <block id="df3fa854d14e46f0aab44fc5eb56d22f" category="paragraph">Das folgende Beispiel zeigt die allgemeinen Informationen zu allen LIFs im Cluster, einschließlich ihrer aktuellen Ports:</block>
   <block id="2f7bf138265d1de77f1badbb185955c6" category="paragraph">Das folgende Beispiel zeigt die aktiven Cluster-Switches:</block>
@@ -2565,7 +2413,6 @@
   <block id="db39960670bd5a0afd6aa3f81f3ba73d" category="paragraph">Sie müssen jetzt beide Schalter vorbereiten.</block>
   <block id="1e59f27afab544486b3444c5591d4f53" category="paragraph">Falls Sie die RCF-Datei und das Image aktualisieren müssen, müssen Sie die folgenden Schritte ausführen:</block>
   <block id="e6f83bff1ab8bd0edb5a79370ff0af31" category="list-text">Gehen Sie auf die Seite _Cisco Ethernet Switches_ auf der NetApp Support-Website.</block>
-  <block id="71600be46c0f1ca12f61430270e6324a" category="paragraph">Die Downloadseite „ONTAP 8.x oder später Cluster- und Management-Netzwerk-Switch-Referenzkonfigurationsdateien“ finden Sie hier. Wählen Sie dort die passende Version aus.</block>
   <block id="266daf0ca11ec57d9d3cb7598fd930b3" category="paragraph"><block ref="d14f00174ffa33ec8f559ffde7a52484" prefix="" category="inline-code"></block></block>
   <block id="23cd51d657266665ae8f8c9d2a2ae14f" category="paragraph">Das folgende Beispiel zeigt die Migration der LIFs für die Knoten n1 und n2; die LIF-Migration muss auf allen Knoten durchgeführt werden:</block>
   <block id="fb0f753ded9498a080196f8272f79423" category="paragraph">Das folgende Beispiel zeigt den aktuellen Status der einzelnen Cluster:</block>
@@ -2674,7 +2521,6 @@
   <block id="1cc0390a1e09f6355aa33a42546e034a" category="summary">Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch Cisco Nexus 3232C-Cluster-Switches zu ersetzen, müssen Sie eine bestimmte Abfolge von Aufgaben durchführen.</block>
   <block id="0a16e487073b824b443013a4386a6758" category="doc">Migrieren Sie einen CN1610 Cluster-Switch zu einem Cisco Nexus 3232C Cluster-Switch</block>
   <block id="0c0fcfb1c62bc821a6649a0cb742f88b" category="paragraph">Vor der Migration sollten Sie unbedingt Folgendes überprüfen:<block ref="6894d466d0e09d0e91d8f514ea5bb845" category="inline-link-macro-rx"></block> Die</block>
-  <block id="63118e28449881b4a45f2e3bdbfc97bc" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10-GbE-Cluster-Verbindungsports: e0a, e0b, e0c und e0d.  Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: e4a und e4e.  Der<block ref="ed925a5605a5afba7260684d8fd47590" category="inline-link-macro-rx"></block> verfügt über Informationen zu den Cluster-Glasfaserkabeln auf Ihren Plattformen.</block>
   <block id="e34a8fe284087ca24cac2ece5b6422c4" category="list-text">Die Nexus 3232C-Switches, die die CN1610-Switches ersetzen, sind C1 und C2.</block>
   <block id="9c79613f94322b9249048fe262f0baea" category="section-title">Schritt 2: Ersetzen Sie den Cluster-Schalter CL2 durch C2.</block>
   <block id="80ba2298ea2e8bd12acd9eb6839d255c" category="section-title">Schritt 3: Ersetzen Sie den Cluster-Schalter CL1 durch C1</block>
@@ -2941,7 +2787,6 @@
   <block id="01b7bc1db0e7dc619e0de057500994c2" category="list-text">Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die auf dem Server verfügbar sind.<block ref="10c469496046da901842344cb3680d0e" category="inline-link-rx"></block> Seite.</block>
   <block id="4fd3c39884768128b1709971be9c57ab" category="list-text">Die Namen der beiden Speicherschalter lauten S1 und S2.</block>
   <block id="79779dc1801a58ad11dd3078fff93f81" category="list-text">Die Knoten sind Knoten1 und Knoten2.</block>
-  <block id="cba3f8a77a6b81eb95f2ca0a31707ee0" category="paragraph">Die Beispiele in diesem Verfahren verwenden zwei Knoten; Knoten 1 mit zwei Speicheranschlüssen und Knoten 2 mit zwei Speicheranschlüssen.  Siehe die<block ref="34774b6dc875898cd8aa59f7081c068c" category="inline-link-macro-rx"></block> um die korrekten Speicherports auf Ihren Plattformen zu überprüfen.</block>
   <block id="db366391da91f981116eae4b0abd56c4" category="admonition">Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.  Die Befehlsausgaben können je nach ONTAP Version variieren.</block>
   <block id="77bd959484f1a1073326c408194dc65e" category="section-title">Schritt 1: Überprüfen Sie den Gesundheitszustand der Switches und Ports.</block>
   <block id="e3e32349be8562dbe95d6af1fcba4bbe" category="list-text">Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:<block ref="80cae18d0d871afff6b1bcabf727d6da" prefix=" " category="inline-code"></block></block>
@@ -3024,7 +2869,6 @@
   <block id="249c296c1de730eddbe0ead3fe930200" category="summary">Bevor Sie Ihren Cisco 92300YC Switch konfigurieren, lesen Sie bitte die folgenden Informationen.</block>
   <block id="709ea8965bb4964023cd6e82df0d3c62" category="paragraph">Bevor Sie Ihren Cisco 92300YC Switch konfigurieren, beachten Sie bitte die folgenden Hinweise.</block>
   <block id="ce6bf7cd47eb09b6a69cb1199b0e124b" category="doc">Komponenten und Teilenummern für Cisco Nexus 92300YC-Switches</block>
-  <block id="ed6ae629414abab8b0e9b2e8deadb8c2" category="paragraph">Bei der Installation und Wartung des Cisco Nexus 92300YC Switches sollten Sie unbedingt alle Switch-Komponenten und Teilenummern überprüfen. Siehe die<block ref="cd25cbe53f0a314145c84729c6ce2c78" category="inline-link-rx"></block> für Details.</block>
   <block id="26961e618ecd01e172d0cc2829344d09" category="list-text">Abluftstrom auf der Backbordseite (Standardluft) -- Kühle Luft strömt durch die Lüfter- und Netzteilmodule im Kaltgang in das Gehäuse und wird durch das Backbordende des Gehäuses im Warmgang wieder ausgestoßen.  Abluftstrom auf der Backbordseite mit blauer Färbung.</block>
   <block id="a65de0b2540eeae253ed86b6c80d5cd8" category="list-text">Luftansaugung an der Backbordseite (umgekehrte Luftführung) -- Kühle Luft strömt durch die Backbordseite im Kaltgang in das Gehäuse und wird durch die Lüfter- und Stromversorgungsmodule im Warmgang wieder ausgestoßen.  Lufteinlass auf der Backbordseite mit bordeauxroter Färbung.</block>
   <block id="ede2428532eb37220f5b7dc1131ef1f6" category="summary">Mit diesem Verfahren können Sie die Erstinstallation des Cisco Nexus 92300YC Switches durchführen.</block>
@@ -3082,7 +2926,6 @@
   <block id="58d8f5733e0a28fbb10c789b8e8b1006" category="list-text">Informationen zu den LIFs anzeigen:<block ref="7af866342cc7e87972580d7b709d8820" prefix=" " category="inline-code"></block></block>
   <block id="13af841949dee66caeadbec7c281ed4f" category="summary">Sie können die RCF-Datei installieren, nachdem Sie den Switch Nexus 92300YC zum ersten Mal eingerichtet haben.</block>
   <block id="c2995f917cf848b1a8ad4f123990b08f" category="inline-link-macro">Hardware-Universum^_</block>
-  <block id="47db2740e391cb9dd7afd4c727db1c28" category="paragraph">Siehe die<block ref="2e30f42bb79c7c9fe477a9d63d7f110d" category="inline-link-macro-rx"></block> für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports.</block>
   <block id="4467c0e8315716749952b403b5a34f1e" category="list-title">Unterstützte Ports und Knotenverbindungen</block>
   <block id="8c24c8f1f5492e3c2d260cfb0bc25caa" category="list-text">Die für die Nexus 92300YC Switches unterstützten Inter-Switch Links (ISLs) sind die Ports 1/65 und 1/66.</block>
   <block id="6661eb47e9ec5d9c548abbe3d7e6a8cc" category="list-text">Die für die Nexus 92300YC Switches unterstützten Knotenverbindungen sind die Ports 1/1 bis 1/66.</block>
@@ -3188,53 +3031,13 @@
   <block id="a5ba084a16f4288f9dbb11676c16a481" category="list-text">Trennen Sie das Kabel vom Cluster-Port e0b auf Knoten 2 und verbinden Sie dann e0b mit Port 2 des Cluster-Switches cs2 unter Verwendung der von den 92300YC-Switches unterstützten geeigneten Verkabelung.</block>
   <block id="5092d42ca2315a935e2e3c56036b8a27" category="paragraph">Das folgende Beispiel zeigt, dass die Ports 1/1 bis 1/64 am Switch cs2 aktiviert sind:</block>
   <block id="2ddf49eb6c3fafb7644444a8f6985876" category="list-text">[[step8]] Falls Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:</block>
-  <block id="0087b0de389e5b9f017430f157337f28" category="summary">Ältere Cisco Cluster-Switches für einen ONTAP Cluster können ohne Unterbrechung auf Cisco Nexus 92300YC Cluster-Netzwerk-Switches migriert werden.</block>
-  <block id="96b8ff1634f6f4a5cc62e8b2c11e4a44" category="doc">Migration von einem Cisco Switch zu einem Cisco Nexus 92300YC-Switch</block>
-  <block id="c24412eff0fdd364ed38f42c78180f6d" category="list-text">Ein voll funktionsfähiger, bereits bestehender Cluster.</block>
-  <block id="72f6fbf7a37a5a7a645211259132da5b" category="list-text">10-GbE- und 40-GbE-Konnektivität von Knoten zu Nexus 92300YC Cluster-Switches.</block>
-  <block id="0b4e7dc1d810fd824ce3cb8e1eea7331" category="list-text">Alle Cluster-Ports sind aktiv, um einen unterbrechungsfreien Betrieb zu gewährleisten.</block>
-  <block id="7ee654c3fc1033653e4c755c7ad707c7" category="list-text">Die korrekte Version von NX-OS und die Referenzkonfigurationsdatei (RCF) sind auf den Nexus 92300YC Cluster-Switches installiert.</block>
   <block id="4911fe5a5a61a43546dd84d203eacf1c" category="list-text">Ein redundanter und voll funktionsfähiger NetApp Cluster, der beide ältere Cisco Switches nutzt.</block>
   <block id="c3f3714ca8555fda13d1cbc127147867" category="list-text">Management-Konnektivität und Konsolenzugriff sowohl auf die älteren Cisco Switches als auch auf die neuen Switches.</block>
   <block id="ee9f18fe03ee9b0dd7c1625d630104b6" category="list-text">Alle Cluster-LIFs befinden sich im aktiven Zustand und sind an ihren Heimatports angeschlossen.</block>
   <block id="e1c4ebdf7c0ad72137d57dc5fd646845" category="list-text">ISL-Ports wurden aktiviert und zwischen den älteren Cisco Switches sowie zwischen den neuen Switches verkabelt.</block>
-  <block id="861442a3532c3e685a51468723598110" category="list-text">Die vorhandenen Cisco Nexus 5596UP Cluster-Switches sind c1 und c2.</block>
-  <block id="2d424e30f5921ffd190e032bca1d7566" category="list-text">Die neuen Nexus 92300YC Cluster-Switches sind cs1 und cs2.</block>
-  <block id="3d1c2ff675fe732df9f817f3321c6054" category="list-text">Die Cluster-LIFs sind node1_clus1 und node1_clus2 auf Knoten 1 bzw. node2_clus1 und node2_clus2 auf Knoten 2.</block>
-  <block id="cd4062096153c60d3a0b62dd4dfe8687" category="list-text">Zuerst wird der Schalter c2 durch den Schalter cs2 ersetzt, dann wird der Schalter c1 durch den Schalter cs1 ersetzt.</block>
-  <block id="c38cb773f24f0b9ae3b8397c55c78d53" category="list-text">Auf cs1 wird eine temporäre ISL aufgebaut, die c1 mit cs1 verbindet.</block>
-  <block id="c4384bbea1341e272b5dfaffcff9c9d1" category="list-text">Die Verkabelung zwischen den Knoten und c2 wird dann von c2 getrennt und wieder mit cs2 verbunden.</block>
-  <block id="5b7decbae50904c9d97f36aefb67af39" category="list-text">Die Verkabelung zwischen den Knoten und c1 wird dann von c1 getrennt und wieder mit cs1 verbunden.</block>
-  <block id="30cb07dc2fdb252aa5173019f18e0ce7" category="list-text">Anschließend wird die temporäre ISL zwischen c1 und cs1 entfernt.</block>
-  <block id="3fe274866aa3b2524aa38f499dbd44cf" category="list-title">Anschlüsse, die für Verbindungen verwendet werden</block>
-  <block id="c9049e11062b6258ff369d40cf0004a5" category="list-text">Einige der Ports der Nexus 92300YC Switches sind für den Betrieb mit 10 GbE oder 40 GbE konfiguriert.</block>
-  <block id="3050fa444ab7c4607b3b7d02616c51eb" category="list-text">Ports e1/1-48 (10/25 GbE), e1/49-64 (40/100 GbE): Nexus 92300YC</block>
-  <block id="de33a0a4a16e5fee7f1826829adfff72" category="list-text">Ports e1/1-40 (10 GbE): Nexus 5596UP</block>
-  <block id="93c9d1eb87fa5f9c3bc749094f50da72" category="list-text">Ports e1/1-32 (10 GbE): Nexus 5020</block>
-  <block id="9e8d8362d0e9cfd0d2e5df32d22df3d4" category="list-text">Anschlüsse e1/1-12, e2/1-6 (10 GbE): Nexus 5010 mit Erweiterungsmodul</block>
-  <block id="4ce71fb1aa3f03f9da350c35b471368d" category="list-text">Ports e1/65-66 (100 GbE): Nexus 92300YC</block>
-  <block id="188bd851b27016e87d25d2c042f67ff8" category="list-text">Ports e1/41–48 (10 GbE): Nexus 5596UP</block>
-  <block id="f9aee2e068bb28aa4c5deecd96b8027c" category="list-text">Ports e1/33–40 (10 GbE): Nexus 5020</block>
-  <block id="c0f9b028477a4c90905b2a666cab2349" category="list-text">Ports e1/13–20 (10 GbE): Nexus 5010</block>
-  <block id="ab69ec8d5c1225f57653957e1b830ada" category="list-text"><block ref="f5b758910e77ef4f56db9cc19f96d706" category="inline-link-rx"></block>enthält Informationen zur unterstützten Verkabelung für alle Cluster-Switches.</block>
-  <block id="46f4e846ca08ef976e5fa57699be7358" category="list-text">Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen sind auf der<block ref="a29f73ef9de6be7554c49272d8910429" category="inline-link-rx"></block> Seite.</block>
   <block id="300c4a8af362f43878948de70117255e" category="paragraph">Jeder LIF sollte „up/up“ anzeigen.<block ref="4f21ee5a18672b60f4c01e94e6be9c79" prefix=" " category="inline-code"></block> und wahr für<block ref="53db3ce0fe0e71f06b3beb0b676b806c" prefix=" " category="inline-code"></block> Die</block>
-  <block id="4485f5ea819522aa200ca55acefcd1bc" category="list-text">Überprüfen Sie mithilfe des folgenden Befehls, ob die Cluster-Ports auf jedem Knoten wie folgt mit den vorhandenen Cluster-Switches verbunden sind (aus Sicht der Knoten):</block>
-  <block id="8bd9607443f1bca8467a9888834fc1ef" category="list-text">Überprüfen Sie mithilfe des folgenden Befehls, ob die Cluster-Ports und Switches wie folgt verbunden sind (aus Sicht der Switches):</block>
-  <block id="990838b9b76e69aee53a16fbaf6802e0" category="list-text">Konfigurieren Sie eine temporäre ISL auf cs1on Ports e1/41-48, zwischen c1 und cs1.</block>
-  <block id="48df2fb4a9556ac37edec166e7e858f9" category="paragraph">Das folgende Beispiel zeigt, wie die neue ISL auf c1 und cs1 konfiguriert ist:</block>
-  <block id="2aa6bce99f388363decd09b81d00eb7d" category="list-text">Entfernen Sie die ISL-Kabel von den Ports e1/41-48 von c2 und verbinden Sie die Kabel mit den Ports e1/41-48 von cs1.</block>
-  <block id="33df6843420a464f89deffbd2926215b" category="list-text">Überprüfen Sie, ob die ISL-Ports und der Portkanal, die c1 und cs1 verbinden, betriebsbereit sind:</block>
-  <block id="f428750661677ee18c87e664c0eced86" category="paragraph">Das folgende Beispiel zeigt die Verwendung des Cisco -Befehls „show port-channel summary“, um zu überprüfen, ob die ISL-Ports auf c1 und cs1 betriebsbereit sind:</block>
-  <block id="b939ce60cfddd0851329ab4b6920640a" category="list-text">Für Knoten 1 trennen Sie das Kabel von e1/1 auf c2 und verbinden Sie es dann mit e1/1 auf cs2. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.</block>
-  <block id="e8591b2cd8ee695fa44e66dfdc1946fa" category="list-text">Für Knoten 2 trennen Sie das Kabel von e1/2 auf c2 und verbinden Sie es dann mit e1/2 auf cs2. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.</block>
   <block id="c1823cd6c866c4f070a5323fbfabc525" category="list-text">Die Cluster-Ports auf jedem Knoten sind nun, aus Sicht der Knoten, folgendermaßen mit den Cluster-Switches verbunden:</block>
-  <block id="cac40dada74737ca3c53b204f6d69698" category="list-text">Für Knoten 1 trennen Sie das Kabel von e1/1 auf c1 und verbinden Sie es dann mit e1/1 auf cs1. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.</block>
-  <block id="43a394f626014f93d34c2270873ed0f5" category="list-text">Für Knoten 2 trennen Sie das Kabel von e1/2 auf c1 und verbinden Sie es dann mit e1/2 auf cs1. Verwenden Sie hierfür geeignete Kabel, die vom Nexus 92300YC unterstützt werden.</block>
-  <block id="27781c87d25f863e4d8141fb97e91e1d" category="list-text">Löschen Sie die temporäre ISL zwischen cs1 und c1.</block>
-  <block id="2bac625f6ecebcbbf1a1ec0ca242d0a4" category="section-title">Schritt 3: Schließen Sie die Migration ab.</block>
   <block id="8b46c589466074f9f6f08c5ac2e65338" category="list-text">Überprüfen Sie die endgültige Konfiguration des Clusters:</block>
-  <block id="22265ef643cb758bbeafeae6b9005960" category="list-text">[[step3]] Falls Sie die automatische Fallerstellung unterdrückt haben, aktivieren Sie sie wieder, indem Sie eine AutoSupport Nachricht aufrufen:</block>
   <block id="6dd41d8a8ed57c2ab7e587572c2bf8c5" category="doc">Ersetzen Sie Cisco Nexus 92300YC Cluster-Switches durch switchlose Verbindungen.</block>
   <block id="24e7ed7655bcf90918459c3d0f5803c1" category="summary">Der Austausch eines defekten Nexus 92300YC-Switches in einem Clusternetzwerk ist ein nicht-unterbrechendes Verfahren (NDU).</block>
   <block id="fd77dcf431c664f377add379bb8ba43b" category="doc">Ersetzen Sie einen Cisco Nexus 92300YC-Switch</block>
@@ -5662,7 +5465,6 @@
   <block id="6d2ac3125800134a281aad252b2e6f7e" category="sidebar">Gemeinsam genutzte Switches verwalten</block>
   <block id="e3a2407d2baf9ca6f3a0a7a13bf9ab66" category="sidebar">Ersetzen Sie den Schalter 9336C-FX2</block>
   <block id="9725b453d47042649c1d30716f06297d" category="sidebar">Setzen Sie den 9336C-FX2-Switch auf die Werkseinstellungen zurück</block>
-  <block id="749193dd106134969b2e8383155060cb" category="sidebar">Mit Speicher-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen. Diese Cisco Nexus 9000-Plattform-Switches bilden die Grundlage für skalierbare Cluster-Interconnect-Lösungen in NetApp ONTAP Umgebungen.</block>
   <block id="442072c0438c34942ba48441cb27b07d" category="sidebar">Verwenden Sie die Dokumente auf dieser Site, um Ihre Speicher-Switches für ONTAP Clusterbereitstellungen zu installieren, zu konfigurieren und zu warten.</block>
   <block id="a1dd4aca43eb246c9849b3703c4fd095" category="sidebar">Installieren und Konfigurieren von Speicher-Switches</block>
   <block id="ef93cc5be7463521789a10fbbbd5d7a6" category="sidebar">Wartung von Speicherschaltern</block>
@@ -5702,13 +5504,6 @@
   <block id="f3b17afc64da773efa83071745456131" category="sidebar">Überprüfen der SSH-Konfiguration</block>
   <block id="c0297ebb85b4b11dd34e1a95ad8ae773" category="sidebar">Schalter migrieren</block>
   <block id="5cb6e4827abbdff34c1577139d21756f" category="sidebar">Migrate_switches_3132q-v</block>
-  <block id="a71e2a7b5da7f3f8346749ba6a40f97e" category="sidebar">CN1610-Switch-Migration</block>
-  <block id="314c03c94249ff930ebff3525fbc24b9" category="sidebar">CN1610_switch_migration</block>
-  <block id="615d128facaa5dc615433f0e1f95c945" category="sidebar">CN1610 Switch-Migrationsworkflow</block>
-  <block id="fdcf419452fc6546848017eb6bcdb98e" category="sidebar">Schließen Sie Ihre Migration ab.</block>
-  <block id="da2b7c9954dace16048c6ea887e10a29" category="sidebar">Cisco Nexus 5596 Switch-Migration</block>
-  <block id="c01a1fe06f4b33ee4e155a262627add6" category="sidebar">CN5596_switch_migration</block>
-  <block id="35ed32a945dbf51bc4289e44a6b904ae" category="sidebar">Migrationsworkflow für Cisco Nexus 5596 Switches</block>
   <block id="00831a481846747d1cb35679ec57efb0" category="sidebar">Migration von schalterlosen Clustern zu Zwei-Knoten-Clustern mit Schaltern</block>
   <block id="553ab86ada0024cafa20d0134083fc4d" category="sidebar">Migration von einem schalterlosen zu einem schalterbehafteten Cluster</block>
   <block id="63d1a94a57c77c8572aaec7d0388b931" category="sidebar">Migration von einem schalterlosen zu einem Zwei-Knoten-Schalter-Workflow</block>
@@ -5719,9 +5514,6 @@
   <block id="95af2603f5a4982908526f8688792890" category="sidebar">Install_hardware_3232C</block>
   <block id="52cb6d2a1abc8dd2ced7a38145d4a6f0" category="sidebar">Configure_software_3232C</block>
   <block id="5a3e455abb77dcfd46ecb114e3762d38" category="sidebar">Migrate_switches_3232C</block>
-  <block id="3b6fb26524302309d80c9149c7c440e4" category="sidebar">Migration vom CN1610-Switch-Workflow</block>
-  <block id="d6b71e6ab26e9ca64a22a3632abea8e3" category="sidebar">Nexus 5596 Switch-Migration</block>
-  <block id="84ae103339014eb3f8cca2119ae12ffe" category="sidebar">Workflow für die Migration von Cisco Nexus 5596 Switches</block>
   <block id="87dd95e61b34b8a0d24a9d76e9880689" category="sidebar">Migration von Zwei-Knoten-Switchless-Clustern</block>
   <block id="f36aa89aee5a55633ce25b54c9a779d3" category="sidebar">Migration von schalterlosen Clustern</block>
   <block id="c32aa48aa3b92b64c3a5ea6a1b2e9a1f" category="sidebar">Migration vom Workflow zweier schalterloser Cluster</block>
@@ -5732,7 +5524,6 @@
   <block id="b6c306e6e3042fa0d66df82b85cdd615" category="sidebar">Configure_software_92300yc</block>
   <block id="a8bb0b5314965a8ac1d110202d7aae1f" category="sidebar">Installieren Sie NX-OS</block>
   <block id="db006b145b3fbbf5410a350f5edd5d2a" category="sidebar">Migrate_switches_92300yc</block>
-  <block id="9c065304d8a82e97da8536d4c7484ee2" category="sidebar">Migration von einem älteren Cisco Switch</block>
   <block id="1b26a33c8f2840aaa88a3c83445b7162" category="sidebar">Replace_switches_92300yc</block>
   <block id="46fd2d8570ac9394d60d1c59d30d738d" category="sidebar">Schalter austauschen</block>
   <block id="d4a2bd843c47096577ed23fa1d4ed623" category="sidebar">Overview_9332d-gx2b</block>
@@ -5807,28 +5598,14 @@
   <block id="1ec880c9722934c26038bc64978254f2" category="admonition">Um einen Transaktionsschlüssel für eine Portlizenzschlüsseldatei einzulösen, gehen Sie zu<block ref="1a8ec2f1a7f8a934a4dd69a5d5c5300d" category="inline-link-macro-rx"></block> Seite. Siehe den Artikel in der Wissensdatenbank.<block ref="7475ce8d248fdfe999b98a176df29951" category="inline-link-macro-rx"></block> für weitere Einzelheiten.</block>
   <block id="63d84b478f5cf46bf22ac4a48d7dbdaf" category="paragraph">Nachdem Sie Ihre Switch-Migration abgeschlossen haben, können Sie<block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block> Die</block>
   <block id="9da60a268433d9b3a5bb3faade2bc94e" category="inline-link-macro">Schließen Sie Ihre Migration ab.</block>
-  <block id="ceae281b9f46a498a90253a9b6035769" category="paragraph">Nachdem Sie Ihre Switch-Ports konfiguriert haben, können Sie<block ref="25f55b685acb2e49f49d86a4b3166712" category="inline-link-macro-rx"></block> Die</block>
   <block id="ad922f3bf852d7de5ed44851b4878c58" category="inline-link-macro">Bereiten Sie sich auf die Migration Ihrer Schalter vor.</block>
-  <block id="14ae1457e72b1298fdb0f41375354ef4" category="paragraph">Nachdem Sie die Migrationsanforderungen geprüft haben, können Sie<block ref="5556998cec31eb92f32df1b83459efff" category="inline-link-macro-rx"></block> Die</block>
   <block id="1022079d6c4d0fb339ce219f5b0bc80b" category="inline-link-macro">Konfigurieren Sie Ihre Ports</block>
-  <block id="356adc3b214ec21b02c42b4b115b16e9" category="paragraph">Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sie<block ref="d4000ec1d414a7502b21ae3dd3c5840a" category="inline-link-macro-rx"></block> Die</block>
-  <block id="89fc2b7e8e60c774cba9bcb9e55babaf" category="paragraph">Nachdem Sie Ihre Switch-Ports konfiguriert haben, können Sie<block ref="bf0fa41c8a479d2cbcf6bdf3ae6ad5b4" category="inline-link-macro-rx"></block> Die</block>
-  <block id="d845a579f300234ad7fa54c0381582ac" category="paragraph">Nachdem Sie die Migrationsanforderungen geprüft haben, können Sie<block ref="d9f2a1e304fb793e94600787aaab5d88" category="inline-link-macro-rx"></block> Die</block>
-  <block id="00ac1893d99097cefb1a4ae2eadb9e59" category="paragraph">Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sie<block ref="4f22ab069aceb629014d3d9b8db60ebe" category="inline-link-macro-rx"></block> Die</block>
   <block id="1a91c84925ff3f64a04ef29a84fa8269" category="paragraph">Nachdem Sie Ihre Switch-Ports konfiguriert haben, können Sie<block ref="9b4e9d59e070097158700db7eb74d2b4" category="inline-link-macro-rx"></block> Die</block>
   <block id="bed7763295ee5566a954be1784e7b963" category="paragraph">Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sie<block ref="7319dc5bee570ea2ba287a02c36de7d2" category="inline-link-macro-rx"></block> Die</block>
   <block id="0f6d465867451d9f7e8e3fccf626abdd" category="paragraph">Nachdem Sie die Migrationsanforderungen geprüft haben, können Sie<block ref="74c2d6e9c24c0072ef10faf4f32888a2" category="inline-link-macro-rx"></block> Die</block>
   <block id="1ff9776c7f96ac2701af319ed9604d31" category="paragraph">Nachdem Sie Ihren Schalter ausgetauscht haben, können Sie<block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block> Die</block>
   <block id="0daff9862c0ebe7681e5b726b1ef4b9f" category="paragraph">Nach dem Zurücksetzen des Schalters können Sie<block ref="f45e97977128cc582bf2e734e3a331a3" category="inline-link-macro-rx"></block> Es wird Ihren Anforderungen entsprechend angefertigt.</block>
   <block id="f42bb157194542ddefd800174dd049dc" category="paragraph">Nachdem Sie Ihre Switch-Migration abgeschlossen haben, können Sie<block ref="9c3be868eca09e30ec03c7542e485ba6" category="inline-link-macro-rx"></block> Die</block>
-  <block id="ef5fadf794d43b06212f5088bf371504" category="paragraph">Nachdem Sie die Migrationsanforderungen geprüft haben, können Sie<block ref="5556998cec31eb92f32df1b83459efff" category="inline-link-macro-rx"></block> Die</block>
-  <block id="830e4cd0f69745eb958c7daa4ecc2636" category="inline-link-macro">Ersetzen Sie den Schalter CL2 des Modells CN1610 durch den Schalter C2 des Modells 3232C.</block>
-  <block id="af51490fe94d63e9c6bb318753351308" category="paragraph">Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sie<block ref="9118d2244e5db573f07108145936667f" category="inline-link-macro-rx"></block> Die</block>
-  <block id="0a641627612a9d2a3aa09e0a2a137416" category="paragraph">Nachdem Sie den Schalter CN1610 CL1 ausgetauscht haben, können Sie<block ref="25f55b685acb2e49f49d86a4b3166712" category="inline-link-macro-rx"></block> Die</block>
-  <block id="365d742f3775c4a7da973483112603fb" category="inline-link-macro">Ersetzen Sie den Schalter CL1 des Modells CN1610 durch den Schalter C1 des Modells 3232C.</block>
-  <block id="95d03cf4f1eeb0c2b731a85968c385d3" category="paragraph">Nachdem Sie den Schalter CN1610 CL2 ausgetauscht haben, können Sie<block ref="75e469a4a43720b7ea775c13aab22570" category="inline-link-macro-rx"></block> Die</block>
-  <block id="e2a18836e5a4adf281837f9272df081e" category="paragraph">Nachdem Sie die Migrationsanforderungen geprüft haben, können Sie<block ref="d9f2a1e304fb793e94600787aaab5d88" category="inline-link-macro-rx"></block> Die</block>
-  <block id="580d29a0ebaa6c7d2498abf217dc22e7" category="paragraph">Nachdem Sie die Migration Ihrer Switches vorbereitet haben, können Sie<block ref="4f22ab069aceb629014d3d9b8db60ebe" category="inline-link-macro-rx"></block> Die</block>
   <block id="da2164a7e11a5c0d8e92abe91adad16a" category="paragraph">Nachdem Sie Ihre Konfigurationsanforderungen bestätigt haben, können Sie die<block ref="ebd73c3e74cc4ef5f3b03634c8dd9a01" category="inline-link-macro-rx"></block> Die</block>
   <block id="68f8477787757a5afa201ddf275decf3" category="paragraph">Nach der Installation der NX-OS-Software können Sie <block ref="06b5548e8ac5164b226ba17b6e4d1fe4" category="inline-link-macro-rx"></block>Die</block>
   <block id="35eb5cba73bda40c0b8b40e523662279" category="paragraph">Nachdem Sie die Übersicht über die Installations- oder Aktualisierungsprozedur von RCF durchgelesen haben, können Sie<block ref="7022ba5e5ec6244ac8d3473bbc8c433f" category="inline-link-macro-rx"></block> oder<block ref="8a829f0d1f577ca80ad99d80f239a28e" category="inline-link-macro-rx"></block> wie erforderlich.</block>
@@ -5878,4 +5655,43 @@
   <block id="31d1f8ac94c6c6348baf87c178d54ca6" category="paragraph">MultiCluster-HA RCF 1._xx_</block>
   <block id="882f88e519afe0ccad4d00b167a8f9f4" category="list-text"><block ref="882f88e519afe0ccad4d00b167a8f9f4" category="inline-link-macro-rx"></block></block>
   <block id="56b1e9ee9f81d9d1458caeb63a57b431" category="list-text">*ClusterStorageRCF* - Unterstützt einen partitionierten Cluster plus zwei Speicherzonen auf den Switches (Cluster-Storage RCF 1._xx_).</block>
+  <block id="10f894c966bd05206772ae4732990626" category="list-text">Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen, bevor Sie die automatische Rücksetzung auf den Cluster-LIFs aktivieren:</block>
+  <block id="0fb694df774685fe4c1df68d7d634243" category="list-text">[[step16]]Automatische Rücksetzung der Cluster-LIFs aktivieren.</block>
+  <block id="97577e43f592831dd6187cb42595ac7a" category="paragraph"><block ref="86271bc578254c48491961aec49f6a7c" prefix="" category="inline-code"></block></block>
+  <block id="4e92ea2b06ac769ad163ea1d047b1df4" category="list-text">Sehen <block ref="9157c7c9558b7cd53a9f90cf9b9c6139" category="inline-link-macro-rx"></block> Weitere Informationen zur Verkabelung finden Sie hier.</block>
+  <block id="78a810b7e1cb1c8be2eccbd01a2c857f" category="inline-link-macro">Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?</block>
+  <block id="ff7aa79d98a2fcaa973e5b895e0f352f" category="list-text">Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="5d82e300daaa1f8915402f12e6fe2709" category="paragraph">Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports e0a und e0b. Siehe die<block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block> um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="0b3058f905cd30a08120a8aaef46d84f" category="paragraph">Siehe die<block ref="c043e01cdc55399f824e6d1e4eb8a5b5" category="inline-link-rx"></block> Weitere Informationen zu Switch-Ports finden Sie hier. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="1ace8c8df8c82bbdf035d2b6b2a610a7" category="list-text">Schließen Sie die Installation ab. Führen Sie diese vier Schritte aus, um den Switch neu zu konfigurieren:</block>
+  <block id="38a7170e62a41698a024c914d2ae22be" category="list-text">Schließen Sie die Installation ab. Der Switch startet ohne angewendete Konfiguration neu und wird auf die Werkseinstellungen zurückgesetzt. Befolgen Sie diese fünf Schritte, um den Switch neu zu konfigurieren:</block>
+  <block id="c6df83973efb88b8200eaf11a9a6c99c" category="paragraph">Siehe die<block ref="341c1c8afc925d24c41903215e7d4958" category="inline-link-rx"></block> Und<block ref="019bec57a33f30d395c26e4eab684618" category="inline-link-rx"></block> Informationen zur Kompatibilität von EFOS und ONTAP mit BES-53248-Switches finden Sie hier. Die Unterstützung von EFOS und ONTAP kann je nach Maschinentyp des BES-53248-Switches variieren. Einzelheiten zu allen Weichenmaschinentypen des Typs BES-52348 finden Sie unter<block ref="18673e02a37b64215efc2503c4149ac9" category="inline-link-macro-rx"></block> Die Sehen <block ref="5b59c69ea97fcd509833c3dd14993ddd" category="inline-link-macro-rx"></block>^ Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="9f702335f914c423796259b7c2041f5e" category="paragraph">Siehe die<block ref="ba81a2074219dbc1e842c96a03d02ea8" category="inline-link-rx"></block> Weitere Informationen zu Switch-Ports finden Sie hier. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="9c9fed70b2431d26e8296c958fa43437" category="paragraph">Der <block ref="cf71da9df512dc9905af42f5d1fdf834" category="inline-link-macro-rx"></block> Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung von BES-53248 Cluster-Switches. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="793a7952c9e3c096f7cb463983174c47" category="paragraph">Der <block ref="cf71da9df512dc9905af42f5d1fdf834" category="inline-link-macro-rx"></block> Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung mit BES-53248-Switches. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="51b07d87cca2bb682d52678a9f3a6403" category="paragraph">Siehe die<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> für die aktuellsten Informationen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="78f85905b5f52a0e5726f2c1d78882b9" category="paragraph">Siehe die<block ref="34774b6dc875898cd8aa59f7081c068c" category="inline-link-macro-rx"></block> um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="93586a8f49408f483b5b0ac7e6bc3bac" category="list-text"><block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block></block>
+  <block id="fff3dd334cd553c8e4ec9c505edf49b3" category="paragraph">Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10-GbE-Cluster-Verbindungsports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: e4a und e4e. Der<block ref="ed925a5605a5afba7260684d8fd47590" category="inline-link-macro-rx"></block> verfügt über Informationen zu den Cluster-Glasfaserkabeln auf Ihren Plattformen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="4b5c62962abd78b2f1d7b46e2acefac2" category="paragraph">Die Beispiele in diesem Verfahren verwenden zwei Knoten; Knoten 1 mit zwei Speicheranschlüssen und Knoten 2 mit zwei Speicheranschlüssen. Siehe die<block ref="34774b6dc875898cd8aa59f7081c068c" category="inline-link-macro-rx"></block> um die korrekten Speicherports auf Ihren Plattformen zu überprüfen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="70cdfafbbfc658158225450a1d735b53" category="paragraph">Bei der Installation und Wartung des Cisco Nexus 92300YC Switches sollten Sie unbedingt alle Switch-Komponenten und Teilenummern überprüfen. Siehe die<block ref="cd25cbe53f0a314145c84729c6ce2c78" category="inline-link-rx"></block> für Details. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="e32282aeafd66288d3d17a82f0b26898" category="paragraph">Siehe die<block ref="2e30f42bb79c7c9fe477a9d63d7f110d" category="inline-link-macro-rx"></block> für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="56d0c52f84ae87247377186dcd760614" category="list-text">Automatische Wiederherstellung auf allen Cluster-LIFs deaktivieren:</block>
+  <block id="c883ecf9599211441495ef2b45d65924" category="list-text">Siehe die<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> für die aktuellsten Informationen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="66c5a9b93fc7043632d6abd12e1d9ea9" category="paragraph">Siehe die<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> Einzelheiten zu den von der Plattform verwendeten Ports finden Sie hier. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="caa432665e0b78bb2e937e5a4335fe0a" category="paragraph">Sehen<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> Informationen zu den Cluster-Ports für Ihre Plattformen finden Sie hier. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="8475ebda22bdf39b934120a81ee8cc10" category="paragraph">Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie unter<block ref="a9613e1dbacf145285c45df4264fe797" category="inline-link-rx"></block> Die Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.</block>
+  <block id="2a901f79a93d2d86148b32365b601aae" category="list-text">Siehe die<block ref="e8018b6e740a667345f4bcc94e4023fc" category="inline-link-rx"></block> für die aktuellsten Informationen. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="ac9929f9f44881f40aa7a8c435e0f7db" category="paragraph">NetApp<block ref="e8018b6e740a667345f4bcc94e4023fc" category="inline-link-rx"></block> enthält weitere Informationen zur Verkabelung. Sehen <block ref="93586a8f49408f483b5b0ac7e6bc3bac" category="inline-link-macro-rx"></block> Für weitere Informationen zu den Installationsanforderungen des Schalters.</block>
+  <block id="3829578a5b66588164cf513fb3c38fbc" category="paragraph">Siehe die <block ref="c845c6ffda77bc94ba897d84583cb923" category="inline-link-macro-rx"></block> Weitere Informationen zu Switch-Ports finden Sie hier.</block>
+  <block id="baf1125386b3eeb8fb389e46ed17e086" category="paragraph">Siehe den Artikel in der Wissensdatenbank.<block ref="f556049016aa8325c61d874db64ae1f9" category="inline-link-macro-rx"></block> für weitere Einzelheiten.</block>
+  <block id="386a8b4fb66b8e96b7c199b0d51c3d04" category="section-title">QSA-Modul</block>
+  <block id="ecd4d35aa4ec1b7e41fc81e4d21486aa" category="paragraph">Bei Verwendung von QSFP+ (40GbE) zu SFP+ (10GbE) Adaptern oder QSFP28 (100GbE) zu SFP28 (25GbE) Adaptern (QSA) stecken Sie diese in nicht-breakout 40GbE/100GbE Switch-Ports (swp3-swp14). Stecken Sie das QSA-Modul nicht in einen Port, der für Breakout konfiguriert ist.</block>
+  <block id="69773ae4760c0c8ed1c2e07723d0bc7b" category="paragraph">Wenn ein QSA-Modul verwendet wird, um eine Verbindung zu den 10GbE/25GbE-Cluster-Ports einer Plattform herzustellen, kann es vorkommen, dass die Verbindung nicht zustande kommt.</block>
+  <block id="bf65b73c9ce2f9d4f9660c1e21e696a2" category="list-text">Bei 10GbE stellen Sie die Verbindungsgeschwindigkeit manuell auf 10000 ein und deaktivieren die automatische Aushandlung.</block>
+  <block id="3e4cf35eb600304361fb04e90048a5a5" category="list-text">Bei 25GbE stellen Sie die Verbindungsgeschwindigkeit manuell auf 25000 ein und deaktivieren Sie die automatische Aushandlung.</block>
+  <block id="45478d039f2c0c4cf1e53caab564b974" category="paragraph">Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen. Bei Verwendung von 10GbE- und 25GbE-Breakout-Ports oder eines QSA-Moduls überprüfen Sie, ob die automatische Aushandlung deaktiviert ist und stellen Sie die Schnittstellengeschwindigkeit am Switch ein.</block>
+  <block id="b863fc58b633b41e58cc8a5b99e7043b" category="inline-link-macro">Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?</block>
+  <block id="ab9a0b8fd43af09ec7cd6f43a3cafa97" category="paragraph">Siehe die <block ref="c845c6ffda77bc94ba897d84583cb923" category="inline-link-macro-rx"></block>und der Artikel in der Wissensdatenbank <block ref="eaa81338373f6673f7bec757b105ef25" category="inline-link-macro-rx"></block> für weitere Informationen.</block>
+  <block id="a1fe5f79e41b7a07061c6e55eb0e9030" category="sidebar">Mit Speicher-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen. Diese Ethernet-Speicher-Switches bilden die Grundlage für skalierbare Cluster-Verbindungslösungen in NetApp ONTAP Umgebungen.</block>
 </blocks>

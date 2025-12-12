@@ -40,7 +40,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Die Knoten sind Knoten1 und Knoten2.
 
 
-Die Beispiele in diesem Verfahren verwenden zwei Knoten; Knoten 1 mit zwei Speicheranschlüssen und Knoten 2 mit zwei Speicheranschlüssen.  Siehe dielink:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Speicherports auf Ihren Plattformen zu überprüfen.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten; Knoten 1 mit zwei Speicheranschlüssen und Knoten 2 mit zwei Speicheranschlüssen. Siehe dielink:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Speicherports auf Ihren Plattformen zu überprüfen. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Für weitere Informationen zu den Installationsanforderungen des Schalters.
 
 
 NOTE: Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.  Die Befehlsausgaben können je nach ONTAP Version variieren.

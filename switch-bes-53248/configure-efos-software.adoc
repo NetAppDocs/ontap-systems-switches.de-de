@@ -238,13 +238,12 @@ Additional Packages............................ BGP-4
 ............................................... Prototype Open API
 ----
 ====
-. Schließen Sie die Installation ab.  Befolgen Sie diese fünf Schritte, um den Switch neu zu konfigurieren:
+. Schließen Sie die Installation ab. Führen Sie diese vier Schritte aus, um den Switch neu zu konfigurieren:
 +
 .. link:configure-licenses.html["Lizenzen installieren"]
 .. link:configure-install-rcf.html["Installieren Sie die RCF-Datei"]
 .. link:configure-ssh.html["Aktivieren von SSH"]
-.. link:CSHM_log_collection.html["Protokollerfassung aktivieren"]
-.. link:CSHM_snmpv3.html["SNMPv3 für die Überwachung konfigurieren"]
+.. link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"]
 
 
 . Wiederholen Sie die Schritte 1 bis 7 am Partnerschalter.
@@ -410,14 +409,13 @@ unit 	active 	    backup   current-active  next-active
 (cs2) #
 ----
 ====
-. Schließen Sie die Installation ab.  Der Switch startet ohne angewendete Konfiguration neu und wird auf die Werkseinstellungen zurückgesetzt.  Befolgen Sie diese sechs Schritte, um den Switch neu zu konfigurieren:
+. Schließen Sie die Installation ab. Der Switch startet ohne angewendete Konfiguration neu und wird auf die Werkseinstellungen zurückgesetzt. Befolgen Sie diese fünf Schritte, um den Switch neu zu konfigurieren:
 +
 .. link:configure-install-initial.html["Schalter konfigurieren"]
 .. link:configure-licenses.html["Lizenzen installieren"]
 .. link:configure-install-rcf.html["Installieren Sie die RCF-Datei"]
 .. link:configure-ssh.html["Aktivieren von SSH"]
-.. link:CSHM_log_collection.html["Protokollerfassung aktivieren"]
-.. link:CSHM_snmpv3.html["SNMPv3 für die Überwachung konfigurieren"]
+.. link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"]
 
 
 . Wiederholen Sie die Schritte 1 bis 8 am Partnerschalter.

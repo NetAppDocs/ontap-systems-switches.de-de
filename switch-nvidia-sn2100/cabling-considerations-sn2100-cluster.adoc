@@ -50,7 +50,7 @@ swp15-16
 100GbE Inter-Switch Link (ISL)-Ports
 
 |===
-Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.
+Siehe die link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.
 
 
 
@@ -190,7 +190,7 @@ UP     swp4      100G  9216   Trunk/L2                     Master: bridge(UP)
 
 --
 ====
-Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["Der SN2100-Switch kann keine Verbindung über 40/100GbE-Kupferkabel herstellen."^] für weitere Einzelheiten.
+Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["Der SN2100-Switch kann keine Verbindung über 40/100GbE-Kupferkabel herstellen."^] für weitere Einzelheiten.
 
 Unter Cumulus Linux 4.4.2 werden Kupferverbindungen auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100GbE-Ports nicht unterstützt. Beispiel:
 
@@ -200,24 +200,23 @@ Unter Cumulus Linux 4.4.2 werden Kupferverbindungen auf SN2100-Switches mit X115
 
 
 
-== QSA-Adapter
+== QSA-Modul
 
-Wenn ein QSA-Adapter verwendet wird, um eine Verbindung zu den 10GbE/25GbE-Cluster-Ports einer Plattform herzustellen, kann es vorkommen, dass die Verbindung nicht zustande kommt.
+Bei Verwendung von QSFP+ (40GbE) zu SFP+ (10GbE) Adaptern oder QSFP28 (100GbE) zu SFP28 (25GbE) Adaptern (QSA) stecken Sie diese in nicht-breakout 40GbE/100GbE Switch-Ports (swp3-swp14). Stecken Sie das QSA-Modul nicht in einen Port, der für Breakout konfiguriert ist.
+
+Wenn ein QSA-Modul verwendet wird, um eine Verbindung zu den 10GbE/25GbE-Cluster-Ports einer Plattform herzustellen, kann es vorkommen, dass die Verbindung nicht zustande kommt.
 
 Um dieses Problem zu beheben, gehen Sie wie folgt vor:
 
-* Für 10GbE stellen Sie die Verbindungsgeschwindigkeit von swp1s0-3 manuell auf 10000 ein und deaktivieren Sie die automatische Aushandlung.
-* Für 25GbE stellen Sie die Verbindungsgeschwindigkeit swp2s0-3 manuell auf 25000 ein und deaktivieren Sie die automatische Aushandlung.
+* Bei 10GbE stellen Sie die Verbindungsgeschwindigkeit manuell auf 10000 ein und deaktivieren die automatische Aushandlung.
+* Bei 25GbE stellen Sie die Verbindungsgeschwindigkeit manuell auf 25000 ein und deaktivieren Sie die automatische Aushandlung.
 
-
-
-NOTE: Bei Verwendung von 10GbE/25GbE QSA-Adaptern stecken Sie diese in nicht-breakout 40GbE/100GbE-Ports (swp3-swp14).  Stecken Sie den QSA-Adapter nicht in einen Port, der für Breakout konfiguriert ist.
 
 
 
 == Einstellen der Schnittstellengeschwindigkeit an Breakout-Ports
 
-Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen.  Bei Verwendung von 10GbE- und 25GbE-Breakout-Ports überprüfen Sie, ob die automatische Aushandlung deaktiviert ist, und stellen Sie die Schnittstellengeschwindigkeit am Switch ein.
+Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen. Bei Verwendung von 10GbE- und 25GbE-Breakout-Ports oder eines QSA-Moduls überprüfen Sie, ob die automatische Aushandlung deaktiviert ist und stellen Sie die Schnittstellengeschwindigkeit am Switch ein.
 
 [role="tabbed-block"]
 ====
@@ -332,5 +331,7 @@ UP     swp16      100G  9216   BondMember  cs01 (swp16)     Master: cl
 ----
 --
 ====
+Siehe die link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^]und der Artikel in der Wissensdatenbank link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] für weitere Informationen.
+
 .Wie geht es weiter?
 Nachdem Sie Ihre Verkabelungs- und Konfigurationsanforderungen überprüft haben, können Sielink:install-cable-shelves-sn2100-cluster.html["Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrung."] Die

@@ -25,7 +25,7 @@ Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen.
 * IP-Subnetz für den Verwaltungsnetzwerkverkehr
 * Hostnamen und IP-Adressen für jeden Speichersystem-Controller und alle entsprechenden Switches
 * Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird.
-* Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen.
+* Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Für weitere Informationen zu den Installationsanforderungen des Schalters.
 
 
 
