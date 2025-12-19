@@ -445,7 +445,7 @@ Are you sure you would like to reset the system? (y/n) *y*
 
 . Beachten Sie Folgendes:
 +
-.. Falls zusätzliche Portlizenzen auf dem Switch installiert wurden, müssen Sie die RCF-Datei ändern, um die zusätzlichen lizenzierten Ports zu konfigurieren. Sehenlink:configure-licenses.html#activate-newly-licensed-ports["Aktivieren Sie neu lizenzierte Ports"] für Details.
+.. Falls zusätzliche Portlizenzen auf dem Switch installiert wurden, müssen Sie die RCF-Datei ändern, um die zusätzlichen lizenzierten Ports zu konfigurieren. Sehen link:configure-licenses.html#activate-newly-licensed-ports["Aktivieren Sie neu lizenzierte Ports"] für weitere Details. Wenn Sie jedoch auf RCF 1.12 oder höher aktualisieren, sind die Änderungen nicht mehr erforderlich, da alle Schnittstellen jetzt vorkonfiguriert sind.
 .. Alle im vorherigen RCF vorgenommenen Anpassungen sollten protokolliert und auf das neue RCF angewendet werden.  Zum Beispiel durch Festlegen von Portgeschwindigkeiten oder durch Festcodieren des FEC-Modus.
 
 
