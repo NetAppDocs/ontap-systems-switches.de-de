@@ -44,7 +44,7 @@ Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das 
 
 Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 
-image:cabling_worksheet.jpg["Verkabelungsarbeitsblatt"]
+image:cabling-worksheet.jpg["Verkabelungsarbeitsblatt"]
 
 Wo:
 
@@ -60,7 +60,7 @@ Wo:
 
 Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Die Tabelle „Unterstützte Clusterverbindungen“ des Hardware Universe definiert die von der Plattform verwendeten Cluster-Ports.
 
-image:blank_cabling_worksheet.jpg["Leeres Verkabelungsarbeitsblatt"]
+image:blank-cabling-worksheet.jpg["Leeres Verkabelungsarbeitsblatt"]
 
 Wo:
 
