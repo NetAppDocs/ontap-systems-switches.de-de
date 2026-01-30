@@ -3502,7 +3502,6 @@
   <block id="a8d1a66d62c022a563277e8b0691fa83" category="list-text">Alle benutzerdefinierten Ergänzungen zwischen dem aktuellen<block ref="092a495b03acdb0bf155d8ff2997a8d6" prefix=" " category="inline-code"></block> Datei und die verwendete RCF-Datei.</block>
   <block id="b978a3c040fa352cf3eb469eb092efd7" category="list-text">Nachdem Sie überprüft haben, ob die RCF-Versionen und die Schaltereinstellungen korrekt sind, kopieren Sie die<block ref="092a495b03acdb0bf155d8ff2997a8d6" prefix=" " category="inline-code"></block> Datei an die<block ref="35b7dd24bfd716b0553d5e558b8afe97" prefix=" " category="inline-code"></block> Datei.</block>
   <block id="92a263f83655527a8570ddfd3130dcf6" category="paragraph"><block ref="141e63272914863fc9c959b427fdacd7" prefix="" category="inline-code"></block></block>
-  <block id="baa9d9b44ef34df5ca5f98884d0608d3" category="paragraph"><block ref="603fb14344e659fed2e403db2df24a4a" prefix="" category="inline-code"></block></block>
   <block id="758d64d19fd5c7f49ed73e0b94a6f13f" category="list-text">Neustart des Switches cs1.</block>
   <block id="c360869741dd5844f76506c53b837af4" category="list-text">Wiederholen Sie die Schritte 1 bis 13 auf Switch cs2.</block>
   <block id="7abb8bc9df6ce2c7758d9b3973b94f9a" category="summary">Gehen Sie wie folgt vor, um den Cisco Nexus 9336C-FX2 Switch zu installieren.</block>
@@ -5761,4 +5760,6 @@
   <block id="e77c10b1a257ebcc959eb6fe14f2aa4d" category="sidebar">Overview_3232C_storage</block>
   <block id="8382d892581b7184fb83126ff18bb70d" category="sidebar">Install_hardware_3232C_storage</block>
   <block id="efc5205a1684eea7ad72b62e5417e2ce" category="sidebar">Configure_software_3232C_storage</block>
+  <block id="6754d52ab3aba634c1d3868f6ff1173b" category="paragraph"><block ref="4b5c6435698a249ed2ca19ecf903991f" prefix="" category="inline-code"></block></block>
+  <block id="eff487118c44b434c2174aab2b3a4e1c" category="list-text">Führen Sie einen Neustart von Switch cs2 durch.</block>
 </blocks>
