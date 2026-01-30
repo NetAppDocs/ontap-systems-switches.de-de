@@ -1,0 +1,222 @@
+---
+permalink: switch-cisco-3232c-storage/setup-switch-3232c-storage.html 
+sidebar: sidebar 
+keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
+summary: Falls Sie die erforderlichen Konfigurationsinformationen und Dokumentationen noch nicht besitzen, müssen Sie diese Informationen sammeln, bevor Sie Ihren Cluster und die Management-Netzwerk-Switches einrichten. 
+---
+= Konfigurieren Sie den 3232C-Speicherschalter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gehen Sie wie folgt vor, um den Cisco Nexus 3232C Switch einzurichten und zu konfigurieren.
+
+.Bevor Sie beginnen
+* Zugriff auf einen HTTP-, FTP- oder TFTP-Server am Installationsort, um die entsprechenden NX-OS- und Referenzkonfigurationsdatei-(RCF)-Versionen herunterzuladen.
+* Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
+* Erforderliche Dokumentation zum Cluster-Netzwerk und zum Management-Netzwerk-Switch.
++
+Siehe link:required-documentation-3232c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
+
+* Erforderliche Controller-Dokumentation und ONTAP Dokumentation.
++
+https://netapp.com/us/documenation/index.aspx["NetApp Dokumentation"^]
+
+* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
+* Ausgefüllte Verkabelungs-Arbeitsblätter.
+* Anwendbare NetApp Clusternetzwerk- und Managementnetzwerk-RCFs, heruntergeladen von der NetApp Support-Website unter http://mysupport.netapp.com/["mysupport.netapp.com"^] für die Schalter, die Sie erhalten.  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert.  Auf diesen Switches ist auch die aktuelle Version der NX-OS-Software installiert, allerdings sind die RCFs nicht geladen.
+
+
+.Schritte
+. Installieren Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller.
++
+[cols="1,2"]
+|===
+| Wenn Sie Ihr... installieren | Dann... 
+
+
+ a| 
+Cisco Nexus 3232C in einem NetApp -Systemschrank
+ a| 
+Siehe die Anleitung _Installing a Cisco Nexus 3232C switch and pass-through panel in a NetApp cabinet_ für Anweisungen zum Einbau des Switches in einen NetApp Schrank.
+
+
+
+ a| 
+Ausrüstung in einem Telekommunikationsrack
+ a| 
+Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
+
+|===
+. Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
+. Schalten Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller ein.
+. Führen Sie eine Erstkonfiguration der Cluster-Netzwerk-Switches durch.
++
+Beantworten Sie die folgenden Fragen zur Ersteinrichtung, wenn Sie den Switch zum ersten Mal einschalten.  Die Sicherheitsrichtlinie Ihrer Website definiert die zu aktivierenden Antworten und Dienste.
+
++
+[cols="1,2"]
+|===
+| Prompt | Antwort 
+
+
+ a| 
+Automatische Bereitstellung abbrechen und mit normaler Einrichtung fortfahren?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Wollen Sie einen sicheren Passwortstandard erzwingen?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Die Standardeinstellung ist Ja.
+
+
+
+ a| 
+Geben Sie das Passwort für den Administrator ein.
+ a| 
+Das Standardpasswort lautet "`admin`"; Sie müssen ein neues, sicheres Passwort erstellen.  Ein schwaches Passwort kann abgelehnt werden.
+
+
+
+ a| 
+Möchten Sie den Dialog zur Basiskonfiguration aufrufen?  (ja/nein)
+ a| 
+Antworten Sie bei der Erstkonfiguration des Switches mit *ja*.
+
+
+
+ a| 
+Ein weiteres Benutzerkonto erstellen?  (ja/nein)
+ a| 
+Die Antwort hängt von den Richtlinien Ihrer Website bezüglich alternativer Administratoren ab.  Die Standardeinstellung ist *nein*.
+
+
+
+ a| 
+SNMP-Community-String schreibgeschützt konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+SNMP-Community-Zeichenfolge für Lese- und Schreibzugriffe konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Geben Sie den Namen des Schalters ein.
+ a| 
+Der Name des Schalters ist auf 63 alphanumerische Zeichen beschränkt.
+
+
+
+ a| 
+Mit der Out-of-Band-Managementkonfiguration (mgmt0) fortfahren?  (ja/nein)
+ a| 
+Antworten Sie bei dieser Eingabeaufforderung mit *ja* (Standardeinstellung).  Geben Sie an der Eingabeaufforderung mgmt0 IPv4 address: Ihre IP-Adresse ein: ip_address.
+
+
+
+ a| 
+Standardgateway konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Geben Sie an der IPv4-Adresse des Standardgateways Ihre Standardgateway-Adresse ein.
+
+
+
+ a| 
+Erweiterte IP-Optionen konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Den Telnet-Dienst aktivieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+SSH-Dienst aktiviert?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Die Standardeinstellung ist Ja.
+
+
+NOTE: Bei der Verwendung von Ethernet Switch Health Monitor (CSHM) wird SSH aufgrund seiner Protokollierungsfunktionen empfohlen.  Für erhöhte Sicherheit wird auch SSHv2 empfohlen.
+
+
+
+ a| 
+Geben Sie den Typ des SSH-Schlüssels ein, den Sie generieren möchten (dsa/rsa/rsa1).
+ a| 
+Standardmäßig wird *rsa* verwendet.
+
+
+
+ a| 
+Geben Sie die Anzahl der Schlüsselbits ein (1024-2048).
+ a| 
+Geben Sie die Anzahl der Schlüsselbits im Bereich von 1024 bis 2048 ein.
+
+
+
+ a| 
+Den NTP-Server konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Standard-Schnittstellenschicht (L3/L2) konfigurieren:
+ a| 
+Antworte mit *L2*.  Standardmäßig ist L2 eingestellt.
+
+
+
+ a| 
+Standardmäßigen Schnittstellenstatus des Switch-Ports konfigurieren (ausgeschaltet/nicht ausgeschaltet):
+ a| 
+Antworte mit *noshut*.  Die Standardeinstellung ist noshut.
+
+
+
+ a| 
+CoPP-Systemprofil konfigurieren (streng/moderat/tolerant/dicht):
+ a| 
+Mit *streng* antworten.  Die Standardeinstellung ist strikt.
+
+
+
+ a| 
+Möchten Sie die Konfiguration bearbeiten?  (ja/nein)
+ a| 
+An dieser Stelle sollten Sie die neue Konfiguration sehen.  Überprüfen Sie die soeben eingegebene Konfiguration und nehmen Sie gegebenenfalls die erforderlichen Änderungen vor.  Antworten Sie mit *nein*, wenn Sie mit der Konfiguration zufrieden sind.  Antworten Sie mit *ja*, wenn Sie Ihre Konfigurationseinstellungen bearbeiten möchten.
+
+
+
+ a| 
+Diese Konfiguration verwenden und speichern?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*, um die Konfiguration zu speichern.  Dadurch werden die Kickstart- und Systemabbilder automatisch aktualisiert.
+
+
+NOTE: Wenn Sie die Konfiguration in diesem Schritt nicht speichern, werden beim nächsten Neustart des Switches keine der Änderungen wirksam.
+
+|===
+. Überprüfen Sie die von Ihnen getroffenen Konfigurationseinstellungen in der Anzeige, die am Ende des Setups erscheint, und stellen Sie sicher, dass Sie die Konfiguration speichern.
+. Prüfen Sie die Version auf den Cluster-Netzwerk-Switches und laden Sie gegebenenfalls die von NetApp unterstützte Version der Software von der  https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite auf die Switches herunter.
+
+
+.Wie geht es weiter?
+Nachdem Sie Ihre Switches konfiguriert haben, können Sie link:prepare-install-cisco-nexus-3232c-storage.html["Bereiten Sie die Installation von NX-OS und RCF vor."].

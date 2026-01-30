@@ -1,0 +1,52 @@
+---
+permalink: switch-cisco-3232c-storage/install-switch-3232c-storage.html 
+sidebar: sidebar 
+keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 3232c 
+summary: Führen Sie dieses Verfahren aus, um den Cisco Nexus 3232C Storage-Switch zu installieren. 
+---
+= Installieren Sie den 3232C-Speicherschalter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie dieses Verfahren aus, um den Cisco Nexus 3232C Storage-Switch einzurichten und zu konfigurieren.
+
+.Bevor Sie beginnen
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
+
+* Zugriff auf einen HTTP-, FTP- oder TFTP-Server am Installationsort, um die entsprechenden NX-OS- und Referenzkonfigurationsdatei-(RCF)-Versionen herunterzuladen.
+* Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
+* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
+* Anwendbare NetApp -Clusternetzwerk- und Managementnetzwerk-RCFs, die von der NetApp -Support-Website heruntergeladen wurden unter http://mysupport.netapp.com/["mysupport.netapp.com"^] Die  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert. Diese Switches verfügen ebenfalls über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
+* link:required-documentation-3232c-storage.html["Erforderliche Switch- und ONTAP Dokumentation"].
+
+
+.Schritte
+. Installieren Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller.
++
+[cols="1,2"]
+|===
+| Wenn Sie die... installieren | Dann... 
+
+
+ a| 
+Cisco Nexus 3232C in einem NetApp -Systemschrank
+ a| 
+Anweisungen zum Einbau des Switches in einen NetApp -Schrank finden Sie im Leitfaden _Installing a Cisco Nexus 3232C cluster switch and pass-through panel in a NetApp cabinet_.
+
+
+
+ a| 
+Ausrüstung in einem Telekommunikationsrack
+ a| 
+Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
+
+|===
+. Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
+. Schalten Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller ein.
+
+
+.Wie geht es weiter?
+Nachdem Sie den 3232C Speicherschalter installiert haben, können Sie dann link:install-cisco-nexus-3232c-storage.html["Installieren Sie den Schalter in einem NetApp cabinet"].

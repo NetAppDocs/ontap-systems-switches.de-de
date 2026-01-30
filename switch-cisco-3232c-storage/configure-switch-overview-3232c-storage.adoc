@@ -1,0 +1,36 @@
+---
+permalink: switch-cisco-3232c-storage/configure-switch-overview-3232c-storage.html 
+sidebar: sidebar 
+keywords: initial installation, configure switch-cisco-3232c-storage switch 
+summary: Übersicht über Installation und Konfiguration für Cisco Nexus 3232C Storage Switches 
+---
+= Installations- und Einrichtungsworkflow für Cisco Nexus 3232C Storage Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Cisco Nexus 3232C Switches sind Teil der Cisco Nexus 9000 Plattform und können in einem NetApp Systemschrank installiert werden.
+
+Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 3232C Switches zu installieren und einzurichten.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-reqs-3232c-storage.html["Überprüfen der Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Prüfen Sie die Konfigurationsanforderungen für die 3232C storage switches.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:required-documentation-3232c-storage.html["Überprüfen Sie die erforderlichen Unterlagen"]
+[role="quick-margin-para"]
+Lesen Sie die spezifische Switch- und Controller-Dokumentation, um Ihre 3232C-Switches und den ONTAP Cluster einzurichten.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:smart-call-home-3232c-storage.html["Überprüfen Sie die Smart Call Home-Anforderungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Anforderungen für die Cisco Smart Call Home-Funktion, die zur Überwachung der Hardware- und Softwarekomponenten in Ihrem Netzwerk verwendet wird.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-switch-3232c-storage.html["Installieren Sie die Hardware"]
+[role="quick-margin-para"]
+Installieren Sie die Switch-Hardware.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-software-overview-3232c-storage.html["Konfigurieren der Software"]
+[role="quick-margin-para"]
+Konfigurieren Sie die Switch-Software.

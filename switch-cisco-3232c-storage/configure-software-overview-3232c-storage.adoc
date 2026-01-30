@@ -1,0 +1,38 @@
+---
+permalink: switch-cisco-3232c-storage/configure-software-overview-3232c-storage.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Übersicht der Softwarekonfiguration für Cisco Nexus 3232C Storage Switches 
+---
+= Software-Installations-Workflow für Cisco Nexus 3232C Storage Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Software für einen Cisco Nexus 3232C-Switch zu installieren und zu konfigurieren und die Referenzkonfigurationsdatei (RCF) zu installieren oder zu aktualisieren, gehen Sie wie folgt vor:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch-3232c-storage.html["Konfigurieren Sie den Schalter"]
+[role="quick-margin-para"]
+Konfigurieren Sie den 3232C Speicherswitch.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:prepare-install-cisco-nexus-3232c-storage.html["Bereiten Sie die Installation der NX-OS-Software und des RCF vor."]
+[role="quick-margin-para"]
+Die Cisco NX-OS Software und die Referenzkonfigurationsdateien (RCFs) müssen auf Cisco 3232C Storage-Switches installiert sein.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-nx-os-software-3232c-storage.html["Installieren Sie die NX-OS-Software"]
+[role="quick-margin-para"]
+Laden Sie die NX-OS-Software auf dem Cisco 3232C Storage-Switch herunter und installieren oder aktualisieren Sie sie.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-rcf-software-3232c-storage.html["Installieren Sie den RCF"]
+[role="quick-margin-para"]
+Installieren Sie das RCF, nachdem Sie den Cisco 3232C Storage-Switch zum ersten Mal eingerichtet haben.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
+[role="quick-margin-para"]
+Stellen Sie sicher, dass SSH auf den Switches aktiviert ist, um den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen zu verwenden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-3232c-storage.html["Setzen Sie den Schalter auf die Werkseinstellungen zurück."]
+[role="quick-margin-para"]
+Löschen Sie die 3232C-Speicherschalter-Einstellungen.

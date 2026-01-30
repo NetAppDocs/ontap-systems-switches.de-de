@@ -1,0 +1,22 @@
+---
+permalink: switch-cisco-3232c-storage/install-hardware-workflow.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Bevor Sie Cisco Nexus 3232C Speicherswitches konfigurieren, überprüfen Sie die Konfigurationsübersicht. 
+---
+= Workflow zur Hardwareinstallation für Cisco Nexus 3232C-Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Hardware für einen 3232C-Speicherswitch zu installieren und zu konfigurieren, führen Sie die folgenden Schritte aus:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-switch-3232c-storage.html["Installieren Sie den Schalter"]
+[role="quick-margin-para"]
+Installieren Sie den 3232C-Speicherschalter.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-cisco-nexus-3232c-storage.html["Installieren Sie den Switch in einem NetApp -Schrank."]
+[role="quick-margin-para"]
+Installieren Sie den 3232C-Speicherschalter und die Durchgangsplatte in einem NetApp-Schrank nach Bedarf.

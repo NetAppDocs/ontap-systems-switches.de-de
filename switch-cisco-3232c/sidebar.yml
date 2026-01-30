@@ -73,3 +73,10 @@ entries:
     url: "/switch-cisco-3232c/replace-cluster-switch.html"
   - title: Ersetzen Sie die Clusterschalter durch schalterlose Verbindungen.
     url: "/switch-cisco-3232c/migrate-to-switchless-cluster-interconnect.html"
+- title: Cisco 3232C Storage Switches
+  pdf-filename: 3232C_storage_switches
+  entries:
+  - title: Upgrade eines 3232C Storage Switches
+    url: "/switch-cisco-3232c/upgrade-3232c-storage-switches.html"
+  - title: Ersetzen Sie einen 3232C-Speicherschalter
+    url: "/switch-cisco-3232c/replace-storage-switch.html"
