@@ -5763,4 +5763,9 @@
   <block id="6754d52ab3aba634c1d3868f6ff1173b" category="paragraph"><block ref="4b5c6435698a249ed2ca19ecf903991f" prefix="" category="inline-code"></block></block>
   <block id="eff487118c44b434c2174aab2b3a4e1c" category="list-text">Führen Sie einen Neustart von Switch cs2 durch.</block>
   <block id="fb14b077ecd3df929fa7f98e0e505f8c" category="admonition">Beim Upgrade oder der Anwendung eines neuen RCF müssen Sie die Schaltereinstellungen löschen und eine Grundkonfiguration durchführen.</block>
+  <block id="ece376b7acc25f86ff2e09f80d38755c" category="paragraph">Stellen Sie sicher, dass Sie Folgendes tun:</block>
+  <block id="9a9e15bbbf81b37074eb3677448baf70" category="list-text">Führen Sie den <block ref="856e0a903a301d6d44f55e6eb5b82200" prefix=" " category="inline-code"></block> Befehl auf dem Switch aus, um die Auswirkungen der Installation oder Aktualisierung des neuen NX-OS-Software-Images zu überprüfen. Dabei werden die Integrität des Images, erforderliche Neustarts, die Hardwarekompatibilität und ausreichend Speicherplatz geprüft.</block>
+  <block id="1ce0015d97074c710fb18a71c0facacd" category="list-text">Lesen Sie die Versionshinweise für die Zielversion der NX-OS-Software, um auf spezifische Anforderungen zu prüfen.</block>
+  <block id="07e8467e284d5ad4e9a20246ae001803" category="list-text">Vergewissern Sie sich, dass Sie eine aktuelle Sicherung der Switch-Konfiguration haben.</block>
+  <block id="0280c61cdd286c198feabf97c27f4988" category="list-text">Vergewissern Sie sich, dass Sie einen voll funktionsfähigen Cluster haben (keine Fehler in den Protokollen oder ähnliche Probleme).</block>
 </blocks>
