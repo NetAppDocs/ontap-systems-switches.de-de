@@ -16,7 +16,7 @@ Gehen Sie wie folgt vor, um den Cisco Nexus 3232C Switch einzurichten und zu kon
 .Bevor Sie beginnen
 * Zugriff auf einen HTTP-, FTP- oder TFTP-Server am Installationsort, um die entsprechenden NX-OS- und Referenzkonfigurationsdatei-(RCF)-Versionen herunterzuladen.
 * Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
-* Erforderliche Dokumentation zum Cluster-Netzwerk und zum Management-Netzwerk-Switch.
+* Erforderliche Netzwerk- und Management-Netzwerk-Switch-Dokumentation.
 +
 Siehe link:required-documentation-3232c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
 
@@ -25,12 +25,11 @@ Siehe link:required-documentation-3232c-storage.html["Erforderliche Dokumentatio
 https://netapp.com/us/documenation/index.aspx["NetApp Dokumentation"^]
 
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
-* Ausgefüllte Verkabelungs-Arbeitsblätter.
-* Anwendbare NetApp Clusternetzwerk- und Managementnetzwerk-RCFs, heruntergeladen von der NetApp Support-Website unter http://mysupport.netapp.com/["mysupport.netapp.com"^] für die Schalter, die Sie erhalten.  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert.  Auf diesen Switches ist auch die aktuelle Version der NX-OS-Software installiert, allerdings sind die RCFs nicht geladen.
+* Anwendbare NetApp Speicher-Netzwerk- und Management-Netzwerk-RCFs, heruntergeladen von der NetApp Support Site unter http://mysupport.netapp.com/["mysupport.netapp.com"^] für die Switches, die Sie erhalten. Alle Cisco Speicher-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco Werkseinstellung geliefert. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS Software, aber die RCFs sind nicht geladen.
 
 
 .Schritte
-. Installieren Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller.
+. Racken Sie die Netzwerk-Switches des Speichernetzwerks und Managementnetzwerks sowie die Controller.
 +
 [cols="1,2"]
 |===
@@ -50,9 +49,9 @@ Ausrüstung in einem Telekommunikationsrack
 Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
 
 |===
-. Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
-. Schalten Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller ein.
-. Führen Sie eine Erstkonfiguration der Cluster-Netzwerk-Switches durch.
+. Verkabeln Sie die Speicher- und Management-Netzwerk-Switches mit den Controllern mithilfe der ausgefüllten Verkabelungsarbeitsblätter.
+. Schalten Sie die Netzwerk-Switches des Speichernetzwerks und des Managementnetzwerks sowie die Controller ein.
+. Führen Sie eine Erstkonfiguration der Storage-Netzwerk-Switches durch.
 +
 Beantworten Sie die folgenden Fragen zur Ersteinrichtung, wenn Sie den Switch zum ersten Mal einschalten.  Die Sicherheitsrichtlinie Ihrer Website definiert die zu aktivierenden Antworten und Dienste.
 
@@ -215,7 +214,7 @@ NOTE: Wenn Sie die Konfiguration in diesem Schritt nicht speichern, werden beim 
 
 |===
 . Überprüfen Sie die von Ihnen getroffenen Konfigurationseinstellungen in der Anzeige, die am Ende des Setups erscheint, und stellen Sie sicher, dass Sie die Konfiguration speichern.
-. Prüfen Sie die Version auf den Cluster-Netzwerk-Switches und laden Sie gegebenenfalls die von NetApp unterstützte Version der Software von der  https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite auf die Switches herunter.
+. Prüfen Sie die Version auf den Netzwerk-Switches und laden Sie gegebenenfalls die von NetApp unterstützte Version der Software von der  https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite auf die Switches herunter.
 
 
 .Wie geht es weiter?

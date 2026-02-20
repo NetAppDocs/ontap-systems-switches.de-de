@@ -21,7 +21,7 @@ Konfigurieren Sie den 3232C Speicherswitch.
 [role="quick-margin-para"]
 Die Cisco NX-OS Software und die Referenzkonfigurationsdateien (RCFs) müssen auf Cisco 3232C Storage-Switches installiert sein.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-nx-os-software-3232c-storage.html["Installieren Sie die NX-OS-Software"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-nx-os-software-3232c-storage.html["Installieren oder aktualisieren Sie die NX-OS-Software."]
 [role="quick-margin-para"]
 Laden Sie die NX-OS-Software auf dem Cisco 3232C Storage-Switch herunter und installieren oder aktualisieren Sie sie.
 
@@ -29,10 +29,14 @@ Laden Sie die NX-OS-Software auf dem Cisco 3232C Storage-Switch herunter und ins
 [role="quick-margin-para"]
 Installieren Sie das RCF, nachdem Sie den Cisco 3232C Storage-Switch zum ersten Mal eingerichtet haben.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:upgrade-rcf-software-3232c-storage.html["Das RCF aufrüsten"]
+[role="quick-margin-para"]
+Aktualisieren Sie Ihre bestehende RCF-Version nach Bedarf.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
 [role="quick-margin-para"]
 Stellen Sie sicher, dass SSH auf den Switches aktiviert ist, um den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen zu verwenden.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-3232c-storage.html["Setzen Sie den Schalter auf die Werkseinstellungen zurück."]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:reset-switch-3232c-storage.html["Setzen Sie den Schalter auf die Werkseinstellungen zurück."]
 [role="quick-margin-para"]
 Löschen Sie die 3232C-Speicherschalter-Einstellungen.

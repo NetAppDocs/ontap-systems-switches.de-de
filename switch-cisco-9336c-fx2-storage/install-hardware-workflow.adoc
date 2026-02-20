@@ -24,3 +24,7 @@ Installieren Sie die Speicher-Switches 9336C-FX2 und 9336C-FX2-T.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-switch-and-passthrough-panel-9336c-storage.html["Installieren Sie den Switch in einem NetApp -Schrank."]
 [role="quick-margin-para"]
 Installieren Sie die Switches 9336C-FX2 und 9336C-FX2-T und das Durchgangspanel nach Bedarf in einem NetApp Schrank.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cabling-considerations-9336c-storage.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"]
+[role="quick-margin-para"]
+Bevor Sie Ihre 9336C-FX2 und 9336C-FX2-T Switches konfigurieren, überprüfen Sie die Hinweise zur Verkabelung und Konfiguration.

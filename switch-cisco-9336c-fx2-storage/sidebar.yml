@@ -25,6 +25,8 @@ entries:
     url: "/switch-cisco-9336c-fx2-storage/install-9336c-storage.html"
   - title: Installieren Sie den Switch im NetApp Schrank
     url: "/switch-cisco-9336c-fx2-storage/install-switch-and-passthrough-panel-9336c-storage.html"
+  - title: Kabel und Konfiguration prüfen
+    url: "/switch-cisco-9336c-fx2-storage/cabling-considerations-9336c-storage.html"
 - title: Konfigurieren der Software
   pdf-filename: Configure_software_9336c-fx2-storage
   entries:

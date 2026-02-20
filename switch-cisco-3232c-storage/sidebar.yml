@@ -22,6 +22,8 @@ entries:
     url: "/switch-cisco-3232c-storage/install-switch-3232c-storage.html"
   - title: Switch im NetApp Schrank installieren
     url: "/switch-cisco-3232c-storage/install-cisco-nexus-3232c-storage.html"
+  - title: Kabel und Konfiguration prüfen
+    url: "/switch-cisco-3232c-storage/cabling-considerations-3232c-storage.html"
 - title: Software konfigurieren
   pdf-filename: Configure_software_3232C_storage
   entries:
@@ -31,10 +33,12 @@ entries:
     url: "/switch-cisco-3232c-storage/setup-switch-3232c-storage.html"
   - title: Bereiten Sie die Installation der NX-OS-Software und von RCF vor.
     url: "/switch-cisco-3232c-storage/prepare-install-cisco-nexus-3232c-storage.html"
-  - title: Installieren Sie die NX-OS-Software
+  - title: Installieren oder aktualisieren Sie die NX-OS-Software.
     url: "/switch-cisco-3232c-storage/install-nx-os-software-3232c-storage.html"
   - title: Installieren Sie den RCF
     url: "/switch-cisco-3232c-storage/install-rcf-software-3232c-storage.html"
+  - title: Aktualisieren Sie Ihre RCF-Version
+    url: "/switch-cisco-3232c-storage/upgrade-rcf-software-3232c-storage.html"
   - title: Überprüfen der SSH-Konfiguration
     url: "/switch-cisco-3232c-storage/configure-ssh-keys.html"
   - title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.

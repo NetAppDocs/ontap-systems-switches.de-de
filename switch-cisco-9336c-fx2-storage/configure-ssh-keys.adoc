@@ -11,7 +11,7 @@ summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Heal
 
 
 [role="lead"]
-Wenn Sie die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollerfassung verwenden, überprüfen Sie, ob SSH und SSH-Schlüssel auf den Cluster-Switches aktiviert sind.
+Wenn Sie den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen verwenden, überprüfen Sie, ob SSH und SSH-Schlüssel auf den Switches aktiviert sind.
 
 .Schritte
 . Überprüfen Sie, ob SSH aktiviert ist:

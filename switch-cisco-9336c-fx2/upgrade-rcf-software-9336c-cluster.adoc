@@ -35,6 +35,20 @@ CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs 
 
 == Schritt 1: Vorbereitung auf das Upgrade
 
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
++
+`system node autosupport invoke -node * -type all -message MAINT=xh`
+
++
+Wobei _x_ die Dauer des Wartungsfensters in Stunden angibt.
+
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
++
+`set -privilege advanced`
+
++
+Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
+
 . Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`

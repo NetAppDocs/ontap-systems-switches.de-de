@@ -23,6 +23,8 @@ entries:
     url: "/switch-cisco-9336c-fx2-shared/install-9336c-shared.html"
   - title: Switch im NetApp Schrank installieren
     url: "/switch-cisco-9336c-fx2-shared/install-switch-and-passthrough-panel-9336c-shared.html"
+  - title: Kabel und Konfiguration prüfen
+    url: "/switch-cisco-9336c-fx2-shared/cabling-considerations-9336c-shared.html"
 - title: Konfigurieren der Software
   pdf-filename: Configure_software_9336c-fx2-shared
   entries:

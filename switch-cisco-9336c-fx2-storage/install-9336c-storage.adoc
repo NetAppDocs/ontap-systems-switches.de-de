@@ -1,8 +1,8 @@
 ---
 permalink: switch-cisco-9336c-fx2-storage/install-9336c-storage.html 
 sidebar: sidebar 
-keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
-summary: Falls Sie die erforderlichen Konfigurationsinformationen und Dokumentationen noch nicht besitzen, müssen Sie diese Informationen sammeln, bevor Sie Ihren Cluster und die Management-Netzwerk-Switches einrichten. 
+keywords: require, configuration, information, documentation, storage, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
+summary: Falls Sie die erforderlichen Konfigurationsinformationen und Dokumentationen noch nicht besitzen, müssen Sie diese Informationen sammeln, bevor Sie Ihre Storage- und Management-Netzwerk-Switches einrichten. 
 ---
 = Installieren Sie die Speicher-Switches 9336C-FX2 und 9336C-FX2-T
 :allow-uri-read: 
@@ -20,12 +20,15 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
 * Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
 * Vollendetlink:setup-worksheet-9336c-storage.html["Verkabelungs-Arbeitsblätter"] Die
-* Anwendbare NetApp -Clusternetzwerk- und Managementnetzwerk-RCFs, die von der NetApp -Support-Website heruntergeladen wurden unter http://mysupport.netapp.com/["mysupport.netapp.com"^] Die  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert. Diese Switches verfügen ebenfalls über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
+* Anwendbare NetApp Speicher- und Managementnetzwerk-RCFs, die von der NetApp Support Site unter  http://mysupport.netapp.com/["mysupport.netapp.com"^] heruntergeladen wurden.
++
+Alle Cisco-Switches für Speicher- und Managementnetzwerke werden mit der standardmäßigen Cisco-Werkskonfiguration ausgeliefert. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS Software, jedoch sind die RCFs nicht geladen.
+
 * Erforderliche Schalterdokumentation. Sehenlink:required-documentation-9336c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
 
 
 .Schritte
-. Installieren Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller.
+. Racken Sie die Netzwerk- und Managementnetzwerk-Switches und -Controller.
 +
 [cols="1,2"]
 |===
@@ -45,8 +48,8 @@ Ausrüstung in einem Telekommunikationsrack
 Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
 
 |===
-. Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
-. Schalten Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller ein.
+. Verbinden Sie die Netzwerk- und Management-Netzwerk-Switches mit den Controllern, indem Sie die ausgefüllten Verkabelungsarbeitsblätter verwenden.
+. Schalten Sie die Netzwerk- und Managementnetzwerk-Switches und -Controller ein.
 
 
 .Wie geht es weiter?

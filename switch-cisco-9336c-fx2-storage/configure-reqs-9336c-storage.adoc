@@ -18,30 +18,6 @@ summary: Ab ONTAP 9.9.1 können Sie Cisco Nexus 9336C-FX2 Switches verwenden, um
 
 
 
-== ONTAP-Unterstützung
-
-[role="tabbed-block"]
-====
-.ONTAP 9.9.1 und höher
---
-Ab ONTAP 9.9.1 können Sie Cisco Nexus 9336C-FX2 Switches verwenden, um Speicher- und Clusterfunktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren.
-
-Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Netzwerk-Switches.
-
-
-NOTE: Der Ethernet-Switch-Health-Monitor unterstützt weder ONTAP 9.13.1P8 und ältere Versionen noch 9.14.1P3 und ältere Versionen oder NX-OS Version 10.3(4a)(M).
-
---
-.ONTAP 9.10.1 und höher
---
-Darüber hinaus können Sie ab ONTAP 9.10.1 Cisco Nexus 9336C-FX2-T-Switches verwenden, um Speicher- und Clusterfunktionen in einer gemeinsam genutzten Switch-Konfiguration zu kombinieren.
-
-Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Netzwerk-Switches.
-
---
-====
-
-
 == Konfigurationsanforderungen
 
 Für die Konfiguration benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelverbindern für Ihre Switches.

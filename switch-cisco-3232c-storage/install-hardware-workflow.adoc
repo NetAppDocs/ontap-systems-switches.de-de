@@ -20,3 +20,7 @@ Installieren Sie den 3232C-Speicherschalter.
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-cisco-nexus-3232c-storage.html["Installieren Sie den Switch in einem NetApp -Schrank."]
 [role="quick-margin-para"]
 Installieren Sie den 3232C-Speicherschalter und die Durchgangsplatte in einem NetApp-Schrank nach Bedarf.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:cabling-considerations-3232c-storage.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"]
+[role="quick-margin-para"]
+Überprüfen Sie die Verkabelungs- und Konfigurationsaspekte für den 3232C Storage Switch.

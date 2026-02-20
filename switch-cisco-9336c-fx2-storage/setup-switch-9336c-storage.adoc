@@ -20,12 +20,12 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
 * Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
 * Vollendetlink:setup-worksheet-9336c-storage.html["Verkabelungs-Arbeitsblätter"] Die
-* Anwendbare NetApp -Clusternetzwerk- und Managementnetzwerk-RCFs, die von der NetApp -Support-Website heruntergeladen wurden unter http://mysupport.netapp.com/["mysupport.netapp.com"^] Die  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert. Diese Switches verfügen ebenfalls über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
+* Anwendbare NetApp-Netzwerk- und Management-Netzwerk-RCFs, die von der NetApp Support Site unter  http://mysupport.netapp.com/["mysupport.netapp.com"^] heruntergeladen wurden. Alle Cisco Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco-Werkskonfiguration geliefert. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
 * Erforderliche Schalterdokumentation. Sehenlink:required-documentation-9336c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
 
 
 .Schritte
-. Führen Sie eine Erstkonfiguration der Cluster-Netzwerk-Switches durch.
+. Führen Sie eine Erstkonfiguration der Netzwerk-Switches durch.
 +
 Beantworten Sie die folgenden Fragen zur Ersteinrichtung, wenn Sie den Switch zum ersten Mal einschalten.  Die Sicherheitsrichtlinie Ihrer Website definiert die zu aktivierenden Antworten und Dienste.
 
@@ -188,7 +188,7 @@ NOTE: Wenn Sie die Konfiguration in diesem Schritt nicht speichern, werden beim 
 
 |===
 . Überprüfen Sie die von Ihnen getroffenen Konfigurationseinstellungen in der Anzeige, die am Ende des Setups erscheint, und stellen Sie sicher, dass Sie die Konfiguration speichern.
-. Überprüfen Sie die Version auf den Cluster-Netzwerk-Switches und laden Sie gegebenenfalls die von NetApp unterstützte Softwareversion auf die Switches herunter. https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
+. Prüfen Sie die Version auf den Netzwerk-Switches und laden Sie gegebenenfalls die von NetApp unterstützte Version der Software von der  https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite auf die Switches herunter.
 
 
 .Wie geht es weiter?
