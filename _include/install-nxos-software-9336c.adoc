@@ -444,7 +444,7 @@ plugin
 Active Package(s):
 ----
 ====
-. Aktualisieren Sie das EPLD-Image und starten Sie den Switch neu.
+. Aktualisieren Sie das EPLD-Image und starten Sie den Switch neu. Wenn Sie NX-OS 10.5(3)F oder höher verwenden, müssen Sie kein separates EPLD-Image-Upgrade durchführen, da das EPLD-Image im NX-OS-Image enthalten ist. Überspringen Sie diesen Schritt und fahren Sie mit der Überprüfung der Cluster-Port-Gesundheit fort.
 +
 .Beispiel anzeigen
 [%collapsible]

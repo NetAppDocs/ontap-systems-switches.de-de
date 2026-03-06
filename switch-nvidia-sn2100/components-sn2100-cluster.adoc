@@ -58,7 +58,7 @@ Schienensatz, NVIDIA Einzelschalter kurze Tiefe
 
 |===
 
-NOTE: Weitere Informationen finden Sie in der NVIDIA Dokumentation. https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installation Ihres SN2100-Weichen- und Schienensatzes"^] Die
+NOTE: Weitere Einzelheiten hierzu finden Sie in der NVIDIA-Dokumentation link:https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installation Ihres SN2100-Weichen- und Schienensatzes"^].
 
 .Wie geht es weiter?
 Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die folgenden überprüfen: link:required-documentation-sn2100-cluster.html["erforderliche Dokumentation"]Die

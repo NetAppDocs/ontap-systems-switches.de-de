@@ -2,7 +2,7 @@
 permalink: switch-nvidia-sn2100-storage/install-hardware-sn2100-storage.html 
 sidebar: sidebar 
 keywords: switches hardware installation 
-summary: Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokumentation von NVIDIA. 
+summary: Informationen zur Installation der SN2100-Hardware finden Sie in der NVIDIA Dokumentation. 
 ---
 = Installieren Sie die Hardware für den NVIDIA SN2100-Switch.
 :allow-uri-read: 
@@ -11,11 +11,13 @@ summary: Informationen zur Installation der BES-53248-Hardware finden Sie in der
 
 
 [role="lead"]
-Zur Installation der SN2100-Hardware konsultieren Sie bitte die Dokumentation von NVIDIA.
+Die Installation der NVIDIA SN2100 Switch-Hardware ist ein entscheidender erster Schritt beim Aufbau einer zuverlässigen und skalierbaren Netzwerkinfrastruktur zur Unterstützung von Datensicherung, Replikation und Management-Workflows.
+
+Befolgen Sie diese Schritte, um Ihre SN2100-Switches einzurichten und zu konfigurieren. Ausführliche Anweisungen finden Sie in der Dokumentation von NVIDIA.
 
 .Schritte
 . Überprüfen Sie dielink:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"] Die
-. Befolgen Sie die Anweisungen in https://docs.nvidia.com/networking/display/sn2000pub/Installation["NVIDIA Switch Installationsanleitung"^] Die
+. Befolgen Sie die Anweisungen in der link:https://docs.nvidia.com/networking/display/sn2000pub/Installation["NVIDIA Switch Installationsanleitung"^].
 
 
 .Wie geht es weiter?
