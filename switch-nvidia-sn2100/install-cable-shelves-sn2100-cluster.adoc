@@ -17,10 +17,7 @@ Falls Sie ein System haben, in dem die NS224-Laufwerksschächte als Switch-Attac
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMLP2876580["Kabelumschalter-angeschlossene NS224-Laufwerksschächte"^]
 
-* Prüfen Sie, ob Ihre Plattformmodelle mit unterstützter Hardware wie Speicherschaltern und Kabeln kompatibel sind:
-+
-https://hwu.netapp.com/["NetApp Hardware Universe"^]
-
+* Bestätigen Sie unterstützte Hardware, wie Speicherschalter und Kabel, für Ihr Plattformmodell. Siehe die link:https://hwu.netapp.com/["Hardware Universe"^] für Details.
 
 
 .Wie geht es weiter?

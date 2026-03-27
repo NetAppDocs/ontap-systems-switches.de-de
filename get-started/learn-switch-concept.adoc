@@ -46,6 +46,7 @@ Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstelle
 Storage-Switches ermöglichen das Routing von Daten zwischen Servern und Storage-Arrays in einem Storage Area Network (SAN).  Zu den von NetApp unterstützten Speicher-Switches gehören:
 
 * Cisco Nexus 9336C-FX2
+* Cisco Nexus 3232C
 * NVIDIA SN2100
 
 
@@ -60,12 +61,6 @@ Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktion
 
 
 
-== Ende der Verfügbarkeit
+== Verfügbarkeitsende-Schalter
 
-Die folgenden Speichersysteme sind nicht mehr käuflich erhältlich, werden aber weiterhin unterstützt:
-
-* Cisco Nexus 3232C
-* Cisco Nexus 3132Q-V
-* Cisco Nexus 92300YC
-* NetApp CN1610
-
+Eine Liste der Netzwerk-Switches, die nicht mehr zum Kauf erhältlich sind, aber weiterhin unterstützt werden, finden Sie unter link:../overview-eod.html["Verfügbarkeitsende-Schalter"].

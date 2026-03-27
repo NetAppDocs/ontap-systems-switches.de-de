@@ -17,7 +17,7 @@ Bei der Installation und Wartung des BES-53248-Switches sollten Sie unbedingt di
 
 == EFOS- und ONTAP Unterstützung
 
-Siehe die https://hwu.netapp.com/Switch/Index["NetApp Hardware Universe"^] Und https://mysupport.netapp.com/site/info/broadcom-cluster-switch["Broadcom-Switch-Kompatibilitätsmatrix"^] Informationen zur Kompatibilität von EFOS und ONTAP mit BES-53248-Switches finden Sie hier. Die Unterstützung von EFOS und ONTAP kann je nach Maschinentyp des BES-53248-Switches variieren. Einzelheiten zu allen Weichenmaschinentypen des Typs BES-52348 finden Sie unterlink:components-bes53248.html["Komponenten und Teilenummern für BES-53248 Cluster-Schalter"] Die Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"]^ Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.
+Siehe link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^] und link:https://mysupport.netapp.com/site/info/broadcom-cluster-switch["Broadcom-Switch-Kompatibilitätsmatrix"^] für Informationen zur EFOS- und ONTAP-Kompatibilität mit BES-53248-Switches. Die EFOS- und ONTAP-Unterstützung kann je nach spezifischem Maschinentyp des BES-53248-Switches variieren. Details zu allen BES-53248-Switch-Maschinentypen finden Sie unter link:components-bes53248.html["Komponenten und Teilenummern für BES-53248 Cluster-Schalter"]. Siehe link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"] für weitere Informationen zu den Installationsanforderungen des Switches.
 
 
 
@@ -63,7 +63,7 @@ Die von Broadcom unterstützte Tabelle der Portzuweisungen für den BES-53248 Cl
 100GbE-Cluster-Inter-Switch-Link (ISL)-Ports, Basiskonfiguration
 
 |===
-Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports finden Sie hier. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Für weitere Informationen zu den Installationsanforderungen des Schalters.
+Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.com/Switch/Index["Hardware Universe"]. Weitere Informationen zu den Installationsvoraussetzungen für Switches finden Sie in der link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
 
 
 
@@ -77,7 +77,7 @@ Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Infor
 
 === Zusätzliche Anforderungen
 
-* Wenn Sie zusätzliche Lizenzen erwerben, siehelink:configure-licenses.html["Aktivieren Sie neu lizenzierte Ports"] Einzelheiten zur Aktivierung finden Sie dort.
+* Wenn Sie zusätzliche Lizenzen erwerben, lesen Sie link:configure-licenses.html["Aktivieren Sie neu lizenzierte Ports"] für Einzelheiten zur Aktivierung.
 * Wenn SSH aktiv ist, müssen Sie es nach Ausführung des Befehls manuell wieder aktivieren. `erase startup-config` und den Switch neu starten.
 
 

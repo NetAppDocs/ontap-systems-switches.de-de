@@ -52,7 +52,7 @@ Siehe Folgendes:
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
 
 * Lassen Sie AutoSupport während der Wartungsarbeiten aktiviert.
-* Lösen Sie vor und nach der Wartung einen Wartungs AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Siehe diesen Wissensdatenbankartikellink:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^] für weitere Einzelheiten.
+* Lösen Sie vor und nach der Wartung eine Wartungs-AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren. Weitere Einzelheiten finden Sie in diesem Knowledge Base Artikel link:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^].
 * Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Wissensdatenbankartikel.link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP -Systemen?"^] Die
 
 
@@ -87,7 +87,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 
 Die Anzahl der 10-GbE- und 40/100-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter [URL] verfügbar sind.link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
 
-Die Beispiele in diesem Ersetzungsverfahren verwenden vier Knoten.  Zwei der Knoten nutzen vier 10-GB-Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d.  Die anderen beiden Knoten verwenden zwei 40-GB-Cluster-Interconnect-Ports: e4a und e4e.  Siehe dielink:https://hwu.netapp.com["Hardware Universe"^] um die korrekten Cluster-Ports für Ihre Plattform zu überprüfen.
+Die Beispiele in dieser Austauschprozedur verwenden vier Knoten. Zwei der Knoten nutzen vier 10-GB-Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten nutzen zwei 40-GB-Cluster-Interconnect-Ports: e4a und e4e. Siehe die link:https://hwu.netapp.com["Hardware Universe"^] zur Überprüfung der richtigen Cluster-Ports für Ihre Plattform.
 
 
 
@@ -95,7 +95,7 @@ Die Beispiele in diesem Ersetzungsverfahren verwenden vier Knoten.  Zwei der Kno
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
 +
-`system node autosupport invoke -node * -type all - message MAINT=xh`
+`system node autosupport invoke -node * -type all -message MAINT=xh`
 
 +
 _x_ ist die Dauer des Wartungsfensters in Stunden.
@@ -462,7 +462,7 @@ Larger than PMTU communication succeeds on 32 path(s) RPC status:
 
 . Schalten Sie die Ports 1/31 und 1/32 am Cluster-Switch CL1 ab.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -482,7 +482,7 @@ Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden List
 . Entfernen Sie die Inter-Switch-Link-Kabel (ISL) von den Ports e1/31 und e1/32 des Cluster-Switches CL2 und schließen Sie sie an die gleichen Ports des Ersatz-Switches C2 an.
 . Aktivieren Sie die ISL-Ports 1/31 und 1/32 am Cluster-Switch CL1.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -500,7 +500,7 @@ Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden List
 ====
 . Überprüfen Sie, ob die ISLs auf CL1 aktiv sind.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 Die Ports Eth1/31 und Eth1/32 sollten anzeigen `(P)` Das bedeutet, dass die ISL-Ports im Portkanal aktiv sind:
@@ -527,7 +527,7 @@ Group Port-        Type   Protocol  Member Ports
 ====
 . Überprüfen Sie, ob die ISLs auf dem Cluster-Switch C2 aktiv sind.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen

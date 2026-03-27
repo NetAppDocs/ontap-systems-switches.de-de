@@ -4,22 +4,22 @@ sidebar: sidebar
 keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9332d-gx2b 
 summary: Sie können das RCF installieren, nachdem Sie den Nexus 9332D-GX2B-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
 ---
-= Übersicht zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF).
+= Übersicht zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9332D-GX2B-Switch zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
+Sie installieren die Referenz-Konfigurationsdatei (RCF), nachdem Sie den Nexus 9332D-GX2B Switch zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn bereits eine Version der RCF-Datei auf Ihrem Switch installiert ist.
 
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation oder Aufrüstung Ihres RCF erhalten Sie bei Bedarf.
+Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] bei der Installation oder Aktualisierung Ihres RCF.
 
 .Verfügbare RCF-Konfiguration
 * *Cluster-HA-Storage AFX* - Alle Ports sind im 4x100GbE Breakout-Modus konfiguriert, der universell AFX-Knotencluster, HA, Speicherports und NX224-Speichergehäuseports unterstützt.  400GbE ISL zwischen den Switches.  (_Cluster-HA-Storage AFX RCF_vxx.x_).
 
 
-Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
+Spezifische Details zur Port- und VLAN-Nutzung finden Sie im Banner und im Abschnitt „Wichtige Hinweise“ Ihres RCF. Weitere Informationen finden Sie unter link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^].
 
 .Empfohlene Dokumentation
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches (NSS)"^]
@@ -41,7 +41,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 
 
-Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Ports auf Ihrer Plattform zu überprüfen.
+Siehe  https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^], um die korrekten Ports auf Ihrer Plattform zu überprüfen.
 
 
 NOTE: Die Befehlsausgaben können je nach ONTAP Version variieren.

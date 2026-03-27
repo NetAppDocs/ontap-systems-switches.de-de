@@ -21,7 +21,7 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
 * Vollendetlink:setup-worksheet-9336c-storage.html["Verkabelungs-Arbeitsblätter"] Die
 * Anwendbare NetApp-Netzwerk- und Management-Netzwerk-RCFs, die von der NetApp Support Site unter  http://mysupport.netapp.com/["mysupport.netapp.com"^] heruntergeladen wurden. Alle Cisco Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco-Werkskonfiguration geliefert. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
-* Erforderliche Schalterdokumentation. Sehenlink:required-documentation-9336c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
+* Erforderliche Switch-Dokumentation. Weitere Informationen finden Sie unter link:required-documentation-9336c-storage.html["Erforderliche Dokumentation"].
 
 
 .Schritte

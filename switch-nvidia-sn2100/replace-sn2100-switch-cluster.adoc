@@ -49,7 +49,7 @@ NOTE: Sie müssen den Befehl zur Migration eines Cluster-LIF von dem Knoten ausf
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
 
 * Lassen Sie AutoSupport während der Wartungsarbeiten aktiviert.
-* Lösen Sie vor und nach der Wartung einen Wartungs AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Siehe diesen Wissensdatenbankartikel https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^] für weitere Einzelheiten.
+* Lösen Sie vor und nach der Wartung eine Wartungs-AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren. Weitere Einzelheiten finden Sie in diesem Knowledge Base Artikel link:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^].
 * Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Wissensdatenbankartikel. https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP -Systemen?"^] Die
 
 

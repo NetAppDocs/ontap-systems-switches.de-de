@@ -38,7 +38,7 @@ Bitte beachten Sie die folgenden Anforderungen an die Clusterumgebung.
 ** Es besteht Konsolenzugriff auf die Cluster-Switches.
 ** Die Knoten-zu-Knoten- und Schalter-zu-Schalter-Verbindungen des BES-53248 verwenden Twinax- oder Glasfaserkabel.
 +
-Der link:https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält Informationen zur ONTAP Kompatibilität, zur unterstützten EFOS-Firmware und zur Verkabelung mit BES-53248-Switches. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Für weitere Informationen zu den Installationsanforderungen des Schalters.
+Die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] enthält Informationen zur ONTAP-Kompatibilität, unterstützten EFOS-Firmware und zur Verkabelung von BES-53248 Switches. Weitere Informationen zu den Installationsanforderungen für Switches finden Sie unter link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
 
 
 
@@ -72,7 +72,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind `e0a` Und `e0b` Die
 +
-Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] Enthält die aktuellsten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
+Die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
@@ -280,7 +280,7 @@ cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert fals
 ----
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 1 und verbinden Sie dann e0a mit Port 1 des Cluster-Switches cs1 unter Verwendung der von den BES-53248-Switches unterstützten geeigneten Verkabelung.
 +
-Der https://hwu.netapp.com/Home/Index["_NetApp Hardware Universe_"^] enthält weitere Informationen zur Verkabelung.
+Die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 2 und verbinden Sie dann e0a mit Port 2 des Cluster-Switches cs1 unter Verwendung der von den BES-53248-Switches unterstützten geeigneten Verkabelung.
 . Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.

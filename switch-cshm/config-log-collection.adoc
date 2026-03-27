@@ -256,7 +256,7 @@ system switch ethernet log show
 --
 ====
 
-CAUTION: Wenn von der Protokollerfassungsfunktion Fehlerstatus gemeldet werden (sichtbar in der Ausgabe von `system switch ethernet log show` ), sehenlink:log-collection-troubleshoot.html["Fehlerbehebung bei der Protokollerfassung"] für weitere Einzelheiten.
+CAUTION: Falls von der Protokollerfassungsfunktion Fehlerstatus gemeldet werden (sichtbar in der Ausgabe von  `system switch ethernet log show`), siehe link:log-collection-troubleshoot.html["Fehlerbehebung bei der Protokollerfassung"] für weitere Details.
 
 .Wie geht es weiter?
 link:config-snmpv3.html["SNMPv3 konfigurieren (optional)"].

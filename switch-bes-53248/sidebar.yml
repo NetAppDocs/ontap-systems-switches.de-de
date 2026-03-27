@@ -35,12 +35,12 @@ entries:
     url: "/switch-bes-53248/efos-install-rcf-license-file.html"
   - title: Lizenzen installieren
     url: "/switch-bes-53248/configure-licenses.html"
-  - title: RCF-Konfigurationsdatei installieren
+  - title: Installieren Sie den RCF
     url: "/switch-bes-53248/configure-install-rcf.html"
   - title: SSH für die Protokollerfassung aktivieren
     url: "/switch-bes-53248/configure-ssh.html"
-  - title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
-    url: "/switch-bes-53248/reset-switch-bes-53248.html"
+- title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
+  url: "/switch-bes-53248/reset-switch-bes-53248.html"
 - title: Aktualisieren Sie den Switch
   pdf-filename: Upgrade_switches_bes53248
   entries:

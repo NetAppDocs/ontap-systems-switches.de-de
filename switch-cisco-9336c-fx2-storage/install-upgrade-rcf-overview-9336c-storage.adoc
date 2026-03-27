@@ -13,7 +13,7 @@ summary: Sie können die RCF-Datei installieren, nachdem Sie den Switch Nexus 93
 [role="lead"]
 Die Referenzkonfigurationsdatei (RCF) wird nach der erstmaligen Einrichtung des Speicherswitches Nexus 9336C-FX2 installiert. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
 
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation oder Aufrüstung Ihres RCF erhalten Sie bei Bedarf.
+Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] bei der Installation oder Aktualisierung Ihres RCF.
 
 .Verfügbare RCF-Konfiguration
 Storage - (Storage RCF 1._xx_) ist die verfügbare RCF-Konfiguration, bei der alle Ports für 100GbE NVMe storage connections konfiguriert sind.
@@ -36,7 +36,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Die Knotennamen lauten cluster1-01 und cluster1-02.
 
 
-Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Ports auf Ihrer Plattform zu überprüfen.
+Siehe die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] zur Überprüfung der korrekten Ports auf Ihrer Plattform.
 
 
 NOTE: Die Befehlsausgaben können je nach ONTAP Version variieren.

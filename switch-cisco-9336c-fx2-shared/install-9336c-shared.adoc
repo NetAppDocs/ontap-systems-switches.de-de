@@ -19,15 +19,15 @@ Befolgen Sie diese Anweisungen, um Cisco Nexus 9336C-FX2 Shared Switches zu konf
 .Bevor Sie beginnen
 Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
-* Erforderliche Dokumentation für gemeinsam genutzte Switches, Controller und ONTAP .  Sehenlink:required-documentation-9336c-shared.html["Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 Shared Switches"] Und https://docs.netapp.com/us-en/ontap/index.html["NetApp ONTAP-Dokumentation"^] Die
+* Erforderliche Dokumentation für gemeinsam genutzte Switches, Controller und ONTAP. Siehe link:required-documentation-9336c-shared.html["Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 Shared Switches"] und  https://docs.netapp.com/us-en/ontap/index.html["NetApp ONTAP-Dokumentation"^].
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
-* Ausgefüllte Verkabelungs-Arbeitsblätter. Sehenlink:cable-9336c-shared.html["Füllen Sie das Verkabelungsarbeitsblatt für den Cisco Nexus 9336C-FX2 aus."] .  Weitere Informationen zur Verkabelung finden Sie unter https://hwu.netapp.com["Hardware Universe"] Die
+* Ausgefüllte Verkabelungsarbeitsblätter. Siehe link:cable-9336c-shared.html["Füllen Sie das Verkabelungsarbeitsblatt für den Cisco Nexus 9336C-FX2 aus."]. Weitere Informationen zur Verkabelung finden Sie im link:https://hwu.netapp.com["Hardware Universe"^].
 
 
 .Schritte
 . Die Switches, Controller und NS224 NVMe-Speichergehäuse werden in ein Rack eingebaut.
 +
-Siehe dielink:../switch-cisco-9336c-fx2/install-switch-and-passthrough-panel-9336c-cluster.html["Regaleinbauanleitung"] um zu lernen, wie man den Switch in einem NetApp -Schrank montiert.
+Siehe link:../switch-cisco-9336c-fx2/install-switch-and-passthrough-panel-9336c-cluster.html["Regaleinbauanleitung"] , um zu erfahren, wie der Switch in einem NetApp Schrank montiert wird.
 
 . Schalten Sie die Switches, Controller und NS224 NVMe-Speichergehäuse ein.
 

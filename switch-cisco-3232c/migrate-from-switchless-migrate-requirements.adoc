@@ -53,7 +53,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Die Knoten sind *n1* und *n2*.
 
 
-Die Beispiele in diesem Verfahren verwenden zwei Knoten, die jeweils zwei 40-GbE-Cluster-Verbindungsports *e4a* und *e4e* verwenden.  Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] enthält Details zu den Cluster-Ports auf Ihren Plattformen.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten, die jeweils zwei 40-GbE-Cluster-Verbindungsports *e4a* und *e4e* verwenden.  Derlink:https://hwu.netapp.com/["Hardware Universe"^] enthält Details zu den Cluster-Ports auf Ihren Plattformen.
 
 * *n1_clus1* ist die erste logische Clusterschnittstelle (LIF), die für den Knoten *n1* mit dem Cluster-Switch *C1* verbunden wird.
 * *n1_clus2* ist der erste Cluster-LIF, der mit dem Cluster-Switch *C2* für den Knoten *n1* verbunden ist.

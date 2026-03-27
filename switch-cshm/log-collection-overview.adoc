@@ -13,4 +13,4 @@ summary: Sie können die bereitgestellten Befehle verwenden...
 [role="lead"]
 Wenn die Protokollerfassung eingerichtet ist, können Sie eine stündliche Erfassung periodischer Daten aktivieren, die von AutoSupport gesammelt werden, und detaillierte Supportprotokolle anfordern.
 
-Sehenlink:config-log-collection.html["Protokollerfassung konfigurieren"] für weitere Einzelheiten.
+Weitere Einzelheiten finden Sie unter link:config-log-collection.html["Protokollerfassung konfigurieren"].

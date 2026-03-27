@@ -14,7 +14,7 @@ summary: 'Das Betriebssystem Cumulus Linux (CL) kann entweder installiert werden
 Gehen Sie wie folgt vor, um Cumulus Linux (CL) OS zu installieren, wenn der Switch im ONIE-Modus läuft.
 
 
-NOTE: Cumulus Linux (CL) OS kann entweder installiert werden, wenn auf dem Switch ONIE oder Cumulus Linux läuft (siehelink:install-cumulus-mode-sn2100-cluster.html["Installation im Cumulus-Modus"] ).
+NOTE: Cumulus Linux (CL) OS kann entweder installiert werden, wenn der Switch ONIE oder Cumulus Linux ausführt (siehe link:install-cumulus-mode-sn2100-cluster.html["Installation im Cumulus-Modus"]).
 
 .Informationen zu diesem Vorgang
 Sie können Cumulus Linux mithilfe der Open Network Install Environment (ONIE) installieren, die die automatische Erkennung eines Netzwerkinstallationsabbilds ermöglicht.  Dies erleichtert das Systemmodell der Absicherung von Switches durch die Wahl eines Betriebssystems, wie beispielsweise Cumulus Linux.  Cumulus Linux lässt sich am einfachsten mit ONIE über die lokale HTTP-Erkennung installieren.
@@ -344,7 +344,7 @@ cumulus@cumulus:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] für weitere Informationen.
+Weitere Informationen finden Sie unter  https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^].
 
 
 

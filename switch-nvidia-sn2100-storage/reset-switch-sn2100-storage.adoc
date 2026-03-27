@@ -21,7 +21,7 @@ So setzen Sie den SN2100-Speicherschalter auf die Werkseinstellungen zurück:
 
 
 
-NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unterlink:configure-software-sn2100-storage.html["Softwareinstallations-Workflow für NVIDIA SN2100-Switches"] Die
+NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unter link:configure-software-sn2100-storage.html["Softwareinstallations-Workflow für NVIDIA SN2100-Switches"].
 
 .Schritte
 [role="tabbed-block"]
@@ -72,7 +72,7 @@ Do you want to continue? [y/n] *y*
 ----
 
 
-Siehe NVIDIA https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-511/Installation-Management/Factory-Reset/["Werksreset"^] Weitere Einzelheiten finden Sie in der Dokumentation.
+Weitere Details finden Sie in der NVIDIA https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-511/Installation-Management/Factory-Reset/["Werksreset"^] Dokumentation.
 
 --
 ====

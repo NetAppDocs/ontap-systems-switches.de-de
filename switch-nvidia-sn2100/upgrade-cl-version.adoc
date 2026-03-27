@@ -39,7 +39,7 @@ NOTE: Bei jedem Upgrade von Cumulus Linux wird die gesamte Dateisystemstruktur g
 
 CAUTION: Das Standardpasswort für das Cumulus-Benutzerkonto lautet *cumulus*.  Beim ersten Anmelden bei Cumulus Linux müssen Sie dieses Standardpasswort ändern.  Vor der Installation eines neuen Images müssen Sie alle Automatisierungsskripte aktualisieren.  Cumulus Linux bietet Befehlszeilenoptionen, um das Standardpasswort während des Installationsprozesses automatisch zu ändern.
 
-Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-510/Installation-Management/Installing-a-New-Cumulus-Linux-Image/["Installation eines neuen Cumulus Linux-Images"^] für weitere Informationen.
+Weitere Informationen finden Sie unter link:https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-510/Installation-Management/Installing-a-New-Cumulus-Linux-Image/["Installation eines neuen Cumulus Linux-Images"^].
 
 .Schritte
 [role="tabbed-block"]
@@ -273,7 +273,7 @@ cumulus@sw1:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] für weitere Informationen.
+Weitere Informationen finden Sie in der link:https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^].
 
 
 
@@ -498,7 +498,7 @@ cumulus@sw1:mgmt:~$ *sudo adduser admin nvshow*
      Done.
 ----
 +
-Sehen https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^] für weitere Informationen.
+Weitere Informationen finden Sie unter link:https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-54/System-Configuration/Authentication-Authorization-and-Accounting/User-Accounts/["NVIDIA Benutzerkonten"^].
 
 
 

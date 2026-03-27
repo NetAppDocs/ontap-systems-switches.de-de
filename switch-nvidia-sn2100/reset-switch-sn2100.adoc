@@ -21,7 +21,7 @@ So setzen Sie den SN2100-Cluster-Switch auf die Werkseinstellungen zurück:
 
 
 
-NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unterlink:configure-software-overview-sn2100-cluster.html["Softwareinstallations-Workflow für NVIDIA SN2100-Switches"] Die
+NOTE: Weitere Informationen zur Installation von Cumulus Linux finden Sie unter link:configure-software-overview-sn2100-cluster.html["Softwareinstallations-Workflow für NVIDIA SN2100-Switches"].
 
 .Schritte
 [role="tabbed-block"]
@@ -72,7 +72,7 @@ Do you want to continue? [y/n] *y*
 ----
 
 
-Siehe NVIDIA https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-511/Installation-Management/Factory-Reset/["Werksreset"^] Weitere Einzelheiten finden Sie in der Dokumentation.
+Weitere Einzelheiten entnehmen Sie bitte der NVIDIA link:https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-511/Installation-Management/Factory-Reset/["Werksreset"^] Dokumentation.
 
 --
 ====

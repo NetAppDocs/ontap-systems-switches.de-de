@@ -46,7 +46,7 @@ Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen S
 
 Stellen Sie sicher, dass:
 
-* Sie verfügen über die passende Anzahl und Art an Kabeln und Kabelsteckern für Ihre Switches. Siehe die https://hwu.netapp.com["Hardware Universe"^] Die
+* Sie verfügen über die richtige Anzahl und Art von Kabeln und Kabelverbindern für Ihre Switches. Siehe link:https://hwu.netapp.com["Hardware Universe"^].
 * Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolenport herstellen.
 
 
@@ -59,10 +59,10 @@ Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen.
 * IP-Subnetz für den Verwaltungsnetzwerkverkehr
 * Hostnamen und IP-Adressen für jeden Speichersystem-Controller und alle entsprechenden Switches
 * Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird. Bei den Systemen AFF A800 und AFF A700s verwendet die e0M-Schnittstelle einen dedizierten Ethernet-Anschluss.
-* Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen.
+* Beziehen Sie sich auf die link:https://hwu.netapp.com["Hardware Universe"^] für die neuesten Informationen.
 
 
-Weitere Informationen zur Erstkonfiguration Ihres Switches finden Sie in der folgenden Anleitung: https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Cisco Nexus 9336C-FX2 Installations- und Upgrade-Leitfaden"^] Die
+Weitere Informationen zur Erstkonfiguration Ihres Switches finden Sie im folgenden link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9336c-fx2-e/cisco-nexus-9336c-fx2-e-nx-os-mode-switch-hardware-installation-guide.html["Cisco Nexus 9336C-FX2 Installations- und Upgrade-Leitfaden"^].
 
 .Was kommt als nächstes
 Nachdem Sie die Konfigurationsanforderungen geprüft haben, können Sie Ihre link:components-9336c-cluster.html["Komponenten und Teilenummern"]Die

@@ -36,7 +36,7 @@ Bevor Sie beginnen, führen Sie bitte die folgende Prozedur durch:link:prepare-n
 . Melden Sie sich über SSH oder über eine serielle Konsole am Switch cs1 an.
 . Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] .
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
 .Beispiel anzeigen
@@ -56,7 +56,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] .
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
 .Beispiel anzeigen

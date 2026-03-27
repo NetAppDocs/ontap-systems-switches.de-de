@@ -30,7 +30,7 @@ Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Nexus-Sw
 . Melden Sie sich über SSH oder über eine serielle Konsole am Switch cs1 an.
 . Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Leitfaden in derlink:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
 .Beispiel anzeigen
@@ -50,7 +50,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Leitfaden in derlink:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
 Dieses Beispiel zeigt die RCF-Datei. `Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt` wird auf Switch CS1 installiert:
@@ -161,7 +161,7 @@ Stellen Sie sicher, dass Sie Folgendes konfigurieren:
 `cs1# echo "hardware access-list tcam region ing-l2-qos 1280" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] für weitere Einzelheiten.
+Weitere Einzelheiten finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^].
 
 . Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
 +

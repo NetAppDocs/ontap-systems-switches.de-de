@@ -33,8 +33,4 @@ Installieren oder aktualisieren Sie das RCF, nachdem Sie den Cisco 9364D-GX2A-Sw
 [role="quick-margin-para"]
 Stellen Sie sicher, dass SSH auf dem Cisco 9364D-GX2A-Switch für die Verwendung mit dem Ethernet Switch Health Monitor (CSHM) und den Protokollerfassungsfunktionen aktiviert ist.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-9364d.html["Setzen Sie den Schalter auf die Werkseinstellungen zurück."]
-[role="quick-margin-para"]
-Löschen Sie die Einstellungen des Cisco 9364D-GX2A-Switches.
-
 Sobald Sie die Konfiguration Ihrer Schalter abgeschlossen haben, gehen Sie zulink:https://docs.netapp.com/us-en/ontap-afx/install-setup/power-on-hardware.html["Schalten Sie Ihr AFX 1K-Speichersystem ein"^] Die

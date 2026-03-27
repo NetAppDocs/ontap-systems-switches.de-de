@@ -50,7 +50,7 @@ swp15-16
 100GbE Inter-Switch Link (ISL)-Ports
 
 |===
-Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] Weitere Informationen zu Switch-Ports finden Sie hier.
+Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^].
 
 
 
@@ -190,7 +190,7 @@ UP     swp4      100G  9216   Trunk/L2                     Master: bridge(UP)
 
 --
 ====
-Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["Der SN2100-Switch kann keine Verbindung über 40/100GbE-Kupferkabel herstellen."^] für weitere Einzelheiten.
+Weitere Einzelheiten finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric_Interconnect_and_Management_Switches/NVIDIA_SN2100_switch_fails_to_connect_using_40_100GbE_copper_cable["Der SN2100-Switch kann keine Verbindung über 40/100GbE-Kupferkabel herstellen."^].
 
 Unter Cumulus Linux 4.4.2 werden Kupferverbindungen auf SN2100-Switches mit X1151A NIC, X1146A NIC oder integrierten 100GbE-Ports nicht unterstützt. Beispiel:
 

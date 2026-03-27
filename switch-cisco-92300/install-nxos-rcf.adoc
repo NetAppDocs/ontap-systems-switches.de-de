@@ -22,14 +22,14 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 * Die Cluster-Ports auf jedem Knoten sind benannt `e0a` Und `e0b` Die
 +
-Siehe dielink:https://hwu.netapp.com/Home/Index["Hardware-Universum^_"] für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.
+Siehe die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports. Siehe link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] für weitere Informationen zu den Installationsanforderungen für Switches.
 
 
 
 .Unterstützte Ports und Knotenverbindungen
 * Die für die Nexus 92300YC Switches unterstützten Inter-Switch Links (ISLs) sind die Ports 1/65 und 1/66.
 * Die für die Nexus 92300YC Switches unterstützten Knotenverbindungen sind die Ports 1/1 bis 1/66.
-* Die Beispiele in diesem Verfahren verwenden zwei Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports. `e0a` Und `e0b` Die  Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
+* Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Knoten verwenden zwei 10GbE-Cluster-Interconnect-Ports `e0a` und `e0b`. Siehe link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^], um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
 
 
 .Bevor Sie beginnen

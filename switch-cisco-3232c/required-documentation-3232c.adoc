@@ -11,13 +11,13 @@ summary: Für die Installation und Wartung des Cisco Nexus 3232C Switches sollte
 
 
 [role="lead"]
-Für die Installation und Wartung des Cisco Nexus 3232C Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation lesen.
+Für die Installation des Cisco Nexus 3232C Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
 
 
 
 == Switch-Dokumentation
 
-Für die Einrichtung der Cisco Nexus 3232C Switches benötigen Sie die folgende Dokumentation von https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/series.html["Cisco Nexus 3000 Series Switches Unterstützung"^] Seite.
+Um die Cisco Nexus 3232C Switches einzurichten, benötigen Sie die folgende Dokumentation von link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/series.html["Cisco Nexus 3000 Series Switches Unterstützung"^].
 
 [cols="1,2"]
 |===
@@ -83,7 +83,7 @@ Bietet Informationen zur Einhaltung internationaler behördlicher Vorschriften, 
 
 == ONTAP-Systemdokumentation
 
-Um ein ONTAP -System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Version des Betriebssystems von https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9"^] Die
+Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Version des Betriebssystems.
 
 [cols="1,2"]
 |===
@@ -98,14 +98,14 @@ Beschreibt die Installation von NetApp -Hardware.
 
 
  a| 
-ONTAP-Dokumentation
+link:https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9"^]
  a| 
 Bietet detaillierte Informationen zu allen Aspekten der ONTAP Releases.
 
 
 
  a| 
-https://hwu.netapp.com["Hardware Universe"^]
+link:https://hwu.netapp.com["Hardware Universe"^]
  a| 
 Bietet Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
 
@@ -114,7 +114,7 @@ Bietet Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
 
 == Dokumentation für Schienenbausatz und Schrank
 
-Informationen zur Installation eines Cisco 3232C Switches in einem NetApp -Schrank finden Sie in der folgenden Hardware-Dokumentation.
+Um einen 3232C Cisco Switch in einem NetApp Schrank zu installieren, lesen Sie die folgende Hardware-Dokumentation.
 
 [cols="1,2"]
 |===
@@ -122,7 +122,7 @@ Informationen zur Installation eines Cisco 3232C Switches in einem NetApp -Schra
 
 
  a| 
-https://library.netapp.com/ecm/ecm_download_file/ECMM1280394["42U Systemschrank, Tiefenführung"^]
+link:https://library.netapp.com/ecm/ecm_download_file/ECMM1280394["42U Systemschrank, Tiefenführung"^]
  a| 
 Beschreibt die mit dem 42U-Systemschrank verbundenen FRUs und gibt Anweisungen zur Wartung und zum Austausch der FRUs.
 

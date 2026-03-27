@@ -36,6 +36,6 @@ Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (C
 
 == Ähnliche Informationen
 
-* Weitere Informationen zu Switch-Ports finden Sie unter  https://hwu.netapp.com/Switch/Index["Hardware Universe"^].
-* Weitere Informationen zu den Installationsanforderungen für Netzwerk-Switches finden Sie unter  https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
+* Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^].
+* Weitere Informationen zu den Installationsanforderungen für Netzwerk-Switches finden Sie unter link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
 

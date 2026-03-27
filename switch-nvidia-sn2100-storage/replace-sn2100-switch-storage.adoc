@@ -20,7 +20,7 @@ Bevor Sie die Cumulus-Software und die RCFs auf einem NVIDIA SN2100-Speicher-Swi
 * Sie haben die entsprechenden RCFs heruntergeladen.
 
 
-Der http://hwu.netapp.com["Hardware Universe"^] Enthält detaillierte Informationen zu den unterstützten Ports und deren Konfigurationen.
+Die link:http://hwu.netapp.com["Hardware Universe"^] bietet vollständige Details zu den unterstützten Ports und deren Konfigurationen.
 
 Die bestehende Netzwerkkonfiguration muss folgende Eigenschaften aufweisen:
 

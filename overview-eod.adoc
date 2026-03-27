@@ -4,7 +4,7 @@ permalink: overview-eod.html
 keywords: switches, fas, aff systems, end of availability, EOD 
 summary: EOD-Schalter für FAS und AFF Systeme. 
 ---
-= Ende der Verfügbarkeit
+= Verfügbarkeitsende-Schalter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

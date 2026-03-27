@@ -25,7 +25,7 @@ Der Migrationsprozess funktioniert für alle Knoten, die optische oder Twinax-An
 ** Die Zwei-Knoten-Konfiguration ohne Schalter ist ordnungsgemäß eingerichtet und funktioniert.
 ** Alle Cluster-Ports befinden sich im Status *up*.
 ** Alle logischen Schnittstellen (LIFs) des Clusters befinden sich im Status *up* und sind an ihren jeweiligen Ports angeschlossen.
-** Sehen https://hwu.netapp.com["Hardware Universe"^] für alle unterstützten ONTAP Versionen.
+** Siehe link:https://hwu.netapp.com["Hardware Universe"^] für alle unterstützten ONTAP Versionen.
 
 
 * Für die Konfiguration des Cisco Nexus 9336C-FX2 Switches:
@@ -34,7 +34,7 @@ Der Migrationsprozess funktioniert für alle Knoten, die optische oder Twinax-An
 ** Es besteht Konsolenzugriff auf die Cluster-Switches.
 ** Knoten-zu-Knoten-Switch- und Switch-zu-Switch-Verbindungen des Nexus 9336C-FX2 verwenden Twinax- oder Glasfaserkabel.
 +
-Sehen https://hwu.netapp.com["Hardware Universe"^] Weitere Informationen zur Verkabelung finden Sie hier.
+Weitere Informationen zur Verkabelung finden Sie in der link:https://hwu.netapp.com["Hardware Universe"^].
 
 
 
@@ -57,7 +57,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e0a und e0b.
 
 
-Sehen https://hwu.netapp.com["Hardware Universe"^] Informationen zu den Cluster-Ports für Ihre Plattformen finden Sie hier. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.
+Weitere Informationen zu den Cluster-Ports für Ihre Plattformen finden Sie in der link:https://hwu.netapp.com["Hardware Universe"^]. Weitere Informationen zu den Installationsvoraussetzungen für Switches finden Sie in der link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
 
 
 
@@ -291,9 +291,6 @@ Cluster
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 1 und verbinden Sie dann e0a mit Port 1 des Cluster-Switches cs1 unter Verwendung der von den 9336C-FX2-Switches unterstützten geeigneten Verkabelung.
 +
 Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
-
-+
-https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^]
 
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 2 und verbinden Sie dann e0a mit Port 2 des Cluster-Switches cs1 unter Verwendung der von den 9336C-FX2-Switches unterstützten geeigneten Verkabelung.
 . Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.

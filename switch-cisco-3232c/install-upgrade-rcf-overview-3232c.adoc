@@ -13,7 +13,7 @@ summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Heal
 [role="lead"]
 Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Nexus 3232C-Switches zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
 
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation oder Aufrüstung Ihres RCF erhalten Sie bei Bedarf.
+Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] bei der Installation oder Aktualisierung Ihres RCF.
 
 .Verfügbare RCF-Konfigurationen
 Die folgende Tabelle beschreibt die für verschiedene Konfigurationen verfügbaren RCFs.  Wählen Sie den für Ihre Konfiguration passenden RCF aus.
@@ -74,7 +74,7 @@ Alle Ports sind für 100GbE NVMe-Speicherverbindungen konfiguriert.
 
 |===
 .Verfügbare RCFs
-Die folgende Tabelle listet die verfügbaren RCFs für 3232C-Switches auf.  Wählen Sie die für Ihre Konfiguration passende RCF-Version aus. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
+Die folgende Tabelle listet die verfügbaren RCFs für 3232C-Switches auf. Wählen Sie die für Ihre Konfiguration passende RCF-Version. Weitere Informationen finden Sie unter link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^].
 
 [cols="1"]
 |===
@@ -120,12 +120,12 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 
 
-Die Beispiele in diesem Verfahren verwenden vier Knoten.  Diese Knoten verwenden zwei 10GbE-Cluster-Verbindungsports *e0a* und *e0b*.  Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
+Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Knoten verwenden zwei 10GbE-Cluster-Interconnect-Ports *e0a* und *e0b*. Siehe die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] zur Überprüfung der korrekten Cluster-Ports auf Ihren Plattformen.
 
 
 NOTE: Die Befehlsausgaben können je nach ONTAP Version variieren.
 
-Einzelheiten zu den verfügbaren RCF-Konfigurationen finden Sie unterlink:configure-software-overview-3232c-cluster.html["Softwareinstallations-Workflow"] .
+Einzelheiten zu den verfügbaren RCF-Konfigurationen finden Sie unter link:configure-software-overview-3232c-cluster.html["Softwareinstallations-Workflow"].
 
 .verwendete Befehle
 Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.

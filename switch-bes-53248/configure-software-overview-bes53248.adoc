@@ -32,7 +32,3 @@ Installieren oder aktualisieren Sie die RCF auf dem BES-53248 Cluster-Switch und
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh.html["Aktivieren Sie SSH auf BES-53248 Cluster-Switches."]
 [role="quick-margin-para"]
 Wenn Sie die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollerfassung nutzen, aktivieren Sie SSH auf den Switches.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:reset-switch-bes-53248.html["Setzen Sie den Schalter auf die Werkseinstellungen zurück."]
-[role="quick-margin-para"]
-Löschen Sie die Einstellungen des Cluster-Schalters BES-53248.

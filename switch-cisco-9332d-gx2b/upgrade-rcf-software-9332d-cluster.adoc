@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: install rcf, cisco switches 
 summary: Mit diesem Verfahren können Sie Ihre RCF-Version aktualisieren. 
 ---
-= Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF)
+= Aktualisieren Sie Ihre RCF-Version
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -428,7 +428,7 @@ cs1(config)# *exit*
 ----
 +
 
-CAUTION: Stellen Sie sicher, dass Sie *alle* verbundenen Ports herunterfahren, um Probleme mit der Netzwerkverbindung zu vermeiden. Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Node_out_of_quorum_when_migrating_cluster_lif_during_switch_OS_upgrade["Knoten außerhalb des Quorums bei Migration des Cluster-LIF während des Switch-OS-Upgrades"^] für weitere Einzelheiten.
+CAUTION: Stellen Sie sicher, dass Sie *alle* angeschlossenen Ports herunterfahren, um Netzwerkverbindungsprobleme zu vermeiden. Siehe den Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Node_out_of_quorum_when_migrating_cluster_lif_during_switch_OS_upgrade["Knoten außerhalb des Quorums bei Migration des Cluster-LIF während des Switch-OS-Upgrades"^] für weitere Details.
 
 . Überprüfen Sie, ob für die Cluster-LIFs ein Failover auf die auf Switch cs1 gehosteten Ports durchgeführt wurde. Dies kann einige Sekunden dauern.
 +
@@ -525,7 +525,7 @@ Stellen Sie sicher, dass Sie Folgendes konfigurieren:
 `cs1# echo "hardware access-list tcam region ing-l2-qos 1536" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] für weitere Einzelheiten.
+Weitere Einzelheiten finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^].
 
 . Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
 +
@@ -558,7 +558,7 @@ Möglicherweise müssen Sie die Einträge in der Host-Datei aktualisieren, die m
 
 . Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Führer.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in den  https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Guides.
 
 +
 .Beispiel anzeigen
@@ -578,7 +578,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Führer.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in den  https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Guides.
 
 +
 Dieses Beispiel zeigt die RCF-Datei. `NX9332D-GX2B-RCF-v10.0-Shared.txt` wird auf Switch CS1 installiert:
@@ -613,7 +613,7 @@ Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port
 . Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.
 . Nachdem Sie überprüft haben, ob die RCF-Versionen, die benutzerdefinierten Erweiterungen und die Schaltereinstellungen korrekt sind, kopieren Sie die `running-config` Datei an die `startup-config` Datei.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Führer.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in den  https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Guides.
 
 +
 `cs1# *copy running-config startup-config*`

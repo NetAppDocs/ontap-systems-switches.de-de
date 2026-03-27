@@ -40,8 +40,8 @@ entries:
     url: "/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html"
   - title: Installieren Sie die CSHM-Datei
     url: "/switch-nvidia-sn2100/setup-install-cshm-file.html"
-  - title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
-    url: "/switch-nvidia-sn2100/reset-switch-sn2100.html"
+- title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
+  url: "/switch-nvidia-sn2100/reset-switch-sn2100.html"
 - title: Migrieren Sie die Schalter
   pdf-filename: Migrate_switches_sn2100
   entries:

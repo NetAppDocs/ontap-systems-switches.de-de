@@ -23,7 +23,7 @@ Folgende Schalter werden unterstützt:
 * Nexus 3232C
 
 
-Die in diesem Verfahren unterstützten ONTAP und NX-OS-Versionen finden Sie auf der Cisco Ethernet Switches-Seite. Sehen https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"] .
+Die in diesem Verfahren unterstützten ONTAP- und NX-OS-Versionen finden Sie auf der Cisco Ethernet Switches-Seite. Siehe  https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^].
 
 .Anschlussports
 Die Switches verwenden die folgenden Ports, um eine Verbindung zu den Knoten herzustellen:
@@ -48,7 +48,7 @@ Die Switches verwenden die folgenden Ports, um eine Verbindung zu den Knoten her
 
 
 
-Der https://hwu.netapp.com["Hardware Universe"] enthält Informationen zur unterstützten Verkabelung für alle Cluster-Switches.
+Die link:https://hwu.netapp.com["Hardware Universe"^] enthält Informationen über die unterstützte Verkabelung für alle Cluster-Switches.
 
 .Was du brauchst
 * Bitte stellen Sie sicher, dass Sie die folgenden Aufgaben erledigt haben:

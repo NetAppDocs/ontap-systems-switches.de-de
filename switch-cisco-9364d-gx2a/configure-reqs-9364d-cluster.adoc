@@ -25,13 +25,13 @@ Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen.
 * IP-Subnetz für den Verwaltungsnetzwerkverkehr
 * Hostnamen und IP-Adressen für jeden Speichersystem-Controller und alle entsprechenden Switches
 * Die meisten Speichersystem-Controller werden über die e0M-Schnittstelle verwaltet, indem eine Verbindung zum Ethernet-Service-Port (Schraubenschlüsselsymbol) hergestellt wird.
-* Siehe die https://hwu.netapp.com["Hardware Universe"^] für die aktuellsten Informationen.
+* Beziehen Sie sich auf die link:https://hwu.netapp.com["Hardware Universe"^] für die neuesten Informationen.
 
 
 
 
 == Verkabelungsanforderungen
 
-* Sie verfügen über die passende Anzahl und Art an Kabeln und Kabelsteckern für Ihre Switches. Siehe die https://hwu.netapp.com["Hardware Universe"^] Die
+* Sie verfügen über die richtige Anzahl und Art von Kabeln und Kabelverbindern für Ihre Switches. Siehe link:https://hwu.netapp.com["Hardware Universe"^].
 * Je nach Art des Switches, den Sie zunächst konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Switch-Konsolenport herstellen.
 

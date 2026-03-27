@@ -33,7 +33,7 @@ Das NetApp Pass-Through-Panel-Kit enthält die folgende Hardware:
 
 NOTE: Die Überbrückungskabel sind nicht im Durchgangskit enthalten und sollten Ihren Schaltern beiliegen.  Falls sie nicht mit den Switches geliefert wurden, können Sie sie bei NetApp bestellen (Teilenummer X1558A-R6).
 
-* Informationen zu den erforderlichen Vorbereitungen, dem Inhalt des Kits und den Sicherheitsvorkehrungen finden Sie unter https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/aci_9336cfx2_hig/guide/b_n9336cFX2_aci_hardware_installation_guide.html["Hardware-Installationshandbuch für die Cisco Nexus 9000-Serie"^] Die
+* Für die anfänglichen Vorbereitungsanforderungen, den Kit-Inhalt und die Sicherheitsvorkehrungen beachten Sie bitte die link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/aci_9336cfx2_hig/guide/b_n9336cFX2_aci_hardware_installation_guide.html["Hardware-Installationshandbuch für die Cisco Nexus 9000-Serie"^].
 
 
 .Schritte

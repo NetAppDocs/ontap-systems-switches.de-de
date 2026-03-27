@@ -13,7 +13,7 @@ summary: Sie können RCF installieren, nachdem Sie den Nexus 3232C Switch zum er
 [role="lead"]
 Gehen Sie wie folgt vor, um die RCF nach der erstmaligen Einrichtung des Nexus 3232C-Switches zu installieren.
 
-Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/onprem/Switches/Cisco/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Aufrüstung Ihres RCF finden Sie hier.
+Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/onprem/Switches/Cisco/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] beim Upgrade Ihrer RCF.
 
 
 
@@ -291,7 +291,7 @@ NOTE: Beim Upgrade oder Anwenden eines neuen RCF müssen Sie die Switch-Einstell
 `cs2# echo "hardware access-list tcam region qos 256" >> bootflash:write_erase.cfg`
 
 +
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] für weitere Einzelheiten.
+Weitere Einzelheiten finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^].
 
 . Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
 +
@@ -318,7 +318,7 @@ Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Swi
 +
 `This command will reboot the system. (y/n)?  [n] *y*`
 
-. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs2: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Leitfaden in derlink:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenz"^] Leitfäden.
+. Kopieren Sie die RCF-Datei mithilfe eines der folgenden Übertragungsprotokolle in den Bootflash-Speicher des Switches cs2: FTP, TFTP, SFTP oder SCP. Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenz"^]
 +
 .Beispiel anzeigen
 [%collapsible]
@@ -337,7 +337,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Leitfaden in derlink:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenz"^] Leitfäden.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenz"^]
 
 +
 .Beispiel anzeigen
@@ -422,7 +422,7 @@ Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port
 . Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-3232c.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
 . Nachdem Sie überprüft haben, ob die RCF-Versionen und die Schaltereinstellungen korrekt sind, kopieren Sie die Running-Config-Datei in die Startup-Config-Datei.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie im entsprechenden Handbuch im https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenz"^] Führer.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-installation-guides-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenz"^]
 
 +
 [listing]

@@ -25,7 +25,7 @@ Der Migrationsprozess funktioniert für alle Knoten, die optische oder Twinax-An
 ** Die Zwei-Knoten-Konfiguration ohne Schalter ist ordnungsgemäß eingerichtet und funktioniert.
 ** Alle Cluster-Ports befinden sich im Status *up*.
 ** Alle logischen Schnittstellen (LIFs) des Clusters befinden sich im Status *up* und sind an ihren jeweiligen Ports angeschlossen.
-** Sehen https://hwu.netapp.com["Hardware Universe"^] für alle unterstützten ONTAP Versionen.
+** Siehe link:https://hwu.netapp.com["Hardware Universe"^] für alle unterstützten ONTAP Versionen.
 
 
 * Für die Cisco Nexus 9332D-GX2B-Switch-Konfiguration:
@@ -34,7 +34,7 @@ Der Migrationsprozess funktioniert für alle Knoten, die optische oder Twinax-An
 ** Es besteht Konsolenzugriff auf die Cluster-Switches.
 ** Knoten-zu-Knoten-Switch- und Switch-zu-Switch-Verbindungen des Nexus 9332D-GX2B verwenden Twinax- oder Glasfaserkabel.
 +
-Sehen https://hwu.netapp.com["Hardware Universe"^] Weitere Informationen zur Verkabelung finden Sie hier.
+Weitere Informationen zur Verkabelung finden Sie in der link:https://hwu.netapp.com["Hardware Universe"^].
 
 
 
@@ -57,7 +57,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e0a und e0b.
 
 
-Sehen https://hwu.netapp.com["Hardware Universe"^] Informationen zu den Cluster-Ports für Ihre Plattformen finden Sie hier.
+Weitere Informationen zu den Cluster-Ports für Ihre Plattformen finden Sie in der link:https://hwu.netapp.com["Hardware Universe"^].
 
 
 
@@ -290,10 +290,7 @@ Cluster
 ====
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten1 und verbinden Sie e0a dann mit Port 1 auf Cluster-Switch cs1. Verwenden Sie dazu die entsprechende Verkabelung, die von den 9332D-GX2B-Switches unterstützt wird.
 +
-Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
-
-+
-https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^]
+Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten2 und verbinden Sie e0a dann mit Port 2 auf Cluster-Switch cs1. Verwenden Sie dazu die entsprechende Verkabelung, die von den 9332D-GX2B-Switches unterstützt wird.
 . Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.

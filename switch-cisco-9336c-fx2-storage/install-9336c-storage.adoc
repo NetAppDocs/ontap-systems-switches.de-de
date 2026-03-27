@@ -24,7 +24,7 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
 +
 Alle Cisco-Switches für Speicher- und Managementnetzwerke werden mit der standardmäßigen Cisco-Werkskonfiguration ausgeliefert. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS Software, jedoch sind die RCFs nicht geladen.
 
-* Erforderliche Schalterdokumentation. Sehenlink:required-documentation-9336c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
+* Erforderliche Switch-Dokumentation. Weitere Informationen finden Sie unter link:required-documentation-9336c-storage.html["Erforderliche Dokumentation"].
 
 
 .Schritte
@@ -38,14 +38,14 @@ Alle Cisco-Switches für Speicher- und Managementnetzwerke werden mit der standa
  a| 
 Cisco Nexus 9336C-FX2 in einem NetApp -Systemschrank
  a| 
-Sehenlink:install-switch-and-passthrough-panel-9336c-storage.html["Switch im NetApp Schrank installieren"] Anweisungen zur Installation des Switches in einem NetApp -Schrank finden Sie hier.
+Siehe link:install-switch-and-passthrough-panel-9336c-storage.html["Switch im NetApp Schrank installieren"] für Anweisungen zur Installation des Schalters in einem NetApp Schrank.
 
 
 
  a| 
 Ausrüstung in einem Telekommunikationsrack
  a| 
-Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
+Beachten Sie die Verfahren, die in den Installationshandbüchern für die Switch-Hardware und den NetApp Installations- und Einrichtungsanweisungen bereitgestellt werden.
 
 |===
 . Verbinden Sie die Netzwerk- und Management-Netzwerk-Switches mit den Controllern, indem Sie die ausgefüllten Verkabelungsarbeitsblätter verwenden.

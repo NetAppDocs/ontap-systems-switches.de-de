@@ -17,7 +17,7 @@ Sie können Cisco -Cluster-Switches für einen ONTAP Cluster auf NVIDIA SN2100-C
 
 == Überprüfungsanforderungen
 
-Beim Austausch älterer Cisco -Cluster-Switches durch NVIDIA SN2100-Cluster-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Sehenlink:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"] .
+Beim Austausch älterer Cisco-Cluster-Switches durch NVIDIA SN2100-Cluster-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Siehe link:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"].
 
 .Unterstützte Schalter
 Folgende Cisco Cluster-Switches werden unterstützt:
@@ -29,7 +29,7 @@ Folgende Cisco Cluster-Switches werden unterstützt:
 * Nexus 3132Q-V
 
 
-Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie unter https://hwu.netapp.com/["Hardware Universe"^] Die
+Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie in der link:https://hwu.netapp.com/["Hardware Universe"^].
 
 .Was du brauchst
 Stellen Sie sicher, dass:
@@ -50,7 +50,7 @@ Stellen Sie sicher, dass:
 
 
 
-NOTE: Wenn Sie die Portgeschwindigkeit der Cluster-Ports e0a und e1a auf AFF A800 oder AFF C800 Systemen ändern, kann es nach der Geschwindigkeitsumwandlung zu fehlerhaften Paketen kommen.  Sehen https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["Bug 1570339"^] und der Artikel in der Wissensdatenbank https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["CRC-Fehler an T6-Ports nach der Umstellung von 40GbE auf 100GbE"^] zur Orientierung.
+NOTE: Wenn Sie die Portgeschwindigkeit der Cluster-Ports e0a und e1a auf AFF A800 oder AFF C800 Systemen ändern, kann es nach der Geschwindigkeitsumstellung zu fehlerhaften Paketen kommen. Siehe link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["Bug 1570339"^] und den Knowledge Base Artikel link:https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["CRC-Fehler an T6-Ports nach der Umstellung von 40GbE auf 100GbE"^] für Anleitungen.
 
 
 

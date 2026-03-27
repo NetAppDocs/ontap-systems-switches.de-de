@@ -17,7 +17,7 @@ Sie können NetApp CN1610 Cluster-Switches für einen ONTAP Cluster auf NVIDIA S
 
 == Überprüfungsanforderungen
 
-Beim Austausch von NetApp CN1610 Cluster-Switches durch NVIDIA SN2100 Cluster-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Sehenlink:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"] .
+Sie müssen sich bestimmter Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen bewusst sein, wenn Sie NetApp CN1610 Cluster-Switches durch NVIDIA SN2100 Cluster-Switches ersetzen. Siehe link:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"].
 
 .Unterstützte Schalter
 Folgende Cluster-Switches werden unterstützt:
@@ -26,7 +26,7 @@ Folgende Cluster-Switches werden unterstützt:
 * NVIDIA SN2100
 
 
-Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie unter https://hwu.netapp.com/["Hardware Universe"^] Die
+Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie in der link:https://hwu.netapp.com/["Hardware Universe"^].
 
 .Bevor Sie beginnen
 Bitte prüfen Sie, ob Ihre Konfiguration die folgenden Anforderungen erfüllt:

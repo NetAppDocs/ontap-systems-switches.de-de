@@ -17,7 +17,7 @@ Wenn Sie einen Zwei-Knoten-Cluster ohne Switches haben, lesen Sie bitte dieses V
 Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.
 
 ====
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 * link:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610"^]
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switch"^]

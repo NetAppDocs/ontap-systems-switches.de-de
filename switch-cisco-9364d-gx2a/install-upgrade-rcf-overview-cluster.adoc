@@ -4,29 +4,29 @@ sidebar: sidebar
 keywords: install, upgarde, cluster, switch, cisco 9364d-gx2a 
 summary: Sie können das RCF installieren, nachdem Sie den Nexus 9364d-gx2a-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihr RCF zu aktualisieren. 
 ---
-= Übersicht zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF).
+= Übersicht zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie den Nexus 9364D-GX2A-Switch zum ersten Mal eingerichtet haben. Sie aktualisieren Ihre RCF-Version, wenn auf Ihrem Switch eine vorhandene Version der RCF-Datei installiert ist.
+Sie installieren die RCF nach der erstmaligen Einrichtung des Nexus 9364D-GX2A Switch. Sie aktualisieren Ihre RCF-Version, wenn bereits eine Version der RCF auf Ihrem Switch installiert ist.
 
-Siehe den Artikel in der Wissensdatenbank.link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Weitere Informationen zur Installation oder Aufrüstung Ihres RCF erhalten Sie bei Bedarf.
+Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] bei der Installation oder Aktualisierung Ihres RCF.
 
 .Verfügbare RCF-Konfiguration
 * *Cluster-HA-Storage AFX* - Alle Ports sind im 4x100GbE Breakout-Modus konfiguriert, der universell AFX-Knotencluster, HA, Speicherports und NX224-Speichergehäuseports unterstützt.  400GbE ISL zwischen den Switches.  (_Cluster-HA-Storage AFX RCF_vxx.x_).
 
 
-Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den Abschnitt „Banner und wichtige Hinweise“ in Ihrem RCF. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] für weitere Informationen.
+Spezifische Details zur Port- und VLAN-Nutzung finden Sie im Banner und im Abschnitt „Wichtige Hinweise“ Ihres RCF. Weitere Informationen finden Sie unter link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^].
 
 .Empfohlene Dokumentation
 * link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches (NSS)"^]
 +
 Auf der NetApp Support-Website finden Sie die Tabelle zur Switch-Kompatibilität, in der die unterstützten ONTAP und RCF-Versionen aufgeführt sind.  Beachten Sie, dass zwischen der Befehlssyntax in der RCF und der Syntax in bestimmten Versionen von NX-OS Befehlsabhängigkeiten bestehen können.
 
-* link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-guides-list.html["Cisco Nexus 3=9000 Series Switches"^]
+* link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-guides-list.html["Cisco Nexus 9000 Series Switches"^]
 +
 Die vollständige Dokumentation zu den Upgrade- und Downgrade-Verfahren für Cisco -Switches finden Sie in den entsprechenden Software- und Upgrade-Leitfäden auf der Cisco -Website.
 
@@ -41,7 +41,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 
 
-Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
+Siehe die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] zur Überprüfung der korrekten Cluster-Ports auf Ihren Plattformen.
 
 
 NOTE: Die Befehlsausgaben können je nach ONTAP Version variieren.

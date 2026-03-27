@@ -18,7 +18,7 @@ Die Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte C
 Die meisten Systeme benötigen zwei dedizierte Cluster-Netzwerkanschlüsse an jedem Controller.
 
 
-NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC Cluster-Switches zu unterstützen. Sehenlink:../switch-cshm/cshm-overview.html["Switch-Zustandsüberwachung (CSHM)"] .
+NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche Konfigurationsdatei installieren, um den Cluster Switch Health Monitor (CSHM) für 92300YC Cluster Switches zu unterstützen. Siehe link:../switch-cshm/cshm-overview.html["Switch-Zustandsüberwachung (CSHM)"].
 
 
 
@@ -41,7 +41,7 @@ Für die Konfiguration des Cisco Nexus 92300YC Switches:
 * Es besteht Konsolenzugriff auf die Cluster-Switches.
 * Die Knoten-zu-Knoten- und Schalter-zu-Schalter-Verbindungen des Nexus 92300YC verwenden Twinax- oder Glasfaserkabel.
 +
-https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^]enthält weitere Informationen zur Verkabelung.
+Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
 
 * Inter-Switch Link (ISL)-Kabel sind an die Ports 1/65 und 1/66 beider 92300YC-Switches angeschlossen.
 * Die erste Anpassung beider 92300YC-Switches ist abgeschlossen.  Damit die:
@@ -65,7 +65,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 * Die in diesem Verfahren verwendeten Cluster-Ports sind e0a und e0b.
 +
-https://hwu.netapp.com["Hardware Universe"^]Enthält die aktuellsten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
+Die link:https://hwu.netapp.com["Hardware Universe"^] enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 
@@ -311,7 +311,7 @@ Cluster
 ====
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 1 und verbinden Sie dann e0a mit Port 1 auf dem Cluster-Switch cs1. Verwenden Sie dazu die von den 92300YC-Switches unterstützten geeigneten Kabel.
 +
-Der https://hwu.netapp.com/SWITCH/INDEX["_Hardware Universe - Schalter_"^] enthält weitere Informationen zur Verkabelung.
+Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
 
 . Trennen Sie das Kabel vom Cluster-Port e0a auf Knoten 2 und verbinden Sie dann e0a mit Port 2 auf Cluster-Switch cs1. Verwenden Sie dazu die von den 92300YC-Switches unterstützten Kabel.
 . Aktivieren Sie alle zum Knoten hin ausgerichteten Ports am Cluster-Switch cs1.

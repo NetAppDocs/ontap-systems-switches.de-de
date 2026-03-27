@@ -17,7 +17,7 @@ Sie können von älteren Cisco -Switches für einen ONTAP Cluster auf NVIDIA SN2
 
 == Überprüfungsanforderungen
 
-Beim Austausch älterer Cisco Switches durch NVIDIA SN2100-Speicher-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Sehenlink:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"] .
+Beim Austausch älterer Cisco-Switches durch NVIDIA SN2100-Speicher-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Siehe link:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"].
 
 .Unterstützte Schalter
 Folgende Speichersysteme werden unterstützt:
@@ -26,7 +26,7 @@ Folgende Speichersysteme werden unterstützt:
 * Cisco Nexus 3232C
 
 
-Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie unter https://hwu.netapp.com/["Hardware Universe"^] Die
+Einzelheiten zu den unterstützten Ports und deren Konfigurationen finden Sie in der link:https://hwu.netapp.com/["Hardware Universe"^].
 
 .Was du brauchst
 Stellen Sie sicher, dass:

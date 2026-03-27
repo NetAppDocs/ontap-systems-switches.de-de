@@ -49,7 +49,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Der `cluster::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 * Die Cluster-Ports auf jedem Knoten tragen die Namen e1a und e2a.
 +
-https://hwu.netapp.com/["Hardware Universe"^]enthält weitere Informationen zu den tatsächlichen Cluster-Ports, die auf Ihrer Plattform unterstützt werden.
+Der link:https://hwu.netapp.com/["Hardware Universe"^] enthält weitere Informationen über die tatsächlich auf Ihrer Plattform unterstützten Cluster-Ports.
 
 * Die unterstützten Inter-Switch-Links (ISLs) sind die Ports 0/13 bis 0/16.
 * Die unterstützten Knotenverbindungen sind die Ports 0/1 bis 0/12.

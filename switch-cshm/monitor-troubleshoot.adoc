@@ -17,4 +17,4 @@ Wenn Warnmeldungen ausgegeben werden, meldet der Systemzustandsbericht einen bee
 
 Um die verfügbaren Warnmeldungen des Ethernet-Switch-Integritätsmonitors anzuzeigen, führen Sie folgenden Befehl aus: `system health alert definition show -monitor ethernet-switch`
 
-Siehe den Artikel in der Wissensdatenbank. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Cluster_Switch_Health_Monitor_CSHM_Alert_Resolution_Guide["Leitfaden zur Behebung von Warnungen des Switch Health Monitor"^] für detaillierte Informationen zur Fehlerbehebung bei Warnmeldungen.
+Weitere Einzelheiten zur erweiterten Behebung von Warnmeldungen finden Sie im Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Cluster_Switch_Health_Monitor_CSHM_Alert_Resolution_Guide["Leitfaden zur Behebung von Warnungen des Switch Health Monitor"^].

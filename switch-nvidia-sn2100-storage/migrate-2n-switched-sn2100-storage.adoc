@@ -35,10 +35,10 @@ Stellen Sie für die Konfiguration des NVIDIA SN2100 Cluster-Switches Folgendes 
 * Die Knoten-zu-Knoten- und Switch-zu-Switch-Verbindungen des NVIDIA SN2100 verwenden Twinax- oder Glasfaserkabel.
 +
 
-NOTE: Sehenlink:cabling-considerations-sn2100-storage.html["Überlegungen zu Verkabelung und Konfiguration"] für Einschränkungen und weitere Details.
+NOTE: Beachten Sie link:cabling-considerations-sn2100-storage.html["Überlegungen zu Verkabelung und Konfiguration"] für Einschränkungen und weitere Details.
 
 +
-Der https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
+Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält weitere Informationen zur Verkabelung.
 
 * Inter-Switch Link (ISL)-Kabel sind an die Ports swp15 und swp16 beider NVIDIA SN2100 Switches angeschlossen.
 * Die erste Anpassung beider SN2100-Schalter ist abgeschlossen, sodass:
@@ -64,7 +64,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 * Die in diesem Verfahren verwendeten Cluster-Ports sind _e3a_ und _e3b_.
 * Breakout-Ports haben folgendes Format: swp[Port]s[Breakout-Port 0-3].  Beispielsweise gibt es vier Breakout-Ports auf swp1: _swp1s0_, _swp1s1_, _swp1s2_ und _swp1s3_.
 +
-Der https://hwu.netapp.com["Hardware Universe"^] Enthält die aktuellsten Informationen zu den tatsächlichen Cluster-Ports für Ihre Plattformen.
+Die link:https://hwu.netapp.com["Hardware Universe"^] enthält die neuesten Informationen über die tatsächlichen Cluster-Ports für Ihre Plattformen.
 
 
 

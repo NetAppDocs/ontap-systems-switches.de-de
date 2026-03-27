@@ -16,7 +16,7 @@ Folgen Sie dieser Vorgehensweise, um das RCF-Skript zu installieren oder zu aktu
 .Bevor Sie beginnen
 Vor der Installation oder Aktualisierung des RCF-Skripts stellen Sie sicher, dass Folgendes auf dem Switch verfügbar ist:
 
-* Cumulus Linux ist installiert.  Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"^] für unterstützte Versionen.
+* Cumulus Linux ist installiert. Siehe die link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^] für unterstützte Versionen.
 * IP-Adresse, Subnetzmaske und Standardgateway werden per DHCP definiert oder manuell konfiguriert.
 
 
@@ -30,7 +30,7 @@ Folgende Referenzkonfigurationskategorien stehen zur Verfügung:
 |===
 
 
-| Cluster | Bei Ports, die für 4x10GbE-Breakout konfiguriert sind, ist ein Port für 4x25GbE-Breakout und die anderen Ports für 40/100GbE konfiguriert. Unterstützt gemeinsam genutzten Cluster-/HA-Verkehr auf Ports für Knoten, die gemeinsam genutzte Cluster-/HA-Ports verwenden. Die Plattformtabelle finden Sie im Knowledge-Base-Artikel. https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_AFF_ASA_and_FAS_platforms_use_shared_Cluster_and_HA_Ethernet_ports["Welche AFF, ASA und FAS -Plattformen verwenden gemeinsam genutzte Cluster- und HA-Ethernet-Ports?"^] Die Alle Ports können auch als dedizierte Cluster-Ports verwendet werden. 
+| Cluster | Bei Ports, die für 4x10GbE-Breakout konfiguriert sind, ist ein Port für 4x25GbE-Breakout konfiguriert und die anderen Ports sind für 40/100GbE konfiguriert. Unterstützt gemeinsam genutzten Cluster-/HA-Datenverkehr auf Ports für Knoten, die gemeinsam genutzte Cluster-/HA-Ports verwenden. Siehe die Plattformtabelle im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/What_AFF_ASA_and_FAS_platforms_use_shared_Cluster_and_HA_Ethernet_ports["Welche AFF, ASA und FAS -Plattformen verwenden gemeinsam genutzte Cluster- und HA-Ethernet-Ports?"^]. Alle Ports können auch als dedizierte Cluster-Ports verwendet werden. 
 
 
  a| 

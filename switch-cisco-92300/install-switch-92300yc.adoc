@@ -35,14 +35,14 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
  a| 
 Cisco Nexus 92300YC in einem NetApp -Systemschrank
  a| 
-Anweisungen zur Installation des Switches in einem NetApp -Schrank finden Sie im Handbuch „Installieren eines Cisco Nexus 92300YC-Cluster-Switches und Pass-Through-Panels in einem NetApp -Schrank“.
+Siehe die Anleitung _Installing a Cisco Nexus 92300YC cluster switch and pass-through panel in a NetApp cabinet_ für Anweisungen zur Installation des Switches in einem NetApp Schrank.
 
 
 
  a| 
 Ausrüstung in einem Telekommunikationsrack
  a| 
-Beachten Sie die in den Hardware-Installationshandbüchern für Switches und den Installations- und Einrichtungsanweisungen von NetApp beschriebenen Vorgehensweisen.
+Beachten Sie die Verfahren, die in den Installationshandbüchern für die Switch-Hardware und den NetApp Installations- und Einrichtungsanweisungen bereitgestellt werden.
 
 |===
 . Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.

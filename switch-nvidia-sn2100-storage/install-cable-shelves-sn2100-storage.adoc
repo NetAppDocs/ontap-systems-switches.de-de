@@ -21,8 +21,5 @@ https://library.netapp.com/ecm/ecm_download_file/ECMLP2876580["Informationen zur
 +
 https://docs.netapp.com/us-en/ontap-systems-switches/index.html["AFF und FAS Schalterdokumentation"^]
 
-* Prüfen Sie, ob Ihre Plattformmodelle mit unterstützter Hardware wie Speicherschaltern und Kabeln kompatibel sind:
-+
-https://hwu.netapp.com/["NetApp Hardware Universe"^]
-
+* Bestätigen Sie unterstützte Hardware, wie Speicherschalter und Kabel, für Ihr Plattformmodell. Siehe die link:https://hwu.netapp.com/["Hardware Universe"^] für Details.
 

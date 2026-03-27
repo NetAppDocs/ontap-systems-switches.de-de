@@ -4,14 +4,14 @@ sidebar: sidebar
 keywords: install rcf,setup rcf,rcf file, efos, license file 
 summary: 'Sie können die Referenzkonfigurationsdatei (RCF) installieren, nachdem Sie den Cluster-Switch BES-53248 konfiguriert und die neuen Lizenzen angewendet haben.' 
 ---
-= Installieren Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei.
+= Installieren Sie die Referenz-Konfigurationsdatei (RCF) und die Lizenzdatei
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ab EFOS 3.12.0.1 können Sie die Referenzkonfigurationsdatei (RCF) und die Lizenzdatei nach der Konfiguration des Cluster-Switches BES-53248 installieren.
+Ab EFOS 3.12.0.1 können Sie die RCF- und Lizenzdatei nach der Konfiguration des BES-53248 Cluster-Switch installieren.
 
 
 CAUTION: Alle Ports werden bei der Installation des RCF konfiguriert, aber Sie müssen Ihre Lizenz installieren, um die konfigurierten Ports zu aktivieren.
@@ -25,13 +25,13 @@ Bitte vergewissern Sie sich, dass Folgendes vorhanden ist:
 
 * Eine aktuelle Sicherungskopie der Switch-Konfiguration.
 * Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
-* Das aktuelle RCF ist erhältlich bei https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite.
+* Die aktuelle RCF, verfügbar auf der link:https://mysupport.netapp.com/site/products/all/details/broadcom-cluster-switches/downloads-tab["Broadcom Cluster-Switches"^] Seite.
 * Eine Bootkonfiguration in der RCF-Datei, die die gewünschten Boot-Images widerspiegelt, ist erforderlich, wenn Sie nur EFOS installieren und Ihre aktuelle RCF-Version beibehalten.  Wenn Sie die Bootkonfiguration ändern müssen, um die aktuellen Boot-Images widerzuspiegeln, müssen Sie dies tun, bevor Sie die RCF erneut anwenden, damit bei zukünftigen Neustarts die richtige Version instanziiert wird.
-* Eine Konsolenverbindung zum Switch ist erforderlich, wenn der RCF aus dem Werkszustand installiert wird.  Diese Anforderung ist optional, wenn Sie den Wissensdatenbank-Artikel verwendet haben. https://kb.netapp.com/onprem/Switches/Broadcom/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Broadcom-Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Um die Konfiguration vorher zu löschen.
+* Eine Konsolenverbindung zum Switch ist erforderlich, wenn die RCF aus dem Werkszustand installiert wird. Diese Anforderung ist optional, wenn Sie den Knowledge Base Artikel link:https://kb.netapp.com/onprem/Switches/Broadcom/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Broadcom-Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] verwendet haben, um die Konfiguration zuvor zu löschen.
 
 
 .Empfohlene Dokumentation
-In der Switch-Kompatibilitätstabelle finden Sie die unterstützten ONTAP und RCF-Versionen.  Siehe die https://mysupport.netapp.com/site/info/broadcom-cluster-switch["EFOS-Software-Download"^] Seite.  Beachten Sie, dass zwischen der Befehlssyntax in der RCF und der in EFOS-Versionen vorhandenen Befehlssyntax Abhängigkeiten bestehen können.
+Konsultieren Sie die Switch-Kompatibilitätstabelle für die unterstützten ONTAP- und RCF-Versionen. Siehe link:https://mysupport.netapp.com/site/info/broadcom-cluster-switch["EFOS-Software-Download"^]. Beachten Sie, dass es Befehlsabhängigkeiten zwischen der Befehlssyntax im RCF und der in EFOS-Versionen geben kann.
 
 
 
@@ -44,7 +44,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * Die Knotennamen sind cluster1-01, cluster1-02, cluster1-03 und cluster1-04.
 * Die Cluster-LIF-Namen sind cluster1-01_clus1, cluster1-01_clus2, cluster1-02_clus1, cluster1-02_clus2, cluster1-03_clus1, cluster1-03_clus2, cluster1-04_clus1 und cluster1-04_clus2.
 * Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
-* Die Beispiele in diesem Verfahren verwenden vier Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports. `e0a` Und `e0b` Die  Siehe die https://hwu.netapp.com/Home/Index["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
+* Die Beispiele in diesem Verfahren verwenden vier Knoten. Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports `e0a` und `e0b`. Siehe link:https://hwu.netapp.com/Home/Index["Hardware Universe"^], um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
 
 
 
@@ -56,7 +56,7 @@ Für dieses Verfahren müssen sowohl ONTAP -Befehle als auch Broadcom-Switch-Bef
 Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erforderlich. Dies ist beabsichtigt, da RCF-Versionsänderungen die ISL-Konnektivität vorübergehend beeinträchtigen können. Um einen unterbrechungsfreien Clusterbetrieb zu gewährleisten, migriert das folgende Verfahren alle Cluster-LIFs zum operativen Partner-Switch, während die Schritte auf dem Ziel-Switch ausgeführt werden.
 
 
-CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, lesen Sie bitte den Knowledge-Base-Artikel. https://kb.netapp.com/onprem/Switches/Broadcom/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Broadcom-Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] Die  Wenn Sie die Schaltereinstellungen vollständig löschen müssen, müssen Sie die Grundkonfiguration erneut durchführen.  Sie müssen über die serielle Konsole mit dem Switch verbunden sein, da eine vollständige Konfigurationslöschung die Konfiguration des Management-Netzwerks zurücksetzt.
+CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, verwenden Sie den Knowledge Base Artikel link:https://kb.netapp.com/onprem/Switches/Broadcom/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Broadcom-Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^]. Wenn Sie die Switch-Einstellungen vollständig löschen müssen, müssen Sie die Basiskonfiguration erneut durchführen. Sie müssen über die serielle Konsole mit dem Switch verbunden sein, da ein vollständiges Löschen der Konfiguration die Konfiguration des Management-Netzwerks zurücksetzt.
 
 
 

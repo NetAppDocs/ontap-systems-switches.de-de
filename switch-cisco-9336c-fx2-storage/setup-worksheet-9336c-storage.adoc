@@ -445,7 +445,7 @@ Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 
 == 9336C-FX2 leeres Verkabelungs-Arbeitsblatt
 
-Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden. Der Abschnitt _Unterstützte Clusterverbindungen_ des link:https://hwu.netapp.com["Hardware Universe"^] definiert die von der Plattform verwendeten Cluster-Ports.
 
 [cols="5%, 45%, 5%, 45%"]
 |===
@@ -1020,7 +1020,7 @@ Lizenz erforderlich
 Lizenz erforderlich
 
 |===
-Siehe die https://hwu.netapp.com/Switch/Index["Hardware Universe"] Weitere Informationen zu Switch-Ports finden Sie hier.
+Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^].
 
 .Was kommt als nächstes
 Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie link:install-9336c-storage.html["Installieren Sie den Schalter"]Die

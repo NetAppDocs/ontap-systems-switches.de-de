@@ -31,7 +31,7 @@ Die Beispiele in den Konfigurationsanleitungen verwenden die folgende Switch- un
 * Die Cluster-LIF-Namen sind `node1_clus1` Und `node1_clus2` für Knoten1 und `node2_clus1` Und `node2_clus2` für Knoten 2.
 * Der IPspace-Name lautet Cluster.
 * Der `cluster1::>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
-* Die Cluster-Ports auf jedem Knoten sind benannt `e0a` Und `e0b` Die  Siehe die https://hwu.netapp.com/Home/Index["NetApp Hardware Universe"^] für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports.
+* Die Cluster-Ports auf jedem Knoten sind benannt `e0a` und `e0b`. Siehe link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] für die tatsächlich von Ihrer Plattform unterstützten Cluster-Ports.
 * Die für die NetApp Switches unterstützten Inter-Switch-Links (ISLs) sind die Ports 0/55 und 0/56.
 * Die für die NetApp Switches unterstützten Knotenverbindungen sind die Ports 0/1 bis 0/16 mit Standardlizenzierung.
 * Die Beispiele verwenden zwei Knoten, aber ein Cluster kann bis zu 24 Knoten umfassen.

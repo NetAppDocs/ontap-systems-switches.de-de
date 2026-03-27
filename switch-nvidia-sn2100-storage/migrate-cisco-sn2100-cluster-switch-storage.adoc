@@ -36,7 +36,7 @@ Folgende Cisco Cluster-Switches werden unterstützt:
 ** ISL-Ports wurden aktiviert und zwischen den älteren Cisco Switches sowie zwischen den neuen Switches verkabelt.
 
 
-* Siehe die https://hwu.netapp.com/["Hardware Universe"^] Für detaillierte Informationen zu den unterstützten Ports und deren Konfigurationen.
+* Siehe die link:https://hwu.netapp.com/["Hardware Universe"^] für vollständige Details zu den unterstützten Ports und deren Konfigurationen.
 * Sie haben einige Ports an NVIDIA SN2100 Switches so konfiguriert, dass sie mit 40 GbE oder 100 GbE laufen.
 * Sie haben die 40-GbE- und 100-GbE-Konnektivität von den Knoten zu den NVIDIA SN2100 Cluster-Switches geplant, migriert und dokumentiert.
 +

@@ -11,7 +11,7 @@ summary: Erfahren Sie mehr über die neuen Schalter für FAS und AFF Systeme.
 
 
 [role="lead"]
-Erfahren Sie mehr über die neuen Schalter für FAS und AFF Systeme.  Weitere Informationen zum Schalter finden Sie unter https://hwu.netapp.com/Switch/Index["NetApp Hardware Universe"^] Die
+Erfahren Sie mehr über die neuen Switches für ONTAP-Speichersysteme. Weitere Informationen zu den Switches finden Sie unter link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^].
 
 
 

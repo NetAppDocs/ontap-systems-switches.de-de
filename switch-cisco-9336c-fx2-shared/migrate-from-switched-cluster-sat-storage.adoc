@@ -89,7 +89,7 @@ node2
 ====
 
 
-. [[step6]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch A durch die gemeinsam genutzte RCF-Datei.  Sehenlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. [[Schritt 6]]Ersetzen Sie die Speicher-RCF auf dem gemeinsam genutzten Switch A durch die gemeinsam genutzte RCF-Datei. Siehe link:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Details.
 . Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter A, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
@@ -125,7 +125,7 @@ There are no entries matching your query.
 ====
 
 
-. [[step12]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch B durch die gemeinsam genutzte RCF-Datei.  Sehenlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. [[Schritt 12]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch B durch die gemeinsam genutzte RCF-Datei. Weitere Einzelheiten finden Sie unter link:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"].
 . Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter B, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
@@ -203,7 +203,7 @@ sh1 (config)# *exit*
 ====
 
 
-. [[step16]]Migrieren Sie die Cluster-Netzwerkfunktionen von den vorhandenen Cluster-Switches auf die gemeinsam genutzten Switches mithilfe des Switch-Austauschverfahrens und des gemeinsam genutzten RCF.  Der neue gemeinsame Schalter A ist "cs1".  Der neue gemeinsame Schalter B ist "cs2".  Sehenlink:replace-9336c-fx2-shared.html["Ersetzen Sie einen gemeinsam genutzten Cisco Nexus 9336C-FX2-Switch"] Undlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. [[step16]]Migrieren Sie das Cluster-Netzwerk von den vorhandenen Cluster-Switches auf die gemeinsam genutzten Switches mithilfe des Switch-Austauschverfahrens und des gemeinsamen RCF. Der neue gemeinsam genutzte Switch A ist "cs1". Der neue gemeinsam genutzte Switch B ist "cs2". Weitere Einzelheiten finden Sie unter link:replace-9336c-fx2-shared.html["Ersetzen Sie einen gemeinsam genutzten Cisco Nexus 9336C-FX2-Switch"] und link:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"].
 . Überprüfen Sie, ob die Konfiguration des umgeschalteten Netzwerks gültig ist:
 +
 `network port show`

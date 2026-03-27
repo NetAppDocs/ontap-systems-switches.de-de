@@ -35,7 +35,7 @@ Falls erforderlich, finden Sie weitere Informationen in den folgenden Quellen:
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10-GbE-Cluster-Verbindungsports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten verwenden zwei 40-GbE-Cluster-Verbindungsglasfaserkabel: e4a und e4e. Derlink:https://hwu.netapp.com/["_Hardware-Universum_"^] verfügt über Informationen zu den Cluster-Glasfaserkabeln auf Ihren Plattformen. Sehen link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] Weitere Informationen zu den Installationsanforderungen des Schalters finden Sie hier.
+Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten nutzen vier 10-GbE-Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten nutzen zwei 40-GbE-Cluster-Interconnect-Glasfaserkabel: e4a und e4e. Weitere Informationen zu den Cluster-Glasfaserkabeln auf Ihren Plattformen finden Sie in der link:https://hwu.netapp.com/["Hardware Universe"^]. Weitere Informationen zu den Installationsanforderungen für Switches finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
 
 Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 
@@ -199,7 +199,7 @@ CL2                           cluster-network  10.10.1.102   CN1610
 Sie sollten jetzt beide Schalter vorbereiten.  Falls Sie die RCF und das Image aktualisieren müssen, müssen Sie die folgenden Schritte ausführen:
 
 +
-.. Sehenlink:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Supportseite.
+.. Siehe link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Support-Website.
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
 .. Laden Sie die passende Version der RCF herunter.
 .. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.
@@ -365,7 +365,7 @@ RPC status:
 ====
 . [[step3]] Schalten Sie die ISL-Ports 13 bis 16 am aktiven CN1610-Switch CL1 mit dem entsprechenden Befehl ab.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -385,7 +385,7 @@ Das folgende Beispiel zeigt, wie die ISL-Ports 13 bis 16 am CN1610-Switch CL1 ab
 ====
 . Errichte eine temporäre ISL zwischen CL1 und C2:
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -428,7 +428,7 @@ Beim Wiederanschließen von Kabeln an den neuen Cisco 3232C Switch müssen entwe
 Diese Konfiguration entspricht der ISL-Konfiguration auf dem 3232C-Switch C2, wenn die ISLs auf beiden Switches aktiviert sind.
 
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -448,7 +448,7 @@ Das folgende Beispiel zeigt, wie die ISL-Schnittstelle 3/1 so konfiguriert wird,
 ====
 . Schalten Sie die ISLs 13 bis 16 auf dem aktiven CN1610-Switch CL1 ein.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -505,7 +505,7 @@ Ports  Timeout       Speed       Active
 `show port-channel summary`
 
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 Die Ports Eth1/24/1 bis Eth1/24/4 sollten anzeigen `(P)` Das bedeutet, dass alle vier ISL-Ports im Portkanal aktiv sind.  Eth1/31 und Eth1/32 sollten anzeigen `(D)` weil sie nicht miteinander verbunden sind.
@@ -796,7 +796,7 @@ cluster::*> *network port modify -node n2 -port e0d -up-admin false*
 ====
 . Schalten Sie die ISL-Ports 24, 31 und 32 am aktiven 3232C-Switch C2 ab.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -827,7 +827,7 @@ Sie müssen die Ports e1/31 und e1/32 auf C1 mit den Ports e1/31 und e1/32 auf C
 
 . Die Konfiguration auf Port 24 soll wiederhergestellt und der temporäre Portkanal 2 auf C2 entfernt werden:
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -862,7 +862,7 @@ Copy Complete.
 ====
 . Aktivieren Sie die ISL-Ports 31 und 32 am aktiven Switch C2 3232C.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen
@@ -884,7 +884,7 @@ Copy Complete.
 ====
 . Überprüfen Sie, ob die ISL-Verbindungen `up` am Schalter C2 des 3232C.
 +
-Weitere Informationen zu Cisco -Befehlen finden Sie in den in der folgenden Liste aufgeführten Anleitungen: https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] Die
+Weitere Informationen zu Cisco-Befehlen finden Sie in den in der link:https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/products-command-reference-list.html["Cisco Nexus 3000 Serie NX-OS Befehlsreferenzen"^] aufgeführten Anleitungen.
 
 +
 .Beispiel anzeigen

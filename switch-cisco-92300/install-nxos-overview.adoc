@@ -21,7 +21,7 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
 
 .Zu den Beispielen
-Die Beispiele in diesem Verfahren verwenden zwei Knoten.  Diese Knoten nutzen zwei 10GbE-Cluster-Verbindungsports. `e0a` Und `e0b` Die  Siehe die https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
+Die Beispiele in diesem Verfahren verwenden zwei Knoten. Diese Knoten verwenden zwei 10GbE-Cluster-Interconnect-Ports `e0a` und `e0b`. Siehe link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^], um die korrekten Cluster-Ports auf Ihren Plattformen zu überprüfen.
 
 Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
 

@@ -50,7 +50,7 @@ link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storag
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
 
 * Lassen Sie AutoSupport während der Wartungsarbeiten aktiviert.
-* Lösen Sie vor und nach der Wartung einen Wartungs AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren.  Siehe diesen Wissensdatenbankartikellink:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^] für weitere Einzelheiten.
+* Lösen Sie vor und nach der Wartung eine Wartungs-AutoSupport aus, um die Fallerstellung für die Dauer der Wartung zu deaktivieren. Weitere Einzelheiten finden Sie in diesem Knowledge Base Artikel link:https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU92["SU92: Wie man die automatische Fallerstellung während geplanter Wartungsfenster unterdrückt"^].
 * Aktivieren Sie die Sitzungsprotokollierung für alle CLI-Sitzungen.  Anweisungen zum Aktivieren der Sitzungsprotokollierung finden Sie im Abschnitt „Protokollierung der Sitzungsausgabe“ in diesem Wissensdatenbankartikel.link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_configure_PuTTY_for_optimal_connectivity_to_ONTAP_systems["Wie konfiguriert man PuTTY für eine optimale Verbindung zu ONTAP -Systemen?"^] Die
 
 
@@ -68,7 +68,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 * n1_clus3 ist die zweite LIF, die mit dem Cluster-Switch C2 für Knoten n1 verbunden ist.
 * n1_clus4 ist die zweite LIF, die mit dem Cluster-Switch CL1 für Knoten n1 verbunden ist.
 * Die Anzahl der 10-GbE- und 40-GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter [URL] verfügbar sind.link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster-Netzwerk-Switch-Referenzkonfigurationsdatei herunterladen"^] Die
-* Die Knoten sind n1, n2, n3 und n4.  - Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten verwenden vier 10 GB Cluster-Verbindungsports: e0a, e0b, e0c und e0d.  Die anderen beiden Knoten verwenden zwei 40-GB-Cluster-Interconnect-Ports: e4a und e4e.  Siehe dielink:https://hwu.netapp.com/["Hardware Universe"^] für die tatsächlichen Cluster-Ports auf Ihren Plattformen.
+* Die Knoten sind n1, n2, n3 und n4. - Die Beispiele in diesem Verfahren verwenden vier Knoten: Zwei Knoten nutzen vier 10 GB Cluster-Interconnect-Ports: e0a, e0b, e0c und e0d. Die anderen beiden Knoten nutzen zwei 40 GB Cluster-Interconnect-Ports: e4a und e4e. Siehe link:https://hwu.netapp.com/["Hardware Universe"^] für die tatsächlichen Cluster-Ports auf Ihren Plattformen.
 
 
 .Informationen zu diesem Vorgang
@@ -261,7 +261,7 @@ CL2                          cluster-network   10.10.1.102      NX3132V
 Sie müssen jetzt den Ersatzschalter vorbereiten.  Falls Sie die RCF-Datei und das Image aktualisieren müssen, befolgen Sie bitte diese Schritte:
 
 +
-.. Auf der NetApp Supportseite finden Sie weitere Informationen.link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch/["Cisco Ethernet-Switches"^] Die
+.. Auf der NetApp Support Site finden Sie weitere Informationen unter link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch/["Cisco Ethernet-Switches"^].
 .. Notieren Sie sich Ihren Switch und die erforderlichen Softwareversionen in der Tabelle auf dieser Seite.
 .. Laden Sie die passende Version der RCF herunter.
 .. Klicken Sie auf der Seite *Beschreibung* auf *WEITER*, akzeptieren Sie die Lizenzvereinbarung und folgen Sie dann den Anweisungen auf der Seite *Download*, um die RCF-Datei herunterzuladen.

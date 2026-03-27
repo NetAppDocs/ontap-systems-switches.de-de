@@ -105,7 +105,7 @@ There are no entries matching your query.
 ====
 
 
-. [[step7]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch A durch die gemeinsam genutzte RCF-Datei.  Sehenlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. [[Schritt 7]]Ersetzen Sie die Speicher-RCF auf dem gemeinsam genutzten Switch A durch die gemeinsam genutzte RCF-Datei. Siehe link:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Details.
 . Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter B, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
@@ -141,7 +141,7 @@ There are no entries matching your query.
 ====
 
 
-. [[step13]]Ersetzen Sie die Speicher-RCF-Datei auf dem gemeinsam genutzten Switch B durch die gemeinsam genutzte RCF-Datei.  Sehenlink:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Einzelheiten.
+. [[Schritt 13]]Ersetzen Sie die Storage-RCF-Datei auf dem Shared Switch B durch die Shared-RCF-Datei. Siehe link:install-nxos-rcf-9336c-shared.html["Installieren Sie RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch"] für weitere Details.
 . Überprüfen Sie, ob der an HA-Paar 1, Speicherschalter B, angeschlossene Speicher fehlerfrei funktioniert:
 +
 `system health alert show -instance`
@@ -183,7 +183,7 @@ sh1 (config)# *exit*
 ====
 
 
-. [[step16]]Konvertierung des HA-Paares 1 von einem schalterlosen Cluster in einen geschalteten Cluster.  Verwenden Sie die im gemeinsamen RCF definierten Cluster-Portzuweisungen.  Sehenlink:prepare-nxos-rcf-9336c-shared.html["Installieren Sie die NX-OS-Software und die Referenzkonfigurationsdateien (RCFs)."] Für weitere Einzelheiten.
+. [[Schritt 16]]Konvertieren Sie HA-Paar 1 von einem Cluster ohne Switches in einen Cluster mit Switches. Verwenden Sie die im gemeinsamen RCF definierten Cluster-Portzuweisungen. Siehe link:prepare-nxos-rcf-9336c-shared.html["Installieren Sie die NX-OS-Software und Referenz-Konfigurationsdateien (RCFs)"] für weitere Details.
 . Überprüfen Sie, ob die Netzwerkkonfiguration gültig ist:
 +
 `network port show`
