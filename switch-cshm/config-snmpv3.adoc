@@ -13,7 +13,7 @@ summary: 'Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch
 [role="lead"]
 SNMP wird zur Überwachung der Switches verwendet.  Die Überwachung mittels SNMPv3 wird durch Befolgen der folgenden Vorgehensweise konfiguriert.
 
-Der Ethernet Switch Health Monitor (CSHM) nutzt SNMP, um den Zustand und die Leistung von Cluster- und Speicherswitches zu überwachen.  Standardmäßig wird SNMPv2c automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert.  SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität einführt, die vor unberechtigtem Zugriff schützen und die Vertraulichkeit und Integrität der Daten während der Übertragung gewährleisten.
+Der Ethernet Switch Health Monitor (CSHM) nutzt SNMP zur Überwachung des Zustands und der Leistung von Netzwerk-Switches. Standardmäßig wird SNMPv2c automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert. SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität einführt, die vor unberechtigtem Zugriff schützen und die Vertraulichkeit sowie Integrität der Daten während der Übertragung gewährleisten.
 
 [NOTE]
 ====

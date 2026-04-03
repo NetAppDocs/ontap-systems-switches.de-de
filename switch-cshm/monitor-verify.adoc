@@ -11,7 +11,7 @@ summary: Erfahren Sie, wie Sie überprüfen können, ob die Überwachung eines E
 
 
 [role="lead"]
-Der Ethernet Switch Health Monitor (CSHM) versucht automatisch, die von ihm erkannten Switches zu überwachen; die Überwachung erfolgt jedoch möglicherweise nicht automatisch, wenn die Switches nicht korrekt konfiguriert sind.  Sie sollten überprüfen, ob der Health Monitor ordnungsgemäß konfiguriert ist, um Ihre Switches zu überwachen.
+Der Ethernet-Switch-Integritätsmonitor (CSHM) versucht automatisch, die erkannten Netzwerk-Switches zu überwachen; die Überwachung erfolgt jedoch möglicherweise nicht automatisch, wenn die Switches nicht korrekt konfiguriert sind. Sie sollten überprüfen, ob der Integritätsmonitor korrekt konfiguriert ist, um Ihre Switches zu überwachen.
 
 
 

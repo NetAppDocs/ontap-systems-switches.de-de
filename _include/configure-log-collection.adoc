@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-Der Ethernet Switch Health Monitor (CSHM) ist dafür zuständig, den Betriebszustand der Cluster- und Speichernetzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln.  Dieses Verfahren führt Sie durch den Prozess der Einrichtung der Datenerfassung, der Anforderung detaillierter *Support*-Protokolle und der Aktivierung einer stündlichen Erfassung von *periodischen* Daten, die von AutoSupport erfasst werden.
+Der Ethernet-Switch-Integritätsmonitor (CSHM) ist für die Überwachung des Betriebszustands von Netzwerk-Switches und die Erfassung von Switch-Protokollen zu Debugging-Zwecken zuständig. Diese Anleitung führt Sie durch die Einrichtung der Protokollerfassung, die Anforderung detaillierter *Support*-Protokolle und die Aktivierung der stündlichen Erfassung von *periodischen* Daten, die von AutoSupport erfasst werden.
 
 *HINWEIS:* Wenn Sie den FIPS-Modus aktivieren, müssen Sie Folgendes durchführen:
 
