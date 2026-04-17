@@ -2,7 +2,7 @@
 permalink: switch-cisco-92300/replace-92300yc.html 
 sidebar: sidebar 
 keywords: replace,upgrade cisco nexus 92300yc cluster switch 
-summary: 'Der Austausch eines defekten Nexus 92300YC-Switches in einem Clusternetzwerk ist ein nicht-unterbrechendes Verfahren (NDU).' 
+summary: Der Austausch eines defekten Nexus 92300YC-Switches in einem Clusternetzwerk ist ein unterbrechungsfreies Verfahren. 
 ---
 = Ersetzen Sie einen Cisco Nexus 92300YC-Switch
 :allow-uri-read: 

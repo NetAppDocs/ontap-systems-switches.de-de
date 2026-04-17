@@ -130,7 +130,7 @@ cluster1::*>
 ====
 .. Überprüfen Sie, ob alle Cluster-Schnittstellen (LIFs) am Home-Port angeschlossen sind:
 +
-`network interface show -vserver cluster`
+`network interface show -vserver Cluster`
 
 +
 .Beispiel anzeigen
@@ -138,7 +138,7 @@ cluster1::*>
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface show -vserver cluster*
+cluster1::*> *network interface show -vserver Cluster*
             Logical            Status     Network           Current      Current Is
 Vserver     Interface          Admin/Oper Address/Mask      Node         Port    Home
 ----------- ------------------ ---------- ----------------- ------------ ------- ----
@@ -223,7 +223,7 @@ CAUTION: Stellen Sie sicher, dass Sie *alle* verbundenen Cluster-Ports herunterf
 
 . Überprüfen Sie, ob die Cluster-LIFs auf die Ports des Cluster-Switches cs1 umgeschaltet haben. Dies kann einige Sekunden dauern.
 +
-`network interface show -vserver cluster`
+`network interface show -vserver Cluster`
 
 +
 .Beispiel anzeigen
@@ -231,7 +231,7 @@ CAUTION: Stellen Sie sicher, dass Sie *alle* verbundenen Cluster-Ports herunterf
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface show -vserver cluster*
+cluster1::*> *network interface show -vserver Cluster*
             Logical           Status     Network            Current       Current Is
 Vserver     Interface         Admin/Oper Address/Mask       Node          Port    Home
 ----------- ----------------- ---------- ------------------ ------------- ------- ----
@@ -345,21 +345,22 @@ Weitere Einzelheiten finden Sie im Knowledge Base Artikel link:https://kb.netapp
 +
 Möglicherweise müssen Sie die Einträge in der Host-Datei aktualisieren, die mit den SSH-Schlüsseln zusammenhängen.
 
-. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
+. Kopieren Sie die RCF auf den Bootflash auf Switch cs1 mithilfe eines der folgenden Übertragungsprotokolle: FTP, SFTP oder SCP.
 +
 Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
-Dieses Beispiel zeigt, wie TFTP verwendet wird, um eine RCF-Datei in den Bootflash des Switches cs1 zu kopieren:
+Dieses Beispiel zeigt, wie SFTP verwendet wird, um eine RCF in den Bootflash auf dem Switch cs1 zu kopieren:
 
 +
 [listing, subs="+quotes"]
 ----
-cs1# *copy tftp: bootflash: vrf management*
+cs1# *copy sftp: bootflash: vrf management*
 Enter source filename: *Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt*
-Enter hostname for the tftp server: *172.22.201.50*
-Trying to connect to tftp server......Connection to Server Established.
-TFTP get operation was successful
+Enter hostname for the sftp server: *172.22.201.50*
+Enter username: *user1*
+Trying to connect to sftp server......Connection to Server Established.
+SFTP get operation was successful
 Copy complete, now saving to disk (please wait)...
 ----
 . Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
@@ -555,6 +556,9 @@ cluster1::*>
 `This command will reboot the system. (y/n)?  [n] *y*`
 
 
+
+
+CAUTION: Falls Ihr 9336C-FX2-Switch nach dem RCF-Upgrade nicht mehr startet, lesen Sie den NetApp Knowledge Base Artikel link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Cisco_9336C-FX2_Switch_Fails_to_Boot_After_RCF_Install_%E2%80%93_Boot_Variable_Cleared["Cisco 9336C-FX2 Switch startet nach RCF-Installation nicht – Boot-Variable gelöscht"^] für die nächsten Schritte.
 
 
 
@@ -792,7 +796,7 @@ cs1#
 ====
 . Überprüfen Sie, ob die Cluster-LIFs wieder auf ihren Heimatport zurückgekehrt sind:
 +
-`network interface show -vserver cluster`
+`network interface show -vserver Cluster`
 
 +
 .Beispiel anzeigen
@@ -800,7 +804,7 @@ cs1#
 ====
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface show -vserver cluster*
+cluster1::*> *network interface show -vserver Cluster*
             Logical            Status     Network            Current             Current Is
 Vserver     Interface          Admin/Oper Address/Mask       Node                Port    Home
 ----------- ------------------ ---------- ------------------ ------------------- ------- ----

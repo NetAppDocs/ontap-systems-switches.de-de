@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/install-upgrade-rcf-overview-3232c.html 
 sidebar: sidebar 
 keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 3232c 
-summary: 'SSH ist eine Voraussetzung für die Verwendung des Cluster Switch Health Monitor (CSHM) und der Protokollerfassungsfunktionen. Um SSH auf Cisco 3232c-Cluster-Switches zu aktivieren, generieren Sie zuerst die SSH-Schlüssel und aktivieren dann SSH.' 
+summary: 'SSH ist für die Nutzung des Cluster Switch Health Monitor (CSHM) und der Protokollerfassungsfunktionen erforderlich. Um SSH auf Cisco 3232c Cluster-Switches zu aktivieren, müssen Sie zunächst die SSH-Schlüssel generieren und anschließend SSH aktivieren.' 
 ---
 = Übersicht zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF).
 :allow-uri-read: 

@@ -28,7 +28,7 @@ Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Nexus-Sw
 == Schritt 1: Installieren Sie die RCF auf den Schaltern
 
 . Melden Sie sich über SSH oder über eine serielle Konsole am Switch cs1 an.
-. Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
+. Kopieren Sie die RCF in den Bootflash von Switch cs1 mithilfe eines der folgenden Übertragungsprotokolle: FTP, SFTP oder SCP.
 +
 Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9336c-fx2-switch/model.html#CommandReferences["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
@@ -36,15 +36,16 @@ Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden i
 .Beispiel anzeigen
 [%collapsible]
 ====
-Dieses Beispiel zeigt, wie TFTP verwendet wird, um eine RCF-Datei in den Bootflash des Switches cs1 zu kopieren:
+Dieses Beispiel zeigt, wie SFTP verwendet wird, um eine RCF in den Bootflash auf dem Switch cs1 zu kopieren:
 
 [listing, subs="+quotes"]
 ----
-cs1# *copy tftp: bootflash: vrf management*
+cs1# *copy sftp: bootflash: vrf management*
 Enter source filename: *Nexus_9336C_RCF_v1.6-Cluster-HA-Breakout.txt*
-Enter hostname for the tftp server: *172.22.201.50*
-Trying to connect to tftp server......Connection to Server Established.
-TFTP get operation was successful
+Enter hostname for the sftp server: *172.22.201.50*
+Enter username: *user1*
+Trying to connect to sftp server......Connection to Server Established.
+SFTP get operation was successful
 Copy complete, now saving to disk (please wait)...
 ----
 ====
