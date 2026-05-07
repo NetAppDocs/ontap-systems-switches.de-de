@@ -2,7 +2,7 @@
 permalink: switch-bes-53248/CSHM_snmpv3.html 
 sidebar: sidebar 
 keywords: SNMP,SNMPv3,SNMPv3 setup,BES-53248 Broadcom setup,BES-3248 switches configuration,EFOS 
-summary: 'SNMPv3 kann mit dem Ethernet Switch Health Monitor (CSHM) verwendet werden.' 
+summary: SNMPv3 kann mit dem Ethernet-Switch-Integritätsmonitor CSHM verwendet werden. 
 ---
 = SNMPv3 konfigurieren
 :allow-uri-read: 

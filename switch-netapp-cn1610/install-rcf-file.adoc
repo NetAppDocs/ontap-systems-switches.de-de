@@ -2,7 +2,7 @@
 permalink: switch-netapp-cn1610/install-rcf-file.html 
 sidebar: sidebar 
 keywords: reference configuration, file ,install, cn1610, switch, install rcf 
-summary: 'Bei der Installation einer Referenzkonfigurationsdatei (RCF) müssen Sie zuerst die Cluster-LIFs vom Switch cs2 migrieren.  Nach der Installation und Validierung des RCF können die LIFs zurückmigriert werden.' 
+summary: Bei der Installation einer Referenz-Konfigurationsdatei RCF müssen Sie zuerst die Cluster-LIFs vom Switch cs2 migrieren. Nach der Installation und Validierung der RCF können die LIFs wieder zurückmigriert werden. 
 ---
 = Installieren einer Referenzkonfigurationsdatei auf einem CN1610-Switch
 :allow-uri-read: 

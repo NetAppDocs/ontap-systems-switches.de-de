@@ -763,4 +763,4 @@ Falls Cluster-LIFs nicht zu ihren Heimatports zurückgekehrt sind, setzen Sie si
 
 
 .Wie geht es weiter?
-Nach der Installation oder Aktualisierung der NX-OS-Software können Sielink:install-upgrade-rcf-overview-cluster.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."] Die
+Nach der Installation oder Aktualisierung der NX-OS-Software können Sie link:install-upgrade-rcf-overview-cluster-9336c.html["Installieren oder aktualisieren Sie die Referenzkonfigurationsdatei (RCF)."].

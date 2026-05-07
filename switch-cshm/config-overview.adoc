@@ -2,7 +2,7 @@
 permalink: switch-cshm/config-overview.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: 'Der Ethernet Switch Health Monitor (CSHM) ist dafür zuständig, den Betriebszustand der Cluster- und Speichernetzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln.' 
+summary: Der Ethernet-Switch-Integritätsmonitor CSHM ist dafür zuständig, den Betriebszustand der Cluster- und Speichernetzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln. 
 ---
 = Konfigurationsübersicht
 :allow-uri-read: 

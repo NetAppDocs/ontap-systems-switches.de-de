@@ -1,5 +1,5 @@
 ---
-permalink: switch-cisco-9364d-gx2a/install-upgrade-rcf-overview-cluster.html 
+permalink: switch-cisco-9364d-gx2a/install-upgrade-rcf-overview-cluster-9364d.html 
 sidebar: sidebar 
 keywords: install, upgarde, cluster, switch, cisco 9364d-gx2a 
 summary: Sie können das RCF installieren, nachdem Sie den Nexus 9364d-gx2a-Switch zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihr RCF zu aktualisieren. 

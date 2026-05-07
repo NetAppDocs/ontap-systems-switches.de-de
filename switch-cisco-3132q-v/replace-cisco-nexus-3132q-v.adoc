@@ -2,7 +2,7 @@
 permalink: switch-cisco-3132q-v/replace-cisco-nexus-3132q-v.html 
 sidebar: sidebar 
 keywords: replace, cisco nexus 3132q-v cluster switches 
-summary: 'Der Austausch eines defekten Cisco Nexus 3132Q-V Switches in einem Clusternetzwerk ist ein nicht-unterbrechendes Verfahren (NDO), und Sie müssen eine bestimmte Abfolge von Aufgaben durchführen.' 
+summary: 'Der Austausch eines defekten Cisco Nexus 3132Q-V Switches in einem Clusternetzwerk ist ein unterbrechungsfreies Verfahren (NDU), und Sie müssen eine bestimmte Abfolge von Aufgaben ausführen.' 
 ---
 = Ersetzen Sie die Cisco Nexus 3132Q-V Cluster-Switches
 :allow-uri-read: 
