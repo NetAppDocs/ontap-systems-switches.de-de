@@ -68,7 +68,8 @@ Montieren Sie Ihr Aufbewahrungssystem und die Regalböden im Schrank oder Regal.
  a| 
  a| 
 * https://docs.netapp.com/us-en/ontap-afx/index.html["AFX-Systeme"^]
-* https://docs.netapp.com/us-en/ontap-systems/aff-landing/index.html["AFF-Systeme"^]
+* https://docs.netapp.com/us-en/ontap-systems/aff-aseries/index.html["AFF A Series Systeme"^]
+* https://docs.netapp.com/us-en/ontap-systems/aff-cseries/index.html["AFF C-Serien-Systeme"^]
 * https://docs.netapp.com/us-en/ontap-systems/allsan-landing/index.html["ASA-Systeme"^]
 * https://docs.netapp.com/us-en/asa-r2/index.html["ASA r2-Systeme"^]
 * https://docs.netapp.com/us-en/ontap-systems/fas/index.html["FAS-Systeme"^]
@@ -172,7 +173,8 @@ Nachdem Sie Ihre Switches konfiguriert und die erforderliche Software installier
  a| 
  a| 
 * https://docs.netapp.com/us-en/ontap-afx/index.html["AFX-Systeme"^]
-* https://docs.netapp.com/us-en/ontap-systems/aff-landing/index.html["AFF-Systeme"^]
+* https://docs.netapp.com/us-en/ontap-systems/aff-aseries/index.html["AFF A Series Systeme"^]
+* https://docs.netapp.com/us-en/ontap-systems/aff-cseries/index.html["AFF C-Serien-Systeme"^]
 * https://docs.netapp.com/us-en/ontap-systems/allsan-landing/index.html["ASA-Systeme"^]
 * https://docs.netapp.com/us-en/asa-r2/index.html["ASA r2-Systeme"^]
 * https://docs.netapp.com/us-en/ontap-systems/fas/index.html["FAS-Systeme"^]
