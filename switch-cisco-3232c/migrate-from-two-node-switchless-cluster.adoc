@@ -15,6 +15,7 @@ Wenn Sie einen _switchlosen_ Cluster mit zwei Knoten haben, können Sie zu einem
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -70,6 +71,7 @@ Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Ser
 ====
 
 
+[[step-1-display-and-migrate-physical-and-logical-ports]]
 == Schritt 1: Physische und logische Ports anzeigen und migrieren
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -323,6 +325,7 @@ cluster::*> *network interface migrate -vserver cluster -lif n2_clus1 -source-no
 
 
 
+[[step-2-shut-down-the-reassigned-lifs-and-disconnect-the-cables]]
 == Schritt 2: Schalten Sie die neu zugewiesenen LIFs ab und trennen Sie die Kabel.
 
 . Überprüfen Sie, ob die Cluster-Schnittstellen erfolgreich migriert wurden:
@@ -438,6 +441,7 @@ Sie können sich auf die laufende Konfiguration beziehen und den ersten 40-GbE-P
 
 
 
+[[step-3-enable-the-cluster-ports]]
 == Schritt 3: Aktivieren Sie die Cluster-Ports
 
 . Trennen Sie das Kabel von e4a am Knoten n2.
@@ -554,6 +558,7 @@ Cluster
 
 
 
+[[step-4-enable-the-reassigned-lifs]]
 == Schritt 4: Aktivieren Sie die neu zugewiesenen LIFs
 
 . Zeigen Sie die Cluster-Port-Konnektivität auf jedem Knoten an:

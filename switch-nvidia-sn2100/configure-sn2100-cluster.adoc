@@ -15,7 +15,7 @@ Informationen zur Konfiguration des SN2100-Switches finden Sie in der Dokumentat
 
 .Schritte
 . Überprüfen Sie dielink:configure-reqs-sn2100-cluster.html["Konfigurationsanforderungen"] Die
-. Befolgen Sie die Anweisungen in https://docs.nvidia.com/networking/display/sn2000pub/System+Bring-Up["NVIDIA -Systemstart."^] Die
+. Den Anweisungen in  https://networking-docs.nvidia.com/sn2000hw/latest/system-bring-up["NVIDIA -Systemstart."^] wird gefolgt.
 
 
 .Wie geht es weiter?

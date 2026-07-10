@@ -15,6 +15,7 @@ Um die vorhandenen CN1610-Cluster-Switches in einem Cluster durch Cisco Nexus 32
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Vor der Migration sollten Sie unbedingt Folgendes überprüfen:link:migrate-requirements-3232c.html["Migrationsanforderungen"] Die
@@ -32,6 +33,7 @@ Falls erforderlich, finden Sie weitere Informationen in den folgenden Quellen:
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -52,6 +54,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -260,6 +263,7 @@ Cluster
 
 
 
+[[step-2-replace-cluster-switch-cl2-with-c2]]
 === Schritt 2: Ersetzen Sie den Cluster-Schalter CL2 durch C2.
 
 . Schalten Sie die Cluster-Verbindungsports ab, die physisch mit Switch CL2 verbunden sind:
@@ -744,6 +748,7 @@ cluster::*> *network interface migrate -vserver cluster -lif n2_clus4 -source-no
 
 
 
+[[step-3-replace-cluster-switch-cl1-with-c1]]
 === Schritt 3: Ersetzen Sie den Cluster-Schalter CL1 durch C1
 
 . Überprüfen Sie den Status des Clusters:
@@ -979,6 +984,7 @@ e0d   cluster   cluster    up    9000  auto/10000     -
 
 
 
+[[step-4-complete-the-procedure]]
 === Schritt 4: Schließen Sie den Vorgang ab
 
 . Alle migrierten Cluster-Interconnect-LIFs, die ursprünglich auf allen Knoten mit C1 verbunden waren, sollen wiederhergestellt werden:

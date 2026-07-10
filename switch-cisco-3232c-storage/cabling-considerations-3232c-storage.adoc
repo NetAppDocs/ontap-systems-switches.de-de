@@ -15,6 +15,7 @@ Bevor Sie Ihre 3232C-Switches konfigurieren, überprüfen Sie die Verkabelungs- 
 
 
 
+[[support-for-nvidia-cx6-cx6-dx-and-cx7-ethernet-ports]]
 == Unterstützung für NVIDIA CX6-, CX6-DX- und CX7-Ethernet-Anschlüsse
 
 Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (CX6), ConnectX-6 Dx (CX6-DX) oder ConnectX-7 (CX7) NIC-Ports verbinden, müssen Sie die Switch-Port-Geschwindigkeit fest codieren.
@@ -34,6 +35,7 @@ Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (C
 ----
 
 
+[[related-information]]
 == Ähnliche Informationen
 
 * Weitere Informationen zu Switch-Ports finden Sie in der  https://hwu.netapp.com/Switch/Index["Hardware Universe"^].

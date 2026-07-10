@@ -15,6 +15,7 @@ Befolgen Sie diese Schritte, um einen defekten Cisco Nexus 3232C Storage-Switch 
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Die bestehende Netzwerkkonfiguration muss folgende Eigenschaften aufweisen:
@@ -39,12 +40,14 @@ Der Ersatz-Switch Cisco Nexus 3232C muss folgende Eigenschaften aufweisen:
 
 
 
+[[replace-the-switch]]
 == Tauschen Sie den Schalter aus.
 
 Bei diesem Verfahren wird der zweite Nexus 3232C Storage Switch s2 durch den neuen 3232C Switch ns2 ersetzt. Die beiden Knoten sind cluster1-01 und cluster1-02.
 
 
 
+[[step-1-confirm-the-switch-to-be-replaced-is-s2]]
 === Schritt 1: Bestätigen Sie, dass der auszutauschende Switch S2 ist
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -145,6 +148,7 @@ SHFGD2008000022         Eth1/8          120        S           e0a
 
 
 
+[[step-2-configure-cabling]]
 === Schritt 2: Verkabelung konfigurieren
 
 . [[fünf]]Überprüfen Sie die Regalanschlüsse im Speichersystem:
@@ -177,6 +181,7 @@ shelf  id  remote-port  remote-device
 
 
 
+[[step-3-verify-all-device-configurations-on-switch-ns2]]
 === Schritt 3: Überprüfen Sie alle Gerätekonfigurationen auf Switch ns2
 
 . Überprüfen Sie den Gesundheitszustand der Speicherknotenports:

@@ -1,0 +1,49 @@
+---
+permalink: switch-cisco-9332d-gx2b/configure-switch-workflow-9332d.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9332d-gx2b switch 
+summary: Cisco 9332D-GX2B Switches werden im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems, eines Switch-Austauschs oder eines Switch-Resets auf die Werkseinstellungen konfiguriert. 
+---
+= Switch Workflow konfigurieren, Cisco Nexus 9332D-GX2B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Cisco 9332D-GX2B Switches werden im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems, eines Switch-Austauschs oder eines Switch-Resets auf die Werkseinstellungen konfiguriert.
+
+Sie werden möglicherweise zu diesem Workflow oder zu einzelnen Themen in diesem Workflow weitergeleitet, wie es Ihr spezifisches Verfahren für link:install-configure-switches-in-afx-workflow-9332d.html["Ein neues AFX 1K oder AFX 2K System installieren und einrichten"], link:replace-9332d-cluster.html["Einen Switch austauschen"] oder link:maintain-reset-switch-9332d.html["Einen Switch auf die Werkseinstellungen zurücksetzen"] erfordert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-complete-initial-setup-9332d.html["Die Ersteinrichtung des Schalters abschließen"]
+[role="quick-margin-para"]
+Nach dem Einschalten der Switches starten diese den Bootvorgang und der Konfigurationsassistent wird angezeigt. Sie werden aufgefordert, eine Reihe von Fragen zu beantworten, um die Erstkonfiguration (Startkonfiguration) der Switches durchzuführen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:configure-review-cabling-config-requirements-9332d.html["Überprüfung der Verkabelungs- und Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Verkabelungs- und Konfigurationsanforderungen werden überprüft.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:configure-install-nxos-9332d.html["Installieren Sie NX-OS"]
+[role="quick-margin-para"]
+Die aktuelle Version von NX-OS auf den Switches installieren, die Ihr AFX 1K oder AFX 2K System unterstützen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:configure-install-upgrade-rcf-overview-9332d.html["Installieren Sie RCF"]
+[role="quick-margin-para"]
+Installieren Sie die aktuelle Version von RCF auf den Switches, die Ihr AFX 1K oder AFX 2K System unterstützen. Der Link führt zur Übersicht über die RCF-Installation oder das Upgrade, die wichtige Informationen enthält, die vor der Installation von RCF zu beachten sind.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-verify-ssh-9332d.html["SSH für die Protokollerfassung überprüfen"]
+[role="quick-margin-para"]
+Überprüfen Sie, ob SSH aktiviert ist, sodass die Funktion zur Protokollerfassung des Ethernet Switch Health Monitor (CSHM) verwendet werden kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:../switch-cshm/cshm-overview.html["Konfiguration der Zustandsüberwachung von Ethernet Switches"]
+[role="quick-margin-para"]
+Die Ethernet Switch-Zustandsüberwachung (CSHM) wird konfiguriert, um den Betriebszustand der Switches sicherzustellen und Switch-Protokolle für Debugging und Fehlerbehebung zu erfassen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:configure-smart-call-9332d.html["Smart Call Home konfigurieren (optional)"]
+[role="quick-margin-para"]
+ONTAP unterstützt die Zustandsüberwachung von Ethernet-Switches (CSHM) zur Überwachung der AFX Cluster Switches sowie die Möglichkeit, Switch-Diagnoseprotokolle zu erfassen. Cisco's Smart Call Home ist eine Option, um proaktiven Support bereitzustellen und bei der Lösung von Problemen zu unterstützen, die mit den Switches auftreten könnten.
+
+.Wie geht es weiter?
+* Wenn Sie Ihren Switch im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems konfiguriert haben, müssen Sie link:install-complete-afx-setup-9332d.html["Die AFX Systemeinrichtung abschließen"].
+* Wenn Sie Ihren Switch im Rahmen eines Switch-Austauschs konfiguriert oder auf die Werkseinstellungen zurückgesetzt haben, sollte Ihr Switch normal funktionieren.
+

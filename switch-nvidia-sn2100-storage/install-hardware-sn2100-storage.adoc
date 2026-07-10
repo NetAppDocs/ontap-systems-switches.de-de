@@ -17,7 +17,7 @@ Befolgen Sie diese Schritte, um Ihre SN2100-Switches einzurichten und zu konfigu
 
 .Schritte
 . Überprüfen Sie dielink:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"] Die
-. Befolgen Sie die Anweisungen in der link:https://docs.nvidia.com/networking/display/sn2000pub/Installation["NVIDIA Switch Installationsanleitung"^].
+. Befolgen Sie die Anweisungen in der link:https://networking-docs.nvidia.com/sn2000hw/latest/installation["NVIDIA Switch Installationsanleitung"^].
 
 
 .Wie geht es weiter?

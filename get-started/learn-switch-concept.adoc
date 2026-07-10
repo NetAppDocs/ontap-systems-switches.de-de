@@ -20,6 +20,7 @@ NOTE: Es werden ausschließlich von NetApp validierte Back-End-Switches (bestell
 
 
 
+[[afx-systems-switches]]
 == AFX-Systemschalter
 
 Mit den Switches von AFX Systems können Sie schnelle, energieeffiziente und platzsparende Netzwerk-Switches erstellen. Aufgrund ihrer geringen Größe und hohen Portdichte sind sie ideal für die Handhabung großer Netzwerke. Die Ports unterstützen unterschiedliche Geschwindigkeiten und können in mehrere Verbindungen aufgeteilt werden. Zu den von NetApp unterstützten AFX-System-Switches gehören:
@@ -30,6 +31,7 @@ Mit den Switches von AFX Systems können Sie schnelle, energieeffiziente und pla
 
 
 
+[[cluster-switches]]
 == Cluster-Switches
 
 Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstellen. Zu den von NetApp unterstützten Cluster-Switches gehören:
@@ -41,6 +43,7 @@ Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstelle
 
 
 
+[[storage-switches]]
 == Speicherschalter
 
 Storage-Switches ermöglichen das Routing von Daten zwischen Servern und Storage-Arrays in einem Storage Area Network (SAN).  Zu den von NetApp unterstützten Speicher-Switches gehören:
@@ -52,6 +55,7 @@ Storage-Switches ermöglichen das Routing von Daten zwischen Servern und Storage
 
 
 
+[[shared-switches]]
 == Gemeinsam genutzte Switches
 
 Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren, indem sie die Verwendung gemeinsam genutzter Cluster- und Speicher-RCFs unterstützen.  Der von NetApp unterstützte Shared Switch ist:
@@ -61,6 +65,7 @@ Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktion
 
 
 
+[[end-of-availability-switches]]
 == Verfügbarkeitsende-Schalter
 
 Eine Liste der Netzwerk-Switches, die nicht mehr zum Kauf erhältlich sind, aber weiterhin unterstützt werden, finden Sie unter link:../overview-eod.html["Verfügbarkeitsende-Schalter"].

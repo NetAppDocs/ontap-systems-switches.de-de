@@ -18,6 +18,7 @@ Verwenden Sie die folgenden Verkabelungsabbildungen, um die Verkabelung zwischen
 
 
 
+[[cable-ns224-storage-as-switch-attached]]
 == Kabel NS224 Aufbewahrung als Schalteranschluss
 
 Wenn Sie den NS224-Speicher als Switch-Attached-Speicher verkabeln möchten, folgen Sie dem Switch-Attached-Schaltplan:
@@ -28,6 +29,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[cable-ns224-storage-as-direct-attached]]
 == Kabel NS224-Aufbewahrung als direkt angeschlossen
 
 Wenn Sie den NS224-Speicher direkt anschließen möchten, anstatt die gemeinsam genutzten Switch-Speicherports zu verwenden, folgen Sie dem Diagramm für den direkten Anschluss:
@@ -38,6 +40,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[cisco-nexus-9336c-fx2-cabling-worksheet]]
 == Cisco Nexus 9336C-FX2 Verkabelungs-Arbeitsblatt
 
 Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt anhand des ausgefüllten Beispiel-Verkabelungsarbeitsblatts ausfüllen.
@@ -56,6 +59,7 @@ Wo:
 
 
 
+[[blank-cabling-worksheet]]
 == Leeres Verkabelungsarbeitsblatt
 
 Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden. Die Tabelle „Supported Cluster Connections“ des link:https://hwu.netapp.com["Hardware Universe"^] definiert die von der Plattform verwendeten Cluster-Ports.

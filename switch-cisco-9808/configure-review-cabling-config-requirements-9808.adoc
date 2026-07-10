@@ -1,0 +1,37 @@
+---
+permalink: switch-cisco-9808/configure-review-cabling-config-requirements-9808.html 
+sidebar: sidebar 
+keywords: 9808 cabling setup, 9808 switches configuration, nx-os 
+summary: Wenn im Rahmen einer neuen AFX 2K Systeminstallation neue Cisco Nexus 9808 Switches installiert, ein Supervisor-Modul ersetzt oder ein Switch auf die Werkseinstellungen zurückgesetzt wird, sind die folgenden Verkabelungs- und Konfigurationsanforderungen zu berücksichtigen. 
+---
+= Überprüfung der Verkabelungs- und Konfigurationsanforderungen, Cisco Nexus 9808
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Cisco Nexus 9808 Switches im Rahmen einer neuen AFX 2K Systeminstallation installiert werden, ein Supervisor-Modul ersetzt wird oder ein Switch auf die Werkseinstellungen zurückgesetzt wird, sind die folgenden Verkabelungs- und Konfigurationsanforderungen zu prüfen.
+
+
+
+[[hard-code-the-speed-on-breakout-ports]]
+== Die Geschwindigkeit auf Breakout-Ports fest codieren
+
+Die Breakout-Ports des Switches (4x100GbE) müssen fest auf 100GbE konfiguriert werden. Wenn die Geschwindigkeit nicht fest konfiguriert wird, kommen die Ports nicht hoch und befinden sich in einem Fehler-Deaktivierungszustand.
+
+Beispielsweise wird 100GbE an den Breakout-Ports 19-35 fest konfiguriert, indem im Konfigurationsmodus wie folgt vorgegangen wird. Im Beispiel werden die Befehle auf den ersten Switch (cs1) angewendet. Diese Befehle werden für den zweiten Switch wiederholt.
+
+[listing, subs="+quotes"]
+----
+(cs1)# *configure terminal*
+Enter configuration commands, one per line. End with CNTL/Z.
+(cs1)(config)# *interface e1/19/1-4,e1/20/1-4,e1/21/1-4,e1/22/1-4,e1/23/1-4,e1/24/1-4,e1/25/1-4,e1/26/1-4,e1/27/1-4,e1/28/1-4,e1/29/1-4,e1/30/1-4,e1/31/1-4,e1/32/1-4,e1/33/1-4,e1/34/1-4,e1/35/1-4*
+(cs1)(config-if)# *speed 100000*
+(cs1)(config-if)# *no negotiate auto*
+(cs1)(config-if)# *exit*
+(cs1)(config)# *exit*
+(cs1)# *copy running-config startup-config*
+----
+.Wie geht es weiter?
+Sobald Sie die Anforderungen an Verkabelung und Konfiguration erfüllt haben, link:configure-install-nxos-9808.html["die NX-OS installieren"].

@@ -1,0 +1,146 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9332d-gx2b/reference-documentation-9332d.html 
+keywords: shared storage cluster switch 
+summary: Für die Installation und Konfiguration des Cisco Nexus 9332D-GX2B Switches im Rahmen eines neuen AFX 1K oder AFX 2K Systems oder für die Wartung bestehender Switches kann auf die entsprechende Cisco Switch-Dokumentation und NetApp Systemsdokumentation verwiesen werden. 
+---
+= Referenzdokumentation – Cisco Nexus 9332D-GX2B
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Installation und Konfiguration des Cisco Nexus 9332D-GX2B Switches im Rahmen eines neuen AFX 1K oder AFX 2K Systems oder für die Wartung bestehender Switches kann auf die entsprechende Cisco Switch-Dokumentation und NetApp Systemsdokumentation verwiesen werden.
+
+
+NOTE: Schrittweise Anweisungen zur Installation und Konfiguration Ihrer Switches als Teil eines neuen AFX 1K oder AFX 2K Systems finden sich in der link:install-configure-switches-in-afx-workflow-9332d.html["Installation und Konfiguration von Switches in einem AFX Systemworkflow"].
+
+
+
+[[cisco-switch-documentation]]
+== Cisco Switch Dokumentation
+
+Um Ihre Cisco Nexus 9332D-GX2B Switches als Teil eines neuen AFX 1K oder AFX 2K Systems zu installieren und zu konfigurieren, können die folgenden Cisco Dokumente als Referenz dienen, um sich mit den Switch-Versionshinweisen, Sicherheitsinformationen, Installationsoptionen, der anfänglichen Softwarekonfiguration und den Befehlsreferenzen vertraut zu machen.
+
+Nach der Installation und Konfiguration Ihrer Switches finden Sie in den entsprechenden Cisco Dokumenten Hinweise zur Wartung Ihrer Switches.
+
+Alle diese Dokumente sind auf der link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Series Switches Unterstützung"^] Seite verfügbar.
+
+[cols="1,2,3"]
+|===
+| Aufgabentyp | Cisco Dokumenttitel | Beschreibung 
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-release-notes-list.html["Cisco Nexus 9000 Serie NX-OS Versionshinweise"^](Wählen Sie die Hinweise für die auf Ihren Switches installierte NX-OS-Version aus)
+ a| 
+Beschreibt die Funktionen, Fehler und Einschränkungen der Cisco Nexus 9000-Serie.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/regulatory/compliance/RCSI.html?dtid=osscdc000283&linkclickid=srch["Informationen zur Einhaltung gesetzlicher Bestimmungen und zur Sicherheit für die Cisco Nexus 9000-Serie"^]
+ a| 
+Bietet Informationen zur Einhaltung internationaler behördlicher Vorschriften, zur Sicherheit und zu gesetzlichen Bestimmungen für die Switches der Serie Nexus 9000.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Cisco Nexus 9332D-GX2B NX-OS-Modusschalter – Hardwareinstallationshandbuch"^]
+ a| 
+Bietet detaillierte Informationen zu Standortanforderungen, Hardware-Details der Schalter und Installationsoptionen.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-installation-and-configuration-guides-list.html["Softwarekonfigurationshandbücher für Cisco Nexus 9000 Series Switches"^](Wählen Sie die Anleitung für die auf Ihren Switches installierte NX-OS-Version aus)
+ a| 
+Liefert die grundlegenden Switch-Konfigurationsinformationen, die Sie benötigen, bevor Sie den Switch für den ONTAP -Betrieb konfigurieren können.
+
+
+
+ a| 
+Installieren, konfigurieren und warten
+ a| 
+link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/102x/command-reference/config/b_n9k_config_commands_1021.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^]
+ a| 
+Bietet Links zu den verschiedenen Befehlsreferenzen von Cisco.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/101x/upgrade/cisco-nexus-9000-nx-os-software-upgrade-downgrade-guide-101x.html["Leitfaden für Software-Upgrades und -Downgrades der Cisco Nexus 9000-Serie mit NX-OS"^](Wählen Sie die Anleitung für die auf Ihren Switches installierte NX-OS-Version aus)
+ a| 
+Bietet Informationen darüber, wie der Switch gegebenenfalls auf eine von ONTAP unterstützte Switch-Software heruntergestuft werden kann.
+
+
+
+ a| 
+Pflegen
+ a| 
+link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/products-system-message-guides-list.html["Cisco Nexus 9000 Series NX-OS-Systemnachrichtenreferenz"^]
+ a| 
+Beschreibt die Systemmeldungen für Switches der Cisco Nexus 9000-Serie, sowohl die informativen als auch die, die bei der Diagnose von Problemen mit Verbindungen, interner Hardware oder der Systemsoftware hilfreich sein können.
+
+|===
+
+
+[[netapp-systems-documentation]]
+== NetApp Systemdokumentation
+
+Um Ihre Cisco Nexus 9332D-GX2B Switches als Teil eines neuen AFX 1K oder AFX 2K Systems zu installieren und zu konfigurieren, können die folgenden NetApp Systems-Dokumente und Ressourcen als Referenz dienen, um sich mit den AFX Systemen, den unterstützten ONTAP Releases, den unterstützten Hardwarekonfigurationen und den Anforderungen für die Systeminstallation vertraut zu machen.
+
+[cols="1,2,3"]
+|===
+| Aufgabentyp | ONTAP Dokumenttitel | Beschreibung 
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://docs.netapp.com/us-en/ontap-afx/index.html["AFX-Systemdokumentation"^]
+ a| 
+Beschreibt die Installation von NetApp -Hardware.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://docs.netapp.com/us-en/ontap-family/["ONTAP-Dokumentation"^]
+ a| 
+Bietet detaillierte Informationen zu allen Aspekten der ONTAP Releases.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://hwu.netapp.com["Hardware Universe"^]
+ a| 
+Bietet Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
+
+
+
+ a| 
+Installieren und konfigurieren
+ a| 
+link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^]
+ a| 
+Bietet weitere Informationen zu den Installationsanforderungen von Speichersystemen.
+
+|===

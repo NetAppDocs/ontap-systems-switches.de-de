@@ -15,6 +15,7 @@ summary: Ältere Cisco Switches eines ONTAP Clusters können ohne Unterbrechung 
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Folgende Speichersysteme werden unterstützt:
@@ -45,6 +46,7 @@ Stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -69,6 +71,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -93,6 +96,7 @@ Jeder Port sollte als aktiviert angezeigt werden `Status` Die
 
 
 
+[[step-2-configure-cables-and-ports]]
 === Schritt 2: Kabel und Anschlüsse konfigurieren
 
 . Netzwerkportattribute anzeigen:
@@ -336,6 +340,7 @@ node2      /lldp
 
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Überprüfen Sie die endgültige Konfiguration:

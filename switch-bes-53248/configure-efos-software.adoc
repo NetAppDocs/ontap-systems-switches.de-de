@@ -17,6 +17,7 @@ Die EFOS-Software umfasst eine Reihe fortschrittlicher Netzwerkfunktionen und -p
 
 
 
+[[prepare-for-installation]]
 == Vorbereiten der Installation
 
 .Bevor Sie beginnen
@@ -27,6 +28,7 @@ Die EFOS-Software umfasst eine Reihe fortschrittlicher Netzwerkfunktionen und -p
 
 
 
+[[install-the-software]]
 == Installieren Sie die Software
 
 Verwenden Sie eine der folgenden Methoden, um die EFOS-Software zu installieren:
@@ -37,6 +39,7 @@ Verwenden Sie eine der folgenden Methoden, um die EFOS-Software zu installieren:
 
 
 
+[[method-1-install-efos]]
 === Methode 1: EFOS installieren
 
 Führen Sie die folgenden Schritte aus, um die EFOS-Software zu installieren.
@@ -251,6 +254,7 @@ Additional Packages............................ BGP-4
 
 
 
+[[method-2-install-efos-in-onie-mode]]
 === Methode 2: EFOS im ONIE-Modus installieren
 
 Die folgenden Schritte können Sie durchführen, wenn eine EFOS-Version FIPS-konform und die andere EFOS-Version nicht FIPS-konform ist.  Diese Schritte können verwendet werden, um das Nicht-FIPS- oder FIPS-konforme EFOS 3.7.xx-Image von ONIE zu installieren, falls der Switch nicht bootet.

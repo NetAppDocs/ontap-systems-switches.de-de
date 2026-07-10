@@ -15,17 +15,17 @@ Gehen Sie wie folgt vor, um den Cisco Nexus 3232C Switch einzurichten und zu kon
 
 .Bevor Sie beginnen
 * Zugriff auf einen HTTP-, FTP- oder TFTP-Server am Installationsort, um die entsprechenden NX-OS- und Referenzkonfigurationsdatei-(RCF)-Versionen herunterzuladen.
-* Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
+* Anwendbare NX-OS Version, heruntergeladen von der link:https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
 * Erforderliche Netzwerk- und Management-Netzwerk-Switch-Dokumentation.
 +
 Siehe link:required-documentation-3232c-storage.html["Erforderliche Dokumentation"] für weitere Informationen.
 
 * Erforderliche Controller-Dokumentation und ONTAP Dokumentation.
 +
-https://netapp.com/us/documenation/index.aspx["NetApp Dokumentation"^]
+link:https://docs.netapp.com/us-en/ontap/index.html["ONTAP 9 Dokumentation"^]
 
 * Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
-* Anwendbare NetApp Speicher-Netzwerk- und Management-Netzwerk-RCFs, heruntergeladen von der NetApp Support Site unter http://mysupport.netapp.com/["mysupport.netapp.com"^] für die Switches, die Sie erhalten. Alle Cisco Speicher-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco Werkseinstellung geliefert. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS Software, aber die RCFs sind nicht geladen.
+* Die entsprechenden NetApp RCFs für Speicher- und Managementnetzwerke, heruntergeladen von der NetApp Support-Website unter link:http://mysupport.netapp.com/["mysupport.netapp.com"^] für die Switches, die Sie erhalten. Alle Cisco Speicher- und Managementnetzwerk-Switches kommen mit der standardmäßigen Cisco Werkseinstellung. Diese Switches verfügen außerdem über die aktuelle Version der NX-OS Software, jedoch sind die RCFs nicht geladen.
 
 
 .Schritte

@@ -33,6 +33,7 @@ CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs 
 
 
 
+[[step-1-prepare-for-the-upgrade]]
 == Schritt 1: Vorbereitung auf das Upgrade
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -196,6 +197,7 @@ cluster1::*>
 
 
 
+[[step-2-configure-ports]]
 == Schritt 2: Ports konfigurieren
 
 . Schalten Sie auf dem Cluster-Switch cs1 die Ports ab, die mit den Cluster-Ports der Knoten verbunden sind.
@@ -562,6 +564,7 @@ CAUTION: Falls Ihr 9336C-FX2-Switch nach dem RCF-Upgrade nicht mehr startet, les
 
 
 
+[[step-3-verify-the-cluster-network-configuration-and-cluster-health]]
 == Schritt 3: Überprüfen Sie die Clusternetzwerkkonfiguration und den Clusterzustand.
 
 . Überprüfen Sie, ob die mit den Cluster-Ports verbundenen Switch-Ports *aktiv* sind.

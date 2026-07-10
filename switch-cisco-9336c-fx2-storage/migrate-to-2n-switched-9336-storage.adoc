@@ -17,6 +17,7 @@ Der Migrationsprozess funktioniert für alle Knoten, die optische oder Twinax-An
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -62,10 +63,12 @@ Sehen https://hwu.netapp.com["Hardware Universe"^] Informationen zu den Cluster-
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -90,6 +93,7 @@ Die erweiterte Aufforderung(`*>` ) erscheint.
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 . Deaktivieren Sie alle zum Knoten führenden Ports (außer ISL-Ports) an den beiden neuen Cluster-Switches cs1 und cs2.
@@ -411,6 +415,7 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Überprüfen Sie, ob alle Schnittstellen den Wert „true“ anzeigen. `Is Home` :

@@ -1,0 +1,77 @@
+---
+permalink: switch-cisco-9808/configure-verify-ssh-9808.html 
+sidebar: sidebar 
+keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9808 
+summary: 'Wenn Sie Ihre Switches im Rahmen einer Neuinstallation eines AFX 2K Systems, eines Austauschs des Supervisor-Moduls oder einer Wiederherstellung der Werkseinstellungen konfigurieren und die Funktionen Cluster Switch Health Monitor (CSHM) und Protokollerfassung nutzen möchten, muss überprüft werden, dass SSH und SSH Keys auf den Switches aktiviert sind.' 
+---
+= SSH für die Protokollerfassung überprüfen, Cisco Nexus 9808
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Switches im Rahmen einer Neuinstallation eines AFX 2K Systems, eines Supervisor-Modul-Austauschs oder einer Wiederherstellung der Werkseinstellungen konfiguriert werden, ist für die Nutzung der Protokollerfassungsfunktion des Ethernet Switch Health Monitor (CSHM) zu überprüfen, ob SSH auf den Switches aktiviert ist.
+
+.Bevor Sie beginnen
+Sie müssen über die serielle Konsole mit dem Switch verbunden sein.
+
+.Schritte
+. Überprüfen Sie, ob SSH aktiviert ist:
++
+[listing, subs="+quotes"]
+----
+(switch) *show ssh server*
+ssh version 2 is enabled
+----
+. Überprüfen Sie, ob die SSH-Schlüssel aktiviert sind:
++
+`show ssh key`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(switch)# *show ssh key*
+
+**************************************
+rsa Keys generated:Wed May 14 18:49:37 2025
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCndfdJesautdCwk5Mk/7pKOFl0IeShc9uBtj74F52vbjyf1FHOCXX7Xf3Vopxs6L1hbzgCpFLo9E7pZBd3I+1AoLyQULtR3svzNieGY8mlWZGLtpKf/P2fDCd8JVJaejrwQhm49WUPiC6ziEqBDMOGhJpD2e9++umyDdr6
+NbmK8Q==
+
+
+bitcount:1024
+fingerprint:
+SHA256:QtNU+Qq2I4ZfYwEfMEB1+z8w7xaKTlantTdsjLBx+OU
+**************************************
+could not retrieve dsa key information
+**************************************
+ecdsa Keys generated:Wed May 14 18:50:56 2025
+
+
+ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBAAYnv17T+JlGmH8rg81xiOow0mPmkbkIG0o7h9EchixO3i3KjgQr8AwqkRHNTcQC3lRnizhJFUeMGCwuQTurziRCwE6fAOkWa2MRyXA1DYRKKXjVEOnW9+MvinMipHQ0cCc
+YSExhh7j4HvWHIuYv8RmD7e3rmDQFlyyiLwdmpGfas2yaw==
+
+
+bitcount:521
+fingerprint:
+SHA256:7cpZ5NGnIq5Iamw67ke+9o4qG9D3xxmGPauVl4X5934
+**************************************
+
+(switch)# *show feature | include scpServer*
+scpServer              1          enabled
+(switch)# *show feature | include ssh*
+sshServer              1          enabled
+(switch)#
+----
+====
+
+
+.Wie geht es weiter?
+* Nachdem Sie überprüft haben, dass SSH für die Protokollerfassung aktiviert ist, link:../switch-cshm/cshm-overview.html["Konfiguration der Zustandsüberwachung von Ethernet Switches"].
+* Nachdem die Zustandsüberwachung für Ethernet Switches konfiguriert wurde, besteht die Möglichkeit, die Cisco Smart Call Home Supportfunktion zu nutzen link:configure-smart-call-9808.html["Smart Call Home konfigurieren"].
+* Wenn Sie Ihren Switch im Rahmen einer Neuinstallation eines AFX 2K-Systems konfiguriert haben, müssen Sie link:install-complete-afx-setup-9808.html["Die AFX Systemeinrichtung abschließen"].
+

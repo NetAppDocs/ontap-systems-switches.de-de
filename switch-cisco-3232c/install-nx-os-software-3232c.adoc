@@ -15,6 +15,7 @@ Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 3232C Cluster-
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -26,6 +27,7 @@ Mit diesem Verfahren können Sie die NX-OS-Software auf dem Nexus 3232C Cluster-
 
 
 
+[[install-the-software]]
 == Installieren Sie die Software
 
 Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.

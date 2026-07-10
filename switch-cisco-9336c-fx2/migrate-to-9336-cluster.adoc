@@ -15,6 +15,7 @@ Sie können eine unterbrechungsfreie Migration von älteren Cisco -Cluster-Switc
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Stellen Sie sicher, dass:
@@ -40,6 +41,7 @@ NOTE: Wenn Sie die Portgeschwindigkeit der Cluster-Ports e0a und e1a auf AFF A80
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -93,6 +95,7 @@ NOTE: Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL)
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh`
@@ -114,6 +117,7 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 . Prüfen Sie an den neuen Switches, ob die ISL-Verbindung zwischen den Switches cs1-new und cs2-new hergestellt und funktionsfähig ist:
@@ -620,6 +624,7 @@ Group Port-       Type     Protocol  Member Ports
 
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Automatische Wiederherstellung der Cluster-LIFs aktivieren.

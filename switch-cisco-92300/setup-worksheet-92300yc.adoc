@@ -17,6 +17,7 @@ Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzu
 
 
 
+[[sample-cabling-worksheet]]
 == Beispiel-Verkabelungsarbeitsblatt
 
 Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
@@ -756,6 +757,7 @@ Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
 |===
 
 
+[[blank-cabling-worksheet]]
 == Leeres Verkabelungsarbeitsblatt
 
 Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden. Der Abschnitt _Unterstützte Clusterverbindungen_ des link:https://hwu.netapp.com["Hardware Universe"^] definiert die von der Plattform verwendeten Cluster-Ports.

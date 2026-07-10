@@ -15,6 +15,7 @@ In den meisten Fällen werden Ethernet-Switches von ONTAP automatisch erkannt un
 
 
 
+[[create-a-switch-entry-so-that-ontap-can-monitor-it]]
 == Erstellen Sie einen Switch-Eintrag, damit ONTAP ihn überwachen kann.
 
 Verwenden Sie die `system switch ethernet create` Befehl zum manuellen Konfigurieren und Aktivieren der Überwachung für einen bestimmten Ethernet-Switch.  Dies ist hilfreich, wenn ONTAP den Schalter nicht automatisch hinzufügt oder wenn Sie den Schalter zuvor entfernt haben und ihn wieder hinzufügen möchten.
@@ -27,6 +28,7 @@ Ein typisches Beispiel ist das Hinzufügen eines Switches mit dem Namen [DeviceN
 
 
 
+[[disable-monitoring-without-deleting-the-switch]]
 == Überwachung deaktivieren, ohne den Schalter zu löschen
 
 Wenn Sie die Überwachung eines bestimmten Schalters pausieren oder beenden, ihn aber für die zukünftige Überwachung beibehalten möchten, ändern Sie dessen Einstellungen. `is-monitoring-enabled-admim` den Parameter, anstatt ihn zu löschen.
@@ -41,6 +43,7 @@ Dadurch bleiben Schalterdetails und Konfigurationen erhalten, ohne dass neue War
 
 
 
+[[remove-a-switch-you-no-longer-need]]
 == Entfernen Sie einen Schalter, den Sie nicht mehr benötigen.
 
 Verwenden `system switch ethernet delete` Einen Schalter löschen, der nicht mehr angeschlossen ist oder nicht mehr benötigt wird:

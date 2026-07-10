@@ -17,6 +17,7 @@ Die Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte C
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Was du brauchst
@@ -52,6 +53,7 @@ Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] 
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -70,6 +72,7 @@ Die link:https://hwu.netapp.com["Hardware Universe"^] enthält die neuesten Info
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -90,6 +93,7 @@ Die erweiterte Aufforderung(`*>` ) erscheint.
 
 
 
+[[step-2-configure-cables-and-ports]]
 === Schritt 2: Kabel und Anschlüsse konfigurieren
 
 . Deaktivieren Sie alle zum Knoten führenden Ports (nicht die ISL-Ports) an den beiden neuen Cluster-Switches sw1 und sw2.
@@ -420,6 +424,7 @@ swp16      100G   BondMember  sw1                swp16
 
 
 
+[[step-3-complete-the-procedure]]
 === Schritt 3: Schließen Sie den Vorgang ab.
 
 . Informationen zu den in Ihrem Cluster gefundenen Netzwerkgeräten anzeigen:

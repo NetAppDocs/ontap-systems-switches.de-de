@@ -16,6 +16,7 @@ Der Ethernet-Switch-Integritätsmonitor (CSHM) ist für die Überwachung des Bet
 ====
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 * Der Benutzer muss Zugriff auf den Schalter haben. `show` Befehle.  Falls diese nicht verfügbar sind, erstellen Sie einen neuen Benutzer und erteilen Sie diesem die erforderlichen Berechtigungen.
@@ -34,6 +35,7 @@ Der Ethernet-Switch-Integritätsmonitor (CSHM) ist für die Überwachung des Bet
 
 
 
+[[steps]]
 == Schritte
 
 [role="tabbed-block"]

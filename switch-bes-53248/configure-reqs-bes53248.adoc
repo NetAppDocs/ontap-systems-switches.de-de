@@ -15,18 +15,21 @@ Bei der Installation und Wartung des BES-53248-Switches sollten Sie unbedingt di
 
 
 
+[[efos-and-ontap-support]]
 == EFOS- und ONTAP Unterstützung
 
 Siehe link:https://hwu.netapp.com/Switch/Index["Hardware Universe"^] und link:https://mysupport.netapp.com/site/info/broadcom-cluster-switch["Broadcom-Switch-Kompatibilitätsmatrix"^] für Informationen zur EFOS- und ONTAP-Kompatibilität mit BES-53248-Switches. Die EFOS- und ONTAP-Unterstützung kann je nach spezifischem Maschinentyp des BES-53248-Switches variieren. Details zu allen BES-53248-Switch-Maschinentypen finden Sie unter link:components-bes53248.html["Komponenten und Teilenummern für BES-53248 Cluster-Schalter"]. Siehe link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"] für weitere Informationen zu den Installationsanforderungen des Switches.
 
 
 
+[[configuration-requirements]]
 == Konfigurationsanforderungen
 
 Zur Konfiguration eines Clusters benötigen Sie die entsprechende Anzahl und Art von Kabeln und Kabelverbindern für die Cluster-Switches.  Je nachdem, welchen Cluster-Switch Sie initial konfigurieren, müssen Sie mit dem mitgelieferten Konsolenkabel eine Verbindung zum Konsolenport des Switches herstellen.
 
 
 
+[[cluster-switch-port-assignments]]
 === Portzuweisungen für Cluster-Switches
 
 Die von Broadcom unterstützte Tabelle der Portzuweisungen für den BES-53248 Cluster-Switch kann als Leitfaden für die Konfiguration Ihres Clusters verwendet werden.
@@ -67,6 +70,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[port-group-speed-constraint]]
 === Geschwindigkeitsbeschränkung der Portgruppe
 
 * Bei den Cluster-Switches BES-53248 sind die 48 10/25GbE (SFP28/SFP+)-Ports in 12 x 4-Port-Gruppen wie folgt zusammengefasst: Ports 1-4, 5-8, 9-12, 13-16, 17-20, 21-24, 25-28, 29-32, 33-36, 37-40, 41-44 und 45-48.
@@ -75,6 +79,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[additional-requirements]]
 === Zusätzliche Anforderungen
 
 * Wenn Sie zusätzliche Lizenzen erwerben, lesen Sie link:configure-licenses.html["Aktivieren Sie neu lizenzierte Ports"] für Einzelheiten zur Aktivierung.

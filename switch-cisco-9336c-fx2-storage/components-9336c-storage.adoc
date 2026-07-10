@@ -108,6 +108,7 @@ N9K-9336C 65 CFM, Einlassluftstrom auf der Backbordseite
 |===
 
 
+[[cisco-smart-licenses-for-9336c-fx2-t-ports-only]]
 == Cisco Smart-Lizenzen nur für 9336C-FX2-T-Ports
 
 Um mehr als 12 Ports an Ihrem Cisco Nexus 9336C-FX-T Storage-Switch zu aktivieren, müssen Sie eine Cisco Smart-Lizenz erwerben.  Cisco Smart-Lizenzen werden über Cisco Smart-Konten verwaltet.

@@ -18,6 +18,7 @@ CAUTION: Für EFOS 3.12 und höher befolgen Sie die Installationsschritte inlink
 
 
 
+[[review-available-licenses]]
 == Prüfen Sie die verfügbaren Lizenzen.
 
 Für die Verwendung auf dem Cluster-Switch BES-53248 stehen folgende Lizenzen zur Verfügung:
@@ -58,6 +59,7 @@ NOTE: Um einen Transaktionsschlüssel gegen eine Port-Lizenzschlüsseldatei einz
 
 
 
+[[legacy-licenses]]
 == Legacy-Lizenzen
 
 Die folgende Tabelle listet die älteren Lizenzen auf, die für die Verwendung auf dem Cluster-Switch BES-53248 verfügbar waren:
@@ -134,6 +136,7 @@ NOTE: Für die Basiskonfiguration ist keine Lizenz erforderlich.
 
 
 
+[[install-license-files]]
 == Lizenzdateien installieren
 
 Befolgen Sie diese Schritte, um Lizenzen für BES-53248 Cluster-Switches zu installieren.
@@ -355,6 +358,7 @@ CAUTION: Bei der Installation zusätzlicher Lizenzen müssen Sie die neuen Schni
 
 
 
+[[troubleshoot-install-issues]]
 == Behebung von Installationsproblemen
 
 Wenn bei der Installation einer Lizenz Probleme auftreten, führen Sie die folgenden Debug-Befehle aus, bevor Sie die Lizenz installieren. `copy` Den Befehl erneut geben.
@@ -423,6 +427,7 @@ Bevor Sie auf eine ältere Version der Software zurückgreifen können, müssen 
 
 
 
+[[activate-newly-licensed-ports]]
 == Aktivieren Sie neu lizenzierte Ports
 
 Um neu lizenzierte Ports zu aktivieren, müssen Sie die neueste Version der RCF bearbeiten und die entsprechenden Portdetails einkommentieren.

@@ -26,6 +26,7 @@ Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netap
 
 
 
+[[step-1-install-the-rcf-on-the-switches]]
 == Schritt 1: Installieren Sie die RCF auf den Schaltern
 
 . Melden Sie sich bei Switch s2 über SSH oder über eine serielle Konsole an.
@@ -126,6 +127,7 @@ s2# copy running-config startup-config [########################################
 
 
 
+[[step-2-verify-the-switch-connections]]
 == Schritt 2: Überprüfen Sie die Switch-Verbindungen
 
 . Vergewissern Sie sich, dass die Switch-Ports *up* sind.
@@ -437,6 +439,7 @@ NOTE: Für spezifische Details zur Port- und VLAN-Nutzung verweisen wir auf den 
 
 
 
+[[step-3-set-up-your-ontap-cluster]]
 == Schritt 3: Richten Sie Ihren ONTAP Cluster ein.
 
 NetApp empfiehlt, neue Cluster mit dem System Manager einzurichten.

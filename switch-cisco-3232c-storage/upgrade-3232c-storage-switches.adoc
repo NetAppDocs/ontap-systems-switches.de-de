@@ -15,6 +15,7 @@ Führen Sie diese Schritte aus, um die Cisco NX-OS-Software und die Referenzkonf
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -31,6 +32,7 @@ Wenn Sie die Bootvariablen ändern müssen, um die aktuellen Boot-Images widerzu
 
 
 
+[[replace-the-switch]]
 == Tauschen Sie den Schalter aus.
 
 .Zu den Beispielen
@@ -47,6 +49,7 @@ NOTE: Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 30
 
 
 
+[[step-1-check-the-health-status-of-switches-and-ports]]
 === Schritt 1: Überprüfen Sie den Gesundheitszustand der Switches und Ports.
 
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -139,6 +142,7 @@ There are no entries matching your query.
 
 
 
+[[step-2-copy-the-rcf-to-cisco-switch-s2]]
 === Schritt 2: Kopieren Sie die RCF auf Cisco Switch s2
 
 . Kopieren Sie die RCF auf Switch s2 mithilfe eines der folgenden Übertragungsprotokolle in den Bootflash des Switches: FTP, HTTP, TFTP, SFTP oder SCP.
@@ -265,6 +269,7 @@ s2# copy running-config startup-config
 
 
 
+[[step-3-copy-the-nx-os-image-to-cisco-switch-s2-and-reboot]]
 === Schritt 3: Kopieren Sie das NX-OS-Image auf den Cisco switch s2 und starten Sie ihn neu
 
 . Kopieren Sie das NX-OS image auf Switch s2.
@@ -459,6 +464,7 @@ s2#
 
 
 
+[[step-4-recheck-the-health-status-of-switches-and-ports]]
 === Schritt 4: Überprüfen Sie erneut den Gesundheitszustand der Switches und Ports.
 
 . Überprüfen Sie nach dem Neustart, ob die Speicherschalter verfügbar sind:

@@ -21,6 +21,7 @@ Die folgenden Schalter sind nicht mehr käuflich erhältlich, werden aber weiter
 
 
 
+[[end-of-sale-and-end-of-life-announcements]]
 == Ankündigungen zum Verkaufsende und Produktlebenszyklusende
 
 * link:https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3000-series-switches/n3k-c3232c-eol.html["Ankündigung zum Verkaufs- und Produktlebenszyklusende für den Cisco Nexus 3232C"]

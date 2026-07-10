@@ -17,6 +17,7 @@ Bevor Sie beginnen, führen Sie bitte die folgende Prozedur durch:link:install-n
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -57,6 +58,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 
 
 
+[[install-the-software]]
 == Installieren Sie die Software
 
 Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 9000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.

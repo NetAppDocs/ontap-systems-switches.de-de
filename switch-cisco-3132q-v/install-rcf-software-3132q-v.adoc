@@ -29,6 +29,7 @@ Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL) erfor
 
 
 
+[[step-1-install-the-rcf-on-the-switches]]
 == Schritt 1: Installieren Sie die RCF auf den Schaltern
 
 . Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
@@ -315,6 +316,7 @@ Weitere Einzelheiten finden Sie unter link:https://kb.netapp.com/on-prem/Switche
 
 
 
+[[step-2-verify-the-switch-connections]]
 == Schritt 2: Überprüfen Sie die Switch-Verbindungen
 
 . Überprüfen Sie, ob die mit den Cluster-Ports verbundenen Switch-Ports *aktiv* sind.
@@ -415,6 +417,7 @@ cluster1::*>
 
 
 
+[[step-3-setup-your-ontap-cluster]]
 == Schritt 3: Einrichten Ihres ONTAP Clusters
 
 NetApp empfiehlt, neue Cluster mit dem System Manager einzurichten.

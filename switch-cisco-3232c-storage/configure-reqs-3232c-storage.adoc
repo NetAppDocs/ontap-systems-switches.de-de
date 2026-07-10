@@ -18,12 +18,14 @@ Bei der Installation und Wartung des Cisco Nexus 3232C Switches sollten Sie unbe
 
 
 
+[[configuration-requirements]]
 == Konfigurationsanforderungen
 
 Sie benötigen die passende Anzahl und Art von Kabeln und Kabelsteckern für Ihre Switches. Je nach Typ des Switches, den Sie zunächst konfigurieren, müssen Sie den Konsolenport des Switches mit dem mitgelieferten Konsolenkabel verbinden; außerdem müssen Sie spezifische Netzwerkinformationen bereitstellen.
 
 
 
+[[network-requirements]]
 == Netzwerkanforderungen
 
 Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen:

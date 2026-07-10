@@ -1,0 +1,69 @@
+= 
+:allow-uri-read: 
+
+
+Die auf Ihrem AFX-System ausgeführte ONTAP-Version und die auf Ihren Switches installierte NX-OS-Version bestimmen, welche RCF-Versionen für Ihre Switches unterstützt werden. RCF-Versionen verfügen über voreingestellte Portgeschwindigkeitskonfigurationen, die festlegen, wie viele Switch-Ports sich im Breakout-Modus (4x100GbE) und wie viele im Nicht-Breakout-Modus befinden.
+
+[NOTE]
+====
+Die aktuelle Liste der unterstützten RCF Versionen befindet sich auf der link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["NetApp Cisco Ethernet-Switches"^] Seite.
+
+Informationen zu den Switch-Ports sind auch in der  https://hwu.netapp.com["NetApp Hardware Universe"^] zu finden.
+
+====
+* Wenn Sie ein AFX 1K System besitzen, wird RCF 10.0 und höher unterstützt.
+* Wenn Sie ein AFX 2K System besitzen, wird RCF 10.1 und höher unterstützt.
+* RCF 10.0 besteht aus einer Datei und unterstützt gemeinsam genutzte Switches, `Cluster-HA-Storage AFX RCF_10.0`.
++
+Die folgende Tabelle zeigt beispielsweise die voreingestellten Gruppierungen der Switch-Ports, ihre Portgeschwindigkeiten und die Verwendung für diese RCF-Datei.
+
++
+[cols="1,2"]
+|===
+| Switch Portgruppen | Portgeschwindigkeiten und Nutzung 
+
+
+ a| 
+Ethernet1/1/1-4 auf Ethernet1/30/1-4
+ a| 
+4x100GbE-Modus für Cluster-, HA- und Speicherverbindungen
+
+
+
+ a| 
+Ethernet1/31, Ethernet1/32
+ a| 
+400GbE ISL
+
+|===
+* RCF 10.1 bietet verschiedene Dateien für unterschiedliche Anwendungsfälle für AFX 1K und für AFX 2K Systeme. Abhängig davon, wie die Switches in der AFX 1K oder AFX 2K Systemkonfiguration verwendet werden sollen (gemeinsam genutzt, nur Storage oder nur Cluster und HA), wird die entsprechende RCF Datei ausgewählt.
++
+Wenn Sie beispielsweise Ihre Switches als gemeinsam genutzte Switches in einem AFX 2K-System verwenden, nutzen Sie die für diesen Anwendungsfall geeignete RCF-Datei. Die entsprechende RCF-Datei könnte ähnlich wie  `RCF-v10.1-NX9332D-GX2B-CL1-ST1-100GBR15-400G15.txt` benannt sein. Die folgende Tabelle zeigt die voreingestellten Gruppen der Switch-Ports, deren Portgeschwindigkeiten und die Verwendung dieser RCF-Datei.
+
++
+[cols="1,2"]
+|===
+| Switch Portgruppen | Portgeschwindigkeiten und Nutzung 
+
+
+ a| 
+Ethernet1/1/1-4 zu Ethernet1/15/1-4
+ a| 
+4x100GbE Modus für Intra-cluster-, HA- und Storage Shelf-Verbindungen
+
+
+
+ a| 
+Ethernet1/16 bis Ethernet1/30
+ a| 
+400GbE Modus für Intra-cluster-, HA- und Storage-Verbindungen
+
+
+
+ a| 
+Ethernet1/31, Ethernet1/32
+ a| 
+400GbE Intra-Cluster ISL-Verbindungen
+
+|===
+

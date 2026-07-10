@@ -17,6 +17,7 @@ Die Installationsschritte sind für NetApp CN1601 Management-Switches und CN1610
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -36,6 +37,7 @@ Bitte konsultieren Sie die Tabelle zur Schalterkompatibilität auf der Website. 
 
 
 
+[[install-the-fastpath-software]]
 == Installieren Sie die FASTPATH-Software
 
 Das folgende Verfahren verwendet die Clustered Data ONTAP 8.2 Syntax.  Daher unterscheiden sich der Cluster-Vserver, die LIF-Namen und die CLI-Ausgabe von denen in Data ONTAP 8.3.
@@ -62,6 +64,7 @@ Der link:https://hwu.netapp.com/["Hardware Universe"^] enthält weitere Informat
 
 
 
+[[step-1-migrate-cluster]]
 === Schritt 1: Cluster migrieren
 
 . Informationen zu den Netzwerkports des Clusters anzeigen:
@@ -252,6 +255,7 @@ Copy operation successful
 
 
 
+[[step-2-install-the-fastpath-software-and-rcf]]
 === Schritt 2: Installieren Sie die FASTPATH-Software und RCF.
 
 . Überprüfen Sie die laufende Version der FASTPATH-Software.
@@ -463,6 +467,7 @@ System will now restart!
 
 
 
+[[step-3-validate-installation]]
 === Schritt 3: Installation überprüfen
 
 . Melden Sie sich erneut an und überprüfen Sie dann, ob auf dem Switch die neue Version der FASTPATH-Software ausgeführt wird.

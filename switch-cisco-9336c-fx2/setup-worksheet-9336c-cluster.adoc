@@ -23,6 +23,7 @@ Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzu
 
 
 
+[[9336c-fx2-sample-cabling-worksheet]]
 == 9336C-FX2 Beispiel-Verkabelungsarbeitsblatt
 
 Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
@@ -333,6 +334,7 @@ Reserviert
 |===
 
 
+[[9336c-fx2-blank-cabling-worksheet]]
 == 9336C-FX2 leeres Verkabelungs-Arbeitsblatt
 
 Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
@@ -592,6 +594,7 @@ Reserviert
 |===
 
 
+[[9336c-fx2-t-sample-cabling-worksheet-12-port]]
 == 9336C-FX2-T Muster-Verkabelungsplan (12-Port)
 
 Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
@@ -748,6 +751,7 @@ Lizenz erforderlich
 |===
 
 
+[[9336c-fx2-t-blank-cabling-worksheet-12-port]]
 == 9336C-FX2-T Blindkabel-Arbeitsblatt (12-Port)
 
 Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.

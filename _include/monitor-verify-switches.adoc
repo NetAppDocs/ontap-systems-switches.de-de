@@ -4,6 +4,7 @@
 
 
 
+[[confirm-monitoring-of-the-connected-ethernet-switches]]
 == Bestätigen Sie die Überwachung der angeschlossenen Ethernet-Switches.
 
 Um zu bestätigen, dass die angeschlossenen Ethernet-Switches überwacht werden, führen Sie Folgendes aus:
@@ -23,6 +24,7 @@ Wenn ein Schalter in der Befehlsausgabe nicht aufgeführt ist, hat ONTAP ihn wah
 ====
 
 
+[[confirm-firmware-and-rcf-versions-are-up-to-date]]
 == Bitte prüfen Sie, ob die Firmware- und RCF-Versionen auf dem neuesten Stand sind.
 
 Stellen Sie sicher, dass auf dem Switch die neueste unterstützte Firmware läuft und dass eine kompatible Referenzkonfigurationsdatei (RCF) angewendet wurde.  Weitere Informationen finden Sie auf der Websitehttps://mysupport.netapp.com/site/downloads["NetApp Support-Downloadseite"^] Die
@@ -40,6 +42,7 @@ NOTE: Sehenlink:config-snmpv3.html["Optional: SNMPv3 konfigurieren"] Einzelheite
 
 
 
+[[confirm-management-network-connection]]
 == Bestätigen Sie die Verbindung zum Managementnetzwerk.
 
 Überprüfen Sie, ob der Management-Port des Switches mit dem Management-Netzwerk verbunden ist.

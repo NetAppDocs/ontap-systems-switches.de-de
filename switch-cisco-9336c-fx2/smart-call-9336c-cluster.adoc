@@ -13,8 +13,15 @@ summary: Smart Call Home überwacht die Hardware- und Softwarekomponenten Ihres 
 [role="lead"]
 Um Smart Call Home zu verwenden, müssen Sie einen Cluster-Netzwerk-Switch für die Kommunikation per E-Mail mit dem Smart Call Home-System konfigurieren. Darüber hinaus können Sie Ihren Cluster-Netzwerk-Switch optional so einrichten, dass er die integrierte Smart Call Home-Supportfunktion von Cisco nutzt.
 
-Smart Call Home überwacht die Hardware- und Softwarekomponenten in Ihrem Netzwerk. Wenn eine kritische Systemkonfiguration auftritt, wird eine E-Mail-Benachrichtigung generiert und ein Alarm an alle Empfänger gesendet, die in Ihrem Zielprofil konfiguriert sind.
+Cisco Smart Call Home überwacht die Hardware- und Softwarekomponenten Ihres Netzwerks. Bei einer kritischen Systemkonfiguration wird eine E-Mail-Benachrichtigung generiert und alle Empfänger, die in Ihrem Zielprofil konfiguriert sind, werden benachrichtigt.
 
+[NOTE]
+====
+ONTAP unterstützt die Zustandsüberwachung von Ethernet Switches (CSHM) zur Überwachung der AFX Cluster Switches sowie die Möglichkeit, Diagnoseprotokolle der Switches zu erfassen.
+
+Cisco Smart Call Home ist eine Option, um proaktiven Support bereitzustellen und bei der Lösung eventuell auftretender Probleme mit den Switches zu unterstützen.
+
+====
 Bevor Sie Smart Call Home verwenden können, beachten Sie die folgenden Anforderungen:
 
 * Ein E-Mail-Server muss vorhanden sein.
@@ -25,3 +32,5 @@ Bevor Sie Smart Call Home verwenden können, beachten Sie die folgenden Anforder
 
 
 Der http://www.cisco.com/c/en/us/products/switches/index.html["Cisco Supportseite"^] enthält Informationen zu den Befehlen zur Konfiguration von Smart Call Home.
+
+Smart Call Home kann während der Installation und Einrichtung eines neuen Systems oder nachträglich konfiguriert werden.

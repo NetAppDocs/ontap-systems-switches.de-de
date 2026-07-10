@@ -1,0 +1,79 @@
+---
+permalink: switch-cisco-9364d-gx2a/configure-verify-ssh-9364d.html 
+sidebar: sidebar 
+keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9332d-gx2b 
+summary: 'Wenn Sie Ihre Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems, eines Switch-Austauschs oder einer Wiederherstellung der Werkseinstellungen konfigurieren, um die Funktion zur Protokollerfassung des Ethernet Switch Health Monitor (CSHM) nutzen zu können, muss überprüft werden, dass SSH auf den Switches aktiviert ist.' 
+---
+= SSH für die Protokollerfassung überprüfen, Cisco Nexus 9364D-GX2A
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Ihre Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems, eines Switch-Austauschs oder einer Wiederherstellung der Werkseinstellungen konfigurieren, um die Funktion zur Protokollerfassung des Ethernet Switch Health Monitor (CSHM) nutzen zu können, muss überprüft werden, dass SSH auf den Switches aktiviert ist.
+
+.Bevor Sie beginnen
+Sie müssen über die serielle Konsole mit dem Switch verbunden sein.
+
+.Schritte
+. Überprüfen Sie, ob SSH aktiviert ist:
++
+[listing, subs="+quotes"]
+----
+(switch) *show ssh server*
+ssh version 2 is enabled
+----
+. Überprüfen Sie, ob die SSH-Schlüssel aktiviert sind:
++
+`show ssh key`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+(switch)# *show ssh key*
+
+rsa Keys generated:Thu May 15 15:09:55 2025
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDCQJPZk7OGhg0j1t0NWKylnI8R8zDpuMpU6KKAjPOCShTFpibeYQqxOPTCAKACkut8dduZmc3bY9DIOle0cKYQ8PgS2mG9ovQ0RJ56RUNhVNPdJuhXM4ckHoiVJxIAbHkbcw8rzawbkT6cNBUiZY3MrOMh0e0CnMRhh9we
+MOo/vQ==
+
+
+bitcount:1024
+fingerprint:
+SHA256:TMUXFgyRC3EcIZEVbQ/P0elDByBCJizPJ1XKMkIXfPI
+**************************************
+could not retrieve dsa key information
+**************************************
+ecdsa Keys generated:Thu May 15 15:12:09 2025
+
+
+ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBADquZcNSDA/eLAaItXyxVZxsSJSE3u4et9B6+RLq162zTe/3A6JTCyBrkfrMhQt9QMQ7XrMqJGxLSinXhyUClBxwQD/ZbkZueZHiFuYg5hKN97wUYvts+EwpG2mSVonxKKp
+atmtgu48BqKfZTc4LZYL5vgdh5uuktJ0Z8mYHt3xKPXsvw==
+
+
+bitcount:521
+fingerprint:
+SHA256:K8LDx6L7sJjLFn8iubUhjt66uk8TYmXwnQKWVD04C1o
+**************************************
+
+(switch)# *show feature | include scpServer*
+scpServer              1          enabled
+(switch)# *show feature | include ssh*
+sshServer              1          enabled
+(switch)#
+----
+====
+
+
+.Wie geht es weiter?
+* Nachdem Sie überprüft haben, dass SSH für die Protokollerfassung aktiviert ist, link:../switch-cshm/cshm-overview.html["Konfiguration der Zustandsüberwachung von Ethernet Switches"].
++
+** Nachdem die Zustandsüberwachung für Ethernet Switches konfiguriert wurde, besteht die Möglichkeit, die Cisco Smart Call Home Supportfunktion zu nutzen link:configure-smart-call-9364d.html["Smart Call Home konfigurieren"].
+
+
+* Wenn Sie Ihren Switch im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems konfiguriert haben, muss link:install-complete-afx-setup-9364d.html["Die AFX Systemeinrichtung abschließen"].
+

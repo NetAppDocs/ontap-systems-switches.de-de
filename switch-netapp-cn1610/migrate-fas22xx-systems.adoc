@@ -15,6 +15,7 @@ Wenn Sie FAS22xx-Systeme in einem bestehenden Zwei-Knoten-Switchless-Cluster hab
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -32,12 +33,14 @@ https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 Dieses Verfahren ist ein nicht-disruptives Verfahren, das die direkte Cluster-Konnektivität in einer switchlosen Umgebung aufhebt und jede Verbindung zum Switch durch eine Verbindung zum Partnerknoten ersetzt.
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie Folgendes eingeben `y` wenn Sie aufgefordert werden, fortzufahren:
@@ -150,6 +153,7 @@ Drücken Sie bei der Aufforderung zum Beeinträchtigen des Knotens `Ctrl-C` und 
 
 
 
+[[step-2-configure-cables-and-ports]]
 === Schritt 2: Kabel und Anschlüsse konfigurieren
 
 . Trennen Sie an jedem Controllermodul das Kabel, das den 10-GbE-Clusterport mit dem switchlosen Cluster verbindet.
@@ -301,6 +305,7 @@ RPC status:
 ====
 
 
+[[step-3-complete-the-procedure]]
 === Schritt 3: Schließen Sie den Vorgang ab.
 
 . Wenn Sie die automatische Fallerstellung unterdrückt haben, können Sie sie durch Aufruf einer AutoSupport Nachricht wieder aktivieren:

@@ -15,6 +15,7 @@ Befolgen Sie diese Schritte, um defekte Nexus 9336C-FX2- und 9336C-FX2-T-Switche
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Bevor Sie den Schalter austauschen, stellen Sie sicher, dass Folgendes passiert:
@@ -46,6 +47,7 @@ Alle zuvor vorgenommenen Anpassungen am Standort, wie z. B. STP, SNMP und SSH, w
 
 
 
+[[enable-console-logging]]
 == Konsolenprotokollierung aktivieren
 
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
@@ -57,6 +59,7 @@ NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Gerä
 
 
 
+[[replace-the-switch]]
 == Tauschen Sie den Schalter aus.
 
 .Zu den Beispielen
@@ -160,6 +163,7 @@ Total entries displayed: 4
 ====
 
 
+[[step-1-prepare-for-replacement]]
 === Schritt 1: Vorbereitung auf den Austausch
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -291,6 +295,7 @@ RPC status:
 ====
 
 
+[[step-2-configure-cables-and-ports]]
 === Schritt 2: Kabel und Anschlüsse konfigurieren
 
 . Schalten Sie die ISL-Ports 1/35 und 1/36 am Switch Nexus 9336C-FX2 cs1 ab.
@@ -519,6 +524,7 @@ RPC status:
 ====
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Bestätigen Sie die folgende Cluster-Netzwerkkonfiguration:

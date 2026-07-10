@@ -1,0 +1,76 @@
+---
+permalink: switch-cisco-9808/install-configure-switches-in-afx-workflow-9808.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9808 switch 
+summary: Zur Installation und Konfiguration Ihrer Cisco Nexus 9808 Switches als Teil Ihres neuen AFX 2K Systems wird eine Kombination aus Dokumentationen von dieser Switch-Website und der AFX Systems-Website verwendet. Die Dokumentation enthält Links, die bei Bedarf weiterleiten. 
+---
+= Installation und Konfiguration von Switches in einem AFX Systemworkflow, Cisco Nexus 9808
+:allow-uri-read: 
+
+
+[role="lead"]
+Zur Installation und Konfiguration Ihrer Cisco Nexus 9808 Switches als Teil Ihres neuen AFX 2K Systems wird eine Kombination aus Dokumentationen von dieser Switch-Website und der AFX Systems-Website verwendet. Die Dokumentation enthält Links, die bei Bedarf weiterleiten.
+
+
+
+[[install-switches]]
+=== Switches installieren
+
+Zur Installation Ihrer Switches ist eine Vorbereitung der Installation erforderlich, danach erfolgt die Installation der Switches (zusammen mit der AFX-Systemhardware), einschließlich der Verkabelung und des Einschaltens der Switches.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-prepare-9808.html["Vorbereitungen für die Installation"]
+[role="quick-margin-para"]
+Die Installation und Einrichtung der Switches erfolgt nach Durchsicht der Dokumentation zu Cisco und ONTAP Systemen, Vorbereitung des Standorts und Verständnis der voreingestellten Konfiguration der Switch-Ports für die von Ihrem AFX System unterstützte RCF-Version.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-switches-9808.html["Die Switches installieren"]
+[role="quick-margin-para"]
+Sie werden durch den Installations- und Einrichtungsworkflow des AFX 2K Systems geleitet, um die Switches (zusammen mit der AFX Systemhardware) zu installieren, die Switches zu verkabeln und anschließend einzuschalten. Anschließend erfolgt eine Rückleitung zu diesem Workflow, um die Switches zu konfigurieren.
+
+
+
+[[configure-switches]]
+=== Switches konfigurieren
+
+Zur Konfiguration Ihrer Switches werden die Ersteinrichtung der Switches abgeschlossen, die Verkabelungs- und Konfigurationsanforderungen überprüft, das NX-OS installiert, das RCF installiert, SSH für die Protokollerfassung verifiziert, die Ethernet Switch-Zustandsüberwachung (CSHM) konfiguriert und Smart Call Home (optional) konfiguriert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-complete-initial-setup-9808.html["Abschließen der Ersteinrichtung des Switches"]
+[role="quick-margin-para"]
+Nach dem Einschalten der Switches starten diese den Bootvorgang und der Konfigurationsassistent wird angezeigt. Sie werden aufgefordert, eine Reihe von Fragen zu beantworten, um die Erstkonfiguration (Startkonfiguration) der Switches durchzuführen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:configure-review-cabling-config-requirements-9808.html["Überprüfung der Verkabelungs- und Konfigurationsanforderungen"]
+[role="quick-margin-para"]
+Verkabelungs- und Konfigurationsanforderungen werden überprüft.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:configure-install-nxos-9808.html["Die NX-OS Installation"]
+[role="quick-margin-para"]
+Die aktuelle Version von NX-OS, die Ihr AFX 2K System unterstützt, ist auf den Switches zu installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:configure-install-upgrade-rcf-overview-9808.html["Installieren Sie den RCF"]
+[role="quick-margin-para"]
+Installieren Sie die aktuelle Version von RCF auf den Switches, die Ihr AFX 2K System unterstützen. Der Link führt zur Übersicht über die Installation oder das Upgrade von RCF, die die Informationen enthält, die vor der Installation von RCF zu beachten sind.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-verify-ssh-9808.html["SSH für die Protokollerfassung überprüfen"]
+[role="quick-margin-para"]
+Überprüfen Sie, ob SSH aktiviert ist, sodass die Funktion zur Protokollerfassung des Ethernet Switch Health Monitor (CSHM) verwendet werden kann.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]link:../switch-cshm/cshm-overview.html["Konfiguration der Zustandsüberwachung von Ethernet Switches"]
+[role="quick-margin-para"]
+Die Ethernet Switch-Zustandsüberwachung (CSHM) wird konfiguriert, um den Betriebszustand der Switches sicherzustellen und Switch-Protokolle für Debugging und Fehlerbehebung zu erfassen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"]link:configure-smart-call-9808.html["Smart Call Home konfigurieren (optional)"]
+[role="quick-margin-para"]
+ONTAP unterstützt die Zustandsüberwachung von Ethernet-Switches (CSHM) zur Überwachung der AFX Cluster Switches sowie die Möglichkeit, Switch-Diagnoseprotokolle zu erfassen. Cisco's Smart Call Home ist eine Option, um proaktiven Support bereitzustellen und bei der Lösung von Problemen zu unterstützen, die mit den Switches auftreten könnten.
+
+
+
+[[complete-afx-system-setup]]
+=== Vollständige AFX Systemeinrichtung
+
+Um die Einrichtung Ihres AFX 2K Systems abzuschließen, werden die Inbetriebnahme der AFX Systemkomponenten und die Systemeinrichtungsprozeduren abgeschlossen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-complete-afx-setup-9808.html["Die AFX Systemeinrichtung abschließen"]
+[role="quick-margin-para"]
+In der Dokumentation der AFX Systeme finden sich Anweisungen, wie die Einrichtung des AFX 2K Systems abgeschlossen wird: Dazu gehören das Einschalten der Storage Shelves und Controller, die Überprüfung der Switch-Konnektivität sowie das Abschließen der Systemeinrichtungsprozeduren.
+
+.Wie geht es weiter?
+Nachdem Sie die Einrichtung des AFX-Systems abgeschlossen haben, können Sie Ihr AFX-System verwenden. Sie können auch link:https://docs.netapp.com/us-en/ontap-afx/index.html["Weitere Informationen zu Ihrem AFX System und dessen Verwendung"^].

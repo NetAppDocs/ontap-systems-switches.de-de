@@ -24,6 +24,7 @@ Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, könn
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Stellen Sie sicher, dass:
@@ -56,6 +57,7 @@ Stellen Sie sicher, dass:
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -70,6 +72,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 
 
 
+[[step-1-migrate-from-a-switchless-cluster-with-direct-attached]]
 === Schritt 1: Migration von einem schalterlosen Cluster mit direkt angeschlossenen
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh` Die
@@ -649,6 +652,7 @@ RPC status:
 
 
 
+[[step-2-set-up-the-shared-switch]]
 === Schritt 2: Gemeinsamen Schalter einrichten
 
 Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:

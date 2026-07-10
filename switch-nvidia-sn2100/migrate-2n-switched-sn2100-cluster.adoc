@@ -17,6 +17,7 @@ Die Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte C
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Zwei-Knoten-Schalterlose Konfiguration
@@ -53,6 +54,7 @@ Die link:https://hwu.netapp.com["Hardware Universe"^] enthält die neuesten Info
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -68,6 +70,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Cluster-Switch- und Kno
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht: `system node autosupport invoke -node * -type all -message MAINT=xh`
@@ -82,6 +85,7 @@ Die erweiterte Aufforderung(`*>` ) erscheint.
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 [role="tabbed-block"]
@@ -670,6 +674,7 @@ e3b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Automatische Wiederherstellung auf allen Cluster-LIFs aktivieren:

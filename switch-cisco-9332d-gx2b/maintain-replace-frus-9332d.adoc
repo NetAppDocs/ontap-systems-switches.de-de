@@ -1,0 +1,31 @@
+---
+permalink: switch-cisco-9332d-gx2b/maintain-replace-frus-9332d.html 
+sidebar: sidebar 
+keywords: switches, hardware installation, Cisco Nexus, 9332D-GX2B switches 
+summary: 'Ihr Cisco Nexus 9332D-GX2B Switch verfügt über vor Ort austauschbare Einheiten (FRUs), die bei einem Defekt ausgetauscht werden können.' 
+---
+= Austausch von FRUs – Cisco Nexus 9332D-GX2B
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ihr Cisco Nexus 9332D-GX2B Switch verfügt über vor Ort austauschbare Einheiten (FRUs), die bei einem Defekt ausgetauscht werden können.
+
+.Informationen zu diesem Vorgang
+Der Cisco Nexus 9332D-GX2B Switch verfügt über die folgenden FRUs:
+
+* Lüftermodul (6 insgesamt)
+* Netzteilmodul (2 insgesamt)
+* OSFP/QSFP Transceivermodule (32 feste 400GbE Ports)
+
+
+.Schritte
+. Zur Cisco Website für die  https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html?dtid=osscdc000283&linkclickid=srch&scid=srch-9332d-gx2b-hw-guide#id_111902["Cisco Nexus 9332D-GX2B NX-OS-Modusschalter – Hardwareinstallationshandbuch"^].
+. Im Abschnitt „Komponenten austauschen“ finden Sie die FRU-Prozeduren.
+. Das entsprechende Verfahren zum Austausch der defekten FRU ist zu befolgen.
+
+
+.Wie geht es weiter?
+Nachdem Sie die entsprechende FRU-Prozedur auf der Cisco-Website abgeschlossen haben, kann der normale Betrieb fortgesetzt werden.

@@ -1,0 +1,198 @@
+---
+permalink: switch-cisco-9364d-gx2a/configure-complete-initial-setup-9364d.html 
+sidebar: sidebar 
+keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9364d-gx2a 
+summary: Nach dem Einschalten der Cisco Nexus 9364D-GX2A Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems oder eines Switch-Austauschs oder nach dem Zurücksetzen eines Switches auf die Werkseinstellungen wird dazu aufgefordert, die Ersteinrichtung des/der Switches mithilfe des Konfigurationsassistenten abzuschließen. Zur Unterstützung bei der Ersteinrichtung des/der Switches können die folgenden Fragen des Konfigurationsassistenten und die empfohlenen Antworten herangezogen werden. 
+---
+= Vollständige Ersteinrichtung des Switches, Cisco Nexus 9364D-GX2A
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Einschalten der Cisco Nexus 9364D-GX2A Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems oder eines Switch-Austauschs oder nach dem Zurücksetzen eines Switches auf die Werkseinstellungen wird dazu aufgefordert, die Ersteinrichtung des/der Switches mithilfe des Konfigurationsassistenten abzuschließen. Zur Unterstützung bei der Ersteinrichtung des/der Switches können die folgenden Fragen des Konfigurationsassistenten und die empfohlenen Antworten herangezogen werden.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Sie die Netzwerk- und Konfigurationsinformationen für jeden Switch sowie die entsprechenden Lizenzen haben.
+
+.Informationen zu diesem Vorgang
+* Die Ersteinrichtung muss an jedem Switch abgeschlossen werden.
+* Bei Bedarf kann in der Dokumentation Ihrer NX-OS-Version link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/104x/configuration/fundamentals/cisco-nexus-9000-series-nx-os-fundamentals-configuration-guide-release-104x.html["Cisco Nexus 9000 Series NX-OS Grundlagen Konfigurationsleitfaden"^]Informationen zur Einrichtung der Switches im Kapitel „Using the Cisco NX-OS Setup Utility“ gefunden werden. Informationen zu den Terminaleinstellungen sind im Kapitel „Configuring Terminal Settings and Sessions“ zu finden.
+
+
+.Schritte
+. Den Laptop mit dem seriellen Konsolenanschluss des Switches verbinden.
++
+.. Stellen Sie den seriellen Konsolenanschluss am Laptop auf 9.600 Baud mit N-8-1 ein.
+
+
+. Das Passwort für den Administratorbenutzer wird wie aufgefordert festgelegt.
+. Die Ersteinrichtung des Schalters wird abgeschlossen, indem auf die folgenden Fragen geantwortet wird.
++
+
+NOTE: Die Sicherheitsrichtlinie Ihrer Website definiert die zu aktivierenden Antworten und Dienste.
+
++
+[cols="1,2"]
+|===
+| Prompt | Antwort 
+
+
+ a| 
+Automatische Bereitstellung abbrechen und mit normaler Einrichtung fortfahren?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Wollen Sie einen sicheren Passwortstandard erzwingen?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Die Standardeinstellung ist Ja.
+
+
+
+ a| 
+Geben Sie das Passwort für den Administrator ein.
+ a| 
+Das Standardpasswort lautet "`admin`"; Sie müssen ein neues, sicheres Passwort erstellen.  Ein schwaches Passwort kann abgelehnt werden.
+
+
+
+ a| 
+Möchten Sie den Dialog zur Basiskonfiguration aufrufen?  (ja/nein)
+ a| 
+Antworten Sie bei der Erstkonfiguration des Switches mit *ja*.
+
+
+
+ a| 
+Ein weiteres Benutzerkonto erstellen?  (ja/nein)
+ a| 
+Die Antwort hängt von den Richtlinien Ihrer Website bezüglich alternativer Administratoren ab.  Die Standardeinstellung ist *nein*.
+
+
+
+ a| 
+SNMP-Community-String schreibgeschützt konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+SNMP-Community-Zeichenfolge für Lese- und Schreibzugriffe konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Geben Sie den Namen des Schalters ein.
+ a| 
+Geben Sie den Namen des Schalters ein. Dieser darf maximal 63 alphanumerische Zeichen lang sein.
+
+
+
+ a| 
+Mit der Out-of-Band-Managementkonfiguration (mgmt0) fortfahren?  (ja/nein)
+ a| 
+Antworten Sie bei dieser Eingabeaufforderung mit *ja* (Standardeinstellung).  Geben Sie an der Eingabeaufforderung mgmt0 IPv4 address: Ihre IP-Adresse ein: ip_address.
+
+
+
+ a| 
+Standardgateway konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Geben Sie an der IPv4-Adresse des Standardgateways Ihre Standardgateway-Adresse ein.
+
+
+
+ a| 
+Erweiterte IP-Optionen konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Den Telnet-Dienst aktivieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+SSH-Dienst aktiviert?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*.  Die Standardeinstellung ist Ja.
+
+
+NOTE: Bei der Verwendung von Ethernet Switch Health Monitor (CSHM) wird SSH aufgrund seiner Protokollierungsfunktionen empfohlen.  Für erhöhte Sicherheit wird auch SSHv2 empfohlen.
+
+
+
+ a| 
+Geben Sie den Typ des SSH-Schlüssels ein, den Sie generieren möchten (dsa/rsa/rsa1).
+ a| 
+Standardmäßig wird *rsa* verwendet.
+
+
+
+ a| 
+Geben Sie die Anzahl der Schlüsselbits ein (1024-2048).
+ a| 
+Geben Sie die Anzahl der Schlüsselbits zwischen 1024 und 2048 ein.
+
+
+
+ a| 
+Den NTP-Server konfigurieren?  (ja/nein)
+ a| 
+Antworten Sie mit *nein*.  Die Standardeinstellung ist Nein.
+
+
+
+ a| 
+Standard-Schnittstellenschicht (L3/L2) konfigurieren
+ a| 
+Antworte mit *L2*.  Standardmäßig ist L2 eingestellt.
+
+
+
+ a| 
+Standardmäßigen Schnittstellenstatus des Switch-Ports konfigurieren (ausgeschaltet/nicht ausgeschaltet)
+ a| 
+Antworte mit *noshut*.  Die Standardeinstellung ist noshut.
+
+
+
+ a| 
+CoPP-Systemprofil konfigurieren (streng/moderat/tolerant/dicht)
+ a| 
+Mit *streng* antworten.  Die Standardeinstellung ist strikt.
+
+
+
+ a| 
+Möchten Sie die Konfiguration bearbeiten?  (ja/nein)
+ a| 
+An dieser Stelle sollten Sie die neue Konfiguration sehen.  Überprüfen Sie die soeben eingegebene Konfiguration und nehmen Sie gegebenenfalls die erforderlichen Änderungen vor.  Antworten Sie mit *nein*, wenn Sie mit der Konfiguration zufrieden sind.  Antworten Sie mit *ja*, wenn Sie Ihre Konfigurationseinstellungen bearbeiten möchten.
+
+
+
+ a| 
+Diese Konfiguration verwenden und speichern?  (ja/nein)
+ a| 
+Antworten Sie mit *ja*, um die Konfiguration zu speichern.  Dadurch werden die Kickstart- und Systemabbilder automatisch aktualisiert.
+
+
+NOTE: Wenn Sie die Konfiguration in diesem Schritt nicht speichern, werden beim nächsten Neustart des Switches keine der Änderungen wirksam.
+
+|===
+. Überprüfen Sie die von Ihnen getroffenen Konfigurationseinstellungen in der Anzeige, die am Ende des Setups erscheint, und stellen Sie sicher, dass Sie die Konfiguration speichern.
+
+
+.Wie geht es weiter?
+Nachdem Sie die Ersteinrichtung des Schalters abgeschlossen haben, link:configure-review-cabling-config-requirements-9364d.html["die Anforderungen an Verkabelung und Konfiguration prüfen"].

@@ -15,6 +15,7 @@ Befolgen Sie diese Schritte, um einen defekten Cisco Nexus 3232C Switch in einem
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Was du brauchst
@@ -47,6 +48,7 @@ Siehe Folgendes:
 
 
 
+[[enable-console-logging]]
 == Konsolenprotokollierung aktivieren
 
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
@@ -58,6 +60,7 @@ NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Gerä
 
 
 
+[[replace-the-switch]]
 == Tauschen Sie den Schalter aus.
 
 .Informationen zu diesem Vorgang
@@ -91,6 +94,7 @@ Die Beispiele in dieser Austauschprozedur verwenden vier Knoten. Zwei der Knoten
 
 
 
+[[step-1-display-and-migrate-the-cluster-ports-to-switch]]
 === Schritt 1: Cluster-Ports anzeigen und auf den Switch migrieren
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -458,6 +462,7 @@ Larger than PMTU communication succeeds on 32 path(s) RPC status:
 ====
 
 
+[[step-2-migrate-isls-to-switch-cl1-and-c2]]
 === Schritt 2: ISLs migrieren, um CL1 und C2 zu verschalten
 
 . Schalten Sie die Ports 1/31 und 1/32 am Cluster-Switch CL1 ab.
@@ -572,6 +577,7 @@ cluster::*> *network port modify -node n4 -port e4e -up-admin true*
 
 
 
+[[step-3-revert-all-lifs-to-originally-assigned-ports]]
 === Schritt 3: Alle LIFs auf die ursprünglich zugewiesenen Ports zurücksetzen
 
 . Alle migrierten Cluster-Interconnect-LIFs auf allen Knoten zurücksetzen:
@@ -784,6 +790,7 @@ Larger than PMTU communication succeeds on 32 path(s) RPC status:
 ====
 
 
+[[step-4-verify-all-ports-and-lif-are-correctly-migrated]]
 === Schritt 4: Überprüfen Sie, ob alle Ports und LIF korrekt migriert wurden.
 
 . Die Informationen zu den Geräten in Ihrer Konfiguration können Sie mit den folgenden Befehlen anzeigen:

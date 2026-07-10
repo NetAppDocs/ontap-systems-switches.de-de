@@ -15,6 +15,7 @@ Bevor Sie den Schalter austauschen, stellen Sie sicher, dass die folgenden Bedin
 
 
 
+[[existing-cluster-and-network-infrastructure]]
 == Vorhandene Cluster- und Netzwerkinfrastruktur
 
 Stellen Sie sicher, dass:
@@ -27,6 +28,7 @@ Stellen Sie sicher, dass:
 
 
 
+[[bes-53248-replacement-cluster-switch]]
 == BES-53248 Ersatz-Clusterschalter
 
 Stellen Sie sicher, dass:
@@ -43,6 +45,7 @@ Alle zuvor vorgenommenen Anpassungen am Standort, wie z. B. STP, SNMP und SSH, w
 
 
 
+[[enable-console-logging]]
 == Konsolenprotokollierung aktivieren
 
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
@@ -54,6 +57,7 @@ NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Gerä
 
 
 
+[[related-information]]
 == Ähnliche Informationen
 
 * https://mysupport.netapp.com/["NetApp Support Site"^]

@@ -18,6 +18,7 @@ CAUTION: Für EFOS 3.12 und höher befolgen Sie die Installationsschritte in lin
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -35,6 +36,7 @@ Konsultieren Sie die Switch-Kompatibilitätstabelle für die unterstützten ONTA
 
 
 
+[[install-the-configuration-file]]
 == Installieren Sie die Konfigurationsdatei
 
 .Zu den Beispielen
@@ -60,6 +62,7 @@ CAUTION: Bevor Sie eine neue Switch-Softwareversion und RCFs installieren, verwe
 
 
 
+[[step-1-prepare-for-the-installation]]
 == Schritt 1: Vorbereitung der Installation
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -278,6 +281,7 @@ network interface modify -vserver Cluster -lif * -auto-revert false
 
 
 
+[[step-2-configure-ports]]
 == Schritt 2: Ports konfigurieren
 
 . Überprüfen Sie auf Switch cs2 die Liste der Ports, die mit den Knoten im Cluster verbunden sind.
@@ -960,6 +964,7 @@ Configuration Saved! System will now restart!
 
 
 
+[[step-3-verify-the-configuration]]
 == Schritt 3: Konfiguration überprüfen
 
 . Überprüfen Sie am Switch cs1, ob die mit den Cluster-Ports verbundenen Switch-Ports *aktiv* sind:

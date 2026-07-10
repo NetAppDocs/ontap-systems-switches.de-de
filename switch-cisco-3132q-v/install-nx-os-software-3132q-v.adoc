@@ -15,6 +15,7 @@ Gehen Sie wie folgt vor, um die NX-OS-Software auf dem Cluster-Switch Nexus 3132
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -29,6 +30,7 @@ Gehen Sie wie folgt vor, um die NX-OS-Software auf dem Cluster-Switch Nexus 3132
 
 
 
+[[install-the-software]]
 == Installieren Sie die Software
 
 .Informationen zu diesem Vorgang

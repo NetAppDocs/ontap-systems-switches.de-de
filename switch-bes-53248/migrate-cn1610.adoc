@@ -21,6 +21,7 @@ Folgende Cluster-Switches werden unterstützt:
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Vergewissern Sie sich, dass Ihre Konfiguration die folgenden Anforderungen erfüllt:
@@ -39,6 +40,7 @@ Vergewissern Sie sich, dass Ihre Konfiguration die folgenden Anforderungen erfü
 
 
 
+[[node-connections]]
 === Knotenverbindungen
 
 Die Cluster-Switches unterstützen folgende Knotenverbindungen:
@@ -53,6 +55,7 @@ NOTE: Zusätzliche Ports können durch den Kauf von Portlizenzen aktiviert werde
 
 
 
+[[isl-ports]]
 === ISL-Ports
 
 Die Cluster-Switches verwenden die folgenden Inter-Switch-Link-Ports (ISL):
@@ -65,6 +68,7 @@ Die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] enthält Inform
 
 
 
+[[isl-cabling]]
 === ISL-Verkabelung
 
 Die entsprechende ISL-Verkabelung sieht wie folgt aus:
@@ -75,6 +79,7 @@ Die entsprechende ISL-Verkabelung sieht wie folgt aus:
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 Gehen Sie wie folgt vor, um CN1610-Cluster-Switches auf BES-53248-Cluster-Switches zu migrieren.
@@ -115,6 +120,7 @@ NOTE: Während dieses Vorgangs ist kein betriebsbereiter Inter-Switch-Link (ISL)
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -147,6 +153,7 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 . Prüfen Sie an den neuen Switches, ob die ISL-Verbindung zwischen den Switches cs1 und cs2 hergestellt und funktionsfähig ist:
@@ -651,6 +658,7 @@ cluster::*> system cluster-switch delete -device CL2
 ====
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Automatische Wiederherstellung der Cluster-LIFs aktivieren.

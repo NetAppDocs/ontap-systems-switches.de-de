@@ -33,6 +33,7 @@ CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs 
 
 
 
+[[step-1-prepare-for-the-upgrade]]
 == Schritt 1: Vorbereitung auf das Upgrade
 
 . Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
@@ -191,6 +192,7 @@ Stellen Sie sicher, dass die automatische Wiederherstellung nach Ausführung die
 
 
 
+[[step-2-configure-ports]]
 == Schritt 2: Ports konfigurieren
 
 . Schalten Sie auf dem Cluster-Switch cs2 die Ports ab, die mit den Cluster-Ports der Knoten verbunden sind.
@@ -610,6 +612,7 @@ This command will reboot the system. (y/n)?  [n] *y*
 
 
 
+[[step-3-verify-the-configuration]]
 == Schritt 3: Konfiguration überprüfen
 
 . Überprüfen Sie, ob die mit den Cluster-Ports verbundenen Switch-Ports aktiv sind.

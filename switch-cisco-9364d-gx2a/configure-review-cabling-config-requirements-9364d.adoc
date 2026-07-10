@@ -1,0 +1,35 @@
+---
+permalink: switch-cisco-9364d-gx2a/configure-review-cabling-config-requirements-9364d.html 
+sidebar: sidebar 
+keywords: 9364d-gx2a cabling setup, 9364d-gx2a switches configuration, nx-os 
+summary: Wenn neue Cisco Nexus 9364D-GX2A Switches im Rahmen einer neuen AFX 1K oder AFX 2K Systeminstallation installiert, ein Switch ersetzt oder ein Switch auf die Werkseinstellungen zurückgesetzt wird, sind die folgenden Verkabelungs- und Konfigurationsanforderungen zu prüfen. 
+---
+= Überprüfung der Verkabelungs- und Konfigurationsanforderungen, Cisco Nexus 9364D-GX2A
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Cisco Nexus 9364D-GX2A Switches im Rahmen einer neuen AFX 1K oder AFX 2K Systeminstallation installiert, ein Switch ersetzt oder ein Switch auf die Werkseinstellungen zurückgesetzt wird, sind die folgenden Verkabelungs- und Konfigurationsanforderungen zu berücksichtigen.
+
+
+
+[[hard-code-the-speed-on-breakout-ports]]
+== Die Geschwindigkeit auf Breakout-Ports fest codieren
+
+Die Breakout-Ports des Switches (4x100GbE) müssen fest auf 100GbE konfiguriert werden. Wenn die Geschwindigkeit nicht fest konfiguriert wird, kommen die Ports nicht hoch und befinden sich in einem Fehler-Deaktivierungszustand.
+
+Beispielsweise wird 100GbE an den Breakout-Ports 1-13 fest konfiguriert, indem dies im Konfigurationsmodus durchgeführt wird. Im Beispiel werden die Befehle auf den ersten Switch (cs1) angewendet. Diese Befehle werden für den zweiten Switch wiederholt.
+
+[listing, subs="+quotes"]
+----
+(cs1)(config)# *interface e1/1/1-4, e1/2/1-4, e1/3/1-4, e1/4/1-4, e1/5/1-4, e1/6/1-4, e1/7/1-4, e1/8/1-4, e1/9/1-4, e1/10/1-4, e1/11/1-4, e1/12/1-4, e1/13/1-4*
+(cs1)(config-if)# *speed 100000*
+(cs1)(config-if)# *no negotiate auto*
+(cs1)(config-if)# *exit*
+(cs1)(config)# *exit*
+(cs1)# *copy running-config startup-config*
+----
+.Wie geht es weiter?
+Sobald die Anforderungen an Verkabelung und Konfiguration erfüllt sind, link:configure-install-nxos-9364d.html["die NX-OS installieren"].

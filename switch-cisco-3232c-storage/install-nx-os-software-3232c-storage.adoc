@@ -24,6 +24,7 @@ Vergewissern Sie sich, dass Sie Folgendes haben:
 
 
 
+[[install-or-upgrade-the-software]]
 == Installieren oder aktualisieren Sie die Software
 
 Für dieses Verfahren werden sowohl ONTAP -Befehle als auch Cisco Nexus 3000 Series Switches-Befehle benötigt; es werden ONTAP -Befehle verwendet, sofern nicht anders angegeben.

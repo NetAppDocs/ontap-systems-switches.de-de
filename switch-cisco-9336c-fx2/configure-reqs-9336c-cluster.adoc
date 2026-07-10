@@ -18,6 +18,7 @@ summary: Ab ONTAP 9.9.1 können Sie Cisco Nexus 9336C-FX2 Switches verwenden, um
 
 
 
+[[ontap-support]]
 == ONTAP-Unterstützung
 
 [role="tabbed-block"]
@@ -42,6 +43,7 @@ Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen S
 ====
 
 
+[[configuration-requirements]]
 == Konfigurationsanforderungen
 
 Stellen Sie sicher, dass:
@@ -52,6 +54,7 @@ Stellen Sie sicher, dass:
 
 
 
+[[network-requirements]]
 == Netzwerkanforderungen
 
 Für alle Switch-Konfigurationen benötigen Sie folgende Netzwerkinformationen.

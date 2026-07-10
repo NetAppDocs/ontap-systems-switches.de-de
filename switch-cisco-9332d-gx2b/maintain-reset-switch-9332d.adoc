@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: switch-cisco-9332d-gx2b/maintain-reset-switch-9332d.html 
+keywords: reset switch factory defaults 
+summary: Ein Cisco Nexus 9332D-GX2B Switch kann auf die ursprünglichen Werkseinstellungen zurückgesetzt werden, wenn der Switch außer Betrieb genommen wird oder wenn der Switch ausfällt und nicht wiederhergestellt werden kann, sodass eine manuelle Neukonfiguration erforderlich ist. 
+---
+= Einen Switch auf die Werkseinstellungen zurücksetzen - Cisco Nexus 9332D-GX2B
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Cisco Nexus 9332D-GX2B Switch kann auf die ursprünglichen Werkseinstellungen zurückgesetzt werden, wenn der Switch außer Betrieb genommen wird oder wenn der Switch ausfällt und nicht wiederhergestellt werden kann, sodass eine manuelle Neukonfiguration erforderlich ist.
+
+.Bevor Sie beginnen
+Sie müssen über die serielle Konsole mit dem Switch verbunden sein.
+
+.Informationen zu diesem Vorgang
+* Diese Aufgabe setzt die Konfiguration des Managementnetzwerks zurück.
+* Der  `reload` Befehl, der in diesem Verfahren verwendet wird, startet den Switch neu, wodurch der gesamte Netzwerkverkehr, der über ihn läuft, unterbrochen wird. (Dieses Verfahren sollte während eines Wartungsfensters durchgeführt werden, wenn der Switch nicht in Gebrauch ist.)
+
+
+.Schritte
+. Die bestehende Startkonfiguration löschen:
++
+`write erase`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *write erase*
+
+Warning: This command will erase the startup-configuration.
+Do you wish to proceed anyway? (y/n) [n] *y*
+----
+. NX-OS neu laden
++
+`reload`
+
++
+[listing, subs="+quotes"]
+----
+(cs2)# *reload*
+
+This command will reboot the system. (y/n)? [n] *y*
+----
++
+Das System startet neu und der Konfigurationsassistent wird gestartet.
+
++
+
+NOTE: Wenn Sie während des Neustarts die Aufforderung „Automatische Bereitstellung abbrechen und mit normaler Einrichtung fortfahren? (ja/nein)[n]“ erhalten, mit *ja* antworten, um fortzufahren.
+
+. Wenn der Switch außer Betrieb genommen wird, ist diese Prozedur abgeschlossen; andernfalls ist der Switch mithilfe des link:configure-switch-workflow-9332d.html["Switch-Workflow konfigurieren"] zu konfigurieren.
+

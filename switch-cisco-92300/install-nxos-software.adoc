@@ -17,6 +17,7 @@ NX-OS ist ein Netzwerkbetriebssystem für die Nexus-Serie von Ethernet-Switches 
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Unterstützte Ports und Knotenverbindungen
@@ -34,6 +35,7 @@ Bitte stellen Sie sicher, dass Sie Folgendes haben:
 
 
 
+[[install-the-software]]
 == Installieren Sie die Software
 
 Die Beispiele in diesem Verfahren verwenden zwei Knoten, aber ein Cluster kann bis zu 24 Knoten umfassen.

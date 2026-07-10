@@ -17,6 +17,7 @@ Der Migrationsprozess funktioniert für alle Clusterknotenports, die optische od
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Bitte beachten Sie die folgenden Anforderungen an die Clusterumgebung.
@@ -61,6 +62,7 @@ Die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] enthält Inform
 
 
 
+[[migrate-to-the-cluster-environment]]
 == Migration zur Clusterumgebung
 
 .Zu den Beispielen
@@ -78,6 +80,7 @@ Die link:https://hwu.netapp.com/Home/Index["Hardware Universe"^] enthält die ne
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -110,6 +113,7 @@ Die erweiterte Aufforderung(`*>` ) erscheint.
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 . Deaktivieren Sie alle aktivierten, zum Knoten führenden Ports (nicht ISL-Ports) an beiden neuen Cluster-Switches cs1 *und* cs2.
@@ -415,6 +419,7 @@ e0b       Cluster      Cluster          up   9000  auto/10000 healthy  false
 
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Automatische Wiederherstellung der Cluster-LIFs aktivieren.

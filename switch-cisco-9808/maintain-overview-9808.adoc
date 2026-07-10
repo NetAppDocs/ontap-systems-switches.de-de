@@ -1,0 +1,20 @@
+---
+permalink: switch-cisco-9808/maintain-overview-9808.html 
+sidebar: sidebar 
+keywords: maintain overview, frus, replace switch, reset to factory defaults, cisco 9808 
+summary: 'Die Wartung Ihres Cisco Nexus 9808 Switches stellt langfristige Zuverlässigkeit und optimale Leistung sicher. Wartungsaufgaben wie der Austausch ausgefallener Switch-Komponenten (FRUs), der Austausch eines fehlerhaften Switches sowie das Zurücksetzen eines Switches auf die Werkseinstellungen sind möglich.' 
+---
+= Überblick behalten, Cisco Nexus 9808
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die langfristige Zuverlässigkeit und optimale Leistung Ihres Cisco Nexus 9808 Switches kann durch regelmäßige Wartung sichergestellt werden. Wartungsaufgaben wie der Austausch defekter Switch-Komponenten (FRUs), der Austausch eines defekten Switches sowie das Zurücksetzen eines Switches auf die Werkseinstellungen sind möglich.
+
+Die folgenden Wartungsaufgaben können an einem Switch durchgeführt werden:
+
+* link:maintain-replace-frus-9808.html["FRUs austauschen"]
+* link:maintain-reset-switch-9808.html["Einen Switch auf die Werkseinstellungen zurücksetzen"]
+

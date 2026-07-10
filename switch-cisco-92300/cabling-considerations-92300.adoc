@@ -15,6 +15,7 @@ Bevor Sie Ihren Cisco 92300YC Switch konfigurieren, beachten Sie bitte die folge
 
 
 
+[[support-for-nvidia-cx6-cx6-dx-and-cx7-ethernet-ports]]
 == Unterstützung für NVIDIA CX6-, CX6-DX- und CX7-Ethernet-Anschlüsse
 
 Wenn Sie einen Switch-Port mit einem ONTAP Controller über NVIDIA ConnectX-6 (CX6), ConnectX-6 Dx (CX6-DX) oder ConnectX-7 (CX7) NIC-Ports verbinden, müssen Sie die Geschwindigkeit des Switch-Ports fest codieren.

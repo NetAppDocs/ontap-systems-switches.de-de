@@ -15,6 +15,7 @@ Sie können von älteren Cisco -Switches für einen ONTAP Cluster auf NVIDIA SN2
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 Beim Austausch älterer Cisco-Switches durch NVIDIA SN2100-Speicher-Switches müssen Sie bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen beachten. Siehe link:configure-overview-sn2100-cluster.html["Übersicht über Installation und Konfiguration von NVIDIA SN2100-Switches"].
@@ -48,6 +49,7 @@ Stellen Sie sicher, dass:
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -72,6 +74,7 @@ Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennom
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Wenn AutoSupport aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -89,6 +92,7 @@ Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 . Ermitteln Sie den administrativen oder operativen Status jeder Speicherschnittstelle.
@@ -417,6 +421,7 @@ swp6       100G   Trunk/L2  SHFFG1826000102        e0b
 
 
 
+[[step-3-complete-the-procedure]]
 === Schritt 3: Schließen Sie den Vorgang ab.
 
 . Erstellen Sie ein Kennwort für die Protokollerfassungsfunktion des Ethernet-Switch-Integritätsmonitors:

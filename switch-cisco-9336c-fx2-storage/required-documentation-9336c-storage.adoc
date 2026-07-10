@@ -18,6 +18,7 @@ Für die Installation der Cisco Nexus 9336C-FX2 und 9336C-FX2-T Switches sollten
 
 
 
+[[switch-documentation]]
 == Switch-Dokumentation
 
 Für die Einrichtung der Cisco Nexus 9336C-FX2 Switches benötigen Sie die folgende Dokumentation von link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Series Switches Unterstützung"^].
@@ -84,6 +85,7 @@ Bietet Informationen zur Einhaltung internationaler behördlicher Vorschriften, 
 |===
 
 
+[[ontap-systems-documentation]]
 == ONTAP-Systemdokumentation
 
 Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Version des Betriebssystems.
@@ -115,6 +117,7 @@ Bietet Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
 |===
 
 
+[[rail-kit-and-cabinet-documentation]]
 == Dokumentation für Schienenbausatz und Schrank
 
 Um einen Cisco 9336-FX2 Switch in einen NetApp Schrank zu installieren, lesen Sie die folgende Hardware-Dokumentation.

@@ -1,0 +1,491 @@
+---
+permalink: switch-cisco-9808/configure-install-nxos-9808.html 
+sidebar: sidebar 
+keywords: procedure, install, nx-os, software, nexus, cluster, switch, install the nx-os software - cisco nexus 9808 
+summary: 'Das NX-OS wird auf Ihrem/Ihren Cisco Nexus 9808 Switch(es) im Rahmen einer neuen AFX 2K Systeminstallation, eines Austauschs des Supervisor-Moduls oder eines Zurücksetzens des Switches auf die Werkseinstellungen installiert.' 
+---
+= NX-OS Installation Cisco Nexus 9808
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das NX-OS wird auf Ihrem/Ihren Cisco Nexus 9808 Switch(es) im Rahmen einer neuen AFX 2K Systeminstallation, eines Austauschs des Supervisor-Moduls oder eines Zurücksetzens des Switches auf die Werkseinstellungen installiert.
+
+.Bevor Sie beginnen
+* Der/Die Schalter müssen eingeschaltet sein und die link:configure-complete-initial-setup-9808.html["Abschließen der Ersteinrichtung des Switches"]Prozedur muss abgeschlossen sein.
+* Wenn NX-OS im Rahmen einer Neuinstallation eines AFX Systems oder eines Austauschs eines Supervisor-Moduls auf dem/den Switch(es) installiert wird, sollte überprüft werden, ob die Version von NX-OS auf dem/den Switch(es) die aktuelle, von NetApp unterstützte Version ist.
++
+** Wenn Ihre Switches die aktuell von NetApp unterstützte Version verwenden, ist keine Installation von NX-OS erforderlich. Die Referenz-Konfigurationsdatei (RCF) muss installiert werden. Es wird mit der link:configure-install-upgrade-rcf-overview-9808.html["Übersicht zur Installation oder Aktualisierung des RCF"] begonnen.
+** Wenn auf Ihrem/Ihren Switch(es) nicht die aktuelle, von NetApp unterstützte Version vorhanden ist, wird mit diesem Verfahren die Installation von NX-OS fortgesetzt.
+
+
+* Wenn NX-OS auf einem Switch im Rahmen eines Switch-Austauschs oder eines Zurücksetzens des Switches auf die Werkseinstellungen installiert wird, sollte sichergestellt sein, dass der Cluster voll funktionsfähig ist, das heißt, dass keine Fehler in den Protokollen oder ähnliche Probleme vorliegen.
+* Wenn NX-OS im Rahmen einer Neuinstallation eines AFX-Systems installiert wird, kann diese Anforderung übersprungen werden, da die Controller in Ihrem AFX-System zu diesem Zeitpunkt der Installation und Einrichtung des AFX-Systems noch nicht eingeschaltet sind.
+
+
+.Informationen zu diesem Vorgang
+* Die auf Ihrem AFX-System ausgeführte ONTAP-Version bestimmt die unterstützten Versionen von NX-OS für Ihre Switches.
++
+** Für Switches in einem AFX 2K-System wird der Betrieb mit ONTAP 9.19.1GA oder höher und NX-OS 10.6(3) oder höher unterstützt.
++
+Die aktuelle Liste der unterstützten NX-OS Versionen ist unter link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["NetApp Cisco Ethernet-Switches"^] zu finden.
+
+
+
+* Dieses Verfahren erfordert ausschließlich die Verwendung von Cisco Nexus 9000 Series Switches Befehlen.
+* In den Beispielen dieses Verfahrens wird der erste Switch als cs1 und der zweite Switch als cs2 bezeichnet.
+* Wenn im Rahmen einer Neuinstallation eines AFX 2K Systems Switches installiert wurden, wird das NX-OS auf dem ersten Switch (cs1) installiert und anschließend werden die Schritte für den zweiten Switch (cs2) mit dieser Vorgehensweise wiederholt.
+
+
+
+
+[[step-1-prepare-to-install-the-nx-os]]
+== Schritt 1: Vorbereitung der Installation von NX-OS
+
+Die Installation von NX-OS auf dem/den Switch(es) wird vorbereitet, indem sichergestellt wird, dass Zugriff auf einen Server mit der unterstützten NX-OS-Version besteht, NX-OS heruntergeladen wird, eine Verbindung zum Management-Netzwerk für die Dateiübertragung hergestellt wird und anschließend die Konnektivität zum Server überprüft wird.
+
+.Schritte
+. Sie benötigen Zugriff auf einen HTTP-, SFTP-, FTP- oder TFTP-Server. Zugriff auf einen dieser Server ermöglicht das Herunterladen einer unterstützten Version von NX-OS.
+. Laden Sie die richtige Version von NX-OS und das EPLD-Image von der  https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite auf den/die Switch(es) herunter.
+. Den Switch mit dem Management-Netzwerk (für die Dateiübertragung) verbinden.
+. Die Verbindung zum Server, auf dem NX-OS läuft, kann mit dem  `ping` Befehl überprüft werden.
++
+`ping <IP address>`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Dieses Beispiel bestätigt, dass der Switch den Server unter der IP-Adresse 172.19.2.1 erreichen kann:
+
+[listing, subs="+quotes"]
+----
+cs1# *ping 172.19.2.1*
+Pinging 172.19.2.1 with 0 bytes of data:
+
+Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
+----
+====
+
+
+
+
+[[step-2-install-the-nx-os-and-epld-image]]
+== Schritt 2: Installation des NX-OS- und EPLD-Images
+
+Das NX-OS- und EPLD-Image wird auf dem ersten Switch (cs1) installiert, indem die NX-OS- und EPLD-Image-Versionen installiert und überprüft werden. Im Falle einer Installation von NX-OS als Teil einer neuen AFX Systeminstallation werden diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt.
+
+. Das NX-OS- und EPLD-Image auf den ersten Switch kopieren.
++
+`copy <protocol>: bootflash: vrf management`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das Beispiel verwendet SFTP.
+
+[listing, subs="+quotes"]
+----
+cs1# *copy sftp: bootflash: vrf management*
+Enter source filename: */code/nxos64-s1.10.6.3.F.bin*
+Enter hostname for the sftp server: *172.19.2.1*
+Enter username: *user1*
+
+Outbound-ReKey for 172.19.2.1:22
+Inbound-ReKey for 172.19.2.1:22
+user1@172.19.2.1's password:
+sftp> *progress*
+  Progress meter enabled
+sftp> *get code/nxos64-s1.10.6.3.F.bin /bootflash/nxos64-s1.10.6.3.F.bin*
+/code/nxos64-s1.10.6.3.F.bin  100% 1261MB   9.3MB/s   02:15
+sftp> *exit*
+Copy complete, now saving to disk (please wait)...
+Copy complete.
+----
+====
+. Die aktuell ausgeführte Version von NX-OS überprüfen:
++
+`show version`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cs1# *show version*
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2025, Cisco and/or its affiliates.
+All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under their own
+licenses, such as open source.  This software is provided "as is," and unless
+otherwise stated, there is no warranty, express or implied, including but not
+limited to warranties of merchantability and fitness for a particular purpose.
+Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or
+GNU General Public License (GPL) version 3.0  or the GNU
+Lesser General Public License (LGPL) Version 2.1 or
+Lesser General Public License (LGPL) Version 2.0.
+A copy of each such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://opensource.org/licenses/gpl-3.0.html and
+http://www.opensource.org/licenses/lgpl-2.1.php and
+http://www.gnu.org/licenses/old-licenses/library.txt.
+
+
+Software
+  BIOS: version 01.14
+  NXOS: version 10.5(3)(F) [Feature Release]
+  Host NXOS: version 10.5(3)(F)
+  BIOS compile time:  11/25/2024
+  NXOS image file is: bootflash:///nxos64-s1.10.5.3.F.bin
+  NXOS compile time:  02/27/2026 12:00:00 [03/14/2026 05:25:50]
+  NXOS boot mode: LXC
+
+
+Hardware
+  cisco Nexus9000 C9808 Chassis
+  Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz with 32802156 kB of memory.
+  Processor Board ID FLMXXXXXXXX
+  Device name: cs1
+  bootflash:  115802886 kB
+
+
+Kernel uptime is 5 day(s), 2 hour(s), 13 minute(s), 21 second(s)
+
+
+Last reset at 3580 usecs after Thu Mar 5 15:55:08 2026
+  Reason: Reset Requested by CLI command reload
+  System version: 10.5(3)(F)
+  Service:
+
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+
+Active Package(s):
+
+cs1#
+----
+====
+. Das NX-OS- und EPLD-Image installieren.
++
+Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switches geladen.
+
++
+`install all nxos bootflash:nxos.<image_file>.bin`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das Beispiel verwendet NX-OS Version 10.6(3)(F).
+
+[listing, subs="+quotes"]
+----
+cs1# *install all nxos bootflash:nxos64-s1.10.6.3.F.bin*
+
+Installer will perform compatibility check first. Please wait.
+Installer is forced disruptive
+
+Verifying image bootflash:/nxos64-s1.10.6.3.F.bin for boot variable "nxos".
+[####################] 100% -- SUCCESS
+
+Verifying image type.
+[####################] 100% -- SUCCESS
+
+Preparing "nxos" version info using image bootflash:/nxos64-s1.10.6.3.F.bin.
+[####################] 100% -- SUCCESS
+
+Preparing "bios" version info using image bootflash:/nxos64-s1.10.6.3.F.bin.
+[####################] 100% -- SUCCESS
+
+Performing module support checks.
+[####################] 100% -- SUCCESS
+
+Notifying services about system upgrade.
+[####################] 100% -- SUCCESS
+
+
+Compatibility check is done:
+Module  Bootable  Impact          Install-type  Reason
+------  --------  --------------- ------------  ---------
+  1     yes       Disruptive      Reset         Default upgrade is not hitless
+
+
+
+Images will be upgraded according to following table:
+
+Module   Image    Running-Version(pri:alt)                 New-Version         Upg-Required
+------- --------- ---------------------------------------- ------------------- ------------
+  1      nxos     10.5(3)(F)                               10.6(3)(F)          Yes
+  1      bios     xx.xx.:xx.xx                             xxx                 No
+
+
+Switch will be reloaded for disruptive upgrade.
+
+Do you want to continue with the installation (y/n)? [n] *y*
+
+Install is in progress, please wait.
+
+Performing runtime checks.
+[####################] 100% -- SUCCESS
+
+Setting boot variables.
+[####################] 100% -- SUCCESS
+
+Performing configuration copy.
+[####################] 100% -- SUCCESS
+
+Module 1: Refreshing compact flash and upgrading bios/loader/bootrom.
+Warning: please do not remove or power off the module at this time.
+[####################] 100% -- SUCCESS
+
+Finishing the upgrade, switch will reboot in 10 seconds.
+----
+====
+. Die neue Version von NX-OS nach dem Neustart des Switches überprüfen:
++
+`show version`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cs1# *show version*
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2025, Cisco and/or its affiliates.
+All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under their own
+licenses, such as open source.  This software is provided "as is," and unless
+otherwise stated, there is no warranty, express or implied, including but not
+limited to warranties of merchantability and fitness for a particular purpose.
+Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or
+GNU General Public License (GPL) version 3.0  or the GNU
+Lesser General Public License (LGPL) Version 2.1 or
+Lesser General Public License (LGPL) Version 2.0.
+A copy of each such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://opensource.org/licenses/gpl-3.0.html and
+http://www.opensource.org/licenses/lgpl-2.1.php and
+http://www.gnu.org/licenses/old-licenses/library.txt.
+
+
+Software
+  BIOS: version 01.14
+  NXOS: version 10.6(3)(F) [Feature Release]
+  Host NXOS: version 10.6(3)(F)
+  BIOS compile time:  11/25/2024
+  NXOS image file is: bootflash:///nxos64-s1.10.6.3.F.bin
+  NXOS compile time:  05/30/2026 12:00:00 [06/14/2026 05:25:50]
+  NXOS boot mode: LXC
+
+
+Hardware
+  cisco Nexus9000 C9808 Chassis
+  Intel(R) Xeon(R) CPU D-1633N @ 2.50GHz with 32802156 kB of memory.
+  Processor Board ID FLMXXXXXXXX
+  Device name: cs1
+  bootflash:  115802886 kB
+
+
+Kernel uptime is 5 day(s), 2 hour(s), 13 minute(s), 21 second(s)
+
+
+Last reset at 3580 usecs after Thu Jun 5 15:55:08 2026
+  Reason: Reset Requested by CLI command reload
+  System version: 10.6(3)(F)
+  Service:
+
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+
+Active Package(s):
+
+cs1#
+----
+====
+. Es sollte überprüft werden, ob die neue Version von EPLD erfolgreich geladen wurde:
++
+`show install epld status`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das Beispiel verwendet EPLD Version 10.6(3)(F).
+
+[listing, subs="+quotes"]
+----
+cs1# *show install epld status*
+
+1) Module 2 upgraded on Mon May  4 09:17:08 2026 (631239  us)
+EPLD Install Image: EPLD image file 10.6.3.F. built on Fri Apr 24 19:49:50 2026
+
+Status: EPLD Upgrade was Successful
+
+EPLD                             Curr Ver       Old Ver
+-------------------------------------------------------
+MI FPGA                         0x10014         0x1000b
+IO FPGA                         0x10033         0x10006
+
+2) Module 27 upgraded on Wed Apr  1 15:03:13 2026 (193093  us)
+EPLD Install Image: EPLD image file 10.6.3.F. built on Mon Mar 16 03:28:47 2026
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+IO FPGA                         0x1002d         0x10020
+
+3) Module 28 upgraded on Wed Apr  1 14:59:53 2026 (843907  us)
+EPLD Install Image: EPLD image file 10.6.3.F. built on Mon Mar 16 03:28:47 2026
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+IO FPGA                         0x1002d         0x10020
+
+4) Module 27 upgraded on Fri Mar 27 21:55:55 2026 (132290  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+5) Module 27 upgraded on Fri Mar 27 21:50:16 2026 (  4899  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+6) Module 27 upgraded on Fri Mar 27 21:44:36 2026 (775397  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+7) Module 27 upgraded on Fri Mar 27 21:38:58 2026 (330582  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+8) Module 27 upgraded on Fri Mar 27 21:33:19 2026 (112679  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+9) Module 27 upgraded on Fri Mar 27 21:27:41 2026 (957182  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+10) Module 27 upgraded on Fri Mar 27 21:22:03 2026 ( 90303  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+FM-19 FPGA                      0x10006         0x10000
+FM-20 FPGA                      0x10006         0x10000
+FM-21 FPGA                      0x10006         0x10000
+FM-22 FPGA                      0x10006         0x10000
+FM-23 FPGA                      0x10006         0x10000
+FM-24 FPGA                      0x10006         0x10000
+FM-25 FPGA                      0x10006         0x10000
+FM-26 FPGA                      0x10006         0x10000
+
+11) Module 1 upgraded on Fri Mar 27 21:16:24 2026 (240369  us)
+EPLD Install Image: EPLD image file 10.6.2.F. built on Fri Dec 12 11:15:18 2025
+
+Status: EPLD Upgrade was Successful
+
+EPLD                            Curr Ver        Old Ver
+-------------------------------------------------------
+MI FPGA                         0x10014         0x1000b
+IO FPGA                         0x10033         0x10006
+cs1#
+----
+====
+. Wenn das NX-OS im Rahmen einer neuen AFX-Systeminstallation installiert wird, sind diese Schritte zu wiederholen, um das NX-OS- und EPLD-Image auf dem Switch cs2 zu installieren.
+
+
+.Wie geht es weiter?
+Nachdem Sie NX-OS auf Ihrem/Ihren Switch(es) installiert haben, wird RCF beginnend mit der link:configure-install-upgrade-rcf-overview-9808.html["Übersicht zur Installation oder Aktualisierung des RCF"] installiert.

@@ -15,6 +15,7 @@ Gehen Sie wie folgt vor, um einen defekten NVIDIA SN2100-Switch in einem Cluster
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Vorhandene Cluster- und Netzwerkinfrastruktur
@@ -44,6 +45,7 @@ NOTE: Sie müssen den Befehl zur Migration eines Cluster-LIF von dem Knoten ausf
 
 
 
+[[enable-console-logging]]
 == Konsolenprotokollierung aktivieren
 
 NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Geräten zu aktivieren und beim Austausch Ihres Switches die folgenden Maßnahmen zu ergreifen:
@@ -55,6 +57,7 @@ NetApp empfiehlt dringend, die Konsolenprotokollierung auf den verwendeten Gerä
 
 
 
+[[replace-the-switch]]
 == Tauschen Sie den Schalter aus.
 
 .Zu den Beispielen
@@ -145,6 +148,7 @@ swp16      100G   BondMember  sw1                swp16
 ====
 
 
+[[step-1-prepare-for-replacement]]
 === Schritt 1: Vorbereitung auf den Austausch
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -174,6 +178,7 @@ Prüfen, laden und installieren Sie gegebenenfalls die entsprechenden Versionen 
 
 
 
+[[step-2-configure-ports-and-cabling]]
 === Schritt 2: Anschlüsse und Verkabelung konfigurieren
 
 [role="tabbed-block"]
@@ -627,6 +632,7 @@ e3b       Cluster      Cluster          up    9000  auto/10000  healthy  false
 ====
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 [role="tabbed-block"]

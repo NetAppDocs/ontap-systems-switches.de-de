@@ -15,12 +15,14 @@ Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedin
 
 
 
+[[cabinet-details]]
 == Schrankdetails
 
 Sie installieren den NVIDIA SN2100 Switch (X190006) im NVIDIA Dual/Single Switch Schrank mit den Standardhalterungen, die im Lieferumfang des Switches enthalten sind.
 
 
 
+[[rail-kit-details]]
 == Details zum Schienenbausatz
 
 Die folgende Tabelle listet die Teilenummer und die Beschreibung für die SN2100-Weichen und Schienensätze auf:
@@ -58,7 +60,7 @@ Schienensatz, NVIDIA Einzelschalter kurze Tiefe
 
 |===
 
-NOTE: Weitere Einzelheiten hierzu finden Sie in der NVIDIA-Dokumentation link:https://docs.nvidia.com/networking/display/sn2000pub/Installation["Installation Ihres SN2100-Weichen- und Schienensatzes"^].
+NOTE: Weitere Einzelheiten hierzu finden Sie in der NVIDIA-Dokumentation link:https://networking-docs.nvidia.com/sn2000hw/latest/installation["Installation Ihres SN2100-Weichen- und Schienensatzes"^].
 
 .Wie geht es weiter?
 Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die folgenden überprüfen: link:required-documentation-sn2100-cluster.html["erforderliche Dokumentation"]Die

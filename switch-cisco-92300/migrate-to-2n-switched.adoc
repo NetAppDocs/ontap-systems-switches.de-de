@@ -22,6 +22,7 @@ NOTE: Nach Abschluss der Migration müssen Sie möglicherweise die erforderliche
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -54,6 +55,7 @@ Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] 
 
 
 
+[[migrate-the-switch]]
 == Den Schalter migrieren
 
 .Zu den Beispielen
@@ -71,6 +73,7 @@ Die link:https://hwu.netapp.com["Hardware Universe"^] enthält die neuesten Info
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie Folgendes eingeben `y` wenn Sie aufgefordert werden, fortzufahren:
@@ -106,6 +109,7 @@ cluster1::*> *system node autosupport invoke -node * -type all -message MAINT=2h
 
 
 
+[[step-2-configure-cables-and-ports]]
 === Schritt 2: Kabel und Anschlüsse konfigurieren
 
 . Deaktivieren Sie alle zum Knoten führenden Ports (außer ISL-Ports) an den beiden neuen Cluster-Switches cs1 und cs2.
@@ -398,6 +402,7 @@ cs2(config-if-range)# *no shutdown*
 
 
 
+[[step-3-verify-the-configuration]]
 === Schritt 3: Konfiguration überprüfen
 
 . Automatische Wiederherstellung der Cluster-LIFs aktivieren.

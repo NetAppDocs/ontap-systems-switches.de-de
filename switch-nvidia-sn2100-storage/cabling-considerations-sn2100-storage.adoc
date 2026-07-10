@@ -15,6 +15,7 @@ Bevor Sie Ihren NVIDIA SN2100 Switch konfigurieren, beachten Sie bitte die folge
 
 
 
+[[nvidia-port-details]]
 == NVIDIA -Portdetails
 
 |===
@@ -54,6 +55,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[link-up-delays-with-optical-connections]]
 == Verbindungsverzögerungen bei optischen Verbindungen
 
 Falls Sie Verbindungsverzögerungen von mehr als fünf Sekunden feststellen, bietet Cumulus Linux 5.4 und spätere Versionen Unterstützung für schnelles Verbindungsaufbauen.  Sie können die Links mithilfe der folgenden Funktion konfigurieren: `nv set` Befehl wie folgt:
@@ -81,6 +83,7 @@ Only switchd reload required
 ====
 
 
+[[support-for-copper-connections]]
 == Unterstützung für Kupferverbindungen
 
 Um dieses Problem zu beheben, sind folgende Konfigurationsänderungen erforderlich.
@@ -200,6 +203,7 @@ Unter Cumulus Linux 4.4.2 werden Kupferverbindungen auf SN2100-Switches mit X115
 
 
 
+[[qsa-adapter]]
 == QSA-Adapter
 
 Wenn ein QSA-Adapter verwendet wird, um eine Verbindung zu den 10GbE/25GbE-Cluster-Ports einer Plattform herzustellen, kann es vorkommen, dass die Verbindung nicht zustande kommt.
@@ -215,6 +219,7 @@ NOTE: Bei Verwendung von 10GbE/25GbE QSA-Adaptern stecken Sie diese in nicht-bre
 
 
 
+[[set-interface-speed-on-breakout-ports]]
 == Schnittstellengeschwindigkeit an Breakout-Ports einstellen
 
 Je nach Transceiver im Switch-Port müssen Sie möglicherweise die Geschwindigkeit an der Switch-Schnittstelle auf eine feste Geschwindigkeit einstellen.  Bei Verwendung von 10GbE- und 25GbE-Breakout-Ports überprüfen Sie, ob die automatische Aushandlung deaktiviert ist, und stellen Sie die Schnittstellengeschwindigkeit am Switch ein.

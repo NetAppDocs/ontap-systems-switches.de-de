@@ -30,6 +30,7 @@ CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs 
 
 
 
+[[step-1-prepare-for-the-upgrade]]
 == Schritt 1: Vorbereitung auf das Upgrade
 
 . Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
@@ -165,6 +166,7 @@ cluster1::*> *system switch ethernet show*
 
 
 
+[[step-2-upgrade-the-rcf]]
 == Schritt 2: RCF aktualisieren
 
 . Melden Sie sich mit SSH oder über eine serielle Konsole beim Switch s2 an.
@@ -414,6 +416,7 @@ cluster1::> *system switch ethernet show*
 
 
 
+[[step-3-verify-the-storage-network]]
 == Schritt 3: Überprüfen Sie das Speichernetzwerk
 
 Führen Sie die folgenden Schritte auf jedem Storage-Switch durch, um zu überprüfen, ob das Speichernetzwerk nach dem RCF-Upgrade ordnungsgemäß funktioniert.

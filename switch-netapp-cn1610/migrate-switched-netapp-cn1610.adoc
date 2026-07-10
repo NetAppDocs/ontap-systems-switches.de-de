@@ -15,6 +15,7 @@ Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, könn
 
 
 
+[[review-requirements]]
 == Überprüfungsanforderungen
 
 .Bevor Sie beginnen
@@ -53,6 +54,7 @@ Alle zuvor vorgenommenen Anpassungen am Standort, wie z. B. SMTP, SNMP und SSH, 
 
 
 
+[[migrate-the-switches]]
 == Migrieren Sie die Schalter
 
 .Zu den Beispielen
@@ -70,6 +72,7 @@ Derlink:https://hwu.netapp.com/["Hardware Universe"^] Enthält die aktuellsten I
 
 
 
+[[step-1-prepare-for-migration]]
 === Schritt 1: Vorbereitung auf die Migration
 
 . Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie Folgendes eingeben `y` wenn Sie aufgefordert werden, fortzufahren:
@@ -105,6 +108,7 @@ cluster::*> system node autosupport invoke -node * -type all -message MAINT=2h
 
 
 
+[[step-2-configure-ports]]
 === Schritt 2: Ports konfigurieren
 
 . Deaktivieren Sie alle zum Knoten hin ausgerichteten Ports (nicht die ISL-Ports) an den beiden neuen Cluster-Switches cs1 und cs2.
@@ -865,6 +869,7 @@ NOTE: Für Version 8.3 und höher lauten die Befehle:
 
 
 
+[[step-3-complete-the-configuration]]
 === Schritt 3: Konfiguration abschließen
 
 . Überprüfen Sie, ob alle Schnittstellen angezeigt werden. `true` in der Spalte „Ist zu Hause“:

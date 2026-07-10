@@ -15,6 +15,7 @@ Bevor Sie Ihren Broadcom BES-53248 Switch konfigurieren, beachten Sie bitte die 
 
 
 
+[[cluster-port-switch-assignments]]
 == Cluster-Port-Switch-Zuweisungen
 
 Sie können die von Broadcom unterstützte Tabelle der Portzuweisungen für den BES-53248 Cluster-Switch als Leitfaden für die Konfiguration Ihres Clusters verwenden.
@@ -56,6 +57,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[port-group-speed-constraint]]
 == Geschwindigkeitsbeschränkung der Portgruppe
 
 * Bei den Cluster-Switches BES-53248 sind die 48 10/25GbE (SFP28/SFP+)-Ports in 12 x 4-Port-Gruppen wie folgt zusammengefasst: Ports 1-4, 5-8, 9-12, 13-16, 17-20, 21-24, 25-28, 29-32, 33-36, 37-40, 41-44 und 45-48.
@@ -65,6 +67,7 @@ Weitere Informationen zu Switch-Ports finden Sie in der link:https://hwu.netapp.
 
 
 
+[[fec-requirements]]
 == FEC Anforderungen
 
 * Für 25G-Ports mit Kupferkabeln siehe die folgende Tabelle für Details.
@@ -82,6 +85,7 @@ image::../media/FEC_fiber_table.jpg[25G-Anschlüsse mit Glasfaser-/Lichtwellenle
 
 
 
+[[bootarg-implementation]]
 === Bootarg-Implementierung
 
 Verwenden Sie den folgenden Befehl, um die FEC des 25G-Ports auf einen der folgenden Werte einzustellen: `auto` oder `fc` , wie erforderlich:

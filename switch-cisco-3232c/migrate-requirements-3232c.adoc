@@ -15,6 +15,7 @@ Bevor Sie auf Cisco Nexus 3232C Cluster-Switches migrieren, überprüfen Sie die
 
 
 
+[[cn1610-migrate-requirements]]
 == CN1610 Migrationsanforderungen
 
 Die Cluster-Switches unterstützen folgende Knotenverbindungen:
@@ -74,6 +75,7 @@ Die in diesem Verfahren unterstützten ONTAP und FASTPATH-Versionen sind aufgeli
 
 
 
+[[cn5596-requirements]]
 == CN5596-Anforderungen
 
 Die Cluster-Switches verwenden die folgenden Ports für die Verbindungen zu den Knoten:
