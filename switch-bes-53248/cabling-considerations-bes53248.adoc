@@ -109,3 +109,6 @@ systemshell -node <node> -command sudo sysctl dev.ice.<X>.requested_fec=<auto/fc
 
 
 
+
+.Wie geht es weiter?
+Nachdem die Anforderungen an Verkabelung und Konfiguration erfüllt sind, wird der link:configure-efos-software.html["Installieren Sie die EFOS-Software"] auf dem Switch installiert.
