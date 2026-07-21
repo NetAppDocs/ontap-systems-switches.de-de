@@ -4,10 +4,8 @@ sidebar: sidebar
 keywords:  
 summary: Erfahren Sie mehr über Cluster, Speicher und gemeinsam genutzte Switches. 
 ---
-= Erfahren Sie mehr über AFX-Systeme, Cluster, Speicher und gemeinsam genutzte Switches
+= Informationen zu den Switches Ihres ONTAP Systems
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
 
 [role="lead"]
@@ -19,12 +17,16 @@ Die „Front-End“-Switches stellen die Verbindung zum Host-Speicher her, währ
 NOTE: Es werden ausschließlich von NetApp validierte Back-End-Switches (bestellt bei NetApp) unterstützt.
 
 
+CAUTION: Wenn Sie Ihre Switches aktualisieren, empfiehlt NetApp, zunächst ein ONTAP Software-Upgrade durchzuführen und anschließend das Software-Upgrade für Ihre Switches vorzunehmen.
+
+
 
 [[afx-systems-switches]]
 == AFX-Systemschalter
 
-Mit den Switches von AFX Systems können Sie schnelle, energieeffiziente und platzsparende Netzwerk-Switches erstellen. Aufgrund ihrer geringen Größe und hohen Portdichte sind sie ideal für die Handhabung großer Netzwerke. Die Ports unterstützen unterschiedliche Geschwindigkeiten und können in mehrere Verbindungen aufgeteilt werden. Zu den von NetApp unterstützten AFX-System-Switches gehören:
+AFX Systems Switches ermöglichen die Erstellung schneller, energieeffizienter und platzsparender Netzwerk-Switches. Ihre geringe Größe und hohe Portdichte machen sie ideal für die Verwaltung großer Netzwerke. Die Ports unterstützen verschiedene Geschwindigkeiten und können in mehrere Verbindungen aufgeteilt werden. Zu den von NetApp unterstützten AFX Systems Switches gehören:
 
+* Cisco Nexus 9808
 * Cisco Nexus 9332D-GX2B
 * Cisco Nexus 9364D-GX2A
 
@@ -49,7 +51,6 @@ Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstelle
 Storage-Switches ermöglichen das Routing von Daten zwischen Servern und Storage-Arrays in einem Storage Area Network (SAN).  Zu den von NetApp unterstützten Speicher-Switches gehören:
 
 * Cisco Nexus 9336C-FX2
-* Cisco Nexus 3232C
 * NVIDIA SN2100
 
 
@@ -68,4 +69,4 @@ Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktion
 [[end-of-availability-switches]]
 == Verfügbarkeitsende-Schalter
 
-Eine Liste der Netzwerk-Switches, die nicht mehr zum Kauf erhältlich sind, aber weiterhin unterstützt werden, finden Sie unter link:../overview-eod.html["Verfügbarkeitsende-Schalter"].
+Eine Liste der Netzwerk-Switches, die nicht mehr zum Kauf erhältlich sind, aber weiterhin unterstützt werden, finden Sie unter link:../eoa/index.html["Verfügbarkeitsende-Schalter"].

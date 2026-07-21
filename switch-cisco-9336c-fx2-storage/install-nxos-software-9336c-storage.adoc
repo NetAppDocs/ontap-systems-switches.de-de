@@ -16,6 +16,9 @@ Befolgen Sie dieses Verfahren, um die NX-OS Software auf den Nexus 9336C-FX2 und
 Bevor Sie beginnen, führen Sie bitte die folgende Prozedur durch:link:install-nxos-overview-9336c-storage.html["Bereiten Sie die Installation von NX-OS und RCF vor."] Die
 
 
+NOTE: NetApp empfiehlt, zunächst ein ONTAP Software-Upgrade abzuschließen und anschließend das Software-Upgrade für Ihre Switches durchzuführen.
+
+
 
 [[review-requirements]]
 == Überprüfungsanforderungen

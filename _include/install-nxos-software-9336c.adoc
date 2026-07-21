@@ -3,6 +3,9 @@
 
 
 
+NOTE: NetApp empfiehlt, zunächst ein ONTAP Software-Upgrade abzuschließen und anschließend das Software-Upgrade für Ihre Switches durchzuführen.
+
+
 
 [[review-requirements]]
 == Überprüfungsanforderungen

@@ -2,7 +2,7 @@
 permalink: switch-cshm/log-collection-overview.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Sie können die bereitgestellten Befehle verwenden... 
+summary: Mit der CSHM-Protokollsammlung lassen sich Switch-Protokolle und Diagnosedaten erfassen, um Probleme mit dem Netzwerk-Switch zu beheben. 
 ---
 = Übersicht der Protokollsammlung
 :allow-uri-read: 
@@ -12,5 +12,7 @@ summary: Sie können die bereitgestellten Befehle verwenden...
 
 [role="lead"]
 Wenn die Protokollerfassung eingerichtet ist, können Sie eine stündliche Erfassung periodischer Daten aktivieren, die von AutoSupport gesammelt werden, und detaillierte Supportprotokolle anfordern.
+
+Die Protokollerfassung unterstützt bei der Fehlerbehebung von Netzwerk-Switch-Problemen, indem automatisch Switch-Protokolle und Diagnosedaten gesammelt werden. Es ist möglich, periodische Daten planmäßig über AutoSupport zu erfassen oder eine bedarfsorientierte Erfassung auszulösen, wenn detaillierte Protokolle zur Fehlerbehebung spezifischer Probleme benötigt werden. Die erfassten Protokolle bieten Einblick in den Zustand der Switches, Konfigurationsänderungen und Netzwerkereignisse.
 
 Weitere Einzelheiten finden Sie unter link:config-log-collection.html["Protokollerfassung konfigurieren"].

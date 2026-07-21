@@ -1,0 +1,34 @@
+---
+indexpage:
+  title: Zustandsüberwachung von Ethernet Switches
+  summary: Die Dokumentation auf dieser Website bietet Informationen zur Konfiguration
+    und Wartung des Ethernet Switch Health Monitors für Ihre Speicherswitches.
+  keywords: Ethernet switch health monitor, storage switches, cisco nexus switches,
+    cluster switches, ontap clusters
+  lead: Der Ethernet Switch-Integritätsmonitor ermöglicht die Überwachung des Zustands
+    Ihrer Ethernet Storage Switches in ONTAP Clustern.
+  tiles:
+  - title: Switch-Zustandsüberwachung konfigurieren
+    links:
+    - title: Konfigurationsübersicht
+      url: "../switch-cshm/config-overview.html"
+    - title: Protokollerfassung konfigurieren
+      url: "../switch-cshm/log-collection-overview.html"
+    - title: SNMPv3 konfigurieren (optional)
+      url: "../switch-cshm/config-snmpv3.html"
+  - title: Überprüfen Sie den Zustand des Switches.
+    links:
+    - title: Switch-Zustand prüfen
+      url: "../switch-cshm/monitor-overview.html"
+    - title: Überwachung von Verwaltungsschaltern
+      url: "../switch-cshm/monitor-manage.html"
+    - title: Überprüfen Sie die Schalterüberwachung.
+      url: "../switch-cshm/monitor-verify.html"
+    - title: Fehlerbehebung bei Warnmeldungen
+      url: "../switch-cshm/monitor-troubleshoot.html"
+  - title: Protokollsammlung
+    links:
+    - title: Protokollsammlung
+      url: "../switch-cshm/log-collection-overview.html"
+    - title: Fehlerbehebung bei der Protokollerfassung
+      url: "../switch-cshm/log-collection-troubleshoot.html"

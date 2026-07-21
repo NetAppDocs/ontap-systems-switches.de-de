@@ -16,6 +16,9 @@ Führen Sie diese Schritte aus, um die EFOS-Software auf dem Cluster-Switch BES-
 Die EFOS-Software umfasst eine Reihe fortschrittlicher Netzwerkfunktionen und -protokolle zur Entwicklung von Ethernet- und IP-Infrastruktursystemen.  Diese Softwarearchitektur eignet sich für jedes Netzwerkgerät, das Anwendungen nutzt, die eine gründliche Paketprüfung oder -trennung erfordern.
 
 
+NOTE: NetApp empfiehlt, zunächst ein ONTAP Software-Upgrade abzuschließen und anschließend das Software-Upgrade für Ihre Switches durchzuführen.
+
+
 
 [[prepare-for-upgrade]]
 == Bereiten Sie sich auf das Upgrade vor
@@ -352,7 +355,12 @@ Additional Packages............................ BGP-4
 ............................................... Prototype Open API
 ----
 ====
-. Wiederholen Sie die Schritte 5 bis 11 am Schalter cs1.
+
+
+
+NOTE: Wenn Sie gleichzeitig auch Ihr RCF aktualisieren, ist die Vorgehensweise zur Aktualisierung des RCF auf Switch cs2 vor der Aktualisierung des EFOS auf Switch cs1 zu beachten. Weitere Informationen sind unter link:upgrade-rcf.html["die RCF Version aktualisieren"] zu finden.
+
+. [[step12]] Die Schritte 5 bis 11 werden auf dem Netzwerk-Switch cs1 ebenfalls durchgeführt.
 . Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
 [source, cli]

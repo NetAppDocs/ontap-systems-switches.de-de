@@ -2,7 +2,7 @@
 permalink: switch-cshm/monitor-overview.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Sie können die folgenden Befehle verwenden ...... 
+summary: Mit Warnmeldungen des Ethernet Switch-Integritätsmonitors lassen sich Probleme mit dem Netzwerk-Switch in Ihrem ONTAP Cluster erkennen und beheben. 
 ---
 = Überblick über den Gesundheitscheck
 :allow-uri-read: 
@@ -12,6 +12,8 @@ summary: Sie können die folgenden Befehle verwenden ......
 
 [role="lead"]
 Die Gesundheitsmonitore überwachen proaktiv bestimmte kritische Zustände in Ihrem Cluster und geben Warnmeldungen aus, wenn sie einen Fehler oder ein Risiko erkennen.
+
+Nach der Konfiguration von CSHM überprüfen die Zustandsmonitore kontinuierlich Ihre Netzwerk-Switches auf potenzielle Probleme. Wenn ein Zustandsmonitor einen Fehler oder ein Risiko erkennt, wird eine Warnmeldung mit Diagnoseinformationen generiert, die eine schnelle Reaktion ermöglichen. Aktive Warnmeldungen können angezeigt werden, um aktuelle Probleme zu identifizieren, und verfügbare Warnmeldungsdefinitionen bieten Einblick, welche Bedingungen überwacht werden.
 
 Um die aktuell ausgelösten Warnmeldungen des Ethernet-Switch-Integritätsmonitors anzuzeigen, führen Sie folgenden Befehl aus: `system health alert show -monitor ethernet-switch`
 

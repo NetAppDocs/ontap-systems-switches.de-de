@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: eoa-switches.html 
+keywords: switches, fas, aff systems, end of support, EOS 
+summary: Switches werden für FAS und AFF Systeme nicht mehr unterstützt. 
+---
+= Switches werden nicht mehr unterstützt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die folgenden Switches werden ab der angegebenen Version von ONTAP nicht mehr unterstützt.
+
+Informationen zu aktuell nicht unterstützten Switches finden sich unter link:https://hwu.netapp.com["NetApp Hardware Universe"^].
+
+[cols="25h,~"]
+|===
+| Schalter | Unterstützung eingestellt ab... 
+
+
+ a| 
+Cisco Nexus 3232C
+ a| 
+ONTAP 9.19.1
+
+
+
+ a| 
+Cisco Nexus 3132Q-V
+ a| 
+ONTAP 9.18.1
+
+
+
+ a| 
+Cisco Nexus 92300YC
+ a| 
+ONTAP 9.17.1
+
+
+
+ a| 
+NetApp CN1610
+ a| 
+ONTAP 9.13.1
+
+
+
+ a| 
+Cisco Nexus 5596UP/5596T
+ a| 
+ONTAP 9.11.1
+
+|===

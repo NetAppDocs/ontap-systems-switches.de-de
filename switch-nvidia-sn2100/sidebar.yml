@@ -4,7 +4,7 @@ title: NVIDIA SN2100
 entries:
 - title: Erste Schritte
   entries:
-  - title: Schnellstart
+  - title: Workflow installieren und konfigurieren
     url: "/switch-nvidia-sn2100/configure-overview-sn2100-cluster.html"
   - title: Konfigurationsanforderungen
     url: "/switch-nvidia-sn2100/configure-reqs-sn2100-cluster.html"

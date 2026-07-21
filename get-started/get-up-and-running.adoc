@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Erfahren Sie mehr über Cluster, Speicher und gemeinsam genutzte Switches. 
 ---
-= Schneller Einstieg mit AFX-Systemen, Clustern, Speicher und gemeinsam genutzten Switches
+= Schnellstart für AFX Systeme, Cluster, Storage und Shared Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -92,7 +92,7 @@ Die Installations- und Einrichtungsanleitungen für ONTAP Systeme enthalten Anwe
 [%collapsible]
 ====
 * link:https://docs.netapp.com/us-en/ontap-afx/install-setup/afx-cable-overview.html["Cisco Nexus Switches für ein AFX 1K System installieren"^]
-* link:https://review.docs.netapp.com/us-en/ontap-afx/install-afx-2k/afx-cable-overview.html["Cisco Nexus Switches für ein AFX 2K System installieren"^]
+* link:https://docs.netapp.com/us-en/ontap-afx/install-afx-2k/afx-cable-overview.html["Cisco Nexus Switches für ein AFX 2K System installieren"^]
 
 
 ==== a| 

@@ -1,0 +1,12 @@
+---
+section: switch-cshm-monitor
+title: Überprüfen Sie den Zustand des Switches.
+entries:
+- title: Überblick über den Gesundheitscheck
+  url: "/switch-cshm/monitor-overview.html"
+- title: Überwachung von Verwaltungsschaltern
+  url: "/switch-cshm/monitor-manage.html"
+- title: Überprüfen Sie die Schalterüberwachung.
+  url: "/switch-cshm/monitor-verify.html"
+- title: Fehlerbehebung bei Warnmeldungen
+  url: "/switch-cshm/monitor-troubleshoot.html"

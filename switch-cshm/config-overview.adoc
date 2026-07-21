@@ -13,6 +13,8 @@ summary: Der Ethernet-Switch-Integritätsmonitor CSHM ist dafür zuständig, den
 [role="lead"]
 Der Ethernet Switch Health Monitor (CSHM) ist dafür zuständig, den Betriebszustand der Netzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln.
 
+Bevor Sie CSHM zur Überwachung Ihrer Netzwerk-Switches verwenden können, müssen Sie die Protokollerfassung konfigurieren und optional SNMPv3 für erhöhte Sicherheit einrichten. Die Protokollerfassung ist erforderlich, damit CSHM Switch-Protokolle und Diagnosedaten erfassen kann. SNMPv3 gewährleistet eine sichere Kommunikation zwischen ONTAP und Ihren Switches.
+
 * link:config-log-collection.html["Protokollerfassung konfigurieren"]
 * link:config-snmpv3.html["SNMPv3 konfigurieren (optional)"]
 

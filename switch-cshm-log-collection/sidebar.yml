@@ -1,0 +1,8 @@
+---
+section: switch-cshm-log-collection
+title: Protokolle sammeln
+entries:
+- title: Übersicht der Protokollsammlung
+  url: "/switch-cshm/log-collection-overview.html"
+- title: Fehlerbehebung bei der Protokollerfassung
+  url: "/switch-cshm/log-collection-troubleshoot.html"
