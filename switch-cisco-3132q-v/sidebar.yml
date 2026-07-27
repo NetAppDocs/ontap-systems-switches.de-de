@@ -51,27 +51,27 @@ entries:
 - title: Setzen Sie den Schalter auf die Werkseinstellungen zurück.
   url: "/switch-cisco-3132q-v/reset-switch-3132q-v.html"
 - title: Schalter migrieren
-  pdf-filename: Migrate_switches_3132q-v
+  pdf-filename: Migrieren_der_Switches_3132q-v
   entries:
   - title: Migration von schalterlosen Clustern zu Zwei-Knoten-Clustern mit Schaltern
-    pdf-filename: Migration von einem schalterlosen zu einem schalterbehafteten Cluster
+    pdf-filename: Migration von einem switchlosen zu einem switchbasierten Cluster
     entries:
-    - title: Migration von einem schalterlosen zu einem Zwei-Knoten-Schalter-Workflow
+    - title: Migration von einem schalterlosen zu einem Zwei-Knoten-Switch-Workflow
       url: "/switch-cisco-3132q-v/migrate-switchless-to-switched-workflow.html"
     - title: Migrationsanforderungen
       url: "/switch-cisco-3132q-v/migrate-switchless-to-switched-requirements.html"
-    - title: Bereiten Sie sich auf die Migration vor
+    - title: Vorbereitung auf die Migration
       url: "/switch-cisco-3132q-v/migrate-switchless-prepare-to-migrate.html"
     - title: Konfigurieren Sie Ihre Ports
       url: "/switch-cisco-3132q-v/migrate-switchless-configure-ports.html"
-    - title: Schließen Sie Ihre Migration ab.
+    - title: Migration abschließen
       url: "/switch-cisco-3132q-v/migrate-switchless-complete-migration.html"
 - title: Schalter austauschen
   pdf-filename: Replace_switches_3132q-v
   entries:
   - title: Ersetzen Sie die Anforderungen
     url: "/switch-cisco-3132q-v/switch-requirements.html"
-  - title: 3132Q-V-Schalter ersetzen
+  - title: 3132Q-V Switches ersetzen
     url: "/switch-cisco-3132q-v/replace-cisco-nexus-3132q-v.html"
   - title: Ersetzen Sie die Clusterschalter durch schalterlose Verbindungen.
     url: "/switch-cisco-3132q-v/migrate-to-switchless-cluster-interconnect.html"

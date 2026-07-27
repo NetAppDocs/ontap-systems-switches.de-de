@@ -1,0 +1,30 @@
+---
+permalink: switch-cisco-92300/install-hardware-workflow.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-92300yc switch 
+summary: Vor der Konfiguration der Cisco Nexus 92300YC Cluster Switches empfiehlt sich ein Blick auf die Konfigurationsübersicht. 
+---
+= Arbeitsablauf für die Hardwareinstallation von Cisco Nexus 92300YC Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Installation und Konfiguration der Hardware für einen 92300YC Cluster Switch sind die folgenden Schritte erforderlich:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-worksheet-92300yc.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
+[role="quick-margin-para"]
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-switch-92300yc.html["Installieren Sie den Schalter"]
+[role="quick-margin-para"]
+Der 92300YC Switch wird installiert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-switch-netapp-cabinet-92300yc.html["Installieren Sie den Switch in einem NetApp -Schrank."]
+[role="quick-margin-para"]
+Der 92300YC Switch und das Pass-Through-Panel werden bei Bedarf in einem NetApp Schrank installiert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cabling-considerations-92300.html["Kabel und Konfiguration prüfen"]
+[role="quick-margin-para"]
+Unterstützung für NVIDIA Ethernet-Ports prüfen.

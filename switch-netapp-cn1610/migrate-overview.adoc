@@ -1,0 +1,24 @@
+---
+permalink: switch-netapp-cn1610/migrate-overview.html 
+sidebar: sidebar 
+keywords: migrate, two-node switched cluster, netapp cn1610 
+summary: Wenn ein Cluster ohne Switches mit zwei Knoten vorhanden ist, ist eine unterbrechungsfreie Migration zu einem Cluster mit zwei Knoten und Switches möglich, der NetApp CN1610 Cluster-Netzwerk-Switches enthält. 
+---
+= Migrationsoptionen für ein Zwei-Knoten Cluster mit NetApp CN1610 Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen Cluster ohne Switches mit zwei Knoten haben, ist eine unterbrechungsfreie Migration zu einem Cluster mit zwei Knoten und Switches möglich, der NetApp CN1610 Cluster-Netzwerk-Switches enthält. Das verwendete Verfahren hängt davon ab, ob jeder Controller über zwei dedizierte Cluster-Netzwerk-Ports oder einen einzelnen Cluster-Port verfügt.
+
+Die meisten Systeme benötigen zwei dedizierte Cluster-Netzwerkanschlüsse an jedem Controller.
+
+FAS22xx-Knoten erlauben einen einzelnen Cluster-Port pro Controller.
+
+Es stehen zwei Migrationsoptionen zur Verfügung:
+
+* link:migrate-switched-netapp-cn1610.html["Migration von einem Cluster ohne Switches zu einer geschalteten NetApp CN1610 Clusterumgebung"]
+* link:migrate-fas22xx-systems.html["Migration von einem Cluster ohne Switches (FAS22xx-Systeme mit einer einzigen Cluster-Netzwerkverbindung)"]
+

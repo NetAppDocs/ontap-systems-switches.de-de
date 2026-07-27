@@ -1,0 +1,458 @@
+---
+permalink: switch-cisco-3232c-storage/upgrade-rcf-software-3232c-storage.html 
+sidebar: sidebar 
+keywords: install rcf, cisco switches 
+summary: Mit diesem Verfahren können Sie Ihre RCF-Version aktualisieren. 
+---
+= Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie aktualisieren Ihre RCF-Version, wenn auf Ihren betriebsbereiten Switches bereits eine Version der RCF-Datei installiert ist.
+
+.Bevor Sie beginnen
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
+
+* Eine aktuelle Sicherungskopie der Switch-Konfiguration.
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen oder ähnliche Probleme).
+* Der aktuelle RCF.
+* Wenn Sie Ihre RCF-Version aktualisieren, benötigen Sie eine Boot-Konfiguration in der RCF, die die gewünschten Boot-Images widerspiegelt.
++
+Wenn Sie die Bootkonfiguration ändern müssen, um die aktuellen Boot-Images widerzuspiegeln, müssen Sie dies tun, bevor Sie die RCF erneut anwenden, damit die richtige Version bei zukünftigen Neustarts enthalten ist.
+
+
+
+
+CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs müssen Sie die Switch-Einstellungen löschen und eine Basiskonfiguration durchführen.  Sie müssen über die serielle Konsole mit dem Switch verbunden sein oder grundlegende Konfigurationsinformationen gesichert haben, bevor Sie die Switch-Einstellungen löschen.
+
+
+
+[[step-1-prepare-for-the-upgrade]]
+== Schritt 1: Vorbereitung auf das Upgrade
+
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
++
+`system node autosupport invoke -node * -type all -message MAINT=xh`
+
++
+Wobei _x_ die Dauer des Wartungsfensters in Stunden angibt.
+
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
++
+`set -privilege advanced`
+
++
+Die erweiterte Eingabeaufforderung (*>) wird angezeigt.
+
+. Zeigen Sie die Ports auf jedem Knoten an, die mit den Switches verbunden sind:
++
+[source, cli]
+----
+network device-discovery show
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network device-discovery show*
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID) Interface       Platform
+----------- ------ ------------------------ --------------- ---------
+cluster1-01/cdp
+            e5a    s1                       Ethernet1/7     N3K-C3232C
+            e3b    s2                       Ethernet1/7     N3K-C3232C
+cluster1-02/cdp
+            e5a    s1                       Ethernet1/8     N3K-C3232C
+            e3b    s2                       Ethernet1/8     N3K-C3232C
+.
+.
+----
+====
+. Prüfen Sie den administrativen oder betrieblichen Status jedes Node-Speicherports und Speicherregalports.
++
+.. Überprüfen Sie, ob alle Speicherports der Knoten aktiv und fehlerfrei sind:
++
+[source, cli]
+----
+storage port show -port-type ENET
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *storage port show -port-type ENET*
+
+
+                                      Speed
+Node               Port Type  Mode    (Gb/s) State    Status
+------------------ ---- ----- ------- ------ -------- -----------
+cluster1-01
+                   e5a ENET  -         100   enabled  online
+                   e3b ENET  -         100   enabled  online
+cluster1-02
+                   e5a ENET  -         100   enabled  online
+                   e3b ENET  -         100   enabled  online
+.
+.
+----
+====
+.. Überprüfen Sie, ob alle Ports des Speicherregals aktiv sind und einen fehlerfreien Status aufweisen:
++
+[source, cli]
+----
+storage shelf port show
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::> *storage shelf port show*
+
+Shelf ID Module State        Internal?
+----- -- ------ ------------ ---------
+1.4
+       0 A      connected    false
+       1 A      connected    false
+       2 B      connected    false
+       3 B      connected    false
+.
+.
+----
+====
+.. Vergewissern Sie sich, dass die Switches überwacht werden.
++
+[source, cli]
+----
+system switch ethernet show
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet show*
+  Switch            Type               Address          Model
+  ----------------- ------------------ ---------------- ---------------
+  s1                storage-network    1.2.3.4          N3K-C3232C
+     Serial Number: FFFXXXXXXX1
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.3(4a)
+    Version Source: CDP/ISDP
+  s2                storage-network    2.3.4.5          N3K-C3232C
+     Serial Number: FEEXXXXXXX2
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.3(4a)
+    Version Source: CDP/ISDP
+----
+====
+
+
+
+
+
+
+[[step-2-upgrade-the-rcf]]
+== Schritt 2: RCF aktualisieren
+
+. Melden Sie sich bei Switch s2 über SSH oder über eine serielle Konsole an.
+. Schalten Sie die mit allen Ports der Nodes verbundenen Ports ab.
++
+[listing, subs="+quotes"]
+----
+s2> *enable*
+s2# *configure*
+s2(config)# *interface e1/1-32*
+s2(config-if-range)# *shutdown*
+s2(config-if-range)# *exit*
+s2(config)# *exit*
+----
++
+
+CAUTION: Stellen Sie sicher, dass *alle* angeschlossenen Ports heruntergefahren werden, um Netzwerkverbindungsprobleme zu vermeiden. Siehe den Knowledge Base Artikel https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/Node_out_of_quorum_when_migrating_cluster_lif_during_switch_OS_upgrade["Knoten außerhalb des Quorums bei Migration des Cluster-LIF während des Switch-OS-Upgrades"^] für weitere Details.
+
+. Falls Sie dies noch nicht getan haben, speichern Sie eine Kopie der aktuellen Switch-Konfiguration, indem Sie die Ausgabe des folgenden Befehls in eine Textdatei kopieren:
++
+`show running-config`
+
++
+.. Alle benutzerdefinierten Ergänzungen zwischen dem aktuellen `running-config` und die verwendete RCF-Datei (z. B. eine SNMP-Konfiguration für Ihre Organisation).
+.. Für NX-OS 10.2 und höher verwenden Sie die `show diff running-config` Befehl zum Vergleich mit der gespeicherten RCF-Datei im Bootflash. Alternativ können Sie ein Vergleichstool eines Drittanbieters verwenden.
+
+
+. Speichern Sie die grundlegenden Konfigurationsdetails in der `write_erase.cfg` Datei auf dem Bootflash.
++
+[NOTE]
+====
+Stellen Sie sicher, dass Sie Folgendes konfigurieren:
+
+** Benutzername und Passwort
+** Verwaltungs-IP-Adresse
+** Standardgateway
+** Schaltername
+
+
+====
++
+`s2# show run | section "switchname" > bootflash:write_erase.cfg`
+
++
+`s2# show run | section "hostname" >> bootflash:write_erase.cfg`
+
++
+`s2# show run | i "username admin password" >> bootflash:write_erase.cfg`
+
++
+`s2# show run | section "vrf context management" >> bootflash:write_erase.cfg`
+
++
+`s2# show run | section "interface mgmt0" >> bootflash:write_erase.cfg`
+
++
+Weitere Einzelheiten sind im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] zu finden.
+
+. Überprüfen Sie, ob die `write_erase.cfg` Die Datei ist wie erwartet gefüllt:
++
+`*show file bootflash:write_erase.cfg*`
+
+. Stellen Sie die `write erase` Befehl zum Löschen der aktuell gespeicherten Konfiguration:
++
+`s2# *write erase*`
+
++
+`Warning: This command will erase the startup-configuration.`
+
++
+`Do you wish to proceed anyway? (y/n)  [n] *y*`
+
+. Kopieren Sie die zuvor gespeicherte Basiskonfiguration in die Startkonfiguration.
++
+`s2# *copy bootflash:write_erase.cfg startup-config*`
+
+. Starten Sie den Switch neu:
++
+`s2# *reload*`
+
++
+`This command will reboot the system. (y/n)?  [n] *y*`
+
+. Sobald die Management-IP-Adresse wieder erreichbar ist, melden Sie sich über SSH am Switch an.
++
+Möglicherweise müssen Sie die Einträge in der Host-Datei aktualisieren, die mit den SSH-Schlüsseln zusammenhängen.
+
+. Kopieren Sie die RCF in den Bootflash von Switch s2, indem Sie eines der folgenden Übertragungsprotokolle verwenden: FTP, TFTP, SFTP oder SCP.
++
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/series.html#CommandReferences["Cisco Nexus 3000 Series NX-OS Dokumentation"^].
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Dieses Beispiel zeigt, wie TFTP verwendet wird, um eine RCF in den Bootflash auf dem Switch s2 zu kopieren:
+
+[listing, subs="+quotes"]
+----
+s2# *copy tftp: bootflash: vrf management*
+Enter source filename: *NX3232C-RCF-v1.13-1-Storage.txt*
+Enter hostname for the tftp server: *172.22.201.50*
+Trying to connect to tftp server......Connection to Server Established.
+TFTP get operation was successful
+Copy complete, now saving to disk (please wait)...
+----
+====
+. Wenden Sie die zuvor heruntergeladene RCF-Datei auf den Bootflash an.
++
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/series.html["Cisco Nexus 3000 Series Dokumentation"^].
+
++
+Dieses Beispiel zeigt die RCF-Datei `NX3232C-RCF-v1.13-1-Storage.txt`, die auf Switch s2 installiert wird:
+
++
+[listing, subs="+quotes"]
+----
+s2# *copy NX3232C-RCF-v1.13-1-Storage.txt running-config echo-commands*
+----
++
+[CAUTION]
+====
+Lesen Sie die Abschnitte *Installationshinweise*, *Wichtige Hinweise* und *Banner* Ihres RCF gründlich durch. Sie müssen diese Anweisungen lesen und befolgen, um die ordnungsgemäße Konfiguration und den ordnungsgemäßen Betrieb des Switches sicherzustellen.
+
+====
+. Überprüfen Sie, ob es sich bei der RCF-Datei um die korrekte, neuere Version handelt:
++
+`show running-config`
+
++
+Wenn Sie die Ausgabe überprüfen, um sicherzustellen, dass Sie die richtige RCF-Datei haben, achten Sie darauf, dass die folgenden Informationen korrekt sind:
+
++
+** Das RCF-Banner
+** Die Knoten- und Porteinstellungen
+** Anpassungen
++
+Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port-Einstellungen und beachten Sie die Versionshinweise, um sich über etwaige Änderungen zu informieren, die speziell für die von Ihnen installierte RCF-Version gelten.
+
+
+
+. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.
+. Nachdem Sie überprüft haben, ob die RCF-Versionen, die benutzerdefinierten Erweiterungen und die Schaltereinstellungen korrekt sind, kopieren Sie die `running-config` Datei an die `startup-config` Datei.
++
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der https://www.cisco.com/c/en/us/support/switches/nexus-3000-series-switches/series.html["Cisco Nexus 9000 Series Dokumentation"^].
+
++
+`s2# *copy running-config startup-config*`
+
++
+`[########################################] 100% Copy complete`
+
+. Starten Sie Switch s2 neu. Sie können die Warnungen „`cluster switch health monitor`“ und die Ereignisse „`cluster ports down`“, die auf den Knoten gemeldet werden, während des Neustarts des Switches ignorieren.
++
+`s2# *reload*`
+
++
+`This command will reboot the system. (y/n)?  [n] *y*`
+
+. Prüfen Sie den administrativen oder betrieblichen Status jedes Node-Speicherports und Speicherregalports.
++
+.. Überprüfen Sie, ob alle Speicherports aktiv sind und einen fehlerfreien Status aufweisen:
++
+[source, cli]
+----
+storage port show -port-type ENET
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *storage port show -port-type ENET*
+
+
+                                      Speed
+Node               Port Type  Mode    (Gb/s) State    Status
+------------------ ---- ----- ------- ------ -------- -----------
+cluster1-01
+                   e5a  ENET  -          100 enabled  online
+                   e3b  ENET  -          100 enabled  online
+cluster1-02
+                   e5a  ENET  -          100 enabled  online
+                   e3b  ENET  -          100 enabled  online
+.
+.
+----
+====
+.. Überprüfen Sie, ob alle Ports des Speicherregals aktiv sind und einen fehlerfreien Status aufweisen:
++
+[source, cli]
+----
+storage shelf port show
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::> *storage shelf port show*
+
+Shelf ID Module State        Internal?
+----- -- ------ ------------ ---------
+1.4
+       0 A      connected    false
+       1 A      connected    false
+       2 B      connected    false
+       3 B      connected    false
+.
+.
+----
+====
+.. Überprüfen Sie, ob die Switches überwacht werden:
++
+[source, cli]
+----
+system switch ethernet show
+----
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *system switch ethernet show*
+  Switch           Type               Address          Model
+  ---------------- ------------------ ---------------- ---------------
+  s1               storage-network    1.2.3.4          N3K-C3232C
+     Serial Number: FFFXXXXXXX1
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.3(4a)
+    Version Source: CDP/ISDP
+  s2               storage-network    2.3.4.5          N3K-C3232C
+     Serial Number: FEEXXXXXXX2
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.3(4a)
+    Version Source: CDP/ISDP
+----
+====
+
+
+. Wiederholen Sie die Schritte 1 bis 16 auf Switch s1.
+
+
+
+
+[[step-3-verify-the-storage-network]]
+== Schritt 3: Überprüfen Sie das Speichernetzwerk
+
+Führen Sie die folgenden Schritte auf jedem Storage-Switch durch, um zu überprüfen, ob das Speichernetzwerk nach dem RCF-Upgrade ordnungsgemäß funktioniert.
+
+. Vergewissern Sie sich, dass die Switch-Ports *up* sind.
++
+[source, cli]
+----
+show interface brief
+----
+. Überprüfen Sie, ob die erwarteten Node-Speicheranschlüsse noch verbunden sind:
++
+[source, cli]
+----
+show cdp neighbors
+----
+. Überprüfen Sie, ob die erwarteten Speicherregal-Ports noch verbunden sind:
++
+[source, cli]
+----
+show lldp neighbors
+----
+. Überprüfen Sie, ob sich die Knotenspeicherports und Speicherregalports mit den folgenden Befehlen in den richtigen VLANs befinden:
++
+[source, cli]
+----
+show vlan brief
+----
++
+[source, cli]
+----
+show interface trunk
+----
+
+
+.Wie geht es weiter?
+Nach dem Upgrade Ihres RCF können Sielink:configure-ssh-keys.html["Überprüfen Sie die SSH-Konfiguration"] Die

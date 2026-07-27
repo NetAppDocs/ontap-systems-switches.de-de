@@ -1,0 +1,34 @@
+---
+permalink: switch-cisco-3132q-v/configure-software-overview-3132q-v-cluster.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-3132q-v switch 
+summary: Übersicht der Softwarekonfiguration für Cisco Nexus 3132Q-V Cluster Switches 
+---
+= Workflow für die Softwareinstallation von Cisco Nexus 3132Q-V Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Installation und Konfiguration der Software für einen Cisco Nexus 3132Q-V Switch sowie zur Installation oder Aktualisierung der Reference Configuration File (RCF) sind die folgenden Schritte auszuführen:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch.html["Konfigurieren Sie den Schalter"]
+[role="quick-margin-para"]
+Den 3132Q-V Cluster-Switch konfigurieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:prepare-install-cisco-nexus-3132q.html["Bereiten Sie die Installation der NX-OS-Software und des RCF vor."]
+[role="quick-margin-para"]
+Die Cisco NX-OS Software und RCF müssen auf Cisco 3132Q-V Cluster Switches installiert sein.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-nx-os-software-3132q-v.html["Installieren oder aktualisieren Sie die NX-OS-Software."]
+[role="quick-margin-para"]
+Die NX-OS Software kann auf dem Cisco 3132Q-V Cluster Switch heruntergeladen, installiert oder aktualisiert werden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-upgrade-rcf-overview-3132q-v.html["Installieren oder aktualisieren Sie die RCF"]
+[role="quick-margin-para"]
+Installieren oder aktualisieren Sie das RCF nach der Einrichtung des Cisco 3132Q-V Switches.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
+[role="quick-margin-para"]
+Stellen Sie sicher, dass SSH auf den Switches aktiviert ist, um den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen zu verwenden.

@@ -1,0 +1,595 @@
+---
+permalink: switch-cisco-3232c/setup_worksheet_3232c.html 
+sidebar: sidebar 
+keywords: cable worksheet, Cisco NX 3232C 
+summary: Wenn die unterstützten Plattformen dokumentiert werden sollen, ist das leere Verkabelungsarbeitsblatt unter Verwendung des ausgefüllten Beispiel-Verkabelungsarbeitsblatts als Leitfaden auszufüllen. Jeder Switch kann als einzelner 100GbE-Port, 40GbE-Port oder als 4 x 10GbE-Ports konfiguriert werden. 
+---
+= Vollständiges Verkabelungsarbeitsblatt für Cisco Nexus 3232C
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter und füllen Sie das Verkabelungsarbeitsblatt aus.
+
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
+
+Jeder Switch kann als einzelner 100GbE Port, 40GbE Port oder 4 x 10GbE Ports konfiguriert werden.
+
+
+
+[[sample-cabling-worksheet]]
+== Beispiel Verkabelungsarbeitsblatt
+
+Die Beispiel-Portdefinition für jedes Switch-Paar lautet wie folgt:
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Clusterschalter A 2+| Clusterschalter B 
+
+
+| Switch-Port | Knoten- und Portnutzung | Switch-Port | Knoten- und Portnutzung 
+
+
+ a| 
+1
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+1
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+2
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+2
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+3
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+3
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+4
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+4
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+5
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+5
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+6
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+6
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+7
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+7
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+8
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+8
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+9
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+9
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+10
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+10
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+11
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+11
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+12
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+12
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+13
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+13
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+14
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+14
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+15
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+15
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+16
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+16
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+17
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+17
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+18
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+ a| 
+18
+ a| 
+4x10GbE/4x25GbE oder 40/100GbE Node
+
+
+
+ a| 
+19
+ a| 
+40G/100GbE Knoten 19
+ a| 
+19
+ a| 
+40G/100GbE Knoten 19
+
+
+
+ a| 
+20
+ a| 
+40G/100GbE Knoten 20
+ a| 
+20
+ a| 
+40G/100GbE Knoten 20
+
+
+
+ a| 
+21
+ a| 
+40G/100GbE Knoten 21
+ a| 
+21
+ a| 
+40G/100GbE Knoten 21
+
+
+
+ a| 
+22
+ a| 
+40G/100GbE Knoten 22
+ a| 
+22
+ a| 
+40G/100GbE Knoten 22
+
+
+
+ a| 
+23
+ a| 
+40G/100GbE Node 23
+ a| 
+23
+ a| 
+40G/100GbE Node 23
+
+
+
+ a| 
+24
+ a| 
+40G/100GbE Node 24
+ a| 
+24
+ a| 
+40G/100GbE Node 24
+
+
+
+ a| 
+25 bis 30
+ a| 
+Reserviert
+ a| 
+25 bis 30
+ a| 
+Reserviert
+
+
+
+ a| 
+31
+ a| 
+100GbE ISL zu Switch B Port 31
+ a| 
+31
+ a| 
+100GbE ISL zu Switch A Port 31
+
+
+
+ a| 
+32
+ a| 
+100GbE ISL zu Switch B Port 32
+ a| 
+32
+ a| 
+100GbE ISL zu Switch A Port 32
+
+|===
+
+
+[[blank-cabling-worksheet]]
+== Leeres Verkabelungsarbeitsblatt
+
+Mithilfe des leeren Verkabelungsarbeitsblatts können Sie die Plattformen dokumentieren, die als Knoten in einem Cluster unterstützt werden.  Der Abschnitt _Unterstützte Clusterverbindungen_ der https://hwu.netapp.com["Hardware Universe"^] Definiert die von der Plattform verwendeten Cluster-Ports.
+
+[cols="1, 1, 1, 1"]
+|===
+2+| Clusterschalter A 2+| Clusterschalter B 
+
+
+| Switch-Port | Knoten-/Portnutzung | Switch-Port | Knoten-/Portnutzung 
+
+
+ a| 
+1
+ a| 
+ a| 
+1
+ a| 
+
+
+
+ a| 
+2
+ a| 
+ a| 
+2
+ a| 
+
+
+
+ a| 
+3
+ a| 
+ a| 
+3
+ a| 
+
+
+
+ a| 
+4
+ a| 
+ a| 
+4
+ a| 
+
+
+
+ a| 
+5
+ a| 
+ a| 
+5
+ a| 
+
+
+
+ a| 
+6
+ a| 
+ a| 
+6
+ a| 
+
+
+
+ a| 
+7
+ a| 
+ a| 
+7
+ a| 
+
+
+
+ a| 
+8
+ a| 
+ a| 
+8
+ a| 
+
+
+
+ a| 
+9
+ a| 
+ a| 
+9
+ a| 
+
+
+
+ a| 
+10
+ a| 
+ a| 
+10
+ a| 
+
+
+
+ a| 
+11
+ a| 
+ a| 
+11
+ a| 
+
+
+
+ a| 
+12
+ a| 
+ a| 
+12
+ a| 
+
+
+
+ a| 
+13
+ a| 
+ a| 
+13
+ a| 
+
+
+
+ a| 
+14
+ a| 
+ a| 
+14
+ a| 
+
+
+
+ a| 
+15
+ a| 
+ a| 
+15
+ a| 
+
+
+
+ a| 
+16
+ a| 
+ a| 
+16
+ a| 
+
+
+
+ a| 
+17
+ a| 
+ a| 
+17
+ a| 
+
+
+
+ a| 
+18
+ a| 
+ a| 
+18
+ a| 
+
+
+
+ a| 
+19
+ a| 
+ a| 
+19
+ a| 
+
+
+
+ a| 
+20
+ a| 
+ a| 
+20
+ a| 
+
+
+
+ a| 
+21
+ a| 
+ a| 
+21
+ a| 
+
+
+
+ a| 
+22
+ a| 
+ a| 
+22
+ a| 
+
+
+
+ a| 
+23
+ a| 
+ a| 
+23
+ a| 
+
+
+
+ a| 
+24
+ a| 
+ a| 
+24
+ a| 
+
+
+
+ a| 
+25 bis 30
+ a| 
+Reserviert
+ a| 
+25 bis 30
+ a| 
+Reserviert
+
+
+
+ a| 
+31
+ a| 
+100GbE ISL zu Switch B Port 31
+ a| 
+31
+ a| 
+100GbE ISL zu Switch A Port 31
+
+
+
+ a| 
+32
+ a| 
+100GbE ISL zu Switch B Port 32
+ a| 
+32
+ a| 
+100GbE ISL zu Switch A Port 32
+
+|===
+.Was kommt als nächstes
+Nachdem Sie Ihre Verkabelungsarbeitsblätter ausgefüllt haben, können Sie link:install-switch-3232c.html["Installieren Sie den Schalter"].

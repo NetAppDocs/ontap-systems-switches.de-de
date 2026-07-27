@@ -1,0 +1,71 @@
+---
+permalink: switch-cisco-3232c/migrate-from-switchless-migrate-requirements.html 
+sidebar: sidebar 
+keywords: install, cisco nexus 3232c switch, 
+summary: Vor der Konfiguration der Cisco Nexus 3232c Switches empfiehlt sich ein Überblick über den Prozess und die Nomenklatur. 
+---
+= Migrationsanforderungen
+:allow-uri-read: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein Cluster ohne Switches mit zwei Knoten haben, ist eine Migration zu einem Cluster mit zwei Knoten und Switches möglich, das Cisco Nexus 3232C Cluster Netzwerk Switches umfasst. Dies ist ein unterbrechungsfreies Verfahren.
+
+.Bevor Sie beginnen
+Überprüfen Sie die folgenden Installationen und Verbindungen:
+
+* Für Knotenverbindungen stehen Ports zur Verfügung. Die Cluster Switches nutzen die Inter-Switch Link (ISL) Ports e1/31-32.
+* Sie verfügen über die passenden Kabel für die Clusterverbindungen:
++
+** Die Knoten mit 10 GbE Clusterverbindungen benötigen QSFP-Lichtwellenleitermodule mit Breakout-Glasfaserkabeln oder QSFP zu SFP+ Kupfer-Breakout-Kabeln.
+** Die Knoten mit 40/100 GbE Cluster-Verbindungen benötigen unterstützte QSFP/QSFP28 optische Module mit Glasfaserkabeln oder QSFP/QSFP28 Kupfer-Direktanschlusskabel.
+** Die Cluster Switches benötigen die entsprechende ISL-Verkabelung:
++
+*** 2x QSFP28 Glasfaser- oder Kupfer Direct-Attach-Kabel.
+
+
+
+
+* Die Konfigurationen sind ordnungsgemäß eingerichtet und funktionieren.
++
+Die beiden Knoten müssen verbunden und funktionsfähig in einer Zwei-Knoten Cluster ohne Switches Umgebung sein.
+
+* Alle Cluster-Ports befinden sich im Status *up*.
+* Die Cisco Nexus 3232C Cluster Switches werden unterstützt.
+* Die bestehende Cluster-Netzwerkkonfiguration weist folgende Merkmale auf:
++
+** Eine redundante und voll funktionsfähige Nexus 3232C Cluster Infrastruktur auf beiden Switches
+** Die neuesten RCF und NX-OS Versionen auf Ihren Switches
+** Management-Konnektivität auf beiden Switches
+** Konsolenzugriff auf beide Switches
+** Alle logischen Schnittstellen (LIFs) des Clusters im Status *up* ohne Migration
+** Erste Anpassung des Switches
+** Alle ISL Ports sind aktiviert und verkabelt.
+
+
+
+
+.Zu den verwendeten Beispielen
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
+
+* Nexus 3232C Cluster Switches, *C1* und *C2*.
+* Die Knoten sind *n1* und *n2*.
+
+
+Die Beispiele in diesem Verfahren verwenden zwei Knoten, die jeweils zwei 40-GbE-Cluster-Interconnect-Ports *e4a* und *e4e* nutzen. Die link:https://hwu.netapp.com/["Hardware Universe"^] enthält Details zu den Cluster-Ports auf Ihren Plattformen.
+
+* *n1_clus1* ist die erste logische Schnittstelle (LIF) des Clusters, die für den Knoten *n1* mit dem Cluster-Switch *C1* verbunden wird.
+* *n1_clus2* ist die erste Cluster-LIF, die mit dem Cluster-Switch *C2* für den Node *n1* verbunden wird.
+* *n2_clus1* ist die erste Cluster-LIF, die mit dem Cluster Switch *C1* für den Node *n2* verbunden wird.
+* *n2_clus2* ist die zweite Cluster-LIF, die mit dem Cluster-Switch *C2* für den Node *n2* verbunden ist.
+* Die Anzahl der 10 GbE- und 40/100 GbE-Ports ist in den in den Referenzkonfigurationsdateien (RCFs) definiert, die auf der  https://mysupport.netapp.com/NOW/download/software/sanswitch/fcp/Cisco/netapp_cnmn/download.shtml["Cisco Cluster Netzwerk Switch Referenzkonfigurationsdatei herunterladen"^] Seite verfügbar sind.
+
+
+[NOTE]
+====
+Für dieses Verfahren werden sowohl ONTAP Befehle als auch Cisco Nexus 3000 Series Switches Befehle benötigt; ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+
+====
+.Wie geht es weiter?
+Nachdem Sie die Migrationsanforderungen geprüft haben, kann link:migrate-from-switchless-prepare-to-migrate.html["Vorbereitung auf die Migration Ihrer Switches"] fortgefahren werden.

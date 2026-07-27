@@ -1,0 +1,484 @@
+---
+permalink: switch-netapp-cn1610/install-rcf-file.html 
+sidebar: sidebar 
+keywords: reference configuration, file ,install, cn1610, switch, install rcf 
+summary: Bei der Installation einer Referenz-Konfigurationsdatei RCF müssen Sie zuerst die Cluster-LIFs vom Switch cs2 migrieren. Nach der Installation und Validierung der RCF können die LIFs wieder zurückmigriert werden. 
+---
+= Installieren einer Referenzkonfigurationsdatei auf einem CN1610 Switch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das folgende Verfahren dient zur Installation einer Referenzkonfigurationsdatei (RCF).
+
+Vor der Installation eines RCF müssen zunächst die Cluster-LIFs vom Switch cs2 migriert werden. Nach der Installation und Validierung des RCF können die LIFs wieder zurückmigriert werden.
+
+
+
+[[review-requirements]]
+== Überprüfungsanforderungen
+
+.Bevor Sie beginnen
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
+
+* Eine aktuelle Sicherungskopie der Switch-Konfiguration.
+* Ein voll funktionsfähiger Cluster (keine Fehler in den Protokollen und keine defekten Cluster-Netzwerk-Interface-Karten (NICs) oder ähnliche Probleme).
+* Voll funktionsfähige Portverbindungen am Cluster Switch.
+* Alle Cluster-Ports eingerichtet.
+* Alle logischen Schnittstellen (LIFs) des Clusters sind eingerichtet.
+* Ein erfolgreicher Kommunikationspfad: Der ONTAP (Berechtigung: erweitert) `cluster ping-cluster -node node1`-Befehl muss anzeigen, dass `larger than PMTU communication` die Kommunikation auf allen Pfaden erfolgreich ist.
+* Eine unterstützte Version von RCF und ONTAP.
++
+In der Kompatibilitätstabelle auf der  http://mysupport.netapp.com/NOW/download/software/cm_switches_ntap/["NetApp CN1601 und CN1610 Switches"^] Seite sind die unterstützten RCF- und ONTAP Versionen aufgeführt.
+
+
+
+
+
+[[install-the-rcf]]
+== Installieren Sie den RCF
+
+Das folgende Verfahren verwendet die Syntax von clustered Data ONTAP 8.2. Daher unterscheiden sich der Cluster-Vserver, die LIF-Namen und die CLI-Ausgabe von denen in Data ONTAP 8.3.
+
+Zwischen der Befehlssyntax in den RCF- und FASTPATH-Versionen können Befehlsabhängigkeiten bestehen.
+
+
+NOTE: In RCF Version 1.2 wurde die Unterstützung für Telnet aus Sicherheitsgründen explizit deaktiviert. Um Konnektivitätsprobleme bei der Installation von RCF 1.2 zu vermeiden, sollte überprüft werden, ob Secure Shell (SSH) aktiviert ist. Die https://library.netapp.com/ecm/ecm_get_file/ECMP1117874["NetApp CN1610 Switch Administratorhandbuch"^] enthält weitere Informationen zu SSH.
+
+.Zu den Beispielen
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
+
+* Die beiden NetApp Switches sind cs1 und cs2.
+* Die beiden Cluster-LIFs sind clus1 und clus2.
+* Die Vserver sind vs1 und vs2.
+* Die  `cluster::*>`Eingabeaufforderung zeigt den Namen des Clusters an.
+* Die Cluster-Ports auf jedem Knoten tragen die Namen e1a und e2a.
++
+Der link:https://hwu.netapp.com/["Hardware Universe"^] enthält weitere Informationen über die tatsächlich auf Ihrer Plattform unterstützten Cluster-Ports.
+
+* Die unterstützten Inter-Switch Links (ISLs) sind Ports 0/13 bis 0/16.
+* Die unterstützten Knotenverbindungen sind Ports 0/1 bis 0/12.
+* Eine unterstützte Version von FASTPATH, RCF und ONTAP.
++
+Die Tabelle zur Switch-Kompatibilität auf der  http://mysupport.netapp.com/NOW/download/software/cm_switches_ntap/["NetApp CN1601 und CN1610 Switches"^] Seite enthält Informationen zu den unterstützten FASTPATH, RCF und ONTAP Versionen.
+
+
+
+
+
+[[step-1-migrate-cluster]]
+=== Schritt 1: Cluster migrieren
+
+. Speichern Sie Ihre aktuellen Switch-Konfigurationsinformationen:
++
+`write memory`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die aktuelle Switch-Konfiguration in der Startkonfigurationsdatei (`startup-config` auf Switch cs2 gespeichert wird:
+
+[listing]
+----
+(cs2) # write memory
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) y
+
+Config file 'startup-config' created successfully.
+
+Configuration Saved!
+----
+====
+. Auf der Konsole jedes Knotens clus2 auf Port e1a migrieren:
++
+`network interface migrate`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network interface migrate -vserver vs1 -lif clus2 -source-node node1 -destnode node1 -dest-port e1a
+
+cluster::*> network interface migrate -vserver vs2 -lif clus2 -source-node node2 -destnode node2 -dest-port e1a
+----
+====
+. Auf der Konsole jedes Knotens lässt sich überprüfen, ob die Migration stattgefunden hat:
++
+`network interface show -role cluster`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, dass clus2 auf Port e1a auf beiden Knoten migriert ist:
+
+[listing]
+----
+cluster::*> network port show -role cluster
+         clus1      up/up      10.10.10.1/16   node2    e1a     true
+         clus2      up/up      10.10.10.2/16   node2    e1a     false
+----
+====
+. Port e2a auf beiden Knoten herunterfahren:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, dass der Port e2a auf beiden Knoten abgeschaltet wird:
+
+[listing]
+----
+cluster::*> network port modify -node node1 -port e2a -up-admin false
+cluster::*> network port modify -node node2 -port e2a -up-admin false
+----
+====
+. Es wird überprüft, ob der Port e2a auf beiden Knoten deaktiviert ist:
++
+`network port show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network port show -role cluster
+
+                                  Auto-Negot  Duplex      Speed (Mbps)
+Node   Port   Role     Link MTU   Admin/Oper  Admin/Oper  Admin/Oper
+------ ------ -------- ---- ----- ----------- ----------  -----------
+node1
+       e1a    cluster  up   9000  true/true   full/full   auto/10000
+       e2a    cluster  down 9000  true/true   full/full   auto/10000
+node2
+       e1a    cluster  up   9000  true/true   full/full   auto/10000
+       e2a    cluster  down 9000  true/true   full/full   auto/10000
+----
+====
+. Die ISL-Ports am aktiven NetApp Switch cs1 werden abgeschaltet.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs1) # configure
+(cs1) (config) # interface 0/13-0/16
+(cs1) (interface 0/13-0/16) # shutdown
+(cs1) (interface 0/13-0/16) # exit
+(cs1) (config) # exit
+----
+====
+
+
+
+
+[[step-2-install-rcf]]
+=== Schritt 2: Installation von RCF
+
+. Die RCF-Datei auf den Switch kopieren.
++
+
+NOTE: Sie müssen die  `.scr` Erweiterung als Teil des Dateinamens festlegen, bevor das Skript aufgerufen wird. Diese Erweiterung ist die Erweiterung für das FASTPATH Betriebssystem.
+
++
+Der Switch validiert das Skript automatisch, wenn es auf den Switch heruntergeladen wird, und die Ausgabe wird an die Konsole ausgegeben.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) # copy tftp://10.10.0.1/CN1610_CS_RCF_v1.1.txt nvram:script CN1610_CS_RCF_v1.1.scr
+
+[the script is now displayed line by line]
+Configuration script validated.
+File transfer operation completed successfully.
+----
+====
+. Es sollte überprüft werden, ob das Skript heruntergeladen und unter dem angegebenen Dateinamen gespeichert wurde.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) # script list
+Configuration Script Name        Size(Bytes)
+-------------------------------- -----------
+running-config.scr               6960
+CN1610_CS_RCF_v1.1.scr           2199
+
+2 configuration script(s) found.
+6038 Kbytes free.
+----
+====
+. Das Skript validieren.
++
+
+NOTE: Das Skript wird während des Downloads validiert, um zu überprüfen, dass jede Zeile eine gültige Switch Befehlszeile ist.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) # script validate CN1610_CS_RCF_v1.1.scr
+[the script is now displayed line by line]
+Configuration script 'CN1610_CS_RCF_v1.1.scr' validated.
+----
+====
+. Das Skript auf den Switch anwenden.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) #script apply CN1610_CS_RCF_v1.1.scr
+
+Are you sure you want to apply the configuration script? (y/n) y
+[the script is now displayed line by line]...
+
+Configuration script 'CN1610_CS_RCF_v1.1.scr' applied.
+----
+====
+. Es sollte überprüft werden, ob die Änderungen auf dem Switch implementiert wurden.
++
+[listing]
+----
+(cs2) # show running-config
+----
++
+Das Beispiel zeigt die  `running-config` Datei auf dem Switch an. Die Datei ist mit der RCF zu vergleichen, um zu überprüfen, ob die festgelegten Parameter den Erwartungen entsprechen.
+
+. Die Änderungen werden gespeichert.
+. Die  `running-config` Datei als Standarddatei festlegen.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) # write memory
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) y
+
+Config file 'startup-config' created successfully.
+----
+====
+. Der Switch wird neu gestartet und es wird überprüft, ob die  `running-config` Datei korrekt ist.
++
+Nach Abschluss des Neustarts ist eine Anmeldung erforderlich, die  `running-config` Datei muss angezeigt werden, und anschließend ist auf der Schnittstelle 3/64 nach der Beschreibung zu suchen, die die Versionsbezeichnung für das RCF darstellt.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) # reload
+
+The system has unsaved changes.
+Would you like to save them now? (y/n) y
+
+
+Config file 'startup-config' created successfully.
+Configuration Saved!
+System will now restart!
+----
+====
+. Die ISL-Ports auf cs1, dem aktiven Switch, in Betrieb nehmen.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs1) # configure
+(cs1) (config)# interface 0/13-0/16
+(cs1) (Interface 0/13-0/16)# no shutdown
+(cs1) (Interface 0/13-0/16)# exit
+(cs1) (config)# exit
+----
+====
+. Es sollte überprüft werden, ob die ISLs betriebsbereit sind:
++
+`show port-channel 3/1`
+
++
+Das Feld „Verbindungsstatus“ sollte  `Up` anzeigen.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+
+(cs2) # show port-channel 3/1
+
+Local Interface................................ 3/1
+Channel Name................................... ISL-LAG
+Link State..................................... Up
+Admin Mode..................................... Enabled
+Type........................................... Static
+Load Balance Option............................ 7
+(Enhanced hashing mode)
+
+Mbr    Device/       Port      Port
+Ports  Timeout       Speed     Active
+------ ------------- --------- -------
+0/13   actor/long    10G Full  True
+       partner/long
+0/14   actor/long    10G Full  True
+       partner/long
+0/15   actor/long    10G Full  True
+       partner/long
+0/16   actor/long    10G Full  True
+       partner/long
+----
+====
+. Den Cluster-Port e2a auf beiden Knoten aktivieren:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie Port e2a auf node1 und node2 aktiviert wird:
+
+[listing]
+----
+cluster::*> network port modify -node node1 -port e2a -up-admin true
+cluster::*> network port modify -node node2 -port e2a -up-admin true
+----
+====
+
+
+
+
+[[step-3-validate-installation]]
+=== Schritt 3: Installation validieren
+
+. Es sollte überprüft werden, ob Port e2a auf beiden Knoten aktiv ist:
++
+`network port show -_role cluster_`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network port show -role cluster
+
+                                Auto-Negot  Duplex      Speed (Mbps)
+Node   Port Role     Link MTU   Admin/Oper  Admin/Oper  Admin/Oper
+------ ---- -------- ---- ----  ----------- ----------  ------------
+node1
+       e1a  cluster  up   9000  true/true   full/full   auto/10000
+       e2a  cluster  up   9000  true/true   full/full   auto/10000
+node2
+       e1a  cluster  up   9000  true/true   full/full   auto/10000
+       e2a  cluster  up   9000  true/true   full/full   auto/10000
+----
+====
+. Auf beiden Knoten wird clus2, der mit Port e2a verknüpft ist, zurückgesetzt:
++
+`network interface revert`
+
++
+Die LIF kann je nach Ihrer ONTAP-Version automatisch zurückgesetzt werden.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network interface revert -vserver node1 -lif clus2
+cluster::*> network interface revert -vserver node2 -lif clus2
+----
+====
+. Überprüfen, ob sich das LIF nun (`true` auf beiden Knoten im Home-Zustand befindet:
++
+`network interface show -_role cluster_`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network interface show -role cluster
+
+        Logical    Status     Network        Current  Current Is
+Vserver Interface  Admin/Oper Address/Mask   Node     Port    Home
+------- ---------- ---------- -------------- -------- ------- ----
+vs1
+        clus1      up/up      10.10.10.1/24  node1    e1a     true
+        clus2      up/up      10.10.10.2/24  node1    e2a     true
+vs2
+        clus1      up/up      10.10.10.1/24  node2    e1a     true
+        clus2      up/up      10.10.10.2/24  node2    e2a     true
+----
+====
+. Status der Knotenmitglieder anzeigen:
++
+`cluster show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::> cluster show
+
+Node           Health  Eligibility
+-------------- ------- ------------
+node1
+               true    true
+node2
+               true    true
+----
+====
+. Kopieren Sie die  `running-config` Datei in die  `startup-config` Datei, wenn Sie mit den Softwareversionen und Schaltereinstellungen zufrieden sind.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(cs2) # write memory
+This operation may take a few minutes.
+Management interfaces will not be available during this time.
+
+Are you sure you want to save? (y/n) y
+
+Config file 'startup-config' created successfully.
+
+Configuration Saved!
+----
+====
+. Die vorherigen Schritte werden wiederholt, um den RCF auf dem anderen Switch, cs1, zu installieren.
+
+
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"]

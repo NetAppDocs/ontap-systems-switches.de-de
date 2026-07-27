@@ -1,0 +1,34 @@
+---
+permalink: switch-cisco-92300/configure-software-overview-92300-cluster.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-92300 switch 
+summary: Übersicht der Softwarekonfiguration für Cisco Nexus 92300YC Cluster Switches 
+---
+= Software-Installations-Workflow für Cisco Nexus 92300YC Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Installation und Konfiguration der Software für einen Cisco Nexus 92300YC Switch sowie zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF) sind die folgenden Schritte zu beachten:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:configure-install-initial.html["Konfigurieren Sie den Schalter"]
+[role="quick-margin-para"]
+Der Cluster-Switch 92300YC wird konfiguriert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-nxos-overview.html["Bereiten Sie die Installation der NX-OS-Software und des RCF vor."]
+[role="quick-margin-para"]
+Die Cisco NX-OS Software und Referenzkonfigurationsdateien (RCFs) müssen auf Cisco 92300YC Cluster Switches installiert sein.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-nxos-software.html["Installieren oder aktualisieren Sie die NX-OS-Software."]
+[role="quick-margin-para"]
+Die NX-OS Software kann auf dem Cisco 392300YC Cluster Switch heruntergeladen, installiert oder aktualisiert werden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-the-rcf-file.html["Installieren Sie den RCF"]
+[role="quick-margin-para"]
+Das RCF wird nach der erstmaligen Einrichtung des Cisco 92300YC Switches installiert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
+[role="quick-margin-para"]
+Es sollte überprüft werden, ob SSH auf den Switches aktiviert ist, damit die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollerfassung verwendet werden können.

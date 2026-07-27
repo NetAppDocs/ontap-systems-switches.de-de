@@ -40,7 +40,6 @@ Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstelle
 
 * Broadcom BES-53248
 * Cisco Nexus 9336C-FX2
-* NVIDIA SN2100
 
 
 
@@ -51,7 +50,6 @@ Mit Cluster-Switches können Sie ONTAP Cluster mit mehr als zwei Knoten erstelle
 Storage-Switches ermöglichen das Routing von Daten zwischen Servern und Storage-Arrays in einem Storage Area Network (SAN).  Zu den von NetApp unterstützten Speicher-Switches gehören:
 
 * Cisco Nexus 9336C-FX2
-* NVIDIA SN2100
 
 
 

@@ -1,0 +1,153 @@
+---
+permalink: switch-cisco-3232c-storage/prepare-install-cisco-nexus-3232c-storage.html 
+sidebar: sidebar 
+keywords: nx-os software, install, cisco nexus storage switches, 3232c, rcfs 
+summary: 'Die Cisco NX-OS Software und die Referenzkonfigurationsdateien (RCFs) müssen auf den Cisco Nexus 3232C Storage-Switches installiert sein.' 
+---
+= Vorbereitung der Installation von NX-OS Software und Reference Configuration File (RCF)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie die NX-OS-Software und die Referenzkonfigurationsdatei (RCF) installieren, befolgen Sie bitte diese Schritte.
+
+.Zu den Beispielen
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
+
+* Die Namen der beiden Cisco Switches sind s1 und s2.
+* Die Knotennamen lauten cluster1-01 und cluster1-02.
+
+
+Siehe link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] , um die korrekten Netzwerkanschlüsse auf Ihren Plattformen zu überprüfen. Siehe link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] für weitere Informationen zu den Installationsanforderungen für Switches.
+
+.Informationen zu diesem Vorgang
+Für dieses Verfahren werden sowohl ONTAP Befehle als auch Cisco Nexus 3000 Series Switches Befehle benötigt; ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+
+.Schritte
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, kann die automatische Fallerstellung durch das Auslösen einer AutoSupport-Nachricht unterdrückt werden:
+`system node autosupport invoke -node * -type all -message MAINT=x h`
++
+wobei _x_ die Dauer des Wartungsfensters in Stunden ist.
+
++
+[NOTE]
+====
+Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
+
+====
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
++
+`set -privilege advanced`
+
++
+Die erweiterte Aufforderung(`*>` ) erscheint.
+
+. Zeigen Sie an, wie viele Schnittstellen in jedem Node für jeden Netzwerk-Switch konfiguriert sind:
++
+`network device-discovery show -protocol cdp`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network device-discovery show -protocol cdp*
+
+Node/       Local  Discovered
+Protocol    Port   Device (LLDP: ChassisID)  Interface         Platform
+----------- ------ ------------------------- ----------------- --------
+cluster1-02/cdp
+            e5a    s1                        Eth1/2            N3K-C3232C
+            e3b    s2                        Eth1/2            N3K-C3232C
+cluster1-01/cdp
+            e5a    s1                        Eth1/1            N3K-C3232C
+            e3b    s2                        Eth1/1            N3K-C3232C
+.
+.
+----
+====
+. Prüfen Sie den administrativen oder betrieblichen Status jedes Node-Speicherports und Speicherregalports.
++
+.. Zeigen Sie die Attribute des Knotenspeicherports an:
++
+`storage port show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *storage port show*
+Speed                     VLAN
+Node           Port Type  Mode    (Gb/s) State    Status      ID
+-------------- ---- ----- ------- ------ -------- --------- ----
+cluster1-01
+               e5a  ENET  storage    100 enabled  online      -
+               e3b  ENET  storage    100 enabled  online      -
+cluster1-02
+
+               e5a  ENET  storage    100 enabled  online      -
+               e3b  ENET  storage    100 enabled  online      -
+.
+.
+----
+====
+.. Zeigen Sie die Attribute des Storage-Shelf-Ports an: +
+`storage shelf port show`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *storage shelf port show*
+Shelf ID Module State        Internal?
+----- -- ------ ------------ ---------
+1.4
+       0 A      connected    false
+       1 A      connected    false
+       2 B      connected    false
+       3 B      connected    false
+.
+.
+----
+====
+.. Stellen Sie sicher, dass die Switch-Zustandsüberwachung (CSHM) für die Switches aktiviert ist, damit sie überwacht werden:
++
+`system switch ethernet show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::> *system switch ethernet show*
+  Switch             Type               Address          Model
+  ------------------ ------------------ ---------------- ---------------
+  s1                 storage-network    1.0.0.0          N3K-C3232C
+     Serial Number: FFFYYYYYYY1
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.3(4a)
+    Version Source: CDP/ISDP
+  s2                 storage-network    1.1.0.0           N3K-C3232C
+     Serial Number: FEEYYYYYYY2
+      Is Monitored: true
+            Reason: None
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    10.3(4a)
+    Version Source: CDP/ISDP
+----
+====
+
+
+
+
+.Wie geht es weiter?
+Nachdem Sie die Installation der NX-OS-Software und des RCF vorbereitet haben, können Sie link:install-nx-os-software-3232c-storage.html["Installieren Sie die NX-OS-Software"].

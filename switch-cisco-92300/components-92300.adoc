@@ -1,0 +1,71 @@
+---
+permalink: switch-cisco-92300/components-92300.html 
+sidebar: sidebar 
+keywords: cisco nexus 92300YC 
+summary: Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind. 
+---
+= Komponenten und Teilenummern für Cisco Nexus 92300YC Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Installation und Wartung des Cisco Nexus 92300YC Switches sollten Sie unbedingt alle Switch-Komponenten und Teilenummern überprüfen. Siehe die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] für Details. Weitere Informationen zu den Installationsanforderungen für Switches finden Sie in link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
+
+Die folgende Tabelle enthält die Teilenummer und die Beschreibung für den 92300YC Switch, die Lüfter und die Netzteile:
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+190003
+ a| 
+Cisco 92300YC, CLSW, 48 Ports 10/25 GB, 18 Ports 100G, PTSX (PTSX = Luftaustritt auf der Portseite)
+
+
+
+ a| 
+190003R
+ a| 
+Cisco 92300YC, CLSW, 48Pt10/25GB, 18Pt100G, PSIN (PSIN = Port-seitige Luftansaugung)
+
+
+
+ a| 
+X-NXA-FAN-35CFM-B
+ a| 
+Lüfter, Cisco N9K Port-Seite Lufteinlass
+
+
+
+ a| 
+X-NXA-FAN-35CFM-F
+ a| 
+Lüfter, Cisco N9K Port-Seite Abluftstrom
+
+
+
+ a| 
+X-NXA-PAC-650W-B
+ a| 
+Netzteil, Cisco 650W Portseite Einlass
+
+
+
+ a| 
+X-NXA-PAC-650W-F
+ a| 
+Netzteil, Cisco 650W Port-Seite Auslass
+
+|===
+Details zum Luftstrom des Cisco Nexus 92300YC Switches:
+
+* Port-seitiger Abluftstrom (Standardluft): Kühle Luft tritt durch die Lüfter- und Netzteilmodule im Kaltgang in das Gehäuse ein und wird durch die Port-Seite des Gehäuses im Warmgang abgeführt. Port-seitiger Abluftstrom mit blauer Kennzeichnung.
+* Port-seitiger Lufteinlass (umgekehrte Luftführung), kühle Luft strömt im Kaltgang durch die Port-Seite in das Gehäuse und wird im Warmgang durch die Lüfter- und Netzteilmodule abgeführt. Port-seitiger Lufteinlass mit bordeauxfarbener Kennzeichnung.
+
+
+.Was kommt als nächstes
+Nachdem Sie Ihre Komponenten und Teilenummern bestätigt haben, können Sie die link:required-documentation-92300.html["erforderliche Dokumentation"].

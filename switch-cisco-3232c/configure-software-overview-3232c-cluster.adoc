@@ -1,0 +1,34 @@
+---
+permalink: switch-cisco-3232c/configure-software-overview-3232c-cluster.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Übersicht der Softwarekonfiguration für Cisco Nexus 3232C Cluster Switches 
+---
+= Software-Installations-Workflow für Cisco Nexus 3232C Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Installation und Konfiguration der Software für einen Cisco Nexus 3232C Switch sowie zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF) sind die folgenden Schritte auszuführen:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch.html["Konfigurieren Sie den Schalter"]
+[role="quick-margin-para"]
+Den 3232C Cluster-Switch konfigurieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:prepare-install-cisco-nexus-3232c.html["Bereiten Sie die Installation der NX-OS-Software und des RCF vor."]
+[role="quick-margin-para"]
+Die Cisco NX-OS Software und die Referenzkonfigurationsdateien (RCFs) müssen auf Cisco 3232C Cluster Switches installiert sein.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-nx-os-software-3232c.html["Installieren oder aktualisieren Sie die NX-OS-Software."]
+[role="quick-margin-para"]
+Die NX-OS Software auf dem Cisco 3232C Cluster Switch kann heruntergeladen, installiert oder aktualisiert werden.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:install-rcf-3232c.html["Installieren Sie den RCF"]
+[role="quick-margin-para"]
+Das RCF wird nach der erstmaligen Einrichtung des Cisco 3232C Switches installiert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]link:configure-ssh-keys.html["SSH-Konfiguration überprüfen"]
+[role="quick-margin-para"]
+Stellen Sie sicher, dass SSH auf den Switches aktiviert ist, um den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassungsfunktionen zu verwenden.

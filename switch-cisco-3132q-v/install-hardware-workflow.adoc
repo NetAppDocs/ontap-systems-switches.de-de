@@ -1,0 +1,30 @@
+---
+permalink: switch-cisco-3132q-v/install-hardware-workflow.html 
+sidebar: sidebar 
+keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
+summary: Vor der Konfiguration der Cisco Nexus 3132Q-V Cluster Switches empfiehlt sich ein Blick auf die Konfigurationsübersicht. 
+---
+= Arbeitsablauf für die Hardwareinstallation von Cisco Nexus 3132Q-V Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zur Installation und Konfiguration der Hardware für einen 3132Q-V Cluster Switch sind folgende Schritte erforderlich:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-worksheet-3132q.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
+[role="quick-margin-para"]
+Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]link:install-switch-3132qv.html["Installieren Sie den Schalter"]
+[role="quick-margin-para"]
+Der 3132Q-V Switch wird installiert.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drei"]link:install-cisco-nexus-3132qv.html["Installieren Sie den Switch in einem NetApp -Schrank."]
+[role="quick-margin-para"]
+Den 3132Q-V Switch und die Pass-Through-Platte in einem NetApp Schrank nach Bedarf installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]link:cabling-considerations-3132q-v.html["Kabel und Konfiguration prüfen"]
+[role="quick-margin-para"]
+Unterstützung für NVIDIA Ethernet-Ports prüfen.

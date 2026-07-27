@@ -1,0 +1,1349 @@
+---
+permalink: switch-cisco-3132q-v/replace-cn1610-with-cisco-nexus-3232c.html 
+sidebar: sidebar 
+keywords: replace, cn1610 cluster switches, cisco nexus 3132q-v 
+summary: Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco Nexus 3132Q-V Cluster Switches zu ersetzen, ist eine bestimmte Abfolge von Aufgaben erforderlich. 
+---
+= Migration von CN1610 Cluster Switches zu Cisco Nexus 3132Q-V Cluster Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das folgende Verfahren beschreibt den Austausch der vorhandenen CN1610 Cluster Switches durch Cisco Nexus 3132Q-V Cluster Switches.
+
+
+
+[[review-requirements]]
+== Überprüfungsanforderungen
+
+Die NetApp CN1610-Anforderungen in link:switch-requirements.html["Anforderungen für den Austausch von Cisco Nexus 3132Q-V Cluster Switches"] werden dargestellt.
+
+Weitere Informationen:
+
+* link:https://mysupport.netapp.com/site/products/all/details/netapp-cluster-switches/docs-tab["NetApp CN1601 und CN1610"^]
+* link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switch"^]
+* link:http://hwu.netapp.com["Hardware Universe"^]
+
+
+
+
+[[replace-the-switch]]
+== Tauschen Sie den Schalter aus.
+
+.Nomenklatur von Switches und Knoten
+Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:
+
+* Die Befehlsausgaben können je nach Version der ONTAP -Software variieren.
+* Die auszutauschenden CN1610 Switches sind CL1 und CL2.
+* Die Nexus 3132Q-V Switches, die die CN1610 Switches ersetzen, sind C1 und C2.
+* n1_clus1 ist die erste logische Schnittstelle (LIF), die mit Cluster Switch 1 (CL1 oder C1) für Node n1 verbunden ist.
+* n1_clus2 ist die erste Cluster-LIF, die mit Cluster Switch 2 (CL2 oder C2) für Node n1 verbunden ist.
+* n1_clus3 ist die zweite LIF, die mit Cluster Switch 2 (CL2 oder C2) für Node n1 verbunden ist.
+* n1_clus4 ist die zweite LIF, die mit Cluster Switch 1 (CL1 oder C1) für Node n1 verbunden ist.
+* Die Knoten sind n1, n2, n3 und n4.
+* Die Anzahl der 10 GbE- und 40 GbE-Ports ist in den Referenzkonfigurationsdateien (RCFs) definiert, die unter link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster Netzwerk Switch Referenzkonfigurationsdatei herunterladen"^] verfügbar sind.
+
+
+.Zu den Beispielen
+Die Beispiele in diesem Verfahren verwenden vier Knoten:
+
+* Zwei Knoten verwenden vier 10 GbE Cluster Interconnect-Ports: e0a, e0b, e0c und e0d.
+* Die anderen beiden Knoten nutzen zwei 40-GbE-Cluster-Interconnect-Glasfaserkabel: e4a und e4e.
+
+
+Die link:https://hwu.netapp.com/["Hardware Universe"^] enthält Informationen über die Cluster-Glasfaserkabel auf Ihren Plattformen.
+
+.Informationen zu diesem Vorgang
+Dieses Verfahren umfasst folgendes Szenario:
+
+* Der Cluster beginnt mit zwei Knoten, die mit zwei CN1610 Cluster-Switches verbunden sind.
+* Clusterschalter CL2 wird durch C2 ersetzt
++
+** Der Datenverkehr auf allen Cluster-Ports und LIFs auf allen mit CL2 verbundenen Knoten wird auf die ersten Cluster-Ports und LIFs migriert, die mit CL1 verbunden sind.
+** Die Verkabelung von allen Cluster-Ports auf allen mit CL2 verbundenen Knoten wird getrennt, anschließend werden die Ports mithilfe unterstützter Breakout-Kabel mit dem neuen Cluster Switch C2 verbunden.
+** Die Verkabelung zwischen den ISL-Ports CL1 und CL2 wird getrennt, anschließend werden die Ports von CL1 zu C2 mit unterstütztem Breakout-Kabel wieder verbunden.
+** Der Datenverkehr auf allen Cluster-Ports und logischen Schnittstellen (LIFs), die mit C2 auf allen Knoten verbunden sind, wird zurückgesetzt.
+
+
+* Clusterschalter CL1 wird durch C1 ersetzt
++
+** Der Datenverkehr auf allen Cluster-Ports und logischen Schnittstellen (LIFs) auf allen mit CL1 verbundenen Knoten wird auf die zweiten Cluster-Ports und logischen Schnittstellen (LIFs) migriert, die mit C2 verbunden sind.
+** Die Verkabelung von allen Cluster-Ports auf allen mit CL1 verbundenen Knoten wird getrennt, anschließend werden die Ports mithilfe unterstützter Breakout-Kabel mit dem neuen Cluster Switch C1 verbunden.
+** Die Verkabelung zwischen den ISL-Ports CL1 und C2 wird getrennt, anschließend werden die Ports von C1 nach C2 mit einem unterstützten Breakout-Kabel wieder verbunden.
+** Der Datenverkehr auf allen migrierten Cluster-Ports und logischen Schnittstellen (LIFs), die mit C1 auf allen Knoten verbunden sind, wird zurückgesetzt.
+
+
+
+
+
+NOTE: Für dieses Verfahren werden sowohl ONTAP Befehle als auch Cisco Nexus 3000 Series Switches Befehle benötigt; ONTAP Befehle werden verwendet, sofern nicht anders angegeben.
+
+
+
+[[step-1-prepare-for-replacement]]
+=== Schritt 1: Vorbereitung auf den Austausch
+
+. Wenn AutoSupport auf diesem Cluster aktiviert ist, unterdrücken Sie die automatische Fallerstellung durch Aufruf einer AutoSupport -Nachricht:
++
+`system node autosupport invoke -node * -type all - message MAINT=xh`
+
++
+_x_ ist die Dauer des Wartungsfensters in Stunden.
+
++
+
+NOTE: Die AutoSupport Meldung benachrichtigt den technischen Support über diese Wartungsaufgabe, sodass die automatische Fallerstellung während des Wartungsfensters unterdrückt wird.
+
+. Informationen zu den Geräten in Ihrer Konfiguration:
++
+`network device-discovery show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie viele Cluster-Interconnect-Schnittstellen in jedem Knoten für jeden Cluster-Interconnect-Switch konfiguriert wurden:
+
+[listing]
+----
+cluster::> network device-discovery show
+
+       Local  Discovered
+Node   Port   Device       Interface   Platform
+------ ------ ------------ ----------- ----------
+n1     /cdp
+        e0a   CL1          0/1         CN1610
+        e0b   CL2          0/1         CN1610
+        e0c   CL2          0/2         CN1610
+        e0d   CL1          0/2         CN1610
+n2     /cdp
+        e0a   CL1          0/3         CN1610
+        e0b   CL2          0/3         CN1610
+        e0c   CL2          0/4         CN1610
+        e0d   CL1          0/4         CN1610
+
+8 entries were displayed.
+----
+====
+. Ermitteln Sie den administrativen oder operativen Status jeder Clusterschnittstelle.
++
+.. Cluster-Netzwerkportattribute werden angezeigt:
++
+`network port show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die Netzwerkportattribute eines Systems:
+
+[listing]
+----
+cluster::*> network port show -role Cluster
+       (network port show)
+
+Node: n1
+                Broadcast              Speed (Mbps) Health Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status Health Status
+----- --------- ---------- ----- ----- ------------ ------ -------------
+e0a   cluster   cluster    up    9000  auto/10000     -        -
+e0b   cluster   cluster    up    9000  auto/10000     -        -
+e0c   cluster   cluster    up    9000  auto/10000     -        -
+e0d   cluster   cluster    up    9000  auto/10000     -        -
+
+Node: n2
+                Broadcast              Speed (Mbps) Health Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status Health Status
+----- --------- ---------- ----- ----- ------------ ------ -------------
+e0a   cluster   cluster    up    9000  auto/10000     -        -
+e0b   cluster   cluster    up    9000  auto/10000     -        -
+e0c   cluster   cluster    up    9000  auto/10000     -        -
+e0d   cluster   cluster    up    9000  auto/10000     -        -
+
+8 entries were displayed.
+----
+====
+.. Informationen zu den logischen Schnittstellen werden angezeigt: +
+`network interface show`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die allgemeinen Informationen zu allen LIFs in Ihrem System an:
+
+[listing]
+----
+cluster::*> network interface show -role Cluster
+       (network interface show)
+
+         Logical    Status      Network        Current  Current  Is
+Vserver  Interface  Admin/Oper  Address/Mask   Node     Port     Home
+-------- ---------- ----------- -------------- -------- -------- -----
+Cluster
+         n1_clus1   up/up       10.10.0.1/24   n1       e0a      true
+         n1_clus2   up/up       10.10.0.2/24   n1       e0b      true
+         n1_clus3   up/up       10.10.0.3/24   n1       e0c      true
+         n1_clus4   up/up       10.10.0.4/24   n1       e0d      true
+         n2_clus1   up/up       10.10.0.5/24   n2       e0a      true
+         n2_clus2   up/up       10.10.0.6/24   n2       e0b      true
+         n2_clus3   up/up       10.10.0.7/24   n2       e0c      true
+         n2_clus4   up/up       10.10.0.8/24   n2       e0d      true
+
+8 entries were displayed.
+----
+====
+.. Informationen zu den erkannten Cluster Switches anzeigen:
++
+`system cluster-switch show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die dem Cluster bekannten Cluster Switches zusammen mit ihren Management-IP-Adressen:
+
+[listing]
+----
+cluster::> system cluster-switch show
+
+Switch                        Type             Address       Model
+----------------------------- ---------------- ------------- --------
+CL1                           cluster-network  10.10.1.101   CN1610
+     Serial Number: 01234567
+      Is Monitored: true
+            Reason:
+  Software Version: 1.2.0.7
+    Version Source: ISDP
+
+CL2                           cluster-network  10.10.1.102   CN1610
+     Serial Number: 01234568
+      Is Monitored: true
+            Reason:
+  Software Version: 1.2.0.7
+    Version Source: ISDP
+
+2 entries were displayed.
+----
+====
+
+
+. Den  `-auto-revert`Parameter auf „false“ für die Cluster-LIFs clus1 und clus4 auf beiden Knoten setzen:
++
+`network interface modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network interface modify -vserver node1 -lif clus1 -auto-revert false
+cluster::*> network interface modify -vserver node1 -lif clus4 -auto-revert false
+cluster::*> network interface modify -vserver node2 -lif clus1 -auto-revert false
+cluster::*> network interface modify -vserver node2 -lif clus4 -auto-revert false
+----
+====
+. Es sollte geprüft werden, ob die entsprechenden RCF und Images gemäß den Anforderungen auf den neuen 3132Q-V Switches installiert sind, und ob alle wesentlichen standortspezifischen Anpassungen wie Benutzer und Passwörter, Netzwerkadressen und Ähnliches vorgenommen wurden.
++
+Sie müssen beide Switches jetzt vorbereiten. Falls Sie RCF und Image aktualisieren müssen, sind die folgenden Schritte zu befolgen:
+
++
+.. Siehe link:https://mysupport.netapp.com/site/info/cisco-ethernet-switch["Cisco Ethernet-Switches"^] auf der NetApp Support-Website.
+.. Der verwendete Switch und die erforderlichen Softwareversionen sind in der Tabelle auf dieser Seite zu notieren.
+.. Laden Sie die passende Version der RCF herunter.
+.. Auf der Seite *Beschreibung* auf *WEITER* klicken, die Lizenzvereinbarung akzeptieren und anschließend den Anweisungen auf der Seite *Download* folgen, um die RCF herunterzuladen.
+.. Die passende Version der Image-Software herunterladen.
++
+link:https://mysupport.netapp.com/site/products/all/details/cisco-cluster-storage-switch/downloads-tab["Cisco Cluster und Management Netzwerk Switch Referenzkonfigurationsdatei herunterladen"^]
+
+
+
+. Die mit dem zweiten zu ersetzenden CN1610 Switch verbundenen LIFs migrieren:
++
+`network interface migrate`
+
++
+[NOTE]
+====
+Die Migration der Cluster-LIFs muss von einer Verbindung zu dem Knoten aus erfolgen, entweder über den Serviceprozessor oder die Managementoberfläche des Knotens, der die zu migrierende Cluster-LIF besitzt.
+
+====
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt n1 und n2, jedoch muss die LIF-Migration auf allen Knoten erfolgen:
+
+[listing]
+----
+
+cluster::*> network interface migrate -vserver Cluster -lif n1_clus2 -destination-node  n1  -destination-port  e0a
+cluster::*> network interface migrate -vserver Cluster -lif n1_clus3 -destination-node  n1  -destination-port  e0d
+cluster::*> network interface migrate -vserver Cluster -lif n2_clus2 -destination-node  n2  -destination-port  e0a
+cluster::*> network interface migrate -vserver Cluster -lif n2_clus3 -destination-node  n2  -destination-port  e0d
+----
+====
+. Der Zustand des Clusters kann überprüft werden:
++
+`network interface show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt das Ergebnis des vorherigen  `network interface migrate` Befehls:
+
+[listing]
+----
+cluster::*> network interface show -role Cluster
+       (network interface show)
+
+         Logical    Status      Network         Current  Current  Is
+Vserver  Interface  Admin/Oper  Address/Mask    Node     Port     Home
+-------- ---------- ----------- --------------- -------- -------- -----
+Cluster
+         n1_clus1   up/up       10.10.0.1/24    n1       e0a      true
+         n1_clus2   up/up       10.10.0.2/24    n1       e0a      false
+         n1_clus3   up/up       10.10.0.3/24    n1       e0d      false
+         n1_clus4   up/up       10.10.0.4/24    n1       e0d      true
+         n2_clus1   up/up       10.10.0.5/24    n2       e0a      true
+         n2_clus2   up/up       10.10.0.6/24    n2       e0a      false
+         n2_clus3   up/up       10.10.0.7/24    n2       e0d      false
+         n2_clus4   up/up       10.10.0.8/24    n2       e0d      true
+
+8 entries were displayed.
+----
+====
+. Die Cluster-Verbindungsports, die physisch mit Switch CL2 verbunden sind, werden heruntergefahren:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Die folgenden Befehle schalten die angegebenen Ports auf n1 und n2 ab, die Ports müssen jedoch auf allen Knoten abgeschaltet werden:
+
+[listing]
+----
+cluster::*> network port modify -node n1 -port e0b -up-admin false
+cluster::*> network port modify -node n1 -port e0c -up-admin false
+cluster::*> network port modify -node n2 -port e0b -up-admin false
+cluster::*> network port modify -node n2 -port e0c -up-admin false
+----
+====
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.9.1 und höher
+--
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
+
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Einige Sekunden sollten vergehen, bevor der Befehl „show“ ausgeführt wird, damit die Details angezeigt werden.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source      Destination   Packet
+Node   Date                       LIF         LIF           Loss
+------ -------------------------- ---------- -------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n1_clus2   n2_clus2       none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n2_clus2   n1_clus2       none
+----
+--
+.Alle ONTAP Versionen
+--
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster::*> *cluster ping-cluster -node n1*
+Host is n1
+Getting addresses from network interface table...
+Cluster n1_clus1 n1       e0a    10.10.0.1
+Cluster n1_clus2 n1       e0b    10.10.0.2
+Cluster n1_clus3 n1       e0c    10.10.0.3
+Cluster n1_clus4 n1       e0d    10.10.0.4
+Cluster n2_clus1 n2       e0a    10.10.0.5
+Cluster n2_clus2 n2       e0b    10.10.0.6
+Cluster n2_clus3 n2       e0c    10.10.0.7
+Cluster n2_clus4 n2       e0d    10.10.0.8
+
+Local = 10.10.0.1 10.10.0.2 10.10.0.3 10.10.0.4
+Remote = 10.10.0.5 10.10.0.6 10.10.0.7 10.10.0.8
+Cluster Vserver Id = 4294967293
+Ping status:....
+Basic connectivity succeeds on 16 path(s)
+Basic connectivity fails on 0 path(s)
+................
+Detected 1500 byte MTU on 16 path(s):
+    Local 10.10.0.1 to Remote 10.10.0.5
+    Local 10.10.0.1 to Remote 10.10.0.6
+    Local 10.10.0.1 to Remote 10.10.0.7
+    Local 10.10.0.1 to Remote 10.10.0.8
+    Local 10.10.0.2 to Remote 10.10.0.5
+    Local 10.10.0.2 to Remote 10.10.0.6
+    Local 10.10.0.2 to Remote 10.10.0.7
+    Local 10.10.0.2 to Remote 10.10.0.8
+    Local 10.10.0.3 to Remote 10.10.0.5
+    Local 10.10.0.3 to Remote 10.10.0.6
+    Local 10.10.0.3 to Remote 10.10.0.7
+    Local 10.10.0.3 to Remote 10.10.0.8
+    Local 10.10.0.4 to Remote 10.10.0.5
+    Local 10.10.0.4 to Remote 10.10.0.6
+    Local 10.10.0.4 to Remote 10.10.0.7
+    Local 10.10.0.4 to Remote 10.10.0.8
+
+Larger than PMTU communication succeeds on 16 path(s)
+RPC status:
+4 paths up, 0 paths down (tcp check)
+4 paths up, 0 paths down (udp check)
+----
+--
+====
+. [[step10]] Die ISL-Ports 13 bis 16 am aktiven CN1610 Switch CL1 werden heruntergefahren:
++
+`shutdown`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die ISL-Ports 13 bis 16 am CN1610 Switch CL1 deaktiviert werden:
+
+[listing]
+----
+(CL1)# configure
+(CL1)(Config)# interface 0/13-0/16
+(CL1)(Interface 0/13-0/16)# shutdown
+(CL1)(Interface 0/13-0/16)# exit
+(CL1)(Config)# exit
+(CL1)#
+----
+====
+. Eine temporäre ISL zwischen CL1 und C2 aufbauen:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel erstellt eine temporäre ISL zwischen CL1 (Ports 13-16) und C2 (Ports e1/24/1-4):
+
+[listing]
+----
+C2# configure
+C2(config)# interface port-channel 2
+C2(config-if)# switchport mode trunk
+C2(config-if)# spanning-tree port type network
+C2(config-if)# mtu 9216
+C2(config-if)# interface breakout module 1 port 24 map 10g-4x
+C2(config)# interface e1/24/1-4
+C2(config-if-range)# switchport mode trunk
+C2(config-if-range)# mtu 9216
+C2(config-if-range)# channel-group 2 mode active
+C2(config-if-range)# exit
+C2(config-if)# exit
+----
+====
+
+
+
+
+[[step-2-configure-ports]]
+=== Schritt 2: Ports konfigurieren
+
+. An allen Knoten die Kabel entfernen, die an den CN1610 Switch CL2 angeschlossen sind.
++
+Bei Verwendung geeigneter Kabel sind die getrennten Ports an allen Knoten wieder mit dem Nexus 3132Q-V Switch C2 zu verbinden.
+
+. Vier ISL-Kabel von den Ports 13 bis 16 am CN1610 Switch CL1 entfernen.
++
+Sie müssen geeignete Cisco QSFP-zu-SFP+ Breakout-Kabel anschließen, die Port 1/24 des neuen Cisco 3132Q-V Switch C2 mit den Ports 13 bis 16 des vorhandenen CN1610 Switch CL1 verbinden.
+
++
+
+NOTE: Beim Wiederanschließen von Kabeln an den neuen Cisco 3132Q-V Switch sind entweder Glasfaserkabel oder Cisco Twinax-Kabel zu verwenden.
+
+. Um die ISL dynamisch zu machen, wird die ISL-Schnittstelle 3/1 am aktiven CN1610 Switch so konfiguriert, dass der statische Modus deaktiviert wird: `no port-channel static`
++
+Diese Konfiguration entspricht der ISL-Konfiguration auf dem 3132Q-V Switch C2, wenn die ISLs in Schritt 11 auf beiden Switches aktiviert werden.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die Konfiguration der ISL-Schnittstelle 3/1 mithilfe des  `no port-channel static`-Befehls, um die ISL dynamisch zu machen:
+
+[listing]
+----
+(CL1)# configure
+(CL1)(Config)# interface 3/1
+(CL1)(Interface 3/1)# no port-channel static
+(CL1)(Interface 3/1)# exit
+(CL1)(Config)# exit
+(CL1)#
+----
+====
+. Die ISLs 13 bis 16 auf dem aktiven CN1610 Switch CL1 in Betrieb nehmen.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel veranschaulicht den Prozess, die ISL-Ports 13 bis 16 auf der Port-Channel-Schnittstelle 3/1 bereitzustellen:
+
+[listing]
+----
+(CL1)# configure
+(CL1)(Config)# interface 0/13-0/16,3/1
+(CL1)(Interface 0/13-0/16,3/1)# no shutdown
+(CL1)(Interface 0/13-0/16,3/1)# exit
+(CL1)(Config)# exit
+(CL1)#
+----
+====
+. Es sollte überprüft werden, ob die ISLs  `up` auf dem CN1610 Switch CL1 vorhanden sind:
++
+`show port-channel`
+
++
+Der "Link State" sollte  `Up`, "Type" sollte  `Dynamic` und die Spalte "Port Active" sollte  `True` für die Ports 0/13 bis 0/16 sein:
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+(CL1)# show port-channel 3/1
+Local Interface................................ 3/1
+Channel Name................................... ISL-LAG
+Link State..................................... Up
+Admin Mode..................................... Enabled
+Type........................................... Dynamic
+Load Balance Option............................ 7
+(Enhanced hashing mode)
+
+Mbr    Device/       Port        Port
+Ports  Timeout       Speed       Active
+------ ------------- ----------  -------
+0/13   actor/long    10 Gb Full  True
+       partner/long
+0/14   actor/long    10 Gb Full  True
+       partner/long
+0/15   actor/long    10 Gb Full  True
+       partner/long
+0/16   actor/long    10 Gb Full  True
+       partner/long
+----
+====
+. Überprüfen Sie, ob die ISLs `up` auf dem 3132Q-V Switch C2 vorhanden sind:
++
+`show port-channel summary`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Die Ports Eth1/24/1 bis Eth1/24/4 sollten  `(P)` anzeigen, was bedeutet, dass alle vier ISL-Ports im Port-Channel aktiv sind. Eth1/31 und Eth1/32 sollten  `(D)` anzeigen, da sie nicht verbunden sind:
+
+[listing]
+----
+C2# show port-channel summary
+
+Flags:  D - Down        P - Up in port-channel (members)
+        I - Individual  H - Hot-standby (LACP only)
+        s - Suspended   r - Module-removed
+        S - Switched    R - Routed
+        U - Up (port-channel)
+        M - Not in use. Min-links not met
+------------------------------------------------------------------------------
+Group Port-       Type     Protocol  Member Ports
+      Channel
+------------------------------------------------------------------------------
+1     Po1(SU)     Eth      LACP      Eth1/31(D)   Eth1/32(D)
+2     Po2(SU)     Eth      LACP      Eth1/24/1(P) Eth1/24/2(P) Eth1/24/3(P)
+                                     Eth1/24/4(P)
+----
+====
+. Alle Cluster-Verbindungsports, die mit dem 3132Q-V Switch C2 auf allen Knoten verbunden sind, werden aktiviert:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die mit dem Switch 3132Q-V C2 verbundenen Cluster-Interconnect-Ports aktiviert werden:
+
+[listing]
+----
+cluster::*> network port modify -node n1 -port e0b -up-admin true
+cluster::*> network port modify -node n1 -port e0c -up-admin true
+cluster::*> network port modify -node n2 -port e0b -up-admin true
+cluster::*> network port modify -node n2 -port e0c -up-admin true
+----
+====
+. Alle migrierten Cluster-Interconnect-LIFs, die auf allen Knoten mit C2 verbunden sind, zurücksetzen:
++
+`network interface revert`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network interface revert -vserver Cluster -lif n1_clus2
+cluster::*> network interface revert -vserver Cluster -lif n1_clus3
+cluster::*> network interface revert -vserver Cluster -lif n2_clus2
+cluster::*> network interface revert -vserver Cluster -lif n2_clus3
+----
+====
+. Es ist zu überprüfen, ob alle Cluster-Interconnect-Ports auf ihre Home-Ports zurückgesetzt wurden:
++
+`network interface show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, dass die LIFs auf clus2 auf ihre ursprünglichen Ports zurückgesetzt werden und dass die LIFs erfolgreich zurückgesetzt sind, wenn die Ports in der Spalte „Aktueller Port“ in der Spalte „Ist Home“ den Status  `true` aufweisen. Wenn der Wert „Ist Home“  `false` ist, wird die LIF nicht zurückgesetzt.
+
+[listing]
+----
+cluster::*> network interface show -role cluster
+       (network interface show)
+
+         Logical    Status      Network        Current  Current  Is
+Vserver  Interface  Admin/Oper  Address/Mask   Node     Port     Home
+-------- ---------- ----------- -------------- -------- -------- -----
+Cluster
+         n1_clus1   up/up       10.10.0.1/24   n1       e0a      true
+         n1_clus2   up/up       10.10.0.2/24   n1       e0b      true
+         n1_clus3   up/up       10.10.0.3/24   n1       e0c      true
+         n1_clus4   up/up       10.10.0.4/24   n1       e0d      true
+         n2_clus1   up/up       10.10.0.5/24   n2       e0a      true
+         n2_clus2   up/up       10.10.0.6/24   n2       e0b      true
+         n2_clus3   up/up       10.10.0.7/24   n2       e0c      true
+         n2_clus4   up/up       10.10.0.8/24   n2       e0d      true
+
+8 entries were displayed.
+----
+====
+. Es wird überprüft, ob alle Cluster-Ports verbunden sind:
++
+`network port show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt das Ergebnis des vorherigen  `network port modify`Befehls und bestätigt, dass alle Cluster-Interconnects  `up`sind:
+
+[listing]
+----
+cluster::*> network port show -role Cluster
+       (network port show)
+
+Node: n1
+                Broadcast               Speed (Mbps) Health   Ignore
+Port  IPspace   Domain      Link  MTU   Admin/Open   Status   Health Status
+----- --------- ----------- ----- ----- ------------ -------- -------------
+e0a   cluster   cluster     up    9000  auto/10000     -        -
+e0b   cluster   cluster     up    9000  auto/10000     -        -
+e0c   cluster   cluster     up    9000  auto/10000     -        -
+e0d   cluster   cluster     up    9000  auto/10000     -        -
+
+Node: n2
+                Broadcast               Speed (Mbps) Health   Ignore
+Port  IPspace   Domain      Link  MTU   Admin/Open   Status   Health Status
+----- --------- ----------- ----- ----- ------------ -------- -------------
+e0a   cluster   cluster     up    9000  auto/10000     -        -
+e0b   cluster   cluster     up    9000  auto/10000     -        -
+e0c   cluster   cluster     up    9000  auto/10000     -        -
+e0d   cluster   cluster     up    9000  auto/10000     -        -
+
+8 entries were displayed.
+----
+====
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.9.1 und höher
+--
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
+
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Einige Sekunden sollten vergehen, bevor der Befehl „show“ ausgeführt wird, damit die Details angezeigt werden.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source      Destination   Packet
+Node   Date                       LIF         LIF           Loss
+------ -------------------------- ---------- -------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n1_clus2   n2_clus2       none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n2_clus2   n1_clus2       none
+----
+--
+.Alle ONTAP Versionen
+--
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster::*> *cluster ping-cluster -node n1*
+Host is n1
+Getting addresses from network interface table...
+Cluster n1_clus1 n1       e0a    10.10.0.1
+Cluster n1_clus2 n1       e0b    10.10.0.2
+Cluster n1_clus3 n1       e0c    10.10.0.3
+Cluster n1_clus4 n1       e0d    10.10.0.4
+Cluster n2_clus1 n2       e0a    10.10.0.5
+Cluster n2_clus2 n2       e0b    10.10.0.6
+Cluster n2_clus3 n2       e0c    10.10.0.7
+Cluster n2_clus4 n2       e0d    10.10.0.8
+
+Local = 10.10.0.1 10.10.0.2 10.10.0.3 10.10.0.4
+Remote = 10.10.0.5 10.10.0.6 10.10.0.7 10.10.0.8
+Cluster Vserver Id = 4294967293
+Ping status:....
+Basic connectivity succeeds on 16 path(s)
+Basic connectivity fails on 0 path(s)
+................
+Detected 1500 byte MTU on 16 path(s):
+    Local 10.10.0.1 to Remote 10.10.0.5
+    Local 10.10.0.1 to Remote 10.10.0.6
+    Local 10.10.0.1 to Remote 10.10.0.7
+    Local 10.10.0.1 to Remote 10.10.0.8
+    Local 10.10.0.2 to Remote 10.10.0.5
+    Local 10.10.0.2 to Remote 10.10.0.6
+    Local 10.10.0.2 to Remote 10.10.0.7
+    Local 10.10.0.2 to Remote 10.10.0.8
+    Local 10.10.0.3 to Remote 10.10.0.5
+    Local 10.10.0.3 to Remote 10.10.0.6
+    Local 10.10.0.3 to Remote 10.10.0.7
+    Local 10.10.0.3 to Remote 10.10.0.8
+    Local 10.10.0.4 to Remote 10.10.0.5
+    Local 10.10.0.4 to Remote 10.10.0.6
+    Local 10.10.0.4 to Remote 10.10.0.7
+    Local 10.10.0.4 to Remote 10.10.0.8
+
+Larger than PMTU communication succeeds on 16 path(s)
+RPC status:
+4 paths up, 0 paths down (tcp check)
+4 paths up, 0 paths down (udp check)
+----
+--
+====
+. [[step12]] In jedem Knoten im Cluster sind die Schnittstellen zu migrieren, die dem ersten CN1610 Switch CL1 zugeordnet sind, der ersetzt wird:
++
+`network interface migrate`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt die Ports oder LIFs, die auf den Knoten n1 und n2 migriert werden:
+
+[listing]
+----
+cluster::*> network interface migrate -vserver Cluster -lif n1_clus1 -destination-node n1 -destination-port e0b
+cluster::*> network interface migrate -vserver Cluster -lif n1_clus4 -destination-node n1 -destination-port e0c
+cluster::*> network interface migrate -vserver Cluster -lif n2_clus1 -destination-node n2 -destination-port e0b
+cluster::*> network interface migrate -vserver Cluster -lif n2_clus4 -destination-node n2 -destination-port e0c
+----
+====
+. Clusterstatus überprüfen:
++
+`network interface show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, dass die erforderlichen Cluster-LIFs auf die entsprechenden Cluster-Ports auf dem Cluster-Switch C2 migriert wurden:
+
+[listing]
+----
+cluster::*> network interface show -role Cluster
+       (network interface show)
+
+         Logical    Status      Network        Current  Current  Is
+Vserver  Interface  Admin/Oper  Address/Mask   Node     Port     Home
+-------- ---------- ----------- -------------- -------- -------- -----
+Cluster
+         n1_clus1   up/up       10.10.0.1/24   n1       e0b      false
+         n1_clus2   up/up       10.10.0.2/24   n1       e0b      true
+         n1_clus3   up/up       10.10.0.3/24   n1       e0c      true
+         n1_clus4   up/up       10.10.0.4/24   n1       e0c      false
+         n2_clus1   up/up       10.10.0.5/24   n2       e0b      false
+         n2_clus2   up/up       10.10.0.6/24   n2       e0b      true
+         n2_clus3   up/up       10.10.0.7/24   n2       e0c      true
+         n2_clus4   up/up       10.10.0.8/24   n2       e0c      false
+
+8 entries were displayed.
+----
+====
+. Die Knotenports, die auf allen Knoten mit CL1 verbunden sind, werden abgeschaltet:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die angegebenen Ports auf den Knoten n1 und n2 heruntergefahren werden:
+
+[listing]
+----
+cluster::*> network port modify -node n1 -port e0a -up-admin false
+cluster::*> network port modify -node n1 -port e0d -up-admin false
+cluster::*> network port modify -node n2 -port e0a -up-admin false
+cluster::*> network port modify -node n2 -port e0d -up-admin false
+----
+====
+. Die ISL-Ports 24, 31 und 32 am aktiven 3132Q-V Switch C2 abschalten:
++
+`shutdown`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die ISLs 24, 31 und 32 auf dem aktiven 3132Q-V Switch C2 abgeschaltet werden:
+
+[listing]
+----
+C2# configure
+C2(config)# interface ethernet 1/24/1-4
+C2(config-if-range)# shutdown
+C2(config-if-range)# exit
+C2(config)# interface ethernet 1/31-32
+C2(config-if-range)# shutdown
+C2(config-if-range)# exit
+C2(config)# exit
+C2#
+----
+====
+. Entfernen Sie die Kabel, die an den CN1610 Switch CL1 an allen Knoten angeschlossen sind.
++
+Bei Verwendung geeigneter Kabel sind die getrennten Ports an allen Knoten wieder mit dem Nexus 3132Q-V Switch C1 zu verbinden.
+
+. Die QSFP-Kabel vom Nexus 3132Q-V C2 Port e1/24 entfernen.
++
+Die Ports e1/31 und e1/32 auf C1 sind mit den Ports e1/31 und e1/32 auf C2 mithilfe von unterstützten Cisco QSFP Glasfaser- oder Direktanschlusskabeln zu verbinden.
+
+. Die Konfiguration auf Port 24 wird wiederhergestellt und der temporäre port-channel 2 auf C2 entfernt, indem die  `running-configuration` Datei in die  `startup-configuration` Datei kopiert wird.
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel kopiert die  `running-configuration` Datei in die  `startup-configuration` Datei:
+
+[listing]
+----
+C2# configure
+C2(config)# no interface breakout module 1 port 24 map 10g-4x
+C2(config)# no interface port-channel 2
+C2(config-if)# interface e1/24
+C2(config-if)# description 40GbE Node Port
+C2(config-if)# spanning-tree port type edge
+C2(config-if)# spanning-tree bpduguard enable
+C2(config-if)# mtu 9216
+C2(config-if-range)# exit
+C2(config)# exit
+C2# copy running-config startup-config
+[########################################] 100%
+Copy Complete.
+----
+====
+. ISL-Ports 31 und 32 an C2, dem aktiven 3132Q-V Switch, in Betrieb nehmen:
++
+`no shutdown`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die ISLs 31 und 32 auf dem 3132Q-V Switch C2 aktiviert werden:
+
+[listing]
+----
+
+C2# configure
+C2(config)# interface ethernet 1/31-32
+C2(config-if-range)# no shutdown
+C2(config-if-range)# exit
+C2(config)# exit
+C2# copy running-config startup-config
+[########################################] 100%
+Copy Complete.
+----
+====
+
+
+
+
+[[step-3-verify-the-configuration]]
+=== Schritt 3: Konfiguration überprüfen
+
+. Überprüfen, ob die ISL-Anschlüsse `up` auf dem 3132Q-V Switch C2 vorhanden sind:
++
+`show port-channel summary`
+
++
+Die Ports Eth1/31 und Eth1/32 sollten  `(P)` anzeigen, dass sich beide ISL-Ports  `up` im Port-Channel befinden.
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+
+C1# show port-channel summary
+Flags:  D - Down        P - Up in port-channel (members)
+        I - Individual  H - Hot-standby (LACP only)
+        s - Suspended   r - Module-removed
+        S - Switched    R - Routed
+        U - Up (port-channel)
+        M - Not in use. Min-links not met
+------------------------------------------------------------------------------
+Group Port-       Type     Protocol  Member Ports
+      Channel
+------------------------------------------------------------------------------
+1     Po1(SU)     Eth      LACP      Eth1/31(P)   Eth1/32(P)
+----
+====
+. Alle Cluster-Verbindungsports, die mit dem neuen 3132Q-V Switch C1 auf allen Knoten verbunden sind, in Betrieb nehmen:
++
+`network port modify`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie alle Cluster Interconnect-Ports, die mit dem neuen 3132Q-V Switch C1 verbunden sind, aktiviert werden:
+
+[listing]
+----
+cluster::*> network port modify -node n1 -port e0a -up-admin true
+cluster::*> network port modify -node n1 -port e0d -up-admin true
+cluster::*> network port modify -node n2 -port e0a -up-admin true
+cluster::*> network port modify -node n2 -port e0d -up-admin true
+----
+====
+. Der Status des Clusterknoten-Ports kann überprüft werden:
++
+`network port show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel bestätigt, dass alle Cluster Interconnect-Ports auf n1 und n2 am neuen 3132Q-V Switch C1  `up`:
+
+[listing]
+----
+cluster::*> network port show -role Cluster
+       (network port show)
+
+Node: n1
+                Broadcast              Speed (Mbps) Health   Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status   Health Status
+----- --------- ---------- ----- ----- ------------ -------- -------------
+e0a   cluster   cluster    up    9000  auto/10000     -        -
+e0b   cluster   cluster    up    9000  auto/10000     -        -
+e0c   cluster   cluster    up    9000  auto/10000     -        -
+e0d   cluster   cluster    up    9000  auto/10000     -        -
+
+Node: n2
+                Broadcast              Speed (Mbps) Health   Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status   Health Status
+----- --------- ---------- ----- ----- ------------ -------- -------------
+e0a   cluster   cluster    up    9000  auto/10000     -        -
+e0b   cluster   cluster    up    9000  auto/10000     -        -
+e0c   cluster   cluster    up    9000  auto/10000     -        -
+e0d   cluster   cluster    up    9000  auto/10000     -        -
+
+8 entries were displayed.
+----
+====
+. Alle migrierten Cluster Interconnect LIFs, die ursprünglich auf allen Knoten mit C1 verbunden waren, wiederherstellen:
++
+`network interface revert`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die migrierten Cluster-LIFs auf ihre ursprünglichen Ports zurückgesetzt werden:
+
+[listing]
+----
+cluster::*> network interface revert -vserver Cluster -lif n1_clus1
+cluster::*> network interface revert -vserver Cluster -lif n1_clus4
+cluster::*> network interface revert -vserver Cluster -lif n2_clus1
+cluster::*> network interface revert -vserver Cluster -lif n2_clus4
+----
+====
+. Es wird überprüft, ob die Schnittstelle nun die Ausgangsposition erreicht hat:
++
+`network interface show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt den Status der Cluster-Verbindungsschnittstellen ist `up` und `Is home` für n1 und n2:
+
+[listing]
+----
+cluster::*> network interface show -role Cluster
+       (network interface show)
+
+         Logical    Status      Network        Current  Current  Is
+Vserver  Interface  Admin/Oper  Address/Mask   Node     Port     Home
+-------- ---------- ----------- -------------- -------- -------- -----
+Cluster
+         n1_clus1   up/up       10.10.0.1/24   n1       e0a      true
+         n1_clus2   up/up       10.10.0.2/24   n1       e0b      true
+         n1_clus3   up/up       10.10.0.3/24   n1       e0c      true
+         n1_clus4   up/up       10.10.0.4/24   n1       e0d      true
+         n2_clus1   up/up       10.10.0.5/24   n2       e0a      true
+         n2_clus2   up/up       10.10.0.6/24   n2       e0b      true
+         n2_clus3   up/up       10.10.0.7/24   n2       e0c      true
+         n2_clus4   up/up       10.10.0.8/24   n2       e0d      true
+
+8 entries were displayed.
+----
+====
+. Überprüfen Sie die Konnektivität der Remote-Cluster-Schnittstellen:
+
+
+[role="tabbed-block"]
+====
+.ONTAP 9.9.1 und höher
+--
+Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
+
+`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start*
+----
+*HINWEIS:* Einige Sekunden sollten vergehen, bevor der Befehl „show“ ausgeführt wird, damit die Details angezeigt werden.
+
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity show*
+                                  Source      Destination   Packet
+Node   Date                       LIF         LIF           Loss
+------ -------------------------- ---------- -------------- -----------
+n1
+       3/5/2022 19:21:18 -06:00   n1_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n1_clus2   n2_clus2       none
+
+n2
+       3/5/2022 19:21:18 -06:00   n2_clus2   n1_clus1       none
+       3/5/2022 19:21:20 -06:00   n2_clus2   n1_clus2       none
+----
+--
+.Alle ONTAP Versionen
+--
+Für alle ONTAP Versionen können Sie auch die `cluster ping-cluster -node <name>` Befehl zum Überprüfen der Verbindung:
+
+`cluster ping-cluster -node <name>`
+
+[listing, subs="+quotes"]
+----
+cluster::*> *cluster ping-cluster -node n1*
+Host is n1
+Getting addresses from network interface table...
+Cluster n1_clus1 n1       e0a    10.10.0.1
+Cluster n1_clus2 n1       e0b    10.10.0.2
+Cluster n1_clus3 n1       e0c    10.10.0.3
+Cluster n1_clus4 n1       e0d    10.10.0.4
+Cluster n2_clus1 n2       e0a    10.10.0.5
+Cluster n2_clus2 n2       e0b    10.10.0.6
+Cluster n2_clus3 n2       e0c    10.10.0.7
+Cluster n2_clus4 n2       e0d    10.10.0.8
+
+Local = 10.10.0.1 10.10.0.2 10.10.0.3 10.10.0.4
+Remote = 10.10.0.5 10.10.0.6 10.10.0.7 10.10.0.8
+Cluster Vserver Id = 4294967293
+Ping status:....
+Basic connectivity succeeds on 16 path(s)
+Basic connectivity fails on 0 path(s)
+................
+Detected 1500 byte MTU on 16 path(s):
+    Local 10.10.0.1 to Remote 10.10.0.5
+    Local 10.10.0.1 to Remote 10.10.0.6
+    Local 10.10.0.1 to Remote 10.10.0.7
+    Local 10.10.0.1 to Remote 10.10.0.8
+    Local 10.10.0.2 to Remote 10.10.0.5
+    Local 10.10.0.2 to Remote 10.10.0.6
+    Local 10.10.0.2 to Remote 10.10.0.7
+    Local 10.10.0.2 to Remote 10.10.0.8
+    Local 10.10.0.3 to Remote 10.10.0.5
+    Local 10.10.0.3 to Remote 10.10.0.6
+    Local 10.10.0.3 to Remote 10.10.0.7
+    Local 10.10.0.3 to Remote 10.10.0.8
+    Local 10.10.0.4 to Remote 10.10.0.5
+    Local 10.10.0.4 to Remote 10.10.0.6
+    Local 10.10.0.4 to Remote 10.10.0.7
+    Local 10.10.0.4 to Remote 10.10.0.8
+
+Larger than PMTU communication succeeds on 16 path(s)
+RPC status:
+4 paths up, 0 paths down (tcp check)
+4 paths up, 0 paths down (udp check)
+----
+--
+====
+. [[step7]]Den Cluster durch das Hinzufügen von Knoten zu den Nexus 3132Q-V Cluster Switches erweitern.
+. Informationen zu den Geräten in Ihrer Konfiguration werden angezeigt:
++
+** `network device-discovery show`
+** `network port show -role cluster`
+** `network interface show -role cluster`
+** `system cluster-switch show`
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Die folgenden Beispiele zeigen die Knoten n3 und n4 mit 40 GbE Cluster-Ports, die an die Ports e1/7 und e1/8 der beiden Nexus 3132Q-V Cluster Switches angeschlossen sind, und beide Knoten sind dem Cluster beigetreten. Die 40 GbE Cluster-Interconnect-Ports, die verwendet werden, sind e4a und e4e.
+
+[listing]
+----
+cluster::*> network device-discovery show
+
+       Local  Discovered
+Node   Port   Device       Interface       Platform
+------ ------ ------------ --------------- -------------
+n1     /cdp
+        e0a   C1           Ethernet1/1/1   N3K-C3132Q-V
+        e0b   C2           Ethernet1/1/1   N3K-C3132Q-V
+        e0c   C2           Ethernet1/1/2   N3K-C3132Q-V
+        e0d   C1           Ethernet1/1/2   N3K-C3132Q-V
+n2     /cdp
+        e0a   C1           Ethernet1/1/3   N3K-C3132Q-V
+        e0b   C2           Ethernet1/1/3   N3K-C3132Q-V
+        e0c   C2           Ethernet1/1/4   N3K-C3132Q-V
+        e0d   C1           Ethernet1/1/4   N3K-C3132Q-V
+n3     /cdp
+        e4a   C1           Ethernet1/7     N3K-C3132Q-V
+        e4e   C2           Ethernet1/7     N3K-C3132Q-V
+n4     /cdp
+        e4a   C1           Ethernet1/8     N3K-C3132Q-V
+        e4e   C2           Ethernet1/8     N3K-C3132Q-V
+
+12 entries were displayed.
+----
+[listing]
+----
+cluster::*> network port show -role cluster
+       (network port show)
+
+Node: n1
+                Broadcast              Speed (Mbps) Health   Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status   Health Status
+----- --------- ---------- ----- ----- ------------ -------- -------------
+e0a   cluster   cluster    up    9000  auto/10000     -        -
+e0b   cluster   cluster    up    9000  auto/10000     -        -
+e0c   cluster   cluster    up    9000  auto/10000     -        -
+e0d   cluster   cluster    up    9000  auto/10000     -        -
+
+Node: n2
+                Broadcast              Speed (Mbps) Health   Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status   Health Status
+----- --------- ---------- ----- ----- ------------ -------- -------------
+e0a   cluster   cluster    up    9000  auto/10000     -        -
+e0b   cluster   cluster    up    9000  auto/10000     -        -
+e0c   cluster   cluster    up    9000  auto/10000     -        -
+e0d   cluster   cluster    up    9000  auto/10000     -        -
+
+Node: n3
+                Broadcast              Speed (Mbps) Health   Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status   Health Status
+----- --------- ---------- ----- ----- ------------ -------- -------------
+e4a   cluster   cluster    up    9000  auto/40000     -        -
+e4e   cluster   cluster    up    9000  auto/40000     -        -
+
+Node: n4
+                Broadcast              Speed (Mbps) Health   Ignore
+Port  IPspace   Domain     Link  MTU   Admin/Open   Status   Health Status
+----- --------- ---------- ----- ----- ------------ -------- -------------
+e4a   cluster   cluster    up    9000  auto/40000     -        -
+e4e   cluster   cluster    up    9000  auto/40000     -        -
+
+12 entries were displayed.
+----
+[listing]
+----
+cluster::*> network interface show -role Cluster
+       (network interface show)
+
+         Logical    Status      Network        Current  Current  Is
+Vserver  Interface  Admin/Oper  Address/Mask   Node     Port     Home
+-------- ---------- ----------- -------------- -------- -------- -----
+Cluster
+         n1_clus1   up/up       10.10.0.1/24   n1       e0a      true
+         n1_clus2   up/up       10.10.0.2/24   n1       e0b      true
+         n1_clus3   up/up       10.10.0.3/24   n1       e0c      true
+         n1_clus4   up/up       10.10.0.4/24   n1       e0d      true
+         n2_clus1   up/up       10.10.0.5/24   n2       e0a      true
+         n2_clus2   up/up       10.10.0.6/24   n2       e0b      true
+         n2_clus3   up/up       10.10.0.7/24   n2       e0c      true
+         n2_clus4   up/up       10.10.0.8/24   n2       e0d      true
+         n3_clus1   up/up       10.10.0.9/24   n3       e4a      true
+         n3_clus2   up/up       10.10.0.10/24  n3       e4e      true
+         n4_clus1   up/up       10.10.0.11/24  n4       e4a      true
+         n4_clus2   up/up       10.10.0.12/24  n4       e4e      true
+
+12 entries were displayed.
+----
+[listing]
+----
+cluster::> system cluster-switch show
+
+Switch                      Type             Address       Model
+--------------------------- ---------------- ------------- ---------
+C1                          cluster-network  10.10.1.103   NX3132V
+     Serial Number: FOX000001
+      Is Monitored: true
+            Reason:
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    7.0(3)I4(1)
+    Version Source: CDP
+
+C2                          cluster-network  10.10.1.104   NX3132V
+     Serial Number: FOX000002
+      Is Monitored: true
+            Reason:
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    7.0(3)I4(1)
+    Version Source: CDP
+
+CL1                         cluster-network  10.10.1.101   CN1610
+     Serial Number: 01234567
+      Is Monitored: true
+            Reason:
+  Software Version: 1.2.0.7
+    Version Source: ISDP
+
+CL2                         cluster-network  10.10.1.102    CN1610
+     Serial Number: 01234568
+      Is Monitored: true
+            Reason:
+  Software Version: 1.2.0.7
+    Version Source: ISDP
+
+4 entries were displayed.
+----
+====
+
+
+. Die ersetzten CN1610 Switches entfernen, falls diese nicht automatisch entfernt wurden:
++
+`system cluster-switch delete`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+Das folgende Beispiel zeigt, wie die CN1610 Switches entfernt werden:
+
+[listing]
+----
+
+cluster::> system cluster-switch delete -device CL1
+cluster::> system cluster-switch delete -device CL2
+----
+====
+. Die Cluster clus1 und clus4 werden so konfiguriert, dass  `-auto-revert` auf jedem Knoten vorhanden ist, und es wird bestätigt:
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::*> network interface modify -vserver node1 -lif clus1 -auto-revert true
+cluster::*> network interface modify -vserver node1 -lif clus4 -auto-revert true
+cluster::*> network interface modify -vserver node2 -lif clus1 -auto-revert true
+cluster::*> network interface modify -vserver node2 -lif clus4 -auto-revert true
+----
+====
+. Überprüfen, ob die richtigen Cluster-Switches überwacht werden:
++
+`system cluster-switch show`
+
++
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing]
+----
+cluster::> system cluster-switch show
+
+Switch                      Type               Address          Model
+--------------------------- ------------------ ---------------- ---------------
+C1                          cluster-network    10.10.1.103      NX3132V
+     Serial Number: FOX000001
+      Is Monitored: true
+            Reason:
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    7.0(3)I4(1)
+    Version Source: CDP
+
+C2                          cluster-network    10.10.1.104      NX3132V
+     Serial Number: FOX000002
+      Is Monitored: true
+            Reason:
+  Software Version: Cisco Nexus Operating System (NX-OS) Software, Version
+                    7.0(3)I4(1)
+    Version Source: CDP
+
+2 entries were displayed.
+----
+====
+. [[step43_replacecn1610]]Wenn die automatische Fallerstellung unterdrückt wurde, kann sie durch das Auslösen einer AutoSupport-Nachricht wieder aktiviert werden:
++
+`system node autosupport invoke -node * -type all -message MAINT=END`
+
+
+
+.Wie geht es weiter?
+link:../switch-cshm/config-overview.html["Switch-Zustandsüberwachung konfigurieren"].

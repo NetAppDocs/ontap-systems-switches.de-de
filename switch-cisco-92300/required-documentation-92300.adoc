@@ -1,0 +1,139 @@
+---
+permalink: switch-cisco-92300/required-documentation-92300.html 
+sidebar: sidebar 
+keywords: cisco nexus 92300YC 
+summary: Für die Installation und Wartung des Cisco Nexus 92300YC Switches ist es wichtig, alle empfohlene Dokumentation zu überprüfen. 
+---
+= Dokumentationsanforderungen für Cisco Nexus 92300YC Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Installation des Cisco Nexus 92300YC Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
+
+
+
+[[switch-documentation]]
+== Switch-Dokumentation
+
+Um die Cisco Nexus 92300YC Switches einzurichten, benötigen Sie die folgende Dokumentation von link:https://www.cisco.com/site/us/en/products/networking/cloud-networking-switches/nexus-9200-series-switches/index.html["Cisco Nexus 9000 Series Switches Unterstützung"^].
+
+[cols="1,2"]
+|===
+| Dokumenttitel | Beschreibung 
+
+
+ a| 
+_Hardware-Installationsanleitung für die Nexus 9000-Serie_
+ a| 
+Bietet detaillierte Informationen zu Standortanforderungen, Hardware-Details der Schalter und Installationsoptionen.
+
+
+
+ a| 
+_Softwarekonfigurationshandbücher für Cisco Nexus 9000 Series Switches_ (wählen Sie das Handbuch für die auf Ihren Switches installierte NX-OS-Version aus)
+ a| 
+Liefert die grundlegenden Switch-Konfigurationsinformationen, die Sie benötigen, bevor Sie den Switch für den ONTAP -Betrieb konfigurieren können.
+
+
+
+ a| 
+_Cisco Nexus 9000 Series NX-OS Software Upgrade and Downgrade Guide_ (Wählen Sie den Leitfaden für die auf Ihren Switches installierte NX-OS-Version aus)
+ a| 
+Bietet Informationen darüber, wie der Switch gegebenenfalls auf eine von ONTAP unterstützte Switch-Software heruntergestuft werden kann.
+
+
+
+ a| 
+Cisco Nexus 9000 Serie NX-OS Befehlsreferenz – Masterindex
+ a| 
+Bietet Links zu den verschiedenen Befehlsreferenzen von Cisco.
+
+
+
+ a| 
+Cisco Nexus 9000 MIBs-Referenz
+ a| 
+Beschreibt die Management Information Base (MIB)-Dateien für die Nexus 9000 Switches.
+
+
+
+ a| 
+_Referenz der NX-OS-Systemmeldungen der Nexus 9000-Serie_
+ a| 
+Beschreibt die Systemmeldungen für Switches der Cisco Nexus 9000-Serie, sowohl die informativen als auch die, die bei der Diagnose von Problemen mit Verbindungen, interner Hardware oder der Systemsoftware hilfreich sein können.
+
+
+
+ a| 
+_Cisco Nexus 9000 Series NX-OS Versionshinweise (wählen Sie die Hinweise für die auf Ihren Switches installierte NX-OS-Version aus)_
+ a| 
+Beschreibt die Funktionen, Fehler und Einschränkungen der Cisco Nexus 9000-Serie.
+
+
+
+ a| 
+Informationen zur Einhaltung gesetzlicher Bestimmungen und zur Sicherheit für die Cisco Nexus 9000-Serie
+ a| 
+Bietet Informationen zur Einhaltung internationaler behördlicher Vorschriften, zur Sicherheit und zu gesetzlichen Bestimmungen für die Switches der Serie Nexus 9000.
+
+|===
+
+
+[[ontap-systems-documentation]]
+== ONTAP-Systemdokumentation
+
+Um ein ONTAP-System einzurichten, benötigen Sie die folgenden Dokumente für Ihre Version des Betriebssystems.
+
+[cols="1,2"]
+|===
+| Name | Beschreibung 
+
+
+ a| 
+Controllerspezifische _Installations- und Einrichtungsanweisungen_
+ a| 
+Beschreibt die Installation von NetApp -Hardware.
+
+
+
+ a| 
+link:https://docs.netapp.com/ontap-9/index.jsp["ONTAP 9"^]
+ a| 
+Bietet detaillierte Informationen zu allen Aspekten der ONTAP Releases.
+
+
+
+ a| 
+link:https://hwu.netapp.com["Hardware Universe"^]
+ a| 
+Bietet Informationen zur NetApp Hardwarekonfiguration und -Kompatibilität.
+
+|===
+
+
+[[rail-kit-and-cabinet-documentation]]
+== Dokumentation für Schienenbausatz und Schrank
+
+Um einen Cisco Nexus 92300YC Switch in einem NetApp Schrank zu installieren, lesen Sie die folgende Hardware-Dokumentation.
+
+[cols="1,2"]
+|===
+| Name | Beschreibung 
+
+
+ a| 
+link:https://library.netapp.com/ecm/ecm_download_file/ECMM1280394["42U Systemschrank, Tiefenführung"^]
+ a| 
+Beschreibt die mit dem 42U-Systemschrank verbundenen FRUs und gibt Anweisungen zur Wartung und zum Austausch der FRUs.
+
+
+
+ a| 
+link:install-switch-netapp-cabinet-92300yc.html["Einen Cisco Nexus 92300YC Switch in einem NetApp Schrank installieren"]
+ a| 
+Beschreibt die Installation eines Cisco Nexus 92300YC Switches in einem Vier-Pfosten NetApp Schrank.
+
+|===

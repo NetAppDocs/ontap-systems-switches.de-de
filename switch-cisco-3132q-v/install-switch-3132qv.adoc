@@ -1,0 +1,53 @@
+---
+permalink: switch-cisco-3132q-v/install-switch-3132qv.html 
+sidebar: sidebar 
+keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 3132q-v 
+summary: Das folgende Verfahren dient zur Installation des Cisco Nexus 3132Q-V Switch. 
+---
+= Den 3132Q-V Cluster-Switch installieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit diesem Verfahren wird der Cisco Nexus 3132Q-V Switch eingerichtet und konfiguriert.
+
+.Bevor Sie beginnen
+Bitte stellen Sie sicher, dass Sie Folgendes haben:
+
+* Zugriff auf einen HTTP-, FTP- oder TFTP-Server am Installationsort, um die entsprechenden NX-OS- und Referenzkonfigurationsdatei-(RCF)-Versionen herunterzuladen.
+* Anwendbare NX-OS-Version, heruntergeladen von https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite.
+* Anwendbare Lizenzen, Netzwerk- und Konfigurationsinformationen sowie Kabel.
+* Abgeschlossen link:setup_worksheet_3132q.html["Verkabelungs-Arbeitsblätter"].
+* Anwendbare NetApp -Clusternetzwerk- und Managementnetzwerk-RCFs, die von der NetApp -Support-Website heruntergeladen wurden unter http://mysupport.netapp.com/["mysupport.netapp.com"^] Die  Alle Cisco Cluster-Netzwerk- und Management-Netzwerk-Switches werden mit der standardmäßigen Cisco -Werkskonfiguration ausgeliefert. Diese Switches verfügen ebenfalls über die aktuelle Version der NX-OS-Software, haben jedoch die RCFs nicht geladen.
+* link:required-documentation-3132q.html["Erforderliche Switch- und ONTAP Dokumentation"].
+
+
+.Schritte
+. Installieren Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller.
++
+[cols="1,2"]
+|===
+| Wenn Sie die... installieren | Dann... 
+
+
+ a| 
+Cisco Nexus 9336C-FX2 in einem NetApp -Systemschrank
+ a| 
+Siehe die Anleitung _Installing a Cisco Nexus 3132Q-V cluster switch and pass-through panel in a NetApp cabinet_ für Anweisungen zum Einbau des Switches in einen NetApp Schrank.
+
+
+
+ a| 
+Ausrüstung in einem Telekommunikationsrack
+ a| 
+Beachten Sie die Verfahren, die in den Installationshandbüchern für die Switch-Hardware und den NetApp Installations- und Einrichtungsanweisungen bereitgestellt werden.
+
+|===
+. Verbinden Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches mithilfe der ausgefüllten Verkabelungsarbeitsblätter mit den Controllern.
+. Schalten Sie die Cluster-Netzwerk- und Management-Netzwerk-Switches und -Controller ein.
+
+
+.Wie geht es weiter?
+Optional können Sie link:install-cisco-nexus-3132qv.html["Einen Cisco Nexus 3132Q-V Switch in einem NetApp Schrank installieren"]. Andernfalls können Sie link:cabling-considerations-3132q-v.html["Die Verkabelung und Konfiguration überprüfen."] Anforderungen erfüllen.

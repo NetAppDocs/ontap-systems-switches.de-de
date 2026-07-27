@@ -1,0 +1,18 @@
+---
+permalink: switch-netapp-cn1610/switch-overview-cn1610.html 
+sidebar: sidebar 
+keywords: install, fastpath, software, rcfs 
+summary: Vor der Konfiguration der NetApp CN1610 Switches empfiehlt sich ein Überblick über das Verfahren. 
+---
+= Übersicht über Installation und Konfiguration von NetApp CN1610 Switches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der CN1610 ist ein verwalteter Layer 2 Switch mit hoher Bandbreite, der 16 10-Gigabit Small Form-Factor Pluggable Plus (SFP+) Ports bietet.
+
+Der Switch verfügt über redundante Netzteile und Lüftereinschübe, die Hot-Swapping für hohe Verfügbarkeit unterstützen. Dieser 1U Switch kann in einem Standard-19-Zoll NetApp 42U-Systemschrank oder in einem Schrank eines Drittanbieters installiert werden.
+
+Der Switch unterstützt die lokale Verwaltung über den Konsolenport oder die Fernverwaltung per Telnet oder SSH über eine Netzwerkverbindung. Der CN1610 verfügt über einen dedizierten 1-Gigabit-Ethernet-RJ45-Managementport für die Out-of-Band-Switch-Verwaltung. Der Switch kann über die Eingabe von Befehlen in die Kommandozeilenschnittstelle (CLI) oder mithilfe eines SNMP-basierten Netzwerkmanagementsystems (NMS) verwaltet werden.

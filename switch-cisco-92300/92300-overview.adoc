@@ -1,0 +1,121 @@
+---
+permalink: switch-cisco-92300/92300-overview.html 
+sidebar: sidebar 
+keywords: cisco nexus 92300YC 
+summary: Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind. 
+---
+= Cisco Nexus 92300YC Switch Übersicht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind.
+
+Der Cisco Nexus 92300YC Switch (X190003/R) kann in einem NetApp Systemschrank oder einem Schrank eines Drittanbieters mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installiert werden.
+
+Die folgende Tabelle enthält die Teilenummer und die Beschreibung für den 92300YC Switch, die Lüfter und die Netzteile:
+
+[cols="1,2"]
+|===
+| Teilenummer | Beschreibung 
+
+
+ a| 
+190003
+ a| 
+Cisco 92300YC, CLSW, 48 Ports 10/25 GB, 18 Ports 100G, PTSX (PTSX = Luftaustritt auf der Portseite)
+
+
+
+ a| 
+190003R
+ a| 
+Cisco 92300YC, CLSW, 48Pt10/25GB, 18Pt100G, PSIN (PSIN = Port-seitige Luftansaugung)
+
+
+
+ a| 
+X-NXA-FAN-35CFM-B
+ a| 
+Lüfter, Cisco N9K Port-Seite Lufteinlass
+
+
+
+ a| 
+X-NXA-FAN-35CFM-F
+ a| 
+Lüfter, Cisco N9K Port-Seite Abluftstrom
+
+
+
+ a| 
+X-NXA-PAC-650W-B
+ a| 
+Netzteil, Cisco 650W Portseite Einlass
+
+
+
+ a| 
+X-NXA-PAC-650W-F
+ a| 
+Netzteil, Cisco 650W Port-Seite Auslass
+
+|===
+Details zum Luftstrom des Cisco Nexus 92300YC Switches:
+
+* Port-seitiger Abluftstrom (Standardluft): Kühle Luft strömt durch die Lüfter- und Netzteilmodule im Kaltgang in das Gehäuse und wird durch die Port-Seite des Gehäuses im Warmgang wieder abgeführt. Port-seitiger Abluftstrom mit blauer Kennzeichnung.
+* Port-seitiger Lufteinlass (umgekehrte Luftführung), kühle Luft tritt im Kaltgang durch die Port-Seite in das Gehäuse ein und wird durch die Lüfter- und Netzteilmodule im Warmgang wieder ausgestoßen. Port-seitiger Lufteinlass mit bordeauxfarbener Kennzeichnung.
+
+
+.Verfügbare Dokumentation
+Die folgende Tabelle listet die für die Cisco Nexus 92300YC Switches verfügbare Dokumentation auf.
+
+|===
+
+
+| Titel | Beschreibung 
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-overview-cisco-92300.html["_Einrichtung der Cisco Nexus 92300YC Cluster Switches_"^]
+ a| 
+Beschreibt, wie die Cisco Nexus 92300YC Cluster Switches eingerichtet und konfiguriert werden.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/install-nxos-overview.html["_NX-OS und die Referenzkonfigurationsdateien (RCFs) installieren_"^]
+ a| 
+Beschreibt, wie NX-OS und Referenzkonfigurationsdateien (RCFs) auf dem Nexus 92300YC Cluster Switch installiert werden.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/configure-install-initial.html["_Konfiguration eines neuen Cisco Nexus 92300YC Switches_"^]
+ a| 
+Beschreibt, wie die Migration von Umgebungen, die ältere Cisco Switches verwenden, zu Umgebungen erfolgt, die Cisco 92300YC Switches verwenden.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-92300yc.html["_Migration von einem älteren Cisco Switch zu einem Cisco Nexus 92300YC Switch_"^]
+ a| 
+Beschreibt das Verfahren zum Austausch eines älteren Cisco Switches durch einen Cisco Nexus 92300YC Cluster Switch.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/migrate-to-2n-switched.html["_Migration von einem Zwei-Knoten Cluster ohne Switches_"^]
+ a| 
+Beschreibt die Migration von einer Zwei-Knoten Cluster ohne Switches Umgebung zu einer Zwei-Knoten Umgebung mit Switches unter Verwendung von Cisco Nexus 92300YC Cluster Switches.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-92300/replace-92300yc.html["_Ersetzen eines Cisco Nexus 92300YC Cluster Switches_"^]
+ a| 
+Beschreibt das Vorgehen zum Austausch eines defekten Cisco Nexus 92300YC Switch in einem Cluster sowie zum Herunterladen des Switch-Betriebssystems und der Konfigurationsdatei.
+
+|===

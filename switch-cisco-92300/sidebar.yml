@@ -39,7 +39,7 @@ entries:
     url: "/switch-cisco-92300/install-nxos-overview.html"
   - title: Installieren Sie NX-OS
     url: "/switch-cisco-92300/install-nxos-software.html"
-  - title: RCF-Konfigurationsdatei installieren
+  - title: RCF Konfigurationsdatei installieren
     url: "/switch-cisco-92300/install-the-rcf-file.html"
   - title: SSH-Konfiguration überprüfen
     url: "/switch-cisco-92300/configure-ssh-keys.html"
