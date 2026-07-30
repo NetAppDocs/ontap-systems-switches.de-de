@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/required-documentation-sn2100-storage.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
-summary: Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation lesen. 
+summary: Die für die Installation und Wartung von NVIDIA SN2100 Speicherswitches erforderliche Dokumentation wird hier aufgeführt. 
 ---
-= Dokumentationsanforderungen für NVIDIA SN2100-Switches
+= Dokumentationsanforderungen für NVIDIA SN2100 Speicherschalter prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation des NVIDIA SN2100 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
+Die für die Einrichtung von NVIDIA SN2100 Storage Switches und deren Konfiguration in einem ONTAP Speichernetzwerk erforderliche Switch- und Controller-Dokumentation wird hier aufgeführt.
 
 Die folgende Tabelle listet die für die NVIDIA SN2100 Switches verfügbare Dokumentation auf.
 

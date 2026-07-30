@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9332d-gx2b/maintain-reset-switch-9332d.html 
 keywords: reset switch factory defaults 
-summary: Ein Cisco Nexus 9332D-GX2B Switch kann auf die ursprünglichen Werkseinstellungen zurückgesetzt werden, wenn der Switch außer Betrieb genommen wird oder wenn der Switch ausfällt und nicht wiederhergestellt werden kann, sodass eine manuelle Neukonfiguration erforderlich ist. 
+summary: Ein Cisco Nexus 9332D-GX2B Switch wird auf die Werkseinstellungen zurückgesetzt, wenn er außer Betrieb genommen oder ein Switch wiederhergestellt wird, der nicht konfiguriert werden kann. 
 ---
-= Einen Switch auf die Werkseinstellungen zurücksetzen - Cisco Nexus 9332D-GX2B
+= Der Cisco Nexus 9332D-GX2B Switch wird auf die Werkseinstellungen zurückgesetzt.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Ein Cisco Nexus 9332D-GX2B Switch kann auf die ursprünglichen Werksein
 
 
 [role="lead"]
-Ein Cisco Nexus 9332D-GX2B Switch kann auf die ursprünglichen Werkseinstellungen zurückgesetzt werden, wenn der Switch außer Betrieb genommen wird oder wenn der Switch ausfällt und nicht wiederhergestellt werden kann, sodass eine manuelle Neukonfiguration erforderlich ist.
+Ein Cisco Nexus 9332D-GX2B Switch wird auf die Werkseinstellungen zurückgesetzt, wenn der Switch außer Betrieb genommen wird oder wenn er ausfällt und nicht durch normale Konfigurationsmethoden wiederhergestellt werden kann.
 
 .Bevor Sie beginnen
 Sie müssen über die serielle Konsole mit dem Switch verbunden sein.

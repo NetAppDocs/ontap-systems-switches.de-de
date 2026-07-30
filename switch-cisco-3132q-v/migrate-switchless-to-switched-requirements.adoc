@@ -2,15 +2,15 @@
 permalink: switch-cisco-3132q-v/migrate-switchless-to-switched-requirements.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3132q-v switch, 
-summary: Vor der Konfiguration der Cisco Nexus 3132q-v Switches empfiehlt sich ein Überblick über den Prozess und die Nomenklatur. 
+summary: Die Migrationsanforderungen für den Wechsel von einem Zwei-Knoten Cluster ohne Switches zu Cisco Nexus 3132Q-V Cluster Switches werden dargestellt. 
 ---
-= Migrationsanforderungen
+= Überprüfung der Migrationsanforderungen für Cisco Nexus 3132Q-V Cluster Switches
 :allow-uri-read: 
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn ein Cluster ohne Switches mit zwei Knoten vorhanden ist, enthält dieses Verfahren die relevanten Anforderungen für die Migration zu einem Cluster mit zwei Knoten und Switches.
+Die Anforderungen für die Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Cluster mit Switches unter Verwendung von Cisco Nexus 3132Q-V Cluster Switches werden hier dargestellt.
 
 [NOTE]
 ====

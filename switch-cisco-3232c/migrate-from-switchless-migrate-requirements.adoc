@@ -2,15 +2,15 @@
 permalink: switch-cisco-3232c/migrate-from-switchless-migrate-requirements.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3232c switch, 
-summary: Vor der Konfiguration der Cisco Nexus 3232c Switches empfiehlt sich ein Überblick über den Prozess und die Nomenklatur. 
+summary: Die Anforderungen für die Migration von einem Zwei-Knoten Cluster ohne Switches zu Cisco Nexus 3232C Cluster Switches werden dargestellt. 
 ---
-= Migrationsanforderungen
+= Überprüfung der Anforderungen für die Migration von einem Cluster ohne Switches zu Cisco Nexus 3232C Cluster Switches
 :allow-uri-read: 
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie ein Cluster ohne Switches mit zwei Knoten haben, ist eine Migration zu einem Cluster mit zwei Knoten und Switches möglich, das Cisco Nexus 3232C Cluster Netzwerk Switches umfasst. Dies ist ein unterbrechungsfreies Verfahren.
+Die Anforderungen für die Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Cluster mit Switches unter Verwendung von Cisco Nexus 3232C Cluster Switches werden dargestellt.
 
 .Bevor Sie beginnen
 Überprüfen Sie die folgenden Installationen und Verbindungen:

@@ -2,16 +2,16 @@
 permalink: switch-cshm/monitor-troubleshoot.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Sie können die folgenden Befehle verwenden… 
+summary: Probleme mit Ethernet-Switch-Zustandsüberwachungsalarmen, die von CSHM in Ihrem ONTAP Cluster ausgelöst werden, beheben. 
 ---
-= Fehlerbehebung bei Warnmeldungen
+= Warnmeldungen für den Zustandsmonitor des Ethernet-Switches beheben
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Es werden Warnmeldungen ausgegeben, wenn bei einem Ethernet-Switch in Ihrem Cluster ein Fehler, ein Risiko oder ein kritischer Zustand festgestellt wird.
+Warnmeldungen, die vom Ethernet Switch Health Monitor (CSHM) ausgelöst werden, wenn ein Fehler, ein Risiko oder ein kritischer Zustand bei einem Netzwerk-Switch in Ihrem ONTAP Cluster erkannt wird, können behoben werden.
 
 Wenn Warnmeldungen ausgegeben werden, meldet der Systemzustandsbericht einen beeinträchtigten Status für den Cluster.  Die ausgelösten Warnmeldungen enthalten die Informationen, die Sie benötigen, um auf eine Beeinträchtigung des Systemzustands zu reagieren.
 

@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/configure-install-rcf.html 
 sidebar: sidebar 
 keywords: install rcf,setup rcf,rcf file 
-summary: Sie können die Referenzkonfigurationsdatei RCF installieren, nachdem Sie den BES-53248 Cluster-Switch konfiguriert und die neuen Lizenzen angewendet haben. 
+summary: 'Die Referenz-Konfigurationsdatei (RCF) wird auf dem Broadcom BES-53248 Cluster Switch installiert, nachdem die Erstkonfiguration abgeschlossen und alle erforderlichen Lizenzen angewendet wurden.' 
 ---
-= Installieren Sie die Referenz-Konfigurationsdatei (RCF)
+= Die RCF auf dem Broadcom BES-53248 Cluster Switch installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können das RCF installieren, nachdem Sie den BES-53248 Cluster-Switch konfiguriert und die neuen Lizenzen angewendet haben.
+Die Referenz-Konfigurationsdatei (RCF) wird auf dem Broadcom BES-53248 Cluster Switch installiert, nachdem die Erstkonfiguration abgeschlossen und alle erforderlichen Lizenzen angewendet wurden. Die RCF definiert Portzuweisungen, VLANs und Netzwerkeinstellungen für den Clusterbetrieb.
 
 
 CAUTION: Für EFOS 3.12 und höher befolgen Sie die Installationsschritte in link:efos-install-rcf-license-file.html["Installieren Sie die Referenz-Konfigurationsdatei (RCF) und die Lizenzdatei"].

@@ -2,16 +2,16 @@
 permalink: switch-cisco-9364d-gx2a/configure-complete-initial-setup-9364d.html 
 sidebar: sidebar 
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9364d-gx2a 
-summary: Nach dem Einschalten der Cisco Nexus 9364D-GX2A Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems oder eines Switch-Austauschs oder nach dem Zurücksetzen eines Switches auf die Werkseinstellungen wird dazu aufgefordert, die Ersteinrichtung des/der Switches mithilfe des Konfigurationsassistenten abzuschließen. Zur Unterstützung bei der Ersteinrichtung des/der Switches können die folgenden Fragen des Konfigurationsassistenten und die empfohlenen Antworten herangezogen werden. 
+summary: Die Ersteinrichtung der Cisco Nexus 9364D-GX2A Switches erfolgt mithilfe des Konfigurationsassistenten für neue AFX 1K oder AFX 2K Systeme, den Austausch von Switches oder das Zurücksetzen auf Werkseinstellungen. 
 ---
-= Vollständige Ersteinrichtung des Switches, Cisco Nexus 9364D-GX2A
+= Die Ersteinrichtung des Cisco Nexus 9364D-GX2A Switch abschließen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nach dem Einschalten der Cisco Nexus 9364D-GX2A Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems oder eines Switch-Austauschs oder nach dem Zurücksetzen eines Switches auf die Werkseinstellungen wird dazu aufgefordert, die Ersteinrichtung des/der Switches mithilfe des Konfigurationsassistenten abzuschließen. Zur Unterstützung bei der Ersteinrichtung des/der Switches können die folgenden Fragen des Konfigurationsassistenten und die empfohlenen Antworten herangezogen werden.
+Die Ersteinrichtung der Cisco Nexus 9364D-GX2A Switches erfolgt mithilfe des Konfigurationsassistenten. Dieses Verfahren gilt für neue AFX 1K oder AFX 2K Systeminstallationen, den Austausch von Switches sowie für Switches, die auf die Werkseinstellungen zurückgesetzt wurden.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie die Netzwerk- und Konfigurationsinformationen für jeden Switch sowie die entsprechenden Lizenzen haben.

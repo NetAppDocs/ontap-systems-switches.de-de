@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/configure-reqs-92300.html 
 sidebar: sidebar 
 keywords: cisco nexus 92300YC 
-summary: Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind. 
+summary: Vor der Installation oder dem Upgrade sind die Konfigurationsanforderungen für Cisco Nexus 92300YC Cluster Switches zu prüfen. 
 ---
-= Konfigurationsanforderungen für Cisco Nexus 92300YC Switches
+= Konfigurationsanforderungen für Cisco Nexus 92300YC Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung des Cisco Nexus 92300YC Switches empfiehlt sich eine Überprüfung aller Konfigurations- und Netzwerkanforderungen.
+Vor der Installation oder dem Upgrade sind die Konfigurationsanforderungen für Cisco Nexus 92300YC Cluster Switches zu prüfen.
 
 Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind.
 

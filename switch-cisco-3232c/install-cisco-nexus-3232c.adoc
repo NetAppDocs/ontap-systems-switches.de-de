@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/install-cisco-nexus-3232c.html 
 sidebar: sidebar 
 keywords: install, cisco nexus, 3232c cluster switch, pass-through panel, netapp cabinet 
-summary: Der Cisco Nexus 3232C Switch und das Durchgangspanel können in einem NetApp Schrank mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installiert werden. 
+summary: Ein Cisco Nexus 3232C Cluster Switch und ein Durchgangspanel können in einem NetApp Schrank mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installiert werden. 
 ---
 = Einen Cisco Nexus 3232C Cluster Switch in einem NetApp Schrank installieren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Der Cisco Nexus 3232C Switch und das Durchgangspanel können in einem N
 
 
 [role="lead"]
-Je nach Konfiguration kann es erforderlich sein, den Cisco Nexus 3232C Cluster Switch und das Pass-Through-Panel in einem NetApp Schrank mit den standardmäßigen Halterungen zu installieren, die im Lieferumfang des Switches enthalten sind.
+Ein Cisco Nexus 3232C Cluster Switch und ein Durchgangspanel können in einem NetApp Schrank mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installiert werden.
 
 .Bevor Sie beginnen
 * Die anfänglichen Vorbereitungsanforderungen, der Inhalt des Kits und die Sicherheitsvorkehrungen in der link:http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/hw/installation/guide/b_n3000_hardware_install_guide.html["Cisco Nexus 3000 Series Hardware-Installationshandbuch"^].

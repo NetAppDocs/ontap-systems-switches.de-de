@@ -2,50 +2,41 @@
 permalink: switch-cshm/config-log-collection.html 
 sidebar: sidebar 
 keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation 
-summary: 'Die Funktion zur Protokollerfassung des Ethernet-Switch-Integritätsmonitors (CSHM) wird verwendet, um Protokolle von Cluster- oder Speichernetzwerk-Switches in ONTAP zu sammeln.' 
+summary: Die Protokollerfassung wird so konfiguriert, dass CSHM Switch-Protokolle und Diagnosedaten von Cluster- und Speichernetzwerk-Switches erfassen kann. 
 ---
-= Protokollerfassung konfigurieren
+= Konfiguration der Protokollerfassung für den Ethernet Switch Zustandsmonitor
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Der Ethernet-Switch-Integritätsmonitor (CSHM) ist für die Überwachung des Betriebszustands von Netzwerk-Switches und die Erfassung von Switch-Protokollen zu Debugging-Zwecken zuständig. Diese Anleitung führt Sie durch die Einrichtung der Protokollerfassung, die Anforderung detaillierter *Support*-Protokolle und die Aktivierung der stündlichen Erfassung von *periodischen* Daten, die von AutoSupport erfasst werden.
+Die Protokollerfassung auf den Ethernet-Switches wird so konfiguriert, dass der Ethernet Switch Health Monitor (CSHM) Switch-Protokolle für Debugging und AutoSupport-Berichterstellung erfassen kann. Mit diesem Verfahren werden sowohl die bedarfsgesteuerte Support-Protokollerfassung als auch die stündliche periodische Datenerfassung in ONTAP eingerichtet.
 
-*HINWEIS:* Wenn Sie den FIPS-Modus aktivieren, müssen Sie Folgendes durchführen:
-
-[NOTE]
-====
-. Generieren Sie die SSH-Schlüssel auf dem Switch gemäß den Anweisungen des Herstellers neu.
-. SSH-Schlüssel in ONTAP neu generieren mit `debug system regenerate-systemshell-key-pair`
-. Führen Sie die Routine zur Einrichtung der Protokollsammlung erneut aus. `system switch ethernet log setup-password` Befehl
-
-
-====
+.Bevor Sie beginnen
+* Wenn Sie den FIPS-Modus verwenden, sind vor dem Einrichten der Protokollerfassung die folgenden Schritte abzuschließen:
++
+.. Generieren Sie die SSH-Schlüssel auf dem Switch gemäß den Anweisungen des Herstellers neu.
+.. SSH-Schlüssel in ONTAP mit  `debug system regenerate-systemshell-key-pair` neu generieren.
+.. Die Einrichtung der Protokollerfassung wird mit dem  `system switch ethernet log setup-password` Befehl erneut durchgeführt.
 
 
-[[before-you-begin]]
-== Bevor Sie beginnen
-
-* Der Benutzer muss Zugriff auf den Schalter haben. `show` Befehle.  Falls diese nicht verfügbar sind, erstellen Sie einen neuen Benutzer und erteilen Sie diesem die erforderlichen Berechtigungen.
-* Die Zustandsüberwachung des Switches muss aktiviert sein.  Überprüfen Sie dies, indem Sie sicherstellen, dass `Is Monitored:` Das Feld wird in der Ausgabe auf *true* gesetzt. `system switch ethernet show` Befehl.
+* Sie benötigen Zugriff auf die Switch `show`-Befehle. Falls Sie keinen Zugriff haben, sollte ein neuer Switch-Benutzer erstellt und mit den erforderlichen Berechtigungen ausgestattet werden.
+* Die Zustandsüberwachung des Switches muss aktiviert sein. Dies lässt sich überprüfen, indem kontrolliert wird, dass das  `Is Monitored:` Feld in der Ausgabe von  `system switch ethernet show` auf *true* gesetzt ist.
 * Für die Protokollerfassung mit Broadcom- und Cisco -Switches:
 +
 ** Der lokale Benutzer muss über Netzwerkadministratorrechte verfügen.
-** Für jede Clusterkonfiguration, bei der die Protokollerfassung aktiviert ist, sollte ein neuer Benutzer auf dem Switch angelegt werden.  Diese Switches unterstützen keine mehreren SSH-Schlüssel für denselben Benutzer.  Jede zusätzliche Konfiguration der Protokollerfassung überschreibt alle bereits vorhandenen SSH-Schlüssel des Benutzers.
+** Für jeden Cluster mit aktivierter Protokollerfassung wird ein neuer Switch-Benutzer erstellt. Diese Switches unterstützen keine mehreren SSH-Schlüssel für denselben Benutzer, ein erneutes Ausführen des Setups überschreibt den vorhandenen SSH-Schlüssel.
 
 
-* Für die Protokollerfassung mit NVIDIA -Switches muss dem Benutzer, der für die Protokollerfassung zuständig ist, die Berechtigung zum Ausführen des Programms erteilt werden. `cl-support` Befehle ausführen, ohne ein Passwort angeben zu müssen.  Um diese Verwendung zu ermöglichen, führen Sie folgenden Befehl aus:
+* Für die Protokollerfassung mit NVIDIA Switches muss der Protokollerfassungsbenutzer den  `cl-support` Befehl ohne Passwort ausführen können. Damit dies möglich ist, ist folgender Befehl auszuführen:
 +
 `echo '_<user>_ ALL = NOPASSWD: /usr/cumulus/bin/cl-support' | sudo EDITOR='tee -a' visudo -f /etc/sudoers.d/cumulus`
 
 
 
-
-
-[[steps]]
-== Schritte
+.Schritte
+Führen Sie die Schritte für Ihre Version von ONTAP aus, um die Protokollerfassung einzurichten, die periodische Datenerfassung zu aktivieren und optional Supportprotokolle auf Abruf anzufordern.
 
 [role="tabbed-block"]
 ====

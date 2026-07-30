@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/configure-reqs-3232c.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Cisco Nexus 3232C Switches können als Cluster Switches in einem AFF oder FAS Cluster eingesetzt werden. 
+summary: Vor der Installation oder dem Upgrade sind die Konfigurationsanforderungen für Cisco Nexus 3232C Cluster Switches zu prüfen. 
 ---
-= Konfigurationsanforderungen für Cisco Nexus 3232C Switches
+= Konfigurationsanforderungen für Cisco Nexus 3232C Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung des Cisco Nexus 3232C Switches empfiehlt sich eine Überprüfung der Konfigurations- und Netzwerkanforderungen.
+Vor der Installation oder dem Upgrade sind die Konfigurationsanforderungen für Cisco Nexus 3232C Cluster Switches zu prüfen.
 
 
 

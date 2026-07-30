@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/migrate-from-cisco-nexus-5596.html 
 sidebar: sidebar 
 keywords: migrate, cisco nexus 5596 switch, 3232c 
-summary: Um die vorhandenen Cisco Nexus 5596 Cluster Switches in einem Cluster durch Nexus 3232C Cluster Switches zu ersetzen, ist eine bestimmte Abfolge von Aufgaben erforderlich. 
+summary: Migration von Cisco Nexus 5596 Cluster Switches zu Cisco Nexus 3232C Cluster Switches ohne Unterbrechung des Clusterbetriebs. 
 ---
-= Migration von einem Cisco Nexus 5596 Cluster Switch zu einem Cisco Nexus 3232C Cluster Switch
+= Migration von Cisco Nexus 5596 Cluster Switches zu Cisco Nexus 3232C Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Dieses Verfahren beschreibt die Migration vorhandener Cisco Nexus 5596 Cluster Switches in einem Cluster mit Nexus 3232C Cluster Switches.
+Vorhandene Cisco Nexus 5596 Cluster Switches können ohne Unterbrechung des Clusterbetriebs auf Cisco Nexus 3232C Cluster Switches migriert werden.
 
 
 

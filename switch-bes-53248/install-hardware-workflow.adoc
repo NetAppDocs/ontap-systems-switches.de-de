@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/install-hardware-workflow.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure new bes-53248 switch 
-summary: Bevor Sie die Cluster-Switches vom Typ BES-53248 konfigurieren, lesen Sie bitte die Konfigurationsübersicht. 
+summary: Mit diesem Workflow lässt sich die Hardware für einen neuen Broadcom BES-53248 Cluster Switch installieren und konfigurieren. 
 ---
-= Workflow zur Hardwareinstallation für BES-53248-Switches
+= Arbeitsablauf für die Hardwareinstallation des Broadcom BES-53248 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Hardware für einen BES-53248-Cluster-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:
+Mit diesem Workflow lässt sich die Hardware für einen neuen Broadcom BES-53248 Cluster Switch installieren und konfigurieren.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-hardware-bes53248.html["Installieren Sie die Switch-Hardware"]
 [role="quick-margin-para"]

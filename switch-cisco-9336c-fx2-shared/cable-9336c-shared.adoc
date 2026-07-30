@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9336c-fx2-shared/cable-9336c-shared.html 
 keywords: shared storage cluster switch cable 
-summary: Verwenden Sie die Abbildungen der Verkabelung, um die Verkabelung zwischen den Controllern und den Switches abzuschließen. 
+summary: Das Verkabelungsarbeitsblatt für Cisco Nexus 9336C-FX2 Shared Switches dient zur Dokumentation der Portverbindungen zwischen Controllern und Switches. 
 ---
-= Füllen Sie das Verkabelungsarbeitsblatt für den Cisco Nexus 9336C-FX2 aus.
+= Das Arbeitsblatt zur Verkabelung des gemeinsam genutzten Cisco Nexus 9336C-FX2 Switches ausfüllen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Verwenden Sie die Abbildungen der Verkabelung, um die Verkabelung zwisc
 
 
 [role="lead"]
-Verwenden Sie die folgenden Verkabelungsabbildungen, um die Verkabelung zwischen den Controllern und den Switches abzuschließen.
+Das Verkabelungsarbeitsblatt für Cisco Nexus 9336C-FX2 Shared Switches wird mithilfe der Verkabelungsabbildungen ausgefüllt, um die Portverbindungen zwischen Controllern und Switches zu dokumentieren.
 
 
 

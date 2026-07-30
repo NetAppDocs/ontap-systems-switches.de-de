@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2-shared/upgrade-rcf-software-9336c-shared.html 
 sidebar: sidebar 
 keywords: install rcf, cisco switches 
-summary: Sie können RCF installieren, nachdem Sie den Switch Nexus 9336C-FX2 zum ersten Mal eingerichtet haben. Mit diesem Verfahren können Sie auch Ihre RCF-Version aktualisieren. 
+summary: 'Die Referenz-Konfigurationsdatei (RCF) auf einem Cisco Nexus 9336C-FX2 Shared Switch wird aktualisiert, wenn eine neuere Version verfügbar ist.' 
 ---
-= Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF).
+= Upgrade der RCF auf einem gemeinsam genutzten Cisco Nexus 9336C-FX2 Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie aktualisieren Ihre RCF-Version, wenn auf Ihren betriebsbereiten Switches bereits eine Version der RCF-Datei installiert ist.
+Die Referenz-Konfigurationsdatei (RCF) auf einem Cisco Nexus 9336C-FX2 Shared Switch wird aktualisiert, wenn eine neuere Version der RCF verfügbar ist.
 
 .Bevor Sie beginnen
 Bitte stellen Sie sicher, dass Sie Folgendes haben:

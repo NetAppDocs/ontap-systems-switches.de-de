@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c-storage/upgrade-rcf-software-3232c-storage.html 
 sidebar: sidebar 
 keywords: install rcf, cisco switches 
-summary: Mit diesem Verfahren können Sie Ihre RCF-Version aktualisieren. 
+summary: 'Die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 3232C Storage Switches wird aktualisiert, wenn eine neuere Version verfügbar ist.' 
 ---
-= Aktualisieren Sie Ihre Referenzkonfigurationsdatei (RCF)
+= Das RCF auf Cisco Nexus 3232C Storage Switches aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie aktualisieren Ihre RCF-Version, wenn auf Ihren betriebsbereiten Switches bereits eine Version der RCF-Datei installiert ist.
+Die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 3232C Storage Switches wird aktualisiert, wenn eine neuere Version der RCF verfügbar ist.
 
 .Bevor Sie beginnen
 Bitte stellen Sie sicher, dass Sie Folgendes haben:

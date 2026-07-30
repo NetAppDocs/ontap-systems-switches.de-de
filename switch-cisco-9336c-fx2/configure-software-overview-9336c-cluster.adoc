@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2/configure-software-overview-9336c-cluster.html 
 sidebar: sidebar 
 keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Übersicht über die Softwarekonfiguration für Cisco Nexus 9336C-FX2 Cluster-Switches 
+summary: Mit diesem Workflow werden die NX-OS Software und die RCF auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches installiert. 
 ---
-= Workflow zur Softwareinstallation für Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Cluster-Switches
+= Workflow für die Softwareinstallation für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Software für die Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches zu installieren und zu konfigurieren und um die Referenzkonfigurationsdatei (RCF) zu installieren oder zu aktualisieren, gehen Sie wie folgt vor:
+Mit diesem Workflow werden die NX-OS Software und die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches installiert.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch-9336c-cluster.html["Konfigurieren Sie den Schalter"]
 [role="quick-margin-para"]

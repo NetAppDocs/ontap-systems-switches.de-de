@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/configure-install-initial.html 
 sidebar: sidebar 
 keywords: install cisco 92300YC cluster switch, cisco nx 92300yc 
-summary: Mit diesem Verfahren lässt sich die Erstinstallation des Cisco Nexus 92300YC Switches durchführen. 
+summary: Der Cisco Nexus 92300YC Cluster Switch wird für den Clusterbetrieb vorbereitet. 
 ---
-= Cisco Nexus 92300YC Switch konfigurieren
+= Die Cisco Nexus 92300YC Cluster Switch-Konfiguration
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Mit diesem Verfahren lässt sich der Cisco Nexus 92300YC Switch einrichten und konfigurieren.
+Der Cisco Nexus 92300YC Cluster Switch wird mit Initialisierungsbefehlen konfiguriert, um ihn für den Clusterbetrieb vorzubereiten.
 
 .Schritte
 . Verbinden Sie den seriellen Port mit einem Host oder einem seriellen Port.

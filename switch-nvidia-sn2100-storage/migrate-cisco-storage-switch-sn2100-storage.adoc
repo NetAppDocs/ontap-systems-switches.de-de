@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/migrate-cisco-storage-switch-sn2100-storage.html 
 sidebar: sidebar 
 keywords: migrating to a storage switch with NVIDIA SN2100 storage switches, how to migrate 
-summary: Ältere Cisco Switches eines ONTAP Clusters können ohne Unterbrechung auf NVIDIA SN2100-Speicher-Switches migriert werden. 
+summary: Eine Migration von älteren Cisco Storage Switches zu NVIDIA SN2100 Storage Switches ist möglich, ohne den Betrieb des Speichernetzwerks zu unterbrechen. 
 ---
-= Migration von einem Cisco -Speicher-Switch zu einem NVIDIA SN2100-Speicher-Switch
+= Migration von einem Cisco Storage Switch zu einem NVIDIA SN2100 Storage Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ältere Cisco Switches für einen ONTAP Cluster können auf NVIDIA SN2100-Speicher-Switches migriert werden. Dies ist ein unterbrechungsfreies Verfahren.
+Eine Migration von älteren Cisco Storage Switches zu NVIDIA SN2100 Storage Switches ist möglich, ohne den Betrieb des Speichernetzwerks zu unterbrechen.
 
 
 

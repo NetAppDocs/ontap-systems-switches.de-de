@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100/replace-sn2100-switch-cluster.html 
 sidebar: sidebar 
 keywords: replacing, replace, defective, nvidia, switch, cluster, network, nondisruptive, procedure, ndu, replace a nvidia msn2100 cluster switch - nvidia SN2100 
-summary: Der Austausch eines defekten NVIDIA SN2100-Switches in einem Clusternetzwerk ist ein unterbrechungsfreies Verfahren. 
+summary: Einen defekten NVIDIA SN2100 Cluster Switch in einem Cluster-Netzwerk ersetzen. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
-= Ersetzen Sie einen NVIDIA SN2100 Cluster-Switch
+= Austausch eines NVIDIA SN2100 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um einen defekten NVIDIA SN2100-Switch in einem Clusternetzwerk auszutauschen. Dies ist ein unterbrechungsfreies Verfahren (NDU).
+Ein defekter NVIDIA SN2100 Cluster Switch kann in einem Cluster-Netzwerk ausgetauscht werden, ohne den Clusterbetrieb zu unterbrechen. Dieses unterbrechungsfreie Verfahren (NDU) umfasst die Vorbereitung eines Ersatzswitches und die Migration der Verbindungen vom ausgefallenen Switch.
 
 
 

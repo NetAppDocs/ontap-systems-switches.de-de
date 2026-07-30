@@ -2,16 +2,16 @@
 permalink: switch-cisco-3132q-v/install-overview-cisco-3132qv.html 
 sidebar: sidebar 
 keywords: install, Cisco Nexus 3132Q-V 
-summary: Vor der Konfiguration der Cisco Nexus 3132Q-V Switches empfiehlt sich ein Überblick über den Prozess und die Nomenklatur. 
+summary: Mit diesem Workflow werden Cisco Nexus 3132Q-V Cluster Switches in einer ONTAP Umgebung installiert und konfiguriert. 
 ---
-= Installations- und Einrichtungsablauf für Cisco Nexus 3132Q-V Switches
+= Installations- und Einrichtungsworkflow für Cisco Nexus 3132Q-V Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Cisco Nexus 3132Q-V Switches können als Cluster Switches in Ihrem AFF oder FAS Cluster verwendet werden. Cluster Switches ermöglichen den Aufbau von ONTAP Clustern mit mehr als zwei Knoten.
+Mit diesem Workflow lassen sich Cisco Nexus 3132Q-V Cluster Switches in einer ONTAP Umgebung installieren und konfigurieren. Der 3132Q-V unterstützt ONTAP Cluster mit mehr als zwei Knoten.
 
 Die folgenden Arbeitsschritte dienen der Installation und Einrichtung Ihres Cisco Nexus 3132Q-V Switch.
 

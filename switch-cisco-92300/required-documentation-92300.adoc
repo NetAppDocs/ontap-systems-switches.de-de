@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/required-documentation-92300.html 
 sidebar: sidebar 
 keywords: cisco nexus 92300YC 
-summary: Für die Installation und Wartung des Cisco Nexus 92300YC Switches ist es wichtig, alle empfohlene Dokumentation zu überprüfen. 
+summary: Die für die Installation und Wartung der Cisco Nexus 92300YC Cluster Switches erforderliche Dokumentation wird hier aufgeführt. 
 ---
-= Dokumentationsanforderungen für Cisco Nexus 92300YC Switches
+= Überprüfung der Dokumentationsanforderungen für Cisco Nexus 92300YC Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation des Cisco Nexus 92300YC Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
+Die für die Einrichtung von Cisco Nexus 92300YC Cluster Switches und deren Konfiguration in einem ONTAP Cluster erforderliche Dokumentation zu Switch und Controller ist zu prüfen.
 
 
 

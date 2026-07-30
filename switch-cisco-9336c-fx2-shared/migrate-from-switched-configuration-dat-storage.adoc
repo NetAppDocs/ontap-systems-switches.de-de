@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9336c-fx2-shared/migrate-from-switched-configuration-dat-storage.html 
 keywords:  
-summary:  
+summary: Migration von einer Switch-Konfiguration mit direkt angeschlossenem Speicher zu Cisco Nexus 9336C-FX2 Shared Switches durch das Hinzufügen von zwei neuen Shared Switches. 
 ---
-= Migration von einer Switched-Konfiguration mit direkt angeschlossenem Speicher
+= Migration von einer Switch-Konfiguration mit direkt angeschlossenem Speicher zu Cisco Nexus 9336C-FX2 Shared Switches
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-Sie können von einer Switched-Konfiguration mit direkt angeschlossenem Speicher migrieren, indem Sie zwei neue Shared Switches hinzufügen.
+Migration von einer Switch-Konfiguration mit direkt angeschlossenem Speicher zu Cisco Nexus 9336C-FX2 Shared Switches durch das Hinzufügen von zwei neuen Shared Switches.
 
 .Unterstützte Schalter
 Folgende Schalter werden unterstützt:

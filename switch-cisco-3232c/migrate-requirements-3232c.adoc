@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/migrate-requirements-3232c.html 
 sidebar: sidebar 
 keywords: migrate, cn1610 switch, cisco nexus 3232c cluster 
-summary: Beim Austausch von CN1610 Cluster Switches durch Cisco Nexus 3232C Cluster Switches sind bestimmte Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen zu berücksichtigen. 
+summary: Vor dem Austausch von CN1610 Cluster Switches durch Cisco Nexus 3232C Cluster Switches sollten die Migrationsanforderungen geprüft werden. 
 ---
-= Migrationsanforderungen für Cisco Nexus 3232C Cluster Switches
+= Überprüfung der Migrationsanforderungen für Cisco Nexus 3232C Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie auf Cisco Nexus 3232C Cluster Switches migrieren, sollten die Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen geprüft werden.
+Die Konfigurationsinformationen, Portverbindungen und Verkabelungsanforderungen sollten vor dem Austausch der CN1610 Cluster Switches durch Cisco Nexus 3232C Cluster Switches geprüft werden.
 
 
 

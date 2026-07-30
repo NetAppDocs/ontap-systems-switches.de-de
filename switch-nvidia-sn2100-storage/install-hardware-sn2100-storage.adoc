@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/install-hardware-sn2100-storage.html 
 sidebar: sidebar 
 keywords: switches hardware installation 
-summary: Informationen zur Installation der SN2100-Hardware finden Sie in der NVIDIA Dokumentation. 
+summary: Die NVIDIA SN2100 Storage Switch-Hardware wird gemäß der Dokumentation von NVIDIA installiert. 
 ---
-= Installieren Sie die Hardware für den NVIDIA SN2100-Switch.
+= Hardware für den NVIDIA SN2100 Speicherschalter installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die Installation der NVIDIA SN2100 Switch-Hardware ist ein entscheidender erster Schritt beim Aufbau einer zuverlässigen und skalierbaren Netzwerkinfrastruktur zur Unterstützung von Datensicherung, Replikation und Management-Workflows.
+Die NVIDIA SN2100 Storage Switch-Hardware wird gemäß der NVIDIA-Dokumentation installiert. Die Hardwareinstallation ist der erste Schritt vor der Konfiguration des Switches für den Betrieb im Speichernetzwerk.
 
 Befolgen Sie diese Schritte, um Ihre SN2100-Switches einzurichten und zu konfigurieren. Ausführliche Anweisungen finden Sie in der Dokumentation von NVIDIA.
 

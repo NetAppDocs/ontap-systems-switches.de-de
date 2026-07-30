@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/CSHM_snmpv3.html 
 sidebar: sidebar 
 keywords: SNMP,SNMPv3,SNMPv3 setup,BES-53248 Broadcom setup,BES-3248 switches configuration,EFOS 
-summary: SNMPv3 kann mit dem Ethernet-Switch-Integritätsmonitor CSHM verwendet werden. 
+summary: 'SNMPv3 auf dem Broadcom BES-53248 Cluster Switch konfigurieren, um eine sichere Kommunikation mit dem Ethernet Switch Health Monitor (CSHM) zu ermöglichen.' 
 ---
-= SNMPv3 konfigurieren
+= SNMPv3 für den Broadcom BES-53248 Cluster Switch konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Befolgen Sie dieses Verfahren, um SNMPv3 zu konfigurieren, das die Zustandsüberwachung von Ethernet-Switches (CSHM) unterstützt.
+SNMPv3 auf dem Broadcom BES-53248 Cluster Switch konfigurieren, um eine sichere, authentifizierte Kommunikation mit dem Ethernet Switch Health Monitor (CSHM) zu ermöglichen. SNMPv3 bietet verschlüsselte Abfragen des Switch-Status für die Zustandsüberwachung in ONTAP.
 
 .Informationen zu diesem Vorgang
 Die folgenden Befehle konfigurieren einen SNMPv3-Benutzernamen auf Broadcom BES-53248-Switches:

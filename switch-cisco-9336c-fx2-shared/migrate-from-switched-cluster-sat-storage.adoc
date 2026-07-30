@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9336c-fx2-shared/migrate-from-switched-cluster-sat-storage.html 
 keywords:  
-summary:  
+summary: Migration von einem Cluster mit Switches und Switch-attached Storage zu Cisco Nexus 9336C-FX2 Shared Switches durch Wiederverwendung der vorhandenen Storage Switches. 
 ---
-= Migration von einem Switched Cluster mit Switched Attached Storage
+= Migration von einem Cluster mit Switches und Switch-attached Storage zu Cisco Nexus 9336C-FX2 Shared Switches
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-Sie können von einem Switched Cluster mit Switch-gebundenem Speicher migrieren, indem Sie die Storage-Switches wiederverwenden.
+Migration von einem Cluster mit Switches und Switch-attached Storage zu Cisco Nexus 9336C-FX2 Shared Switches durch Wiederverwendung der vorhandenen Storage Switches als Shared Switches.
 
 Durch die Wiederverwendung der Speicherschalter werden die Speicherschalter des HA-Paares 1 zu gemeinsam genutzten Schaltern, wie in der folgenden Abbildung dargestellt.
 

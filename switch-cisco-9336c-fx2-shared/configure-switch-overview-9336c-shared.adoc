@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2-shared/configure-switch-overview-9336c-shared.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Übersicht über Installation und Konfiguration von Cisco Nexus 9336C-FX2 Shared Switches 
+summary: Mit diesem Workflow lässt sich ein Cisco Nexus 9336C-FX2 Shared Switch in einer ONTAP Umgebung installieren und konfigurieren. 
 ---
 = Installations- und Einrichtungsworkflow für gemeinsam genutzte Cisco Nexus 9336C-FX2-Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Übersicht über Installation und Konfiguration von Cisco Nexus 9336C-F
 
 
 [role="lead"]
-Der Cisco Nexus 9336C-FX2 Shared Switch ist Teil der Cisco Nexus 9000 Plattform und kann in einem NetApp Systemschrank installiert werden.  Gemeinsam genutzte Switches ermöglichen es Ihnen, Cluster- und Speicherfunktionen in einer gemeinsamen Switch-Konfiguration zu kombinieren, indem sie die Verwendung gemeinsam genutzter Cluster- und Speicherreferenzkonfigurationsdateien unterstützen.
+Mit diesem Workflow lässt sich ein Cisco Nexus 9336C-FX2 Shared Switch in einer ONTAP Umgebung installieren und konfigurieren. Shared Switches kombinieren Cluster- und Speicherfunktionen mithilfe gemeinsam genutzter Referenzkonfigurationsdateien (RCFs).
 
 Befolgen Sie diese Arbeitsschritte, um Ihre Cisco 9336C-FX2-Switches zu installieren und einzurichten.
 

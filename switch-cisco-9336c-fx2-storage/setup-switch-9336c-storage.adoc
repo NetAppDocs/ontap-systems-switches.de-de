@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2-storage/setup-switch-9336c-storage.html 
 sidebar: sidebar 
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9336c-fx2 
-summary: Falls Sie die erforderlichen Konfigurationsinformationen und Dokumentationen noch nicht besitzen, müssen Sie diese Informationen sammeln, bevor Sie Ihren Cluster und die Management-Netzwerk-Switches einrichten. 
+summary: Die Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches werden für den Betrieb im Storage-Netzwerk konfiguriert. 
 ---
-= Konfigurieren der Speicher-Switches 9336C-FX2 und 9336C-FX2-T
+= Die Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Befolgen Sie dieses Verfahren, um die Cisco Nexus-Switches 9336C-FX2 und 9336C-FX2-T zu konfigurieren.
+Die Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches werden mit Initial Setup-Befehlen für den Betrieb im Storage-Netzwerk vorbereitet.
 
 .Bevor Sie beginnen
 Bitte stellen Sie sicher, dass Sie Folgendes haben:

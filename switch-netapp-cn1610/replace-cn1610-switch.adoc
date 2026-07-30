@@ -2,7 +2,7 @@
 permalink: switch-netapp-cn1610/replace-cn1610-switch.html 
 sidebar: sidebar 
 keywords: replace, netapp cn1610, cluster switch 
-summary: Ein defekter NetApp CN1610 Cluster Switch kann unterbrechungsfrei durch das Ausführen einer bestimmten Abfolge von Aufgaben ersetzt werden. 
+summary: Einen defekten NetApp CN1610 Cluster Switch ersetzen. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
 = Austausch eines NetApp CN1610 Cluster Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Ein defekter NetApp CN1610 Cluster Switch kann unterbrechungsfrei durch
 
 
 [role="lead"]
-Führen Sie die folgenden Schritte aus, um einen defekten NetApp CN1610 Switch in einem Cluster-Netzwerk zu ersetzen. Dies ist ein unterbrechungsfreies Verfahren (NDU).
+Einen defekten NetApp CN1610 Cluster Switch in einem Cluster-Netzwerk ersetzen, ohne den Clusterbetrieb zu unterbrechen. Dieses unterbrechungsfreie Verfahren (NDU) umfasst die Vorbereitung eines Ersatz-Switches und die Migration der Verbindungen vom ausgefallenen Switch.
 
 
 

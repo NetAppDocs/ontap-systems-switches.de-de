@@ -2,16 +2,16 @@
 permalink: switch-cisco-9808/maintain-replace-frus-9808.html 
 sidebar: sidebar 
 keywords: switches, hardware installation, Cisco Nexus, 9808 switches 
-summary: 'Ihr Cisco Nexus 9808 Switch verfügt über austauschbare Einheiten (FRUs), die bei einem Defekt ersetzt werden können.' 
+summary: 'Defekte Feldaustauscheinheiten (FRUs) auf Cisco Nexus 9808 Switches ersetzen.' 
 ---
-= FRUs ersetzen - Cisco Nexus 9808
+= FRUs im Cisco Nexus 9808 Switch austauschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Ihr Cisco Nexus 9808 Switch verfügt über austauschbare Einheiten (FRUs), die bei einem Defekt ersetzt werden können.
+Defekte Feldaustauscheinheiten (FRUs) auf Cisco Nexus 9808 Switches können ersetzt werden, um die Funktionalität des Switches wiederherzustellen, ohne den gesamten Switch austauschen zu müssen.
 
 .Informationen zu diesem Vorgang
 Der Cisco Nexus 9808 Switch verfügt über die folgenden FRUs:

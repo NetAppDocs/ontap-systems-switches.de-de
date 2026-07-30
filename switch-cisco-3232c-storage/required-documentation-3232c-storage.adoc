@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c-storage/required-documentation-3232c-storage.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Für die Installation und Wartung des Cisco Nexus 3232C Switches ist es wichtig, alle empfohlene Dokumentation zu prüfen. 
+summary: Die für die Installation und Wartung der Cisco Nexus 3232C Storage Switches erforderliche Dokumentation ist zu prüfen. 
 ---
-= Dokumentationsanforderungen für Cisco Nexus 3232C Storage Switches
+= Dokumentationsanforderungen für Cisco Nexus 3232C Speicherswitches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation des Cisco Nexus 3232C Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
+Die für die Einrichtung der Cisco Nexus 3232C Storage Switches und deren Konfiguration in einem ONTAP Speichernetzwerk erforderliche Dokumentation zu Switch und Controller ist zu prüfen.
 
 
 

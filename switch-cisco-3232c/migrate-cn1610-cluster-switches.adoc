@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/migrate-cn1610-cluster-switches.html 
 sidebar: sidebar 
 keywords: migrate, cn1610 switch, cisco nexus 3232c cluster 
-summary: Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco Nexus 3232C Cluster Switches zu ersetzen, ist eine bestimmte Abfolge von Aufgaben erforderlich. 
+summary: Migration von NetApp CN1610 Cluster Switches zu Cisco Nexus 3232C Cluster Switches, ohne den Clusterbetrieb zu unterbrechen. 
 ---
-= Migration eines CN1610 Cluster Switch zu einem Cisco Nexus 3232C Cluster Switch
+= Migration von NetApp CN1610 Cluster Switches zu Cisco Nexus 3232C Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die vorhandenen CN1610 Cluster Switches in einem Cluster durch Cisco Nexus 3232C Cluster Switches zu ersetzen, ist eine bestimmte Abfolge von Aufgaben erforderlich.
+Vorhandene NetApp CN1610 Cluster Switches können ohne Unterbrechung des Clusterbetriebs auf Cisco Nexus 3232C Cluster Switches migriert werden.
 
 
 

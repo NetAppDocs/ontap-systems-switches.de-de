@@ -2,16 +2,16 @@
 permalink: switch-cisco-9364d-gx2a/configure-upgrade-rcf-9364d.html 
 sidebar: sidebar 
 keywords: install rcf, cisco switches 
-summary: 'Die Version der Referenzkonfigurationsdatei (RCF) auf den Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware, eine neue ONTAP Version oder eine neue NX-OS Version in der AFX 1K oder AFX 2K Systemkonfiguration zu unterstützen oder anzugleichen.' 
+summary: Die RCF auf Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware, eine neue ONTAP Version oder eine neue NX-OS Version auf AFX 1K oder AFX 2K Systemen zu unterstützen. 
 ---
-= RCF-Version aktualisieren, Cisco Nexus 9364D-GX2A
+= Upgrade der RCF auf dem Cisco Nexus 9364D-GX2A Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die Version der Referenzkonfigurationsdatei (RCF) auf den Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware, eine neue ONTAP Version oder eine neue NX-OS Version in der AFX 1K oder AFX 2K Systemkonfiguration zu unterstützen oder anzugleichen.
+Die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware, eine neue ONTAP Version oder eine neue NX-OS Version auf AFX 1K oder AFX 2K Systemen zu unterstützen.
 
 
 NOTE: Führen Sie kein Upgrade oder Downgrade Ihrer RCF Version auf eine nicht unterstützte Version durch.

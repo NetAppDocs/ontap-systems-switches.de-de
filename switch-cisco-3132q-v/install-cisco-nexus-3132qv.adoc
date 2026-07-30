@@ -2,7 +2,7 @@
 permalink: switch-cisco-3132q-v/install-cisco-nexus-3132qv.html 
 sidebar: sidebar 
 keywords: install, cisco nexus 3132q-v cluster switch, pass-through panel, netapp cabinet 
-summary: Sie können den Cisco Nexus 3132Q-V Switch und das Durchgangspanel in einem NetApp Schrank mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installieren. 
+summary: Ein Cisco Nexus 3132Q-V Cluster Switch und ein Durchgangspanel werden in einem NetApp Schrank mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installiert. 
 ---
 = Installation eines Cisco Nexus 3132Q-V Cluster Switch in einem NetApp Schrank
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie können den Cisco Nexus 3132Q-V Switch und das Durchgangspanel in e
 
 
 [role="lead"]
-Je nach Konfiguration kann es erforderlich sein, den Cisco Nexus 3132Q-V Switch und das Durchgangspanel in einem NetApp Schrank mit den standardmäßigen Halterungen zu installieren, die im Lieferumfang des Switches enthalten sind.
+Ein Cisco Nexus 3132Q-V Cluster Switch und ein Durchgangspanel werden in einem NetApp Schrank mit den im Lieferumfang des Switches enthaltenen Standardhalterungen installiert.
 
 .Bevor Sie beginnen
 * Die erforderlichen Vorbereitungen, der Inhalt des Sets und die Sicherheitsvorkehrungen befinden sich in den  http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/hw/installation/guide/b_n3000_hardware_install_guide.html["Cisco Nexus 3000 Series Hardware-Installationshandbuch"^]. Diese Dokumente sollten vor Beginn des Verfahrens geprüft werden.

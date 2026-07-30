@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/configure-efos-software.html 
 sidebar: sidebar 
 keywords: BES-53248 cluster switches,installing EFOS software 
-summary: Führen Sie diese Schritte aus, um die Ethernet Fabric OS EFOS-Software auf dem BES-53248 Cluster-Switch zu installieren. 
+summary: 'Das Ethernet Fabric OS (EFOS) wird auf dem Broadcom BES-53248 Cluster Switch installiert, um ihn für den Clusterbetrieb vorzubereiten.' 
 ---
-= Installieren Sie die EFOS-Software
+= EFOS Software auf dem Broadcom BES-53248 Cluster Switch installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um die Ethernet Fabric OS (EFOS)-Software auf dem Cluster-Switch BES-53248 zu installieren.
+Das Ethernet Fabric OS (EFOS) wird auf dem Broadcom BES-53248 Cluster Switch installiert, um ihn für den Clusterbetrieb vorzubereiten. EFOS muss installiert sein, bevor der Switch konfiguriert oder die Referenz-Konfigurationsdatei (RCF) installiert wird.
 
 Die EFOS-Software umfasst eine Reihe fortschrittlicher Netzwerkfunktionen und -protokolle zur Entwicklung von Ethernet- und IP-Infrastruktursystemen.  Diese Softwarearchitektur eignet sich für jedes Netzwerkgerät, das Anwendungen nutzt, die eine gründliche Paketprüfung oder -trennung erfordern.
 

@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/replace-switch-reqs.html 
 sidebar: sidebar 
 keywords: replace, replacing, defective, broadcom-supported, bes, cluster, switch, network, nondisruptive, procedure, ndu, replace a broadcom-supported bes-53428 cluster switch - bes-53428 switches 
-summary: 'Der Austausch eines defekten, von Broadcom unterstützten BES-53248 Cluster-Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren (NDU).' 
+summary: Die Bedingungen und Anforderungen, die vor dem Austausch eines Broadcom BES-53248 Cluster Switches erfüllt sein müssen, werden dargestellt. 
 ---
-= Ersatzbedarf
+= Die Anforderungen für den Austausch des Broadcom BES-53248 Cluster Switches werden hier aufgeführt.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie den Schalter austauschen, stellen Sie sicher, dass die folgenden Bedingungen in der aktuellen Umgebung und am Ersatzschalter erfüllt sind.
+Die Bedingungen und Anforderungen, die in der aktuellen Umgebung und auf dem Ersatz-Cluster-Switch Broadcom BES-53248 erfüllt sein müssen, sollten vor Beginn des Austauschvorgangs geprüft werden.
 
 
 

@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/configure-install-initial.html 
 sidebar: sidebar 
 keywords: switches initial setup,initial setup,efos download 
-summary: Mit diesem Verfahren können Sie die Erstinstallation des Cluster-Switches BES-53248 durchführen. 
+summary: Eine Erstkonfiguration des Broadcom BES-53248 Cluster Switches bereitet das System auf die Installation der EFOS Software und die Cluster-Bereitstellung vor. 
 ---
-= Konfigurieren des Cluster-Switches BES-53248
+= Die Broadcom BES-53248 Cluster Switch konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie die folgenden Schritte aus, um die Ersteinrichtung des Cluster-Switches BES-53248 durchzuführen.
+Die Erstkonfiguration des Broadcom BES-53248 Cluster Switch wird durchgeführt, um ihn für die Installation der EFOS Software und die Cluster-Bereitstellung vorzubereiten.
 
 .Bevor Sie beginnen
 * Die Hardware wird wie beschrieben installiert.link:install-hardware-bes53248.html["Installieren Sie die Hardware"] Die

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9808/maintain-reset-switch-9808.html 
 keywords: reset switch factory defaults 
-summary: Ein Cisco Nexus 9808 Switch kann auf die ursprünglichen Werkseinstellungen zurückgesetzt werden, wenn der Switch außer Betrieb genommen wird oder wenn der Switch ausfällt und nicht wiederhergestellt werden kann, sodass eine manuelle Neukonfiguration erforderlich ist. 
+summary: Ein Cisco Nexus 9808 Switch wird auf die Werkseinstellungen zurückgesetzt, wenn er außer Betrieb genommen oder ein Switch wiederhergestellt wird, der nicht konfiguriert werden kann. 
 ---
-= Switch auf Werkseinstellungen zurücksetzen, Cisco Nexus 9808
+= Der Cisco Nexus 9808 Switch wird auf die Werkseinstellungen zurückgesetzt.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Ein Cisco Nexus 9808 Switch kann auf die ursprünglichen Werkseinstellu
 
 
 [role="lead"]
-Ein Cisco Nexus 9808 Switch kann auf die ursprünglichen Werkseinstellungen zurückgesetzt werden, wenn der Switch außer Betrieb genommen wird oder wenn der Switch ausfällt und nicht wiederhergestellt werden kann, sodass eine manuelle Neukonfiguration erforderlich ist.
+Ein Cisco Nexus 9808 Switch wird auf die Werkseinstellungen zurückgesetzt, wenn der Switch außer Betrieb genommen wird oder wenn er ausfällt und nicht durch normale Konfigurationsmethoden wiederhergestellt werden kann.
 
 .Bevor Sie beginnen
 Sie müssen über die serielle Konsole mit dem Switch verbunden sein.

@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/setup-worksheet-92300yc.html 
 sidebar: sidebar 
 keywords: cable worksheet, Cisco NX 92300YC 
-summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt anhand des ausgefüllten Beispiel-Verkabelungsarbeitsblatts ausfüllen. 
+summary: Das Verkabelungsarbeitsblatt für Cisco Nexus 92300YC Cluster Switches dient der Dokumentation von Portverbindungen und unterstützten Plattformkonfigurationen. 
 ---
-= Vollständiges Cisco Nexus 92300YC Verkabelungsarbeitsblatt
+= Das Verkabelungsarbeitsblatt für Cisco Nexus 92300YC ausfüllen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter und füllen Sie das Verkabelungsarbeitsblatt aus.
+Das Verkabelungsarbeitsblatt für Cisco Nexus 92300YC Cluster Switches dient der Dokumentation von Portverbindungen und unterstützten Plattformkonfigurationen.
 
 Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
 

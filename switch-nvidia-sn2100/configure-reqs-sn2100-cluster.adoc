@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100/configure-reqs-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
-summary: Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt alle Anforderungen und die empfohlene Dokumentation beachten. 
+summary: Vor der Installation oder dem Upgrade sind die Konfigurationsanforderungen für NVIDIA SN2100 Cluster Switches zu prüfen. 
 ---
-= Konfigurationsanforderungen für NVIDIA SN2100-Switches
+= Konfigurationsanforderungen für NVIDIA SN2100 Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt alle Konfigurationsanforderungen beachten.
+Vor der Installation oder dem Upgrade sind die Konfigurationsanforderungen für NVIDIA SN2100 Cluster Switches zu prüfen.
 
 
 

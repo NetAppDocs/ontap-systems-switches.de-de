@@ -2,16 +2,16 @@
 permalink: switch-netapp-cn1610/migrate-switched-netapp-cn1610.html 
 sidebar: sidebar 
 keywords: migrate, switchless cluster environment, switched netapp cn1610 
-summary: Wenn Sie bereits eine Cluster ohne Switches Umgebung mit zwei Knoten besitzen, kann zu einer Clusterumgebung mit zwei Knoten und Switches migriert werden, indem CN1610 Cluster-Netzwerk-Switches verwendet werden, was eine Skalierung über zwei Knoten hinaus ermöglicht. 
+summary: Migration von einem Zwei-Knoten Cluster ohne Switches zu einer Clusterumgebung mit Switches unter Verwendung von NetApp CN1610 Cluster Switches. 
 ---
-= Migration von einer Cluster ohne Switches Umgebung zu einer geschalteten NetApp CN1610 Clusterumgebung
+= Migration von einem Cluster ohne Switches zu einer geschalteten NetApp CN1610 Clusterumgebung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie bereits eine Cluster ohne Switches Umgebung mit zwei Knoten besitzen, kann zu einer Clusterumgebung mit zwei Knoten und Switches migriert werden, indem CN1610 Cluster-Netzwerk-Switches verwendet werden, was eine Skalierung über zwei Knoten hinaus ermöglicht.
+Migration von einer Zwei-Knoten Cluster ohne Switches-Umgebung zu einer Clusterumgebung mit Switches unter Verwendung der NetApp CN1610 Cluster Switches. Durch diese Migration kann das Cluster auf mehr als zwei Knoten skaliert werden.
 
 
 

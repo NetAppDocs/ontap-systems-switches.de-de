@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/migrate-from-two-node-switchless-cluster.html 
 sidebar: sidebar 
 keywords: migrate, two-node cluster, switchless, cisco nexus 3232c 
-summary: Wenn Sie über ein Cluster ohne Switches mit zwei Knoten verfügen, ist eine unterbrechungsfreie Migration zu einem Cluster mit Switches und zwei Knoten möglich, das Cisco Nexus 3232C Cluster-Netzwerk-Switches umfasst. 
+summary: Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Cluster mit Switches unter Verwendung von Cisco Nexus 3232C Cluster Switches. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
-= Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Cluster mit Cisco Nexus 3232C Cluster Switches
+= Migration von einem Zwei-Knoten Cluster ohne Switches zu Cisco Nexus 3232C Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie ein Cluster ohne Switches mit zwei Knoten haben, kann auf ein Cluster mit Switches mit zwei Knoten migriert werden, das Cisco Nexus 3232C Cluster Network Switches umfasst. Dies ist ein unterbrechungsfreies Verfahren.
+Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Cluster mit Switches unter Verwendung von Cisco Nexus 3232C Cluster Switches. Dies ist ein unterbrechungsfreies Verfahren.
 
 
 

@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/configure-reqs-bes53248.html 
 sidebar: sidebar 
 keywords: bes, cluster, switch, port, assignment, table, configure, bes-53428 cluster switch port assignments - bes-53428 switches 
-summary: Sie können die Portzuordnungstabelle des BES-53248 Cluster-Switches als Leitfaden für die Konfiguration Ihres Clusters verwenden. 
+summary: Vor der Installation sind die EFOS- und ONTAP-Versionsanforderungen sowie die unterstützten Konfigurationen für den Broadcom BES-53248 Cluster Switch zu prüfen. 
 ---
-= Konfigurationsanforderungen für BES-53248 Cluster-Switches
+= Die Konfigurationsanforderungen für den Broadcom BES-53248 Cluster Switch werden dargestellt.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bei der Installation und Wartung des BES-53248-Switches sollten Sie unbedingt die Support- und Konfigurationsanforderungen für EFOS und ONTAP beachten.
+Vor der Installation oder dem Upgrade sind die EFOS- und ONTAP-Kompatibilitätsanforderungen sowie die Details zur Portkonfiguration für den Broadcom BES-53248 Cluster Switch zu prüfen.
 
 
 

@@ -2,16 +2,16 @@
 permalink: switch-cisco-9808/configure-review-cabling-config-requirements-9808.html 
 sidebar: sidebar 
 keywords: 9808 cabling setup, 9808 switches configuration, nx-os 
-summary: Wenn im Rahmen einer neuen AFX 2K Systeminstallation neue Cisco Nexus 9808 Switches installiert, ein Supervisor-Modul ersetzt oder ein Switch auf die Werkseinstellungen zurückgesetzt wird, sind die folgenden Verkabelungs- und Konfigurationsanforderungen zu berücksichtigen. 
+summary: Die Verkabelungs- und Konfigurationsanforderungen für Cisco Nexus 9808 Switches sollten vor der Installation als Teil eines AFX 2K Systems überprüft werden. 
 ---
-= Überprüfung der Verkabelungs- und Konfigurationsanforderungen, Cisco Nexus 9808
+= Verkabelungs- und Konfigurationsanforderungen für den Cisco Nexus 9808 Switch prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Cisco Nexus 9808 Switches im Rahmen einer neuen AFX 2K Systeminstallation installiert werden, ein Supervisor-Modul ersetzt wird oder ein Switch auf die Werkseinstellungen zurückgesetzt wird, sind die folgenden Verkabelungs- und Konfigurationsanforderungen zu prüfen.
+Die Verkabelungs- und Konfigurationsanforderungen für Cisco Nexus 9808 Switches sollten vor der Installation als Teil eines neuen AFX 2K Systems, dem Austausch eines Supervisor-Moduls oder dem Zurücksetzen eines Switches auf die Werkseinstellungen überprüft werden.
 
 
 

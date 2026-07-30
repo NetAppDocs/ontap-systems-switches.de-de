@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/CSHM_log_collection.html 
 sidebar: sidebar 
 keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation,BES-53248 Broadcom setup,BES-53248 switches configuration,EFOS 
-summary: 'Die Funktion zur Protokollerfassung des Ethernet-Switch-Integritätsmonitors (CSHM) wird verwendet, um Protokolle von Cluster- oder Speichernetzwerk-Switches in ONTAP zu sammeln.' 
+summary: Die Protokollerfassung auf dem Broadcom BES-53248 Cluster Switch wird konfiguriert, damit CSHM Switch-Protokolle für Debugging und AutoSupport-Berichterstellung erfassen kann. 
 ---
-= Protokollerfassung für die Zustandsüberwachung von Ethernet-Switches
+= Konfiguration der Protokollerfassung für den Broadcom BES-53248 Cluster Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Der Ethernet Switch Health Monitor (CSHM) ist dafür zuständig, den Betriebszustand der Cluster- und Speichernetzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln.  Dieses Verfahren führt Sie durch den Prozess der Einrichtung und des Starts der Erfassung detaillierter *Support*-Protokolle vom Switch und startet eine stündliche Erfassung von *periodischen* Daten, die von AutoSupport erfasst werden.
+Die Protokollerfassung auf dem Broadcom BES-53248 Cluster Switch wird so konfiguriert, dass der Ethernet Switch Health Monitor (CSHM) Switch-Protokolle für Debugging und AutoSupport-Berichterstellung erfassen kann. Mit diesem Verfahren werden sowohl die bedarfsgesteuerte Protokollerfassung als auch die stündliche periodische Datenerfassung eingerichtet.
 
 .Bevor Sie beginnen
 * Um die Protokollerfassungsfunktion zu aktivieren, müssen Sie ONTAP Version 9.10.1P15, 9.11.1P12 oder 9.12.1 oder höher und EFOS 3.8.0.2 oder höher verwenden.

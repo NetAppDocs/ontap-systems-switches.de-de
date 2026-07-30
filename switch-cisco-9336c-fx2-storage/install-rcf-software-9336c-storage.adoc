@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2-storage/install-rcf-software-9336c-storage.html 
 sidebar: sidebar 
 keywords: install rcf, cisco switches, storage 
-summary: Sie können die RCF-Datei installieren, nachdem Sie den Speicherswitch Nexus 9336C-FX2 zum ersten Mal eingerichtet haben. Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. 
+summary: 'Die Referenzkonfigurationsdatei (RCF) wird nach der Ersteinrichtung auf den Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches installiert, um Portzuweisungen und Netzwerkeinstellungen zu konfigurieren.' 
 ---
-= Installieren Sie die Referenzkonfigurationsdatei
+= RCF auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie installieren die Referenzkonfigurationsdatei (RCF), nachdem Sie die Speicher-Switches Nexus 9336C-FX2 und 9336C-FX2-T zum ersten Mal eingerichtet haben.
+Die Referenzkonfigurationsdatei (RCF) ist nach der Ersteinrichtung auf den Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches zu installieren. Die RCF definiert die für den Betrieb des Speichernetzwerks erforderlichen Portzuweisungen und Netzwerkeinstellungen.
 
 Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] bei der Installation Ihres RCF.
 

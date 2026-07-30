@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9808/install-prepare-9808.html 
 keywords: shared storage cluster switch 
-summary: Vor der Installation von Cisco Nexus 9808 Switches als Teil einer neuen AFX 2K Systeminstallation empfiehlt es sich, sich mit Aspekten des Switches und seiner Installation vertraut zu machen, indem die entsprechende Cisco Switch-Dokumentation und ONTAP Systemdokumentation geprüft, die unterstützten RCF-Versionen für AFX Systeme verstanden und die Nutzung von Smart Call Home in Erwägung gezogen werden. 
+summary: Die Installation von Cisco Nexus 9808 Switches als Teil eines neuen AFX 2K Systems wird vorbereitet, indem die Switch-Dokumentation, die unterstützten RCF-Versionen und die Smart Call Home Anforderungen geprüft werden. 
 ---
-= Vorbereitung auf die Installation der Switches – Cisco Nexus 9808
+= Vorbereitung der Installation von Cisco Nexus 9808 Switches in einem AFX System
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Vor der Installation von Cisco Nexus 9808 Switches als Teil einer neuen
 
 
 [role="lead"]
-Vor der Installation von Cisco Nexus 9808 Switches als Teil einer neuen AFX 2K Systeminstallation empfiehlt es sich, sich mit Aspekten des Switches und seiner Installation vertraut zu machen, indem die entsprechende Cisco Switch-Dokumentation und ONTAP Systems-Dokumentation geprüft, die unterstützten Versionen der Referenz-Konfigurationsdatei (RCF) für AFX Systeme verstanden und die Nutzung von Smart Call Home in Erwägung gezogen werden.
+Die Installation von Cisco Nexus 9808 Switches als Teil eines neuen AFX 2K Systems wird vorbereitet, indem die entsprechende Cisco Switch-Dokumentation geprüft, unterstützte RCF-Versionen berücksichtigt und die Smart Call Home Konfiguration in Erwägung gezogen werden.
 
 
 

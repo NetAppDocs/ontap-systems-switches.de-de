@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/install-cumulus-mode-sn2100-storage.html 
 sidebar: sidebar 
 keywords: install cumulus mode, sn2100 SN2100 switches setup, cumulus linux, cumulus mode 
-summary: Cumulus Linux CL OS kann entweder installiert werden, wenn auf dem Switch Cumulus Linux oder ONIE läuft. 
+summary: Cumulus Linux wird auf NVIDIA SN2100 Speicherswitches installiert, wenn der Switch im Cumulus-Modus betrieben wird. 
 ---
-= Installieren Sie Cumulus Linux im Cumulus-Modus
+= Cumulus Linux im Cumulus-Modus auf NVIDIA SN2100 Speicherschaltern installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um Cumulus Linux (CL) OS zu installieren, wenn der Switch im Cumulus-Modus läuft.
+Cumulus Linux (CL) auf NVIDIA SN2100 Speicherswitches installieren, wenn der Switch im Cumulus-Modus betrieben wird.
 
 
 NOTE: Cumulus Linux (CL) OS kann entweder installiert werden, wenn der Switch Cumulus Linux oder ONIE ausführt (siehe link:install-onie-mode-sn2100-storage.html["Installation im ONIE-Modus"]).

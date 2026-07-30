@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c-storage/replace-storage-switch.html 
 sidebar: sidebar 
 keywords: replace, cisco nexus, 3232c storage switch 
-summary: Ein defekter Cisco Nexus 3232C Storage Switch kann unterbrechungsfrei durch das Ausführen einer bestimmten Abfolge von Aufgaben ersetzt werden. 
+summary: Einen defekten Cisco Nexus 3232C Storage Switch ersetzen. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
 = Austausch eines Cisco Nexus 3232C Storage Switch
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Ein defekter Cisco Nexus 3232C Storage Switch kann unterbrechungsfrei d
 
 
 [role="lead"]
-Führen Sie die folgenden Schritte aus, um einen defekten Cisco Nexus 3232C Storage Switch auszutauschen. Dies ist ein unterbrechungsfreier Vorgang.
+Ein defekter Cisco Nexus 3232C Storage Switch kann ersetzt werden, ohne den Betrieb des Speichernetzwerks zu unterbrechen. Dieses unterbrechungsfreie Verfahren umfasst die Vorbereitung eines Ersatzswitches und die Wiederherstellung der Speichernetzwerkkonfiguration.
 
 
 

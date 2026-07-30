@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/install-rcf-3232c.html 
 sidebar: sidebar 
 keywords: install, rcf 
-summary: Die RCF kann nach der erstmaligen Einrichtung des Nexus 3232C Switch installiert werden. Mit diesem Verfahren ist auch ein Upgrade der RCF-Version möglich. 
+summary: 'Die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 3232C Cluster Switches installieren oder aktualisieren.' 
 ---
-= Die Referenzkonfigurationsdatei (RCF) installieren oder aktualisieren
+= RCF auf Cisco Nexus 3232C Cluster Switches installieren oder aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Das folgende Verfahren beschreibt die Installation der RCF nach der erstmaligen Einrichtung des Nexus 3232C Switch.
+Die Referenz-Konfigurationsdatei (RCF) wird nach der Ersteinrichtung auf Cisco Nexus 3232C Cluster Switches installiert oder auf eine neuere RCF-Version aktualisiert, sobald diese verfügbar ist.
 
 Sie können dieses Verfahren auch verwenden, um Ihre RCF-Version zu aktualisieren. Weitere Informationen finden Sie im Knowledge Base Artikel link:https://kb.netapp.com/onprem/Switches/Cisco/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["Wie man die Konfiguration eines Cisco Interconnect-Switches löscht und gleichzeitig die Remote-Konnektivität beibehält"^] beim Upgrade Ihrer RCF.
 

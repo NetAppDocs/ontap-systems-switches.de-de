@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/configure-sn2100-storage.html 
 sidebar: sidebar 
 keywords: switches hardware installation 
-summary: Informationen zur Installation der NVIDIA SN2100 Hardware sind in der Dokumentation von NVIDIA zu finden. 
+summary: Der NVIDIA SN2100 Speicherswitch wird entsprechend der Dokumentation von NVIDIA konfiguriert. 
 ---
-= Konfigurieren Sie den NVIDIA SN2100-Switch
+= Den NVIDIA SN2100 Speicherschalter konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Informationen zur Konfiguration des SN2100-Switches finden Sie in der Dokumentation von NVIDIA.
+Der NVIDIA SN2100 Speicherswitch wird entsprechend der Dokumentation von NVIDIA konfiguriert.
 
 .Schritte
 . Überprüfen Sie dielink:configure-reqs-sn2100-storage.html["Konfigurationsanforderungen"] Die

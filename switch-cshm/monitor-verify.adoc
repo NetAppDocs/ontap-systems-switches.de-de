@@ -2,9 +2,9 @@
 permalink: switch-cshm/monitor-verify.html 
 sidebar: sidebar 
 keywords: verify, monitor, cluster, management, network, switches, heath, monitor 
-summary: Erfahren Sie, wie Sie überprüfen können, ob die Überwachung eines Ethernet-Switches funktioniert. 
+summary: Es sollte sichergestellt sein, dass die Zustandsüberwachung der Ethernet-Switches ordnungsgemäß konfiguriert ist und funktioniert. 
 ---
-= Überprüfen Sie die Überwachung der Ethernet-Switches.
+= Die Konfiguration des Ethernet-Switch-Integritätsmonitors überprüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

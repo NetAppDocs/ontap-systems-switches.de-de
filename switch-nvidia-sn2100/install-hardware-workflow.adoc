@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100/install-hardware-workflow.html 
 sidebar: sidebar 
 keywords: switches, initial installation, configure switch-nvidia-sn2100 switch 
-summary: Lesen Sie vor der Konfiguration von NVIDIA SN2100-Cluster-Switches die Konfigurationsübersicht. 
+summary: Mit diesem Workflow wird die Hardware für NVIDIA SN2100 Cluster Switches installiert. 
 ---
-= Workflow zur Hardwareinstallation für NVIDIA SN2100-Switches
+= Arbeitsablauf für die Hardwareinstallation von NVIDIA SN2100 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um die Hardware für einen SN2100-Cluster-Switch zu installieren und zu konfigurieren, gehen Sie wie folgt vor:
+Mit diesem Workflow lässt sich die Hardware für NVIDIA SN2100 Cluster Switches installieren und konfigurieren.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:install-hardware-sn2100-cluster.html["Installieren Sie die Hardware"]
 [role="quick-margin-para"]

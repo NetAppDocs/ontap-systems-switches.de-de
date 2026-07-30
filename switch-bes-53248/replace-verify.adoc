@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/replace-verify.html 
 sidebar: sidebar 
 keywords: command, verify, operational, bes, cluster, switch, upgrade, verify the configuration after a cluster switch upgrade - bes-53428 switches 
-summary: Mit den hier bereitgestellten Befehlen können Sie überprüfen, ob nach einem Upgrade des BES-53248 Cluster-Switches alles betriebsbereit ist. 
+summary: Die Integrität des ONTAP Clusternetzwerks nach dem Upgrade der EFOS Software oder des RCF auf dem Broadcom BES-53248 Cluster Switch überprüfen. 
 ---
-= Überprüfen Sie das ONTAP Clusternetzwerk nach einem EFOS-Software- oder RCF-Upgrade der BES-53248-Cluster-Switches.
+= Das ONTAP Clusternetzwerk nach dem Upgrade der EFOS Software oder des RCF auf dem Broadcom BES-53248 Cluster Switch überprüfen.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Mit den folgenden Befehlen können Sie den Zustand des ONTAP -Clusternetzwerks nach einem Upgrade der EFOS-Software oder des RCF für BES-53248-Cluster-Switches überprüfen.
+Die Integrität des ONTAP Cluster-Netzwerks nach dem Upgrade der EFOS Software oder der Referenz-Konfigurationsdatei (RCF) auf dem Broadcom BES-53248 Cluster Switch überprüfen.
 
 .Schritte
 . Informationen zu den Netzwerkports des Clusters können mit folgendem Befehl angezeigt werden:

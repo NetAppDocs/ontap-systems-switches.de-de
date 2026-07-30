@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/components-bes53248.html 
 sidebar: sidebar 
 keywords: cluster-mode,supported versions,switches supported,cluster network,efos 
-summary: Für die Installation und Wartung des Schalters BES-53248 sollten Sie unbedingt die Liste der Komponenten und Teilenummern überprüfen. 
+summary: Die Komponenten und Teilenummern für den Broadcom BES-53248 Cluster Switch zur Unterstützung der Hardwareinstallation und der laufenden Wartung werden identifiziert. 
 ---
-= Komponenten und Teilenummern für BES-53248 Cluster-Schalter
+= Informationen zu Komponenten und Teilenummern des Broadcom BES-53248 Cluster Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung des Schalters BES-53248 sollten Sie unbedingt die Liste der Komponenten und Teilenummern überprüfen.
+Die Komponenten und Teilenummern für den Broadcom BES-53248 Cluster Switch zur Unterstützung der Hardwareinstallation und der laufenden Wartung werden identifiziert.
 
 Die folgende Tabelle listet die Teilenummer, die Beschreibung und die minimalen EFOS- und ONTAP Versionen für die Cluster-Switch-Komponenten BES-53248 auf, einschließlich Details zum Rack-Montage-Schienensatz.
 

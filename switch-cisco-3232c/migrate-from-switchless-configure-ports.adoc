@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c/migrate-from-switchless-configure-ports.html 
 sidebar: sidebar 
 keywords: cisco 3232c, cluster switches 
-summary: Cisco Nexus 3232C Switches können als Cluster Switches in einem AFF oder FAS Cluster eingesetzt werden. 
+summary: Ports für die Migration von einem Zwei-Knoten Cluster ohne Switches zu Cisco Nexus 3232C Cluster Switches konfigurieren. 
 ---
-= Ports für die Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Zwei-Knoten Cluster mit Switches konfigurieren
+= Ports für die Migration von einem Zwei-Knoten Cluster ohne Switches zu Cisco Nexus 3232C Cluster Switches konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die folgenden Schritte beschreiben die Konfiguration der Ports für die Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Zwei-Knoten Cluster mit Switches auf Nexus 3232C Switches.
+Ports für die Migration von einem Zwei-Knoten Cluster ohne Switches zu einem Zwei-Knoten Cluster mit Switches unter Verwendung von Cisco Nexus 3232C Cluster Switches konfigurieren.
 
 .Schritte
 . Die LIFs n1_clus1 und n2_clus1 werden auf die physischen Ports ihrer Zielknoten migriert:

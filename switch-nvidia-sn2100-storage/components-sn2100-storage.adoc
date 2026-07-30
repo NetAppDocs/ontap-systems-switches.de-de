@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/components-sn2100-storage.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
-summary: Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt die Liste der Komponenten und die Teilenummern für das Gehäuse und das Schienenset überprüfen. 
+summary: Die Komponenten und Teilenummern für NVIDIA SN2100 Speicherswitches zur Unterstützung der Hardwareinstallation und der laufenden Wartung identifizieren. 
 ---
-= Komponenten und Teilenummern für NVIDIA SN2100-Schalter
+= Komponenten und Teilenummern für NVIDIA SN2100 Speicherschalter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt die Liste der Komponenten und die Teilenummern für das Gehäuse und das Schienenset überprüfen.
+Die Komponenten und Teilenummern für NVIDIA SN2100 Speicherswitches zur Unterstützung der Hardwareinstallation und der laufenden Wartung identifizieren.
 
 
 

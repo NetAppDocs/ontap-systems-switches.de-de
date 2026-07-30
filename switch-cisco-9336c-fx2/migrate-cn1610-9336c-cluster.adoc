@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2/migrate-cn1610-9336c-cluster.html 
 sidebar: sidebar 
 keywords: migrate cluster Cisco Nexus 9336C-FX2 cluster switches cn1610 
-summary: Sie können NetApp CN1610 Cluster-Switches für einen ONTAP Cluster unterbrechungsfrei auf Cisco Nexus 9336C-FX2 Cluster-Netzwerk-Switches migrieren. 
+summary: Migration von NetApp CN1610 Cluster Switches auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches, ohne den Clusterbetrieb zu unterbrechen. 
 ---
-= Migrieren Sie von NetApp CN1610-Cluster-Switches zu Cisco 9336C-FX2- und 9336C-FX2-T-Cluster-Switches
+= Migration von NetApp CN1610 Cluster Switches zu Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können NetApp CN1610-Cluster-Switches für einen ONTAP Cluster auf Cisco 9336C-FX2- und 9336C-FX2-T-Cluster-Switches migrieren. Dies ist ein unterbrechungsfreies Verfahren.
+Vorhandene NetApp CN1610 Cluster Switches können auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches migriert werden, ohne den Clusterbetrieb zu unterbrechen.
 
 
 

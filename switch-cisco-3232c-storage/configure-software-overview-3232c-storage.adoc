@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c-storage/configure-software-overview-3232c-storage.html 
 sidebar: sidebar 
 keywords: switches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Übersicht der Softwarekonfiguration für Cisco Nexus 3232C Storage Switches 
+summary: Mit diesem Workflow werden die NX-OS Software und die RCF auf Cisco Nexus 3232C Storage Switches installiert. 
 ---
-= Software-Installations-Workflow für Cisco Nexus 3232C Storage Switches
+= Softwareinstallations-Workflow für Cisco Nexus 3232C Speicherswitches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Zur Installation und Konfiguration der Software für einen Cisco Nexus 3232C Switch sowie zur Installation oder Aktualisierung der Referenzkonfigurationsdatei (RCF) sind die folgenden Schritte auszuführen:
+Mit diesem Workflow werden die NX-OS Software und die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 3232C Storage Switches installiert.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch-3232c-storage.html["Konfigurieren Sie den Schalter"]
 [role="quick-margin-para"]

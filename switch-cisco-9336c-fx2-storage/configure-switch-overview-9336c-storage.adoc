@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2-storage/configure-switch-overview-9336c-storage.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Übersicht über Installation und Konfiguration der Cisco Nexus 9336C-FX2 Speicherswitches 
+summary: Mit diesem Workflow lassen sich Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches in einer ONTAP Umgebung installieren und konfigurieren. 
 ---
-= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2 9336C-FX2-T-Speicherswitches
+= Installations- und Einrichtungsworkflow für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die Cisco Nexus 9336C-FX2 und 9336C-FX2-T Switches sind Teil der Cisco Nexus 9000 Plattform und können in einem NetApp Systemschrank installiert werden.
+Mit diesem Workflow lassen sich Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches in einer ONTAP Umgebung installieren und konfigurieren. Diese Switches sind Teil der Cisco Nexus 9000 Plattform und unterstützen die Speichernetzwerkanbindung für ONTAP Systeme.
 
 Cisco Nexus 9336C-FX2 (36 Ports) ist ein Cluster-/Speicher-/Daten-Switch mit hoher Portdichte. Cisco Nexus 9336C-FX2-T (12 Ports) ist ein Hochleistungs-Switch mit geringer Portdichte, der 10/25/40/100GbE-Konfigurationen unterstützt.
 

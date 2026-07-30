@@ -2,16 +2,16 @@
 permalink: switch-cisco-3132q-v/smart-call-home-3132q.html 
 sidebar: sidebar 
 keywords: Cisco, 3132Q-V 
-summary: Für die Nutzung der Funktion „Smart Call Home“ gelten die folgenden Richtlinien. 
+summary: Die Anforderungen und Konfigurationsoptionen für Smart Call Home bei Cisco Nexus 3132Q-V Cluster Switches werden dargestellt. 
 ---
-= Anforderungen für Smart Call Home
+= Anforderungen für Smart Call Home für Cisco Nexus 3132Q-V Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um Smart Call Home zu verwenden, müssen Sie einen Cluster-Netzwerk-Switch für die Kommunikation per E-Mail mit dem Smart Call Home-System konfigurieren. Darüber hinaus können Sie Ihren Cluster-Netzwerk-Switch optional so einrichten, dass er die integrierte Smart Call Home-Supportfunktion von Cisco nutzt.
+Die Anforderungen für die Konfiguration von Smart Call Home auf Cisco Nexus 3132Q-V Cluster Switches zur Aktivierung automatischer E-Mail-Benachrichtigungen bei kritischen Systemereignissen werden dargestellt.
 
 Cisco Smart Call Home überwacht die Hardware- und Softwarekomponenten Ihres Netzwerks. Bei einer kritischen Systemkonfiguration wird eine E-Mail-Benachrichtigung generiert und alle Empfänger, die in Ihrem Zielprofil konfiguriert sind, werden benachrichtigt.
 

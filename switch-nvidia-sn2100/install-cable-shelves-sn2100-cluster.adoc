@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100/install-cable-shelves-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: sn2100 cabling setup, msn2100 sn2100 switches configuration, cumulus linux 
-summary: Falls Sie ein System haben, in dem die NS224-Laufwerksschächte als Switch-Attached Storage und nicht als Direct-Attached Storage verkabelt werden müssen, verwenden Sie die hier bereitgestellten Informationen. 
+summary: NS224-Laufwerksschächte als Switch-gebundener Speicher mit NVIDIA SN2100 Cluster Switches verkabeln, wenn kein direkt angeschlossener Speicher verwendet wird. 
 ---
-= Verkabeln Sie die NS224-Regale als schaltergebundene Aufbewahrungslösung.
+= NS224-Laufwerksschächte als Switch-gebundener Speicher für NVIDIA SN2100 Cluster Switches verkabeln
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Falls Sie ein System haben, in dem die NS224-Laufwerksschächte als Switch-Attached Storage (nicht als Direct-Attached Storage) verkabelt werden müssen, verwenden Sie die hier bereitgestellten Informationen.
+NS224-Laufwerksschächte als Switch-gebundener Speicher mit NVIDIA SN2100 Cluster Switches verkabeln, wenn direkt angeschlossener Speicher für Ihre Konfiguration nicht geeignet ist.
 
 * Kabel NS224 treibt Regale über Speicherschalter an:
 +

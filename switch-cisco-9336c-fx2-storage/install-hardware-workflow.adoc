@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2-storage/install-hardware-workflow.html 
 sidebar: sidebar 
 keywords: witches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Lesen Sie vor der Konfiguration der Cisco Nexus 9336C-FX2-Cluster-Switches die Konfigurationsübersicht. 
+summary: Dieser Workflow beschreibt die Installation der Hardware für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches. 
 ---
-= Workflow zur Hardwareinstallation für die Speicherswitches Cisco Nexus 9336C-FX2 und 9336C-FX2-T
+= Hardware-Installationsablauf für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um die Hardware für die Speicher-Switches 9336C-FX2 und 9336C-FX2-T zu installieren und zu konfigurieren:
+Mit diesem Workflow lässt sich die Hardware für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches installieren und konfigurieren.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-worksheet-9336c-storage.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
 [role="quick-margin-para"]

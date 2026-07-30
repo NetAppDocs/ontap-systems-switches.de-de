@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/upgrade-efos-software.html 
 sidebar: sidebar 
 keywords: BES-53248 cluster switches,upgrading EFOS software 
-summary: Führen Sie diese Schritte aus, um die Ethernet Fabric OS EFOS Software auf dem BES-53248 Cluster-Switch zu aktualisieren. 
+summary: 'Die Ethernet Fabric OS (EFOS) Software auf dem Broadcom BES-53248 Cluster Switch wird aktualisiert, um die Kompatibilität mit ONTAP aufrechtzuerhalten.' 
 ---
-= Aktualisieren Sie die EFOS-Software
+= EFOS-Software auf dem Broadcom BES-53248 Cluster Switch aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Führen Sie diese Schritte aus, um die EFOS-Software auf dem Cluster-Switch BES-53248 zu aktualisieren.
+Die Ethernet Fabric OS (EFOS) Software auf dem Broadcom BES-53248 Cluster Switch wird aktualisiert, um die Kompatibilität mit ONTAP zu erhalten und Zugriff auf die neuesten Switch-Funktionen sowie Fehlerbehebungen zu ermöglichen.
 
 Die EFOS-Software umfasst eine Reihe fortschrittlicher Netzwerkfunktionen und -protokolle zur Entwicklung von Ethernet- und IP-Infrastruktursystemen.  Diese Softwarearchitektur eignet sich für jedes Netzwerkgerät, das Anwendungen nutzt, die eine gründliche Paketprüfung oder -trennung erfordern.
 

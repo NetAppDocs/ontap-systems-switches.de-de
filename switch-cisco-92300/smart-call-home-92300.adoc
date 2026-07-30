@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/smart-call-home-92300.html 
 sidebar: sidebar 
 keywords: cisco nexus 92300YC 
-summary: Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind. 
+summary: Die Anforderungen und Konfigurationsoptionen für Smart Call Home bei Cisco Nexus 92300YC Cluster Switches werden dargestellt. 
 ---
-= Anforderungen für Smart Call Home
+= Smart Call Home Anforderungen für Cisco Nexus 92300YC Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Um Smart Call Home zu verwenden, müssen Sie einen Cluster-Netzwerk-Switch für die Kommunikation per E-Mail mit dem Smart Call Home-System konfigurieren. Darüber hinaus können Sie Ihren Cluster-Netzwerk-Switch optional so einrichten, dass er die integrierte Smart Call Home-Supportfunktion von Cisco nutzt.
+Die Anforderungen für die Konfiguration von Smart Call Home auf Cisco Nexus 92300YC Cluster Switches im Hinblick auf die Aktivierung automatischer E-Mail-Benachrichtigungen für kritische Systemereignisse werden dargestellt.
 
 Cisco Smart Call Home überwacht die Hardware- und Softwarekomponenten Ihres Netzwerks. Bei einer kritischen Systemkonfiguration wird eine E-Mail-Benachrichtigung generiert und alle Empfänger, die in Ihrem Zielprofil konfiguriert sind, werden benachrichtigt.
 

@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/configure-new-switch-overview.html 
 sidebar: sidebar 
 keywords: BES-53248 switches, initial installation, configure new bes-53248 switch 
-summary: Bevor Sie die Cluster-Switches vom Typ BES-53248 konfigurieren, lesen Sie bitte die Konfigurationsübersicht. 
+summary: Mit diesem Arbeitsablauf wird ein neuer Broadcom BES-53248 Cluster Switch installiert und konfiguriert, von der Überprüfung der Anforderungen bis zur Hardware- und Softwareeinrichtung. 
 ---
-= Installations- und Einrichtungsablauf für BES-53248-Switches
+= Installations- und Einrichtungsablauf für den Broadcom BES-53248 Cluster Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Der BES-53248 ist ein Bare-Metal-Switch, der für den Einsatz in ONTAP Clustern mit zwei bis 24 Knoten konzipiert ist.
+Mit diesem Workflow lässt sich ein neuer Broadcom BES-53248 Cluster Switch in einer ONTAP Umgebung installieren und konfigurieren. Der BES-53248 ist ein Bare Metal Switch, der ONTAP Cluster mit zwei bis 24 Knoten unterstützt.
 
 Befolgen Sie diese Arbeitsschritte, um Ihre BES-53248-Switches zu installieren und einzurichten.
 

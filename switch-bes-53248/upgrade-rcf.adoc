@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/upgrade-rcf.html 
 sidebar: sidebar 
 keywords: upgrade rcf,setup rcf,rcf file 
-summary: Sie können das RCF nach der Konfiguration des BES-53248 Netzwerk-Switches und nach Anwendung aller neuen Lizenzen aktualisieren. 
+summary: 'Die Referenz-Konfigurationsdatei (RCF) auf dem Broadcom BES-53248 Cluster Switch wird nach dem Upgrade der EFOS Software aktualisiert.' 
 ---
-= Aktualisieren Sie die RCF-Version
+= Das RCF auf dem Broadcom BES-53248 Cluster Switch aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können das RCF nach dem Upgrade des BES-53248 Cluster-Switch EFOS und nach dem Anwenden aller neuen Lizenzen aktualisieren.
+Die Referenz-Konfigurationsdatei (RCF) auf dem Broadcom BES-53248 Cluster Switch wird nach dem Upgrade der EFOS-Software und dem Anwenden aller erforderlichen Lizenzen aktualisiert.
 
 .Bevor Sie beginnen
 Bitte stellen Sie sicher, dass Sie Folgendes haben:

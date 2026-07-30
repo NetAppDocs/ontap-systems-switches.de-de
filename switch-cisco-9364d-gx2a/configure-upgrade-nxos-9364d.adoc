@@ -2,16 +2,16 @@
 permalink: switch-cisco-9364d-gx2a/configure-upgrade-nxos-9364d.html 
 sidebar: sidebar 
 keywords: procedure, install, nx-os, software, nexus, cluster, switch, install the nx-os software - cisco nexus 9364d-gx2a 
-summary: Das NX-OS auf den Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware oder eine neue ONTAP Version auf dem AFX 1K oder AFX 2K System zu unterstützen. 
+summary: Das NX-OS auf Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware oder eine neue ONTAP Version auf AFX 1K oder AFX 2K Systemen zu unterstützen. 
 ---
-= Upgrade des NX-OS Cisco Nexus 9364D-GX2A
+= NX-OS auf dem Cisco Nexus 9364D-GX2A Switch aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Das NX-OS auf den Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware oder eine neue ONTAP Version auf dem AFX 1K oder AFX 2K System zu unterstützen.
+Das NX-OS auf Cisco Nexus 9364D-GX2A Switches wird aktualisiert, um neue Hardware oder eine neue ONTAP Version auf AFX 1K oder AFX 2K Systemen zu unterstützen.
 
 
 NOTE: NetApp empfiehlt, zunächst ein ONTAP Software-Upgrade abzuschließen und anschließend das Software-Upgrade für Ihre Switches durchzuführen.

@@ -2,16 +2,16 @@
 permalink: switch-cisco-3132q-v/configure-software-overview-3132q-v-cluster.html 
 sidebar: sidebar 
 keywords: switches, initial installation, configure switch-cisco-3132q-v switch 
-summary: Übersicht der Softwarekonfiguration für Cisco Nexus 3132Q-V Cluster Switches 
+summary: Mit diesem Workflow werden die NX-OS Software und das RCF auf Cisco Nexus 3132Q-V Cluster Switches installiert. 
 ---
-= Workflow für die Softwareinstallation von Cisco Nexus 3132Q-V Cluster Switches
+= Workflow für die Softwareinstallation für Cisco Nexus 3132Q-V Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Zur Installation und Konfiguration der Software für einen Cisco Nexus 3132Q-V Switch sowie zur Installation oder Aktualisierung der Reference Configuration File (RCF) sind die folgenden Schritte auszuführen:
+Mit diesem Workflow werden die NX-OS Software und die Referenz-Konfigurationsdatei (RCF) auf Cisco Nexus 3132Q-V Cluster Switches installiert.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-switch.html["Konfigurieren Sie den Schalter"]
 [role="quick-margin-para"]

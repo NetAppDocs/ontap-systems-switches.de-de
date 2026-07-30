@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/migrate-to-2n-switched.html 
 sidebar: sidebar 
 keywords: 2-node switched Cisco 92300YC cluster switch migration 
-summary: Wenn Sie bereits eine Cluster ohne Switches Umgebung mit zwei Knoten besitzen, ist eine Migration zu einer Clusterumgebung mit zwei Knoten und Switches mithilfe von Cisco Nexus 92300YC Switches möglich, sodass eine Skalierung über zwei Knoten im Cluster hinaus ermöglicht wird. 
+summary: Eine bestehende Zwei-Knoten Cluster ohne Switches kann in eine Clusterumgebung mit Switches unter Verwendung von Cisco Nexus 92300YC Cluster Switches migriert werden. 
 ---
-= Migration zu einem Cluster mit zwei Knoten und einem Cisco Nexus 92300YC Switch mit Switch
+= Migration zu einem Zwei-Knoten Cluster mit Cisco Nexus 92300YC Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn bereits eine Clusterumgebung ohne Switches mit zwei Knoten vorhanden ist, kann eine Migration zu einer Clusterumgebung mit Switches und zwei Knoten mithilfe von Cisco Nexus 92300YC Switches erfolgen, sodass eine Skalierung über zwei Knoten im Cluster hinaus möglich ist.
+Ein bestehender Zwei-Knoten Cluster ohne Switches kann in eine Clusterumgebung mit Switches unter Verwendung von Cisco Nexus 92300YC Cluster Switches migriert werden. Diese unterbrechungsfreie Migration ermöglicht eine Skalierung des Clusters über zwei Knoten hinaus.
 
 Die Vorgehensweise hängt davon ab, ob jeder Controller über zwei dedizierte Cluster-Netzwerk-Ports oder nur einen einzelnen Cluster-Port verfügt. Das beschriebene Verfahren funktioniert für alle Knoten mit optischen oder Twinax-Ports, wird jedoch auf diesem Switch nicht unterstützt, wenn die Knoten Onboard-10GbBASE-T-RJ45-Ports für die Cluster-Netzwerk-Ports verwenden.
 

@@ -1,15 +1,15 @@
 ---
 permalink: switch-nvidia-sn2100/reset-switch-sn2100.html 
 sidebar: sidebar 
-keywords: SN2100 reset switch to factory defaults, SN2100 switches configuration, efos 
-summary: Lesen Sie die folgenden Informationen, bevor Sie Ihren Cisco Nexus SN2100-Switch konfigurieren. 
+keywords: SN2100 reset switch to factory defaults, SN2100 switches configuration, cumulus linux 
+summary: Setzen Sie den NVIDIA SN2100 Cluster Switch auf die Werkseinstellungen zurück, indem die aktuelle Switch-Konfiguration gelöscht wird. 
 ---
-= Setzen Sie den SN2100-Cluster-Switch auf die Werkseinstellungen zurück
+= Den NVIDIA SN2100 Cluster Switch auf die Werkseinstellungen zurücksetzen
 :allow-uri-read: 
 
 
 [role="lead"]
-So setzen Sie den SN2100-Cluster-Switch auf die Werkseinstellungen zurück:
+Der NVIDIA SN2100 Cluster Switch wird auf die Werkseinstellungen zurückgesetzt, indem die aktuelle Switch-Konfiguration gelöscht und der Switch auf seine ursprünglichen Einstellungen zurückgesetzt wird.
 
 * Für Cumulus Linux 5.10 und früher wenden Sie das Cumulus-Image an.
 * Für Cumulus Linux 5.11 und höher verwenden Sie die `nv action reset system factory-default` Befehl.

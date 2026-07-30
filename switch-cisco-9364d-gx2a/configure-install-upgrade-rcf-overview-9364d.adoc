@@ -2,19 +2,19 @@
 permalink: switch-cisco-9364d-gx2a/configure-install-upgrade-rcf-overview-9364d.html 
 sidebar: sidebar 
 keywords: install, upgrade, cluster, switch, cisco 9364d-gx2a 
-summary: 'Sie können die Referenzkonfigurationsdatei (RCF) auf Ihren Nexus 9364D-GX2A Switches installieren oder aktualisieren. Eine unterstützte Version der RCF wird auf den Switches im Rahmen einer neuen AFX 1K oder AFX 2K Systeminstallation, eines Switch-Austauschs oder eines Zurücksetzens der Switches auf die Werkseinstellungen installiert. Ein Upgrade auf eine unterstützte Version der RCF auf den Switches erfolgt zur Unterstützung neuer Hardware, einer neuen ONTAP Version oder zur Angleichung an eine neue NX-OS Version in Ihrer AFX Systemkonfiguration.' 
+summary: Die RCF auf Cisco Nexus 9364D-GX2A Switches kann für AFX 1K und AFX 2K Systeminstallationen, Switch-Austausch oder zur Unterstützung neuer Hardware oder ONTAP Versionen installiert oder aktualisiert werden. 
 ---
-= RCF-Installation oder -Aktualisierung Übersicht, Cisco Nexus 9364D-GX2A
+= Informationen zur Installation oder Aktualisierung des RCF auf dem Cisco Nexus 9364D-GX2A Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können die Referenzkonfigurationsdatei (RCF) auf Ihren Nexus 9364D-GX2A Switches installieren oder aktualisieren. Eine unterstützte Version der RCF wird auf den Switches im Rahmen einer neuen AFX 1K oder AFX 2K Systeminstallation, eines Switch-Austauschs oder eines Zurücksetzens der Switches auf die Werkseinstellungen installiert. Ein Upgrade auf eine unterstützte Version der RCF auf den Switches erfolgt zur Unterstützung neuer Hardware, einer neuen ONTAP Version oder zur Angleichung an eine neue NX-OS Version in Ihrer AFX Systemkonfiguration.
+Die Referenzkonfigurationsdatei (RCF) auf Cisco Nexus 9364D-GX2A Switches installieren oder aktualisieren. Eine neue RCF für AFX 1K oder AFX 2K Systeminstallationen oder Switch-Austausche installieren oder eine vorhandene RCF aktualisieren, um neue Hardware oder ONTAP Versionen zu unterstützen.
 
 
-NOTE: Die Installation oder Aktualisierung von RCF ist unabhängig von der Installation oder Aktualisierung von NS-OS. Wenn sowohl NX-OS als auch RCF installiert oder aktualisiert werden, empfiehlt es sich, NX-OS zuerst zu installieren oder zu aktualisieren.
+NOTE: Die Installation oder Aktualisierung von RCF ist unabhängig von der Installation oder Aktualisierung von NX-OS. Wenn sowohl NX-OS als auch RCF installiert oder aktualisiert werden, empfiehlt es sich, NX-OS zuerst zu installieren oder zu aktualisieren.
 
 
 

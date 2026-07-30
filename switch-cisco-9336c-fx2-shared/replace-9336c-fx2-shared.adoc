@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: switch-cisco-9336c-fx2-shared/replace-9336c-fx2-shared.html 
 keywords:  
-summary:  
+summary: Einen defekten Cisco Nexus 9336C-FX2 Shared Switch ersetzen. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
 = Ersetzen Sie einen gemeinsam genutzten Cisco Nexus 9336C-FX2-Switch
 :hardbreaks:
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-Sie können einen defekten Nexus 9336C-FX2 Shared Switch austauschen. Dies ist ein unterbrechungsfreies Verfahren (NDU).
+Ein defekter Cisco Nexus 9336C-FX2 Shared Switch kann ersetzt werden, ohne den Cluster- oder Speichernetzwerkbetrieb zu unterbrechen. Dieses unterbrechungsfreie Verfahren (NDU) umfasst die Vorbereitung eines Ersatzswitches und die Wiederherstellung der Shared Switch Konfiguration.
 
 .Bevor Sie beginnen
 Bevor Sie den Schalter austauschen, stellen Sie sicher, dass Folgendes passiert:

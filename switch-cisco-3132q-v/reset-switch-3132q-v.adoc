@@ -2,14 +2,14 @@
 permalink: switch-cisco-3132q-v/reset-switch-3132q-v.html 
 sidebar: sidebar 
 keywords: 3132Q-V reset switch to factory defaults, 3132Q-V2 switches configuration, efos 
-summary: Vor der Konfiguration Ihres Cisco Nexus 3132Q-V Switches sind die folgenden Informationen zu beachten. 
+summary: Der Cisco Nexus 3132Q-V Cluster Switch wird auf die Werkseinstellungen zurückgesetzt, indem die aktuelle Switch-Konfiguration gelöscht wird. 
 ---
-= Den 3132Q-V Cluster-Switch auf die Werkseinstellungen zurücksetzen
+= Cisco Nexus 3132Q-V Cluster Switch auf Werkseinstellungen zurücksetzen
 :allow-uri-read: 
 
 
 [role="lead"]
-Um den 3132Q-V Cluster Switch auf die Werkseinstellungen zurückzusetzen, müssen die Einstellungen des 3132Q-V Switch gelöscht werden.
+Der Cisco Nexus 3132Q-V Cluster Switch wird auf die Werkseinstellungen zurückgesetzt, indem die aktuelle Switch-Konfiguration gelöscht und der Switch auf seine ursprünglichen Einstellungen zurückgesetzt wird.
 
 .Informationen zu diesem Vorgang
 * Sie müssen über die serielle Konsole mit dem Switch verbunden sein.

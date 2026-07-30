@@ -2,16 +2,16 @@
 permalink: switch-cisco-9808/configure-complete-initial-setup-9808.html 
 sidebar: sidebar 
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9808 
-summary: Nach dem Einschalten eines oder mehrerer Cisco Nexus 9808 Switches im Rahmen einer Neuinstallation eines AFX 2K Systems oder eines Switch-Austauschs oder nach dem Zurücksetzen eines Switches auf die Werkseinstellungen erfolgt eine Aufforderung, die Ersteinrichtung der Switches mithilfe des Konfigurationsassistenten abzuschließen. Zur Unterstützung bei der Ersteinrichtung der Switches können die folgenden Fragen des Konfigurationsassistenten und die empfohlenen Antworten herangezogen werden. 
+summary: Die Ersteinrichtung von Cisco Nexus 9808 Switches erfolgt mithilfe des Konfigurationsassistenten bei neuen AFX 2K Systeminstallationen, beim Austausch von Supervisor-Modulen oder beim Zurücksetzen auf Werkseinstellungen. 
 ---
-= Vollständige Ersteinrichtung des Switches, Cisco Nexus 9808
+= Die Ersteinrichtung des Cisco Nexus 9808 Switch abschließen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Nach dem Einschalten eines oder mehrerer Cisco Nexus 9808 Switches im Rahmen einer neuen AFX 2K Systeminstallation oder eines Supervisor-Modul-Austauschs bzw. nach dem Zurücksetzen eines Switches auf die Werkseinstellungen erfolgt eine Aufforderung, die Ersteinrichtung des/der Switches mithilfe des Konfigurationsassistenten abzuschließen. Zur Unterstützung bei der Ersteinrichtung des/der Switches können die folgenden Fragen des Konfigurationsassistenten und die empfohlenen Antworten herangezogen werden.
+Die Ersteinrichtung der Cisco Nexus 9808 Switches wird mithilfe des Konfigurationsassistenten abgeschlossen. Dieses Verfahren gilt für neue AFX 2K Systeminstallationen, den Austausch von Supervisor-Modulen sowie für Switches, die auf die Werkseinstellungen zurückgesetzt wurden.
 
 .Bevor Sie beginnen
 Stellen Sie sicher, dass Sie die Netzwerk- und Konfigurationsinformationen für jeden Switch sowie die entsprechenden Lizenzen haben.

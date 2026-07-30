@@ -2,7 +2,7 @@
 permalink: switch-nvidia-sn2100-storage/migrate-2n-switched-sn2100-storage.html 
 sidebar: sidebar 
 keywords: two-node switchless cluster environments,migrating to a two-node switched NVIDIA SN2100 cluster environment,switchless cluster environments,NVIDIA SN2100 switches 
-summary: Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von NVIDIA SN2100 Switches auf eine switchierte Clusterumgebung mit zwei Knoten migrieren, um die Anzahl der Knoten im Cluster auf über zwei zu erweitern. 
+summary: Eine bestehende Zwei-Knoten Cluster ohne Switches kann in eine Clusterumgebung mit Switches unter Verwendung von NVIDIA SN2100 Cluster Switches migriert werden. 
 ---
 = Migration zu einem Zwei-Knoten-Switch-Cluster mit NVIDIA SN2100 Cluster-Switches
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitz
 
 
 [role="lead"]
-Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von NVIDIA SN2100 Switches auf eine switchierte Clusterumgebung mit zwei Knoten migrieren, um die Anzahl der Knoten im Cluster auf über zwei zu erweitern.
+Ein bestehender Zwei-Knoten Cluster ohne Switches kann mithilfe von NVIDIA SN2100 Cluster Switches in eine Clusterumgebung mit Switches migriert werden. Diese unterbrechungsfreie Migration ermöglicht eine Skalierung des Clusters über zwei Knoten hinaus.
 
 Die Vorgehensweise hängt davon ab, ob Sie an jedem Controller zwei dedizierte Cluster-Netzwerkanschlüsse oder an jedem Controller einen einzelnen Clusteranschluss haben.  Der dokumentierte Prozess funktioniert für alle Knoten, die optische oder Twinax-Anschlüsse verwenden, wird jedoch von diesem Switch nicht unterstützt, wenn die Knoten Onboard-10GBASE-T-RJ45-Anschlüsse für die Cluster-Netzwerkanschlüsse verwenden.
 

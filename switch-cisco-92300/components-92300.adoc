@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/components-92300.html 
 sidebar: sidebar 
 keywords: cisco nexus 92300YC 
-summary: Wenn Sie ONTAP -Cluster mit mehr als zwei Knoten aufbauen möchten, benötigen Sie zwei unterstützte Cluster-Netzwerk-Switches.  Sie können zusätzliche Management-Schalter verwenden, die optional sind. 
+summary: Die Komponenten und Teilenummern für Cisco Nexus 92300YC Cluster Switches zur Unterstützung der Hardwareinstallation und der laufenden Wartung identifizieren. 
 ---
-= Komponenten und Teilenummern für Cisco Nexus 92300YC Switches
+= Komponenten und Teilenummern für Cisco Nexus 92300YC Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation und Wartung des Cisco Nexus 92300YC Switches sollten Sie unbedingt alle Switch-Komponenten und Teilenummern überprüfen. Siehe die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] für Details. Weitere Informationen zu den Installationsanforderungen für Switches finden Sie in link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^].
+Die Komponenten und Teilenummern für Cisco Nexus 92300YC Cluster Switches zur Unterstützung der Hardwareinstallation und laufenden Wartung werden identifiziert. Einzelheiten sind in der link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe"^] zu finden. Weitere Informationen zu den Installationsanforderungen der Switches sind unter link:https://kb.netapp.com/Support/General_Support/What_additional_information_do_I_need_to_install_my_equipment_that_is_not_in_HWU["Welche zusätzlichen Informationen benötige ich für die Installation meiner Geräte, die nicht in HWU enthalten sind?"^] verfügbar.
 
 Die folgende Tabelle enthält die Teilenummer und die Beschreibung für den 92300YC Switch, die Lüfter und die Netzteile:
 

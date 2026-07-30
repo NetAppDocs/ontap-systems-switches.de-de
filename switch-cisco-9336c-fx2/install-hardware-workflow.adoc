@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2/install-hardware-workflow.html 
 sidebar: sidebar 
 keywords: witches, initial installation, configure switch-cisco-9336c-fx2 switch 
-summary: Lesen Sie vor der Konfiguration der Cisco Nexus 9336C-FX2-Cluster-Switches die Konfigurationsübersicht. 
+summary: Mit diesem Workflow lässt sich die Hardware für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches installieren. 
 ---
-= Workflow zur Hardwareinstallation für Cisco Nexus 9336C-FX2- und 9336C-FX2-T-Switches
+= Arbeitsablauf für die Hardwareinstallation für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie folgendermaßen vor, um die Hardware für die Cluster-Switches 9336C-FX2 und 9336C-FX2-T zu installieren und zu konfigurieren:
+Mit diesem Workflow lässt sich die Hardware für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches installieren und konfigurieren.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]link:setup-worksheet-9336c-cluster.html["Vervollständigen Sie das Verkabelungsarbeitsblatt"]
 [role="quick-margin-para"]

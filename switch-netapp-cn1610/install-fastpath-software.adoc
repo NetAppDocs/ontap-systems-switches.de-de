@@ -2,16 +2,16 @@
 permalink: switch-netapp-cn1610/install-fastpath-software.html 
 sidebar: sidebar 
 keywords: install, fastpath, software 
-summary: Wenn Sie die FASTPATH-Software auf Ihren NetApp Switches installieren, muss das Upgrade mit dem zweiten Switch, cs2, begonnen werden. 
+summary: 'Die FASTPATH Software wird auf den NetApp CN1610 Cluster-Switches installiert, wobei das Upgrade mit dem zweiten Switch (cs2) begonnen wird.' 
 ---
-= FASTPATH Software installieren
+= FASTPATH Software auf NetApp CN1610 Cluster Switches installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie die FASTPATH Software auf Ihren NetApp Switches installieren, muss das Upgrade mit dem zweiten Switch, _cs2_, begonnen werden.
+Die FASTPATH Software auf NetApp CN1610 Cluster-Switches installieren, wobei das Upgrade mit dem zweiten Switch, _cs2_, begonnen wird.
 
 
 

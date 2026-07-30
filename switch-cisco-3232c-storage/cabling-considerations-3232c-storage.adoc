@@ -2,16 +2,16 @@
 permalink: switch-cisco-3232c-storage/cabling-considerations-3232c-storage.html 
 sidebar: sidebar 
 keywords: 3232c cabling setup, 3232c switches configuration, nx-os 
-summary: Vor der Konfiguration Ihres Cisco 3232C Switch sollten die folgenden Informationen geprüft werden. 
+summary: Vor der Bereitstellung sind die Verkabelungs- und Konfigurationsaspekte der Cisco Nexus 3232C Storage Switches zu berücksichtigen. 
 ---
-= Überprüfung der Verkabelung und Konfigurationsüberlegungen
+= Verkabelungs- und Konfigurationsaspekte für Cisco Nexus 3232C Storage Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Bevor Sie Ihre 3232C-Switches konfigurieren, überprüfen Sie die Verkabelungs- und Konfigurationsanforderungen.
+Vor der Bereitstellung sind die Verkabelungs- und Konfigurationsaspekte der Cisco Nexus 3232C Storage Switches zu berücksichtigen.
 
 
 

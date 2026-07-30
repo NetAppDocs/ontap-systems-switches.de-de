@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
 summary: Mit Warnmeldungen des Ethernet Switch-Integritätsmonitors lassen sich Probleme mit dem Netzwerk-Switch in Ihrem ONTAP Cluster erkennen und beheben. 
 ---
-= Überblick über den Gesundheitscheck
+= Informationen zu Warnmeldungen für den Ethernet-Switch-Integritätsmonitor
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

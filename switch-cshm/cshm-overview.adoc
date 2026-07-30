@@ -2,15 +2,15 @@
 permalink: switch-cshm/cshm-overview.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Der Ethernet-Switch-Integritätsmonitor CSHM ist dafür zuständig, den Betriebszustand der Cluster- und Speichernetzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln. 
+summary: 'Informationen zum Ethernet Switch Health Monitor (CSHM) und dazu, wie er den Zustand von Cluster- und Speichernetzwerk-Switches in ONTAP überwacht.' 
 ---
-= Zustandsüberwachung von Ethernet Switches
+= Informationen zur Zustandsüberwachung von Ethernet Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Der Ethernet Switch Health Monitor (CSHM) ist dafür zuständig, den Betriebszustand der Netzwerk-Switches sicherzustellen und Switch-Protokolle zu Debugging-Zwecken zu sammeln.
+Der Ethernet Switch Health Monitor (CSHM) überwacht proaktiv den Zustand der Cluster- und Speichernetzwerk-Switches in ONTAP, meldet erkannte Fehler und sammelt Switch-Protokolle zur Fehlersuche.
 
 CSHM überwacht Cluster- und Speichernetzwerk-Switches, um die Zuverlässigkeit der Netzwerkinfrastruktur aufrechtzuerhalten. Der Health Monitor erkennt automatisch Switch-Probleme, sammelt Protokolle zur Fehlerbehebung und stellt Warnmeldungen bereit, wenn Netzwerkprobleme auftreten. CSHM unterstützt mehrere Switch-Anbieter und -Modelle und ermöglicht die Identifizierung und Behebung von Netzwerkverbindungsproblemen, bevor diese die Speicherumgebung beeinträchtigen.

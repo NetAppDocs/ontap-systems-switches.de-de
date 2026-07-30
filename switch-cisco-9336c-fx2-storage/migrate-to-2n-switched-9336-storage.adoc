@@ -2,16 +2,16 @@
 permalink: switch-cisco-9336c-fx2-storage/migrate-to-2n-switched-9336-storage.html 
 sidebar: sidebar 
 keywords: two-node switchless cluster environments,migrating to a two-node switched 9336C-FX2 cluster environment,switchless cluster environments,9336C-FX2 switches 
-summary: Wenn Sie bereits eine switchlose Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches zu einer switchierten Clusterumgebung mit zwei Knoten migrieren, um die Anzahl der Knoten im Cluster auf über zwei zu erhöhen. 
+summary: Ein bestehender Zwei-Knoten Cluster ohne Switches kann in eine Switched-Cluster-Umgebung mit Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches migriert werden. 
 ---
-= Migration zu einem Zwei-Knoten-Switched-Cluster
+= Migration zu einem Zwei-Knoten-Cluster mit Switches unter Verwendung von Cisco Nexus 9336C-FX2 Storage Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie bereits eine _switchlose_ Clusterumgebung mit zwei Knoten besitzen, können Sie mithilfe von Cisco Nexus 9336C-FX2 Switches zu einer _switched_ Clusterumgebung mit zwei Knoten migrieren, um die Anzahl der Knoten im Cluster auf über zwei zu erhöhen.
+Ein bestehender Zwei-Knoten Cluster ohne Switches kann in eine Clusterumgebung mit Switches unter Verwendung von Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches migriert werden. Diese unterbrechungsfreie Migration ermöglicht eine Skalierung des Clusters über zwei Knoten hinaus.
 
 Der Migrationsprozess funktioniert für alle Knoten, die optische oder Twinax-Anschlüsse verwenden, wird jedoch von diesem Switch nicht unterstützt, wenn die Knoten Onboard-10Gb BASE-T RJ45-Anschlüsse für die Cluster-Netzwerkanschlüsse verwenden.
 

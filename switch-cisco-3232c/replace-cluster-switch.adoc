@@ -2,7 +2,7 @@
 permalink: switch-cisco-3232c/replace-cluster-switch.html 
 sidebar: sidebar 
 keywords: replace, cisco nexus 3232c, cluster switch 
-summary: Ein defekter Cisco Nexus 3232C Switch in einem Cluster kann unterbrechungsfrei durch das Ausführen einer bestimmten Abfolge von Aufgaben ersetzt werden. 
+summary: Einen defekten Cisco Nexus 3232C Cluster Switch ersetzen. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
 = Austausch eines Cisco Nexus 3232C Cluster Switch
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Ein defekter Cisco Nexus 3232C Switch in einem Cluster kann unterbrechu
 
 
 [role="lead"]
-Die folgenden Schritte beschreiben den Austausch eines defekten Cisco Nexus 3232C Switch in einem Cluster. Dies ist ein unterbrechungsfreies Verfahren.
+Ein defekter Cisco Nexus 3232C Cluster Switch kann ohne Unterbrechung des Clusterbetriebs ersetzt werden. Dieses unterbrechungsfreie Verfahren umfasst die Vorbereitung eines Ersatzswitches und die Migration der Verbindungen vom ausgefallenen Switch.
 
 
 

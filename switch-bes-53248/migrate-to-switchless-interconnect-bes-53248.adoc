@@ -2,9 +2,9 @@
 permalink: switch-bes-53248/migrate-to-switchless-interconnect-bes-53248.html 
 sidebar: sidebar 
 keywords: migrate, switchless cluster interconnect, broadcom bes-53248 switch 
-summary: Für ONTAP 9.3 und höher können Sie von einem Cluster mit einem Switched-Cluster-Netzwerk zu einem Cluster migrieren, in dem zwei Knoten direkt miteinander verbunden sind. 
+summary: Migration von einem vermittelten Clusternetzwerk mit Broadcom BES-53248 Cluster Switches zu einer Zwei-Knoten Cluster ohne Switches Konfiguration für ONTAP 9.3 und höher. 
 ---
-= Ersetzen Sie Broadcom BES-53248 Cluster-Switches durch switchlose Verbindungen.
+= Migration von Broadcom BES-53248 Cluster Switches zu Cluster ohne Switches Verbindungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

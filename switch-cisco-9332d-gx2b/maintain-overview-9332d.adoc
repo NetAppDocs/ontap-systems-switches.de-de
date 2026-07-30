@@ -2,16 +2,16 @@
 permalink: switch-cisco-9332d-gx2b/maintain-overview-9332d.html 
 sidebar: sidebar 
 keywords: maintain overview, frus, replace switch, reset to factory defaults, cisco 9332d-gx2b 
-summary: 'Warten Sie Ihren Cisco Nexus 9332D-GX2B Switch, um langfristige Zuverlässigkeit und optimale Leistung sicherzustellen. Es können Wartungsaufgaben wie der Austausch ausgefallener Switch-Komponenten (FRUs), der Austausch eines fehlerhaften Switches und das Zurücksetzen eines Switches auf die Werkseinstellungen durchgeführt werden.' 
+summary: Die Wartungsaufgaben für Cisco Nexus 9332D-GX2B Switches umfassen den Austausch von FRUs, den Austausch von Switches sowie das Zurücksetzen auf die Werkseinstellungen. 
 ---
-= Überblick behalten, Cisco Nexus 9332D-GX2B
+= Informationen zu den Wartungsoptionen für den Cisco Nexus 9332D-GX2B Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Warten Sie Ihren Cisco Nexus 9332D-GX2B Switch, um langfristige Zuverlässigkeit und optimale Leistung sicherzustellen. Es können Wartungsaufgaben wie der Austausch defekter Switch-Komponenten (FRUs), der Austausch eines defekten Switches und das Zurücksetzen eines Switches auf die Werkseinstellungen durchgeführt werden.
+Die verfügbaren Wartungsaufgaben für Cisco Nexus 9332D-GX2B Switches umfassen den Austausch defekter Switch-Komponenten (FRUs), den Austausch eines defekten Switches sowie das Zurücksetzen eines Switches auf die Werkseinstellungen.
 
 Die folgenden Wartungsaufgaben können an einem Switch durchgeführt werden:
 

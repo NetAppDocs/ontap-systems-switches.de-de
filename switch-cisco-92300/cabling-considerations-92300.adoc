@@ -2,16 +2,16 @@
 permalink: switch-cisco-92300/cabling-considerations-92300.html 
 sidebar: sidebar 
 keywords: 92300YC cabling setup, 92300YC switches configuration, nx-os 
-summary: Vor der Konfiguration Ihres Cisco 92300YC Switches sind die folgenden Informationen zu beachten. 
+summary: Vor der Bereitstellung sind die Verkabelungs- und Konfigurationsaspekte für Cisco Nexus 92300YC Cluster Switches zu prüfen. 
 ---
-= Überprüfung der Verkabelung und Konfigurationsüberlegungen
+= Überprüfung der Verkabelungs- und Konfigurationsaspekte für Cisco Nexus 92300YC Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Vor der Konfiguration Ihres Cisco 92300YC Switches sind die folgenden Hinweise zu berücksichtigen.
+Vor der Bereitstellung sind die Verkabelungs- und Konfigurationsaspekte für Cisco Nexus 92300YC Cluster Switches zu prüfen.
 
 
 

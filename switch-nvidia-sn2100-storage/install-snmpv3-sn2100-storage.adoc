@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100-storage/install-snmpv3-sn2100-storage.html 
 sidebar: sidebar 
 keywords: sn2100 SN2100 cabling setup, sn2100 switches configuration, cumulus linux os 
-summary: Diese Version beinhaltet Unterstützung für SNMPv3 zur Protokollüberwachung. 
+summary: SNMPv3 auf NVIDIA SN2100 Speicherswitchen konfigurieren, um eine sichere Protokollerfassung und Zustandsüberwachung der Switches zu ermöglichen. 
 ---
-= Konfigurieren Sie SNMPv3 für die Switch-Protokollerfassung
+= SNMPv3 für NVIDIA SN2100 Speicherschalter konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Befolgen Sie dieses Verfahren, um SNMPv3 zu konfigurieren, das die Protokollerfassung von Switches und die Switch-Zustandsüberwachung (SHM) unterstützt.
+SNMPv3 auf NVIDIA SN2100 Storage Switches konfigurieren, um eine sichere, authentifizierte Switch-Protokollerfassung und die Überwachung des Ethernet Switch Health Monitor (CSHM) zu ermöglichen.
 
 .Informationen zu diesem Vorgang
 Die folgenden Befehle konfigurieren einen SNMPv3-Benutzernamen auf NVIDIA SN2100-Switches:
@@ -27,7 +27,7 @@ Die folgenden Befehle konfigurieren einen SNMPv3-Benutzernamen auf NVIDIA SN2100
 Der folgende Befehl konfiguriert einen SNMPv3-Benutzernamen auf der ONTAP Seite:
 `cluster1::*> security login create -user-or-group-name _SNMPv3_USER_ -application snmp -authentication-method usm -remote-switch-ipaddress _ADDRESS_`
 
-Der folgende Befehl richtet den SNMPv3-Benutzernamen bei SHM ein:
+Der folgende Befehl richtet den SNMPv3-Benutzernamen bei CSHM ein:
 `cluster1::*> system switch ethernet modify -device _DEVICE_ -snmp-version SNMPv3 -community-or-username _SNMPv3_USER_`
 
 .Schritte

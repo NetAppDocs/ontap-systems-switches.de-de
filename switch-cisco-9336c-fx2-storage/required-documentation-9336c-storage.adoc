@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: switch-cisco-9336c-fx2-storage/required-documentation-9336c-storage.html 
 keywords: shared storage cluster switch 
-summary: Für die Installation und Wartung von Cisco Nexus 9336C-FX2 Switches sollten Sie unbedingt die spezifische Switch- und Controller-Dokumentation lesen, um Ihre Cisco 9336-FX2 Switches und ONTAP Cluster einzurichten. 
+summary: Die für die Einrichtung und Konfiguration der Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches erforderliche Switch- und Controller-Dokumentation ist zu prüfen. 
 ---
-= Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Speicher-Switches
+= Dokumentationsanforderungen für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Speicherswitches prüfen
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Für die Installation und Wartung von Cisco Nexus 9336C-FX2 Switches so
 
 
 [role="lead"]
-Für die Installation der Cisco Nexus 9336C-FX2 und 9336C-FX2-T Switches sollten Sie unbedingt die spezifische Switch- und Controller-Dokumentation lesen, um Ihre Cisco 9336-FX2 Switches und ONTAP Cluster einzurichten.
+Die für die Einrichtung der Cisco Nexus 9336C-FX2 und 9336C-FX2-T Storage Switches sowie deren Konfiguration in einem ONTAP Speichernetzwerk erforderliche Switch- und Controller-Dokumentation ist zu prüfen.
 
 
 

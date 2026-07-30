@@ -2,7 +2,7 @@
 permalink: switch-cisco-9336c-fx2/setup-worksheet-9336c-cluster.html 
 sidebar: sidebar 
 keywords: document, support, platform, complete, blank, cabling, worksheet, guide, cisco, nexus, cisco nexus 9336c-fx2 cabling worksheet - cisco nexus 9336-fx2-t 
-summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen Sie das leere Verkabelungsarbeitsblatt anhand des ausgefüllten Beispiel-Verkabelungsarbeitsblatts ausfüllen. 
+summary: Das Verkabelungsarbeitsblatt für Cisco Nexus 9336C-FX2 oder 9336C-FX2-T Cluster Switches dient zur Dokumentation der Portverbindungen und unterstützten Plattformkonfigurationen. 
 ---
 = Füllen Sie das Verkabelungsarbeitsblatt für Cisco Nexus 9336C-FX2 oder 9336C-FX2-T aus.
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn Sie die unterstützten Plattformen dokumentieren möchten, müssen
 
 
 [role="lead"]
-Wenn Sie die unterstützten Plattformen dokumentieren möchten, laden Sie eine PDF-Datei dieser Seite herunter und füllen Sie das Verkabelungsarbeitsblatt aus.
+Das Verkabelungsarbeitsblatt für Cisco Nexus 9336C-FX2 oder 9336C-FX2-T Cluster Switches dient zur Dokumentation der Portverbindungen und unterstützten Plattformkonfigurationen.
 
 Das Beispiel-Verkabelungs-Arbeitsblatt enthält Beispiele für empfohlene Portzuweisungen von den Switches zu den Controllern.  Das leere Arbeitsblatt dient als Vorlage, die Sie beim Einrichten Ihres Clusters verwenden können.
 

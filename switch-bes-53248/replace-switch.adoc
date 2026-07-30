@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/replace-switch.html 
 sidebar: sidebar 
 keywords: replace, replacing, defective, broadcom-supported, bes, cluster, switch, network, nondisruptive, procedure, ndu, replace a broadcom-supported bes-53428 cluster switch - bes-53428 switches 
-summary: Der Austausch eines defekten, von Broadcom unterstützten BES-53248 Cluster-Switches in einem Cluster-Netzwerk ist ein unterbrechungsfreies Verfahren. 
+summary: Ein defekter Broadcom BES-53248 Cluster Switch wird in einem Cluster-Netzwerk ersetzt. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
-= Ersetzen Sie einen von Broadcom unterstützten BES-53248-Cluster-Switch
+= Austausch eines Broadcom BES-53248 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Gehen Sie wie folgt vor, um einen defekten Broadcom-unterstützten BES-53248 Cluster-Switch in einem Cluster-Netzwerk auszutauschen. Dies ist ein unterbrechungsfreies Verfahren (NDU).
+Ein defekter Broadcom BES-53248 Cluster Switch kann in einem Cluster-Netzwerk ausgetauscht werden, ohne den Clusterbetrieb zu unterbrechen. Dieses unterbrechungsfreie Verfahren (NDU) umfasst die Vorbereitung eines Ersatz-Switches und die Migration der Verbindungen vom ausgefallenen Switch.
 
 .Zu den Beispielen
 Die Beispiele in diesem Verfahren verwenden die folgende Schalter- und Knotennomenklatur:

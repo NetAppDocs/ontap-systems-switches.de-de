@@ -1,17 +1,17 @@
 ---
 permalink: switch-cisco-9364d-gx2a/configure-verify-ssh-9364d.html 
 sidebar: sidebar 
-keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9332d-gx2b 
-summary: 'Wenn Sie Ihre Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems, eines Switch-Austauschs oder einer Wiederherstellung der Werkseinstellungen konfigurieren, um die Funktion zur Protokollerfassung des Ethernet Switch Health Monitor (CSHM) nutzen zu können, muss überprüft werden, dass SSH auf den Switches aktiviert ist.' 
+keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9364d-gx2a 
+summary: 'Es sollte überprüft werden, dass SSH auf Cisco Nexus 9364D-GX2A Switches aktiviert ist, um den Ethernet Switch Health Monitor (CSHM) und die Protokollerfassung zu unterstützen.' 
 ---
-= SSH für die Protokollerfassung überprüfen, Cisco Nexus 9364D-GX2A
+= SSH für die Protokollerfassung auf dem Cisco Nexus 9364D-GX2A Switch überprüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie Ihre Switches im Rahmen einer Neuinstallation eines AFX 1K oder AFX 2K Systems, eines Switch-Austauschs oder einer Wiederherstellung der Werkseinstellungen konfigurieren, um die Funktion zur Protokollerfassung des Ethernet Switch Health Monitor (CSHM) nutzen zu können, muss überprüft werden, dass SSH auf den Switches aktiviert ist.
+Es sollte überprüft werden, ob SSH auf Cisco Nexus 9364D-GX2A Switches aktiviert ist, damit die Funktionen Ethernet Switch Health Monitor (CSHM) und Protokollsammlung unterstützt werden.
 
 .Bevor Sie beginnen
 Sie müssen über die serielle Konsole mit dem Switch verbunden sein.

@@ -2,16 +2,16 @@
 permalink: switch-cshm/config-snmpv3.html 
 sidebar: sidebar 
 keywords: cshm, configure, snmpv3, switch logs, debugging, collection 
-summary: Mit diesem Verfahren können Sie SNMPv3 für Ihren spezifischen Switch konfigurieren, der die Zustandsüberwachung von Ethernet-Switches CSHM unterstützt. 
+summary: 'SNMPv3 auf Ihren Netzwerk-Switches konfigurieren, damit eine sichere Kommunikation mit dem Ethernet Switch Health Monitor (CSHM) möglich ist.' 
 ---
-= Konfigurieren Sie SNMPv3 für Ihren Switch (optional).
+= SNMPv3 für die Zustandsüberwachung von Ethernet-Switches konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-SNMP wird zur Überwachung der Switches verwendet.  Die Überwachung mittels SNMPv3 wird durch Befolgen der folgenden Vorgehensweise konfiguriert.
+SNMPv3 wird auf Ihren Netzwerk-Switches konfiguriert, um eine sichere, authentifizierte Kommunikation mit dem Ethernet-Switch-Integritätsmonitor (CSHM) zu ermöglichen. SNMPv3 bietet verschlüsselte Abfragen des Switch-Status für die Zustandsüberwachung in ONTAP.
 
 Der Ethernet Switch Health Monitor (CSHM) nutzt SNMP zur Überwachung des Zustands und der Leistung von Netzwerk-Switches. Standardmäßig wird SNMPv2c automatisch über die Referenzkonfigurationsdatei (RCF) konfiguriert. SNMPv3 ist sicherer als SNMPv2, da es robuste Sicherheitsfunktionen wie Authentifizierung, Verschlüsselung und Nachrichtenintegrität einführt, die vor unberechtigtem Zugriff schützen und die Vertraulichkeit sowie Integrität der Daten während der Übertragung gewährleisten.
 

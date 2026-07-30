@@ -2,16 +2,16 @@
 permalink: switch-netapp-cn1610/install-overview-cn1610.html 
 sidebar: sidebar 
 keywords: install, fastpath, software, rcfs 
-summary: Vor der Konfiguration der NetApp CN1610 Switches empfiehlt sich ein Überblick über das Verfahren. 
+summary: Mit diesem Workflow werden NetApp CN1610 Cluster Switches in einer ONTAP Umgebung installiert und konfiguriert. 
 ---
-= Workflow für NetApp CN1610 Switches installieren und konfigurieren
+= Installations- und Konfigurationsworkflow für NetApp CN1610 Cluster-Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Zur Installation und Konfiguration eines NetApp CN1610 Switch auf Systemen mit ONTAP sind die folgenden Schritte erforderlich:
+Mit diesem Workflow werden NetApp CN1610 Cluster-Switches auf Systemen mit ONTAP installiert und konfiguriert.
 
 . link:install-hardware-cn1610.html["Installieren der Hardware"]
 . link:install-fastpath-software.html["FASTPATH Software installieren"]

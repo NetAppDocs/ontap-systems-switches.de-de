@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100/migrate-cn1610-sn2100-cluster-switch.html 
 sidebar: sidebar 
 keywords: migrate cluster NVIDIA SN2100 cluster switches cn1610 
-summary: Sie können NetApp CN1610 Cluster-Switches für einen ONTAP Cluster unterbrechungsfrei auf NVIDIA SN2100 Cluster-Netzwerk-Switches migrieren. 
+summary: Vorhandene NetApp CN1610 Cluster Switches können unterbrechungsfrei auf NVIDIA SN2100 Cluster Switches migriert werden, ohne den Clusterbetrieb zu beeinträchtigen. 
 ---
-= Migration von CN1610-Cluster-Switches zu NVIDIA SN2100-Cluster-Switches
+= Migration von NetApp CN1610 Cluster Switches zu NVIDIA SN2100 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können NetApp CN1610 Cluster-Switches für einen ONTAP Cluster auf NVIDIA SN2100 Cluster-Switches migrieren. Dies ist ein unterbrechungsfreies Verfahren.
+Vorhandene NetApp CN1610 Cluster Switches können unterbrechungsfrei auf NVIDIA SN2100 Cluster Switches migriert werden, ohne den Clusterbetrieb zu beeinträchtigen.
 
 
 

@@ -2,16 +2,16 @@
 permalink: switch-bes-53248/install-hardware-bes53248.html 
 sidebar: sidebar 
 keywords: switches hardware installation 
-summary: Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokumentation von Broadcom. 
+summary: Die Broadcom BES-53248 Cluster Switch Hardware wird gemäß der von Broadcom unterstützten BES-53248 Cluster Switch Installation Guide installiert. 
 ---
-= Installieren Sie die Hardware für den Cluster-Switch BES-53248.
+= Hardware für den Broadcom BES-53248 Cluster Switch installieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Informationen zur Installation der BES-53248-Hardware finden Sie in der Dokumentation von Broadcom.
+Die Broadcom BES-53248 Cluster Switch Hardware wird gemäß der von Broadcom unterstützten BES-53248 Cluster Switch Installation Guide installiert.
 
 .Schritte
 . Überprüfen Sie dielink:configure-reqs-bes53248.html["Konfigurationsanforderungen"] Die

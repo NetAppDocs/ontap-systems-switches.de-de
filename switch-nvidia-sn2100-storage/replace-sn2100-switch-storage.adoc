@@ -2,19 +2,19 @@
 permalink: switch-nvidia-sn2100-storage/replace-sn2100-switch-storage.html 
 sidebar: sidebar 
 keywords: replacing, replace, defective, nvidia, switch, cluster, network, nondisruptive, procedure, ndu, replace a nvidia sn2100 cluster switch - nvidia SN2100 
-summary: Der Austausch eines defekten NVIDIA SN2100 Speicherswitches ist ein unterbrechungsfreier Vorgang. 
+summary: Einen defekten NVIDIA SN2100 Speicherswitch ersetzen. Dies ist ein unterbrechungsfreies Verfahren. 
 ---
-= Ersetzen Sie einen NVIDIA SN2100 Speicherschalter
+= Austausch eines NVIDIA SN2100 Speicherschalters
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können einen defekten NVIDIA SN2100 Speicherschalter austauschen. Dies ist ein unterbrechungsfreies Verfahren.
+Ein defekter NVIDIA SN2100 Storage Switch kann ausgetauscht werden, ohne den Betrieb des Speichernetzwerks zu unterbrechen. Dieses unterbrechungsfreie Verfahren umfasst die Vorbereitung eines Ersatzswitches und die Wiederherstellung der Storage Netzwerk-Konfiguration.
 
 .Bevor Sie beginnen
-Bevor Sie die Cumulus-Software und die RCFs auf einem NVIDIA SN2100-Speicher-Switch installieren, stellen Sie Folgendes sicher:
+Vor der Installation der Cumulus Software und der RCFs auf einem NVIDIA SN2100 Storage Switch ist Folgendes sicherzustellen:
 
 * Ihr System unterstützt NVIDIA SN2100 Speicherswitches.
 * Sie haben die entsprechenden RCFs heruntergeladen.

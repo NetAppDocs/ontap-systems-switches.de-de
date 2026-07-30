@@ -2,16 +2,16 @@
 permalink: switch-netapp-cn1610/migrate-fas22xx-systems.html 
 sidebar: sidebar 
 keywords: migrate, two-node switched cluster, fas22xx systems, single, network connection 
-summary: Wenn Sie FAS22xx-Systeme in einem bestehenden Cluster ohne Switches mit zwei Knoten haben, in dem jedes Controller-Modul über eine einzelne Back-to-Back-10-GbE-Verbindung für die Cluster-Konnektivität verfügt, kann die Cluster ohne Switches-Netzwerkoption verwendet und die direkte Back-to-Back-Konnektivität durch Switch-Verbindungen ersetzt werden. 
+summary: FAS22xx-Systeme können von einem Cluster ohne Switches mit einer einzelnen Cluster-Netzwerkverbindung auf ein geschaltetes Cluster mit NetApp CN1610 Cluster Switches migriert werden. 
 ---
-= Migration zu einem Zwei-Knoten Switched Cluster in FAS22xx-Systemen mit einer einzigen Cluster-Netzwerkverbindung
+= FAS22xx-Systeme können mithilfe von NetApp CN1610 Cluster Switches auf ein Cluster mit Switch migriert werden.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Sie FAS22xx-Systeme in einem bestehenden Cluster ohne Switches mit zwei Knoten haben, in dem jedes Controller-Modul über eine einzelne Back-to-Back-10-GbE-Verbindung für die Cluster-Konnektivität verfügt, kann die Cluster ohne Switches-Netzwerkoption verwendet und die direkte Back-to-Back-Konnektivität durch Switch-Verbindungen ersetzt werden.
+FAS22xx-Systeme von einem Cluster ohne Switches mit zwei Knoten und einer einzelnen 10-GbE-Verbindung pro Controller auf ein Cluster mit Switches unter Verwendung von NetApp CN1610 Cluster Switches migrieren.
 
 
 

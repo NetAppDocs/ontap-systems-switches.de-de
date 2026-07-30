@@ -2,16 +2,16 @@
 permalink: switch-nvidia-sn2100/required-documentation-sn2100-cluster.html 
 sidebar: sidebar 
 keywords: nvidia SN2100 switches 
-summary: Für die Installation und Wartung des NVIDIA SN2100 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation lesen. 
+summary: Die für die Installation und Wartung von NVIDIA SN2100 Cluster Switches erforderliche Dokumentation wird hier aufgeführt. 
 ---
-= Dokumentationsanforderungen für NVIDIA SN2100-Switches
+= Überprüfen der Dokumentationsanforderungen für NVIDIA SN2100 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Für die Installation des NVIDIA SN2100 Switches sollten Sie unbedingt die gesamte empfohlene Dokumentation durchlesen.
+Die für die Einrichtung der NVIDIA SN2100 Cluster Switches und deren Konfiguration in einem ONTAP Cluster erforderliche Switch- und Controller-Dokumentation sollte geprüft werden.
 
 [cols="1,2"]
 |===

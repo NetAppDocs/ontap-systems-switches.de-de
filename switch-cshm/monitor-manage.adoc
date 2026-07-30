@@ -2,9 +2,9 @@
 permalink: switch-cshm/monitor-manage.html 
 sidebar: sidebar 
 keywords: create, remove, switch, cluster, monitor, health, management 
-summary: Erfahren Sie, wie Sie Ethernet-Switches manuell erstellen, Standardüberwachungseinstellungen ändern und diese aus der Überwachung löschen. 
+summary: Ethernet-Switches können manuell zur CSHM-Überwachung hinzugefügt, konfiguriert oder entfernt werden, oder die Überwachung kann während Wartungsarbeiten pausiert werden. 
 ---
-= Verwaltung der Überwachung von Ethernet-Switches
+= Überwachung des Zustands von Ethernet-Switches verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

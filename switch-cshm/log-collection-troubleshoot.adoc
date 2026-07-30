@@ -2,9 +2,9 @@
 permalink: switch-cshm/log-collection-troubleshoot.html 
 sidebar: sidebar 
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
-summary: Sie können die hier bereitgestellten Befehle verwenden, um … 
+summary: 'Fehler und Ausfälle bei der Protokollerfassung des Ethernet-Switch-Integritätsmonitors (CSHM) beheben.' 
 ---
-= Fehlerbehebung bei der Protokollerfassung
+= Fehlerbehebung bei der Protokollerfassung für den Ethernet Switch Health Monitor
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
