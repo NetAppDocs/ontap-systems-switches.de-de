@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cisco 3132q-v, cluster switches 
 summary: Vorbereitung der Migration von einem Zwei-Knoten Cluster ohne Switches auf Cisco Nexus 3132Q-V Cluster Switches. 
 ---
-= Vorbereitung der Migration von einem Cluster ohne Switches zu Cisco Nexus 3132Q-V Cluster Switches
+= Vorbereitung auf die Migration zu Cisco Nexus 3132Q-V Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

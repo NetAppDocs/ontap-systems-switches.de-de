@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rcf, install, upgrade, cluster switch, cisco nexus 3232c 
 summary: Das RCF auf Cisco Nexus 3232C Cluster Switches wird nach der Ersteinrichtung oder bei Verfügbarkeit einer neueren Version installiert oder aktualisiert. 
 ---
-= Informationen zur Installation oder Aktualisierung des RCF auf Cisco Nexus 3232C Cluster Switches
+= RCF-Optionen für Cisco Nexus 3232C Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

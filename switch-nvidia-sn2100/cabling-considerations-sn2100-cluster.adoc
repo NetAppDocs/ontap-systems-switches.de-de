@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: SN2100 cabling setup, sn2100 switches configuration, cumulus linux os 
 summary: Vor der Bereitstellung sind die Verkabelungs- und Konfigurationsaspekte für NVIDIA SN2100 Cluster Switches zu prüfen. 
 ---
-= Überblick über Verkabelungs- und Konfigurationsaspekte für NVIDIA SN2100 Cluster Switches
+= Verkabelungs- und Konfigurationsrichtlinien für NVIDIA SN2100 Cluster Switches im Überblick
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

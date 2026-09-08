@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace, cisco nexus 3132q-v cluster switches 
 summary: Einen defekten Cisco Nexus 3132Q-V Cluster Switch ersetzen. Dies ist ein unterbrechungsfreier Vorgang. 
 ---
-= Cisco Nexus 3132Q-V Cluster-Switches ersetzen
+= Austausch eines Cisco Nexus 3132Q-V Cluster Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
 summary: Mit der CSHM-Protokollsammlung lassen sich Switch-Protokolle und Diagnosedaten erfassen, um Probleme mit dem Netzwerk-Switch zu beheben. 
 ---
-= Informationen zur Protokollerfassung für den Ethernet Switch Health Monitor
+= Informationen zur Protokollerfassung für die Zustandsüberwachung von Ethernet Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

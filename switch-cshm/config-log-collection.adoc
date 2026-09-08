@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: log collection feature,collect switch-related log files,SSh key,crypto key generation 
 summary: Die Protokollerfassung wird so konfiguriert, dass CSHM Switch-Protokolle und Diagnosedaten von Cluster- und Speichernetzwerk-Switches erfassen kann. 
 ---
-= Konfiguration der Protokollerfassung für den Ethernet Switch Zustandsmonitor
+= Konfiguration der Protokollerfassung für die Zustandsüberwachung von Ethernet Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

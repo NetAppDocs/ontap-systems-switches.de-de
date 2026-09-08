@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cshm, cluster, storage, switch logs, debugging, collection 
 summary: 'Fehler und Ausfälle bei der Protokollerfassung des Ethernet-Switch-Integritätsmonitors (CSHM) beheben.' 
 ---
-= Fehlerbehebung bei der Protokollerfassung für den Ethernet Switch Health Monitor
+= Fehlerbehebung bei der Protokollerfassung für die Zustandsüberwachung von Ethernet Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

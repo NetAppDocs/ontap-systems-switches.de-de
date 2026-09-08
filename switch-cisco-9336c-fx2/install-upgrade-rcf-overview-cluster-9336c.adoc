@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ssh, requirement, cluster, switch, health, monitor, cshm, log, collection, feature, cisco 9336c-fx2 
 summary: 'Die Referenz-Konfigurationsdatei (RCF) kann nach der Ersteinrichtung oder beim Upgrade einer vorhandenen RCF auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches installiert oder aktualisiert werden.' 
 ---
-= RCF auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches installieren oder aktualisieren
+= Informationen zur Installation oder Aktualisierung des RCF auf Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

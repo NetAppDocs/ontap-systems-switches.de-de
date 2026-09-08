@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: 3232c cabling setup, 3232c switches configuration, nx-os 
 summary: Vor der Inbetriebnahme sind die Verkabelungs- und Konfigurationsaspekte für Cisco Nexus 3232C Cluster Switches zu berücksichtigen. 
 ---
-= Überprüfung der Verkabelungs- und Konfigurationsaspekte für Cisco Nexus 3232C Cluster Switches
+= Verkabelungsanforderungen für Cisco Nexus 3232C Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

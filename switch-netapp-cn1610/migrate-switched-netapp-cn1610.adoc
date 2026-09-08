@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: migrate, switchless cluster environment, switched netapp cn1610 
 summary: Migration von einem Zwei-Knoten Cluster ohne Switches zu einer Clusterumgebung mit Switches unter Verwendung von NetApp CN1610 Cluster Switches. 
 ---
-= Migration von einem Cluster ohne Switches zu einer geschalteten NetApp CN1610 Clusterumgebung
+= Migration von einem Cluster ohne Switches zu einem geschalteten NetApp CN1610 Cluster
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

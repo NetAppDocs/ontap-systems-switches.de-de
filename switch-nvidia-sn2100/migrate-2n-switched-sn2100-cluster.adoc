@@ -37,7 +37,7 @@ Stellen Sie sicher, dass:
 * Die Knoten-zu-Knoten- und Switch-zu-Switch-Verbindungen des NVIDIA SN2100 verwenden Twinax- oder Glasfaserkabel.
 +
 
-IMPORTANT: Siehe link:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] für Hinweise und weitere Details. Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält auch weitere Informationen zur Verkabelung.
+IMPORTANT: Beachten Sie link:cabling-considerations-sn2100-cluster.html["Richtlinien für Verkabelung und Konfiguration"] für Einschränkungen und weitere Details. Die link:https://hwu.netapp.com/SWITCH/INDEX["Hardware Universe – Schalter"^] enthält auch weitere Informationen zur Verkabelung.
 
 * Inter-Switch Link (ISL)-Kabel sind an die Ports swp15 und swp16 beider NVIDIA SN2100 Switches angeschlossen.
 * Die erste Anpassung beider SN2100-Schalter ist abgeschlossen, sodass:

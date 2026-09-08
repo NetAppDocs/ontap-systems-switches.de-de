@@ -4,12 +4,12 @@ sidebar: sidebar
 keywords:  
 summary: Erfahren Sie mehr über Cluster, Speicher und gemeinsam genutzte Switches. 
 ---
-= Informationen zu den Switches Ihres ONTAP Systems
+= Informationen zu ONTAP Systemschaltern
 :allow-uri-read: 
 
 
 [role="lead"]
-NetApp bietet AFX-Systeme, Cluster, Speicher und gemeinsam genutzte Switches, die eine interne Kommunikation ermöglichen und die unterbrechungsfreie Verschiebung von Daten und Netzwerkschnittstellen über den Cluster ermöglichen.
+ONTAP bietet AFX Systeme, Cluster, Speicher und gemeinsam genutzte Switches, die interne Kommunikation mit der Möglichkeit bieten, Daten und Netzwerkschnittstellen unterbrechungsfrei im gesamten Cluster zu verschieben.
 
 Die „Front-End“-Switches stellen die Verbindung zum Host-Speicher her, während die „Back-End“-Cluster-Switches Verbindungen zwischen zwei oder mehr NetApp Controllern herstellen.
 

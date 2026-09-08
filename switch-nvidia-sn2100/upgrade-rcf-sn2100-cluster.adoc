@@ -140,7 +140,7 @@ admin@sw1:mgmt:~$ cat /etc/issue
 
 NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
+. Alle zuvor vorgenommenen Anpassungen sind erneut auf die Switch-Konfiguration anzuwenden. Einzelheiten zu weiteren erforderlichen Änderungen sind in link:cabling-considerations-sn2100-cluster.html["Richtlinien für Verkabelung und Konfiguration"] zu finden.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -462,7 +462,7 @@ admin@sw1:mgmt:~$ cat /etc/issue
 
 NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
+. Alle zuvor vorgenommenen Anpassungen sind erneut auf die Switch-Konfiguration anzuwenden. Einzelheiten zu weiteren erforderlichen Änderungen sind in link:cabling-considerations-sn2100-cluster.html["Richtlinien für Verkabelung und Konfiguration"] zu finden.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]
@@ -756,7 +756,7 @@ NOTE: Im obigen Schritt 3 *Aktualisieren der MOTD-Datei* wird der Befehl verwend
 
 NOTE: Bei Problemen mit RCF-Python-Skripten, die nicht behoben werden können, wenden Sie sich bitte an [Kontaktinformationen einfügen]. https://mysupport.netapp.com/["NetApp Support"^] um Unterstützung zu erhalten.
 
-. Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehelink:cabling-considerations-sn2100-cluster.html["Überprüfung der Verkabelung und Konfigurationsüberlegungen"] Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.
+. Alle zuvor vorgenommenen Anpassungen sind erneut auf die Switch-Konfiguration anzuwenden. Einzelheiten zu weiteren erforderlichen Änderungen sind in link:cabling-considerations-sn2100-cluster.html["Richtlinien für Verkabelung und Konfiguration"] zu finden.
 . Überprüfen Sie die Konfiguration nach dem Neustart:
 +
 [listing, subs="+quotes"]

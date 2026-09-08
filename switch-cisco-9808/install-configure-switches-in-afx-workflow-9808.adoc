@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: switches, initial installation, configure switch-cisco-9808 switch 
 summary: Mit diesem Workflow werden Cisco Nexus 9808 Switches als Teil eines neuen AFX 2K Systems installiert und konfiguriert. 
 ---
-= Installations- und Konfigurationsworkflow für Cisco Nexus 9808 Switches in einem AFX-System
+= Installations- und Konfigurationsablauf für Cisco Nexus 9808 Switches
 :allow-uri-read: 
 
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cluster-mode,supported versions,switches supported,cluster network,efos 
 summary: Die Komponenten und Teilenummern für den Broadcom BES-53248 Cluster Switch zur Unterstützung der Hardwareinstallation und der laufenden Wartung werden identifiziert. 
 ---
-= Informationen zu Komponenten und Teilenummern des Broadcom BES-53248 Cluster Switch
+= Komponenten und Teilenummern für den Broadcom BES-53248 Cluster Switch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

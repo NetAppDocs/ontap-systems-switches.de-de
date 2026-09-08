@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cisco 3132q-v, cluster switches 
 summary: Ports für die Migration von einem Zwei-Knoten Cluster ohne Switches zu Cisco Nexus 3132Q-V Cluster Switches konfigurieren. 
 ---
-= Ports für die Migration von Cluster ohne Switches zu Cisco Nexus 3132Q-V Cluster Switches konfigurieren
+= Ports für die Migration zu Cisco Nexus 3132Q-V Cluster Switches konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

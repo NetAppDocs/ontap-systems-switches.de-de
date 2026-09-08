@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: BES-53248 cabling setup, BES-53248 switches configuration, efos 
 summary: Vor der Inbetriebnahme sind die Verkabelungs- und Konfigurationsbeschränkungen für den Broadcom BES-53248 Cluster Switch zu berücksichtigen, einschließlich der Cluster-Port-Zuweisungen, der Geschwindigkeitsbeschränkungen der Portgruppen und der FEC-Einstellungen. 
 ---
-= Verkabelungs- und Konfigurationsaspekte für den Broadcom BES-53248 Cluster Switch werden betrachtet.
+= Verkabelungs- und Konfigurationsanforderungen für den Broadcom BES-53248 Cluster Switch prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

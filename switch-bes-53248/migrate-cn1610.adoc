@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: CN1610, CN1610 replacing, migrate from CN1610 
 summary: Vorhandene NetApp CN1610 Cluster Switches können auf Broadcom BES-53248 Cluster Switches migriert werden, wenn die Migrationsanforderungen und das Verfahren beachtet werden. 
 ---
-= Migration der NetApp CN1610 Cluster Switches zu Broadcom BES-53248 Cluster Switches
+= Migration von NetApp CN1610 Cluster Switches zu Broadcom BES-53248 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

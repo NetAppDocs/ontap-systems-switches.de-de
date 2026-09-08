@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9808 
 summary: Die Ersteinrichtung von Cisco Nexus 9808 Switches erfolgt mithilfe des Konfigurationsassistenten bei neuen AFX 2K Systeminstallationen, beim Austausch von Supervisor-Modulen oder beim Zurücksetzen auf Werkseinstellungen. 
 ---
-= Die Ersteinrichtung des Cisco Nexus 9808 Switch abschließen
+= Die Ersteinrichtung auf dem Cisco Nexus 9808 Switch abschließen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

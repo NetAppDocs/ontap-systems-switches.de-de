@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: migrate, two-node switched cluster, fas22xx systems, single, network connection 
 summary: FAS22xx-Systeme können von einem Cluster ohne Switches mit einer einzelnen Cluster-Netzwerkverbindung auf ein geschaltetes Cluster mit NetApp CN1610 Cluster Switches migriert werden. 
 ---
-= FAS22xx-Systeme können mithilfe von NetApp CN1610 Cluster Switches auf ein Cluster mit Switch migriert werden.
+= Migration von FAS22xx Systemen mithilfe von NetApp CN1610 Cluster Switches
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

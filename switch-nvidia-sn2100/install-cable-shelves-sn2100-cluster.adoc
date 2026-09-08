@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: sn2100 cabling setup, msn2100 sn2100 switches configuration, cumulus linux 
 summary: NS224-Laufwerksschächte als Switch-gebundener Speicher mit NVIDIA SN2100 Cluster Switches verkabeln, wenn kein direkt angeschlossener Speicher verwendet wird. 
 ---
-= NS224-Laufwerksschächte als Switch-gebundener Speicher für NVIDIA SN2100 Cluster Switches verkabeln
+= NS224 Shelves als Switch-gebundener Speicher an NVIDIA SN2100 Switches verkabeln
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

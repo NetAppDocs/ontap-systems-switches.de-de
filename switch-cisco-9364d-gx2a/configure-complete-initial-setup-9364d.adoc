@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: require, configuration, information, documentation, cluster, management, network, switches, set up the switches - cisco nexus 9364d-gx2a 
 summary: Die Ersteinrichtung der Cisco Nexus 9364D-GX2A Switches erfolgt mithilfe des Konfigurationsassistenten für neue AFX 1K oder AFX 2K Systeme, den Austausch von Switches oder das Zurücksetzen auf Werkseinstellungen. 
 ---
-= Die Ersteinrichtung des Cisco Nexus 9364D-GX2A Switch abschließen
+= Die Ersteinrichtung auf dem Cisco Nexus 9364D-GX2A Switch abschließen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

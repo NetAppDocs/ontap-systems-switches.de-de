@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: documentation requirements, BES-53248 switches,cluster switches 
 summary: Die für die Einrichtung und Konfiguration des Broadcom BES-53248 Cluster Switch erforderliche Dokumentation zu Switch und Controller sollte geprüft werden. 
 ---
-= Die Dokumentationsanforderungen für die Einrichtung des Broadcom BES-53248 Cluster Switch prüfen.
+= Dokumentationsanforderungen für den Broadcom BES-53248 Cluster Switch prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

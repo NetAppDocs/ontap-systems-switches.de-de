@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: verify, monitor, cluster, management, network, switches, heath, monitor 
 summary: Es sollte sichergestellt sein, dass die Zustandsüberwachung der Ethernet-Switches ordnungsgemäß konfiguriert ist und funktioniert. 
 ---
-= Die Konfiguration des Ethernet-Switch-Integritätsmonitors überprüfen
+= Die Konfiguration für die Überwachung des Zustands von Ethernet Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

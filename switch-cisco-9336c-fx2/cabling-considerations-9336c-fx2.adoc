@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: 9336c-fx2 cabling setup, 9336c-fx2 switches configuration, nx-os 
 summary: Vor der Bereitstellung sind die Verkabelungs- und Konfigurationshinweise für die Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches zu berücksichtigen. 
 ---
-= Hinweise zur Verkabelung und Konfiguration von Cisco Nexus 9336C-FX2 Cluster Switches
+= Verkabelungs- und Konfigurationsanforderungen für Cisco Nexus 9336C-FX2 und 9336C-FX2-T Cluster Switches prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: sn2100 SN2100 cabling setup, sn2100 switches configuration, cumulus linux os 
 summary: Vor der Bereitstellung sind die Verkabelungs- und Konfigurationsaspekte für NVIDIA SN2100 Storage Switches zu prüfen. 
 ---
-= Verkabelungs- und Konfigurationsaspekte für NVIDIA SN2100 Speicherschalter werden erläutert.
+= Verkabelungsrichtlinien für NVIDIA SN2100 Speicherschalter im Überblick
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
