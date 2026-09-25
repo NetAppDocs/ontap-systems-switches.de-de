@@ -23,6 +23,10 @@ NOTE: NetApp empfiehlt, zunächst ein ONTAP Software-Upgrade abzuschließen und 
 
 .Informationen zu diesem Vorgang
 * Bei Bedarf kann auf die link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/101x/upgrade/cisco-nexus-9000-nx-os-software-upgrade-downgrade-guide-101x.html["Leitfaden für Software-Upgrades und -Downgrades der Cisco Nexus 9000-Serie mit NX-OS"^] für weitere Informationen verwiesen werden.
+* Bei Bedarf kann auf die link:https://www.cisco.com/c/dam/en/us/td/docs/dcn/tools/nexus-9k3k-issu-matrix/index.html["Cisco Nexus 9000 und 3000 Upgrade- und ISSU-Matrix"^] verwiesen werden, die Informationen zum In-Service Software Upgrade (ISSU) für Cisco Nexus 9000 Series Switches auf Basis der aktuellen und Zielversionen enthält.
++
+Wählen Sie auf der Seite *Disruptives Upgrade* aus und wählen Sie Ihre aktuelle Version und die Zielversion aus der Dropdown-Liste.
+
 * Die auf Ihrem AFX-System ausgeführte ONTAP-Version bestimmt die unterstützten Versionen von NX-OS für Ihre Switches.
 +
 ** Für Switches in einem AFX 2K-System, auf denen ONTAP 9.19.1GA oder höher ausgeführt wird, wird NX-OS 10.6 und höher unterstützt.
@@ -51,6 +55,7 @@ NOTE: Führen Sie kein Upgrade oder Downgrade Ihrer NX-OS Version auf eine nicht
 ** Der `cluster1::*>` Die Eingabeaufforderung zeigt den Namen des Clusters an.
 
 
+* Die in diesem Verfahren gezeigten Beispiele gelten für AFX 2K Systeme mit Switches, auf denen RCF 10.1 ausgeführt wird. Die Eingabe und Ausgabe kann je nach Ihrer RCF Version variieren.
 
 
 
@@ -62,7 +67,7 @@ Das Upgrade von NX-OS wird vorbereitet, indem eine Management-Netzwerkverbindung
 
 .Schritte
 . Jeder Switch wird mit dem Managementnetzwerk verbunden.
-. Mit der Switch-CLI lässt sich die Verbindung zu dem Server überprüfen, auf dem NX-OS ausgeführt wird.
+. Mithilfe der Switch-CLI ist die Verbindung zum Server zu überprüfen, auf dem NX-OS gehostet wird:
 +
 `ping <IP address>`
 
@@ -494,9 +499,9 @@ network interface modify -vserver Cluster -lif * -auto-revert false
 [[step-2-install-the-nx-os]]
 == Schritt 2: Installation von NX-OS
 
-Das NX-OS wird auf dem ersten Switch (cs1) installiert, indem die neue Version des NX-OS und des EPLD installiert und überprüft wird, der Zustand aller Ports im Cluster verifiziert wird und diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt werden.
+Das NX-OS wird auf dem ersten Switch (cs1) installiert, indem die neue Version von NX-OS und EPLD installiert und überprüft, der Zustand aller Ports im Cluster verifiziert und diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt werden.
 
-. Mithilfe der Switch-CLI wird das NX-OS- und EPLD-Image auf einen Switch kopiert.
+. Mithilfe der Switch-CLI erfolgt das Kopieren des NX-OS- und EPLD-Image auf einen Switch:
 +
 `copy <protocol>: bootflash: vrf management`
 
@@ -595,7 +600,7 @@ cs1#
 ====
 . Mit der Switch-CLI das NX-OS- und EPLD-Image installieren.
 +
-Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switches geladen.
+Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switch geladen:
 
 +
 `install all nxos bootflash:nxos.<version number>.bin`
@@ -669,7 +674,7 @@ Warning: please do not remove or power off the module at this time.
 Finishing the upgrade, switch will reboot in 10 seconds.
 ----
 ====
-. Mit der Switch-CLI lässt sich nach dem Neustart des Switches die neue Version von NX-OS überprüfen:
+. Mithilfe der Switch CLI lässt sich nach dem Neustart des Switches die neue Version von NX-OS überprüfen:
 +
 `show version`
 
@@ -1288,7 +1293,7 @@ node1-04             true    true          true
 
 Mit der ONTAP CLI wird das NX-OS-Upgrade abgeschlossen, indem die automatische Rücksetzung auf den Cluster-LIFs wieder aktiviert und überprüft wird, ob die Cluster-LIFs auf ihre ursprünglichen Ports zurückgekehrt sind.
 
-. Die automatische Rücksetzung auf den Cluster-LIFs wieder aktivieren.
+. Die automatische Wiederherstellung der Cluster LIFs wird wieder aktiviert:
 +
 [source, cli]
 ----

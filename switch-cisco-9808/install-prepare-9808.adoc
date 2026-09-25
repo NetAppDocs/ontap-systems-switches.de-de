@@ -69,21 +69,21 @@ Die folgende Tabelle zeigt beispielsweise die voreingestellten Gruppen der Switc
 
 
  a| 
-Ethernet1/1/1-4 zu Ethernet1/14/1-4
+Ethernet1/1 bis Ethernet1/18
  a| 
-4x100GbE Modus für Intra-cluster-, HA- und Storage Shelf-Verbindungen
-
-
-
- a| 
-Ethernet1/15 bis Ethernet1/30
- a| 
-400GbE Modus für Intra-cluster-, HA- und Storage-Verbindungen
+400GbE Modus für Intra-cluster, HA und Storage shelf Verbindungen
 
 
 
  a| 
-Ethernet1/31, Ethernet1/32
+Ethernet1/19 bis Ethernet1/35
+ a| 
+4x100Gb Modus für Intra-cluster-, HA- und Storage-Verbindungen
+
+
+
+ a| 
+Ethernet1/36
  a| 
 400GbE Intra-Cluster ISL-Verbindungen
 

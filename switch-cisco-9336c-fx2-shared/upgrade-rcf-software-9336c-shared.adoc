@@ -36,6 +36,13 @@ CAUTION: Vor der Installation einer neuen Switch-Softwareversion und neuer RCFs 
 [[step-1-prepare-for-the-upgrade]]
 == Schritt 1: Vorbereitung auf das Upgrade
 
+. Ändern Sie die Berechtigungsstufe auf „Erweitert“, indem Sie *y* eingeben, wenn Sie zur Fortsetzung aufgefordert werden:
++
+`set -privilege advanced`
+
++
+Die erweiterte Aufforderung(`*>` ) erscheint.
+
 . Zeigen Sie die Cluster-Ports auf jedem Knoten an, die mit den Cluster-Switches verbunden sind:
 +
 `network device-discovery show`
@@ -696,7 +703,7 @@ cluster1::*>
 . Wiederholen Sie die Schritte 1 bis 21 auf Switch cs2.
 . Automatische Wiederherstellung der Cluster-LIFs aktivieren.
 +
-`cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert True*`
+`cluster1::*> *network interface modify -vserver Cluster -lif * -auto-revert true*`
 
 
 
@@ -994,14 +1001,16 @@ cluster1-04          true    true          false
 --
 Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start -node **
+----
+*HINWEIS:* Nach einigen Sekunden kann der  `show`Befehl ausgeführt werden, um die Details anzuzeigen. Die Einträge mit dem heutigen Datum sind zu überprüfen.
 
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface check cluster-connectivity start*
+cluster1::*> *network interface check cluster-connectivity show*
 ----
-*HINWEIS:* Warten Sie einige Sekunden, bevor Sie den Vorgang ausführen. `show` Befehl zum Anzeigen der Details.
-
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity show*

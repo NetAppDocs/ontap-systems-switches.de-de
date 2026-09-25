@@ -22,8 +22,10 @@ NX-OS auf Cisco Nexus 9808 Switches für neue AFX 2K Systeminstallationen, Super
 
 
 * Wenn NX-OS auf einem Switch im Rahmen eines Switch-Austauschs oder eines Zurücksetzens des Switches auf die Werkseinstellungen installiert wird, sollte sichergestellt sein, dass der Cluster voll funktionsfähig ist, das heißt, dass keine Fehler in den Protokollen oder ähnliche Probleme vorliegen.
-* Wenn NX-OS im Rahmen einer Neuinstallation eines AFX-Systems installiert wird, kann diese Anforderung übersprungen werden, da die Controller in Ihrem AFX-System zu diesem Zeitpunkt der Installation und Einrichtung des AFX-Systems noch nicht eingeschaltet sind.
 
+
+
+NOTE: Wenn NX-OS im Rahmen einer Neuinstallation eines AFX-Systems installiert wird, kann diese Anforderung übersprungen werden, da die Controller in Ihrem AFX-System zu diesem Zeitpunkt der Installation und Einrichtung des AFX-Systems noch nicht eingeschaltet sind.
 
 .Informationen zu diesem Vorgang
 * Die auf Ihrem AFX-System ausgeführte ONTAP-Version bestimmt die unterstützten Versionen von NX-OS für Ihre Switches.
@@ -37,6 +39,7 @@ Die aktuelle Liste der unterstützten NX-OS Versionen ist unter link:https://mys
 * Dieses Verfahren erfordert ausschließlich die Verwendung von Cisco Nexus 9000 Series Switches Befehlen.
 * In den Beispielen dieses Verfahrens wird der erste Switch als cs1 und der zweite Switch als cs2 bezeichnet.
 * Wenn im Rahmen einer Neuinstallation eines AFX 2K Systems Switches installiert wurden, wird das NX-OS auf dem ersten Switch (cs1) installiert und anschließend werden die Schritte für den zweiten Switch (cs2) mit dieser Vorgehensweise wiederholt.
+* Die in diesem Verfahren gezeigten Beispiele gelten für AFX 2K Systeme mit Switches, auf denen RCF 10.1 ausgeführt wird. Die Eingabe und Ausgabe kann je nach Ihrer RCF Version variieren.
 
 
 
@@ -50,7 +53,7 @@ Die Installation von NX-OS auf dem/den Switch(es) wird vorbereitet, indem sicher
 . Sie benötigen Zugriff auf einen HTTP-, SFTP-, FTP- oder TFTP-Server. Zugriff auf einen dieser Server ermöglicht das Herunterladen einer unterstützten Version von NX-OS.
 . Laden Sie die richtige Version von NX-OS und das EPLD-Image von der  https://software.cisco.com/download/home["Cisco -Software-Download"^] Seite auf den/die Switch(es) herunter.
 . Den Switch mit dem Management-Netzwerk (für die Dateiübertragung) verbinden.
-. Die Verbindung zum Server, auf dem NX-OS läuft, kann mit dem  `ping` Befehl überprüft werden.
+. Die Konnektivität zum Server, auf dem NX-OS gehostet wird, lässt sich mit dem  `ping`Befehl überprüfen:
 +
 `ping <IP address>`
 
@@ -77,7 +80,7 @@ Reply From 172.19.2.1: icmp_seq = 0. time= 5910 usec.
 
 Das NX-OS- und EPLD-Image wird auf dem ersten Switch (cs1) installiert, indem die NX-OS- und EPLD-Image-Versionen installiert und überprüft werden. Im Falle einer Installation von NX-OS als Teil einer neuen AFX Systeminstallation werden diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt.
 
-. Das NX-OS- und EPLD-Image auf den ersten Switch kopieren.
+. Das NX-OS- und EPLD-Image wird auf den ersten Switch kopiert:
 +
 `copy <protocol>: bootflash: vrf management`
 
@@ -176,7 +179,7 @@ cs1#
 ====
 . Das NX-OS- und EPLD-Image installieren.
 +
-Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switches geladen.
+Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switch geladen:
 
 +
 `install all nxos bootflash:nxos.<image_file>.bin`

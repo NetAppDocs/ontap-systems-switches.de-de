@@ -97,7 +97,7 @@ Beispielsweise kann die Portliste mit den neuen Ports 19-22 für das 100G Speed 
 +
 `interface e1/19/1-4, e1/20/1-4, e1/21/1-4, e1/22/1-4`
 
-. Die Breakout-Ports des Switches (4x100GbE) sind fest auf 100GbE zu konfigurieren. Wenn die Geschwindigkeit nicht fest konfiguriert wird, kommen die Ports nicht hoch und befinden sich im Fehlerzustand.
+. Die Breakout-Ports (4x100GbE) des Switches sind fest auf 100GbE zu konfigurieren. Wenn die Geschwindigkeit nicht fest konfiguriert wird, werden die Ports nicht aktiviert und befinden sich in einem fehlerdeaktivierten Zustand:
 +
 `speed 100000`
 

@@ -39,7 +39,7 @@ Die Installation der RCF auf dem/den Switch(es) wird vorbereitet, indem sicherge
 
 .Schritte
 . Sie benötigen Zugriff auf einen HTTP-, FTP- oder TFTP-Server. Zugriff auf einen dieser Server ermöglicht das Herunterladen einer unterstützten Version der RCF.
-. Die für Ihren AFX-Systemtyp unterstützte RCF-Datei steht auf der NetApp Support Site unter  http://mysupport.netapp.com/["mysupport.netapp.com"^] zur Verfügung.
+. Die für Ihren AFX-Systemtyp unterstützte RCF-Datei ist auf der NetApp Support Site unter link:http://mysupport.netapp.com/["mysupport.netapp.com"^] verfügbar.
 +
 
 NOTE: Neue Switches werden nicht mit installiertem RCF ausgeliefert. Der RCF muss auf den Switches installiert werden.
@@ -52,9 +52,9 @@ NOTE: Neue Switches werden nicht mit installiertem RCF ausgeliefert. Der RCF mus
 [[step-2-install-the-rcf]]
 == Schritt 2: Installation der RCF-Datei
 
-Die RCF wird auf dem ersten Switch (cs1) installiert, indem die RCF in den Bootflash kopiert und angewendet wird, die Banner-Ausgabe geprüft wird, die korrekte RCF-Version verifiziert wird, alle benutzerdefinierten Ergänzungen notiert werden, grundlegende Konfigurationsdetails gespeichert werden, überprüft wird, ob die Datei write_erase.cfg gefüllt ist, die aktuell gespeicherte Konfiguration gelöscht wird, die zuvor gespeicherte Basiskonfiguration in die Startkonfiguration kopiert wird und der Switch anschließend neu gestartet wird. Diese Schritte werden auf dem zweiten Switch (cs2) wiederholt, wenn die RCF im Rahmen einer neuen AFX Systeminstallation installiert wird.
+Die RCF wird auf dem ersten Switch (cs1) installiert, indem die RCF in den Bootflash kopiert und dort angewendet, die Bannerausgabe geprüft, die korrekte RCF Version verifiziert, die aktuelle Laufzeitkonfiguration dauerhaft gespeichert und der Switch anschließend neu gestartet wird. Diese Schritte werden auf dem zweiten Switch (cs2) wiederholt, wenn die RCF im Rahmen einer neuen AFX Systeminstallation installiert wird.
 
-. Melden Sie sich über SSH oder über eine serielle Konsole am Switch cs1 an.
+. Melden Sie sich bei Switch cs1 über SSH oder über eine serielle Konsole an.
 . Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
 Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Handbuch im link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/102x/command-reference/config/b_n9k_config_commands_1021.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^]
@@ -138,7 +138,7 @@ Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port
 
 . Die aktuelle laufende Konfiguration wird in die Startkonfiguration kopiert, damit sie dauerhaft erhalten bleibt.
 +
-`cs1# *copy bootflash:write_erase.cfg startup-config*`
+`cs1# *copy running-config startup-config*`
 
 . Starten Sie den Switch neu:
 +

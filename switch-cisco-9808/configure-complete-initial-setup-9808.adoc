@@ -18,7 +18,7 @@ Stellen Sie sicher, dass Sie die Netzwerk- und Konfigurationsinformationen für 
 
 .Informationen zu diesem Vorgang
 * Die Ersteinrichtung muss an jedem Switch abgeschlossen werden.
-* Bei Bedarf finden Sie Informationen zum Einrichten der Switches im Kapitel *Using the Cisco NX-OS Setup Utility* des link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/106x/configuration/fundamentals/cisco-nexus-9000-series-nx-os-fundamentals-configuration-guide-release-106x/m-using-nnxos-setup-utility.html["Cisco Nexus 9000 Series NX-OS Grundlagen-Konfigurationshandbuch, Release 10.6(x)"^].
+* Bei Bedarf kann in der Dokumentation Ihrer NX-OS-Version link:https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/106x/configuration/fundamentals/cisco-nexus-9000-series-nx-os-fundamentals-configuration-guide-release-106x.html["Cisco Nexus 9000 Series NX-OS Grundlagen Konfigurationsleitfaden"^]Informationen zur Einrichtung der Switches im Kapitel „Using the Cisco NX-OS Setup Utility“ gefunden werden. Informationen zu den Terminaleinstellungen sind im Kapitel „Configuring Terminal Settings and Sessions“ zu finden.
 
 
 .Schritte

@@ -18,15 +18,16 @@ Die Referenz-Konfigurationsdatei (RCF) wird auf Cisco Nexus 9808 Switches für n
 * Sie müssen die gewünschte NX-OS Version mit dem link:configure-install-nxos-9808.html["Die NX-OS Installation"] Verfahren installiert haben.
 * Die link:configure-install-upgrade-rcf-overview-9808.html["RCF installieren oder aktualisieren – Übersicht"] Seite muss gelesen worden sein.
 * Wenn die RCF auf einem Switch im Rahmen eines Supervisor-Modul-Austauschs oder eines Switch-Resets auf Werkseinstellungen installiert wird, sollte sichergestellt sein, dass der Cluster voll funktionsfähig ist, das heißt, dass keine Fehler in den Protokollen oder ähnliche Probleme vorliegen.
-+
-Wenn der RCF im Rahmen einer neuen AFX-Systeminstallation installiert wird, kann diese Anforderung übersprungen werden, da die Controller in Ihrem AFX-System zu diesem Zeitpunkt der Installation und Einrichtung des AFX-Systems noch nicht eingeschaltet sind.
 
 
+
+NOTE: Wenn der RCF im Rahmen einer neuen AFX-Systeminstallation installiert wird, kann diese Anforderung übersprungen werden, da die Controller in Ihrem AFX-System zu diesem Zeitpunkt der Installation und Einrichtung des AFX-Systems noch nicht eingeschaltet sind.
 
 .Informationen zu diesem Vorgang
 * Wenn im Rahmen einer Neuinstallation eines AFX 2K Systems Switches installiert wurden, wird die Referenz-Konfigurationsdatei (RCF) auf dem ersten Switch (cs1) installiert und anschließend die Schritte für den zweiten Switch (cs2) mit diesem Verfahren wiederholt.
 * Dieses Verfahren erfordert ausschließlich die Verwendung von Cisco Nexus 9000 Series Switches Befehlen.
 * In den Beispielen dieses Verfahrens wird der erste Switch als cs1 und der zweite Switch als cs2 bezeichnet.
+* Die in diesem Verfahren gezeigten Beispiele gelten für AFX 2K Systeme mit Switches, auf denen RCF 10.1 ausgeführt wird. Die Eingabe und Ausgabe kann je nach Ihrer RCF Version variieren.
 
 
 
@@ -52,12 +53,12 @@ NOTE: Neue Switches werden nicht mit installiertem RCF ausgeliefert. Der RCF mus
 [[step-2-install-the-rcf]]
 == Schritt 2: Installation der RCF-Datei
 
-Die RCF wird auf dem ersten Switch (cs1) installiert, indem die RCF in den Bootflash kopiert und angewendet wird, die Banner-Ausgabe geprüft, die korrekte RCF-Version verifiziert, alle benutzerdefinierten Ergänzungen erfasst, grundlegende Konfigurationsdetails gespeichert, überprüft wird, dass die  `write_erase.cfg` Datei befüllt ist, die aktuell gespeicherte Konfiguration gelöscht, die zuvor gespeicherte Basiskonfiguration in die Startkonfiguration kopiert und anschließend der Switch neu gestartet wird. Diese Schritte werden auf dem zweiten Switch (cs2) wiederholt, wenn die RCF im Rahmen einer neuen AFX Systeminstallation installiert wird.
+Die RCF wird auf dem ersten Switch (cs1) installiert, indem die RCF in den Bootflash kopiert und dort angewendet, die Bannerausgabe geprüft, die korrekte RCF Version verifiziert, die aktuelle Laufzeitkonfiguration dauerhaft gespeichert und der Switch anschließend neu gestartet wird. Diese Schritte werden auf dem zweiten Switch (cs2) wiederholt, wenn die RCF im Rahmen einer neuen AFX Systeminstallation installiert wird.
 
 . Melden Sie sich bei Switch cs1 über SSH oder über eine serielle Konsole an.
 . Kopieren Sie die RCF mit einem der folgenden Übertragungsprotokolle in den Bootflash des Switches cs1: FTP, TFTP, SFTP oder SCP.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in den  https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Guides.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
 `copy <protocol>: bootflash: vrf management`
@@ -80,7 +81,7 @@ Copy complete, now saving to disk (please wait)...
 ====
 . Die zuvor in den Bootflash kopierte RCF-Datei anwenden.
 +
-Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in den  https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^] Guides.
+Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der link:https://www.cisco.com/c/en/us/support/switches/nexus-9000-series-switches/series.html["Cisco Nexus 9000 Serie NX-OS Befehlsreferenz"^].
 
 +
 Dieses Beispiel zeigt die RCF-Datei `RCF-v10.1-NX9808-CL1-ST1.txt`, die auf Switch cs1 installiert wird:
@@ -132,9 +133,9 @@ Das Ergebnis variiert je nach Ihrer Website-Konfiguration.  Prüfen Sie die Port
 
 
 
-. Die aktuelle laufende Konfiguration wird in die Startkonfiguration kopiert, damit sie dauerhaft erhalten bleibt.
+. Die aktuelle laufende Konfiguration wird in die Startkonfiguration kopiert, damit sie dauerhaft gespeichert wird:
 +
-`cs1# *copy bootflash:write_erase.cfg startup-config*`
+`cs1# *copy running-config startup-config*`
 
 . Starten Sie den Switch neu:
 +

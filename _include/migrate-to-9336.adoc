@@ -620,34 +620,33 @@ Group Port-       Type     Protocol  Member Ports
 +
 `network interface modify -vserver Cluster -lif * -auto-revert true`
 
-. Auf Switch cs2 müssen alle Cluster-Ports heruntergefahren und neu gestartet werden, um eine automatische Rücksetzung aller Cluster-LIFs auszulösen, die sich nicht an ihren Home-Ports befinden.
-+
-[listing, subs="+quotes"]
-----
-cs2> *enable*
-cs2# *configure*
-cs2(config)# *interface eth1/1-1/2*
-cs2(config-if-range)# *shutdown*
-
-(Wait for 5-10 seconds before re-enabling the ports)
-
-cs2(config-if-range)# *no shutdown*
-
-(After executing the no shutdown command, the nodes detect the change and begin to auto-revert the cluster LIFs to their home ports)
-
-cs2(config-if-range)# *exit*
-cs2(config)# *exit*
-cs2#
-----
-. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihre ursprünglichen Ports zurückgesetzt wurden (dies kann eine Minute dauern):
+. Überprüfen Sie, ob die Cluster-LIFs wieder auf ihren Heimatport zurückgekehrt sind:
 +
 `network interface show -vserver Cluster`
 
 +
-Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, setzen Sie sie manuell zurück. Sie müssen eine Verbindung zur jeweiligen Node-Management-LIF- oder SP/ BMC -Systemkonsole des lokalen Knotens herstellen, dem die LIF gehört:
+.Beispiel anzeigen
+[%collapsible]
+====
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface show -vserver Cluster*
+            Logical            Status     Network            Current             Current Is
+Vserver     Interface          Admin/Oper Address/Mask       Node                Port    Home
+----------- ------------------ ---------- -----------------  ------------------- ------- ----
+Cluster
+            node1_clus1        up/up      169.254.3.4/23     node1               e0b     true
+            node1_clus2        up/up      169.254.3.5/23     node1               e0b     true
+            node2_clus1        up/up      169.254.3.8/23     node2               e0b     true
+            node2_clus2        up/up      169.254.3.9/23     node2               e0b     true
+cluster1::*>
+----
+====
++
+Falls die Cluster-LIFs nicht zu ihren Heimatports zurückgekehrt sind, können sie manuell vom lokalen Knoten aus zurückgesetzt werden:
 
 +
-`network interface revert -vserver Cluster -lif *`
+`network interface revert -vserver Cluster -lif <lif_name>`
 
 . Überprüfen Sie, ob der Cluster fehlerfrei funktioniert:
 +
@@ -662,15 +661,16 @@ Falls eine der Cluster-LIFs nicht auf ihren Heimatport zurückgesetzt wurde, set
 --
 Sie können die `network interface check cluster-connectivity` Befehl zum Starten einer Zugriffsprüfung für die Clusterkonnektivität und anschließenden Anzeigen der Details:
 
-`network interface check cluster-connectivity start`Und `network interface check cluster-connectivity show`
+[listing, subs="+quotes"]
+----
+cluster1::*> *network interface check cluster-connectivity start -node **
+----
+*HINWEIS:* Nach einigen Sekunden kann der  `show`Befehl ausgeführt werden, um die Details anzuzeigen. Die Einträge mit dem heutigen Datum sind zu überprüfen.
 
 [listing, subs="+quotes"]
 ----
-cluster1::*> *network interface check cluster-connectivity start*
+cluster1::*> *network interface check cluster-connectivity show*
 ----
-
-NOTE: Warten Sie einige Sekunden, bevor Sie den Befehl ausführen. `show` Befehl zum Anzeigen der Details.
-
 [listing, subs="+quotes"]
 ----
 cluster1::*> *network interface check cluster-connectivity show*
