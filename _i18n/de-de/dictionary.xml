@@ -2786,13 +2786,9 @@
   <block id="098d312f939d7511ad5f9bf80ccaea96" category="list-text">Überprüfen Sie die Cumulus Linux-Version:</block>
   <block id="738a5885a3f1e978619a10d76a3f0d58" category="paragraph"><block ref="98f5dff8534e8c39673b544f567273e7" prefix="" category="inline-code"></block></block>
   <block id="e97e9b3be2fac0213159d6416ed26304" category="paragraph">Nach der Installation von Cumulus Linux im ONIE-Modus können Sie<block ref="3acf483c9de841e025c40a5da17bc790" category="inline-link-macro-rx"></block> Die</block>
-  <block id="8f77c20cd9bd8afa1521eb15ea44a8ef" category="list-text">Cumulus Linux 4.4.3 ist installiert.</block>
-  <block id="7baa7758ed49797651dc1e276762ae15" category="list-text">Clustering: *MSN2100-RCF-v1._x_-Cluster*</block>
   <block id="57b0a80c5a3ed4944b5b9a4dee8543f0" category="list-text">Kopieren Sie das RCF-Python-Skript auf den Switch:</block>
-  <block id="31f5d9c51b1172585d012a33be1bef72" category="list-text">Wenden Sie das RCF-Python-Skript *MSN2100-RCF-v1.8-Cluster* an:</block>
   <block id="458ab89f862895d8f5ce855c654868d6" category="paragraph">Das RCF-Skript führt die oben aufgeführten Schritte aus.</block>
   <block id="e4da4813fef5b96a216a043d594bf245" category="list-text">Wenden Sie alle zuvor vorgenommenen Anpassungen auf die Switch-Konfiguration erneut an.  Siehe<block ref="75ce5666fba6992a0719935651dd5b1b" category="inline-link-macro-rx"></block> Einzelheiten zu etwaigen weiteren erforderlichen Änderungen.</block>
-  <block id="101f004ff19ed2b05722d5518355aec8" category="paragraph"><block ref="a2261d8cf22fcce07337ff5c78acfa87" prefix="" category="inline-code"></block></block>
   <block id="d1c87417ef01b3bb9ef749bfc91a91cd" category="paragraph">Nach der Installation oder Aktualisierung des RCF können Sie<block ref="f3791ff783629f66fe5f05b40418ed92" category="inline-link-macro-rx"></block> Die</block>
   <block id="e1ca8fa9e4221b7b9a580ee069ca1bd2" category="paragraph">Die folgenden Befehle konfigurieren einen SNMPv3-Benutzernamen auf NVIDIA SN2100-Switches:</block>
   <block id="110a40639a346b7c822f54dc5b7a9ef8" category="list-text">Für *keine Authentifizierung*:<block ref="0069c6683a9b71a6ce43ff40deb246ce" prefix=" " category="inline-code"></block></block>
@@ -3701,7 +3697,6 @@
   <block id="97baec035cc13209f73c70eb4ec770ba" category="list-text">Laden Sie die richtige Version von NX-OS und das EPLD-Image von der <block ref="f823faeecc1cbb37f2d732cc29c07d86" category="inline-link-rx"></block> Seite auf den/die Switch(es) herunter.</block>
   <block id="fe27c1314cf866810ddbc667418c980b" category="section-title">Schritt 2: Installation des NX-OS- und EPLD-Images</block>
   <block id="f503bf6e3a7ef530427ba9ee9f151aa9" category="paragraph">Das NX-OS- und EPLD-Image wird auf dem ersten Switch (cs1) installiert, indem die NX-OS- und EPLD-Image-Versionen installiert und überprüft werden. Im Falle einer Installation von NX-OS als Teil einer neuen AFX Systeminstallation werden diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt.</block>
-  <block id="ee1edacd9870512b9996cec446c3a4e9" category="list-text">Das NX-OS- und EPLD-Image auf den ersten Switch kopieren.</block>
   <block id="e2e19b5720be0713584948e2d295ae69" category="list-text">Das NX-OS- und EPLD-Image installieren.</block>
   <block id="35d09e78c946cc8aa5c35b0c526f19c8" category="paragraph"><block ref="6df29248bb27b899618751498c8a0599" prefix="" category="inline-code"></block></block>
   <block id="3652e4cb89e846b17f60cbfacf554a98" category="paragraph">Das Beispiel verwendet NX-OS Version 10.6(3)(F).</block>
@@ -3860,24 +3855,17 @@
   <block id="bbe11fdd91fda58af0bba559cb07294d" category="paragraph">Auf der Cisco Website gibt es Anleitungen für Software-Upgrades und -Downgrades.</block>
   <block id="aa5c6ec45e4c4b6dcc0850deb97f2e44" category="paragraph">In diesem Verfahren sind ONTAP Befehle zu verwenden, sofern nicht ausdrücklich ein Cisco Nexus 9000 Series Switch Befehl angegeben ist.</block>
   <block id="9fc86f4dabe0859a40dac8d1f8b5531d" category="paragraph"><block ref="b67d565e5390da794178d81e41d9d587" prefix="" category="inline-code"></block></block>
-  <block id="9487ccc182d124ffae84e3326c18b6cf" category="list-text">Laden und installieren Sie die NX-OS Software und das EPLD Image. Die Schritte können je nach Ihrer aktuellen NX-OS Version und der Ziel-NX-OS Version variieren.</block>
   <block id="c25086ea467dc08f96b34fa5ddfe6f95" category="paragraph">Wählen Sie die Registerkarte, die auf Ihre Situation zutrifft:</block>
-  <block id="545f32c102da8b5c806f0a9252f74aa7" category="list-text">Upgrade auf 10.4(5)(M)</block>
-  <block id="6d4c71f053835d50b253965bf9e22247" category="list-text">Upgrade von 10.4(5)(M) oder älter auf 10.5(3)(F) oder neuer</block>
-  <block id="6a3e1271fda881036b04a9948f12b930" category="list-text">Upgrade von Version 10.5(3)(F) auf eine neuere Version</block>
   <block id="22c721af68f3e238337fd6682565a004" category="list-text">[[stepa]] Die NX-OS Software und die EPLD Images werden auf den Nexus 9336C-FX2 Switch kopiert.</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="example-title">Beispiel</block>
   <block id="5471ccde54f76964db229481cc1fb109" category="paragraph"><block ref="741d4bb5899dd2abc3bdd986dd32f159" prefix="" category="inline-code"></block></block>
   <block id="6634794e8c206b378c65c5faa7c4c80b" category="paragraph"><block ref="a121d8672e9b479ad82c8ef2e7e9c717" prefix="" category="inline-code"></block></block>
-  <block id="f005b45baba8377a1ac45612282d2dc7" category="list-text">[[stepa]] Die NX-OS Software und das EPLD Image auf den Nexus 9336C-FX2 Switch kopieren.</block>
   <block id="5a252ea0dbbfb3da5e794e2acb54d70e" category="list-text">Die NX-OS- und EPLD-Images installieren.</block>
   <block id="ee1c8dab6911f396921f8d9c99310d8e" category="paragraph">Das EPLD-Image wird beim Upgrade auf NX-OS 10.5(3)(F) und höher nicht automatisch aktualisiert. Nach Abschluss des Upgrades und dem Neustart des Switches muss derselbe Upgrade<block ref="1f3226f23ea270e1a1024cd0db05413e" prefix=" " category="inline-code"></block>-Befehl erneut ausgeführt werden.</block>
   <block id="63866b50d1c752b87d0a35424ec78d9f" category="list-text">Der zweite Upgrade-Durchlauf verifiziert die Aktualisierung, überspringt aber das NX-OS Upgrade; nur das EPLD Image wird aktualisiert.</block>
   <block id="e891366244f7639a1cebce5d7b254878" category="list-text">Wenn bereits auf NX-OS 10.5(3)(F) oder höher aktualisiert wurde, werden beide Images gleichzeitig aktualisiert.</block>
-  <block id="7d625d674a5fa1ee8f231bbe934d59c5" category="paragraph">Der folgende Schritt zeigt ein Upgrade von NX-OS 10.4(5)(M) auf 10.5(3)(F). Im ersten Durchlauf erfolgt das NX-OS Upgrade, im zweiten Durchlauf das EPLD Image Upgrade.</block>
   <block id="49b200eb8820638568f5d815c24fbe04" category="paragraph"><block ref="5ea68978710e999c37e81ef89e1609fb" prefix="" category="inline-code"></block></block>
   <block id="30c31bba00ddc5f435e1609b696cfc11" category="paragraph">Das Beispiel verwendet NX-OS Version 10.5(4)(M).</block>
-  <block id="03ff4c3f972d17b8f10bd0edb3043c3a" category="paragraph">Das Beispiel verwendet EPLD Version 10.5(4)(M).</block>
   <block id="28ccfd0538434ca8f7c3ed05eb919f9d" category="list-text">[[step7]]Den Zustand der Cluster-Ports im Cluster überprüfen.</block>
   <block id="7b7c6479e04cac8c2008fe7ca440afea" category="list-text">Wiederholen Sie die Schritte 6 bis 8, um die NX-OS Software auf Switch cs1 zu installieren.</block>
   <block id="95a058e5eceffbda103e7cb32bf0371d" category="list-text">[[step11]]Automatische Rücksetzung auf den Cluster-LIFs aktivieren.</block>
@@ -6493,9 +6481,6 @@
   <block id="673ae793392a47aa63a6e19dee788e49" category="summary">Cumulus Linux auf NVIDIA SN2100 Speicherswitches installieren, wenn der Switch im ONIE-Modus läuft.</block>
   <block id="c22c89a37b9f177e384532a7f1ece079" category="doc">Cumulus Linux im ONIE-Modus auf NVIDIA SN2100 Speicherschaltern installieren</block>
   <block id="8d59a1c1c12d6a7e63c0b9b284e508ef" category="paragraph">Cumulus Linux (CL) auf NVIDIA SN2100 Speicherswitches installieren, wenn der Switch im ONIE-Modus betrieben wird.</block>
-  <block id="c6741893a45d37d5e205eeb008e7f397" category="summary">Das Referenz-Konfigurationsdatei-Skript (RCF) auf NVIDIA SN2100 Speicherswitches installieren oder aktualisieren.</block>
-  <block id="d627507127ea31471cd85704cc78868c" category="doc">Das RCF-Skript auf NVIDIA SN2100 Speicherschaltern installieren oder aktualisieren</block>
-  <block id="e0a62f41a6a7eafa3cec3737408302a8" category="paragraph">Das Referenzkonfigurationsdatei (RCF) Skript kann auf NVIDIA SN2100 Speicherswitches installiert oder aktualisiert werden, um Portzuweisungen und Netzwerkeinstellungen zu konfigurieren.</block>
   <block id="6c02f4f0cecf93bc67137d416dae0717" category="summary">SNMPv3 auf NVIDIA SN2100 Speicherswitchen konfigurieren, um eine sichere Protokollerfassung und Zustandsüberwachung der Switches zu ermöglichen.</block>
   <block id="bb60df157481eef2a3bc6527739082fb" category="doc">SNMPv3 für NVIDIA SN2100 Speicherschalter konfigurieren</block>
   <block id="e61d07468608a5163b9516fbf4e7d7cc" category="paragraph">SNMPv3 auf NVIDIA SN2100 Storage Switches konfigurieren, um eine sichere, authentifizierte Switch-Protokollerfassung und die Überwachung des Ethernet Switch Health Monitor (CSHM) zu ermöglichen.</block>
@@ -6585,7 +6570,6 @@
   <block id="ee01384cf8d137f89bc685e22c4be2d8" category="list-text">Die neue Version von NX-OS nach dem Neustart des Switches überprüfen:</block>
   <block id="a2bfa4b1027a4489b14fe1e1da98d3b6" category="paragraph">Das Beispiel verwendet EPLD Version 10.4(2)F</block>
   <block id="bf2613a62b8382033c4d11fca50c73ac" category="list-text">Nach dem Neustart des Switches erfolgt die Anmeldung und die Überprüfung, ob die neue Version von EPLD erfolgreich geladen wurde:</block>
-  <block id="ec73a52c8df4c017f18b7e0f0728d851" category="list-text">[[stepa]] Das NX-OS- und EPLD-Image wird auf den ersten Switch kopiert:</block>
   <block id="d9235186cc0e8d3882e806417185d7b9" category="list-text">Die ausgeführte Version von NX-OS ist zu überprüfen:</block>
   <block id="f654c58cdecf7be775bef7ae06fe441a" category="paragraph">Das EPLD-Image wird beim Upgrade auf NX-OS 10.6(3)F und höher nicht automatisch aktualisiert. Nach Abschluss des Upgrades und nach dem Neustart des Switches muss derselbe Upgrade<block ref="1f3226f23ea270e1a1024cd0db05413e" prefix=" " category="inline-code"></block>Befehl erneut ausgeführt werden.</block>
   <block id="56087f857f3cca64fb99f1b3f5890604" category="list-text">Wenn Sie bereits auf NX-OS 10.6(3)F und höher aktualisiert haben, werden beide Images gleichzeitig aktualisiert.</block>
@@ -6596,7 +6580,6 @@
   <block id="6065efd0847dd53d5a9d542258344276" category="list-text">Das NX-OS- und EPLD-Image installieren. Die Schritte können je nach Ihrer aktuellen NX-OS Version und der Ziel-NX-OS Version variieren.</block>
   <block id="2737688c7e1f6ffba26f9c6951fa5abe" category="list-text">Upgrade von 10.4(2)F auf 10.6(3)F oder höher</block>
   <block id="6f2c4a1a8b2baa286198fb324d542a64" category="list-text">Upgrade von 10.6(3)F auf eine neuere Version</block>
-  <block id="a74a897521538b72e1b914e5b98566be" category="list-text">[[stepa]] Das NX-OS und EPLD Image wird auf den ersten Switch kopiert.</block>
   <block id="cb5e235c5bd5a3a4562b1566219f4a89" category="paragraph">Das Beispiel verwendet sftp und NX-OS Version 10.6(4)M.</block>
   <block id="0cb3992a66607246eb74aebe3e9789e9" category="paragraph">Das Beispiel verwendet NX-OS Version 10.6(4)M.</block>
   <block id="caf4113ef5fadfeda9c26a5fee89f6b8" category="paragraph">Das Beispiel verwendet EPLD Version 10.6(4)M.</block>
@@ -6604,14 +6587,12 @@
   <block id="1770fc40d3a238691ea3c831f562c744" category="list-text">Bei Bedarf kann in der Dokumentation Ihrer NX-OS-Version <block ref="0ecf3652e1ad34634084ecc7cb5a512e" category="inline-link-macro-rx"></block>Informationen zur Einrichtung der Switches im Kapitel „Using the Cisco NX-OS Setup Utility“ gefunden werden. Informationen zu den Terminaleinstellungen sind im Kapitel „Configuring Terminal Settings and Sessions“ zu finden.</block>
   <block id="c7e5b41e9730af5b00e7d3ece00450f7" category="list-text">Die in diesem Verfahren gezeigten Beispiele gelten für AFX 2K Systeme mit Switches, auf denen RCF 10.1 ausgeführt wird. Die Eingabe und Ausgabe kann je nach Ihrer RCF Version variieren.</block>
   <block id="8ed0d8caaf00274a6af9f5e5e2f160db" category="list-text">Die Konnektivität zum Server, auf dem NX-OS gehostet wird, lässt sich mit dem <block ref="df911f0151f9ef021d410b4be5060972" prefix=" " category="inline-code"></block>Befehl überprüfen:</block>
-  <block id="a2762799f1b4a38f437069b7d8e422fa" category="list-text">Das NX-OS- und EPLD-Image wird auf den ersten Switch kopiert:</block>
   <block id="f05462b6e392b8a6443947a98e5ffb24" category="paragraph">Durch die Installation der Image-Datei wird diese bei jedem Neustart des Switch geladen:</block>
   <block id="cad34ccba01154fef5046fa387039b5c" category="paragraph">Weitere Informationen zu Cisco-Befehlen finden Sie im entsprechenden Leitfaden in der <block ref="232762645b4df5c60acd4583f4d3b328" category="inline-link-macro-rx"></block>.</block>
   <block id="b6025372f7e09e40fa5e0cf9e13ab3e3" category="list-text">Die aktuelle laufende Konfiguration wird in die Startkonfiguration kopiert, damit sie dauerhaft gespeichert wird:</block>
   <block id="34a91a5720a9f504b3aa62be5dafbbad" category="list-text">Die Breakout-Ports (4x100GbE) des Switches sind fest auf 100GbE zu konfigurieren. Wenn die Geschwindigkeit nicht fest konfiguriert wird, werden die Ports nicht aktiviert und befinden sich in einem fehlerdeaktivierten Zustand:</block>
   <block id="3bb353ce15c345888ad0235997853aba" category="list-text">Mithilfe der Switch-CLI ist die Verbindung zum Server zu überprüfen, auf dem NX-OS gehostet wird:</block>
   <block id="b0cd9db5b65d1a7552f0d4d1776cf02b" category="paragraph">Das NX-OS wird auf dem ersten Switch (cs1) installiert, indem die neue Version von NX-OS und EPLD installiert und überprüft, der Zustand aller Ports im Cluster verifiziert und diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt werden.</block>
-  <block id="d5db34440fb801ce1e7b21aa9a1a260c" category="list-text">Mithilfe der Switch-CLI erfolgt das Kopieren des NX-OS- und EPLD-Image auf einen Switch:</block>
   <block id="cf1d77fd6309b116f050d88f91cf96dd" category="list-text">Mithilfe der Switch CLI lässt sich nach dem Neustart des Switches die neue Version von NX-OS überprüfen:</block>
   <block id="7aa43663a4fe610113c6066b203a8840" category="list-text">Die automatische Wiederherstellung der Cluster LIFs wird wieder aktiviert:</block>
   <block id="cd83220db451d36aa03d8ca6c291a49e" category="paragraph"><block ref="5dc73071d11217e5e2e49444f79c8eac" prefix="" category="inline-code"></block></block>
@@ -6622,4 +6603,45 @@
   <block id="bd0444d020b86183862bbc6948afd8e8" category="list-text">Mithilfe der ONTAP CLI wird die automatische Rücksetzung der Cluster LIFs aktiviert:</block>
   <block id="0641c404b90355fd340627cc3967a213" category="list-text">Mithilfe der Switch CLI ist zu überprüfen, ob die mit den Cluster Ports verbundenen Switch Ports *aktiv* sind:</block>
   <block id="630d4b1d7a71915882986f040a422234" category="paragraph">4x100Gb Modus für Intra-cluster-, HA- und Storage-Verbindungen</block>
+  <block id="4b7e002618aa7ffd519fec86287f8771" category="list-text">Der Download und die Installation des NX-OS- und EPLD-Image erfolgen. Die Schritte können je nach Ihrer aktuellen NX-OS-Version und der Zielversion von NX-OS variieren.</block>
+  <block id="2d35ac78d9772d450de6f690db95af00" category="list-text">Upgrade auf 10.4(6)M oder früher</block>
+  <block id="8427a13468c66aeac64ef34926dc67c8" category="list-text">Upgrade von Version 10.4(6)M oder früher auf Version 10.5(3)(F) oder höher</block>
+  <block id="49d23689c6bb644c5a4647e289d74238" category="list-text">Upgrade von 10.5(3)F auf eine neuere Version</block>
+  <block id="cd1e26275b27e242fc6497adfac2e9a7" category="open-title">Upgrade von Version 10.4(6)M oder älter auf Version 10.5(3)F oder neuer</block>
+  <block id="7d45f34ac662bcd6ac76c330d2da43d4" category="list-text">[[stepa]] Kopieren des kombinierten NX-OS- und EPLD-Images auf den Nexus 9336C-FX2 Switch.</block>
+  <block id="c4428e5364d6e4f823ee10eb43c34de0" category="paragraph">Im Folgenden wird der erste Installationsdurchlauf für das Upgrade von NX-OS 10.4(5)(M) auf 10.5(3)(F) gezeigt.</block>
+  <block id="5f27a7f847740894095dab35026bcee0" category="paragraph">Der folgende Schritt zeigt den zweiten Installationsdurchlauf zur Aktualisierung des EPLD-Images.</block>
+  <block id="53afc27f2f545e2f9fe2b6256536f632" category="list-text">Das kombinierte NX-OS- und EPLD-Image wird auf den ersten Switch kopiert.</block>
+  <block id="504bf6b171a5d3a2d7e019caf7bd443a" category="list-text">[[stepa]] Kopieren des kombinierten NX-OS und EPLD Image auf den ersten Switch:</block>
+  <block id="81753b5dd20f91aa4043bf31d0c177ce" category="paragraph">Im Folgenden wird der erste Installationsdurchlauf für das Upgrade von NX-OS 10.4(2)F auf 10.6(3)F gezeigt.</block>
+  <block id="548f00151fa2e05717273bd582bcd97f" category="list-text">[[stepa]] Das kombinierte NX-OS- und EPLD-Image auf den ersten Switch kopieren.</block>
+  <block id="ac4e288dd7e1a8fb79f35c8906d01d71" category="list-text">[[stepd]]Nach dem Neustart des Switches lässt sich die neue Version von NX-OS mithilfe der Switch-CLI überprüfen:</block>
+  <block id="5641da6edf405a2251dc2bb428fe96aa" category="list-text">Kopieren des kombinierten NX-OS- und EPLD-Images auf den ersten Switch:</block>
+  <block id="95d82cccd68b4c1652736b48471a37eb" category="list-text">Mithilfe der Switch-CLI lässt sich das kombinierte NX-OS- und EPLD-Image auf einen Switch kopieren:</block>
+  <block id="ebf2c8fa0cd1e5ddd1627b1aae6ba52c" category="summary">Auf NVIDIA SN2100 Storage Switches erfolgt die Installation des Skripts für die Referenz-Konfigurationsdatei (RFC).</block>
+  <block id="d9d8772d4e81d0eed1afdcd5b8f535b7" category="doc">RCF-Skript auf NVIDIA SN2100 Storage Switches installieren</block>
+  <block id="c1cb629c9621525de753459b6f2c0ae9" category="paragraph">Das Skript für die Referenzkonfigurationsdatei (RCF) wird auf NVIDIA SN2100 Storage Switches installiert, um Portzuweisungen und Netzwerkeinstellungen zu konfigurieren.</block>
+  <block id="2123b47f46a6b2a44de513e0c343098f" category="paragraph">Vor der Installation des RCF-Skripts muss Folgendes auf dem Switch verfügbar sein:</block>
+  <block id="ac5b3627a9104bb66c14498d1d7100da" category="list-text">Eine unterstützte Version von Cumulus Linux ist installiert.</block>
+  <block id="d1f4d61f91bcd128da395d340c176730" category="list-text">IP-Adresse des Management-Ports, Subnetzmaske und Standardgateway werden per DHCP definiert oder manuell konfiguriert.</block>
+  <block id="cf7ed8a36063537c516bd59674af6224" category="paragraph-title">RCF Skriptversion</block>
+  <block id="8bc421c29e23e35d5544d9ae5aeceaef" category="paragraph">Die Auswahl der geeigneten Storage RCF Skriptversion richtet sich nach Ihrer aktuellen ONTAP und Cumulus Linux Version. Der Download der RCFs erfolgt von der <block ref="5baf2e10c7d5342617f6966efa0bb2fe" category="inline-link-rx"></block>Seite.</block>
+  <block id="e591ad610e57cfe690a9967fdf601b46" category="paragraph">Das folgende Beispielverfahren zeigt, wie Sie das RCF-Skript für Storage-Switches herunterladen und anwenden.</block>
+  <block id="f5dd383047da5ef0dc3e4c8c2357b39f" category="section-title">Schritt 1: Installation der RCF auf dem Switch</block>
+  <block id="fc71b86dc7948363fd49005c2958e6a3" category="list-text">Anwendung des RCF Python-Skripts *RCF-v1.14-MSN2100-ST1*:</block>
+  <block id="bb96130dde758202b0e5f4f4d6ba920c" category="list-text">Die Controller Storage Ports und die NS224 Shelf Ports werden an die Switches angeschlossen.</block>
+  <block id="581218a22ca238be40ff0989a8d71a30" category="section-title">Schritt 2: Überprüfung der Switch und Storage Konnektivität</block>
+  <block id="ee75e4fc3527723888afd59f68fb0764" category="list-text">Der Systemstatus der Storage-Ports und der Switch-Konnektivität sollte überprüft werden.</block>
+  <block id="e487e2a4018baf9c4da8035ce151c899" category="list-text">Überprüfung des Status der Node-Storage-Ports:</block>
+  <block id="eea6e9b8252d81d7f8dc2569fd073d2d" category="list-text">Es ist zu überprüfen, ob die Switches verfügbar sind:</block>
+  <block id="16eeba3f541a7b36f32ba0b8be58737d" category="list-text">Die Überprüfungsschritte sind am Partner-Switch (oder an einem anderen Switch) zu wiederholen.</block>
+  <block id="e952e874589e08c72accb419491aef86" category="summary">Aktualisierung des Skripts der Referenzkonfigurationsdatei (RFC) auf NVIDIA SN2100 Storage Switches.</block>
+  <block id="c41ae9e39b11d04568136ed5e1576ec2" category="doc">RCF-Skript auf NVIDIA SN2100 Storage Switches aktualisieren</block>
+  <block id="0f0a56e197588dcaaee6fb366c5eac78" category="paragraph">Die Aktualisierung des Skripts der Referenzkonfigurationsdatei (RCF) auf NVIDIA SN2100 Storage Switches dient zur Konfiguration von Portzuweisungen und Netzwerkeinstellungen.</block>
+  <block id="2f12078db8d3940411ac90f4d09d660f" category="section-title">Schritt 1: Überprüfung des aktuellen Switch- und Storage Systemstatus</block>
+  <block id="d831501cc1e0c296f7725582b3504295" category="section-title">Schritt 2: Upgrade des RCF auf dem Switch</block>
+  <block id="97c45dd149bbfb8592d570a009fee385" category="section-title">Schritt 3: Überprüfen der Switch- und Storage-Konnektivität</block>
+  <block id="7623b95e402cfc99d5158cb118b665be" category="open-title">Cumulus Linux 5.4:</block>
+  <block id="e2dc54ffd947e067753fc8664e33a3e3" category="open-title">Cumulus Linux 5.11 und höher:</block>
+  <block id="d5ff2396abf906847a759be491ef8ed5" category="list-text">Sobald feststeht, dass der aktualisierte Switch und seine Storage Pfade einwandfrei funktionieren, können die Schritte 1 bis 3 am Partner-Switch wiederholt werden.</block>
 </blocks>

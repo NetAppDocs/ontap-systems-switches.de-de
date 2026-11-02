@@ -501,7 +501,7 @@ network interface modify -vserver Cluster -lif * -auto-revert false
 
 Das NX-OS wird auf dem ersten Switch (cs1) installiert, indem die neue Version von NX-OS und EPLD installiert und überprüft, der Zustand aller Ports im Cluster verifiziert und diese Schritte anschließend auf dem zweiten Switch (cs2) wiederholt werden.
 
-. Mithilfe der Switch-CLI erfolgt das Kopieren des NX-OS- und EPLD-Image auf einen Switch:
+. Mithilfe der Switch-CLI lässt sich das kombinierte NX-OS- und EPLD-Image auf einen Switch kopieren:
 +
 `copy <protocol>: bootflash: vrf management`
 
